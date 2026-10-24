@@ -1,10 +1,10 @@
 # IR: the communication-pipeline pilot plan
 
-Reader: human owner, in conversation.
+Reader: RD-1 (human owner, in conversation).
 
-Purpose: the plan for the pilot, as the pipeline's first input.
+Purpose: document. The plan for the pilot, as the pipeline's first input.
 
-Status: rendered (prose at pipeline-pilot.md, 2026-10-24).
+Status: rendered (prose at pipeline-pilot.md; plan active since the owner's ratification, 2026-10-24).
 
 Source: the methodology conversation of 2026-10-22 to 2026-10-24.
 
@@ -24,15 +24,15 @@ T6. Branch point: the step that decides whether an IR is paraphrased, from its p
 
 T7. Term ratification: the process by which the human owner accepts or strikes each term a deliverable introduces. [decided: owner, 2026-10-24]
 
-T8. Reader catalog: a small set of defined readers that the paraphraser and reviewer consume. [proposed: this plan]
+T8. Reader catalog: a small set of defined readers that the paraphraser and reviewer consume. [decided: owner, 2026-10-24, ratified at the bootstrap merge]
 
-T9. Style specification: the methodology's prose rules in a form the paraphraser applies rule by rule. [proposed: this plan]
+T9. Style specification: the methodology's prose rules in a form the paraphraser applies rule by rule. [decided: owner, 2026-10-24, ratified at the bootstrap merge]
 
-T10. Round-trip check: re-extracting claims from rendered prose and diffing them against the source IR. [proposed: this plan]
+T10. Round-trip check: re-extracting claims from rendered prose and diffing them against the source IR. [decided: owner, 2026-10-24, ratified at the bootstrap merge]
 
-T11. Evaluation case: one graded pair of text and findings, kept under eval/; defined in eval/README.md. [proposed: this plan]
+T11. Evaluation case: one graded pair of text and findings, kept under eval/; defined in eval/README.md. [decided: owner, 2026-10-24, ratified at the bootstrap merge]
 
-T12. Graduation: the move of a pilot artifact to its destination project: the methodology corpus, methodology-tools, or project-orchestrator. [proposed: this plan]
+T12. Graduation: the move of a pilot artifact to its destination project: the methodology corpus, methodology-tools, or project-orchestrator. [decided: owner, 2026-10-24, ratified at the bootstrap merge]
 
 T13. Convergence: a project is convergent while the cost for its owners to understand, change and verify it grows more slowly than the project. [decided: owner, "Convergence and Divergence", 2026-10-22]
 
@@ -126,5 +126,6 @@ E3. Allegro, docs/documentation-census.md section 3: four existing rules hold in
 
 ## Asks
 
-A1. Approve the plan as draft and name the chunk 1 gate reviewer: you, or a stranger agent in the reviewer role. Depends: C20.
-A2. Ratify or strike the proposed terms T8 to T12.
+A1. Resolved 2026-10-24: the plan is active; the owner reviews the chunk 1 gate (no stranger named; see chunk 1 IR, C26).
+A2. Resolved 2026-10-24: T8 to T12 ratified at the bootstrap merge.
+A0. No open asks in this IR; chunk asks live in each chunk's IR under docs/records/.

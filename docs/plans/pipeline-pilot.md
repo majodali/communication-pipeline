@@ -1,6 +1,6 @@
 # The communication-pipeline pilot
 
-Status: draft
+Status: active
 
 <!-- K-007 plan. Status transitions: draft → active → (superseded by X,
      because Y | closed → Backlog entry). Anything unmarked here is a
@@ -29,14 +29,14 @@ should start with the [IR schema](../ir-schema.md) and the
 | Stranger | a reviewer with no access to the conversation that produced the text and no content contributions to the project | decided, owner 2026-10-23 |
 | Branch point | the step that decides whether an IR is paraphrased, from its purpose and complexity | decided, owner 2026-10-24 |
 | Term ratification | the process by which the human owner accepts or strikes each term a deliverable introduces | decided, owner 2026-10-24 |
-| Reader catalog | a small set of defined readers that the paraphraser and reviewer consume | proposed |
-| Style specification | the methodology's prose rules in a form the paraphraser applies rule by rule | proposed |
-| Round-trip check | re-extracting claims from rendered prose and diffing them against the source IR | proposed |
-| Evaluation case | one graded pair of text and findings, kept under `eval/`; [definition](../../eval/README.md) | proposed |
-| Graduation | the move of a pilot artifact to its destination project: the methodology corpus, methodology-tools, or project-orchestrator | proposed |
+| Reader catalog | a small set of defined readers that the paraphraser and reviewer consume | decided, owner 2026-10-24 |
+| Style specification | the methodology's prose rules in a form the paraphraser applies rule by rule | decided, owner 2026-10-24 |
+| Round-trip check | re-extracting claims from rendered prose and diffing them against the source IR | decided, owner 2026-10-24 |
+| Evaluation case | one graded pair of text and findings, kept under `eval/`; [definition](../../eval/README.md) | decided, owner 2026-10-24 |
+| Graduation | the move of a pilot artifact to its destination project: the methodology corpus, methodology-tools, or project-orchestrator | decided, owner 2026-10-24 |
 | Convergence | a project is convergent while the cost for its owners to understand, change and verify it grows more slowly than the project | decided, owner, "Convergence and Divergence", 2026-10-22 |
 
-The five proposed terms await ratification (ask A2).
+All thirteen terms are ratified. The project [vocabulary](../vocabulary.md) is their register from chunk 1.
 
 ## Problem
 
@@ -105,7 +105,10 @@ because the shape of chunks 2 to 4 depends on what chunk 1 finds.
 
 IR schema v1 with the referent rule and provenance fields. The reader
 catalog. The style specification as data, stating that it overrides
-harness writing guidance. The branch-point criteria.
+harness writing guidance. The branch-point criteria. Added in the
+chunk: the project vocabulary, because the schema's definition-site
+field needs a target ([chunk 1 IR](../records/chunk-1-specifications.ir.md),
+C23).
 Gate: the owner reads the schema and strikes or accepts each reader
 entry.
 
@@ -151,6 +154,6 @@ verification: the owner reviews the named artifact.
 
 ## Asks
 
-1. Approve the plan as draft and name the chunk 1 gate reviewer: you,
-   or a stranger agent in the reviewer role.
-2. Ratify or strike the five proposed terms in the Terms table.
+No open asks in this plan. The plan went active and its terms were
+ratified on 2026-10-24. The owner reviews each chunk's gate. Each
+chunk's asks live in its IR under `docs/records/`.

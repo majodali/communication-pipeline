@@ -22,12 +22,24 @@ roles have moved to project-orchestrator, this repository archives
   [case 001](../eval/cases/001-review-response-2026-10-23.md)
   seeded. Form audit clean; links resolve.
 
+- [x] **Plan active; terms ratified** — 2026-10-24, at the bootstrap
+  merge. The five proposed terms became decided; the owner reviews
+  each chunk's gate. [Plan](plans/pipeline-pilot.md).
+
+- [x] **Chunk 1 — specifications** — 2026-10-24. [IR schema
+  v1](ir-schema.md): referent rule, provenance forms, clusters, fixed
+  sections, ten checks CK-01 to CK-10, lifecycle. [Reader
+  catalog](readers.md): five entries RD-1 to RD-5, each with a
+  readability test. [Style specification](style-spec.md): 22 rules
+  SP-01 to SP-22 with checks, readers and sources; harness overrides
+  stated. [Branch point](branch-point.md): three dispositions, rules
+  BP-01 to BP-09, provisional thresholds. Added:
+  [vocabulary](vocabulary.md) as a custom type, 17 terms, 4
+  unratified. Source: [chunk 1 IR](records/chunk-1-specifications.ir.md).
+  Gate: open, awaiting the owner's ruling on each reader entry.
+
 ## Upcoming
 
-- [ ] **Chunk 1 — specifications** — IR schema v1, reader catalog,
-  style specification as data, branch-point criteria. Gate: owner
-  reads the schema and rules on each reader entry.
-  [Plan](plans/pipeline-pilot.md#chunk-1--specifications).
 - [ ] **Chunk 2 — roles in Claude Code** — reasoning, paraphraser and
   reviewer skills; lint hooks; one live run on a methodology
   deliverable. Gate: owner reviews one IR and its rendering side by

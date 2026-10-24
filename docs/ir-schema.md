@@ -1,94 +1,146 @@
 # Intermediate representation: schema
 
-Status: draft (v0, bootstrap). Version 1 is chunk 1 of the
-[pilot plan](plans/pipeline-pilot.md).
+Status: active (v1, chunk 1). v0 was the bootstrap draft of 2026-10-24.
 
-Reader: an agent in the reasoning role writing an IR document; an agent
-in the reviewer role checking one; the human owner reading one instead
-of the prose it produced.
+Type: Specification (methodology vocabulary). Defines the custom
+document type **Intermediate representation** declared in
+[docs/classification.md](classification.md).
+
+Reader: [RD-4](readers.md#rd-4-fresh-agent-session) (a fresh agent
+session) in the reasoning or reviewer role; the human owner reading an
+IR instead of the prose rendered from it.
 
 ## Purpose
 
-An intermediate representation (IR) is the structured form a reasoning
-role writes before any prose exists. It holds the terms, claims,
-relations, evidence and asks of a piece of communication, each with an
-identifier and a provenance status. Prose is rendered from it by the
-paraphraser role, or the IR is delivered as is when the branch point
-says no paraphrase is needed.
+An intermediate representation (IR) is the structured form the
+reasoning role writes before any prose exists. It holds the terms,
+claims, relations, evidence and asks of one communication. Every
+element carries an identifier and a provenance status. Prose is
+rendered from the IR by the paraphraser role when the
+[branch point](branch-point.md) says so; otherwise the IR is delivered
+as it stands.
 
-The IR exists to remove three failure modes of prose written directly:
-compression of several claims into one sentence, referents left
-unnamed, and terms used before they are defined.
+The IR removes three failure modes of prose written directly:
+several claims compressed into one sentence; referents left unnamed;
+terms borrowed from context and used as if defined
+([case 001](../eval/cases/001-review-response-2026-10-23.md)).
 
 ## Document form
 
-An IR document is a markdown file named `<subject>.ir.md`. It opens
-with four header fields, then holds sections of elements.
+An IR is a markdown file named `<subject>.ir.md`. It sits beside the
+prose it produces, or under `docs/records/` when the prose is a chat
+message or a PR body. It opens with four header fields and then holds
+five sections in a fixed order: Terms, Claims, Relations, Evidence,
+Asks. The Claims section may use any sub-headings.
 
 | Header field | Value |
 |---|---|
-| Reader | one entry from the reader catalog (chunk 1), or `human owner, in conversation` until the catalog exists |
-| Purpose | one sentence: what the communication is for |
+| Reader | one entry from the [reader catalog](readers.md), by identifier |
+| Purpose | `report` or `document`, then one sentence saying what the communication is for |
 | Status | `draft` · `reviewed` · `rendered` · `delivered` |
 | Source | the conversation, document or event that occasioned it |
 
+A `report` is read by someone who shares the conversation (RD-1,
+RD-2, RD-3). A `document` is read by someone who does not (RD-4,
+RD-5) or will live under `docs/`.
+
 ## Element kinds
 
-Every element has an identifier, a kind, a body, and a provenance
-status. Identifiers are a kind letter and a number, unique within the
-document: `T` term, `C` claim, `R` relation, `E` evidence, `A` ask.
+Every element has an identifier, a body, and a provenance status.
+Identifiers are a kind letter and a number, unique within the
+document.
 
-| Kind | Body | Rule |
+| Kind | Letter | Body | Rule |
+|---|---|---|---|
+| Term | `T` | the word or phrase; its meaning in this communication; `defined-at:` a link to its definition site when that is elsewhere | A term is defined once per IR. Every project-specific term used in a claim appears here. A term whose definition site is elsewhere links it and does not restate it. |
+| Claim | `C` | one statement | A claim makes one statement and names every referent inside itself (the referent rule below). A claim may carry `evidence: E<n>`. |
+| Cluster | `G` | `cluster: C<a>, C<b>, …` with an optional topic claim first | The paraphraser renders a cluster as one paragraph, in the order given. A claim belongs to at most one cluster. |
+| Relation | `R` | `C<a> <verb> C<b> because <reason>` | Verbs: `supports`, `depends-on`, `contradicts`, `refines`. The reason is one sentence or a claim identifier. Cross-claim references are relations, never pronouns in a claim. |
+| Evidence | `E` | a pointer (file and line, commit, message date, URL) and what it shows | Evidence is cited by a claim's `evidence:` field, never free-standing. |
+| Ask | `A` | a decision or action requested of the reader; `Depends:` the claims or asks it rests on | Every IR for RD-1 or RD-2 has an Asks section, holding asks or the single line `A0. No asks.` |
+
+### The referent rule
+
+A referent is anything a claim refers to: a document, a project, a
+rule, a person, a role, an earlier claim's subject. A claim names each
+referent inside itself. A pronoun or determiner phrase (`it`, `this`,
+`that`, `these`, `those`, `the other`, `the above`, `the former`, `the
+latter`, `the same`) is legal only when its antecedent is a noun phrase
+earlier in the same claim. A claim that needs an earlier claim refers
+to it by identifier inside a relation, or restates the referent by
+name.
+
+### Provenance
+
+Each element ends with one status in square brackets:
+
+| Status | Form | Meaning |
 |---|---|---|
-| Term `T` | a word or phrase, its definition, and who introduced it where | A term is defined once per document. A term used in any claim appears here or links to its definition site elsewhere. |
-| Claim `C` | one statement, with every referent named | A claim contains no pronoun or deictic ("this", "that", "the other", "the above") whose antecedent is outside the claim. A claim makes one statement. |
-| Relation `R` | `<C-id> <verb> <C-id>` with a reason | Verbs: `supports`, `depends-on`, `contradicts`, `refines`. The reason is a claim identifier or a sentence. |
-| Evidence `E` | a pointer (file, line, commit, message date) and what it shows | Evidence is cited by a claim's `evidence:` field, never free-standing. |
-| Ask `A` | a decision or action requested of the reader, and what depends on it | Every IR addressed to the human owner lists its asks, or states `A0. No asks`. |
+| decided | `[decided: <who>, <date>]` or `[decided: <source>]` | ratified by the human owner, or quoted from a governed document |
+| proposed | `[proposed: <IR id or "this IR">]` | put forward here; awaits ratification |
+| inferred | `[inferred: R<n>]` | derived by the reasoning role; the relation that derives it is cited |
 
-## Provenance status
+A term with status `proposed` is an unratified term. The count of
+unratified terms per IR is recorded (the owner's unratified-vocabulary
+indicator, "Convergence and Divergence", 2026-10-22).
 
-Every element carries one status in square brackets at the end of its
-body:
+## Mechanical checks
 
-- `[decided]` — ratified by the human owner, with the date or source.
-- `[proposed]` — put forward in this IR; awaits ratification.
-- `[inferred]` — derived by the reasoning role from decided or proposed
-  elements; the relation that derives it is cited.
+A lint or reviewer reports each of these as a finding. Identifiers are
+`CK-nn`.
 
-A term with status `[proposed]` is an unratified term. The count of
-unratified terms per IR is a measurement the pilot records (owner
-indicator: unratified vocabulary).
+| Check | Finding when |
+|---|---|
+| CK-01 | a claim contains a pronoun or determiner phrase from the referent rule with no noun-phrase antecedent earlier in the same claim |
+| CK-02 | a claim exceeds 40 words |
+| CK-03 | a claim joins two clauses that could each stand as a claim, by `and`, `but`, `so`, a semicolon or an em-dash |
+| CK-04 | a project-specific term appears in a claim and is neither a `T` element nor linked to a definition site |
+| CK-05 | an element has no provenance status, or a status without its required fields |
+| CK-06 | a relation, cluster, `evidence:` or `Depends:` names an identifier that does not resolve |
+| CK-07 | the Reader header is not a catalog identifier, or the Purpose header lacks `report` or `document` |
+| CK-08 | an IR for RD-1 or RD-2 has no Asks section |
+| CK-09 | a claim appears in two clusters |
+| CK-10 | the five sections are absent or out of order |
 
-## Mechanical checks (v0)
+What counts as a project-specific term for CK-04: any bolded term, any
+capitalized multi-word phrase that is not a proper name, and any word
+in the project vocabulary.
 
-A reviewer or lint reports each of these as a finding:
+## Rendering rule
 
-1. A claim containing `this`, `that`, `these`, `those`, `it`, `the
-   other`, `the above`, `the former`, `the latter` without a named
-   antecedent in the same claim.
-2. A claim longer than 40 words.
-3. A claim containing two independent clauses joined by `and`, `but`,
-   `so`, `;` or an em-dash where each clause could stand as a claim.
-4. A term used in a claim and not defined in the Terms section or
-   linked to a definition site.
-5. An element without a provenance status.
-6. A relation whose identifiers do not resolve.
-7. An IR addressed to the human owner with no `A` element.
-
-## Rendering rule (v0)
-
-The paraphraser renders one claim as one sentence, or a declared
-cluster of claims as one paragraph. A cluster is declared in the IR as
-`cluster: C3, C4, C5`. The paraphraser introduces no claim, drops no
-claim, and names every term on first use as the Terms section defines
-it. The round-trip check (chunk 3) re-extracts claims from the prose and
-diffs them against the IR.
+The paraphraser renders one claim as one sentence, or one cluster as
+one paragraph in the cluster's order. It introduces no claim and drops
+no claim. It names every term on first use as the Terms section or the
+definition site defines it. It follows the
+[style specification](style-spec.md) for the IR's reader. It states an
+empty Asks section as "No asks." The
+[round-trip check](plans/pipeline-pilot.md#chunk-3--measurement-and-ratification)
+(chunk 3) re-extracts claims from the prose and diffs them against
+the IR.
 
 ## Lifecycle
 
-An IR is a record of one communication. Its `[proposed]` terms and
-claims are candidates for the project's vocabulary and conceptual
-model. The rule that moves them there is chunk 3 of the plan. Until
-then, an IR is kept where its prose is kept, or under `docs/records/`
-when the prose is a chat message.
+An IR's mutability follows its prose's designation. The IR of an
+active document (a plan, a specification) is edited whenever the
+document is, and a disagreement between the two is a defect in the
+prose. The IR of a delivered report (a chat message, a PR body) is a
+record: its Status becomes `delivered` and it is not edited after.
+
+Ratification of a `proposed` term is recorded in the project
+[vocabulary](vocabulary.md), and in any active document that lists the
+term. The rule that moves ratified terms and claims into a project's
+conceptual model is chunk 3 of the plan.
+
+## Changes from v0
+
+- The referent rule is stated with its antecedent condition; v0 listed
+  pronouns only.
+- Provenance has required fields per status.
+- Clusters are an element kind (`G`); v0 mentioned them in the
+  rendering rule only.
+- Section order is fixed; the Purpose header takes `report` or
+  `document`; the Reader header takes a catalog identifier.
+- Terms carry `defined-at:`.
+- Checks CK-07 to CK-10 are new; CK-01 to CK-06 are v0's checks 1 to 6
+  restated.
+- The lifecycle rule ties an IR's mutability to its prose.
