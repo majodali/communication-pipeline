@@ -71,7 +71,7 @@ self-review, which fails the challenge.
 2. The methodology repository is the first subject. Its deliverables go
    through the pipeline from this plan onward (owner, 2026-10-24).
 3. The pilot is built in Claude Code first. Fresh-context subagents are
-   the paraphraser and reviewer; hooks are the lints. It moves to
+   the paraphraser and reviewer. Hooks are the lints. It moves to
    project-orchestrator when the roles are stable (owner, 2026-10-24).
 4. The paraphraser and reviewer run only when the branch point says so,
    and may run on cheaper models (owner, 2026-10-24).
@@ -91,8 +91,8 @@ self-review, which fails the challenge.
 
 - Restyling existing documents in any project. The style guide's
   migration rule covers that.
-- Changing W-008's three parts. The pipeline produces them; it does not
-  replace them.
+- Changing the three parts of W-008 (reports map their deliverables).
+  The pipeline produces them. It does not replace them.
 - A formal (Allegro) model of the IR. The schema is written so a later
   model can lift it.
 
@@ -117,7 +117,10 @@ entry.
 A reasoning skill that works in the IR. A paraphraser skill run as a
 fresh-context subagent. A reviewer skill run as a fresh-context
 subagent that reads both IR and prose. Lint hooks for the mechanical
-checks. One live run on a methodology deliverable.
+checks. One live run on a methodology deliverable. Found in the chunk:
+the lint, turned on the pilot's own documents, reported 43 violations,
+all true, which produced schema v1.1 ([chunk 2
+IR](../records/chunk-2-roles.ir.md), C7 to C16).
 Gate: the owner reviews one IR and its rendering side by side.
 
 ### Chunk 3 — Measurement and ratification

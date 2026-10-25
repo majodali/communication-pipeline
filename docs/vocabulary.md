@@ -4,16 +4,16 @@ Status: active. Register of this project's terms.
 
 Type: **Vocabulary** (Document), a custom document type under
 methodology Article 7, declared in
-[docs/classification.md](classification.md) and defined here: the
-register of a project's terms, one definition site per term, each with
-its meaning, its status and where it was introduced. Convergent with
-Allegro's `docs/book/architecture-vocabulary.md` and with the
-*Vocabulary* type Allegro proposed to the methodology (its
-documentation-standards proposal, section 6.2), so it is a
-standardization candidate under Article 7's convergence clause.
+[docs/classification.md](classification.md) and defined here. A
+vocabulary is the register of a project's terms. Each term has one
+definition site, a meaning, a status and an origin. The type is
+convergent with Allegro's `docs/book/architecture-vocabulary.md` and
+with the *Vocabulary* type Allegro proposed to the methodology
+(documentation-standards proposal, section 6.2). Under Article 7's
+convergence clause it is a standardization candidate.
 
-Reader: RD-4 (a fresh agent session) checking a term; the human owner
-ratifying one.
+Reader: RD-4 (a fresh agent session) checking a term, or the human
+owner ratifying one.
 
 Row shape: term · meaning · status (`decided` with who and when,
 `proposed` with where) · definition site when it is not this file.

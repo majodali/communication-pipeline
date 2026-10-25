@@ -34,13 +34,16 @@ All inputs come from the IR itself.
 
 | Disposition | What runs |
 |---|---|
-| D0 lint only | the schema checks CK-01 to CK-10 and the prose lints; the IR is delivered as it stands |
+| D0 lint only | the schema checks, CK-01 (the referent rule) to CK-10 (section order), and the prose lints; the IR is delivered as it stands |
 | D1 render | D0, then the paraphraser renders prose for the reader |
 | D2 render and review | D1, then the reviewer reads the IR and the prose against the reader's readability test and the [style specification](style-spec.md) |
 
 ## Rules
 
 Rules apply in order. The first rule whose condition holds decides.
+Readers are the [catalog](readers.md)'s: RD-1 (human owner, in
+conversation), RD-2 (human owner, returning), RD-3 (delegating agent),
+RD-4 (fresh agent session), RD-5 (external reader).
 
 | Rule | Condition | Disposition |
 |---|---|---|

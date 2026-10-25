@@ -33,8 +33,16 @@ from context and used as if defined.
   prose is written for them, and which stages run.
 - [`docs/vocabulary.md`](docs/vocabulary.md) — the project's terms and
   their status.
-- [`eval/`](eval/README.md) — the evaluation corpus. Case 001 is the
-  response that motivated the pilot, with nine graded defects.
+- [`scripts/`](scripts/) — the lint (`lint.mjs`), the branch point
+  (`dispatch.mjs`), the IR parser and their tests. Zero dependencies;
+  `npm test`.
+- `.claude/` — the paraphraser and reviewer agents, the reason, render
+  and review skills, and the lint hook. Built artifacts of the
+  specifications under `docs/` (methodology Article 3).
+- [`eval/`](eval/README.md) — the evaluation corpus and the dispatch
+  log. Case 001 is the response that motivated the pilot, with nine
+  graded defects. Case 002 is the lint turned on the pilot's own
+  documents.
 - [`docs/backlog.md`](docs/backlog.md) — what is done and what is next.
 
 ## Exit

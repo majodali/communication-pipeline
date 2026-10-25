@@ -38,6 +38,16 @@ A pilot of a claims-first pipeline for agent prose: reasoning role,
 paraphraser, stranger reviewer, term ratification. The methodology
 repository is its first subject. See README.md for the question.
 
+## Build / run / test
+
+- `npm test` — the lint, parser and dispatcher tests
+- `node scripts/lint.mjs [files]` — IR checks and style lints; no
+  files means every tracked markdown file
+- `node scripts/dispatch.mjs <file>.ir.md [--flag review]` — the
+  branch point; appends to eval/dispatch-log.md
+- Skills: `/reason`, `/render`, `/review`. Agents: paraphraser,
+  reviewer (fresh context; see .claude/agents/)
+
 ## Conventions
 
 - Every deliverable here is written IR first. The IR file sits beside
@@ -47,6 +57,8 @@ repository is its first subject. See README.md for the question.
   without checking it is defined.
 - Chunks run under the per-chunk gate (methodology W-001). Summarize,
   stop, wait.
+- The PostToolUse hook lints every markdown write. A blocked write
+  means the IR has schema violations; fix them, do not bypass.
 
 ## Pointers
 

@@ -1,4 +1,4 @@
-# Case 001 — review of two Allegro proposals, 2026-10-23
+# Case 001: review of two Allegro proposals, 2026-10-23
 
 Instance of the [Evaluation case](../README.md) type.
 
@@ -8,7 +8,7 @@ Instance of the [Evaluation case](../README.md) type.
 | Source text date | 2026-10-23 |
 | Reader addressed | human owner, in conversation |
 | Origin | a methodology session's chat response reviewing the owner's "Convergence and Divergence" writeup and Allegro's two methodology proposals |
-| Through the pipeline | no; written directly as prose with the W-008 block cached in the Agent bootstrap |
+| Through the pipeline | no; written directly as prose with the W-008 (reports map their deliverables) block cached in the Agent bootstrap |
 | Graded by | the same session, on the owner's challenge, 2026-10-23; two of the nine findings are the owner's |
 
 ## Source text
@@ -77,12 +77,17 @@ One caution for the vision text. Your writeup's reframing of the methodology's j
 | 3 | "That is the monolith." / "That is the mechanism." | Aphoristic fragments. "That" refers to the previous paragraph. | Style guide, *Sentences* (rhetorical devices) | lint (fragment pattern); IR check 1 |
 | 4 | "The most important finding in the package is not a rule." | Suspense: states what the finding is not before what it is. | Style guide, *Sentences* | reviewer |
 | 5 | "the surface your cause 2, concept accretion, exploits" | Metaphor in a technical review. | Style guide, *Sentences* | reviewer |
-| 6 | "Implementation-first for recording, model-first for changing." | A slogan standing for a principle, in a review of a proposal (Allegro P-009) that forbids slogans. | Proposed P-009 | reviewer |
-| 7 | "P-004 and P-006 exist and hold in 10 of 50 documents" | Both identifiers bare on first use in the response. | P-004 (citations carry names) | lint (bare identifier) |
+| 6 | "Implementation-first for recording, model-first for changing." | A slogan standing for a principle, in a review of a proposal that forbids slogans. | Allegro's proposed P-009 (principles carry their standard names and a test) | reviewer |
+| 7 | "P-004 and P-006 exist and hold in 10 of 50 documents" | Both identifiers, P-004 (citations carry names) and P-006 (registers hold uniform rows), bare on first use in the response. | P-004 | lint (bare identifier) |
 | 8 | Bold whole-sentence openers on every paragraph of "The review" | Bold used as emphasis. Source: harness writing guidance conflicting with the methodology. | P-003 (bold marks structure only) | lint (bold not a field label); style specification override |
-| 9 | "Allegro's weakness #3 in your writeup" | Wrong attribution. The weaknesses are the owner's, not Allegro's. Produced by compressing "Allegro's open question" and "your weakness" into one phrase. | Correctness; K-010 converse (false content) | IR check 1 and 3; round-trip check |
+| 9 | "Allegro's weakness #3 in your writeup" | Wrong attribution. The weaknesses are the owner's, not Allegro's. Produced by compressing "Allegro's open question" and "your weakness" into one phrase. | Correctness; K-010 (superseded content is never silently readable), the converse for false content | IR check 1 and 3; round-trip check |
 
-Causes recorded at grading: sentences optimized for density; register matched to the documents just read; a harness rule followed over a methodology rule; failures concentrated in the hardest reasoning of the session while routine PR bodies in the same session conformed.
+Causes recorded at grading:
+
+- sentences optimized for density;
+- register matched to the documents just read;
+- a harness rule followed over a methodology rule;
+- failures concentrated in the hardest reasoning of the session, while routine PR bodies in that session conformed.
 
 ## Measures
 

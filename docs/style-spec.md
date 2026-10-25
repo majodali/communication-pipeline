@@ -3,14 +3,14 @@
 Status: active (v1, chunk 1).
 
 Type: Specification (methodology vocabulary). The paraphraser applies
-it rule by rule; the reviewer and the lints check against it.
+it rule by rule. The reviewer and the lints check against it.
 
 Reader: RD-4 (a fresh agent session) in the paraphraser or reviewer
 role.
 
 ## Authority and precedence
 
-This specification restates the methodology's prose rules as data. The
+The specification restates the methodology's prose rules as data. The
 [style guide](https://github.com/majodali/methodology/blob/v1.5.0/docs/style.md),
 the [P- rules](https://github.com/majodali/methodology/blob/v1.5.0/docs/rules/prose.md)
 and [W-008](https://github.com/majodali/methodology/blob/v1.5.0/docs/rules/working-agreement.md#w-008--reports-map-their-deliverables)
@@ -22,8 +22,8 @@ harness, this specification wins. Known conflicts:
 
 | Harness guidance | This specification | Why |
 |---|---|---|
-| bold the first few words of a bullet or paragraph | SP-07: bold only on a field label or a term at its definition site | P-003 forbids bold as emphasis; the harness pattern produced finding 8 of [case 001](../eval/cases/001-review-response-2026-10-23.md) |
-| no headers in a message under about 500 words | SP-10: a header is permitted whenever a reader scanning headers would find a fact faster | P-001, documents are structured for reference |
+| bold the first few words of a bullet or paragraph | SP-07 (bold marks structure): bold only on a field label or a term at its definition site | P-003 (bold marks structure, never emphasis) forbids bold as emphasis; the harness pattern produced finding 8 of [case 001](../eval/cases/001-review-response-2026-10-23.md) |
+| no headers in a message under about 500 words | SP-10 (headers state their contents): a header is permitted whenever a reader scanning headers would find a fact faster | P-001 (documents are structured for reference) |
 
 Guidance from the harness that agrees with the methodology (short
 sentences, lead with the outcome, no em-dashes, numbers out of prose)
@@ -32,8 +32,31 @@ is simply restated below with its methodology source.
 ## Rule table
 
 Columns: identifier; rule; check, where `lint` is a deterministic
-pattern and `judgment` needs a reader; the readers it binds, by
-[catalog](readers.md) identifier; source.
+pattern and `judgment` needs a reader; the readers it binds; source.
+
+Readers and sources are cited by identifier. Their names:
+
+| Identifier | Name |
+|---|---|
+| RD-1 | human owner, in conversation ([catalog](readers.md)) |
+| RD-2 | human owner, returning |
+| RD-3 | delegating agent |
+| RD-4 | fresh agent session |
+| RD-5 | external reader |
+| P-001 | documents are structured for reference |
+| P-002 | one idea per sentence |
+| P-003 | bold marks structure, never emphasis |
+| P-004 | citations carry names |
+| P-005 | headers state their contents |
+| P-006 | registers hold uniform rows |
+| W-008 | reports map their deliverables |
+| K-010 | superseded content is never silently readable |
+| K-011 | found contradictions are marked, not routed around |
+| P-007 | Allegro's proposal: a document states its reader and prerequisites |
+| P-008 | Allegro's proposal: terms are defined once and cited everywhere |
+| P-009 | Allegro's proposal: principles carry their standard names and a test |
+| P-010 | Allegro's proposal: a measurement states its question |
+| P-011 | Allegro's proposal: design documents state the problem before the solution |
 
 | Id | Rule | Check | Readers | Source |
 |---|---|---|---|---|
@@ -68,6 +91,6 @@ do not bind any other project.
 ## What the paraphraser does with this table
 
 For the IR's reader, the paraphraser selects the rows whose Readers
-column includes that reader and applies them while rendering. It does
-not apply rows for other readers. After rendering it runs the lint
-column itself and fixes what it can before the reviewer sees the text.
+column includes that reader and applies them while rendering. Rows for
+other readers do not apply. After rendering, the paraphraser runs the
+lint column and fixes what it can before the reviewer sees the text.

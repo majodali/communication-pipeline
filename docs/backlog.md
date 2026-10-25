@@ -15,7 +15,7 @@ roles have moved to project-orchestrator, this repository archives
 
 - [x] **Bootstrap** — 2026-10-24. Classification at C1 / S0 /
   exploration / none-local, pinned 1.5.0, `methodology` family member;
-  Agent bootstrap with the W-008 block; README stating the question;
+  Agent bootstrap with the block W-008 (reports map their deliverables) requires; README stating the question;
   [IR schema v0](ir-schema.md); the [plan](plans/pipeline-pilot.md)
   as draft, written IR first
   ([source](plans/pipeline-pilot.ir.md)); evaluation
@@ -28,22 +28,35 @@ roles have moved to project-orchestrator, this repository archives
 
 - [x] **Chunk 1 — specifications** — 2026-10-24. [IR schema
   v1](ir-schema.md): referent rule, provenance forms, clusters, fixed
-  sections, ten checks CK-01 to CK-10, lifecycle. [Reader
-  catalog](readers.md): five entries RD-1 to RD-5, each with a
-  readability test. [Style specification](style-spec.md): 22 rules
-  SP-01 to SP-22 with checks, readers and sources; harness overrides
-  stated. [Branch point](branch-point.md): three dispositions, rules
-  BP-01 to BP-09, provisional thresholds. Added:
+  sections, ten checks from CK-01 (the referent rule) to CK-10 (section
+  order), lifecycle. [Reader
+  catalog](readers.md): five entries, RD-1 (human owner, in
+  conversation) to RD-5 (external reader), each with a readability
+  test. [Style specification](style-spec.md): 22 rules,
+  SP-01 (one claim per sentence) to SP-22 (supersession markers), with
+  checks, readers and sources; harness overrides
+  stated. [Branch point](branch-point.md): three dispositions, nine rules from
+  BP-01 (lints always run) to BP-09 (short reports deliver as IR),
+  provisional thresholds. Added:
   [vocabulary](vocabulary.md) as a custom type, 17 terms, 4
   unratified. Source: [chunk 1 IR](records/chunk-1-specifications.ir.md).
   Gate passed 2026-10-25: all five readers accepted; four terms ratified; vocabulary confirmed; the owner is the reviewer.
 
+- [x] **Chunk 2 — roles in Claude Code** — 2026-10-25. `scripts/lint.mjs`
+  runs the ten IR checks and eleven style checks, on demand and as a
+  PostToolUse hook that blocks IR violations; `scripts/dispatch.mjs`
+  applies the branch point and logs to [eval/dispatch-log.md](../eval/dispatch-log.md);
+  paraphraser and reviewer agents under `.claude/agents/`; reason,
+  render and review skills under `.claude/skills/`; 20 tests. Turned on
+  the pilot's own documents the lint found 43 violations and 130
+  warnings ([case 002](../eval/cases/002-lint-on-own-documents-2026-10-25.md));
+  after fixes, 0 and 30. Schema v1.1 followed. Live run: the methodology
+  Portfolio refresh, rendered by the paraphraser and reviewed by the
+  stranger. Source: [chunk 2 IR](records/chunk-2-roles.ir.md). Gate:
+  open, awaiting the owner's side-by-side reading.
+
 ## Upcoming
 
-- [ ] **Chunk 2 — roles in Claude Code** — reasoning, paraphraser and
-  reviewer skills; lint hooks; one live run on a methodology
-  deliverable. Gate: owner reviews one IR and its rendering side by
-  side. [Plan](plans/pipeline-pilot.md#chunk-2--roles-in-claude-code).
 - [ ] **Chunk 3 — measurement and ratification** — evaluation corpus,
   round-trip check, term ratification as a W-008 fourth part
   (amendment draft), IR lifecycle rule. Gate: owner adjudicates the

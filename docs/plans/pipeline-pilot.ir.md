@@ -50,11 +50,13 @@ C5. Rules without checks hold in about ten of fifty documents in one project. ev
 
 C6. The requirement: agent communication stays convergent (T13) for its reader at a cost the owner will pay. [decided: owner, 2026-10-24]
 
-C7. The challenge: the agent that reasons is the agent contaminated by the project's vocabulary and register, so it cannot judge its own output as a stranger would. [decided: owner, 2026-10-23]
+C7. The challenge: the agent that reasons is the agent contaminated by the project's vocabulary and register. [decided: owner, 2026-10-23]
+
+C36. A contaminated agent cannot judge its own output as a stranger would. [inferred: R5]
 
 C8. The approach: separate reasoning from rendering and from review; make the reasoning output a checked IR; render by a role that reads only the IR, the style specification and the reader; review by a stranger. [decided: owner, 2026-10-24]
 
-C9. Alternatives displaced: more guidance in the bootstrap (does not counter C3); lints alone (catch about half the defects in E1 and none of the borrowed terms); a single agent instructed to self-review (fails C7). [inferred: C3, C4, C7]
+C9. Alternatives displaced: more guidance in the bootstrap (does not counter C3); lints alone (catch about half the defects in E1 and none of the borrowed terms); a single agent instructed to self-review (fails C7). [inferred: R6]
 
 ## Settled decisions
 
@@ -62,7 +64,9 @@ C10. The pilot runs in its own repository, majodali/communication-pipeline, at C
 
 C11. The methodology repository is the first subject: its deliverables go through the pipeline from this plan onward. [decided: owner, 2026-10-24]
 
-C12. The pilot is built in Claude Code first, with fresh-context subagents as paraphraser and reviewer and hooks as lints; it moves to project-orchestrator when the roles are stable. [decided: owner, 2026-10-24]
+C12. The pilot is built in Claude Code first, with fresh-context subagents as paraphraser and reviewer and hooks as lints. [decided: owner, 2026-10-24]
+
+C37. The pilot moves to project-orchestrator when the roles are stable. [decided: owner, 2026-10-24]
 
 C13. The paraphraser and reviewer run only when the branch point says so, and may run on cheaper models. [decided: owner, 2026-10-24]
 
@@ -76,29 +80,45 @@ C16. Bounds are expressed in chunks and gates, never calendar time. [decided: ow
 
 C17. Restyling existing documents in any project. The style guide's migration rule covers that. [decided: owner, via Allegro proposal section 7]
 
-C18. Changing W-008's three parts. The pipeline produces them; it does not replace them. [decided]
+C18. Changing W-008's three parts is out of scope. [decided: owner, 2026-10-24]
+
+C38. The pipeline produces W-008's three parts and does not replace them. [decided: owner, 2026-10-24]
 
 C19. A formal (Allegro) model of the IR. The schema is written so a later model can lift it. [decided: owner, 2026-10-24]
 
 ## Chunks
 
-C20. Chunk 1, specifications: IR schema v1 with the referent rule and provenance fields; the reader catalog; the style specification as data stating that it overrides harness writing guidance; the branch-point criteria. Gate: the owner reads the schema and strikes or accepts each reader entry. [proposed]
+C20. Chunk 1, specifications, delivers: IR schema v1 with the referent rule and provenance fields; the reader catalog; the style specification as data, stating that it overrides harness writing guidance; the branch-point criteria. [proposed: this IR]
 
-C21. Chunk 2, roles in Claude Code: a reasoning skill that works in the IR; a paraphraser skill run as a fresh-context subagent; a reviewer skill run as a fresh-context subagent that reads both IR and prose; lint hooks for the mechanical checks; one live run on a methodology deliverable. Gate: the owner reviews one IR and its rendering side by side. [proposed]
+C31. Chunk 1's gate: the owner reads the schema and strikes or accepts each reader entry. [proposed: this IR]
 
-C22. Chunk 3, measurement and ratification: the evaluation corpus with case 001 seeded at bootstrap; the round-trip check; term ratification as a fourth part of W-008 reports, drafted as an amendment; the lifecycle rule that moves ratified terms and claims into a project's vocabulary and conceptual model. Gate: the owner adjudicates the amendment drafts. [proposed]
+C21. Chunk 2, roles in Claude Code, delivers three skills: a reasoning skill that works in the IR; a paraphraser skill run as a fresh-context subagent; a reviewer skill run as a fresh-context subagent that reads both IR and prose. [proposed: this IR]
 
-C23. Chunk 4, graduation: amendments for the schema, the reader catalog, the style specification and the Protects: header field; a methodology-tools PR for the lints; a project-orchestrator proposal for the role contracts; the exit decision under C15. Gate: the three destinations accept or decline. [proposed]
+C39. Chunk 2 also delivers lint hooks for the mechanical checks. [proposed: this IR]
 
-C24. Chunks run under the per-chunk gate, not a pre-ratified sequence, because the shape of chunks 2 to 4 depends on what chunk 1 finds. [proposed]
+C32. Chunk 2 also delivers one live run on a methodology deliverable. [proposed: this IR]
+
+C33. Chunk 2's gate: the owner reviews one IR and its rendering side by side. [proposed: this IR]
+
+C22. Chunk 3, measurement and ratification, delivers: the evaluation corpus, with case 001 seeded at bootstrap; the round-trip check; term ratification as a fourth part of W-008 reports, drafted as an amendment. [proposed: this IR]
+
+C40. Chunk 3 also delivers the lifecycle rule that moves ratified terms and claims into a project's vocabulary and conceptual model. [proposed: this IR]
+
+C34. Chunk 3's gate: the owner adjudicates the amendment drafts. [proposed: this IR]
+
+C23. Chunk 4, graduation, delivers: amendments for the schema, the reader catalog, the style specification and the Protects: header field; a methodology-tools PR for the lints; a project-orchestrator proposal for the role contracts; the exit decision under C15. [proposed: this IR]
+
+C35. Chunk 4's gate: the three destinations accept or decline. [proposed: this IR]
+
+C24. Chunks run under the per-chunk gate, not a pre-ratified sequence, because the shape of chunks 2 to 4 depends on what chunk 1 finds. [proposed: this IR]
 
 ## Verification
 
-C25. The pilot succeeds if, across the evaluation corpus, the reviewer's finding count per thousand words falls from case 001's baseline, the unratified-term count per deliverable reaches zero, and the owner reports review time per deliverable falling. [proposed]
+C25. The pilot succeeds when three measures move across the evaluation corpus: the reviewer's finding count per thousand words falls from case 001's baseline; the unratified-term count per deliverable reaches zero; the owner reports review time per deliverable falling. [proposed: this IR]
 
-C26. The third measure is self-reported and is the weakest. [inferred: C25]
+C26. The third measure is self-reported and is the weakest. [inferred: R4]
 
-C27. Each chunk's gate is its verification: the owner reviews the named artifact. [proposed]
+C27. Each chunk's gate is its verification: the owner reviews the named artifact. [proposed: this IR]
 
 ## Documents to update
 
@@ -106,15 +126,21 @@ C28. docs/backlog.md in this repository at every chunk (W-003). [decided: method
 
 C29. The methodology repository's Backlog and Portfolio register at bootstrap, to register this project (M-001). [decided: methodology M-001]
 
-C30. docs/ir-schema.md from v0 to v1 at chunk 1. [proposed]
+C30. docs/ir-schema.md from v0 to v1 at chunk 1. [proposed: this IR]
 
 ## Relations
 
-R1. C3 depends-on E1 because the nine defects in E1 occurred in the hardest reasoning of the session while routine PR bodies in the same session conformed.
+R1. C3 depends-on C1 because the nine defects in E1 occurred in the hardest reasoning of the session while routine PR bodies in that session conformed.
 
 R2. C8 supports C6 because separating the roles removes the contamination in C7.
 
 R3. C24 depends-on C20 because chunk 1's findings set the shape of chunks 2 to 4.
+
+R4. C26 refines C25 because a self-reported measure cannot be checked by anyone but the reporter.
+
+R5. C36 depends-on C7 because contamination is what removes the stranger's distance.
+
+R6. C9 depends-on C3 because more bootstrap guidance does not counter effort; C9 depends-on C36 because a single self-reviewing agent is contaminated; C9 depends-on C4 because lints alone catch no borrowed terms.
 
 ## Evidence
 
