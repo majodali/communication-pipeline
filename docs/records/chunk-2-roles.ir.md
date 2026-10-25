@@ -153,11 +153,15 @@ C62. Round 3's accepted findings were claim-evidence precision and the placement
 
 C63. The paraphraser's contract now puts an introduced term's definition before its first use and keeps the term out of the Asks part. [decided: this chunk]
 
-C64. Each review round cost about 85 to 90 thousand tokens and 150 to 170 seconds on the haiku model; each rendering cost about 50 thousand tokens and 20 to 45 seconds on the sonnet model. evidence: E9, E15. [decided: task notifications, 2026-10-25]
+C64. Each review round cost about 85 to 90 thousand tokens and 150 to 170 seconds on the haiku model. evidence: E9, E15. [decided: task notifications, 2026-10-25]
+
+C68. Each rendering cost about 50 thousand tokens and 20 to 45 seconds on the sonnet model. evidence: E15. [decided: task notifications, 2026-10-25]
 
 C65. This chunk's own PR body is rendered by the reasoning role, not the paraphraser, although the branch point routes this IR to D2 under BP-05. [decided: this chunk]
 
-C66. The hand rendering is a deviation from the branch point, taken because the chunk gate's reader is the owner reviewing the pipeline itself, and the live run already shows the full loop. [inferred: R10]
+C66. The hand rendering is a deviation from the branch point. [inferred: R10]
+
+C67. The deviation was taken because the chunk gate's reader is the owner reviewing the pipeline itself, and the live run already shows the full loop. [decided: this chunk]
 
 ## Relations
 
