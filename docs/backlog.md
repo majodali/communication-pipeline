@@ -72,9 +72,11 @@ roles have moved to project-orchestrator, this repository archives
   a term, a decision or a register fact; review on request. Reviewer
   bar: terms absent from both vocabularies; claims separately
   decidable. methodology-tools PR #16: explicit anchors resolve. W-008
-  amendment and vocabulary anchors drafted as methodology PRs. Source:
-  [chunk 3 IR](records/chunk-3-measurement.ir.md). Gate: open, the
-  owner adjudicates the two methodology PRs.
+  amendment drafted IR first as methodology PR #46 (stranger review:
+  36 findings, 10 fixed) and vocabulary anchors as methodology PR #45;
+  methodology PR #44 revised and re-rendered after the migration round
+  closed. Source: [chunk 3 IR](records/chunk-3-measurement.ir.md).
+  Gate: open, the owner adjudicates the two methodology PRs.
 
 ## Upcoming
 

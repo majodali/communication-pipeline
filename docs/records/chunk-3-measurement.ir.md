@@ -2,7 +2,7 @@
 
 Reader: RD-1 (human owner, in conversation).
 Purpose: report. The design decisions behind chunk 3's term lifecycle, the narrowed pipeline scope, the round-trip check, the W-008 amendment, and the asks for the chunk 3 gate.
-Status: draft
+Status: rendered (paraphraser, 2026-10-25, disposition D1; round-trip check claims 50, mapped 50; asks reordered to IR order by the reasoning role before delivery)
 Source: the pilot plan, chunk 3; the owner's rulings of 2026-10-25 on scope, the reviewer's bar, and term linking.
 
 ## Terms
@@ -121,7 +121,13 @@ C28. W-008 (reports map their deliverables) gains a fourth part for principal re
 
 C29. The required bootstrap block changes with the Statement, so the amendment carries a migration note of one copy action per project with an Agent bootstrap. [inferred: R3]
 
-C30. The amendment is drafted in the methodology repository as its own PR, IR first, with the rule text rendered by the reasoning role under C13 and reviewed by the stranger. [proposed: this IR]
+C30. The amendment is drafted in the methodology repository as its own PR, IR first, with the rule text rendered by the reasoning role under C13 and reviewed by the stranger. evidence: E6. [proposed: this IR]
+
+C48. The stranger review of the amended W-008 text returned 36 findings, of which 10 were fixed and the rest were pre-existing wording or by design. evidence: E6. [decided: review run, 2026-10-25]
+
+C49. The vocabulary anchors are an editorial change in methodology PR #45. evidence: E7. [decided: this chunk]
+
+C50. The bodies of methodology PR #45 and PR #46 were written as direct prose in W-008 form, not rendered from an IR. [decided: this chunk]
 
 ## Relations
 
@@ -143,9 +149,19 @@ E4. methodology-tools PR #16 and its test; the mtool links check output before (
 
 E5. scripts/roundtrip.mjs on the live run's third IR and rendering: claims 14, mapped 13, missing C14, sentences per claim 1.93.
 
+E6. methodology PR #46 (W-008: reports list the terms they introduce): docs/records/w008-terms-introduced.ir.md and w008-terms-introduced.review.md on branch w008-terms-introduced.
+
+E7. methodology PR #45 (vocabulary: definition anchors on every term entry): 50 anchors in docs/vocabulary.md and a one-line Unreleased note.
+
+E8. methodology PR #44, fourth IR and rendering, after serverless-web-app-template PR #4 merged on 2026-10-25: round-trip check claims 11, mapped 11, missing 0.
+
 ## Asks
 
-A1. The gate: adjudicate the W-008 amendment draft (methodology PR, see C30) and the vocabulary anchors PR. Depends: C28, C7.
+A1. The gate: adjudicate methodology PR #46, the W-008 amendment, and methodology PR #45, the vocabulary anchors. Depends: C28, C7.
+
+A5. Ratify or strike the three terms from chunk 2 still proposed: lint, dispatcher, render map.
+
+A6. Rule on C50: whether a PR body for the owner may be direct prose when its deliverable carries the IR, or must itself be rendered from one.
 
 A2. Ratify or strike the terms connective prose and term lifecycle.
 
