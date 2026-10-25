@@ -82,3 +82,11 @@ A1. The gate: read docs/ir-schema.md v1 and strike or accept each of the five en
 A2. Ratify or strike the four terms T1 to T4.
 A3. Confirm the vocabulary's early arrival (C23) and its custom-type declaration (C24).
 A4. Confirm that you are the chunk 1 gate reviewer (C26), or name a stranger agent.
+
+## Resolution (appended 2026-10-25; the asks above are unchanged as the record of what was asked)
+
+A1 resolved: all five reader entries accepted by the owner, 2026-10-25.
+A2 resolved: T1 to T4 ratified by the owner, 2026-10-25; the vocabulary records them as decided.
+A3 resolved: the vocabulary's early arrival and its custom-type declaration confirmed, 2026-10-25.
+A4 resolved: the owner is the chunk 1 gate reviewer, 2026-10-25.
+

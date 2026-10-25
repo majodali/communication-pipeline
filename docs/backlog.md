@@ -36,7 +36,7 @@ roles have moved to project-orchestrator, this repository archives
   BP-01 to BP-09, provisional thresholds. Added:
   [vocabulary](vocabulary.md) as a custom type, 17 terms, 4
   unratified. Source: [chunk 1 IR](records/chunk-1-specifications.ir.md).
-  Gate: open, awaiting the owner's ruling on each reader entry.
+  Gate passed 2026-10-25: all five readers accepted; four terms ratified; vocabulary confirmed; the owner is the reviewer.
 
 ## Upcoming
 

@@ -33,9 +33,9 @@ Row shape: term · meaning · status (`decided` with who and when,
 | Evaluation case | one graded pair of text and findings against a stated reader | decided, owner 2026-10-24 | [../eval/README.md](../eval/README.md) |
 | Graduation | the move of a pilot artifact to its destination project | decided, owner 2026-10-24 | this file |
 | Convergence | a project is convergent while the cost for its owners to understand, change and verify it grows more slowly than the project | decided, owner, "Convergence and Divergence", 2026-10-22 | the owner's writeup |
-| Disposition | the branch point's output for one IR: lint only, render, or render and review | proposed, chunk 1 IR | [branch-point.md](branch-point.md) |
-| Cluster | a declared ordered list of claim identifiers the paraphraser renders as one paragraph | proposed, chunk 1 IR | [ir-schema.md](ir-schema.md) |
-| Definition site | the one place a term is defined; every other use links to it | proposed, chunk 1 IR | this file |
-| Readability test | the question a reviewer answers to judge a text readable for one catalog reader | proposed, chunk 1 IR | [readers.md](readers.md) |
+| Disposition | the branch point's output for one IR: lint only, render, or render and review | decided, owner 2026-10-25 (chunk 1 gate) | [branch-point.md](branch-point.md) |
+| Cluster | a declared ordered list of claim identifiers the paraphraser renders as one paragraph | decided, owner 2026-10-25 (chunk 1 gate) | [ir-schema.md](ir-schema.md) |
+| Definition site | the one place a term is defined; every other use links to it | decided, owner 2026-10-25 (chunk 1 gate) | this file |
+| Readability test | the question a reviewer answers to judge a text readable for one catalog reader | decided, owner 2026-10-25 (chunk 1 gate) | [readers.md](readers.md) |
 
-Unratified terms at this revision: 4 (the four rows marked proposed).
+Unratified terms at this revision: 0.
