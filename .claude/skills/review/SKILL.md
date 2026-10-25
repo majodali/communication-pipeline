@@ -9,7 +9,10 @@ description: Run the stranger review on prose, an IR, or both, with a fresh-cont
    full: the text under review (the prose, and the IR when both
    exist); the reader's entry from `docs/readers.md`, including the
    readability test; the rows of `docs/style-spec.md` for that reader
-   or `all`. Nothing else. Do not tell the reviewer what the text is
+   or `all`; the terms the reader's corpus defines, which for RD-1 to
+   RD-4 means a link to the methodology vocabulary and the project
+   vocabulary, pasted or named. Nothing else. A term left out of that
+   list comes back as a false "borrowed term" finding. Do not tell the reviewer what the text is
    for or where it came from.
 2. Invoke the Agent tool with `subagent_type: "reviewer"` and that
    prompt.

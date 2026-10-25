@@ -119,6 +119,28 @@ C47. The paraphraser's render map gives its reason: C9 and C10 are register edit
 
 C46. The paraphraser's override of the provenance mapping is a second instance for ask A5. [inferred: R7]
 
+## The stranger review, round 2
+
+C49. Round 2, on the second rendering and the amended IR, returned 22 findings and the verdict not readable for RD-1. evidence: E11. [decided: review file, 2026-10-25]
+
+C50. Prose findings per thousand words fell from 82.0 in round 1 to 35.2 in round 2. evidence: E8, E11. [decided: review files, 2026-10-25]
+
+C51. The reasoning role accepted 19 of the 22 and disputed 3. evidence: E11. [decided: review file, 2026-10-25]
+
+C52. One accepted finding was an inconsistency no lint sees: the IR's Purpose said the refresh closes the round while ask A1 said the round closes when the template's PR merges. evidence: E11. [decided: review file, 2026-10-25]
+
+C53. The reviewer independently judged that the two allegro-row claims should carry proposed, as the paraphraser had in round 2. evidence: E11. [decided: review file, 2026-10-25]
+
+C54. Defining an introduced term at its first use collided with one claim per sentence when the first use was the lead sentence. evidence: E11. [decided: review file, 2026-10-25]
+
+C55. The paraphraser's contract now keeps introduced terms out of the lead and defines each in a sentence of its own. [decided: this chunk]
+
+C56. The reviewer's verdict in round 2 rested on the second question of RD-1's readability test, "does each sentence state one claim?", applied to sentences such as "opened on 2026-09-02 and still open on 2026-10-25". evidence: E11. [decided: review file, 2026-10-25]
+
+C57. Two of the three disputed findings were terms the reader's corpus defines that the reviewer's vocabulary list omitted. evidence: E11. [decided: review file, 2026-10-25]
+
+C58. The review skill now requires the reader's vocabulary, pasted or linked, in the reviewer's prompt. [decided: this chunk]
+
 ## Relations
 
 R1. C25 depends-on C13 because the block is text the methodology requires verbatim.
@@ -135,6 +157,10 @@ R6. C42 depends-on C41 because the disputed rows name the forms the reviewer mis
 
 R7. C46 depends-on C45 because the paraphraser needed a rule the IR did not give it and chose by the claim's content.
 
+R8. C55 depends-on C54 because the collision has one cause, the term in the lead.
+
+R9. C58 depends-on C57 because the false findings had one cause, the missing list.
+
 ## Evidence
 
 E8. ../methodology/docs/records/portfolio-1.5.0-refresh.review.md, round 1, with the disposition column.
@@ -142,6 +168,10 @@ E8. ../methodology/docs/records/portfolio-1.5.0-refresh.review.md, round 1, with
 E9. The subagent task notification for the round 1 review: 147,078 ms, 83,813 tokens.
 
 E10. ../methodology/docs/records/portfolio-1.5.0-refresh.md, the render-map comment at its end.
+
+E11. ../methodology/docs/records/portfolio-1.5.0-refresh.review.md, round 2, with the disposition column.
+
+E12. eval/cases/003-live-run-portfolio-refresh-2026-10-25.md, the round table.
 
 E1. scripts/lint.mjs; .claude/settings.json; the pipe-test of the hook on 2026-10-25, which returned a block decision for an IR with violations and additionalContext for prose.
 
@@ -170,3 +200,5 @@ A4. Confirm schema v1.1 (C15, C16).
 A5. Decide, for chunk 3's schema work, whether a claim names its W-008 part explicitly or the decided-versus-proposed mapping becomes the rule, and whether an observed status is added beside decided. Depends: C30, C31, C32.
 
 A6. Confirm that relations do not render unless a claim cites them. Depends: C33, C34.
+
+A7. Rule on the bar of RD-1's second readability question: whether "opened on 2026-09-02 and still open on 2026-10-25" is one claim or two for the owner's purposes. Depends: C56.

@@ -30,8 +30,9 @@ Rendering rules (docs/ir-schema.md, Rendering rule):
    and append `[paraphraser: could not render C<n> without adding
    content]`.
 3. A term the IR introduces (a `T` element with status proposed) is
-   defined inline at its first use in the prose, and listed again
-   under *Terms introduced* with its status. A term already in the
+   never used in the lead sentence. At its first use it is defined in
+   a sentence of its own, and it is listed again under *Terms
+   introduced* with its status. A term already in the
    vocabulary is used as the vocabulary defines it. Never use a word
    from the IR's Source field as a term.
 4. Every identifier carries its name on first use: "W-008 (reports map
