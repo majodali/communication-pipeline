@@ -3,7 +3,7 @@
 Status: active (v1, chunk 1).
 
 Type: Specification (methodology vocabulary). The paraphraser and the
-reviewer implement against it; every IR names one entry in its Reader
+reviewer implement against it. Every IR names one entry in its Reader
 header.
 
 Reader: RD-4 (a fresh agent session) in the paraphraser or reviewer
@@ -12,7 +12,7 @@ role; the human owner striking or accepting entries.
 ## Why a catalog
 
 "Readable" has no test until the reader is named (Allegro's proposed
-P-007, a document states its reader). Each entry below therefore ends
+P-007, a document states its reader and prerequisites). Each entry below therefore ends
 with a readability test: the question a reviewer answers to judge a
 text readable for that reader. The catalog is small on purpose. An
 entry is added when a real text had a reader none of these describes,
@@ -39,7 +39,7 @@ and the text is cited.
 | Assumed to know | the conversation; the [methodology corpus](https://github.com/majodali/methodology); the portfolio; the project's documents |
 | Not assumed to know | anything recorded only in a prior session or only in an agent's context |
 | Needs from the text | the decisions and actions requested, first; what is new against what was settled |
-| Shape | W-008's three parts (asks; what is already covered; what changed) then *Terms introduced*; the first ask within the first screen |
+| Shape | the three parts of W-008 (reports map their deliverables): asks; what is already covered; what changed. Then *Terms introduced*. The first ask within the first screen |
 | Identifiers | named on first use (P-004, citations carry names); linked where a target exists |
 | Readability test | After the first screen, can the owner list every ask? Does each sentence state one claim? |
 | Evidence | W-008's motivating instance, 2026-08-30; [case 001](../eval/cases/001-review-response-2026-10-23.md) |
@@ -78,7 +78,7 @@ and the text is cited.
 | Assumed to know | the methodology corpus at the project's pin; whatever the project's documents state |
 | Not assumed to know | any conversation; any decision recorded nowhere; any term defined nowhere; any status line that is no longer true |
 | Needs from the text | terms defined or cited before use; the problem before the solution; one definition site per term; status that is true |
-| Shape | documentation: P-001 to P-006 in full; a reader statement; no W-008 parts |
+| Shape | documentation: the P- rules in full, P-001 (documents are structured for reference) to P-006 (registers hold uniform rows); a reader statement; no W-008 parts |
 | Identifiers | named on first use in every document; linked |
 | Readability test | Can the session state the document's problem, its terms and its decision, without the conversation? |
 | Evidence | the owner's "Convergence and Divergence" (2026-10-22): agents have no tacit layer and rebuild the theory from the artifacts every session; Allegro's proposed P-007 and its section 4 reviewer test; case 001, finding 2 |

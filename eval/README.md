@@ -1,13 +1,13 @@
 # Evaluation corpus
 
-The register of evaluation cases: texts graded against the pipeline's
-reader and pattern rules, kept so changes to the IR schema, the style
-specification and the role instructions are tested against known
-defects rather than against memory.
+The register of evaluation cases. A case is a text graded against the
+pipeline's reader and pattern rules. The corpus exists so that changes
+to the IR schema, the style specification and the role instructions
+are tested against known defects rather than against memory.
 
-This file defines the **Evaluation case** custom document type
-(methodology Article 7; declared in
-[docs/classification.md](../docs/classification.md)). Every case under
+The file defines the **Evaluation case** custom document type under
+methodology Article 7, declared in
+[docs/classification.md](../docs/classification.md). Every case under
 `eval/cases/` is an instance and links here.
 
 ## Case format
@@ -31,3 +31,5 @@ regrade is a new case citing the old one.
 | Case | Source | Reader | Findings / kwords | Outcome |
 |---|---|---|---|---|
 | [001](cases/001-review-response-2026-10-23.md) | methodology session review of two Allegro proposals, 2026-10-23 | human owner, in conversation | 9 / 1.25k = 7.2 | baseline; motivated the pilot |
+| [002](cases/002-lint-on-own-documents-2026-10-25.md) | the pilot's fifteen documents at the end of chunk 1, linted by the chunk 2 lint | RD-4 and RD-1 | 43 violations, 130 warnings before; 0 and 30 after | schema v1.1; six lint refinements |
+| [003](cases/003-live-run-portfolio-refresh-2026-10-25.md) | the Portfolio refresh in the methodology repository, the first live run | RD-1 | 82.0, 35.2, 25.2 over three rounds; round 3 readable | three specification changes; two reviewer-instruction changes |
