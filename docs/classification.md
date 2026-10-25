@@ -41,7 +41,7 @@ No deviations recorded.
      Article 7); every instance of a custom type links its definition
      here. -->
 
-Two custom document types (Article 7), each defined in one place and
+Three custom document types (Article 7), each defined in one place and
 linked from every instance:
 
 - **Intermediate representation** (Document) — a `<name>.ir.md` file
@@ -53,3 +53,10 @@ linked from every instance:
   findings against a stated reader; defined in
   [eval/README.md](../eval/README.md). Instances: the files under
   `eval/cases/`.
+- **Vocabulary** (Document) — the register of a project's terms, one
+  definition site per term, with meaning, status and origin; defined in
+  the header of [docs/vocabulary.md](vocabulary.md), its sole
+  instance. Convergent with Allegro's
+  `docs/book/architecture-vocabulary.md` and with the Vocabulary type
+  Allegro proposed upstream, so a standardization candidate (Article
+  7, convergent custom definitions).

@@ -53,5 +53,10 @@ repository is its first subject. See README.md for the question.
 - docs/classification.md — the binding declaration
 - docs/backlog.md — what is done and what is next
 - docs/plans/pipeline-pilot.md — the plan; pipeline-pilot.ir.md is its source
-- docs/ir-schema.md — the IR schema
+- docs/ir-schema.md — the IR schema (v1)
+- docs/readers.md — the reader catalog; every IR names one entry
+- docs/style-spec.md — the style specification the paraphraser applies
+- docs/branch-point.md — which pipeline stages run for an IR
+- docs/vocabulary.md — the project's terms; check it before using a term
+- docs/records/ — IRs of delivered reports (chat messages, PR bodies)
 - eval/README.md — the evaluation corpus and its case format

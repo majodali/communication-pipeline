@@ -25,7 +25,14 @@ from context and used as if defined.
   plan, in four chunks, and its source
   [`pipeline-pilot.ir.md`](docs/plans/pipeline-pilot.ir.md).
 - [`docs/ir-schema.md`](docs/ir-schema.md) — the intermediate
-  representation's schema (v0).
+  representation's schema.
+- [`docs/readers.md`](docs/readers.md),
+  [`docs/style-spec.md`](docs/style-spec.md),
+  [`docs/branch-point.md`](docs/branch-point.md) — the three
+  specifications the roles implement against: who the reader is, how
+  prose is written for them, and which stages run.
+- [`docs/vocabulary.md`](docs/vocabulary.md) — the project's terms and
+  their status.
 - [`eval/`](eval/README.md) — the evaluation corpus. Case 001 is the
   response that motivated the pilot, with nine graded defects.
 - [`docs/backlog.md`](docs/backlog.md) — what is done and what is next.
