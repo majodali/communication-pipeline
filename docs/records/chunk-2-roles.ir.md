@@ -93,6 +93,32 @@ C33. The paraphraser rendered the two relations as sentences in the "what change
 
 C34. The rendering rule does not say whether relations render, so the paraphraser rendered them. [inferred: R5]
 
+## The stranger review, round 1
+
+C37. The reviewer, on the haiku model with fresh context, returned 38 findings on the live run's prose and IR and the verdict not readable for RD-1. evidence: E8. [decided: review file, 2026-10-25]
+
+C38. The reasoning role accepted 27 findings and disputed 11, each disputed row keeping its place with one sentence why. evidence: E8. [decided: review file, 2026-10-25]
+
+C39. Three accepted findings were defects a lint cannot see. evidence: E8. [decided: review file, 2026-10-25]
+
+C44. The three are: a Source line saying all nine PRs were merged while the evidence showed one open; a sentence saying the nine rows read 1.5.0 except one; a process statement filed under "what is already covered". evidence: E8. [decided: review file, 2026-10-25]
+
+C40. Three accepted findings changed the specifications: an introduced term is defined at first use and listed; relations are not rendered; each item under "what changed" carries a named pointer. [decided: this chunk]
+
+C41. Eight of the 11 disputed findings applied the one-claim rule to forms the schema defines otherwise: relations with their reason, asks with two steps, evidence pointers with semicolons. evidence: E8. [decided: review file, 2026-10-25]
+
+C42. The reviewer's instructions now list the forms that are not defects. [decided: this chunk]
+
+C48. The reviewer's instructions now say that a word the reader's own corpus defines is not a borrowed term for that reader. [decided: this chunk]
+
+C43. The round 1 review cost 147 seconds and about 84 thousand tokens on the haiku model. evidence: E9. [decided: task notification, 2026-10-25]
+
+C45. In the second rendering, the paraphraser placed C9 and C10 of the live-run IR under "what changed" although both carry the status decided. evidence: E10. [decided: paraphraser output, 2026-10-25]
+
+C47. The paraphraser's render map gives its reason: C9 and C10 are register edits naming a file and a row. evidence: E10. [decided: paraphraser output, 2026-10-25]
+
+C46. The paraphraser's override of the provenance mapping is a second instance for ask A5. [inferred: R7]
+
 ## Relations
 
 R1. C25 depends-on C13 because the block is text the methodology requires verbatim.
@@ -105,7 +131,17 @@ R4. C31 depends-on C30 because a renderer with no part attribute falls back to t
 
 R5. C34 depends-on C33 because the output shows the gap.
 
+R6. C42 depends-on C41 because the disputed rows name the forms the reviewer misread.
+
+R7. C46 depends-on C45 because the paraphraser needed a rule the IR did not give it and chose by the claim's content.
+
 ## Evidence
+
+E8. ../methodology/docs/records/portfolio-1.5.0-refresh.review.md, round 1, with the disposition column.
+
+E9. The subagent task notification for the round 1 review: 147,078 ms, 83,813 tokens.
+
+E10. ../methodology/docs/records/portfolio-1.5.0-refresh.md, the render-map comment at its end.
 
 E1. scripts/lint.mjs; .claude/settings.json; the pipe-test of the hook on 2026-10-25, which returned a block decision for an IR with violations and additionalContext for prose.
 

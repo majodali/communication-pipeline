@@ -21,14 +21,19 @@ Rendering rules (docs/ir-schema.md, Rendering rule):
 1. One claim becomes one sentence. A declared cluster (a `G` element)
    becomes one paragraph in the cluster's order. Claims not in a
    cluster may be grouped into paragraphs by the IR's own section
-   headings, one paragraph per heading at most.
+   headings, one paragraph per heading at most. Relations (`R`) and
+   evidence (`E`) are never rendered as sentences: a relation is
+   structure for the reviewer, and evidence is cited only where a
+   claim's own text carries a pointer.
 2. Introduce no claim. Drop no claim. If a claim cannot be rendered
    without adding content, render it as literally as the IR states it
    and append `[paraphraser: could not render C<n> without adding
    content]`.
-3. Name every term on first use exactly as the IR's Terms section or
-   the vocabulary defines it. Never use a word from the IR's Source
-   field as a term.
+3. A term the IR introduces (a `T` element with status proposed) is
+   defined inline at its first use in the prose, and listed again
+   under *Terms introduced* with its status. A term already in the
+   vocabulary is used as the vocabulary defines it. Never use a word
+   from the IR's Source field as a term.
 4. Every identifier carries its name on first use: "W-008 (reports map
    their deliverables)". Link it where the IR gives a link.
 5. Follow the style rows you were given. In particular: one idea per
@@ -36,11 +41,17 @@ Rendering rules (docs/ir-schema.md, Rendering rule):
    antecedent is in another sentence; no bold except a field label;
    no em-dash or semicolon joining clauses; no aphorism, slogan,
    metaphor or suspense; numbers in a table or on their own line.
-6. Shape by reader. RD-1 and RD-2: lead with the outcome or decision,
-   then the headings `## Asks`, `## What is already covered`,
+6. Shape by reader. RD-1 and RD-2: one lead sentence stating the
+   outcome, then the headings `## Asks`, `## What is already covered`,
    `## What changed`, `## Terms introduced`, in that order, each
-   stated even when empty ("No asks."). RD-2 opens with one paragraph
-   stating the current state and citing the last recorded state.
+   stated even when empty ("No asks."). *What is already covered*
+   holds the facts settled before the deliverable: claims marked
+   decided. *What changed* holds what the deliverable itself changes:
+   claims marked proposed, as a bulleted list, one claim per bullet,
+   each naming the file and the row or section it points at and what
+   to review there. A claim whose IR text says which part it belongs
+   to goes there instead. RD-2 opens with one paragraph stating the
+   current state and citing the last recorded state.
    RD-3: `## Status`, `## Map`, `## Asks`. RD-4 and RD-5: a one-line
    reader statement first, then the problem before the mechanism;
    RD-5 gets no bare identifier anywhere.

@@ -41,7 +41,26 @@ otherwise. Look for, at minimum:
 - a report whose parts are out of order or whose empty parts are
   dropped;
 - for an IR: a claim with an unresolved referent, a compound claim, a
-  missing or malformed provenance status.
+  missing or malformed provenance status; a Source or header line that
+  contradicts the evidence; a claim whose cited evidence does not show
+  what the claim says.
+
+Forms that are not defects, because the schema or the specification
+defines them so:
+
+- a relation reads `<id> <verb> <id> because <reason>`; the reason is
+  part of the element, not a second claim;
+- an ask may request one action with several steps ("review and
+  merge");
+- a report for RD-1 or RD-2 opens with one lead sentence stating the
+  outcome before the Asks heading;
+- a count stays in a sentence when the sentence is about that count;
+- an evidence pointer is a list, and may use semicolons;
+- a proposed status carries the IR identifier, not a date.
+
+A word the reader's own corpus defines is not a borrowed term for that
+reader. When you cannot tell, report it as a warning and say which
+vocabulary would need to define it.
 
 ## Readability
 

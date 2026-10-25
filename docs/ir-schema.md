@@ -117,8 +117,13 @@ in the project vocabulary.
 
 The paraphraser renders one claim as one sentence, or one cluster as
 one paragraph in the cluster's order. It introduces no claim and drops
-no claim. It names every term on first use as the Terms section or the
-definition site defines it. It follows the
+no claim. Relations and evidence are not rendered as sentences. A term
+the IR introduces is defined inline at its first use and listed again
+under *Terms introduced*. A term already in the vocabulary is used as
+the vocabulary defines it. For the human-owner readers, claims with
+status decided render under *What is already covered* and claims with
+status proposed under *What changed*, unless the claim's text names
+its part. It follows the
 [style specification](style-spec.md) for the IR's reader. It states an
 empty Asks section as "No asks." The
 [round-trip check](plans/pipeline-pilot.md#chunk-3--measurement-and-ratification)
@@ -141,7 +146,16 @@ conceptual model is chunk 3 of the plan.
 ## Changes
 
 v1.1 (chunk 2, 2026-10-25), found by running the lint on the pilot's
-own IRs:
+own IRs and by the first stranger review:
+
+- Relations and evidence are not rendered. The round 1 paraphraser
+  rendered both relations as sentences.
+- An introduced term is defined at first use as well as listed. The
+  round 1 prose used "migration round" in its title and defined it in
+  its last section.
+- The decided-to-covered and proposed-to-changed mapping is written
+  down, since the paraphraser had inferred it. Whether a claim should
+  instead name its part is chunk 3's question.
 
 - Provenance is required on terms, claims and clusters only. v1 said
   every element, and no IR written under v1 had put a status on a
