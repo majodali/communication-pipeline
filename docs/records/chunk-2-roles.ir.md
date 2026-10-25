@@ -2,7 +2,7 @@
 
 Reader: RD-1 (human owner, in conversation).
 Purpose: report. What chunk 2 built, what the lint found when turned on the pilot's own documents, the schema correction that followed, and the asks for the chunk 2 gate.
-Status: draft
+Status: delivered (PR body hand-rendered, see C65)
 Source: the pilot plan, chunk 2; owner go-ahead 2026-10-25.
 
 ## Terms
@@ -141,6 +141,24 @@ C57. Two of the three disputed findings were terms the reader's corpus defines t
 
 C58. The review skill now requires the reader's vocabulary, pasted or linked, in the reviewer's prompt. [decided: this chunk]
 
+## The stranger review, round 3, and delivery
+
+C59. Round 3, on the third rendering and the third IR, returned 16 findings and the verdict readable for RD-1. evidence: E13. [decided: review file, 2026-10-25]
+
+C60. Prose findings per thousand words across the three rounds were 82.0, 35.2 and 25.2. evidence: E8, E11, E13. [decided: review files, 2026-10-25]
+
+C61. The live run was delivered as methodology PR #44, with the third rendering as its body. evidence: E14. [decided: this chunk]
+
+C62. Round 3's accepted findings were claim-evidence precision and the placement of an introduced term's definition inside an ask. evidence: E13. [decided: review file, 2026-10-25]
+
+C63. The paraphraser's contract now puts an introduced term's definition before its first use and keeps the term out of the Asks part. [decided: this chunk]
+
+C64. Each review round cost about 85 to 90 thousand tokens and 150 to 170 seconds on the haiku model; each rendering cost about 50 thousand tokens and 20 to 45 seconds on the sonnet model. evidence: E9, E15. [decided: task notifications, 2026-10-25]
+
+C65. This chunk's own PR body is rendered by the reasoning role, not the paraphraser, although the branch point routes this IR to D2 under BP-05. [decided: this chunk]
+
+C66. The hand rendering is a deviation from the branch point, taken because the chunk gate's reader is the owner reviewing the pipeline itself, and the live run already shows the full loop. [inferred: R10]
+
 ## Relations
 
 R1. C25 depends-on C13 because the block is text the methodology requires verbatim.
@@ -161,6 +179,8 @@ R8. C55 depends-on C54 because the collision has one cause, the term in the lead
 
 R9. C58 depends-on C57 because the false findings had one cause, the missing list.
 
+R10. C66 depends-on C65 because a deviation is only a deviation against a rule that applied.
+
 ## Evidence
 
 E8. ../methodology/docs/records/portfolio-1.5.0-refresh.review.md, round 1, with the disposition column.
@@ -172,6 +192,12 @@ E10. ../methodology/docs/records/portfolio-1.5.0-refresh.md, the render-map comm
 E11. ../methodology/docs/records/portfolio-1.5.0-refresh.review.md, round 2, with the disposition column.
 
 E12. eval/cases/003-live-run-portfolio-refresh-2026-10-25.md, the round table.
+
+E13. ../methodology/docs/records/portfolio-1.5.0-refresh.review.md, round 3, with the disposition column.
+
+E14. https://github.com/majodali/methodology/pull/44.
+
+E15. The subagent task notifications for rounds 2 and 3 and renderings 2 and 3: 154,660 ms and 85,891 tokens; 170,772 ms and 90,062 tokens; 27,670 ms and 49,756 tokens; 21,547 ms and 48,776 tokens.
 
 E1. scripts/lint.mjs; .claude/settings.json; the pipe-test of the hook on 2026-10-25, which returned a block decision for an IR with violations and additionalContext for prose.
 

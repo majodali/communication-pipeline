@@ -21,7 +21,7 @@ The IR, its three renderings and the reviews live in the methodology repository 
 |---|---|---|---|---|---|---|
 | 1 | 257 | 38 (21, 17) | 82.0 | 27, 11 | not readable | 147 |
 | 2 | 284 | 22 (10, 12) | 35.2 | 19, 3 | not readable | 155 |
-| 3 | | | | | | |
+| 3 | 317 | 16 (8, 8) | 25.2 | 15, 1 | readable | 171 |
 
 Defects a lint cannot see that the reviewer caught: a Source line claiming merges the evidence did not show; a sentence contradicting itself ("the nine rows read 1.5.0, except one"); a Purpose line contradicting an ask; a process statement filed as a settled fact; claims whose cited evidence showed a weaker fact than the claim stated.
 
@@ -41,4 +41,4 @@ Paraphraser behaviours that changed the specifications: rendering relations as s
 
 ## Outcome
 
-Filled when round 3 reports. Three specification changes and two reviewer-instruction changes landed in chunk 2 from rounds 1 and 2. One question for the owner: the bar of RD-1's second readability question.
+Delivered as methodology PR #44 on the round 3 verdict. Prose findings per thousand words fell 82.0, 35.2, 25.2 across the three rounds. Three specification changes and two reviewer-instruction changes landed in chunk 2 from rounds 1 and 2. Round 3 adds one more for the paraphraser: an introduced term's definition precedes its first use, or the term is held to the Terms introduced part. Two questions for the owner: the bar of RD-1's second readability question, and whether claims should name their W-008 part.

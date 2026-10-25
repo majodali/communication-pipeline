@@ -51,9 +51,13 @@ roles have moved to project-orchestrator, this repository archives
   the pilot's own documents the lint found 43 violations and 130
   warnings ([case 002](../eval/cases/002-lint-on-own-documents-2026-10-25.md));
   after fixes, 0 and 30. Schema v1.1 followed. Live run: the methodology
-  Portfolio refresh, rendered by the paraphraser and reviewed by the
-  stranger. Source: [chunk 2 IR](records/chunk-2-roles.ir.md). Gate:
-  open, awaiting the owner's side-by-side reading.
+  Portfolio refresh (methodology PR #44), rendered three times by the
+  paraphraser and reviewed three times by the stranger, prose findings
+  per thousand words 82.0, 35.2, 25.2, round 3 readable
+  ([case 003](../eval/cases/003-live-run-portfolio-refresh-2026-10-25.md)).
+  Source: [chunk 2 IR](records/chunk-2-roles.ir.md). Gate: open,
+  awaiting the owner's side-by-side reading of the live run's IR and
+  rendering.
 
 ## Upcoming
 
