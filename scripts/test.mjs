@@ -1,8 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { lintIR, lintProse } from './lint.mjs';
+import { lintIR, lintProse, vocabularyEntries } from './lint.mjs';
 import { parseIR } from './ir.mjs';
 import { inputsOf, decide } from './dispatch.mjs';
+import { roundTrip } from './roundtrip.mjs';
 
 const GOOD_IR = `# IR: x
 
@@ -102,7 +103,7 @@ test('prose lint accepts named identifiers and links', () => {
 
 test('dispatch applies the rules in order', () => {
   const ir = parseIR(GOOD_IR);
-  assert.equal(decide(inputsOf(ir)).rule, 'BP-05'); // one proposed term
+  assert.deepEqual(decide(inputsOf(ir)), { rule: 'BP-05a', disposition: 'D1' }); // one proposed term in a report
   const noTerms = parseIR(GOOD_IR.replace('[proposed: this IR]', '[decided: owner, 2026-10-25]'));
   assert.deepEqual(decide(inputsOf(noTerms)), { rule: 'BP-07', disposition: 'D1' }); // dependent ask
   const simple = parseIR(GOOD_IR.replace('[proposed: this IR]', '[decided: owner, 2026-10-25]').replace(' Depends: C1.', ''));
@@ -169,4 +170,39 @@ test('list items are separate blocks, not one long sentence', () => {
 
 test('SP-13 applies to reports, not to a plan with an Asks section', () => {
   assert.deepEqual(lintProse('# Plan\n\n## Chunks\n\nx.\n\n## Asks\n\nNone.\n').findings.filter((f) => f.check === 'SP-13'), []);
+});
+
+test('dispatch: normative documents take D3; proposed terms in a report take D1', () => {
+  const norm = parseIR(GOOD_IR.replace('Purpose: report.', 'Purpose: document.').replace('Status: draft', 'Status: draft\nNormative: yes'));
+  assert.deepEqual(decide(inputsOf(norm)), { rule: 'BP-02a', disposition: 'D3' });
+  const rep = parseIR(GOOD_IR.replace(' Depends: C1.', ''));
+  assert.deepEqual(decide(inputsOf(rep)), { rule: 'BP-05a', disposition: 'D1' });
+});
+
+test('round trip: missing and unknown identifiers, sentence ratio', () => {
+  const prose = 'Lead.\n\n## Asks\n\n1. Approve the widget.\n\n## What is already covered\n\nThe widget exists. The widget is blue. Also this.\n\n<!-- render map: C1\u2192\u00b61 C2\u2192\u00b61 C9\u2192\u00b61 -->\n';
+  const r = roundTrip(GOOD_IR, prose);
+  assert.equal(r.hasMap, true);
+  assert.deepEqual(r.missing, []);
+  assert.deepEqual(r.unknown, ['C9']);
+  assert.equal(r.claims, 2);
+  assert.ok(r.sentencesPerClaim > 1);
+  const r2 = roundTrip(GOOD_IR, 'no map here\n');
+  assert.equal(r2.hasMap, false);
+  assert.deepEqual(r2.missing, ['C1', 'C2']);
+});
+
+test('SP-23 wants a vocabulary term linked at first use', () => {
+  const vocab = new Map([['paraphraser', { term: 'Paraphraser', anchor: 'def-paraphraser' }]]);
+  const bare = lintProse('The paraphraser renders prose. The paraphraser is fast.\n', { vocab });
+  assert.equal(bare.findings.filter((f) => f.check === 'SP-23').length, 1);
+  const linked = lintProse('The [paraphraser](docs/vocabulary.md#def-paraphraser) renders prose. The paraphraser is fast.\n', { vocab });
+  assert.deepEqual(linked.findings.filter((f) => f.check === 'SP-23'), []);
+});
+
+test('vocabulary rows carry anchor and status', () => {
+  const v = vocabularyEntries();
+  const ir = v.get('ir') ?? v.get('intermediate representation');
+  assert.ok(ir && ir.anchor && ir.anchor.startsWith('def-'), JSON.stringify(ir));
+  assert.equal(ir.status, 'decided');
 });

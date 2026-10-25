@@ -15,7 +15,7 @@ export function parseIR(text) {
   let firstH2 = lines.findIndex((l) => H2_RE.test(l));
   const headLines = firstH2 === -1 ? lines : lines.slice(0, firstH2);
   for (const l of headLines) {
-    const m = /^(Reader|Purpose|Status|Source):\s*(.*)$/.exec(l.trim());
+    const m = /^(Reader|Purpose|Status|Source|Normative):\s*(.*)$/.exec(l.trim());
     if (m) ir.header[m[1].toLowerCase()] = m[2].trim();
   }
   let current = null;

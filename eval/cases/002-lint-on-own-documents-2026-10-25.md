@@ -7,8 +7,8 @@ Instance of the [Evaluation case](../README.md) type.
 | Case | 002 |
 | Source text date | 2026-10-24 (chunk 1) |
 | Reader addressed | RD-4 (fresh agent session) for the specifications; RD-1 (human owner, in conversation) for the two IRs |
-| Origin | the fifteen markdown files the pilot had written by the end of chunk 1, linted by the chunk 2 lint on the day it was built |
-| Through the pipeline | the two IRs were written claims-first; no lint, paraphraser or reviewer existed yet |
+| Origin | the fifteen markdown files the pilot had written by the end of chunk 1, linted by the chunk 2 [lint](../../docs/vocabulary.md#def-lint) on the day it was built |
+| Through the pipeline | the two IRs were written claims-first; no lint, [paraphraser](../../docs/vocabulary.md#def-paraphraser) or [reviewer](../../docs/vocabulary.md#def-reviewer) existed yet |
 | Graded by | scripts/lint.mjs, then the same session reading each finding |
 
 ## Source text

@@ -1,12 +1,12 @@
 ---
 name: reason
-description: Work in the intermediate representation (IR). Use at the start of any deliverable in this project, and in any project that has adopted the pipeline, before writing prose. Creates <subject>.ir.md from the schema, keeps the claims list as the working document, runs the lint, then hands off to /render.
+description: Work in the [intermediate representation](../../../docs/vocabulary.md#def-intermediate-representation) (IR). Use at the start of any deliverable in this project, and in any project that has adopted the pipeline, before writing prose. Creates <subject>.ir.md from the schema, keeps the claims list as the working document, runs the [lint](../../../docs/vocabulary.md#def-lint), then hands off to /render.
 ---
 
 # Reason in the IR
 
-You are the reasoning role (docs/vocabulary.md). Your output is a
-claims list, not prose. Prose comes later, from the paraphraser.
+You are the [reasoning role](../../../docs/vocabulary.md#def-reasoning-role) (docs/vocabulary.md). Your output is a
+claims list, not prose. Prose comes later, from the [paraphraser](../../../docs/vocabulary.md#def-paraphraser).
 
 1. Read `docs/ir-schema.md` (the schema), `docs/readers.md` (pick the
    reader), and `docs/vocabulary.md` (the terms you may use without
@@ -22,7 +22,7 @@ claims list, not prose. Prose comes later, from the paraphraser.
 4. Write claims. One statement per `C` element. Name every referent
    inside the claim. No pronoun whose antecedent is another claim.
    Cite evidence with `evidence: E<n>`. End every term, claim and
-   cluster with `[decided: who, when]`, `[proposed: this IR]` or
+   [cluster](../../../docs/vocabulary.md#def-cluster) with `[decided: who, when]`, `[proposed: this IR]` or
    `[inferred: R<n>]`.
 5. Write Relations, Evidence, Asks. Every IR for the owner has an
    Asks section, holding asks or `A0. No asks.` An ask names what
@@ -34,5 +34,5 @@ claims list, not prose. Prose comes later, from the paraphraser.
    element, not a note elsewhere. The IR is the working document.
 8. When the IR is complete, invoke `/render`.
 
-Never write the prose yourself when the branch point says render.
+Never write the prose yourself when the [branch point](../../../docs/vocabulary.md#def-branch-point) says render.
 Never reuse a word from the Source field as a term.

@@ -22,19 +22,19 @@ should start with the [IR schema](../ir-schema.md) and the
 
 | Term | Meaning here | Status |
 |---|---|---|
-| Intermediate representation (IR) | the structured form a reasoning role writes before prose; [schema](../ir-schema.md) | decided, owner 2026-10-24 |
+| [Intermediate representation](../vocabulary.md#def-intermediate-representation) (IR) | the structured form a [reasoning role](../vocabulary.md#def-reasoning-role) writes before prose; [schema](../ir-schema.md) | decided, owner 2026-10-24 |
 | Reasoning role | the agent role that does the thinking and writes its output as an IR | decided, owner 2026-10-24 |
-| Paraphraser | the agent role that renders an IR into prose for a defined reader | decided, owner 2026-10-24 |
-| Reviewer | the agent role that reads an IR or prose and reports a defined set of unwanted patterns and readability for the defined reader | decided, owner 2026-10-24 |
-| Stranger | a reviewer with no access to the conversation that produced the text and no content contributions to the project | decided, owner 2026-10-23 |
-| Branch point | the step that decides whether an IR is paraphrased, from its purpose and complexity | decided, owner 2026-10-24 |
+| [Paraphraser](../vocabulary.md#def-paraphraser) | the agent role that renders an IR into prose for a defined reader | decided, owner 2026-10-24 |
+| [Reviewer](../vocabulary.md#def-reviewer) | the agent role that reads an IR or prose and reports a defined set of unwanted patterns and readability for the defined reader | decided, owner 2026-10-24 |
+| [Stranger](../vocabulary.md#def-stranger) | a reviewer with no access to the conversation that produced the text and no content contributions to the project | decided, owner 2026-10-23 |
+| [Branch point](../vocabulary.md#def-branch-point) | the step that decides whether an IR is paraphrased, from its purpose and complexity | decided, owner 2026-10-24 |
 | Term ratification | the process by which the human owner accepts or strikes each term a deliverable introduces | decided, owner 2026-10-24 |
-| Reader catalog | a small set of defined readers that the paraphraser and reviewer consume | decided, owner 2026-10-24 |
-| Style specification | the methodology's prose rules in a form the paraphraser applies rule by rule | decided, owner 2026-10-24 |
-| Round-trip check | re-extracting claims from rendered prose and diffing them against the source IR | decided, owner 2026-10-24 |
-| Evaluation case | one graded pair of text and findings, kept under `eval/`; [definition](../../eval/README.md) | decided, owner 2026-10-24 |
-| Graduation | the move of a pilot artifact to its destination project: the methodology corpus, methodology-tools, or project-orchestrator | decided, owner 2026-10-24 |
-| Convergence | a project is convergent while the cost for its owners to understand, change and verify it grows more slowly than the project | decided, owner, "Convergence and Divergence", 2026-10-22 |
+| [Reader catalog](../vocabulary.md#def-reader-catalog) | a small set of defined readers that the paraphraser and reviewer consume | decided, owner 2026-10-24 |
+| [Style specification](../vocabulary.md#def-style-specification) | the methodology's prose rules in a form the paraphraser applies rule by rule | decided, owner 2026-10-24 |
+| [Round-trip check](../vocabulary.md#def-round-trip-check) | re-extracting claims from rendered prose and diffing them against the source IR | decided, owner 2026-10-24 |
+| [Evaluation case](../vocabulary.md#def-evaluation-case) | one graded pair of text and findings, kept under `eval/`; [definition](../../eval/README.md) | decided, owner 2026-10-24 |
+| [Graduation](../vocabulary.md#def-graduation) | the move of a pilot artifact to its destination project: the methodology corpus, methodology-tools, or project-orchestrator | decided, owner 2026-10-24 |
+| [Convergence](../vocabulary.md#def-convergence) | a project is convergent while the cost for its owners to understand, change and verify it grows more slowly than the project | decided, owner, "Convergence and Divergence", 2026-10-22 |
 
 All thirteen terms are ratified. The project [vocabulary](../vocabulary.md) is their register from chunk 1.
 
@@ -116,7 +116,7 @@ entry.
 
 A reasoning skill that works in the IR. A paraphraser skill run as a
 fresh-context subagent. A reviewer skill run as a fresh-context
-subagent that reads both IR and prose. Lint hooks for the mechanical
+subagent that reads both IR and prose. [Lint](../vocabulary.md#def-lint) hooks for the mechanical
 checks. One live run on a methodology deliverable. Found in the chunk:
 the lint, turned on the pilot's own documents, reported 43 violations,
 all true, which produced schema v1.1 ([chunk 2
@@ -128,7 +128,11 @@ Gate: the owner reviews one IR and its rendering side by side.
 The evaluation corpus, with case 001 seeded at bootstrap. The
 round-trip check. Term ratification as a fourth part of W-008 reports,
 drafted as an amendment. The lifecycle rule that moves ratified terms
-and claims into a project's vocabulary and conceptual model.
+and claims into a project's vocabulary and conceptual model. Added in
+the chunk, from the owner's rulings after the live run: the
+[term lifecycle](../term-lifecycle.md) with anchors and first-use
+links, the narrowed pipeline scope, the reviewer's bar, and schema
+v1.2 ([chunk 3 IR](../records/chunk-3-measurement.ir.md)).
 Gate: the owner adjudicates the amendment drafts.
 
 ### Chunk 4 — Graduation

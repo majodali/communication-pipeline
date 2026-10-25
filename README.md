@@ -1,8 +1,8 @@
 # communication-pipeline
 
-A pilot of a claims-first pipeline for agent-written prose. A reasoning
-role writes a checked intermediate representation. A paraphraser
-renders it for a defined reader. A stranger reviewer reports unwanted
+A pilot of a claims-first pipeline for agent-written prose. A [reasoning
+role](docs/vocabulary.md#def-reasoning-role) writes a checked [intermediate representation](docs/vocabulary.md#def-intermediate-representation). A [paraphraser](docs/vocabulary.md#def-paraphraser)
+renders it for a defined reader. A [stranger](docs/vocabulary.md#def-stranger) [reviewer](docs/vocabulary.md#def-reviewer) reports unwanted
 patterns. The human owner ratifies the terms each deliverable
 introduces.
 
@@ -32,8 +32,10 @@ from context and used as if defined.
   specifications the roles implement against: who the reader is, how
   prose is written for them, and which stages run.
 - [`docs/vocabulary.md`](docs/vocabulary.md) — the project's terms and
-  their status.
-- [`scripts/`](scripts/) — the lint (`lint.mjs`), the branch point
+  their status, each with a stable anchor; and
+  [`docs/term-lifecycle.md`](docs/term-lifecycle.md), how a term is
+  linked, defined and ratified.
+- [`scripts/`](scripts/) — the [lint](docs/vocabulary.md#def-lint) (`lint.mjs`), the [branch point](docs/vocabulary.md#def-branch-point)
   (`dispatch.mjs`), the IR parser and their tests. Zero dependencies;
   `npm test`.
 - `.claude/` — the paraphraser and reviewer agents, the reason, render

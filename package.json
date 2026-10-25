@@ -7,7 +7,11 @@
   "scripts": {
     "lint": "node scripts/lint.mjs",
     "dispatch": "node scripts/dispatch.mjs",
-    "test": "node --test scripts/test.mjs"
+    "test": "node --test scripts/test.mjs scripts/link-terms.test.mjs",
+    "link-terms": "node scripts/link-terms.mjs",
+    "roundtrip": "node scripts/roundtrip.mjs"
   },
-  "engines": { "node": ">=20" }
+  "engines": {
+    "node": ">=20"
+  }
 }

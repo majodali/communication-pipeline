@@ -31,8 +31,8 @@ roles have moved to project-orchestrator, this repository archives
   sections, ten checks from CK-01 (the referent rule) to CK-10 (section
   order), lifecycle. [Reader
   catalog](readers.md): five entries, RD-1 (human owner, in
-  conversation) to RD-5 (external reader), each with a readability
-  test. [Style specification](style-spec.md): 22 rules,
+  conversation) to RD-5 (external reader), each with a [readability
+  test](vocabulary.md#def-readability-test). [Style specification](style-spec.md): 22 rules,
   SP-01 (one claim per sentence) to SP-22 (supersession markers), with
   checks, readers and sources; harness overrides
   stated. [Branch point](branch-point.md): three dispositions, nine rules from
@@ -40,33 +40,45 @@ roles have moved to project-orchestrator, this repository archives
   provisional thresholds. Added:
   [vocabulary](vocabulary.md) as a custom type, 17 terms, 4
   unratified. Source: [chunk 1 IR](records/chunk-1-specifications.ir.md).
-  Gate passed 2026-10-25: all five readers accepted; four terms ratified; vocabulary confirmed; the owner is the reviewer.
+  Gate passed 2026-10-25: all five readers accepted; four terms ratified; vocabulary confirmed; the owner is the [reviewer](vocabulary.md#def-reviewer).
 
 - [x] **Chunk 2 — roles in Claude Code** — 2026-10-25. `scripts/lint.mjs`
   runs the ten IR checks and eleven style checks, on demand and as a
   PostToolUse hook that blocks IR violations; `scripts/dispatch.mjs`
-  applies the branch point and logs to [eval/dispatch-log.md](../eval/dispatch-log.md);
-  paraphraser and reviewer agents under `.claude/agents/`; reason,
+  applies the [branch point](vocabulary.md#def-branch-point) and logs to [eval/dispatch-log.md](../eval/dispatch-log.md);
+  [paraphraser](vocabulary.md#def-paraphraser) and reviewer agents under `.claude/agents/`; reason,
   render and review skills under `.claude/skills/`; 20 tests. Turned on
-  the pilot's own documents the lint found 43 violations and 130
+  the pilot's own documents the [lint](vocabulary.md#def-lint) found 43 violations and 130
   warnings ([case 002](../eval/cases/002-lint-on-own-documents-2026-10-25.md));
   after fixes, 0 and 30. Schema v1.1 followed. Live run: the methodology
   Portfolio refresh (methodology PR #44), rendered three times by the
-  paraphraser and reviewed three times by the stranger, prose findings
+  paraphraser and reviewed three times by the [stranger](vocabulary.md#def-stranger), prose findings
   per thousand words 82.0, 35.2, 25.2, round 3 readable
   ([case 003](../eval/cases/003-live-run-portfolio-refresh-2026-10-25.md)).
   Source: [chunk 2 IR](records/chunk-2-roles.ir.md). Gate: open,
   awaiting the owner's side-by-side reading of the live run's IR and
   rendering.
 
+- [x] **Chunk 3 — measurement and ratification** — 2026-10-25.
+  [Term lifecycle](term-lifecycle.md): handling by definition site;
+  first-use unit per reader; RD-5 glosses; anchors `def-<slug>` on
+  every vocabulary row. `scripts/link-terms.mjs` wrote 146 first-use
+  links across the pilot; warnings fell from 226 to 83. Lint gained
+  CK-11, SP-23, SP-24 and the unratified-term count.
+  `scripts/roundtrip.mjs`: the mechanical half of the round-trip check;
+  on the live run it found one claim unrendered. Schema v1.2:
+  connective prose, optional `part:`, D3 for normative text. Scope
+  narrowed per the owner: reports to RD-1 or RD-3 need an IR only for
+  a term, a decision or a register fact; review on request. Reviewer
+  bar: terms absent from both vocabularies; claims separately
+  decidable. methodology-tools PR #16: explicit anchors resolve. W-008
+  amendment and vocabulary anchors drafted as methodology PRs. Source:
+  [chunk 3 IR](records/chunk-3-measurement.ir.md). Gate: open, the
+  owner adjudicates the two methodology PRs.
+
 ## Upcoming
 
-- [ ] **Chunk 3 — measurement and ratification** — evaluation corpus,
-  round-trip check, term ratification as a W-008 fourth part
-  (amendment draft), IR lifecycle rule. Gate: owner adjudicates the
-  drafts.
-  [Plan](plans/pipeline-pilot.md#chunk-3--measurement-and-ratification).
-- [ ] **Chunk 4 — graduation** — amendments, methodology-tools PR,
+- [ ] **Chunk 4 — [graduation](vocabulary.md#def-graduation)** — amendments, methodology-tools PR,
   project-orchestrator proposal, exit decision. Gate: the three
   destinations accept or decline.
   [Plan](plans/pipeline-pilot.md#chunk-4--graduation).

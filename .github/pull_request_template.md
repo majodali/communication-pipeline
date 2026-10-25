@@ -19,4 +19,4 @@
 
 ## Verification
 
-<Form audit result; links check; for pipeline outputs, the reviewer's findings and the round-trip result.>
+<Form audit result; links check; for pipeline outputs, the [reviewer](../docs/vocabulary.md#def-reviewer)'s findings and the round-trip result.>
