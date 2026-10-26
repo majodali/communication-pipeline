@@ -77,6 +77,17 @@ roles have moved to project-orchestrator, this repository archives
   methodology PR #44 revised and re-rendered after the migration round
   closed. Source: [chunk 3 IR](records/chunk-3-measurement.ir.md).
   Gate: open, the owner adjudicates the two methodology PRs.
+- [x] **Stranger rounds until readable; the first meta-review** —
+  2026-10-26, after chunk 5. Owner rulings: rounds until clean, limit
+  ten, on every stranger-reviewed text; meta-review here past two
+  rounds; the orchestrator roles accepted (project-orchestrator PR
+  #7). [Branch point](branch-point.md) v1.3; schema v1.4 (CK-13 to
+  CK-16); methodology PR #51 drafted IR first and reviewed in ten
+  rounds, the limit reached without a readable verdict; methodology-
+  tools PR #19. [Case 005](../eval/cases/005-meta-review-stranger-rounds-2026-10-26.md):
+  the meta-review, six process changes recommended. Source:
+  [IR](records/stranger-rounds.ir.md). Gate: the owner rules on PR #51
+  and on the six changes.
 
 ## Upcoming
 
