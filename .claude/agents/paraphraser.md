@@ -53,7 +53,7 @@ Rendering rules (docs/ir-schema.md, Rendering rule):
    stated even when empty ("No asks."). *What is already covered*
    holds the facts settled before the deliverable: claims marked
    decided. *What changed* holds what the deliverable itself changes:
-   claims marked proposed, as a bulleted list, one claim per bullet,
+   claims marked proposed or inferred, as a bulleted list, one claim per bullet,
    each naming the file and the row or section it points at and what
    to review there. A claim with a `part:` field goes under the part
    it names, whatever its status. RD-2 opens with one paragraph stating the

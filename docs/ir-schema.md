@@ -64,7 +64,7 @@ within the document. A split claim takes a new number, never a suffix:
 | Kind | Letter | Body | Rule |
 |---|---|---|---|
 | Term | `T` | the word or phrase; its meaning in this communication; `defined-at:` a link to its [definition site](vocabulary.md#def-definition-site) when one exists | A term is defined once per IR. Every project-specific term used in a claim appears here. A term with a definition site links it and does not restate it; the rendering links that site at first use. A term without one is proposed, rendered as an inline definition, and listed for ratification ([term lifecycle](term-lifecycle.md)). |
-| Claim | `C` | one statement | A claim makes one statement and names every referent inside itself (the referent rule below). A claim may carry `evidence: E<n>` and, for a report to a human-owner reader, `part: covered` or `part: changed`. Without a part, a decided claim renders under *What is already covered* and a proposed claim under *What changed*. |
+| Claim | `C` | one statement | A claim makes one statement and names every referent inside itself (the referent rule below). A claim may carry `evidence: E<n>` and, for a report to a human-owner reader, `part: covered` or `part: changed`. Without a part, a decided claim renders under *What is already covered*, and a proposed or inferred claim under *What changed*, because an inference is new to the reader (v1.4). |
 | [Cluster](vocabulary.md#def-cluster) | `G` | `cluster: C<a>, C<b>, …` with an optional topic claim first | The [paraphraser](vocabulary.md#def-paraphraser) renders a cluster as one paragraph, in the order given. A claim belongs to at most one cluster. |
 | Relation | `R` | `C<a> <verb> C<b> because <reason>` | Verbs: `supports`, `depends-on`, `contradicts`, `refines`. The reason is one sentence or a claim identifier. Cross-claim references are relations, never pronouns in a claim. |
 | Evidence | `E` | a pointer (file and line, commit, message date, URL) and what it shows | Evidence is cited by a claim's `evidence:` field, never free-standing. |
@@ -118,6 +118,7 @@ A [lint](vocabulary.md#def-lint) or [reviewer](vocabulary.md#def-reviewer) repor
 | CK-11 | a term's `defined-at:` target does not resolve |
 | CK-12 | two elements carry the same identifier (v1.3) |
 | CK-13 | two `T` elements name one term (v1.4) |
+| CK-15 | the round-trip check: a claim absent from the render map, or an identifier in the map the IR does not hold; the sentence-to-claim ratio is information (v1.4) |
 | CK-14 | the rendering conditions select stranger rounds (Normative header, purpose document, reader RD-4 or RD-5, or a review flag in the Status), the Status is reviewed, rendered or delivered, and no `<subject>.review.md` with a verdict sits beside the IR (v1.4) |
 
 What counts as a project-specific term for CK-04: any bolded term, any
@@ -162,9 +163,12 @@ conceptual model is chunk 4's [graduation](vocabulary.md#def-graduation) work.
 
 ## Changes
 
-v1.4 (2026-10-26): CK-13 (term uniqueness) and CK-14 (a reviewed IR
-has its review record with a verdict), from the methodology's
-rounds-until-readable amendment.
+v1.4 (2026-10-26): CK-13 (term uniqueness), CK-14 (a reviewed IR
+has its review record with a verdict) and CK-15 (the round-trip
+check named), from the methodology's rounds-until-readable
+amendment, whose stranger rounds also found that an inferred claim
+belongs under *What changed*, not *What is already covered*: it is
+the reasoning role's inference, not a settled decision (W-008).
 
 v1.3 (chunk 4, 2026-10-26):
 
