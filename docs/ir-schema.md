@@ -118,7 +118,7 @@ A [lint](vocabulary.md#def-lint) or [reviewer](vocabulary.md#def-reviewer) repor
 | CK-11 | a term's `defined-at:` target does not resolve |
 | CK-12 | two elements carry the same identifier (v1.3) |
 | CK-13 | two `T` elements name one term (v1.4) |
-| CK-14 | the Status records a review and no `<subject>.review.md` with a verdict sits beside the IR (v1.4) |
+| CK-14 | the rendering conditions select stranger rounds (Normative header, purpose document, reader RD-4 or RD-5, or a review flag in the Status), the Status is reviewed, rendered or delivered, and no `<subject>.review.md` with a verdict sits beside the IR (v1.4) |
 
 What counts as a project-specific term for CK-04: any bolded term, any
 capitalized multi-word phrase that is not a proper name, and any word

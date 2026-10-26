@@ -91,10 +91,14 @@ export function lintIR(text, { vocab = vocabularyTerms(), file = null } = {}) {
     }
   }
   // CK-14 review record: a reviewed IR has <subject>.review.md beside it
-  if (file && /\breview/i.test(ir.header.status ?? '') && /^(reviewed|rendered|delivered)/.test(ir.header.status ?? '')) {
+  {
+    const h = ir.header;
+    const selected = /^yes/i.test(h.normative ?? '') || /^document/.test(h.purpose ?? '') || /\bRD-[45]\b/.test(h.reader ?? '') || /\breview/i.test(h.status ?? '');
+    if (file && selected && /^(reviewed|rendered|delivered)/.test(h.status ?? '')) {
     const record = file.replace(/\.ir\.md$/, '.review.md');
     if (!existsSync(record)) add('CK-14', 'violation', 1, `Status records a review but ${record.split('/').pop()} is absent`);
     else if (!/Verdict:|verdict/i.test(readFileSync(record, 'utf8'))) add('CK-14', 'violation', 1, `${record.split('/').pop()} holds no verdict`);
+    }
   }
   // CK-10 sections
   const kinds = ir.sections.map((s) => sectionKind(s.title));
