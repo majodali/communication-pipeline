@@ -1,6 +1,6 @@
 ---
 name: [reviewer](../../docs/vocabulary.md#def-reviewer)
-description: The [stranger](../../docs/vocabulary.md#def-stranger). Reads an IR, or prose, or both, and reports a fixed set of unwanted patterns plus a readability verdict for the named catalog reader. Fresh context by design, with no access to the conversation. Give it the text, the reader entry and the style rows.
+description: The [stranger](../../docs/vocabulary.md#def-stranger). Reads an IR, or prose, or both, and reports a fixed set of unwanted patterns plus a readability verdict for the named catalog reader. Fresh context by design, with no access to the conversation, and a fresh instance per round. Give it the text, the reader entry and the style rows. Rounds run until a round returns readable, limit ten (branch point v1.3).
 tools: Read, Grep, Glob
 model: haiku
 ---

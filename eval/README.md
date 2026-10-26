@@ -26,6 +26,14 @@ sections in this order:
 A case is never edited after grading except to fill its Outcome. A
 regrade is a new case citing the old one.
 
+## Meta-review records
+
+A [meta-review](../docs/vocabulary.md#def-meta-review) is an evaluation case whose source text is a
+review record of more than two rounds, with the text it reviewed. Its
+Findings section lists, per round, what the round found that the
+earlier rounds and their fixes had not caught, and why; its Outcome
+names the process change proposed, or none.
+
 ## Cases
 
 | Case | Source | Reader | Findings / kwords | Outcome |

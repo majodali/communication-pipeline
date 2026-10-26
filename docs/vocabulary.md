@@ -45,5 +45,6 @@ the term's first use to it ([term lifecycle](term-lifecycle.md)).
 | <a id="def-connective-prose"></a>Connective prose | a sentence in rendered text that asserts nothing a model would hold and exists to join claims for the reader | decided, owner 2026-10-26 (chunk 3 gate) | [ir-schema.md](ir-schema.md) |
 | <a id="def-term-lifecycle"></a>Term lifecycle | the path a term takes from first use in an IR, through ratification, to a vocabulary row with an anchor that later documents link | decided, owner 2026-10-26 (chunk 3 gate) | [term-lifecycle.md](term-lifecycle.md) |
 | <a id="def-footprint"></a>Footprint | the files or directories an IR declares its work is expected to touch, compared after the work with the files the branch changed | decided, owner 2026-10-26 (chunk 4 gate) | [ir-schema.md](ir-schema.md), Document form; the methodology specification from its close-out amendment |
+| <a id="def-meta-review"></a>Meta-review | a review by this project of a text's review record and the text itself, reporting whether the process needs a change; triggered when a text needs more than two reviewer rounds | proposed, stranger-rounds IR | [branch-point.md](branch-point.md), Meta-review |
 
-Unratified terms at this revision: 0 (all 24 ratified; the last, footprint, at the chunk 4 gate).
+Unratified terms at this revision: 1 (meta-review, proposed 2026-10-26).
