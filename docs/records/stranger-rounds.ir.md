@@ -2,7 +2,7 @@
 
 Reader: RD-1 (human owner, in conversation).
 Purpose: report. The work after the close-out on the owner's rulings of 2026-10-26: rounds until readable, the meta-review, the accepted orchestrator roles; the ten rounds on the methodology amendment; the first meta-review and its proposals; the asks.
-Status: draft
+Status: rendered (paraphraser, 2026-10-26, disposition D1; round-trip check clean; footprint 0 surprises, 0 misses)
 Source: the owner's messages of 2026-10-26 after merging PR #50 and after round 3 ("Keep going to ten and report the curve"); the review record of methodology PR #51; evaluation case 005.
 Footprint: docs/records/; docs/branch-point.md; docs/vocabulary.md; docs/ir-schema.md; docs/backlog.md; docs/plans/pipeline-pilot.review.md; eval/; scripts/; .claude/agents/
 
