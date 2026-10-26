@@ -2,7 +2,7 @@
 
 Reader: RD-1 (human owner, in conversation).
 Purpose: report. The graduation of the pilot's artifacts to their three destinations, the measurements of chunk 4, and the asks for the chunk 4 gate, including the exit decision.
-Status: draft
+Status: rendered (paraphraser, 2026-10-26, disposition D1; round-trip check clean)
 Source: the pilot plan's chunk 4 and settled decision 6; the owner's message of 2026-10-26 ("All merged and terms ratified - go ahead with chunk 4"); seven pull requests opened on 2026-10-26; four stranger reviews.
 Footprint: docs/records/; docs/vocabulary.md; docs/ir-schema.md; docs/backlog.md; docs/plans/pipeline-pilot.md; eval/; scripts/footprint.mjs; scripts/lint.mjs; scripts/ir.mjs; scripts/test.mjs; CLAUDE.md
 
