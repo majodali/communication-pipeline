@@ -142,6 +142,10 @@ and the `Protects:` header field. A methodology-tools PR for the lints.
 A project-orchestrator proposal for the role contracts. The exit
 decision under settled decision 6.
 Gate: the three destinations accept or decline.
+Delivered 2026-10-26 as methodology PRs #47, #48, #49,
+methodology-tools PR #17 and project-orchestrator PR #6; the gate
+report is the [chunk 4 IR](../records/chunk-4-graduation.ir.md). A
+chunk 5, close-out, is proposed there.
 
 ## Verification
 
