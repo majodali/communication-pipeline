@@ -1,7 +1,10 @@
 # Branch point
 
-Status: active (v1.1, chunk 3). Thresholds are provisional until the
-evaluation corpus tunes them.
+Status: active (v1.2, chunk 5: D3 runs two reviewer rounds). Thresholds
+are provisional until the evaluation corpus tunes them. The rules are
+also the Rendering conditions of the methodology's
+[intermediate-representation specification](https://github.com/majodali/methodology/blob/main/docs/intermediate-representation.md)
+from 2026-10-26.
 
 Type: Specification (methodology vocabulary). The pipeline's
 [dispatcher](vocabulary.md#def-dispatcher) implements against it.
@@ -37,7 +40,7 @@ All inputs come from the IR itself.
 | D0 [lint](vocabulary.md#def-lint) only | the schema checks, CK-01 (the referent rule) to CK-10 (section order), and the prose lints; the IR is delivered as it stands |
 | D1 render | D0, then the [paraphraser](vocabulary.md#def-paraphraser) renders prose for the reader |
 | D2 render and review | D1, then the [reviewer](vocabulary.md#def-reviewer) reads the IR and the prose against the reader's [readability test](vocabulary.md#def-readability-test) and the [style specification](style-spec.md) |
-| D3 review without render | the [reasoning role](vocabulary.md#def-reasoning-role) renders the prose itself, because the text is normative (a rule, a specification) and a paraphrase could change its force; the reviewer then reads IR and prose as in D2 |
+| D3 review without render | the [reasoning role](vocabulary.md#def-reasoning-role) renders the prose itself, because the text is normative (a rule, a specification) and a paraphrase could change its force; the reviewer then reads IR and prose as in D2; the reasoning role fixes the findings, and a reviewer reads the fixed text again (owner ruling, 2026-10-26, from [case 004](../eval/cases/004-normative-text-reviews-2026-10-26.md)) |
 
 ## When an IR is required at all
 

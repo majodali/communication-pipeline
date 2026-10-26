@@ -49,10 +49,9 @@ from context and used as if defined.
 
 ## Exit
 
-This repository is a staging area with three destinations. The schema
-and specifications become methodology amendments. The lints move to
-methodology-tools. The roles move to project-orchestrator. When all
-three have happened, the repository archives.
-
-Governed by [majodali/methodology](https://github.com/majodali/methodology)
-as declared in [docs/classification.md](docs/classification.md).
+The three graduation conditions were met on 2026-10-26: the schema and
+specifications are in the methodology (PRs #47 to #49), the lints are
+in methodology-tools (PR #17), and the role proposal is in
+project-orchestrator (PR #6). The owner holds the archive: the
+repository stays open, with its evaluation corpus, until the process
+works well in all projects (ruling at the chunk 4 gate, 2026-10-26).

@@ -2,6 +2,12 @@
 
 Status: active (v1.3, chunk 4). v1.2 was chunk 3; v1.1 was chunk 2; v1 was chunk 1; v0 was the bootstrap draft of 2026-10-24. From chunk 4 the methodology's [intermediate-representation.md](https://github.com/majodali/methodology/blob/main/docs/intermediate-representation.md) is proposed as the specification's home; this file is amended until that PR merges.
 
+> Superseded by methodology PR #49 (W-009 and the
+> [intermediate-representation specification](https://github.com/majodali/methodology/blob/main/docs/intermediate-representation.md))
+> on 2026-10-26 for everything normative. This file stays as the
+> pilot's record, the schema's change history, and the lint's
+> reference until methodology-tools runs every check.
+
 Type: Specification (methodology vocabulary). Defines the custom
 document type **Intermediate representation** declared in
 [docs/classification.md](classification.md).

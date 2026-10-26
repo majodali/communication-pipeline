@@ -20,3 +20,6 @@ Newest last. The data chunk 3 tunes the thresholds against.
 | 2026-10-26 | ../methodology/docs/records/ir-first.ir.md | RD-4 | document | 22 | 0 | 3 | 30 | — | BP-02a | D3 |
 | 2026-10-26 | docs/records/chunk-4-graduation.ir.md | RD-1 | report | 28 | 1 | 9 | 41 | — | BP-05a | D1 |
 | 2026-10-26 | docs/records/chunk-4-graduation.ir.md | RD-1 | report | 33 | 1 | 9 | 38 | — | BP-05a | D1 |
+| 2026-10-26 | ../methodology/docs/records/normative-second-round.ir.md | RD-4 | document | 13 | 0 | 2 | 31 | — | BP-02a | D3 |
+| 2026-10-26 | docs/records/chunk-5-close-out.ir.md | RD-1 | report | 20 | 0 | 5 | 46 | — | BP-07 | D1 |
+| 2026-10-26 | docs/records/chunk-5-close-out.ir.md | RD-1 | report | 26 | 0 | 5 | 26 | — | BP-07 | D1 |

@@ -2,6 +2,13 @@
 
 Status: active (v1, chunk 1).
 
+> Superseded by methodology PR #48 (P-007, documents state their
+> reader; the style guide's Readers table) on 2026-10-26; the
+> catalog's normative home is now
+> [the methodology style guide](https://github.com/majodali/methodology/blob/main/docs/style.md#readers). This file
+> stays as the pilot's record and the paraphraser's and reviewer's
+> input until the roles run in project-orchestrator.
+
 Type: Specification (methodology vocabulary). The [paraphraser](vocabulary.md#def-paraphraser) and the
 [reviewer](vocabulary.md#def-reviewer) implement against it. Every IR names one entry in its Reader
 header.

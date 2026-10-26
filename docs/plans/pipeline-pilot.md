@@ -83,7 +83,11 @@ self-review, which fails the challenge.
 6. The repository has a declared exit. When the schema and
    specifications are adopted upstream, the lints have moved to
    methodology-tools, and the roles have moved to project-orchestrator,
-   the repository archives (owner, 2026-10-24).
+   the repository archives (owner, 2026-10-24). Amended at the chunk 4
+   gate: the three conditions were met on 2026-10-26, and the
+   repository is kept, with its evaluation corpus, until the owner is
+   satisfied that the process works well in all projects (owner,
+   2026-10-26).
 7. Bounds are expressed in chunks and gates, never calendar time
    (owner, 2026-08-30).
 
@@ -146,6 +150,16 @@ Delivered 2026-10-26 as methodology PRs #47, #48, #49,
 methodology-tools PR #17 and project-orchestrator PR #6; the gate
 report is the [chunk 4 IR](../records/chunk-4-graduation.ir.md). A
 chunk 5, close-out, is proposed there.
+
+### Chunk 5 — Close-out
+
+The exit conditions recorded as met; the specifications marked
+superseded by their methodology homes; the vocabulary's definition
+sites pointed upstream; the second reviewer round for normative text
+in the branch point; the evaluation corpus kept here. The repository
+stays open as the pilot's running place until the owner's hold is
+lifted.
+Gate: the owner confirms the close-out record.
 
 ## Verification
 

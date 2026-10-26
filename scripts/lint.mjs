@@ -43,7 +43,7 @@ export function vocabularyEntries(file = resolve(ROOT, 'docs/vocabulary.md')) {
   if (!existsSync(file)) return entries;
   for (const line of readFileSync(file, 'utf8').split('\n')) {
     const m = /^\|\s*(?:<a id="([^"]+)"><\/a>)?\s*([^|]+?)\s*\|([^|]*)\|([^|]*)\|/.exec(line);
-    if (m && !/^(Term|---)/.test(m[2])) {
+    if (m && !/^(Term|---)\s*$/.test(m[2])) {
       const term = m[2].replace(/\s*\(.*\)$/, '').trim();
       const status = /^\s*decided/.test(m[4]) ? 'decided' : /^\s*proposed/.test(m[4]) ? 'proposed' : 'unknown';
       entries.set(term.toLowerCase(), { term, anchor: m[1] ?? null, status });
@@ -207,6 +207,7 @@ export function lintProse(text, { verbose = false, file = null, vocab = vocabula
   let seenTerms = new Set();
   const termList = [...vocab.values()].filter((v) => v.term.length > 3).sort((a, b) => b.term.length - a.term.length);
   if (file) for (const m of text.matchAll(/\]\(([^)\s]*#def-[\w-]+)\)/g)) {
+    if (/^https?:/.test(m[1])) continue; // another repository's anchor: not checkable offline (mtool links check skips these too)
     if (!anchorExists(m[1], file)) add('SP-24', 'violation', text.slice(0, m.index).split('\n').length, `link to ${m[1]} does not resolve`);
   }
   for (const b of blocks) {
