@@ -206,3 +206,15 @@ test('vocabulary rows carry anchor and status', () => {
   assert.ok(ir && ir.anchor && ir.anchor.startsWith('def-'), JSON.stringify(ir));
   assert.equal(ir.status, 'decided');
 });
+
+// --- footprint (chunk 4) ---
+import { parseFootprint, compareFootprint } from './footprint.mjs';
+test('footprint: header parsed, surprises and misses counted', () => {
+  const ir = 'Reader: RD-1\nFootprint: docs/a.md; docs/records/; scripts/x.mjs\n';
+  const declared = parseFootprint(ir);
+  assert.deepEqual(declared, ['docs/a.md', 'docs/records/', 'scripts/x.mjs']);
+  const r = compareFootprint(declared, ['docs/a.md', 'docs/records/r.ir.md', 'README.md']);
+  assert.deepEqual(r.surprises, ['README.md']);
+  assert.deepEqual(r.misses, ['scripts/x.mjs']);
+});
+test('footprint: no header returns null', () => { assert.equal(parseFootprint('Reader: RD-1\n'), null); });
