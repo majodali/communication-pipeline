@@ -69,7 +69,7 @@ repository is its first subject. See README.md for the question.
 - docs/classification.md — the binding declaration
 - docs/backlog.md — what is done and what is next
 - docs/plans/pipeline-pilot.md — the plan; pipeline-pilot.ir.md is its source
-- docs/ir-schema.md — the IR schema (v1)
+- docs/ir-schema.md — the IR schema (v1.3)
 - docs/readers.md — the [reader catalog](docs/vocabulary.md#def-reader-catalog); every IR names one entry
 - docs/style-spec.md — the [style specification](docs/vocabulary.md#def-style-specification) the paraphraser applies
 - docs/branch-point.md — which pipeline stages run for an IR

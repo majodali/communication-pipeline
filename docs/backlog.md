@@ -80,7 +80,15 @@ roles have moved to project-orchestrator, this repository archives
 
 ## Upcoming
 
-- [ ] **Chunk 4 — [graduation](vocabulary.md#def-graduation)** — amendments, methodology-tools PR,
-  project-orchestrator proposal, exit decision. Gate: the three
-  destinations accept or decline.
-  [Plan](plans/pipeline-pilot.md#chunk-4--graduation).
+- [x] **Chunk 4 — [graduation](vocabulary.md#def-graduation)** — 2026-10-26. Three stacked
+  methodology PRs (#47 Protects: field; #48 P-007, P-008, reader
+  catalog, mechanical checks; #49 W-009 and the IR specification),
+  each IR first with a stranger review of the rule text;
+  methodology-tools PR #17 (`mtool style`, `mtool ir check`, W-008
+  block comparison; line-for-line parity with scripts/lint.mjs);
+  project-orchestrator PR #6 (two roles, an IR line in the task
+  result, the routing rule). Schema v1.3: Footprint header, CK-12.
+  [Case 004](../eval/cases/004-normative-text-reviews-2026-10-26.md):
+  22.1 findings per thousand words on normative text. Source:
+  [chunk 4 IR](records/chunk-4-graduation.ir.md). Gate: open, the
+  three destinations accept or decline; exit decision asked.

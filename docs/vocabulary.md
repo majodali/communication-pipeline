@@ -39,10 +39,10 @@ the term's first use to it ([term lifecycle](term-lifecycle.md)).
 | <a id="def-cluster"></a>Cluster | a declared ordered list of claim identifiers the paraphraser renders as one paragraph | decided, owner 2026-10-25 (chunk 1 gate) | [ir-schema.md](ir-schema.md) |
 | <a id="def-definition-site"></a>Definition site | the one place a term is defined; every other use links to it | decided, owner 2026-10-25 (chunk 1 gate) | this file |
 | <a id="def-readability-test"></a>Readability test | the question a reviewer answers to judge a text readable for one catalog reader | decided, owner 2026-10-25 (chunk 1 gate) | [readers.md](readers.md) |
-| <a id="def-lint"></a>Lint | the deterministic checker in scripts/lint.mjs that runs the IR checks and the style specification's lint column | proposed, chunk 2 IR | [ir-schema.md](ir-schema.md), Mechanical checks |
-| <a id="def-dispatcher"></a>Dispatcher | the script scripts/dispatch.mjs that applies the branch point's rules to one IR and logs the disposition | proposed, chunk 2 IR | [branch-point.md](branch-point.md) |
-| <a id="def-render-map"></a>Render map | the comment line the paraphraser appends to prose, listing where each claim landed | proposed, chunk 2 IR | [ir-schema.md](ir-schema.md), Rendering rule |
-| <a id="def-connective-prose"></a>Connective prose | a sentence in rendered text that asserts nothing a model would hold and exists to join claims for the reader | proposed, chunk 3 IR | [ir-schema.md](ir-schema.md) |
-| <a id="def-term-lifecycle"></a>Term lifecycle | the path a term takes from first use in an IR, through ratification, to a vocabulary row with an anchor that later documents link | proposed, chunk 3 IR | [term-lifecycle.md](term-lifecycle.md) |
+| <a id="def-lint"></a>Lint | the deterministic checker in scripts/lint.mjs that runs the IR checks and the style specification's lint column | decided, owner 2026-10-26 (chunk 3 gate) | [ir-schema.md](ir-schema.md), Mechanical checks |
+| <a id="def-dispatcher"></a>Dispatcher | the script scripts/dispatch.mjs that applies the branch point's rules to one IR and logs the disposition | decided, owner 2026-10-26 (chunk 3 gate) | [branch-point.md](branch-point.md) |
+| <a id="def-render-map"></a>Render map | the comment line the paraphraser appends to prose, listing where each claim landed | decided, owner 2026-10-26 (chunk 3 gate) | [ir-schema.md](ir-schema.md), Rendering rule |
+| <a id="def-connective-prose"></a>Connective prose | a sentence in rendered text that asserts nothing a model would hold and exists to join claims for the reader | decided, owner 2026-10-26 (chunk 3 gate) | [ir-schema.md](ir-schema.md) |
+| <a id="def-term-lifecycle"></a>Term lifecycle | the path a term takes from first use in an IR, through ratification, to a vocabulary row with an anchor that later documents link | decided, owner 2026-10-26 (chunk 3 gate) | [term-lifecycle.md](term-lifecycle.md) |
 
 Unratified terms at this revision: 5 (three from chunk 2, awaiting the owner's ruling; two from chunk 3).

@@ -15,3 +15,8 @@ Newest last. The data chunk 3 tunes the thresholds against.
 | 2026-10-25 | ../methodology/docs/records/w008-terms-introduced.ir.md | RD-4 | document | 17 | 1 | 0 | 31 | — | BP-02a | D3 |
 | 2026-10-25 | ../methodology/docs/records/portfolio-1.5.0-refresh.ir.md (fourth IR) | RD-1 | report | 11 | 1 | 2 | 30 | — | BP-05a | D1 |
 | 2026-10-25 | docs/records/chunk-3-measurement.ir.md | RD-1 | report | 50 | 2 | 1 | 36 | — | BP-05a | D1 |
+| 2026-10-26 | ../methodology/docs/records/protects-field.ir.md | RD-4 | document | 14 | 4 | 2 | 22 | — | BP-02a | D3 |
+| 2026-10-26 | ../methodology/docs/records/documents-name-reader.ir.md | RD-4 | document | 31 | 1 | 2 | 30 | — | BP-02a | D3 |
+| 2026-10-26 | ../methodology/docs/records/ir-first.ir.md | RD-4 | document | 22 | 0 | 3 | 30 | — | BP-02a | D3 |
+| 2026-10-26 | docs/records/chunk-4-graduation.ir.md | RD-1 | report | 28 | 1 | 9 | 41 | — | BP-05a | D1 |
+| 2026-10-26 | docs/records/chunk-4-graduation.ir.md | RD-1 | report | 33 | 1 | 9 | 38 | — | BP-05a | D1 |

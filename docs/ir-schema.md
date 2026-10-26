@@ -1,6 +1,6 @@
 # Intermediate representation: schema
 
-Status: active (v1.2, chunk 3). v1.1 was chunk 2; v1 was chunk 1; v0 was the bootstrap draft of 2026-10-24.
+Status: active (v1.3, chunk 4). v1.2 was chunk 3; v1.1 was chunk 2; v1 was chunk 1; v0 was the bootstrap draft of 2026-10-24. From chunk 4 the methodology's [intermediate-representation.md](https://github.com/majodali/methodology/blob/main/docs/intermediate-representation.md) is proposed as the specification's home; this file is amended until that PR merges.
 
 Type: Specification (methodology vocabulary). Defines the custom
 document type **Intermediate representation** declared in
@@ -39,6 +39,7 @@ Asks. The Claims section may use any sub-headings.
 | Purpose | `report` or `document`, then one sentence saying what the communication is for |
 | Status | `draft` · `reviewed` · `rendered` · `delivered` |
 | Source | the conversation, document or event that occasioned it |
+| Footprint | optional (v1.3): the files or directories the work is expected to touch, separated by semicolons; a directory ends in `/` |
 
 A `report` is read by someone who shares the conversation: RD-1 (the
 human owner in conversation), RD-2 (the human owner returning) or RD-3
@@ -109,6 +110,7 @@ A [lint](vocabulary.md#def-lint) or [reviewer](vocabulary.md#def-reviewer) repor
 | CK-09 | a claim appears in two clusters |
 | CK-10 | the five sections are absent or out of order |
 | CK-11 | a term's `defined-at:` target does not resolve |
+| CK-12 | two elements carry the same identifier (v1.3) |
 
 What counts as a project-specific term for CK-04: any bolded term, any
 capitalized multi-word phrase that is not a proper name, and any word
@@ -151,6 +153,17 @@ steps. Moving ratified terms and decided claims into a project's
 conceptual model is chunk 4's [graduation](vocabulary.md#def-graduation) work.
 
 ## Changes
+
+v1.3 (chunk 4, 2026-10-26):
+
+- CK-12 checks identifier uniqueness, which v1 stated and no check
+  tested (found by the stranger review of the methodology's adopted
+  specification).
+- An optional `Footprint` header declares the files the work is
+  expected to touch. `scripts/footprint.mjs` compares the declaration
+  with the branch's changed files and reports surprises (changed, not
+  declared) and misses (declared, unchanged). The counts are the
+  mechanical reading of the owner's prediction-surprise indicator.
 
 v1.2 (chunk 3, 2026-10-25), from the owner's rulings after the live
 run:
