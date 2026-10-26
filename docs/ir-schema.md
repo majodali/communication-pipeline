@@ -110,6 +110,7 @@ A [lint](vocabulary.md#def-lint) or [reviewer](vocabulary.md#def-reviewer) repor
 | CK-09 | a claim appears in two clusters |
 | CK-10 | the five sections are absent or out of order |
 | CK-11 | a term's `defined-at:` target does not resolve |
+| CK-12 | two elements carry the same identifier (v1.3) |
 
 What counts as a project-specific term for CK-04: any bolded term, any
 capitalized multi-word phrase that is not a proper name, and any word
@@ -155,6 +156,9 @@ conceptual model is chunk 4's [graduation](vocabulary.md#def-graduation) work.
 
 v1.3 (chunk 4, 2026-10-26):
 
+- CK-12 checks identifier uniqueness, which v1 stated and no check
+  tested (found by the stranger review of the methodology's adopted
+  specification).
 - An optional `Footprint` header declares the files the work is
   expected to touch. `scripts/footprint.mjs` compares the declaration
   with the branch's changed files and reports surprises (changed, not

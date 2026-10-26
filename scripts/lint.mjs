@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Lint for IR documents (checks CK-01..CK-10, docs/ir-schema.md) and
+// Lint for IR documents (checks CK-01..CK-12, docs/ir-schema.md) and
 // rendered prose (the lint column of docs/style-spec.md).
 // Usage:
 //   node scripts/lint.mjs [--json] [--verbose] [files...]   (default: all tracked .md)
@@ -73,6 +73,14 @@ export function lintIR(text, { vocab = vocabularyTerms(), file = null } = {}) {
   // CK-07 header
   if (!READER_RE.test(ir.header.reader ?? '')) add('CK-07', 'violation', 1, `Reader header is not a catalog identifier: "${ir.header.reader ?? ''}"`);
   if (!/^(report|document)\b/.test(ir.header.purpose ?? '')) add('CK-07', 'violation', 1, `Purpose header must start with "report" or "document": "${ir.header.purpose ?? ''}"`);
+  // CK-12 identifier uniqueness (schema v1.3)
+  {
+    const seen = new Map();
+    for (const e of ir.elements) {
+      if (seen.has(e.id)) add('CK-12', 'violation', e.line, `${e.id} is already used at line ${seen.get(e.id)}`);
+      else seen.set(e.id, e.line);
+    }
+  }
   // CK-10 sections
   const kinds = ir.sections.map((s) => sectionKind(s.title));
   const order = ['terms', 'claims', 'relations', 'evidence', 'asks', 'resolution'];

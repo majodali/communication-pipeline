@@ -218,3 +218,8 @@ test('footprint: header parsed, surprises and misses counted', () => {
   assert.deepEqual(r.misses, ['scripts/x.mjs']);
 });
 test('footprint: no header returns null', () => { assert.equal(parseFootprint('Reader: RD-1\n'), null); });
+
+test('CK-12: a duplicated identifier is a violation', () => {
+  const ir = 'Reader: RD-1\nPurpose: report. x\nStatus: draft\nSource: s\n\n## Terms\n\n## Claims\n\nC1. One. [proposed: this IR]\n\nC1. Two. [proposed: this IR]\n\n## Relations\n\n## Evidence\n\n## Asks\n\nA0. No asks.\n';
+  assert.ok(lintIR(ir).some((f) => f.check === 'CK-12'));
+});

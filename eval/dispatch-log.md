@@ -17,5 +17,4 @@ Newest last. The data chunk 3 tunes the thresholds against.
 | 2026-10-25 | docs/records/chunk-3-measurement.ir.md | RD-1 | report | 50 | 2 | 1 | 36 | — | BP-05a | D1 |
 | 2026-10-26 | ../methodology/docs/records/protects-field.ir.md | RD-4 | document | 14 | 4 | 2 | 22 | — | BP-02a | D3 |
 | 2026-10-26 | ../methodology/docs/records/documents-name-reader.ir.md | RD-4 | document | 31 | 1 | 2 | 30 | — | BP-02a | D3 |
-| 2026-10-26 | ../methodology/docs/records/ir-first.ir.md | RD-4 | document | 18 | 0 | 3 | 62 | — | BP-03 | D2 |
 | 2026-10-26 | ../methodology/docs/records/ir-first.ir.md | RD-4 | document | 22 | 0 | 3 | 30 | — | BP-02a | D3 |
