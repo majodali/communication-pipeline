@@ -2,7 +2,7 @@
 
 Reader: RD-1 (human owner, in conversation).
 Purpose: report. The close-out of the pilot: the exit conditions recorded as met, the owner's hold on the archive, the specifications marked superseded by their methodology homes, and the asks for the close-out gate.
-Status: draft
+Status: rendered (paraphraser, 2026-10-26, disposition D1; round-trip check clean; footprint 0 surprises, 0 misses; the paraphraser marked C14 as unrenderable although its sentence renders C14 in full, and the marker was removed)
 Source: the owner's message of 2026-10-26 at the chunk 4 gate; the merged state of seven pull requests, read on GitHub the same day; the pipeline plan's chunk 5.
 Footprint: docs/records/; docs/readers.md; docs/style-spec.md; docs/term-lifecycle.md; docs/ir-schema.md; docs/branch-point.md; docs/vocabulary.md; docs/plans/pipeline-pilot.md; docs/backlog.md; docs/classification.md; README.md; scripts/dispatch.mjs; scripts/lint.mjs; eval/dispatch-log.md
 
