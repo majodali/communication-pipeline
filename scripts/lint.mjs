@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Lint for IR documents (checks CK-01..CK-12, docs/ir-schema.md) and
+// Lint for IR documents (checks CK-01..CK-14, docs/ir-schema.md) and
 // rendered prose (the lint column of docs/style-spec.md).
 // Usage:
 //   node scripts/lint.mjs [--json] [--verbose] [files...]   (default: all tracked .md)
@@ -80,6 +80,21 @@ export function lintIR(text, { vocab = vocabularyTerms(), file = null } = {}) {
       if (seen.has(e.id)) add('CK-12', 'violation', e.line, `${e.id} is already used at line ${seen.get(e.id)}`);
       else seen.set(e.id, e.line);
     }
+  }
+  // CK-13 term uniqueness (methodology specification, 2026-10-26)
+  {
+    const seen = new Map();
+    for (const e of ir.elements.filter((x) => x.kind === 'T')) {
+      const name = e.text.split(/[:(]/)[0].trim().toLowerCase();
+      if (seen.has(name)) add('CK-13', 'violation', e.line, `${e.id} names the term "${name}" already defined by ${seen.get(name)}`);
+      else seen.set(name, e.id);
+    }
+  }
+  // CK-14 review record: a reviewed IR has <subject>.review.md beside it
+  if (file && /\breview/i.test(ir.header.status ?? '') && /^(reviewed|rendered|delivered)/.test(ir.header.status ?? '')) {
+    const record = file.replace(/\.ir\.md$/, '.review.md');
+    if (!existsSync(record)) add('CK-14', 'violation', 1, `Status records a review but ${record.split('/').pop()} is absent`);
+    else if (!/Verdict:|verdict/i.test(readFileSync(record, 'utf8'))) add('CK-14', 'violation', 1, `${record.split('/').pop()} holds no verdict`);
   }
   // CK-10 sections
   const kinds = ir.sections.map((s) => sectionKind(s.title));

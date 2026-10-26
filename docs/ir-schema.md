@@ -1,6 +1,6 @@
 # Intermediate representation: schema
 
-Status: active (v1.3, chunk 4). v1.2 was chunk 3; v1.1 was chunk 2; v1 was chunk 1; v0 was the bootstrap draft of 2026-10-24. From chunk 4 the methodology's [intermediate-representation.md](https://github.com/majodali/methodology/blob/main/docs/intermediate-representation.md) is proposed as the specification's home; this file is amended until that PR merges.
+Status: active (v1.4, 2026-10-26: CK-13 and CK-14 from the methodology's rounds-until-readable amendment). v1.3 was chunk 4; v1.2 was chunk 3; v1.1 was chunk 2; v1 was chunk 1; v0 was the bootstrap draft of 2026-10-24. From chunk 4 the methodology's [intermediate-representation.md](https://github.com/majodali/methodology/blob/main/docs/intermediate-representation.md) is proposed as the specification's home; this file is amended until that PR merges.
 
 > Superseded by methodology PR #49 (W-009 and the
 > [intermediate-representation specification](https://github.com/majodali/methodology/blob/main/docs/intermediate-representation.md))
@@ -117,6 +117,8 @@ A [lint](vocabulary.md#def-lint) or [reviewer](vocabulary.md#def-reviewer) repor
 | CK-10 | the five sections are absent or out of order |
 | CK-11 | a term's `defined-at:` target does not resolve |
 | CK-12 | two elements carry the same identifier (v1.3) |
+| CK-13 | two `T` elements name one term (v1.4) |
+| CK-14 | the Status records a review and no `<subject>.review.md` with a verdict sits beside the IR (v1.4) |
 
 What counts as a project-specific term for CK-04: any bolded term, any
 capitalized multi-word phrase that is not a proper name, and any word
@@ -159,6 +161,10 @@ steps. Moving ratified terms and decided claims into a project's
 conceptual model is chunk 4's [graduation](vocabulary.md#def-graduation) work.
 
 ## Changes
+
+v1.4 (2026-10-26): CK-13 (term uniqueness) and CK-14 (a reviewed IR
+has its review record with a verdict), from the methodology's
+rounds-until-readable amendment.
 
 v1.3 (chunk 4, 2026-10-26):
 
