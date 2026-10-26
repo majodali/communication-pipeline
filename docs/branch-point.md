@@ -95,10 +95,10 @@ RD-4 (fresh agent session), RD-5 (external reader).
 ## Meta-review
 
 A text that needs more than two reviewer rounds is a subject for
-[meta-review](vocabulary.md#def-meta-review): this project reads the
-review record and the text and reports, as an [evaluation
-case](vocabulary.md#def-evaluation-case), whether the process needs a
-change (owner ruling, 2026-10-26). The first subject is the
+[meta-review](vocabulary.md#def-meta-review) (owner ruling,
+2026-10-26). This project reads the review record and the text. It
+reports, as an [evaluation case](vocabulary.md#def-evaluation-case),
+whether the process needs a change. The first subject is the
 methodology's intermediate-representation specification at PR #50,
 whose second round returned not readable.
 

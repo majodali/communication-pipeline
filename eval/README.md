@@ -31,7 +31,7 @@ regrade is a new case citing the old one.
 A [meta-review](../docs/vocabulary.md#def-meta-review) is an evaluation case whose source text is a
 review record of more than two rounds, with the text it reviewed. Its
 Findings section lists, per round, what the round found that the
-earlier rounds and their fixes had not caught, and why; its Outcome
+earlier rounds and their fixes had not caught, and why. Its Outcome
 names the process change proposed, or none.
 
 ## Cases
