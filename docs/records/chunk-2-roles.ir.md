@@ -7,11 +7,11 @@ Source: the pilot plan, chunk 2; owner go-ahead 2026-10-25.
 
 ## Terms
 
-T1. Lint: the deterministic checker in scripts/lint.mjs that runs the IR checks CK-01 to CK-10 and the style specification's lint column. defined-at: scripts/lint.mjs [proposed: this IR]
+T1. Lint: the deterministic checker in scripts/lint.mjs that runs the IR checks CK-01 to CK-10 and the style specification's lint column. defined-at: ../vocabulary.md#def-lint [proposed: this IR]
 
-T2. Dispatcher: the script scripts/dispatch.mjs that applies the branch point's rules to one IR and logs the disposition. defined-at: docs/branch-point.md [proposed: this IR]
+T2. Dispatcher: the script scripts/dispatch.mjs that applies the branch point's rules to one IR and logs the disposition. defined-at: ../vocabulary.md#def-dispatcher [proposed: this IR]
 
-T3. Render map: the comment line the paraphraser appends to prose, listing which paragraph each claim landed in. defined-at: docs/ir-schema.md, Rendering rule [proposed: this IR]
+T3. Render map: the comment line the paraphraser appends to prose, listing which paragraph each claim landed in. defined-at: ../vocabulary.md#def-render-map [proposed: this IR]
 
 ## What chunk 2 built
 

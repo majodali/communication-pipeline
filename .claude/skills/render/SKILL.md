@@ -1,13 +1,13 @@
 ---
 name: render
-description: Dispatch one IR through the branch point and, when it says render, produce prose with a fresh-context paraphraser subagent. Use after /reason. Records the disposition in eval/dispatch-log.md.
+description: Dispatch one IR through the [branch point](../../../docs/vocabulary.md#def-branch-point) and, when it says render, produce prose with a fresh-context [paraphraser](../../../docs/vocabulary.md#def-paraphraser) subagent. Use after /reason. Records the [disposition](../../../docs/vocabulary.md#def-disposition) in eval/dispatch-log.md.
 ---
 
 # Render an IR
 
 1. Run `node scripts/dispatch.mjs <file>.ir.md` (add `--flag review`
    if the owner asked for a review). Note the disposition: D0, D1 or
-   D2. The dispatcher appends the row to `eval/dispatch-log.md`.
+   D2. The [dispatcher](../../../docs/vocabulary.md#def-dispatcher) appends the row to `eval/dispatch-log.md`.
 2. D0: deliver the IR as it stands. Stop.
 3. D1 or D2: assemble the paraphraser's prompt with exactly three
    things, pasted in full, and nothing else:
@@ -21,7 +21,7 @@ description: Dispatch one IR through the branch point and, when it says render, 
    your intent. The subagent's fresh context is the mechanism.
 4. Write the returned prose beside the IR as `<subject>.md` (or use it
    as the PR body or message). Keep the trailing render-map comment.
-5. Run `node scripts/lint.mjs <subject>.md`. Fix lint findings in the
+5. Run `node scripts/lint.mjs <subject>.md`. Fix [lint](../../../docs/vocabulary.md#def-lint) findings in the
    prose yourself only when the fix changes no claim; otherwise fix the
    IR and render again.
 6. D2: invoke `/review`.

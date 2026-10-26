@@ -21,7 +21,7 @@
   family by default; reciprocated in the lead's Portfolio Families
   section)
 
-Declared exit: this project archives when its three graduation
+Declared exit: this project archives when its three [graduation](vocabulary.md#def-graduation)
 destinations have each accepted or declined their part (the plan's
 settled decision 6). Adopted 2026-10-24 at C1 on the owner's ruling
 that a pilot about documentation discipline should not run at the one
@@ -54,7 +54,7 @@ linked from every instance:
   [eval/README.md](../eval/README.md). Instances: the files under
   `eval/cases/`.
 - **Vocabulary** (Document) — the register of a project's terms, one
-  definition site per term, with meaning, status and origin; defined in
+  [definition site](vocabulary.md#def-definition-site) per term, with meaning, status and origin; defined in
   the header of [docs/vocabulary.md](vocabulary.md), its sole
   instance. Convergent with Allegro's
   `docs/book/architecture-vocabulary.md` and with the Vocabulary type

@@ -1,6 +1,6 @@
 ---
 name: review
-description: Run the stranger review on prose, an IR, or both, with a fresh-context reviewer subagent. Use after /render when the disposition is D2, or on any text the owner asks to have reviewed. Writes the review beside the text.
+description: Run the [stranger](../../../docs/vocabulary.md#def-stranger) review on prose, an IR, or both, with a fresh-context [reviewer](../../../docs/vocabulary.md#def-reviewer) subagent. Use after /render when the [disposition](../../../docs/vocabulary.md#def-disposition) is D2, or on any text the owner asks to have reviewed. Writes the review beside the text.
 ---
 
 # Review as the stranger
@@ -8,7 +8,7 @@ description: Run the stranger review on prose, an IR, or both, with a fresh-cont
 1. Assemble the reviewer's prompt with exactly these things, pasted in
    full: the text under review (the prose, and the IR when both
    exist); the reader's entry from `docs/readers.md`, including the
-   readability test; the rows of `docs/style-spec.md` for that reader
+   [readability test](../../../docs/vocabulary.md#def-readability-test); the rows of `docs/style-spec.md` for that reader
    or `all`; the terms the reader's corpus defines, which for RD-1 to
    RD-4 means a link to the methodology vocabulary and the project
    vocabulary, pasted or named. Nothing else. A term left out of that

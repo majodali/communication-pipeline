@@ -8,7 +8,7 @@ Instance of the [Evaluation case](../README.md) type.
 | Source text date | 2026-10-25 |
 | Reader addressed | RD-1 (human owner, in conversation) |
 | Origin | the methodology repository's Portfolio register refresh after the 1.5.0 migration round, the pipeline's first live run on a methodology deliverable |
-| Through the pipeline | yes: IR by the reasoning role; paraphraser on the sonnet model, fresh context; reviewer on the haiku model, fresh context; three rounds |
+| Through the pipeline | yes: IR by the [reasoning role](../../docs/vocabulary.md#def-reasoning-role); [paraphraser](../../docs/vocabulary.md#def-paraphraser) on the sonnet model, fresh context; [reviewer](../../docs/vocabulary.md#def-reviewer) on the haiku model, fresh context; three rounds |
 | Graded by | the reviewer role, with dispositions by the reasoning role, in the methodology repository at docs/records/portfolio-1.5.0-refresh.review.md |
 
 ## Source text
@@ -23,7 +23,7 @@ The IR, its three renderings and the reviews live in the methodology repository 
 | 2 | 284 | 22 (10, 12) | 35.2 | 19, 3 | not readable | 155 |
 | 3 | 317 | 16 (8, 8) | 25.2 | 15, 1 | readable | 171 |
 
-Defects a lint cannot see that the reviewer caught: a Source line claiming merges the evidence did not show; a sentence contradicting itself ("the nine rows read 1.5.0, except one"); a Purpose line contradicting an ask; a process statement filed as a settled fact; claims whose cited evidence showed a weaker fact than the claim stated.
+Defects a [lint](../../docs/vocabulary.md#def-lint) cannot see that the reviewer caught: a Source line claiming merges the evidence did not show; a sentence contradicting itself ("the nine rows read 1.5.0, except one"); a Purpose line contradicting an ask; a process statement filed as a settled fact; claims whose cited evidence showed a weaker fact than the claim stated.
 
 Reviewer misreads that changed its instructions: the relation form; two-step asks; the lead sentence before the Asks heading; terms the reader's corpus defines but the prompt's vocabulary list omitted.
 

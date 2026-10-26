@@ -1,22 +1,22 @@
 # Intermediate representation: schema
 
-Status: active (v1.1, chunk 2). v1 was chunk 1; v0 was the bootstrap draft of 2026-10-24.
+Status: active (v1.2, chunk 3). v1.1 was chunk 2; v1 was chunk 1; v0 was the bootstrap draft of 2026-10-24.
 
 Type: Specification (methodology vocabulary). Defines the custom
 document type **Intermediate representation** declared in
 [docs/classification.md](classification.md).
 
 Reader: RD-4 (a fresh agent session, [catalog](readers.md#rd-4-fresh-agent-session))
-in the reasoning or reviewer role, or the human owner reading an IR
+in the reasoning or [reviewer](vocabulary.md#def-reviewer) role, or the human owner reading an IR
 instead of the prose rendered from it.
 
 ## Purpose
 
-An intermediate representation (IR) is the structured form the
-reasoning role writes before any prose exists. It holds the terms,
+An [intermediate representation](vocabulary.md#def-intermediate-representation) (IR) is the structured form the
+[reasoning role](vocabulary.md#def-reasoning-role) writes before any prose exists. It holds the terms,
 claims, relations, evidence and asks of one communication. Every
 element carries an identifier and a provenance status. Prose is
-rendered from the IR by the paraphraser role when the
+rendered from the IR by the [paraphraser](vocabulary.md#def-paraphraser) role when the
 [branch point](branch-point.md) says so. Otherwise the IR is delivered
 as it stands.
 
@@ -56,9 +56,9 @@ within the document. A split claim takes a new number, never a suffix:
 
 | Kind | Letter | Body | Rule |
 |---|---|---|---|
-| Term | `T` | the word or phrase; its meaning in this communication; `defined-at:` a link to its definition site when that is elsewhere | A term is defined once per IR. Every project-specific term used in a claim appears here. A term whose definition site is elsewhere links it and does not restate it. |
-| Claim | `C` | one statement | A claim makes one statement and names every referent inside itself (the referent rule below). A claim may carry `evidence: E<n>`. |
-| Cluster | `G` | `cluster: C<a>, C<b>, …` with an optional topic claim first | The paraphraser renders a cluster as one paragraph, in the order given. A claim belongs to at most one cluster. |
+| Term | `T` | the word or phrase; its meaning in this communication; `defined-at:` a link to its [definition site](vocabulary.md#def-definition-site) when one exists | A term is defined once per IR. Every project-specific term used in a claim appears here. A term with a definition site links it and does not restate it; the rendering links that site at first use. A term without one is proposed, rendered as an inline definition, and listed for ratification ([term lifecycle](term-lifecycle.md)). |
+| Claim | `C` | one statement | A claim makes one statement and names every referent inside itself (the referent rule below). A claim may carry `evidence: E<n>` and, for a report to a human-owner reader, `part: covered` or `part: changed`. Without a part, a decided claim renders under *What is already covered* and a proposed claim under *What changed*. |
+| [Cluster](vocabulary.md#def-cluster) | `G` | `cluster: C<a>, C<b>, …` with an optional topic claim first | The [paraphraser](vocabulary.md#def-paraphraser) renders a cluster as one paragraph, in the order given. A claim belongs to at most one cluster. |
 | Relation | `R` | `C<a> <verb> C<b> because <reason>` | Verbs: `supports`, `depends-on`, `contradicts`, `refines`. The reason is one sentence or a claim identifier. Cross-claim references are relations, never pronouns in a claim. |
 | Evidence | `E` | a pointer (file and line, commit, message date, URL) and what it shows | Evidence is cited by a claim's `evidence:` field, never free-standing. |
 | Ask | `A` | a decision or action requested of the reader; `Depends:` the claims or asks it rests on | Every IR for RD-1 (the human owner in conversation) or RD-2 (the human owner returning) has an Asks section, holding asks or the single line `A0. No asks.` |
@@ -85,15 +85,15 @@ request.
 |---|---|---|
 | decided | `[decided: <who>, <date>]` or `[decided: <source>]` | ratified by the human owner, or quoted from a governed document |
 | proposed | `[proposed: <IR id or "this IR">]` | put forward here; awaits ratification |
-| inferred | `[inferred: R<n>]` | derived by the reasoning role; the relation that derives it is cited |
+| inferred | `[inferred: R<n>]` | derived by the [reasoning role](vocabulary.md#def-reasoning-role); the relation that derives it is cited |
 
 A term with status `proposed` is an unratified term. The count of
 unratified terms per IR is recorded (the owner's unratified-vocabulary
-indicator, "Convergence and Divergence", 2026-10-22).
+indicator, "[Convergence](vocabulary.md#def-convergence) and Divergence", 2026-10-22).
 
 ## Mechanical checks
 
-A lint or reviewer reports each of these as a finding. Identifiers are
+A [lint](vocabulary.md#def-lint) or [reviewer](vocabulary.md#def-reviewer) reports each of these as a finding. Identifiers are
 `CK-nn`.
 
 | Check | Finding when |
@@ -101,13 +101,14 @@ A lint or reviewer reports each of these as a finding. Identifiers are
 | CK-01 | a claim contains a pronoun or determiner phrase from the referent rule with no noun-phrase antecedent earlier in that claim. "This specification restates" names its referent and passes; "This is fine" does not |
 | CK-02 | a claim exceeds 40 words |
 | CK-03 | a claim joins two clauses that could each stand as a claim, by `and`, `but`, `so`, a semicolon or an em-dash. A semicolon or a final `, and` that follows a colon separates list items and is not a join |
-| CK-04 | a project-specific term appears in a claim and is neither a `T` element nor linked to a definition site |
-| CK-05 | a term, claim or cluster has no provenance status, or a status without its required fields |
+| CK-04 | a project-specific term appears in a claim and is neither a `T` element nor linked to a [definition site](vocabulary.md#def-definition-site) |
+| CK-05 | a term, claim or [cluster](vocabulary.md#def-cluster) has no provenance status, or a status without its required fields |
 | CK-06 | a relation, cluster, `evidence:` or `Depends:` names an identifier that does not resolve |
 | CK-07 | the Reader header is not a catalog identifier, or the Purpose header lacks `report` or `document` |
 | CK-08 | an IR for RD-1 or RD-2 (either human-owner reader) has no Asks section |
 | CK-09 | a claim appears in two clusters |
 | CK-10 | the five sections are absent or out of order |
+| CK-11 | a term's `defined-at:` target does not resolve |
 
 What counts as a project-specific term for CK-04: any bolded term, any
 capitalized multi-word phrase that is not a proper name, and any word
@@ -115,15 +116,20 @@ in the project vocabulary.
 
 ## Rendering rule
 
-The paraphraser renders one claim as one sentence, or one cluster as
-one paragraph in the cluster's order. It introduces no claim and drops
-no claim. Relations and evidence are not rendered as sentences. A term
-the IR introduces is defined inline at its first use and listed again
-under *Terms introduced*. A term already in the vocabulary is used as
-the vocabulary defines it. For the human-owner readers, claims with
-status decided render under *What is already covered* and claims with
-status proposed under *What changed*, unless the claim's text names
-its part. It follows the
+The [paraphraser](vocabulary.md#def-paraphraser) renders one claim as one sentence, or one [cluster](vocabulary.md#def-cluster) as
+one paragraph in the cluster's order. It introduces no new claim and
+drops no claim. It may add [connective prose](vocabulary.md#def-connective-prose): sentences that assert
+nothing a model would hold and exist to join claims for the reader.
+Relations and evidence are not rendered as sentences. A term with a
+[definition site](vocabulary.md#def-definition-site) is linked at its first use in the unit the [term
+lifecycle](term-lifecycle.md) names, and bare after. A term the IR
+introduces is defined in a sentence of its own before its first use
+and listed under *Terms introduced*. For RD-5 a link becomes an inline
+gloss. For the human-owner readers, a claim renders under the part its
+`part:` field names. Without one, decided renders under *What is
+already covered* and proposed under *What changed*. Normative text (a
+rule, a specification) is rendered by the [reasoning role](vocabulary.md#def-reasoning-role), not the
+paraphraser, and the [reviewer](vocabulary.md#def-reviewer) still reads it ([branch point](vocabulary.md#def-branch-point), D3). It follows the
 [style specification](style-spec.md) for the IR's reader. It states an
 empty Asks section as "No asks." The
 [round-trip check](plans/pipeline-pilot.md#chunk-3--measurement-and-ratification)
@@ -138,15 +144,28 @@ document is, and a disagreement between the two is a defect in the
 prose. The IR of a delivered report (a chat message, a PR body) is a
 record: its Status becomes `delivered` and it is not edited after.
 
-Ratification of a `proposed` term is recorded in the project
-[vocabulary](vocabulary.md), and in any active document that lists the
-term. The rule that moves ratified terms and claims into a project's
-conceptual model is chunk 3 of the plan.
+Ratification of a `proposed` term adds a row with an anchor to the
+project [vocabulary](vocabulary.md), which becomes the term's
+[definition site](vocabulary.md#def-definition-site). The [term lifecycle](term-lifecycle.md) has the
+steps. Moving ratified terms and decided claims into a project's
+conceptual model is chunk 4's [graduation](vocabulary.md#def-graduation) work.
 
 ## Changes
 
-v1.1 (chunk 2, 2026-10-25), found by running the lint on the pilot's
-own IRs and by the first stranger review:
+v1.2 (chunk 3, 2026-10-25), from the owner's rulings after the live
+run:
+
+- The [paraphraser](vocabulary.md#def-paraphraser) may add [connective prose](vocabulary.md#def-connective-prose). It may not add a claim.
+- A claim may name its part of W-008 (reports map their deliverables)
+  with `part:`. The provenance mapping is the default.
+- A term with a [definition site](vocabulary.md#def-definition-site) renders as a link at first use. The
+  first-use unit and the RD-5 gloss are in the term lifecycle.
+- CK-11 checks `defined-at:` targets.
+- Normative text takes [disposition](vocabulary.md#def-disposition) D3: reviewed, not paraphrased.
+
+
+v1.1 (chunk 2, 2026-10-25), found by running the [lint](vocabulary.md#def-lint) on the pilot's
+own IRs and by the first [stranger](vocabulary.md#def-stranger) review:
 
 - Relations and evidence are not rendered. The round 1 paraphraser
   rendered both relations as sentences.

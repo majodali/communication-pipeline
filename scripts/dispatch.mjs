@@ -16,8 +16,9 @@ export function inputsOf(ir, ownerFlag = '') {
   const reader = (ir.header.reader ?? '').match(/^RD-\d/)?.[0] ?? '';
   const purpose = (ir.header.purpose ?? '').match(/^(report|document)/)?.[1] ?? '';
   const claims = ir.elements.filter((e) => e.kind === 'C');
+  const normative = /^yes/i.test(ir.header.normative ?? '');
   return {
-    reader, purpose,
+    reader, purpose, normative,
     claims: claims.length,
     proposedTerms: ir.elements.filter((e) => e.kind === 'T' && e.provenance?.status === 'proposed').length,
     dependentAsks: ir.elements.filter((e) => e.kind === 'A' && /Depends:/.test(e.body)).length,
@@ -27,10 +28,12 @@ export function inputsOf(ir, ownerFlag = '') {
 }
 
 export function decide(i) {
-  if (i.ownerFlag === 'review') return { rule: 'BP-02', disposition: 'D2' };
+  if (i.ownerFlag === 'review') return { rule: 'BP-02', disposition: i.normative ? 'D3' : 'D2' };
+  if (i.purpose === 'document' && i.normative) return { rule: 'BP-02a', disposition: 'D3' };
   if (i.purpose === 'document') return { rule: 'BP-03', disposition: 'D2' };
   if (i.reader === 'RD-4' || i.reader === 'RD-5') return { rule: 'BP-04', disposition: 'D2' };
-  if (i.proposedTerms > 0) return { rule: 'BP-05', disposition: 'D2' };
+  if (i.proposedTerms > 0 && i.purpose === 'document') return { rule: 'BP-05', disposition: 'D2' };
+  if (i.proposedTerms > 0) return { rule: 'BP-05a', disposition: 'D1' };
   if (i.reader === 'RD-2') return { rule: 'BP-06', disposition: 'D1' };
   if (i.reader === 'RD-1' && (i.claims > 6 || i.dependentAsks > 0 || i.longestClaim > 30)) return { rule: 'BP-07', disposition: 'D1' };
   if (i.reader === 'RD-3' && (i.claims > 12 || i.dependentAsks > 0)) return { rule: 'BP-08', disposition: 'D1' };

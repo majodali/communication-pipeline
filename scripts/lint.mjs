@@ -37,22 +37,36 @@ function colonBeforeConjunction(s) {
 // is fine" does not. Flag the pronoun form only.
 const PRONOUN_THEN_VERB = /^(It|This|That|These|Those)\s+(is|are|was|were|means|makes|made|has|have|had|does|did|will|would|can|could|should|may|might|seems|says|gives|keeps|lets|took|takes)\b/;
 
-function vocabularyTerms() {
-  const p = resolve(ROOT, 'docs/vocabulary.md');
-  if (!existsSync(p)) return new Set();
-  const terms = new Set();
-  for (const line of readFileSync(p, 'utf8').split('\n')) {
-    const m = /^\|\s*([^|]+?)\s*\|/.exec(line);
-    if (m && !/^(Term|---)/.test(m[1])) {
-      terms.add(m[1].replace(/\s*\(.*\)$/, '').toLowerCase());
-      const abbr = /\(([A-Z]{2,})\)/.exec(m[1]);
-      if (abbr) terms.add(abbr[1].toLowerCase());
+// The project vocabulary: term -> anchor id. Rows carry <a id="def-..."></a>.
+export function vocabularyEntries(file = resolve(ROOT, 'docs/vocabulary.md')) {
+  const entries = new Map();
+  if (!existsSync(file)) return entries;
+  for (const line of readFileSync(file, 'utf8').split('\n')) {
+    const m = /^\|\s*(?:<a id="([^"]+)"><\/a>)?\s*([^|]+?)\s*\|([^|]*)\|([^|]*)\|/.exec(line);
+    if (m && !/^(Term|---)/.test(m[2])) {
+      const term = m[2].replace(/\s*\(.*\)$/, '').trim();
+      const status = /^\s*decided/.test(m[4]) ? 'decided' : /^\s*proposed/.test(m[4]) ? 'proposed' : 'unknown';
+      entries.set(term.toLowerCase(), { term, anchor: m[1] ?? null, status });
+      const abbr = /\(([A-Z]{2,})\)/.exec(m[2]);
+      if (abbr) entries.set(abbr[1].toLowerCase(), { term: abbr[1], anchor: m[1] ?? null, status });
     }
   }
-  return terms;
+  return entries;
+}
+function vocabularyTerms() { return new Set(vocabularyEntries().keys()); }
+
+function anchorExists(target, fromFile) {
+  const [path, anchor] = target.split('#');
+  const file = path ? resolve(dirname(fromFile), path) : fromFile;
+  if (!existsSync(file)) return false;
+  if (!anchor) return true;
+  const text = readFileSync(file, 'utf8');
+  if (text.includes(`id="${anchor}"`)) return true;
+  const slug = (s) => s.toLowerCase().replace(/[^\w\s-]/g, '').trim().replace(/\s+/g, '-');
+  return text.split('\n').some((l) => /^#{1,6}\s/.test(l) && slug(l.replace(/^#+\s*/, '')) === anchor);
 }
 
-export function lintIR(text, { vocab = vocabularyTerms() } = {}) {
+export function lintIR(text, { vocab = vocabularyTerms(), file = null } = {}) {
   const ir = parseIR(text);
   const f = [];
   const add = (check, level, line, msg) => f.push({ check, level, line, msg });
@@ -81,6 +95,10 @@ export function lintIR(text, { vocab = vocabularyTerms() } = {}) {
         if (status === 'proposed' && !detail) add('CK-05', 'violation', e.line, `${e.id}: [proposed] needs the IR identifier or "this IR"`);
         if (status === 'inferred' && !/^R\d+/.test(detail)) add('CK-05', 'violation', e.line, `${e.id}: [inferred] must cite a relation R<n>`);
       }
+    }
+    if (e.kind === 'T' && file) {
+      const d = /defined-at:\s*(\S+)/.exec(e.body);
+      if (d && !/^https?:/.test(d[1]) && !anchorExists(d[1].replace(/[),.]+$/, ''), file)) add('CK-11', 'violation', e.line, `${e.id} defined-at target does not resolve: ${d[1]}`);
     }
     if (e.kind === 'C') {
       const w = wordCount(e.text);
@@ -118,7 +136,11 @@ export function lintIR(text, { vocab = vocabularyTerms() } = {}) {
       if (dep) for (const id of idsIn(dep[1], 'CA')) if (!ids.has(id)) add('CK-06', 'violation', e.line, `${e.id} depends on ${id}, which does not exist`);
     }
   }
-  return { findings: f, ir };
+  // An unratified term: proposed in this IR and not yet a decided vocabulary row.
+  const entries = vocabularyEntries();
+  const proposedTerms = ir.elements.filter((e) => e.kind === 'T' && e.provenance?.status === 'proposed')
+    .filter((e) => entries.get(e.text.split(/[:(]/)[0].trim().toLowerCase())?.status !== 'decided').length;
+  return { findings: f, ir, proposedTerms };
 }
 
 function proseBlocks(text) {
@@ -159,7 +181,7 @@ function sentences(p) {
   return p.replace(/`[^`]*`/g, 'code').replace(/\[([^\]]+)\]\([^)]*\)/g, '$1').split(/(?<=[.!?])\s+(?=[A-Z"(\[])/).map((s) => s.trim()).filter(Boolean);
 }
 
-export function lintProse(text, { verbose = false } = {}) {
+export function lintProse(text, { verbose = false, file = null, vocab = vocabularyEntries() } = {}) {
   const f = [];
   const add = (check, level, line, msg) => f.push({ check, level, line, msg });
   const blocks = proseBlocks(text);
@@ -172,8 +194,16 @@ export function lintProse(text, { verbose = false } = {}) {
     const present = pos.filter((p) => p >= 0).length;
     if (present >= 2 && (pos.some((p) => p < 0) || !(pos[0] < pos[1] && pos[1] < pos[2]))) add('SP-13', 'warning', 1, `a report carries Asks, What is already covered, What changed, in that order; found positions ${pos.join(',')}`);
   }
+  const perSection = /^Reader:.*\bRD-[45]\b/m.test(text.split('\n').slice(0, 20).join('\n'));
+  const isVocabulary = file ? /(^|\/)vocabulary\.md$/.test(file) : false;
+  let seenTerms = new Set();
+  const termList = [...vocab.values()].filter((v) => v.term.length > 3).sort((a, b) => b.term.length - a.term.length);
+  if (file) for (const m of text.matchAll(/\]\(([^)\s]*#def-[\w-]+)\)/g)) {
+    if (!anchorExists(m[1], file)) add('SP-24', 'violation', text.slice(0, m.index).split('\n').length, `link to ${m[1]} does not resolve`);
+  }
   for (const b of blocks) {
     if (b.kind === 'heading') {
+      if (perSection && /^##\s/.test(text.split('\n')[b.line - 1] ?? '')) seenTerms = new Set();
       if (/^[A-Z]{1,3}-\d+\s*$/.test(b.text)) add('SP-10', 'warning', b.line, `identifier-only header "${b.text}"`);
       if (/\?\s*$/.test(b.text)) add('SP-10', 'warning', b.line, `header ends in a question mark: "${b.text}"`);
       if (/—/.test(b.text) && !/^Chunk \d/.test(b.text)) add('SP-10', 'warning', b.line, `header contains an em-dash: "${b.text}"`);
@@ -190,6 +220,22 @@ export function lintProse(text, { verbose = false } = {}) {
       const after = scan.slice(m.index + id.length, m.index + id.length + 4);
       const inLink = /\[[^\]]*$/.test(scan.slice(0, m.index)) && /^[^\[]*\]\(/.test(scan.slice(m.index));
       if (!inLink && !/^\s*\(/.test(after)) add('SP-05', 'warning', b.line, `${id} appears bare on first use; add its name in parentheses or a link`);
+    }
+    if (b.kind === 'para' || b.kind === 'row' || b.kind === 'table') {
+      // code spans are not prose: blank them so a term inside backticks is not a first use
+      const scanText = b.text.replace(/`[^`]*`/g, (c) => ' '.repeat(c.length));
+      const lower = scanText.toLowerCase();
+      for (const v of termList) {
+        const key = v.term.toLowerCase();
+        if (seenTerms.has(key)) continue;
+        const idx = lower.search(new RegExp(`\\b${key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`));
+        if (idx === -1) continue;
+        seenTerms.add(key);
+        const before = scanText.slice(0, idx), after = scanText.slice(idx + key.length);
+        const linked = /\[[^\]]*$/.test(before) && /^[^\[\]]*\]\(/.test(after);
+        const defining = /<a id="def-/.test(before.slice(-60)) || /\*\*$/.test(before) || (b.kind === 'row' && /^\*\*/.test(b.text));
+        if (!linked && !defining && v.anchor && !isVocabulary) add('SP-23', 'warning', b.line, `"${v.term}" first used here without a link to its definition (#${v.anchor})`);
+      }
     }
     if (b.kind !== 'para' && b.kind !== 'row') continue;
     const row = b.kind === 'row';
@@ -225,8 +271,8 @@ export function lintProse(text, { verbose = false } = {}) {
 export function lintFile(path, opts = {}) {
   const text = readFileSync(path, 'utf8');
   const isIR = path.endsWith('.ir.md');
-  const r = isIR ? lintIR(text, opts) : lintProse(text, opts);
-  return { path, isIR, findings: r.findings, ir: r.ir };
+  const r = isIR ? lintIR(text, { ...opts, file: path }) : lintProse(text, { ...opts, file: path });
+  return { path, isIR, findings: r.findings, ir: r.ir, proposedTerms: r.proposedTerms ?? 0 };
 }
 
 function trackedMarkdown() {
@@ -244,7 +290,8 @@ function format(results) {
       lines.push(`${relative(process.cwd(), r.path)}:${f.line}: ${f.level.toUpperCase().padEnd(9)} ${f.check} ${f.msg}`);
     }
   }
-  lines.push(`${results.length} file(s); ${v} violation(s), ${w} warning(s), ${i} info`);
+  const pt = results.filter((r) => r.isIR).reduce((n, r) => n + (r.proposedTerms ?? 0), 0);
+  lines.push(`${results.length} file(s); ${v} violation(s), ${w} warning(s), ${i} info${results.some((r) => r.isIR) ? `; ${pt} unratified term(s) in IRs` : ''}`);
   return { text: lines.join('\n'), v, w, i };
 }
 

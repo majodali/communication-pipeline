@@ -2,7 +2,7 @@
 
 The register of evaluation cases. A case is a text graded against the
 pipeline's reader and pattern rules. The corpus exists so that changes
-to the IR schema, the style specification and the role instructions
+to the IR schema, the [style specification](../docs/vocabulary.md#def-style-specification) and the role instructions
 are tested against known defects rather than against memory.
 
 The file defines the **Evaluation case** custom document type under
@@ -21,7 +21,7 @@ sections in this order:
 | Source text | the text verbatim, in a fenced block, unedited |
 | Findings | a table: quoted text · defect · rule broken (named) · which pipeline stage should have caught it |
 | Measures | word count; finding count; findings per thousand words; unratified terms used |
-| Outcome | what the case changed: a schema rule, a lint, an instruction, or nothing yet |
+| Outcome | what the case changed: a schema rule, a [lint](../docs/vocabulary.md#def-lint), an instruction, or nothing yet |
 
 A case is never edited after grading except to fill its Outcome. A
 regrade is a new case citing the old one.
