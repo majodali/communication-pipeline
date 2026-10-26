@@ -48,7 +48,9 @@ C24. Round 2, on the fixed text, returned 29 findings, 18 in the new passages, 1
 
 C25. The round 2 findings are fixed, and the fixed text is unmeasured, so the owner decides at adjudication whether a third round runs. [decided: the rule, methodology PR #50]
 
-C26. The second round found 18 defects in passages the first round had already reviewed and the reasoning role had fixed, so one round under-measures normative text. [inferred: R3]
+C26. The second round found 18 defects in passages the first round had already reviewed and the reasoning role had fixed. evidence: E2. [decided: review, 2026-10-26]
+
+C27. One stranger round under-measures normative text. [inferred: R3]
 
 ### Tools
 
@@ -80,7 +82,7 @@ R1. C2 depends-on C1 because the three conditions name the subjects of #49, #17 
 
 R2. C20 depends-on C23 because the floor counts minor releases from the parking date.
 
-R3. C26 depends-on C24 because the second round's count on the fixed passages is the measure of what the first round and its fixes left.
+R3. C27 depends-on C26 because the second round's count on the fixed passages is the measure of what the first round and its fixes left.
 
 ## Evidence
 
