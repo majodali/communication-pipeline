@@ -22,10 +22,10 @@
   section)
 
 Declared exit: this project archives when its three [graduation](vocabulary.md#def-graduation)
-destinations have each accepted or declined their part (the plan's
-settled decision 6). Adopted 2026-10-24 at C1 on the owner's ruling
-that a pilot about documentation discipline should not run at the one
-tier that carries no documentation duties.
+conditions are met and the owner lifts the hold placed at the chunk 4
+gate (2026-10-26): the conditions were met that day, and the
+repository stays open, with its evaluation corpus, until the process
+works well in all projects.
 
 ## Deviation register
 

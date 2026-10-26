@@ -2,6 +2,13 @@
 
 Status: active (v1, chunk 1).
 
+> Superseded by methodology PR #48 (P-007 and P-008, with the style
+> guide's Mechanical checks table) on 2026-10-26; the rules' normative
+> home is [the methodology style guide](https://github.com/majodali/methodology/blob/main/docs/style.md). Rows SP-16 to
+> SP-19 (Allegro's P-009 to P-011) stay pilot-only. This file stays as
+> the paraphraser's and reviewer's input until the roles run in
+> project-orchestrator.
+
 Type: Specification (methodology vocabulary). The [paraphraser](vocabulary.md#def-paraphraser) applies
 it rule by rule. The [reviewer](vocabulary.md#def-reviewer) and the lints check against it.
 

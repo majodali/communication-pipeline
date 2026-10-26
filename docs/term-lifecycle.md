@@ -2,6 +2,11 @@
 
 Status: active (v1, chunk 3).
 
+> Superseded by methodology PR #48 (P-008, terms are defined once and
+> linked at first use) on 2026-10-26; the rule's normative home is
+> [P-008](https://github.com/majodali/methodology/blob/main/docs/rules/prose.md#p-008--terms-are-defined-once-and-linked-at-first-use).
+> This file stays as the pilot's record and the linker's reference.
+
 Type: Specification (methodology vocabulary). The [paraphraser](vocabulary.md#def-paraphraser), the
 [reviewer](vocabulary.md#def-reviewer) and the [lint](vocabulary.md#def-lint) implement against it. The specification is the
 lifecycle rule the pilot plan's chunk 3 promised: how a term moves

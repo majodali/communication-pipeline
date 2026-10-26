@@ -91,4 +91,17 @@ roles have moved to project-orchestrator, this repository archives
   [Case 004](../eval/cases/004-normative-text-reviews-2026-10-26.md):
   22.1 findings per thousand words on normative text. Source:
   [chunk 4 IR](records/chunk-4-graduation.ir.md). Gate: open, the
-  three destinations accept or decline; exit decision asked.
+  three destinations accept or decline; exit decision asked. Closed
+  2026-10-26: all three accepted; footprint ratified; second reviewer
+  round for normative text ruled; evaluation corpus stays; archive
+  on hold.
+- [x] **Chunk 5 — close-out** — 2026-10-26. Exit conditions recorded
+  as met in the [plan](plans/pipeline-pilot.md#chunk-5--close-out),
+  README and Classification; readers, style specification, term
+  lifecycle and schema marked superseded by their methodology homes
+  (K-010); vocabulary definition sites pointed upstream; branch point
+  v1.2 (D3 runs two reviewer rounds); methodology close-out amendment
+  (second round, Footprint header) and methodology-tools PR #18
+  (CK-12). Source: [chunk 5 IR](records/chunk-5-close-out.ir.md).
+  Gate: the owner confirms the record. The repository stays open on
+  the owner's hold.
