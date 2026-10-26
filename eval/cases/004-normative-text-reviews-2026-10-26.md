@@ -44,4 +44,4 @@ What the reviews found that the lint cannot: a MUST whose scope omits a reader c
 
 - The specification adopted into the methodology was rewritten in the methodology's own terms after its review: a mechanical transform of the pipeline's schema carried nine undefined borrowed terms and eleven unresolved referents.
 - CK-12 (identifier uniqueness) entered the schema (v1.3) and the methodology specification.
-- Readability after fixes was not re-measured for any of the four. A second round costs about 150 to 270 seconds and 100k tokens; the chunk 4 gate asks whether normative text gets a second round by default.
+- Readability after fixes was not re-measured for any of the four. A second round costs one more reviewer run, with the token and time figures in the Measures table. The chunk 4 gate asks whether normative text gets a second round by default.
