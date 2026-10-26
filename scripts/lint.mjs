@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Lint for IR documents (checks CK-01..CK-14, docs/ir-schema.md) and
+// Lint for IR documents (checks CK-01..CK-16, docs/ir-schema.md) and
 // rendered prose (the lint column of docs/style-spec.md).
 // Usage:
 //   node scripts/lint.mjs [--json] [--verbose] [files...]   (default: all tracked .md)
@@ -100,6 +100,8 @@ export function lintIR(text, { vocab = vocabularyTerms(), file = null } = {}) {
     else if (!/Verdict:|verdict/i.test(readFileSync(record, 'utf8'))) add('CK-14', 'violation', 1, `${record.split('/').pop()} holds no verdict`);
     }
   }
+  // CK-16 element form (methodology specification, 2026-10-26)
+  for (const st of ir.stray ?? []) add('CK-16', 'violation', st.line, `line is not an element, heading or continuation: "${st.text}"`);
   // CK-10 sections
   const kinds = ir.sections.map((s) => sectionKind(s.title));
   const order = ['terms', 'claims', 'relations', 'evidence', 'asks', 'resolution'];
