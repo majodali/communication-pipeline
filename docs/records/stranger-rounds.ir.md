@@ -54,7 +54,7 @@ C16. The meta-review recommends six process changes. evidence: E4. [decided: cas
 
 C23. The first three recommended changes: a readability threshold instead of zero findings; SP-18 calibrated to the corpus; stopping when the count is flat over three rounds, with a limit of five. evidence: E4. [decided: case 005, 2026-10-26]
 
-C24. The other three recommended changes: growth bounded to ten percent of the words per round; earlier rounds' findings carried in the reviewer prompt; the round's instance confirming each fix before the next fresh round. evidence: E4. [decided: case 005, 2026-10-26]
+C24. The last three recommended changes: growth bounded to ten percent of the words per round; earlier rounds' findings carried in the reviewer prompt; the round's instance confirming each fix before the next fresh round. evidence: E4. [decided: case 005, 2026-10-26]
 
 C17. The meta-review does not recommend reviewing only the amended passages after round 1, nor fixing only new-passage findings, and defers splitting the specification. evidence: E4. [decided: case 005, 2026-10-26]
 
