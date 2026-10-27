@@ -87,4 +87,4 @@ Proposed process changes.
 5. The readable round's findings are fixed and confirmed by that round's instance before delivery; the record marks each confirmed or unfixed. Evidence: ten findings unfixed; the confirmation caught 10 defects in five runs. Recommended.
 6. Change 6, connective prose, and the limit of ten stay as written. Evidence: neither fired in this count. No change.
 
-Owner's decision on the outcome: pending.
+Owner's decision on the outcome, 2026-10-27: changes 1 to 5 adopted; 6 as proposed, no change. Carried into branch point v1.5 and, for change 5, into the methodology's intermediate-representation specification.
