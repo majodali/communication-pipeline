@@ -72,4 +72,5 @@ for RD-4. By fix kind as the stranger judged: cut 4, rephrase 1, add
 | 10–14 | five sentences of steps 1 and 5 with no v1.5 claim | IR scope | declined: the v1.4 IR's C2, C36, C3, C41 and C11 back them, and the file carries the v1.4 map; carried in the next brief |
 
 Claims check (stale-aware) before round 3: 5 changed or new claims,
-0 missing, 0 stale. Same-instance confirmation: recorded below.
+0 missing, 0 stale. Same-instance confirmation: 9 of 9 fixes hold;
+the five declines accepted by the instance as answered.
