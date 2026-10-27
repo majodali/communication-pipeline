@@ -101,7 +101,7 @@ Claims check (stale-aware) after the fixes: 3 changed or new claims,
 
 Same-instance confirmation before delivery: 7 of 7 fixes hold, each
 marked confirmed above; none unfixed. Footprint before delivery:
-recorded below. IR Status set to `reviewed (round 3 readable; fixes
+  miss     eval/cases/008-meta-review-branch-point-rounds-2026-10-27.md. IR Status set to `reviewed (round 3 readable; fixes
 confirmed)`.
 
 ## Verdict
