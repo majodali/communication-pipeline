@@ -1,6 +1,6 @@
 # Branch point
 
-Status: under review (v1.5, round 1; v1.4 is active on main until
+Status: under review (v1.5, round 2; v1.4 is active on main until
 the owner accepts v1.5). Versions: v1.5, 2026-10-27, the five process
 changes of evaluation case 008; v1.4, 2026-10-27, accepted by the
 owner with the style rules SP-05, SP-18, SP-25 and SP-26 and the
