@@ -45,5 +45,7 @@ cut 1, rephrase 2, add 12; by locus: prose 2, IR 3, both 3, pre-v1.5
 | 14 | "that reader is the one the pipeline exists for" | rhetoric (pre-v1.5) | cut |
 | 15 | "the connective-prose rule" unnamed | term | rephrase C11: "The D1 row's rule on joining a reason to its rule by connective prose" |
 
-Claims check (stale-aware) before round 2: 8 changed or new claims,
-0 missing, 0 stale. Same-instance confirmation: recorded below.
+Claims check (stale-aware) before round 2: 7 changed or new claims,
+0 missing, 1 stale (C12, whose sentence is right and whose claim was
+fixed to match it: a stale report that is not a miss, the case the
+check cannot tell apart). Same-instance confirmation: recorded below.
