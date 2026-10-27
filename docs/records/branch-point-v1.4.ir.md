@@ -91,7 +91,7 @@ C25. SP-26, excess words, is a finding when a word, phrase or sentence can go wi
 
 C26. The brief lists the forms that are not defects. [decided: owner, 2026-10-27]
 
-C43. The forms that are not defects are a dated status line, a table cell listing items with semicolons, a parenthesis naming a rule or section, a sentence stating a count, a colon-introduced list with semicolons, and a document's Reader, Type or Status line. [decided: owner, 2026-10-27]
+C43. The forms that are not defects: a dated status line; a table cell with semicolons; a parenthesis naming a rule or section; a sentence stating a count; a colon-introduced list with semicolons; a document's Reader, Type or Status line. [decided: owner, 2026-10-27]
 
 C44. The brief adds any form the text under review needs. [decided: owner, 2026-10-27]
 
