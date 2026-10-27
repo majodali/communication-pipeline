@@ -184,7 +184,7 @@ RD-4 (fresh agent session), RD-5 (external reader).
 - BP-09: the proportional-verification case. The owner or the
   delegating agent reads the short form.
 
-## Meta-review and the decisions on cases 005 and 008
+## Meta-review: the trigger and the decisions on cases 005 and 008
 
 
 
