@@ -18,7 +18,7 @@ confirmation after the fixes, declined findings carried.
 | Round | Prose words | IR claims | Findings | Per 1,000 words | Verdict |
 |---|---|---|---|---|---|
 | 1 | 1,527 | 36 | 23 | 15.1 | not readable (restatement matched in substance; 4 contradictions, 0 undefined terms) |
-| 2 | 1,515 | 41 | | | |
+| 2 | 1,558 | 41 | | | |
 
 Meta-review: not due (fewer than three rounds) unless the count reaches three.
 
@@ -55,5 +55,7 @@ findings were fixed too: the whole document is under review.
 | 23 | semicolon | SP-09 (pre-v1.4) | rephrase: split |
 
 Claims check before round 2: 16 changed or new claims, 0 missing, C18
-removed. Same-instance confirmation: pending at the time of this
-entry; its result is recorded below.
+removed. Same-instance confirmation: 21 of 23 fixes hold; findings
+11 and 19 did not. Fixed again: C17 names the confirmation's findings
+table as the third thing the stranger reads; C26 lists the forms that
+are not defects. Claims check after: 2 changed, 0 missing.

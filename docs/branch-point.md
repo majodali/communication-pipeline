@@ -91,8 +91,8 @@ to the rule by connective prose.
 
 ## Reviewer brief
 
-During the review the stranger reads the prose and the IR and no
-other file. After reading the IR, the stranger reports each
+The stranger reads the prose, the IR, and at the confirmation its
+own findings table with the fixed passages, and no other file. After reading the IR, the stranger reports each
 disagreement between its restatement and the IR as a finding, with
 the side that caused it. The stranger reports findings against
 SP-01 to SP-05, SP-08 to SP-11, SP-18 as calibrated, SP-25 and SP-26
@@ -104,8 +104,12 @@ add). The brief's SP-05 reads as the methodology's
 text does not state. SP-25, contradiction, is a finding when two
 passages cannot both be followed. SP-26, excess words, is a finding
 when a word, phrase or sentence can go without losing a claim, or a
-claim is stated twice. The brief lists, for the text under review, the forms that are not
-defects. The stranger's report has four parts in order: Restatement,
+claim is stated twice. The brief lists the forms that are not defects: a status line
+recording versions with dates; a table cell listing items with
+semicolons; a parenthesis naming a rule or a section; a sentence
+about a count that states the count; a list introduced by a colon
+with items separated by semicolons; a Reader, Type or Status line at
+the head of a document; and any form the text under review adds. The stranger's report has four parts in order: Restatement,
 Findings, Readability, Counts.
 
 ## When an IR is required at all

@@ -2,7 +2,7 @@
 
 Reader: RD-4
 Purpose: document. The revision of the branch point that carries the six process changes of evaluation case 007 and the owner's decisions on case 005's held changes.
-Status: draft (round 1 fixes applied; confirmation pending; unratified terms 3)
+Status: draft (round 1 fixes confirmed, two fixed again; round 2 in progress; unratified terms 3)
 Source: the owner's decisions of 2026-10-27 ("They are all justified"; "Agreed on all four - go ahead with the branch-point revision"); evaluation cases 005, 006 and 007; the methodology specification docs/intermediate-representation.md as merged in PR #52 and #53.
 Normative: yes
 Footprint: docs/branch-point.md; docs/branch-point.review.md; docs/style-spec.md; docs/records/branch-point-v1.4.ir.md; eval/cases/005-meta-review-stranger-rounds-2026-10-26.md; eval/cases/007-meta-review-full-ir-rounds-2026-10-27.md; eval/README.md; scripts/claims-check.mjs; scripts/test.mjs
@@ -73,7 +73,7 @@ C16. A reason split from its rule into a claim of its own renders joined to the 
 
 ### The reviewer brief
 
-C17. During the review the stranger reads the prose and the IR and no other file. [decided: owner, 2026-10-27]
+C17. The stranger reads the prose, the IR, and at the confirmation its own findings table with the fixed passages, and no other file. [decided: owner, 2026-10-27]
 
 C19. After reading the IR, the stranger reports each disagreement between its restatement and the IR as a finding, with the side that caused it. [decided: owner, 2026-10-27]
 
@@ -89,7 +89,7 @@ C24. SP-25, contradiction, is a finding when two passages cannot both be followe
 
 C25. SP-26, excess words, is a finding when a word, phrase or sentence can go without losing a claim, or a claim is stated twice. [decided: owner, 2026-10-27]
 
-C26. The brief lists, for the text under review, the forms that are not defects. [decided: owner, 2026-10-27]
+C26. The brief lists the forms that are not defects: a status line recording versions with dates; a table cell listing items with semicolons; a parenthesis naming a rule or a section; a sentence about a count that states the count; a list introduced by a colon with items separated by semicolons; a Reader, Type or Status line at the head of a document; and any form the text under review adds. [decided: owner, 2026-10-27]
 
 C27. The stranger's report has four parts in order: Restatement, Findings, Readability, Counts. [decided: owner, 2026-10-27]
 
