@@ -15,4 +15,4 @@ check with the previous round's prose.
 
 | Round | Prose words | IR claims | Findings | Per 1,000 words | Verdict |
 |---|---|---|---|---|---|
-| 1 | 1680 | 13 | | | |
+| 1 | 1832 | 13 | | | |

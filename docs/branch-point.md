@@ -1,9 +1,12 @@
 # Branch point
 
-Status: active (v1.4, 2026-10-27, accepted by the owner with the
-style rules SP-05, SP-18, SP-25 and SP-26 and the terms restatement,
-locus and fix kind: the six process changes of evaluation case 007
-and the owner's decisions on case 005's held changes; v1.3, 2026-10-26:
+Status: under review (v1.5, round 1; v1.4 is active on main until
+the owner accepts v1.5). Versions: v1.5, 2026-10-27, the five process
+changes of evaluation case 008; v1.4, 2026-10-27, accepted by the
+owner with the style rules SP-05, SP-18, SP-25 and SP-26 and the
+terms restatement, locus and fix kind: the six process changes of
+evaluation case 007 and the owner's decisions on case 005's held
+changes; v1.3, 2026-10-26:
 every review runs in rounds until readable, limit ten; three or more
 rounds make a text a meta-review subject).
 Thresholds are provisional until the evaluation corpus tunes them. The rules are the Rendering conditions of the methodology's
@@ -62,8 +65,11 @@ of ten. This project's procedure for one round, in order:
    [review record](https://github.com/majodali/methodology/blob/main/docs/vocabulary.md#def-review-record).
    The script `scripts/claims-check.mjs` lists the changed claims and
    the best-matching sentence for each. The script reports a changed
-   claim no sentence carries. The reasoning role fixes, before the
-   round starts, a changed claim that no sentence carries.
+   claim no sentence carries. The script also reports a changed claim
+   whose best-matching sentence did not change since the last round,
+   as stale, from the previous round's prose. The reasoning role
+   fixes, before the round starts, a changed claim that no sentence
+   carries or that is stale.
 2. The round's stranger is a fresh instance. The stranger brief is
    the instruction the reasoning role gives a round's stranger
    instance. A restatement is the stranger's account, in at most 200 words of its own, of the text's
@@ -79,15 +85,23 @@ of ten. This project's procedure for one round, in order:
    answers, per accepted finding, whether the fix holds. The reasoning role fixes again,
    before the next round, a fix the instance says does not hold.
 5. The reasoning role adds to the next round's stranger brief the
-   declined findings of the earlier rounds with their reasons.
-6. A restatement mismatch repeated by two rounds in one form is a
-   prose finding, whatever the strangers attributed it to.
+   declined findings of the earlier rounds with their reasons, and a
+   finding declined in part with the declined part and its reason.
+6. A restatement mismatch on one passage in two rounds is a prose
+   finding, whatever the strangers attributed it to.
+7. At a readable verdict, the reasoning role fixes the round's
+   findings in the IR and then in the prose. The readable round's
+   stranger instance confirms each fix before delivery. The reasoning
+   role marks each finding of the readable round confirmed or unfixed
+   in the review record.
 
 The verdict is readable when the restatement matches the IR and the
 stranger finds no contradiction and no undefined term. The reasoning role records in the review record, per round,
 the prose word count, the IR claim count, the finding count and the
-verdict. Growth of the prose across rounds is a measure in the review
-record, not a bound.
+verdict. Growth of the prose across rounds is a measure in the review record,
+not a bound. During rounds the prose status line reads `under review`
+with the version and the round number. During rounds the IR's Status
+parenthesis holds the round number, and the two change together.
 
 ## Stranger brief
 
@@ -107,7 +121,7 @@ passages cannot both be followed. SP-26, excess words, is a finding
 when a word, phrase or sentence can go without losing a claim, or a
 claim is stated twice. The brief lists the forms that are not defects:
 
-- a dated status line;
+- a dated status line, and an under-review status line with a version and round number;
 - a table cell with semicolons;
 - a parenthesis naming a rule or section;
 - a sentence stating a count;
@@ -179,7 +193,11 @@ whether the process needs a change. The meta-reviews so far are
 [case 005](../eval/cases/005-meta-review-stranger-rounds-2026-10-26.md),
 on methodology PR #51's rounds, and
 [case 007](../eval/cases/007-meta-review-full-ir-rounds-2026-10-27.md),
-on methodology PR #52's rounds.
+on methodology PR #52's rounds, and
+[case 008](../eval/cases/008-meta-review-branch-point-rounds-2026-10-27.md),
+on branch point v1.4's rounds. The owner adopted case 008's five
+changes on 2026-10-27 as branch point v1.5. The connective-prose
+rule and the limit of ten stay as written.
 
 The owner's decisions of 2026-10-27 on case 005's held changes.
 Case 005's change 1, a verdict by a finding-rate threshold, is struck, because
@@ -204,4 +222,6 @@ that fired and the [disposition](vocabulary.md#def-disposition), in `eval/dispat
 [pilot plan](plans/pipeline-pilot.md) created the file. The log is
 the data the thresholds are tuned against.
 
-<!-- render map: C37→¶Status C47→¶Status C38→¶Status C39→¶D2 C48→¶D1 C1→¶Rounds C2→¶Rounds-1 C36→¶Rounds-1 C3→¶Rounds-1 C41→¶Rounds-1 C4→¶Rounds-1 C5→¶Rounds-2 C6→¶Rounds-3 C7→¶Rounds-3 C35→¶Rounds-3 C8→¶Rounds-3 C9→¶Rounds-4 C50→¶Rounds-4 C10→¶Rounds-4 C11→¶Rounds-5 C12→¶Rounds-6 C13→¶Rounds-verdict C14→¶Rounds-verdict C15→¶Rounds-verdict C16→¶D1 C17→¶Rounds-2 C46→¶Brief C19→¶Brief C20→¶Brief C21→¶Brief C22→¶Brief C23→¶Brief C24→¶Brief C25→¶Brief C26→¶Brief C43→¶Brief C44→¶Brief C27→¶Brief C28→¶Meta-2 C29→¶Meta-2 C30→¶Meta-2 C51→¶Meta-2 C31→¶Meta-2 C32→¶Meta-2 C42→¶Meta-2 C33→¶Meta-1 C40→¶Meta-1 C49→¶D3 C34→¶Meta-1 (IR: docs/records/branch-point-v1.4.ir.md) -->
+<!-- v1.4 map (IR: docs/records/branch-point-v1.4.ir.md): C37→¶Status C47→¶Status C38→¶Status C39→¶D2 C48→¶D1 C1→¶Rounds C2→¶Rounds-1 C36→¶Rounds-1 C3→¶Rounds-1 C41→¶Rounds-1 C4→¶Rounds-1 C5→¶Rounds-2 C6→¶Rounds-3 C7→¶Rounds-3 C35→¶Rounds-3 C8→¶Rounds-3 C9→¶Rounds-4 C50→¶Rounds-4 C10→¶Rounds-4 C11→¶Rounds-5 C12→¶Rounds-6 C13→¶Rounds-verdict C14→¶Rounds-verdict C15→¶Rounds-verdict C16→¶D1 C17→¶Rounds-2 C46→¶Brief C19→¶Brief C20→¶Brief C21→¶Brief C22→¶Brief C23→¶Brief C24→¶Brief C25→¶Brief C26→¶Brief C43→¶Brief C44→¶Brief C27→¶Brief C28→¶Meta-2 C29→¶Meta-2 C30→¶Meta-2 C51→¶Meta-2 C31→¶Meta-2 C32→¶Meta-2 C42→¶Meta-2 C33→¶Meta-1 C40→¶Meta-1 C49→¶D3 C34→¶Meta-1 -->
+
+<!-- render map: C1→¶Rounds-1 C2→¶Rounds-1 C4→¶Rounds-5 C3→¶Rounds-6 C8→¶Rounds-7 C9→¶Rounds-7 C10→¶Rounds-7 C5→¶Rounds-verdict C6→¶Rounds-verdict C7→¶Brief-forms C12→¶Meta-1 C13→¶Meta-1 C11→¶Meta-1 (IR: docs/records/branch-point-v1.5.ir.md) -->
