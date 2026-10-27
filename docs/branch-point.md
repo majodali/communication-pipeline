@@ -1,6 +1,6 @@
 # Branch point
 
-Status: under review (v1.6, round 1). Until the owner accepts v1.6,
+Status: under review (v1.6, round 2). Until the owner accepts v1.6,
 v1.5 is active on main. Versions: v1.6, 2026-10-27, the signal-based
 meta-review trigger; v1.5, 2026-10-27, the five process changes of
 evaluation case 008; v1.4, 2026-10-27, accepted by the
@@ -106,8 +106,8 @@ status line and the IR's Status parenthesis together.
 
 ## Stranger brief
 
-The stranger reads only the prose, the IR, and at Rounds step 4 its
-own findings table with the fixed passages. Each
+The stranger reads only the prose, the IR, and at Rounds steps 4 and
+7 its own findings table with the fixed passages. Each
 finding carries a locus (the prose, the IR, or both) and a fix kind
 (cut, rephrase, or add). After reading the IR, the stranger reports
 each disagreement between its restatement and the IR as a finding.
@@ -141,8 +141,7 @@ delegating agent) may be written as prose directly, with the prose
 [lint](vocabulary.md#def-lint). The condition: the report introduces no term, records no decision, and states no
 [register fact](https://github.com/majodali/methodology/blob/main/docs/vocabulary.md#def-register-fact). A term, a decision, or a
 register fact requires the IR, because each is content a model would
-hold (owner ruling, 2026-10-25). Documents
-always start as an IR.
+hold (owner ruling, 2026-10-25). The reasoning role writes a document as an IR first.
 
 ## Rules
 
@@ -200,9 +199,9 @@ contradiction in a passage an earlier round's fix touched. At the end
 of a count, the reasoning role checks the four signals against the
 review record. The reasoning role writes `Meta-review: pending` when
 the text is a subject and `Meta-review: not indicated` otherwise,
-naming the signals checked. The script `scripts/signals.mjs` reads a
-review record and reports the first and third signals from its
-confirmation lines, claims-check lines and curve table. The script
+naming the signals checked. The script `scripts/signals.mjs` reads a review record and reports
+the first and third signals from its per-round word counts,
+confirmation results and claims-check results. The script
 reports wording that may show the second or fourth signal, for the
 reasoning role to confirm by reading. The owner may dispatch a
 meta-review of any text, signal or none. The limit of ten stays as
@@ -210,17 +209,18 @@ the one count-based trigger. The trigger of three rounds predated the
 measurements and fired on counts that converged without any step
 failing. Every meta-review so far was foreshadowed by a signal in its
 review record: growth and an abandoned IR, a drift the mechanical
-check passed, confirmations rejecting fixes. The meta-review reads
-the review record and the text, and reports, as an [evaluation case](vocabulary.md#def-evaluation-case),
-whether the process needs a change. The meta-reviews so far are
+check passed, confirmations rejecting fixes. When the owner dispatches a meta-review, the meta-review session
+reads the review record and the text, and reports, as an
+[evaluation case](vocabulary.md#def-evaluation-case), whether the
+process needs a change. The meta-reviews so far are
 [case 005](../eval/cases/005-meta-review-stranger-rounds-2026-10-26.md),
 on methodology PR #51's rounds, and
 [case 007](../eval/cases/007-meta-review-full-ir-rounds-2026-10-27.md),
 on methodology PR #52's rounds, and
 [case 008](../eval/cases/008-meta-review-branch-point-rounds-2026-10-27.md),
-on branch point v1.4's rounds. The owner adopted case 008's five changes on 2026-10-27. The D1 row's
-rule on joining a reason to its rule by connective prose stays as
-written.
+on branch point v1.4's rounds. The owner adopted case 008's five changes on 2026-10-27. Case 008's
+change 6, the D1 row's rule on joining a reason to its rule by
+connective prose, stays as written.
 
 The owner's decisions of 2026-10-27 on case 005's held changes.
 Case 005's change 1, a verdict by a finding-rate threshold, is struck, because
@@ -249,4 +249,4 @@ the data the thresholds are tuned against.
 
 <!-- v1.5 map (IR: docs/records/branch-point-v1.5.ir.md): C1→¶Rounds-1 C2→¶Rounds-1 C14→¶Rounds-1 C4→¶Rounds-5 C3→¶Rounds-6 C8→¶Rounds-7 C9→¶Rounds-7 C10→¶Rounds-7 C5→¶Rounds-verdict C6→¶Rounds-verdict C16→¶Rounds-verdict C7→¶Brief-forms C12→¶Meta-1 C13→¶Meta-1 C17→¶Status C15→¶Status C11→¶Meta-1 C18→¶Meta-1 -->
 
-<!-- render map: C1→¶Meta-1 C2→¶Meta-1 C3→¶Meta-1 C4→¶Meta-1 C5→¶Meta-1 C6→¶Meta-1 C7→¶Meta-1 C8→¶Meta-1 C9→¶Meta-1 C10→¶Meta-1 C13→¶Meta-1 C11→¶Meta-1 C12→¶Meta-1 (IR: docs/records/branch-point-v1.6.ir.md) -->
+<!-- render map: C1→¶Meta-1 C2→¶Meta-1 C3→¶Meta-1 C4→¶Meta-1 C5→¶Meta-1 C6→¶Meta-1 C7→¶Meta-1 C8→¶Meta-1 C9→¶Meta-1 C10→¶Meta-1 C13→¶Meta-1 C11→¶Meta-1 C12→¶Meta-1 C14→¶Status C15→¶Meta-1 C16→¶Meta-1 C17→¶Brief C18→¶Required (IR: docs/records/branch-point-v1.6.ir.md) -->

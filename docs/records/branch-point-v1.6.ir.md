@@ -2,7 +2,7 @@
 
 Reader: RD-4
 Purpose: document. The revision of the branch point that replaces the three-round meta-review trigger with four signals read from the review record, by owner decision of 2026-10-27.
-Status: draft (round 1 in progress; unratified terms 0)
+Status: draft (round 1 fixes applied, confirmation pending; unratified terms 0)
 Source: the owner's decision of 2026-10-27 ("signal based triggers are preferred"; "Go ahead with those defaults"); the five recorded counts; the methodology specification's count-3 amendment.
 Normative: yes
 Footprint: docs/branch-point.md; docs/records/branch-point-v1.6.ir.md; docs/records/branch-point-v1.6.review.md; docs/vocabulary.md; scripts/signals.mjs; scripts/test.mjs
@@ -29,7 +29,7 @@ C6. At the end of a count, the reasoning role checks the four signals against th
 
 C7. The reasoning role writes `Meta-review: pending` when the text is a subject and `Meta-review: not indicated` otherwise, naming the signals checked. [decided: owner, 2026-10-27]
 
-C8. The script `scripts/signals.mjs` reads a review record and reports the first and third signals from its confirmation lines, claims-check lines and curve table. [proposed: this IR]
+C8. The script `scripts/signals.mjs` reads a review record and reports the first and third signals from its per-round word counts, confirmation results and claims-check results. [proposed: this IR]
 
 C9. The script reports wording that may show the second or fourth signal, for the reasoning role to confirm by reading. [proposed: this IR]
 
@@ -42,6 +42,16 @@ C11. The trigger of three rounds predated the measurements and fired on counts t
 C12. Every meta-review so far was foreshadowed by a signal in its review record: growth and an abandoned IR, a drift the mechanical check passed, confirmations rejecting fixes. [decided: cases 005, 007, 008]
 
 C13. The limit of ten stays as the one count-based trigger. [decided: owner, 2026-10-27]
+
+C14. Until the owner accepts v1.6, v1.5 is active on main. [decided: owner, 2026-10-27]
+
+C15. Case 008's change 6, the D1 row's rule on joining a reason to its rule by connective prose, stays as written. [decided: owner, 2026-10-27]
+
+C16. When the owner dispatches a meta-review, the meta-review session reads the review record and the text, and reports, as an evaluation case, whether the process needs a change. [decided: owner, 2026-10-26]
+
+C17. The stranger reads only the prose, the IR, and at Rounds steps 4 and 7 its own findings table with the fixed passages. [decided: owner, 2026-10-27]
+
+C18. The reasoning role writes a document as an IR first. [decided: owner, 2026-10-25]
 
 ## Relations
 
@@ -67,4 +77,4 @@ E3. eval/cases/005-meta-review-stranger-rounds-2026-10-26.md: prose 2,572 to 4,5
 
 ## Asks
 
-A1. Accept branch point v1.6. Depends: C1 to C13.
+A1. Accept branch point v1.6. Depends: C1 to C18.
