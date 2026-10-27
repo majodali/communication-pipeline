@@ -16,7 +16,8 @@ check with the previous round's prose.
 | Round | Prose words | IR claims | Findings | Per 1,000 words | Verdict |
 |---|---|---|---|---|---|
 | 1 | 1,832 | 13 | 15 | 8.2 | not readable (restatement scoped to the whole document; 2 contradictions, 1 undefined term) |
-| 2 | 1878 | 15 | | | |
+| 2 | 1,878 | 15 | 14 | 7.5 | not readable (restatement mismatch on C4; 0 contradictions, 1 undefined term) |
+| 3 | 1882 | 17 | | | |
 
 ## Round 1, 2026-10-27
 
@@ -50,3 +51,25 @@ Claims check (stale-aware) before round 2: 7 changed or new claims,
 fixed to match it: a stale report that is not a miss, the case the
 check cannot tell apart). Same-instance confirmation: 15 of 15 fixes hold; one new defect
 noted and fixed, A1's dependency range extended to C15.
+
+## Round 2, 2026-10-27
+
+1,878 words; 14 findings; 7.5 per thousand words. Restatement: 170
+words; one mismatch, C4's target missing from its sentence.
+Contradictions 0, undefined terms 1 ("unfixed"); verdict: not readable
+for RD-4. By fix kind as the stranger judged: cut 4, rephrase 1, add
+9; by locus: prose 5, both 4, pre-v1.5 5.
+
+| # | Finding (shortened) | Kind | Disposition |
+|---|---|---|---|
+| 1, 2 | the partial-decline sentence names no target; "also" | mismatch, excess | rephrase to C4's wording |
+| 3 | "also" | excess | cut |
+| 4 | "or that is stale" | excess | cut "that" |
+| 5 | "unfixed" undefined | term | rephrase C10: "as unfixed when the instance did not confirm its fix" |
+| 6, 7 | C6 two claims, no actor for the status change | compound, SP-18 | split: C6, C16 (the reasoning role) |
+| 8 | the v1.4-active sentence stated twice | excess | cut from Meta-review; C15 maps to the status line |
+| 9 | C13 two claims | compound | split: C13, C17 |
+| 10–14 | five sentences of steps 1 and 5 with no v1.5 claim | IR scope | declined: the v1.4 IR's C2, C36, C3, C41 and C11 back them, and the file carries the v1.4 map; carried in the next brief |
+
+Claims check (stale-aware) before round 3: 5 changed or new claims,
+0 missing, 0 stale. Same-instance confirmation: recorded below.

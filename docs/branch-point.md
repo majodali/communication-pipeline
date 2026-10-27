@@ -1,6 +1,6 @@
 # Branch point
 
-Status: under review (v1.5, round 2; v1.4 is active on main until
+Status: under review (v1.5, round 3; v1.4 is active on main until
 the owner accepts v1.5). Versions: v1.5, 2026-10-27, the five process
 changes of evaluation case 008; v1.4, 2026-10-27, accepted by the
 owner with the style rules SP-05, SP-18, SP-25 and SP-26 and the
@@ -64,11 +64,11 @@ of ten. This project's procedure for one round, in order:
    [review record](https://github.com/majodali/methodology/blob/main/docs/vocabulary.md#def-review-record).
    The script `scripts/claims-check.mjs` lists the changed claims and
    the best-matching sentence for each. The script reports a changed
-   claim no sentence carries. The script also reports a changed claim whose best-matching sentence
-   did not change since the last round, as stale. The script takes the
+   claim no sentence carries. The script reports a changed claim whose best-matching sentence did
+   not change since the last round, as stale. The script takes the
    previous round's prose as its base. The reasoning role fixes the
    prose, before the round starts, for a changed claim that no
-   sentence carries or that is stale.
+   sentence carries or is stale.
 2. The round's stranger is a fresh instance. The stranger brief is
    the instruction the reasoning role gives a round's stranger
    instance. A restatement is the stranger's account, in at most 200 words of its own, of the text's
@@ -84,26 +84,25 @@ of ten. This project's procedure for one round, in order:
    answers, per accepted finding, whether the fix holds. The reasoning role fixes again,
    before the next round, a fix the instance says does not hold.
 5. The reasoning role adds to the next round's stranger brief the
-   declined findings of the earlier rounds with their reasons. The
-   reasoning role also adds a finding declined in part, with the
-   declined part and its reason.
+   declined findings of the earlier rounds with their reasons. The reasoning role adds to the next round's stranger brief a finding
+   declined in part, with the declined part and its reason.
 6. The reasoning role treats a restatement mismatch on one passage in
    any two rounds as a prose finding, whatever the strangers
    attributed it to.
 7. At a readable verdict, the reasoning role fixes the round's
    findings in the IR and then in the prose. The readable round's
-   stranger instance confirms each fix before delivery. The reasoning
-   role marks each finding of the readable round confirmed or unfixed
-   in the review record.
+   stranger instance confirms each fix before delivery. The reasoning role marks in the review record each finding of the
+   readable round as confirmed, or as unfixed when the instance did
+   not confirm its fix.
 
 The verdict is readable when the restatement matches the IR and the
 stranger finds no contradiction and no undefined term. The reasoning role records in the review record, per round,
 the prose word count, the IR claim count, the finding count and the
 verdict. Growth of the prose across rounds is a measure in the review record,
 not a bound. During rounds the prose status line reads `under review`
-with the version and the round number. During rounds the IR's Status
-parenthesis holds the round number, and the prose status line and
-the IR's Status parenthesis change together.
+with the version and the round number. During rounds the IR's Status parenthesis holds the round number. The
+reasoning role changes the prose status line and the IR's Status
+parenthesis together.
 
 ## Stranger brief
 
@@ -197,10 +196,8 @@ on methodology PR #51's rounds, and
 [case 007](../eval/cases/007-meta-review-full-ir-rounds-2026-10-27.md),
 on methodology PR #52's rounds, and
 [case 008](../eval/cases/008-meta-review-branch-point-rounds-2026-10-27.md),
-on branch point v1.4's rounds. The owner adopted case 008's five
-changes on 2026-10-27, and branch point v1.5 carries them pending the
-owner's acceptance. Until the owner accepts v1.5, v1.4 is the active
-version on main. The D1 row's rule on joining a reason to its rule by
+on branch point v1.4's rounds. The owner adopted case 008's five changes on 2026-10-27. Branch point
+v1.5 carries the five changes pending the owner's acceptance. The D1 row's rule on joining a reason to its rule by
 connective prose, and the limit of ten, stay as written.
 
 The owner's decisions of 2026-10-27 on case 005's held changes.
@@ -228,4 +225,4 @@ the data the thresholds are tuned against.
 
 <!-- v1.4 map (IR: docs/records/branch-point-v1.4.ir.md): C37→¶Status C47→¶Status C38→¶Status C39→¶D2 C48→¶D1 C1→¶Rounds C2→¶Rounds-1 C36→¶Rounds-1 C3→¶Rounds-1 C41→¶Rounds-1 C4→¶Rounds-1 C5→¶Rounds-2 C6→¶Rounds-3 C7→¶Rounds-3 C35→¶Rounds-3 C8→¶Rounds-3 C9→¶Rounds-4 C50→¶Rounds-4 C10→¶Rounds-4 C11→¶Rounds-5 C12→¶Rounds-6 C13→¶Rounds-verdict C14→¶Rounds-verdict C15→¶Rounds-verdict C16→¶D1 C17→¶Rounds-2 C46→¶Brief C19→¶Brief C20→¶Brief C21→¶Brief C22→¶Brief C23→¶Brief C24→¶Brief C25→¶Brief C26→¶Brief C43→¶Brief C44→¶Brief C27→¶Brief C28→¶Meta-2 C29→¶Meta-2 C30→¶Meta-2 C51→¶Meta-2 C31→¶Meta-2 C32→¶Meta-2 C42→¶Meta-2 C33→¶Meta-1 C40→¶Meta-1 C49→¶D3 C34→¶Meta-1 -->
 
-<!-- render map: C1→¶Rounds-1 C2→¶Rounds-1 C14→¶Rounds-1 C4→¶Rounds-5 C3→¶Rounds-6 C8→¶Rounds-7 C9→¶Rounds-7 C10→¶Rounds-7 C5→¶Rounds-verdict C6→¶Rounds-verdict C7→¶Brief-forms C12→¶Meta-1 C13→¶Meta-1 C15→¶Meta-1 C11→¶Meta-1 (IR: docs/records/branch-point-v1.5.ir.md) -->
+<!-- render map: C1→¶Rounds-1 C2→¶Rounds-1 C14→¶Rounds-1 C4→¶Rounds-5 C3→¶Rounds-6 C8→¶Rounds-7 C9→¶Rounds-7 C10→¶Rounds-7 C5→¶Rounds-verdict C6→¶Rounds-verdict C16→¶Rounds-verdict C7→¶Brief-forms C12→¶Meta-1 C13→¶Meta-1 C17→¶Meta-1 C15→¶Status C11→¶Meta-1 (IR: docs/records/branch-point-v1.5.ir.md) -->

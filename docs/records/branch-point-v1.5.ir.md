@@ -2,7 +2,7 @@
 
 Reader: RD-4
 Purpose: document. The revision of the branch point that carries the five process changes of evaluation case 008, adopted by the owner on 2026-10-27.
-Status: draft (round 2 in progress; unratified terms 0)
+Status: draft (round 2 fixes applied, confirmation pending; unratified terms 0)
 Source: the owner's decision of 2026-10-27 ("go ahead with case 008's five changes"); evaluation case 008; branch point v1.4 and its review record.
 Normative: yes
 Footprint: docs/branch-point.md; docs/records/branch-point-v1.5.ir.md; docs/records/branch-point-v1.5.review.md; eval/cases/008-meta-review-branch-point-rounds-2026-10-27.md; eval/README.md; scripts/claims-check.mjs; scripts/test.mjs
@@ -29,7 +29,9 @@ C4. The reasoning role adds to the next round's stranger brief a finding decline
 
 C5. During rounds the prose status line reads `under review` with the version and the round number. [decided: owner, 2026-10-27]
 
-C6. During rounds the IR's Status parenthesis holds the round number, and the prose status line and the IR's Status parenthesis change together. [decided: owner, 2026-10-27]
+C6. During rounds the IR's Status parenthesis holds the round number. [decided: owner, 2026-10-27]
+
+C16. The reasoning role changes the prose status line and the IR's Status parenthesis together. [decided: owner, 2026-10-27]
 
 C7. The stranger brief lists the under-review status line among the forms that are not defects. [decided: owner, 2026-10-27]
 
@@ -37,7 +39,7 @@ C8. At a readable verdict, the reasoning role fixes the round's findings in the 
 
 C9. The readable round's stranger instance confirms each fix before delivery. [decided: owner, 2026-10-27]
 
-C10. The reasoning role marks each finding of the readable round confirmed or unfixed in the review record. [decided: owner, 2026-10-27]
+C10. The reasoning role marks in the review record each finding of the readable round as confirmed, or as unfixed when the instance did not confirm its fix. [decided: owner, 2026-10-27]
 
 C11. The D1 row's rule on joining a reason to its rule by connective prose, and the limit of ten, stay as written. [decided: owner, 2026-10-27]
 
@@ -45,7 +47,9 @@ C11. The D1 row's rule on joining a reason to its rule by connective prose, and 
 
 C12. The meta-reviews so far are case 005, on methodology PR #51's rounds, case 007, on methodology PR #52's rounds, and case 008, on branch point v1.4's rounds. [decided: case 008]
 
-C13. The owner adopted case 008's five changes on 2026-10-27, and branch point v1.5 carries them pending the owner's acceptance. [decided: owner, 2026-10-27]
+C13. The owner adopted case 008's five changes on 2026-10-27. [decided: owner, 2026-10-27]
+
+C17. Branch point v1.5 carries the five changes pending the owner's acceptance. [decided: owner, 2026-10-27]
 
 C15. Until the owner accepts v1.5, v1.4 is the active version on main. [decided: owner, 2026-10-27]
 
@@ -55,7 +59,7 @@ R1. C2 supports C1 because the script performs the check the rule requires.
 
 R5. C14 depends-on C1 because the fix answers what the check reports.
 
-R2. C6 depends-on C5 because the two statuses carry one state.
+R2. C16 depends-on C5 because the two statuses carry one state.
 
 R3. C10 depends-on C9 because the mark records the confirmation's answer.
 
@@ -69,4 +73,4 @@ E2. docs/records/branch-point-v1.4.review.md: round 5's three fixes passed the c
 
 ## Asks
 
-A1. Accept branch point v1.5. Depends: C1 to C15.
+A1. Accept branch point v1.5. Depends: C1 to C17.
