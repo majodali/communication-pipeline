@@ -22,7 +22,7 @@ confirmation after the fixes, declined findings carried.
 | 3 | 1,637 | 46 | 9 | 5.5 | not readable (restatement mismatch on C33's wording; 0 contradictions, 1 undefined term, pre-v1.4) |
 | 4 | 1,637 | 47 | 6 | 3.7 | not readable (restatement mismatch on provenance: C3, C41, A1; 3 contradictions, 1 undefined term) |
 | 5 | 1,639 | 49 | 9 | 5.5 | not readable (restatement mismatch on C49 only; 0 contradictions, 0 undefined terms) |
-| 6 | 1,631 | 48 | | | |
+| 6 | 1,626 | 48 | | | |
 
 
 ## Round 1, 2026-10-27
