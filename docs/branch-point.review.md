@@ -18,9 +18,9 @@ confirmation after the fixes, declined findings carried.
 | Round | Prose words | IR claims | Findings | Per 1,000 words | Verdict |
 |---|---|---|---|---|---|
 | 1 | 1,527 | 36 | 23 | 15.1 | not readable (restatement matched in substance; 4 contradictions, 0 undefined terms) |
-| 2 | 1,558 | 41 | | | |
+| 2 | 1,580 | 43 | 18 | 11.4 | not readable (restatement matched in substance; 1 contradiction, 2 undefined terms) |
+| 3 | 1,600 | 43 | | | |
 
-Meta-review: not due (fewer than three rounds) unless the count reaches three.
 
 ## Round 1, 2026-10-27
 
@@ -59,3 +59,40 @@ removed. Same-instance confirmation: 21 of 23 fixes hold; findings
 11 and 19 did not. Fixed again: C17 names the confirmation's findings
 table as the third thing the stranger reads; C26 lists the forms that
 are not defects. Claims check after: 2 changed, 0 missing.
+
+## Round 2, 2026-10-27
+
+1,580 words; 18 findings; 11.4 per thousand words. Restatement: 199
+words, matching the IR in substance; "no" on five points: C9 against
+R2 (confirmation of every finding or of accepted ones), C44 (adds or
+lists), C20 with C22 through R5 (the brief's SP-05 against the style
+specification's), A1 and the IR's draft status against the prose's
+active status. Contradictions 1 (R5), undefined terms 2 ("threshold
+verdict", "flat-stop rule"); verdict: not readable for RD-4. By fix
+kind as the stranger judged: cut 3, rephrase 3, add 12; by locus:
+prose 6, IR 1, both 11. The round before the container restart was
+lost unreported and run again; the record counts the run that
+reported.
+
+| # | Finding (shortened) | Kind | Disposition |
+|---|---|---|---|
+| 1 | case 006 cited in the status line and nowhere in the IR | IR gap | cut "006 and"; the IR Purpose names case 007 as the meta-review of case 006's rounds |
+| 2 | confirmation of every finding vs accepted ones (C9, R2) | contradiction (IR) | rephrase C9: "per accepted finding" |
+| 3 | "adds" vs "lists" (C44) | mismatch | rephrase the prose to C44 |
+| 4 | the IR's draft status and pending terms vs the prose's active status | mismatch | declined: the IR header and asks describe the IR; the delivering report carries the ratification ask (W-008) |
+| 5, 15 | R5 names a contradiction the reviewed set cannot resolve | contradiction | rephrase C22: SP-05 in the brief and in the style specification from v1.4; R5 becomes supports |
+| 6 | 68-word sentence | length | rephrase: the forms as a list (C43, C44) |
+| 7 | "at the confirmation" | referent | rephrase C17: "at Rounds step 4" |
+| 8, 13 | "the next round's brief" and no actor | referent, SP-18 | rephrase C11: the reasoning role adds the declined findings to the brief |
+| 9, 10 | "threshold verdict", "flat-stop rule" undefined | term | rephrase C28, C29: the rules described, not named |
+| 11, 12 | the rendering rule under Rounds, no actor | header, SP-18 | rephrase C16 and move to the D1 row: the renderer named |
+| 14 | per-round record without an actor | SP-18 | rephrase C14: the reasoning role |
+| 16 | growth stated twice | excess | rephrase C30: the decision refers to the Rounds measure |
+| 17 | "on the rounds of" | excess | rephrase C34 |
+| 18 | SP-01 to SP-11 bare | identifier | declined: the range is linked to the style specification's rule table, the identifiers' definition site |
+
+Claims check before round 3: 10 changed claims, 0 missing. The
+same-instance confirmation is recorded below. Round 3 starts, so the
+text is a meta-review subject.
+
+Meta-review: pending

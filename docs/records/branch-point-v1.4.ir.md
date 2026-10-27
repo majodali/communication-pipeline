@@ -1,8 +1,8 @@
 # IR: Branch point v1.4, the rounds procedure and the reviewer brief
 
 Reader: RD-4
-Purpose: document. The revision of the branch point that carries the six process changes of evaluation case 007 and the owner's decisions on case 005's held changes.
-Status: draft (round 1 fixes confirmed, two fixed again; round 2 in progress; unratified terms 3)
+Purpose: document. The revision of the branch point that carries the six process changes of evaluation case 007, the meta-review of case 006's rounds, and the owner's decisions on case 005's held changes.
+Status: draft (round 2 fixes applied; confirmation pending; unratified terms 3)
 Source: the owner's decisions of 2026-10-27 ("They are all justified"; "Agreed on all four - go ahead with the branch-point revision"); evaluation cases 005, 006 and 007; the methodology specification docs/intermediate-representation.md as merged in PR #52 and #53.
 Normative: yes
 Footprint: docs/branch-point.md; docs/branch-point.review.md; docs/style-spec.md; docs/records/branch-point-v1.4.ir.md; eval/cases/005-meta-review-stranger-rounds-2026-10-26.md; eval/cases/007-meta-review-full-ir-rounds-2026-10-27.md; eval/README.md; scripts/claims-check.mjs; scripts/test.mjs
@@ -55,25 +55,25 @@ C35. A fix adds words only for a missing definition, referent or rule. [decided:
 
 C8. The reasoning role records a declined finding in the review record with its reason. [decided: owner, 2026-10-27]
 
-C9. After the fixes, the round's stranger instance receives its findings table and the fixed passages and answers, per finding, whether the fix holds. [decided: owner, 2026-10-27]
+C9. After the fixes, the round's stranger instance receives its findings table and the fixed passages and answers, per accepted finding, whether the fix holds. [decided: owner, 2026-10-27]
 
 C10. The reasoning role fixes again, before the next round, a fix the instance says does not hold. [decided: owner, 2026-10-27]
 
-C11. The next round's brief carries the declined findings of the earlier rounds with their reasons. [decided: owner, 2026-10-27]
+C11. The reasoning role adds to the next round's brief the declined findings of the earlier rounds with their reasons. [decided: owner, 2026-10-27]
 
 C12. A restatement mismatch repeated by two rounds in one form is a prose finding, whatever the strangers attributed it to. [decided: owner, 2026-10-27]
 
 C13. The verdict is readable when the restatement matches the IR and the stranger finds no contradiction and no undefined term. [decided: owner, 2026-10-27]
 
-C14. The review record holds, per round, the prose word count, the IR claim count, the finding count and the verdict. [decided: owner, 2026-10-27]
+C14. The reasoning role records in the review record, per round, the prose word count, the IR claim count, the finding count and the verdict. [decided: owner, 2026-10-27]
 
 C15. Growth of the prose across rounds is a measure in the review record, not a bound. [decided: owner, 2026-10-27]
 
-C16. A reason split from its rule into a claim of its own renders joined to the rule by connective prose. [decided: owner, 2026-10-27]
+C16. The renderer, the paraphraser or under D3 the reasoning role, joins a reason the IR holds as its own claim to its rule by connective prose. [decided: owner, 2026-10-27]
 
 ### The reviewer brief
 
-C17. The stranger reads the prose, the IR, and at the confirmation its own findings table with the fixed passages, and no other file. [decided: owner, 2026-10-27]
+C17. The stranger reads the prose, the IR, and at Rounds step 4 its own findings table with the fixed passages, and no other file. [decided: owner, 2026-10-27]
 
 C19. After reading the IR, the stranger reports each disagreement between its restatement and the IR as a finding, with the side that caused it. [decided: owner, 2026-10-27]
 
@@ -81,7 +81,7 @@ C20. The stranger reports findings against SP-01 to SP-05, SP-08 to SP-11, SP-18
 
 C21. Each finding carries a locus and a fix kind. [decided: owner, 2026-10-27]
 
-C22. The brief's SP-05 reads as the methodology's P-004 (identifiers carry names) does: a name or a link at first use. [decided: owner, 2026-10-27]
+C22. SP-05, in the brief and in the style specification from v1.4, reads as the methodology's P-004 (identifiers carry names) does: a name or a link at first use. [decided: owner, 2026-10-27]
 
 C23. SP-18 is calibrated to a duty whose actor or trigger the text does not state. [decided: owner, 2026-10-27]
 
@@ -99,11 +99,11 @@ C27. The stranger's report has four parts in order: Restatement, Findings, Reada
 
 ### Decisions on case 005
 
-C28. The threshold verdict of case 005 is struck, because the verdict rule reached zero contradictions without a count threshold. [decided: owner, 2026-10-27]
+C28. Case 005's change 1, a verdict by a finding-rate threshold, is struck, because the verdict rule reached zero contradictions without a threshold. [decided: owner, 2026-10-27]
 
-C29. The flat-stop rule with a limit of five is struck, because the finding rate was flat from round 5 while contradictions ran to round 9. [decided: owner, 2026-10-27]
+C29. Case 005's change 3, stopping when the finding count is flat with a limit of five, is struck, because the rate was flat from round 5 while contradictions ran to round 9. [decided: owner, 2026-10-27]
 
-C30. Growth is a measure, not a bound, because fixing in the IR first kept the prose from growing. [decided: owner, 2026-10-27]
+C30. Case 005's change 4, a bound on growth, is replaced by the measure of the Rounds section, because fixing in the IR first kept the prose from growing. [decided: owner, 2026-10-27]
 
 C31. The split of the specification into IR form and review process is closed as not needed, because the IR specification reached readable at 2,808 words. [decided: owner, 2026-10-27]
 
@@ -115,7 +115,7 @@ C42. Fixing only new-passage findings stays not recommended. [decided: owner, 20
 
 C33. A text with three or more rounds in one count is a meta-review subject. [decided: owner, 2026-10-26]
 
-C34. The meta-reviews so far are case 005, on PR #51's rounds, and case 007, on PR #52's rounds. [decided: cases 005 and 007]
+C34. The meta-reviews so far are case 005, on methodology PR #51's rounds, and case 007, on methodology PR #52's rounds. [decided: cases 005 and 007]
 
 C40. The meta-review reads the review record and the text, and reports, as an evaluation case, whether the process needs a change. [decided: owner, 2026-10-26]
 
@@ -129,7 +129,7 @@ R3. C12 refines C13 because a recurring mismatch is a text defect the verdict ru
 
 R4. C15 depends-on C14 because the measure is the recorded count.
 
-R5. C22 contradicts C20 unless SP-05's text is changed, which this revision does in the style specification.
+R5. C22 supports C20 because the style specification's SP-05 carries the wording the brief uses.
 
 R6. C28 supports C13 because the verdict rule replaces the threshold.
 
