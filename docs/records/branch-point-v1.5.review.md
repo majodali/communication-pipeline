@@ -120,7 +120,7 @@ one stranger disagreed with a carried decline on one new spot, which
 was fixed; no restatement mismatch recurred; the status line under
 rounds drew one compound finding and no contradiction.
 
-Meta-review: pending. This text is a meta-review subject (three
-rounds in one count). The delivering report asks the owner to
-dispatch the meta-review, or to decide that three rounds on a
-revision of this size need none.
+Meta-review: not required. Owner decision of 2026-10-27, on accepting
+v1.5: three rounds on a revision of this size need none, and the
+three-round trigger is to be revisited against the five counts now
+recorded.
