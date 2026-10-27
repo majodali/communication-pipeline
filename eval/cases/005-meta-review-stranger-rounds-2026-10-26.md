@@ -73,3 +73,5 @@ Proposed process changes. Each: the change, then the evidence.
 7. Review the whole document in round 1 and only the amended passages after. Evidence: pre-existing findings fell to two or fewer from round 4. Not recommended alone, because rounds 6 and 7 found contradictions between new and old passages.
 8. Fix only new-passage findings during rounds; record pre-existing ones as accepted. Evidence: pre-existing findings were few after round 3 and cheap to fix. Not recommended.
 9. Split the specification into IR form and review process. Evidence: from round 4 the findings cluster under Stranger rounds, Meta-review and The footprint. Deferred until changes 1 to 6 are measured.
+
+Owner's decision on the outcome, 2026-10-27, after case 007 re-weighed the changes: 1 struck; 2 adopted in the narrow form, a duty names its actor and its trigger; 3 struck, the limit stays ten; 4 adopted as a measure, not a bound; 5 and 6 adopted (case 007, changes 5 and 4); 7 and 8 stay not recommended; 9 closed as not needed. Carried into branch point v1.4.

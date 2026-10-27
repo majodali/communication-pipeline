@@ -1,7 +1,9 @@
 # Branch point
 
-Status: active (v1.3, 2026-10-26: every review runs in rounds until
-readable, limit ten; more than two rounds triggers a meta-review).
+Status: active (v1.4, 2026-10-27: the rounds procedure and the
+reviewer brief, from evaluation cases 006 and 007; v1.3, 2026-10-26:
+every review runs in rounds until readable, limit ten; three or more
+rounds trigger a meta-review).
 Thresholds are provisional until the evaluation corpus tunes them. The rules are
 also the Rendering conditions of the methodology's
 [intermediate-representation specification](https://github.com/majodali/methodology/blob/main/docs/intermediate-representation.md)
@@ -40,8 +42,72 @@ All inputs come from the IR itself.
 |---|---|
 | D0 [lint](vocabulary.md#def-lint) only | the schema checks, CK-01 (the referent rule) to CK-10 (section order), and the prose lints; the IR is delivered as it stands |
 | D1 render | D0, then the [paraphraser](vocabulary.md#def-paraphraser) renders prose for the reader |
-| D2 render and review | D1, then [reviewer](vocabulary.md#def-reviewer) rounds: a fresh reviewer reads the IR and the prose against the reader's [readability test](vocabulary.md#def-readability-test) and the [style specification](style-spec.md); the reasoning role fixes the findings; the next round reads the fixed text; the rounds end at the first verdict of readable, or after ten rounds, which the review record states (owner ruling, 2026-10-26) |
+| D2 render and review | D1, then [reviewer](vocabulary.md#def-reviewer) rounds under the Rounds section below |
 | D3 review without render | the [reasoning role](vocabulary.md#def-reasoning-role) renders the prose itself, because the text is normative (a rule, a specification) and a paraphrase could change its force; then reviewer rounds as in D2 |
+
+## Rounds
+
+The rounds of D2 and D3 follow the methodology specification's
+[Stranger rounds](https://github.com/majodali/methodology/blob/main/docs/intermediate-representation.md#stranger-rounds)
+rule: a [count](https://github.com/majodali/methodology/blob/main/docs/vocabulary.md#def-count)
+of [rounds](https://github.com/majodali/methodology/blob/main/docs/vocabulary.md#def-round)
+runs until a round returns readable, or to the
+[limit](https://github.com/majodali/methodology/blob/main/docs/vocabulary.md#def-limit)
+of ten. This project's procedure for one round, in order (owner
+decisions of 2026-10-27 on cases 006 and 007):
+
+1. Before the round, the reasoning role finds, for each claim changed
+   since the last round, the prose sentence that carries it. The
+   reasoning role records each changed claim and its sentence in the
+   [review record](https://github.com/majodali/methodology/blob/main/docs/vocabulary.md#def-review-record).
+   The script `scripts/claims-check.mjs` lists the changed claims and
+   the best-matching sentence for each, and reports a claim no
+   sentence carries. A changed claim that no sentence carries is
+   fixed in the prose before the round starts.
+2. The round's stranger is a fresh instance. The stranger reads the
+   prose first, writes its restatement, and only then reads the IR.
+   A restatement is the stranger's account, in at most 200 words of
+   its own, of the text's problem, terms and decisions.
+3. The reasoning role fixes each finding it accepts in the IR first
+   and then in the prose. A fix rephrases or cuts words before it
+   adds words. A fix adds words only for a missing definition,
+   referent or rule. A finding the reasoning role declines is
+   recorded in the review record with its reason.
+4. After the fixes, the round's stranger instance receives its
+   findings table and the fixed passages. The instance answers, per
+   finding, whether the fix holds. A fix the instance says does not
+   hold is fixed again before the next round.
+5. The next round's brief carries the declined findings of the
+   earlier rounds with their reasons.
+6. A restatement mismatch repeated by two rounds in one form is a
+   prose finding, whatever the strangers attributed it to.
+
+The verdict is readable when the restatement matches the IR, the
+stranger finds no contradiction, and the stranger finds no undefined
+term. The review record holds, per round, the prose word count, the
+IR claim count, the finding count and the verdict. Growth of the
+prose across rounds is a measure in the review record, not a bound.
+A reason split from its rule into a claim of its own renders joined
+to the rule by connective prose.
+
+## Reviewer brief
+
+The stranger reads the prose and the IR and no other file. The
+restatement is at most 200 words and covers the problem, the terms
+and the decisions. After reading the IR, the stranger reports each
+disagreement between its restatement and the IR as a finding, with
+the side that caused it. The stranger then reports findings against
+SP-01 to SP-05, SP-08 to SP-11, SP-18 as calibrated, SP-25 and SP-26
+of the [style specification](style-spec.md). Each finding carries a
+locus (the prose, the IR, or both) and a fix kind (cut, rephrase, or
+add). The brief's SP-05 reads as P-004 does: a name or a link at
+first use. SP-18 is calibrated to a duty whose actor or trigger the
+text does not state. SP-25, contradiction, is a finding when two
+passages cannot both be followed. SP-26, excess words, is a finding
+when a word, phrase or sentence can go without losing a claim, or a
+claim is stated twice. The brief lists the forms that are not
+defects. The stranger's report has four parts in order: Restatement,
+Findings, Readability, Counts.
 
 ## When an IR is required at all
 
@@ -94,16 +160,31 @@ RD-4 (fresh agent session), RD-5 (external reader).
 
 ## Meta-review
 
-A text that needs more than two reviewer rounds is a subject for
+A text with three or more rounds in one count is a subject for
 [meta-review](vocabulary.md#def-meta-review) (owner ruling,
 2026-10-26). This project reads the review record and the text. It
 reports, as an [evaluation case](vocabulary.md#def-evaluation-case),
-whether the process needs a change. The first subject is the
-methodology's intermediate-representation specification at PR #50,
-whose second round returned not readable.
+whether the process needs a change. The meta-reviews so far are
+[case 005](../eval/cases/005-meta-review-stranger-rounds-2026-10-26.md),
+on the rounds of methodology PR #51, and
+[case 007](../eval/cases/007-meta-review-full-ir-rounds-2026-10-27.md),
+on the rounds of methodology PR #52.
+
+The owner's decisions of 2026-10-27 on case 005's held changes: the
+threshold verdict is struck, because the verdict rule reached zero
+contradictions without a count threshold. The flat-stop rule with a
+limit of five is struck, because the finding rate was flat from round
+5 while contradictions ran to round 9. Growth is a measure, not a
+bound, because fixing in the IR first kept the prose from growing.
+The split of the specification into IR form and review process is
+closed as not needed, because the specification reached readable at
+2,808 words. Reviewing only the amended passages after round 1, and
+fixing only new-passage findings, stay not recommended.
 
 ## Record
 
 The [dispatcher](vocabulary.md#def-dispatcher) records, for every IR it routes, the inputs, the rule
 that fired and the [disposition](vocabulary.md#def-disposition), in `eval/dispatch-log.md` (chunk 2
 creates it). The log is the data chunk 3 tunes against.
+
+<!-- render map (v1.4 IR, docs/records/branch-point-v1.4.ir.md): C1→¶Rounds C2→¶Rounds-1 C36→¶Rounds-1 C3→¶Rounds-1 C4→¶Rounds-1 C5→¶Rounds-2 C6→¶Rounds-3 C7→¶Rounds-3 C35→¶Rounds-3 C8→¶Rounds-3 C9→¶Rounds-4 C10→¶Rounds-4 C11→¶Rounds-5 C12→¶Rounds-6 C13→¶Rounds-verdict C14→¶Rounds-verdict C15→¶Rounds-verdict C16→¶Rounds-verdict C17→¶Brief C18→¶Brief C19→¶Brief C20→¶Brief C21→¶Brief C22→¶Brief C23→¶Brief C24→¶Brief C25→¶Brief C26→¶Brief C27→¶Brief C28→¶Meta-2 C29→¶Meta-2 C30→¶Meta-2 C31→¶Meta-2 C32→¶Meta-2 C33→¶Meta-1 C34→¶Meta-1 -->
