@@ -2,7 +2,7 @@
 
 Reader: RD-4
 Purpose: document. The revision of the branch point that carries the six process changes of evaluation case 007, which reviewed the rounds case 006 records, and the owner's decisions on case 005's held changes.
-Status: draft (round 3 fixes confirmed; round 4 in progress; unratified terms 3)
+Status: draft (round 4 fixes applied; confirmation pending; unratified terms 3)
 Source: the owner's decisions of 2026-10-27 ("They are all justified"; "Agreed on all four - go ahead with the branch-point revision"); evaluation cases 005, 006 and 007; the methodology specification docs/intermediate-representation.md as merged in PR #52 and #53.
 Normative: yes
 Footprint: docs/branch-point.md; docs/branch-point.review.md; docs/style-spec.md; docs/records/branch-point-v1.4.ir.md; eval/cases/005-meta-review-stranger-rounds-2026-10-26.md; eval/cases/007-meta-review-full-ir-rounds-2026-10-27.md; eval/README.md; scripts/claims-check.mjs; scripts/test.mjs
@@ -31,7 +31,7 @@ C1. The rounds of dispositions D2 and D3 follow the methodology specification's 
 
 C37. The thresholds are provisional until the evaluation corpus tunes them. [decided: branch point v1.1, 2026-10-25]
 
-C47. The terms restatement, locus and fix kind are proposed by v1.4 and await ratification. [proposed: this IR]
+C47. Version 1.4, the style rules SP-05, SP-18, SP-25 and SP-26, and the terms restatement, locus and fix kind await the owner's acceptance. [proposed: this IR]
 
 C38. The rules are the Rendering conditions of the methodology's intermediate-representation specification. [decided: methodology PR #49, 2026-10-26]
 
@@ -59,7 +59,7 @@ C35. A fix adds words only for a missing definition, referent or rule. [decided:
 
 C8. The reasoning role records a declined finding in the review record with its reason. [decided: owner, 2026-10-27]
 
-C9. After the fixes, the round's stranger instance receives its findings table and the fixed passages and answers, per accepted finding, whether the fix holds. [decided: owner, 2026-10-27]
+C9. After the fixes, the reasoning role sends the round's stranger instance its findings table and the fixed passages, and the instance answers, per accepted finding, whether the fix holds. [decided: owner, 2026-10-27]
 
 C10. The reasoning role fixes again, before the next round, a fix the instance says does not hold. [decided: owner, 2026-10-27]
 
@@ -81,7 +81,7 @@ C17. The stranger brief is the instruction the reasoning role gives a round's st
 
 C46. The stranger reads the prose, the IR, and at Rounds step 4 its own findings table with the fixed passages, and no other file. [decided: owner, 2026-10-27]
 
-C19. After reading the IR, the stranger reports each disagreement between its restatement and the IR as a finding, with the side that caused it. [decided: owner, 2026-10-27]
+C19. After reading the IR, the stranger reports each disagreement between its restatement and the IR as a finding with its locus. [decided: owner, 2026-10-27]
 
 C20. The stranger reports findings against SP-01 to SP-05, SP-08 to SP-11, SP-18, SP-25 and SP-26 of the style specification's rule table. [decided: owner, 2026-10-27]
 
@@ -126,6 +126,8 @@ C33. A text with three or more rounds in one count is a meta-review subject. [de
 C34. The meta-reviews so far are case 005, on methodology PR #51's rounds, and case 007, on methodology PR #52's rounds. [decided: cases 005 and 007]
 
 C40. The meta-review reads the review record and the text, and reports, as an evaluation case, whether the process needs a change. [decided: owner, 2026-10-26]
+
+C49. Disposition D3 is named review, author-rendered. [proposed: this IR]
 
 ## Relations
 

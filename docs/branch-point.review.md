@@ -20,7 +20,8 @@ confirmation after the fixes, declined findings carried.
 | 1 | 1,527 | 36 | 23 | 15.1 | not readable (restatement matched in substance; 4 contradictions, 0 undefined terms) |
 | 2 | 1,580 | 43 | 18 | 11.4 | not readable (restatement matched in substance; 1 contradiction, 2 undefined terms) |
 | 3 | 1,637 | 46 | 9 | 5.5 | not readable (restatement mismatch on C33's wording; 0 contradictions, 1 undefined term, pre-v1.4) |
-| 4 | 1,632 | 47 | | | |
+| 4 | 1,637 | 47 | 6 | 3.7 | not readable (restatement mismatch on provenance: C3, C41, A1; 3 contradictions, 1 undefined term) |
+| 5 | 1639 | 49 | | | |
 
 
 ## Round 1, 2026-10-27
@@ -132,3 +133,26 @@ declined finding was carried in the brief and not raised again.
 
 Claims check before round 4: 3 changed or new claims, 0 missing.
 Same-instance confirmation: 9 of 9 fixes hold, no new defect.
+
+## Round 4, 2026-10-27
+
+1,637 words; 6 findings; 3.7 per thousand words. Restatement: 199
+words; mismatch on provenance: the prose attributed every step to
+owner decisions while C3 and C41 are proposed, and the status line
+said active while A1 asks for acceptance. Contradictions 3 (the two
+above and the pre-v1.4 name "D3 review without render" against its
+row), undefined terms 1 ("register fact", pre-v1.4); verdict: not
+readable for RD-4. By fix kind as the stranger judged: rephrase 2,
+add 4; by locus: both 4, pre-v1.4 2.
+
+| # | Finding (shortened) | Kind | Disposition |
+|---|---|---|---|
+| 1 | no actor for the hand-over of the findings table | SP-18 | rephrase C9: the reasoning role sends |
+| 2 | "the side that caused it" where locus is defined later | excess, order | rephrase C19 "with its locus"; the locus sentence moved first |
+| 3 | every step attributed to owner decisions while the script is proposed | contradiction | cut the attribution; provenance lives in the IR and the Meta-review section |
+| 4 | "active" while A1 asks acceptance | contradiction | rephrase C47 and the status line: pending the owner's acceptance of the version, the four style rules and the three terms |
+| 5 | "register fact" undefined | term (pre-v1.4) | add: a link to the methodology vocabulary's row |
+| 6 | "D3 review without render" vs its row | contradiction (pre-v1.4) | rephrase: "D3 review, author-rendered" (C49) |
+
+Claims check before round 5: 4 changed or new claims, 0 missing.
+Same-instance confirmation: recorded below.

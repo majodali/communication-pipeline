@@ -1,8 +1,9 @@
 # Branch point
 
-Status: active (v1.4, 2026-10-27: the rounds procedure and the
-stranger brief, from evaluation case 007; the terms restatement,
-locus and fix kind are proposed by v1.4 and await ratification; v1.3, 2026-10-26:
+Status: active (v1.4, 2026-10-27, pending the owner's acceptance of
+the version, of the style rules SP-05, SP-18, SP-25 and SP-26, and of
+the terms restatement, locus and fix kind: the rounds procedure and
+the stranger brief, from evaluation case 007; v1.3, 2026-10-26:
 every review runs in rounds until readable, limit ten; three or more
 rounds make a text a meta-review subject).
 Thresholds are provisional until the evaluation corpus tunes them. The rules are
@@ -44,7 +45,7 @@ All inputs but the owner flag come from the IR.
 | D0 [lint](vocabulary.md#def-lint) only | the schema checks, CK-01 (the referent rule) to CK-10 (section order), and the prose lints; the IR is delivered as it stands |
 | D1 render | D0, then the [paraphraser](vocabulary.md#def-paraphraser) renders prose for the reader. The paraphraser, or under D3 the reasoning role, joins a reason the IR holds as its own claim to its rule by connective prose |
 | D2 render and review | D1, then [reviewer](vocabulary.md#def-reviewer) rounds under the Rounds section below |
-| D3 review without render | the [reasoning role](vocabulary.md#def-reasoning-role) renders the prose itself, because the text is normative (a rule, a specification) and a paraphrase could change its force; then reviewer rounds as in D2 |
+| D3 review, author-rendered | the [reasoning role](vocabulary.md#def-reasoning-role) renders the prose itself, because the text is normative (a rule, a specification) and a paraphrase could change its force; then reviewer rounds as in D2 |
 
 ## Rounds
 
@@ -54,8 +55,7 @@ rule: a [count](https://github.com/majodali/methodology/blob/main/docs/vocabular
 of [rounds](https://github.com/majodali/methodology/blob/main/docs/vocabulary.md#def-round)
 runs until a round returns readable, or to the
 [limit](https://github.com/majodali/methodology/blob/main/docs/vocabulary.md#def-limit)
-of ten. This project's procedure for one round, in order (owner
-decisions of 2026-10-27 on case 007):
+of ten. This project's procedure for one round, in order:
 
 1. Before the round, the reasoning role finds, for each claim changed
    since the last round, the prose sentence that carries it. The
@@ -75,9 +75,9 @@ decisions of 2026-10-27 on case 007):
    adds words. A fix adds words only for a missing definition,
    referent or rule. The reasoning role records a declined finding
    in the review record with its reason.
-4. After the fixes, the round's stranger instance receives its
-   findings table and the fixed passages. The round's stranger instance answers, per
-   accepted finding, whether the fix holds. The reasoning role fixes again,
+4. After the fixes, the reasoning role sends the round's stranger
+   instance its findings table and the fixed passages, and the
+   instance answers, per accepted finding, whether the fix holds. The reasoning role fixes again,
    before the next round, a fix the instance says does not hold.
 5. The reasoning role adds to the next round's stranger brief the
    declined findings of the earlier rounds with their reasons.
@@ -93,13 +93,14 @@ record, not a bound.
 ## Stranger brief
 
 The stranger reads the prose, the IR, and at Rounds step 4 its own
-findings table with the fixed passages, and no other file. After reading the IR, the stranger reports each
-disagreement between its restatement and the IR as a finding, with
-the side that caused it. The stranger reports findings against
+findings table with the fixed passages, and no other file. Each
+finding carries a locus (the prose, the IR, or both) and a fix kind
+(cut, rephrase, or add). After reading the IR, the stranger reports
+each disagreement between its restatement and the IR as a finding
+with its locus. The stranger reports findings against
 SP-01 to SP-05, SP-08 to SP-11, SP-18, SP-25 and SP-26
-of the [style specification's rule table](style-spec.md#rule-table). Each finding carries a
-locus (the prose, the IR, or both) and a fix kind (cut, rephrase, or
-add). The stranger brief's SP-05 reads as the methodology's
+of the [style specification's rule table](style-spec.md#rule-table).
+The stranger brief's SP-05 reads as the methodology's
 [P-004](https://github.com/majodali/methodology/blob/main/docs/rules/prose.md#p-004--identifiers-carry-names)
 (identifiers carry names) does: a name or a link at first use. From
 v1.4 the style specification's SP-05 reads as P-004 does. SP-18 is calibrated to a duty whose actor or trigger the
@@ -124,7 +125,8 @@ Findings, Readability, Counts.
 A report to RD-1 (the human owner, in conversation) or RD-3 (a
 delegating agent) may be written as prose directly, with the prose
 [lint](vocabulary.md#def-lint). The condition: it introduces no term,
-records no decision, and states no register fact. A term, a decision, or a
+records no decision, and states no
+[register fact](https://github.com/majodali/methodology/blob/main/docs/vocabulary.md#def-register-fact). A term, a decision, or a
 register fact requires the IR, because each is content a model would
 hold (owner ruling, 2026-10-25). Documents
 always start as an IR.
@@ -201,4 +203,4 @@ that fired and the [disposition](vocabulary.md#def-disposition), in `eval/dispat
 chunk 2 of the [pilot plan](plans/pipeline-pilot.md). The log is the
 data the thresholds are tuned against.
 
-<!-- render map: C37→¶Status C47→¶Status C38→¶Status C39→¶D2 C48→¶D1 C1→¶Rounds C2→¶Rounds-1 C36→¶Rounds-1 C3→¶Rounds-1 C41→¶Rounds-1 C4→¶Rounds-1 C5→¶Rounds-2 C6→¶Rounds-3 C7→¶Rounds-3 C35→¶Rounds-3 C8→¶Rounds-3 C9→¶Rounds-4 C10→¶Rounds-4 C11→¶Rounds-5 C12→¶Rounds-6 C13→¶Rounds-verdict C14→¶Rounds-verdict C15→¶Rounds-verdict C16→¶D1 C17→¶Rounds-2 C46→¶Brief C19→¶Brief C20→¶Brief C21→¶Brief C22→¶Brief C45→¶Brief C23→¶Brief C24→¶Brief C25→¶Brief C26→¶Brief C43→¶Brief C44→¶Brief C27→¶Brief C28→¶Meta-2 C29→¶Meta-2 C30→¶Meta-2 C31→¶Meta-2 C32→¶Meta-2 C42→¶Meta-2 C33→¶Meta-1 C40→¶Meta-1 C34→¶Meta-1 (IR: docs/records/branch-point-v1.4.ir.md) -->
+<!-- render map: C37→¶Status C47→¶Status C38→¶Status C39→¶D2 C48→¶D1 C1→¶Rounds C2→¶Rounds-1 C36→¶Rounds-1 C3→¶Rounds-1 C41→¶Rounds-1 C4→¶Rounds-1 C5→¶Rounds-2 C6→¶Rounds-3 C7→¶Rounds-3 C35→¶Rounds-3 C8→¶Rounds-3 C9→¶Rounds-4 C10→¶Rounds-4 C11→¶Rounds-5 C12→¶Rounds-6 C13→¶Rounds-verdict C14→¶Rounds-verdict C15→¶Rounds-verdict C16→¶D1 C17→¶Rounds-2 C46→¶Brief C19→¶Brief C20→¶Brief C21→¶Brief C22→¶Brief C45→¶Brief C23→¶Brief C24→¶Brief C25→¶Brief C26→¶Brief C43→¶Brief C44→¶Brief C27→¶Brief C28→¶Meta-2 C29→¶Meta-2 C30→¶Meta-2 C31→¶Meta-2 C32→¶Meta-2 C42→¶Meta-2 C33→¶Meta-1 C40→¶Meta-1 C49→¶D3 C34→¶Meta-1 (IR: docs/records/branch-point-v1.4.ir.md) -->
