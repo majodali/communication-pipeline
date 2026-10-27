@@ -252,3 +252,14 @@ test('claims-check reports removed claims', () => {
   const r = claimsCheck(oldIR, newIR, 'The widget is blue.');
   assert.deepEqual(r.removed, ['C1']);
 });
+
+test('claims-check reports a changed claim whose sentence did not change (stale)', () => {
+  const oldIR = `# IR: y\n\nReader: RD-4\nPurpose: document. t\nStatus: draft\nSource: t\n\n## Terms\n\n## Claims\n\nC1. The widget is blue before delivery. [decided: owner, 2026-10-27]\n\n## Relations\n\n## Evidence\n`;
+  const newIR = oldIR.replace('The widget is blue before delivery.', 'The widget is blue before delivery and green after.');
+  const prose = `# Widgets\n\nThe widget is blue before delivery.\n`;
+  const r = claimsCheck(oldIR, newIR, prose, { oldProseText: prose });
+  assert.deepEqual(r.missing, []);
+  assert.deepEqual(r.stale, ['C1']);
+  const fixed = claimsCheck(oldIR, newIR, 'The widget is blue before delivery and green after.', { oldProseText: prose });
+  assert.deepEqual(fixed.stale, []);
+});
