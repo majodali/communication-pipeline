@@ -131,4 +131,4 @@ declined finding was carried in the brief and not raised again.
 | 9 | "Rules apply in order" repeated | excess (pre-v1.4) | cut |
 
 Claims check before round 4: 3 changed or new claims, 0 missing.
-Same-instance confirmation: recorded below.
+Same-instance confirmation: 9 of 9 fixes hold, no new defect.
