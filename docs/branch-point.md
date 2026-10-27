@@ -1,7 +1,8 @@
 # Branch point
 
 Status: active (v1.4, 2026-10-27: the rounds procedure and the
-reviewer brief, from evaluation case 007; v1.3, 2026-10-26:
+stranger brief, from evaluation case 007; the terms restatement,
+locus and fix kind are proposed by v1.4 and await ratification; v1.3, 2026-10-26:
 every review runs in rounds until readable, limit ten; three or more
 rounds trigger a meta-review).
 Thresholds are provisional until the evaluation corpus tunes them. The rules are
@@ -41,7 +42,7 @@ All inputs but the owner flag come from the IR.
 | [Disposition](vocabulary.md#def-disposition) | What runs |
 |---|---|
 | D0 [lint](vocabulary.md#def-lint) only | the schema checks, CK-01 (the referent rule) to CK-10 (section order), and the prose lints; the IR is delivered as it stands |
-| D1 render | D0, then the [paraphraser](vocabulary.md#def-paraphraser) renders prose for the reader. The renderer, the paraphraser or under D3 the reasoning role, joins a reason the IR holds as its own claim to its rule by connective prose |
+| D1 render | D0, then the [paraphraser](vocabulary.md#def-paraphraser) renders prose for the reader. The paraphraser, or under D3 the reasoning role, joins a reason the IR holds as its own claim to its rule by connective prose |
 | D2 render and review | D1, then [reviewer](vocabulary.md#def-reviewer) rounds under the Rounds section below |
 | D3 review without render | the [reasoning role](vocabulary.md#def-reasoning-role) renders the prose itself, because the text is normative (a rule, a specification) and a paraphrase could change its force; then reviewer rounds as in D2 |
 
@@ -64,8 +65,9 @@ decisions of 2026-10-27 on case 007):
    the best-matching sentence for each. The script reports a changed
    claim no sentence carries. The reasoning role fixes, before the
    round starts, a changed claim that no sentence carries.
-2. The round's stranger is a fresh instance. A restatement is the
-   stranger's account, in at most 200 words of its own, of the text's
+2. The round's stranger is a fresh instance. The stranger brief is
+   the instruction the reasoning role gives a round's stranger
+   instance. A restatement is the stranger's account, in at most 200 words of its own, of the text's
    problem, terms and decisions. The stranger reads the prose first,
    writes its restatement, and only then reads the IR.
 3. The reasoning role fixes each finding it accepts in the IR first
@@ -77,8 +79,8 @@ decisions of 2026-10-27 on case 007):
    findings table and the fixed passages. The instance answers, per
    accepted finding, whether the fix holds. The reasoning role fixes again,
    before the next round, a fix the instance says does not hold.
-5. The reasoning role adds to the next round's brief the declined
-   findings of the earlier rounds with their reasons.
+5. The reasoning role adds to the next round's stranger brief the
+   declined findings of the earlier rounds with their reasons.
 6. A restatement mismatch repeated by two rounds in one form is a
    prose finding, whatever the strangers attributed it to.
 
@@ -88,19 +90,19 @@ the prose word count, the IR claim count, the finding count and the
 verdict. Growth of the prose across rounds is a measure in the review
 record, not a bound.
 
-## Reviewer brief
+## Stranger brief
 
 The stranger reads the prose, the IR, and at Rounds step 4 its own
 findings table with the fixed passages, and no other file. After reading the IR, the stranger reports each
 disagreement between its restatement and the IR as a finding, with
 the side that caused it. The stranger reports findings against
 SP-01 to SP-05, SP-08 to SP-11, SP-18 as calibrated, SP-25 and SP-26
-of the [style specification](style-spec.md). Each finding carries a
+of the [style specification's rule table](style-spec.md#rule-table). Each finding carries a
 locus (the prose, the IR, or both) and a fix kind (cut, rephrase, or
-add). SP-05, in the brief and in the style specification from v1.4, reads
-as the methodology's
+add). The stranger brief's SP-05 reads as the methodology's
 [P-004](https://github.com/majodali/methodology/blob/main/docs/rules/prose.md#p-004--identifiers-carry-names)
-(identifiers carry names) does: a name or a link at first use. SP-18 is calibrated to a duty whose actor or trigger the
+(identifiers carry names) does: a name or a link at first use. From
+v1.4 the style specification's SP-05 reads as P-004 does. SP-18 is calibrated to a duty whose actor or trigger the
 text does not state. SP-25, contradiction, is a finding when two
 passages cannot both be followed. SP-26, excess words, is a finding
 when a word, phrase or sentence can go without losing a claim, or a
@@ -113,7 +115,8 @@ claim is stated twice. The brief lists the forms that are not defects:
 - a colon-introduced list with semicolons;
 - a document's Reader, Type or Status line.
 
-The brief adds any form the text under review needs. The stranger's report has four parts in order: Restatement,
+The reasoning role adds to the stranger brief any form the text
+under review needs. The stranger's report has four parts in order: Restatement,
 Findings, Readability, Counts.
 
 ## When an IR is required at all
@@ -197,4 +200,4 @@ The [dispatcher](vocabulary.md#def-dispatcher) records, for every IR it routes, 
 that fired and the [disposition](vocabulary.md#def-disposition), in `eval/dispatch-log.md` (chunk 2
 creates it). The log is the data chunk 3 tunes against.
 
-<!-- render map: C37→¶Status C38→¶Status C39→¶D2 C1→¶Rounds C2→¶Rounds-1 C36→¶Rounds-1 C3→¶Rounds-1 C41→¶Rounds-1 C4→¶Rounds-1 C5→¶Rounds-2 C6→¶Rounds-3 C7→¶Rounds-3 C35→¶Rounds-3 C8→¶Rounds-3 C9→¶Rounds-4 C10→¶Rounds-4 C11→¶Rounds-5 C12→¶Rounds-6 C13→¶Rounds-verdict C14→¶Rounds-verdict C15→¶Rounds-verdict C16→¶D1 C17→¶Brief C19→¶Brief C20→¶Brief C21→¶Brief C22→¶Brief C23→¶Brief C24→¶Brief C25→¶Brief C26→¶Brief C43→¶Brief C44→¶Brief C27→¶Brief C28→¶Meta-2 C29→¶Meta-2 C30→¶Meta-2 C31→¶Meta-2 C32→¶Meta-2 C42→¶Meta-2 C33→¶Meta-1 C40→¶Meta-1 C34→¶Meta-1 (IR: docs/records/branch-point-v1.4.ir.md) -->
+<!-- render map: C37→¶Status C47→¶Status C38→¶Status C39→¶D2 C1→¶Rounds C2→¶Rounds-1 C36→¶Rounds-1 C3→¶Rounds-1 C41→¶Rounds-1 C4→¶Rounds-1 C5→¶Rounds-2 C6→¶Rounds-3 C7→¶Rounds-3 C35→¶Rounds-3 C8→¶Rounds-3 C9→¶Rounds-4 C10→¶Rounds-4 C11→¶Rounds-5 C12→¶Rounds-6 C13→¶Rounds-verdict C14→¶Rounds-verdict C15→¶Rounds-verdict C16→¶D1 C17→¶Rounds-2 C46→¶Brief C19→¶Brief C20→¶Brief C21→¶Brief C22→¶Brief C45→¶Brief C23→¶Brief C24→¶Brief C25→¶Brief C26→¶Brief C43→¶Brief C44→¶Brief C27→¶Brief C28→¶Meta-2 C29→¶Meta-2 C30→¶Meta-2 C31→¶Meta-2 C32→¶Meta-2 C42→¶Meta-2 C33→¶Meta-1 C40→¶Meta-1 C34→¶Meta-1 (IR: docs/records/branch-point-v1.4.ir.md) -->

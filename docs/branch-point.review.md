@@ -19,7 +19,7 @@ confirmation after the fixes, declined findings carried.
 |---|---|---|---|---|---|
 | 1 | 1,527 | 36 | 23 | 15.1 | not readable (restatement matched in substance; 4 contradictions, 0 undefined terms) |
 | 2 | 1,580 | 43 | 18 | 11.4 | not readable (restatement matched in substance; 1 contradiction, 2 undefined terms) |
-| 3 | 1,600 | 43 | | | |
+| 3 | 1,637 | 46 | | | |
 
 
 ## Round 1, 2026-10-27
@@ -91,8 +91,18 @@ reported.
 | 17 | "on the rounds of" | excess | rephrase C34 |
 | 18 | SP-01 to SP-11 bare | identifier | declined: the range is linked to the style specification's rule table, the identifiers' definition site |
 
-Claims check before round 3: 10 changed claims, 0 missing. The
-same-instance confirmation is recorded below. Round 3 starts, so the
-text is a meta-review subject.
+Claims check before round 3: 10 changed claims, 0 missing. Same-instance
+confirmation: 15 of 16 accepted fixes hold; finding 8 did not ("the
+brief" had two referents); both declines were contested with reasons
+the reasoning role accepted in part. Three new defects the confirmation
+noted in the fixed passages were fixed: the IR Purpose's wording on
+case 006; C22 holding two claims (split, C45); "renderer" undefined
+(C16 names the paraphraser and the reasoning role). Finding 8: the
+term stranger brief defined (C17) and used throughout; the section
+renamed Stranger brief. Finding 4: the status line now states the
+three proposed terms await ratification (C47). Finding 18: the link
+now points at the style specification's rule table; naming each rule
+stays declined. Claims check after: 9 changed, 0 missing; prose 1,637
+words. Round 3 starts, so the text is a meta-review subject.
 
 Meta-review: pending

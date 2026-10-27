@@ -1,8 +1,8 @@
 # IR: Branch point v1.4, the rounds procedure and the reviewer brief
 
 Reader: RD-4
-Purpose: document. The revision of the branch point that carries the six process changes of evaluation case 007, the meta-review of case 006's rounds, and the owner's decisions on case 005's held changes.
-Status: draft (round 2 fixes applied; confirmation pending; unratified terms 3)
+Purpose: document. The revision of the branch point that carries the six process changes of evaluation case 007, which reviewed the rounds case 006 records, and the owner's decisions on case 005's held changes.
+Status: draft (round 2 fixes confirmed, one fixed again, three new defects fixed; round 3 in progress; unratified terms 3)
 Source: the owner's decisions of 2026-10-27 ("They are all justified"; "Agreed on all four - go ahead with the branch-point revision"); evaluation cases 005, 006 and 007; the methodology specification docs/intermediate-representation.md as merged in PR #52 and #53.
 Normative: yes
 Footprint: docs/branch-point.md; docs/branch-point.review.md; docs/style-spec.md; docs/records/branch-point-v1.4.ir.md; eval/cases/005-meta-review-stranger-rounds-2026-10-26.md; eval/cases/007-meta-review-full-ir-rounds-2026-10-27.md; eval/README.md; scripts/claims-check.mjs; scripts/test.mjs
@@ -30,6 +30,8 @@ T7. Locus: the stranger's judgement of where a defect sits: the prose, the IR, o
 C1. The rounds of dispositions D2 and D3 follow the methodology specification's Stranger rounds rule: until a round returns readable, or to the limit of ten in one count. [decided: owner, 2026-10-26]
 
 C37. The thresholds are provisional until the evaluation corpus tunes them. [decided: branch point v1.1, 2026-10-25]
+
+C47. The terms restatement, locus and fix kind are proposed by v1.4 and await ratification. [proposed: this IR]
 
 C38. The rules are the Rendering conditions of the methodology's intermediate-representation specification. [decided: methodology PR #49, 2026-10-26]
 
@@ -59,7 +61,7 @@ C9. After the fixes, the round's stranger instance receives its findings table a
 
 C10. The reasoning role fixes again, before the next round, a fix the instance says does not hold. [decided: owner, 2026-10-27]
 
-C11. The reasoning role adds to the next round's brief the declined findings of the earlier rounds with their reasons. [decided: owner, 2026-10-27]
+C11. The reasoning role adds to the next round's stranger brief the declined findings of the earlier rounds with their reasons. [decided: owner, 2026-10-27]
 
 C12. A restatement mismatch repeated by two rounds in one form is a prose finding, whatever the strangers attributed it to. [decided: owner, 2026-10-27]
 
@@ -69,19 +71,23 @@ C14. The reasoning role records in the review record, per round, the prose word 
 
 C15. Growth of the prose across rounds is a measure in the review record, not a bound. [decided: owner, 2026-10-27]
 
-C16. The renderer, the paraphraser or under D3 the reasoning role, joins a reason the IR holds as its own claim to its rule by connective prose. [decided: owner, 2026-10-27]
+C16. The paraphraser, or under D3 the reasoning role, joins a reason the IR holds as its own claim to its rule by connective prose. [decided: owner, 2026-10-27]
 
 ### The reviewer brief
 
-C17. The stranger reads the prose, the IR, and at Rounds step 4 its own findings table with the fixed passages, and no other file. [decided: owner, 2026-10-27]
+C17. The stranger brief is the instruction the reasoning role gives a round's stranger instance. [decided: owner, 2026-10-27]
+
+C46. The stranger reads the prose, the IR, and at Rounds step 4 its own findings table with the fixed passages, and no other file. [decided: owner, 2026-10-27]
 
 C19. After reading the IR, the stranger reports each disagreement between its restatement and the IR as a finding, with the side that caused it. [decided: owner, 2026-10-27]
 
-C20. The stranger reports findings against SP-01 to SP-05, SP-08 to SP-11, SP-18 as calibrated, SP-25 and SP-26. [decided: owner, 2026-10-27]
+C20. The stranger reports findings against SP-01 to SP-05, SP-08 to SP-11, SP-18 as calibrated, SP-25 and SP-26 of the style specification's rule table. [decided: owner, 2026-10-27]
 
 C21. Each finding carries a locus and a fix kind. [decided: owner, 2026-10-27]
 
-C22. SP-05, in the brief and in the style specification from v1.4, reads as the methodology's P-004 (identifiers carry names) does: a name or a link at first use. [decided: owner, 2026-10-27]
+C22. The stranger brief's SP-05 reads as the methodology's P-004 (identifiers carry names) does: a name or a link at first use. [decided: owner, 2026-10-27]
+
+C45. From v1.4 the style specification's SP-05 reads as P-004 does. [decided: owner, 2026-10-27]
 
 C23. SP-18 is calibrated to a duty whose actor or trigger the text does not state. [decided: owner, 2026-10-27]
 
@@ -93,7 +99,7 @@ C26. The brief lists the forms that are not defects. [decided: owner, 2026-10-27
 
 C43. The forms that are not defects: a dated status line; a table cell with semicolons; a parenthesis naming a rule or section; a sentence stating a count; a colon-introduced list with semicolons; a document's Reader, Type or Status line. [decided: owner, 2026-10-27]
 
-C44. The brief adds any form the text under review needs. [decided: owner, 2026-10-27]
+C44. The reasoning role adds to the stranger brief any form the text under review needs. [decided: owner, 2026-10-27]
 
 C27. The stranger's report has four parts in order: Restatement, Findings, Readability, Counts. [decided: owner, 2026-10-27]
 
@@ -129,7 +135,7 @@ R3. C12 refines C13 because a recurring mismatch is a text defect the verdict ru
 
 R4. C15 depends-on C14 because the measure is the recorded count.
 
-R5. C22 supports C20 because the style specification's SP-05 carries the wording the brief uses.
+R5. C45 supports C22 because the style specification's SP-05 carries the wording the brief uses.
 
 R6. C28 supports C13 because the verdict rule replaces the threshold.
 
