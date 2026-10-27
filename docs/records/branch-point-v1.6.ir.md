@@ -2,7 +2,7 @@
 
 Reader: RD-4
 Purpose: document. The revision of the branch point that replaces the three-round meta-review trigger with four signals read from the review record, by owner decision of 2026-10-27.
-Status: draft (round 3 in progress; unratified terms 0)
+Status: draft (round 3 readable; fixes applied, confirmation pending; unratified terms 0)
 Source: the owner's decision of 2026-10-27 ("signal based triggers are preferred"; "Go ahead with those defaults"); the five recorded counts; the methodology specification's count-3 amendment.
 Normative: yes
 Footprint: docs/branch-point.md; docs/records/branch-point-v1.6.ir.md; docs/records/branch-point-v1.6.review.md; docs/vocabulary.md; scripts/signals.mjs; scripts/test.mjs
@@ -29,15 +29,15 @@ C6. At the end of a count, the reasoning role checks the four signals against th
 
 C7. The reasoning role writes `Meta-review: pending` when the text is a subject and `Meta-review: not indicated` otherwise, naming the signals checked. [decided: owner, 2026-10-27]
 
-C8. The script `scripts/signals.mjs` reads a review record and reports the first and third signals from its per-round word counts, confirmation results and claims-check results. [proposed: this IR]
+C8. The script `scripts/signals.mjs` reads a review record and reports the first and third signals from its per-round word counts, confirmation results and claims-check results. [decided: owner, 2026-10-27]
 
-C9. The script reports wording that may show the second or fourth signal, for the reasoning role to confirm by reading at the end of the count. [proposed: this IR]
+C9. The script reports wording that may show the second or fourth signal, for the reasoning role to confirm by reading at the end of the count. [decided: owner, 2026-10-27]
 
 C10. The owner may dispatch a meta-review of any text, signal or none. [decided: owner, 2026-10-27]
 
 ### Why
 
-C11. The trigger of three rounds predated the measurements and fired on counts that converged without any step failing. [decided: owner, 2026-10-27]
+C11. The trigger of three rounds predated the five recorded counts and fired on counts that converged without any step failing. [decided: owner, 2026-10-27]
 
 C12. Every meta-review so far was foreshadowed by a signal in its review record: growth and an abandoned IR, a drift the mechanical check passed, confirmations rejecting fixes. [decided: cases 005, 007, 008]
 

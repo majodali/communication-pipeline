@@ -13,7 +13,7 @@ paragraph of the Meta-review section). The v1.5 procedure applies.
 |---|---|---|---|---|---|
 | 1 | 2,099 | 13 | 10 | 4.8 | not readable (5 v1.6 sentences read as claimless; 1 contradiction, 1 undefined term) |
 | 2 | 2,120 | 18 | 4 | 1.9 | not readable (restatement matched; 0 contradictions, 1 undefined term) |
-| 3 | 2115 | 20 | | | |
+| 3 | 2,115 | 21 | 5 | 2.4 | readable (restatement matched; 0 contradictions, 0 undefined terms) |
 
 ## Round 1, 2026-10-27
 
@@ -65,3 +65,23 @@ Claims check (stale-aware) before round 3: 4 changed or new claims,
 one new defect noted, the merged sentence at 42 words, split again
 with the reason as its own sentence (C19, C21). Claims check after:
 2 changed or new, 0 missing, 0 stale.
+
+## Round 3, 2026-10-27
+
+2,115 words; 5 findings; 2.4 per thousand words. Restatement: 199
+words, matching the IR. Contradictions 0, undefined terms 0; verdict:
+readable for RD-4. The count ends at round 3. Under step 7, the
+findings are fixed and the round's instance confirms each before
+delivery. By fix kind as the stranger judged: cut 1, rephrase 2, add
+2; by locus: IR 1, both 1, pre-v1.6 3.
+
+| # | Finding (shortened) | Kind | Fix | Confirmation |
+|---|---|---|---|---|
+| 1 | "the measurements" without a referent | referent | rephrase C11: "the five recorded counts" | |
+| 2 | step 5's two sentences repeat their main clause | excess (pre-v1.6) | declined: a v1.5 round split that sentence under SP-01; the two readings conflict and the split stands | |
+| 3 | the header names case 005 only | header (pre-v1.6) | rephrase: "Meta-review and the decisions on cases 005 and 008" | |
+| 4 | "case 005" unlinked at first use | identifier (pre-v1.6) | add: the link | |
+| 5 | C8 and C9 proposed while the prose states them as settled | provenance (IR) | rephrase: decided by the owner's go-ahead of 2026-10-27 | |
+
+Claims check (stale-aware) after the fixes: 3 changed claims, 0
+missing, 0 stale. Prose 2,115 to 2126 words.

@@ -7,8 +7,9 @@ evaluation case 008; v1.4, 2026-10-27, accepted by the
 owner with the style rules
 [SP-05, SP-18, SP-25 and SP-26](style-spec.md#rule-table) and the
 terms restatement, locus and fix kind, the six process changes of
-evaluation case 007 and the owner's decisions on case 005's held
-changes.
+evaluation case 007 and the owner's decisions on
+[case 005](../eval/cases/005-meta-review-stranger-rounds-2026-10-26.md)'s
+held changes.
 Thresholds are provisional until the evaluation corpus tunes them. The rules are the Rendering conditions of the methodology's
 [intermediate-representation specification](https://github.com/majodali/methodology/blob/main/docs/intermediate-representation.md)
 from 2026-10-26.
@@ -183,7 +184,8 @@ RD-4 (fresh agent session), RD-5 (external reader).
 - BP-09: the proportional-verification case. The owner or the
   delegating agent reads the short form.
 
-## Meta-review and the decisions on case 005
+## Meta-review and the decisions on cases 005 and 008
+
 
 
 A text is a subject for [meta-review](vocabulary.md#def-meta-review)
@@ -205,9 +207,8 @@ the first and third signals from its per-round word counts,
 confirmation results and claims-check results. The script
 reports wording that may show the second or fourth signal, for the reasoning role to confirm by reading at the end of the count. The owner may dispatch a
 meta-review of any text, signal or none. The limit of ten stays as
-the one count-based trigger. The trigger of three rounds predated the
-measurements and fired on counts that converged without any step
-failing. Every meta-review so far was foreshadowed by a signal in its
+the one count-based trigger. The trigger of three rounds predated the five recorded counts and
+fired on counts that converged without any step failing. Every meta-review so far was foreshadowed by a signal in its
 review record: growth and an abandoned IR, a drift the mechanical
 check passed, confirmations rejecting fixes. When the owner dispatches a meta-review, the meta-review session
 reads the review record and the text, and reports, as an
