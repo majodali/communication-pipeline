@@ -1,7 +1,8 @@
 # Branch point
 
-Status: active (v1.2, chunk 5: D3 runs two reviewer rounds). Thresholds
-are provisional until the evaluation corpus tunes them. The rules are
+Status: active (v1.3, 2026-10-26: every review runs in rounds until
+readable, limit ten; more than two rounds triggers a meta-review).
+Thresholds are provisional until the evaluation corpus tunes them. The rules are
 also the Rendering conditions of the methodology's
 [intermediate-representation specification](https://github.com/majodali/methodology/blob/main/docs/intermediate-representation.md)
 from 2026-10-26.
@@ -39,8 +40,8 @@ All inputs come from the IR itself.
 |---|---|
 | D0 [lint](vocabulary.md#def-lint) only | the schema checks, CK-01 (the referent rule) to CK-10 (section order), and the prose lints; the IR is delivered as it stands |
 | D1 render | D0, then the [paraphraser](vocabulary.md#def-paraphraser) renders prose for the reader |
-| D2 render and review | D1, then the [reviewer](vocabulary.md#def-reviewer) reads the IR and the prose against the reader's [readability test](vocabulary.md#def-readability-test) and the [style specification](style-spec.md) |
-| D3 review without render | the [reasoning role](vocabulary.md#def-reasoning-role) renders the prose itself, because the text is normative (a rule, a specification) and a paraphrase could change its force; the reviewer then reads IR and prose as in D2; the reasoning role fixes the findings, and a reviewer reads the fixed text again (owner ruling, 2026-10-26, from [case 004](../eval/cases/004-normative-text-reviews-2026-10-26.md)) |
+| D2 render and review | D1, then [reviewer](vocabulary.md#def-reviewer) rounds: a fresh reviewer reads the IR and the prose against the reader's [readability test](vocabulary.md#def-readability-test) and the [style specification](style-spec.md); the reasoning role fixes the findings; the next round reads the fixed text; the rounds end at the first verdict of readable, or after ten rounds, which the review record states (owner ruling, 2026-10-26) |
+| D3 review without render | the [reasoning role](vocabulary.md#def-reasoning-role) renders the prose itself, because the text is normative (a rule, a specification) and a paraphrase could change its force; then reviewer rounds as in D2 |
 
 ## When an IR is required at all
 
@@ -90,6 +91,16 @@ RD-4 (fresh agent session), RD-5 (external reader).
   claims list. The thresholds are guesses and are tuned in chunk 3.
 - BP-09: the proportional-verification case. The owner or the
   delegating agent reads the short form.
+
+## Meta-review
+
+A text that needs more than two reviewer rounds is a subject for
+[meta-review](vocabulary.md#def-meta-review) (owner ruling,
+2026-10-26). This project reads the review record and the text. It
+reports, as an [evaluation case](vocabulary.md#def-evaluation-case),
+whether the process needs a change. The first subject is the
+methodology's intermediate-representation specification at PR #50,
+whose second round returned not readable.
 
 ## Record
 

@@ -26,6 +26,14 @@ sections in this order:
 A case is never edited after grading except to fill its Outcome. A
 regrade is a new case citing the old one.
 
+## Meta-review records
+
+A [meta-review](../docs/vocabulary.md#def-meta-review) is an evaluation case whose source text is a
+review record of more than two rounds, with the text it reviewed. Its
+Findings section lists, per round, what the round found that the
+earlier rounds and their fixes had not caught, and why. Its Outcome
+names the process change proposed, or none.
+
 ## Cases
 
 | Case | Source | Reader | Findings / kwords | Outcome |
@@ -34,3 +42,4 @@ regrade is a new case citing the old one.
 | [002](cases/002-lint-on-own-documents-2026-10-25.md) | the pilot's fifteen documents at the end of chunk 1, linted by the chunk 2 lint | RD-4 and RD-1 | 43 violations, 130 warnings before; 0 and 30 after | schema v1.1; six lint refinements |
 | [003](cases/003-live-run-portfolio-refresh-2026-10-25.md) | the Portfolio refresh in the methodology repository, the first live run | RD-1 | 82.0, 35.2, 25.2 over three rounds; round 3 readable | three specification changes; two reviewer-instruction changes |
 | [004](cases/004-normative-text-reviews-2026-10-26.md) | four methodology amendments under disposition D3, one stranger round each | RD-4 | 22.1 over 5,878 words; 21.0 on new text; none readable before fixes | the adopted specification rewritten; CK-12; the second-round question |
+| [005](cases/005-meta-review-stranger-rounds-2026-10-26.md) | meta-review: ten stranger rounds on the methodology's IR specification (PR #51), limit reached | RD-4 | 232 findings; 10.9 to 4.8 per thousand words; 0 of 10 readable | nine process changes proposed, six recommended |
