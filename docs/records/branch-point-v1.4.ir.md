@@ -59,7 +59,9 @@ C35. A fix adds words only for a missing definition, referent or rule. [decided:
 
 C8. The reasoning role records a declined finding in the review record with its reason. [decided: owner, 2026-10-27]
 
-C9. After the fixes, the reasoning role sends the round's stranger instance its findings table and the fixed passages, and the instance answers, per accepted finding, whether the fix holds. [decided: owner, 2026-10-27]
+C9. After the fixes, the reasoning role sends the round's stranger instance its findings table and the fixed passages. [decided: owner, 2026-10-27]
+
+C50. The instance answers, per accepted finding, whether the fix holds. [decided: owner, 2026-10-27]
 
 C10. The reasoning role fixes again, before the next round, a fix the instance says does not hold. [decided: owner, 2026-10-27]
 

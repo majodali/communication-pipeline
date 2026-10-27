@@ -76,8 +76,8 @@ of ten. This project's procedure for one round, in order:
    referent or rule. The reasoning role records a declined finding
    in the review record with its reason.
 4. After the fixes, the reasoning role sends the round's stranger
-   instance its findings table and the fixed passages, and the
-   instance answers, per accepted finding, whether the fix holds. The reasoning role fixes again,
+   instance its findings table and the fixed passages. The instance
+   answers, per accepted finding, whether the fix holds. The reasoning role fixes again,
    before the next round, a fix the instance says does not hold.
 5. The reasoning role adds to the next round's stranger brief the
    declined findings of the earlier rounds with their reasons.
@@ -203,4 +203,4 @@ that fired and the [disposition](vocabulary.md#def-disposition), in `eval/dispat
 chunk 2 of the [pilot plan](plans/pipeline-pilot.md). The log is the
 data the thresholds are tuned against.
 
-<!-- render map: C37→¶Status C47→¶Status C38→¶Status C39→¶D2 C48→¶D1 C1→¶Rounds C2→¶Rounds-1 C36→¶Rounds-1 C3→¶Rounds-1 C41→¶Rounds-1 C4→¶Rounds-1 C5→¶Rounds-2 C6→¶Rounds-3 C7→¶Rounds-3 C35→¶Rounds-3 C8→¶Rounds-3 C9→¶Rounds-4 C10→¶Rounds-4 C11→¶Rounds-5 C12→¶Rounds-6 C13→¶Rounds-verdict C14→¶Rounds-verdict C15→¶Rounds-verdict C16→¶D1 C17→¶Rounds-2 C46→¶Brief C19→¶Brief C20→¶Brief C21→¶Brief C22→¶Brief C45→¶Brief C23→¶Brief C24→¶Brief C25→¶Brief C26→¶Brief C43→¶Brief C44→¶Brief C27→¶Brief C28→¶Meta-2 C29→¶Meta-2 C30→¶Meta-2 C31→¶Meta-2 C32→¶Meta-2 C42→¶Meta-2 C33→¶Meta-1 C40→¶Meta-1 C49→¶D3 C34→¶Meta-1 (IR: docs/records/branch-point-v1.4.ir.md) -->
+<!-- render map: C37→¶Status C47→¶Status C38→¶Status C39→¶D2 C48→¶D1 C1→¶Rounds C2→¶Rounds-1 C36→¶Rounds-1 C3→¶Rounds-1 C41→¶Rounds-1 C4→¶Rounds-1 C5→¶Rounds-2 C6→¶Rounds-3 C7→¶Rounds-3 C35→¶Rounds-3 C8→¶Rounds-3 C9→¶Rounds-4 C50→¶Rounds-4 C10→¶Rounds-4 C11→¶Rounds-5 C12→¶Rounds-6 C13→¶Rounds-verdict C14→¶Rounds-verdict C15→¶Rounds-verdict C16→¶D1 C17→¶Rounds-2 C46→¶Brief C19→¶Brief C20→¶Brief C21→¶Brief C22→¶Brief C45→¶Brief C23→¶Brief C24→¶Brief C25→¶Brief C26→¶Brief C43→¶Brief C44→¶Brief C27→¶Brief C28→¶Meta-2 C29→¶Meta-2 C30→¶Meta-2 C31→¶Meta-2 C32→¶Meta-2 C42→¶Meta-2 C33→¶Meta-1 C40→¶Meta-1 C49→¶D3 C34→¶Meta-1 (IR: docs/records/branch-point-v1.4.ir.md) -->
