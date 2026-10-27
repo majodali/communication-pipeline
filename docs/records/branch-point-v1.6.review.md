@@ -12,7 +12,8 @@ paragraph of the Meta-review section). The v1.5 procedure applies.
 | Round | Prose words | IR claims | Findings | Per 1,000 words | Verdict |
 |---|---|---|---|---|---|
 | 1 | 2,099 | 13 | 10 | 4.8 | not readable (5 v1.6 sentences read as claimless; 1 contradiction, 1 undefined term) |
-| 2 | 2120 | 18 | | | |
+| 2 | 2,120 | 18 | 4 | 1.9 | not readable (restatement matched; 0 contradictions, 1 undefined term) |
+| 3 | 2115 | 20 | | | |
 
 ## Round 1, 2026-10-27
 
@@ -43,3 +44,21 @@ now says case 008 proposed no change to the rule); C16's provenance
 date of 2026-10-26, declined, since the tag records the owner's
 ruling that defined the meta-review, not this revision. Claims check
 after: 1 changed, 0 missing, 0 stale.
+
+## Round 2, 2026-10-27
+
+2,120 words; 4 findings; 1.9 per thousand words. Restatement: 199
+words, matching the IR. Contradictions 0, undefined terms 1 ("state
+paragraph", pre-v1.6); verdict: not readable for RD-4. By fix kind as
+the stranger judged: cut 1, rephrase 1, add 2; by locus: both 2,
+pre-v1.6 2.
+
+| # | Finding (shortened) | Kind | Disposition |
+|---|---|---|---|
+| 1 | the reading confirmation has no trigger | SP-18 | rephrase C9: "at the end of the count" |
+| 2 | "and none was made" | excess | cut from C15 |
+| 3 | the IR-required condition stated twice | excess (pre-v1.6) | rephrase: one sentence (C19) |
+| 4 | "state paragraph" undefined | term (pre-v1.6) | add: its definition in the BP-06 reason (C20) |
+
+Claims check (stale-aware) before round 3: 4 changed or new claims,
+0 missing, 0 stale. Same-instance confirmation: recorded below.

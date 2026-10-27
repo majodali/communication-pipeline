@@ -1,6 +1,6 @@
 # Branch point
 
-Status: under review (v1.6, round 2). Until the owner accepts v1.6,
+Status: under review (v1.6, round 3). Until the owner accepts v1.6,
 v1.5 is active on main. Versions: v1.6, 2026-10-27, the signal-based
 meta-review trigger; v1.5, 2026-10-27, the five process changes of
 evaluation case 008; v1.4, 2026-10-27, accepted by the
@@ -138,10 +138,10 @@ Findings, Readability, Counts.
 
 A report to RD-1 (the human owner, in conversation) or RD-3 (a
 delegating agent) may be written as prose directly, with the prose
-[lint](vocabulary.md#def-lint). The condition: the report introduces no term, records no decision, and states no
-[register fact](https://github.com/majodali/methodology/blob/main/docs/vocabulary.md#def-register-fact). A term, a decision, or a
-register fact requires the IR, because each is content a model would
-hold (owner ruling, 2026-10-25). The reasoning role writes a document as an IR first.
+[lint](vocabulary.md#def-lint), when it holds no term, decision or
+[register fact](https://github.com/majodali/methodology/blob/main/docs/vocabulary.md#def-register-fact),
+because each is content a model would hold (owner ruling,
+2026-10-25). The reasoning role writes a document as an IR first.
 
 ## Rules
 
@@ -174,7 +174,8 @@ RD-4 (fresh agent session), RD-5 (external reader).
   [reviewer](vocabulary.md#def-reviewer)'s check. In a report the owner's ratification ask is the
   check, because the [stranger](vocabulary.md#def-stranger) review on reports runs only on request
   (owner ruling, 2026-10-25).
-- BP-06: the returning owner needs the state paragraph, which only the
+- BP-06: the returning owner needs the state paragraph, the paragraph
+  stating where the project stands, which only the
   [paraphraser](vocabulary.md#def-paraphraser) writes.
 - BP-07 and BP-08: a short IR with no dependencies reads well as it
   stands. Past the thresholds, the owner reads prose faster than a
@@ -202,8 +203,7 @@ the text is a subject and `Meta-review: not indicated` otherwise,
 naming the signals checked. The script `scripts/signals.mjs` reads a review record and reports
 the first and third signals from its per-round word counts,
 confirmation results and claims-check results. The script
-reports wording that may show the second or fourth signal, for the
-reasoning role to confirm by reading. The owner may dispatch a
+reports wording that may show the second or fourth signal, for the reasoning role to confirm by reading at the end of the count. The owner may dispatch a
 meta-review of any text, signal or none. The limit of ten stays as
 the one count-based trigger. The trigger of three rounds predated the
 measurements and fired on counts that converged without any step
@@ -220,7 +220,7 @@ on methodology PR #52's rounds, and
 [case 008](../eval/cases/008-meta-review-branch-point-rounds-2026-10-27.md),
 on branch point v1.4's rounds. The owner adopted case 008's five changes on 2026-10-27. Case 008
 proposed no change to the D1 row's rule on joining a reason to its
-rule by connective prose, and none was made.
+rule by connective prose.
 
 The owner's decisions of 2026-10-27 on case 005's held changes.
 Case 005's change 1, a verdict by a finding-rate threshold, is struck, because
@@ -249,4 +249,4 @@ the data the thresholds are tuned against.
 
 <!-- v1.5 map (IR: docs/records/branch-point-v1.5.ir.md): C1→¶Rounds-1 C2→¶Rounds-1 C14→¶Rounds-1 C4→¶Rounds-5 C3→¶Rounds-6 C8→¶Rounds-7 C9→¶Rounds-7 C10→¶Rounds-7 C5→¶Rounds-verdict C6→¶Rounds-verdict C16→¶Rounds-verdict C7→¶Brief-forms C12→¶Meta-1 C13→¶Meta-1 C17→¶Status C15→¶Status C11→¶Meta-1 C18→¶Meta-1 -->
 
-<!-- render map: C1→¶Meta-1 C2→¶Meta-1 C3→¶Meta-1 C4→¶Meta-1 C5→¶Meta-1 C6→¶Meta-1 C7→¶Meta-1 C8→¶Meta-1 C9→¶Meta-1 C10→¶Meta-1 C13→¶Meta-1 C11→¶Meta-1 C12→¶Meta-1 C14→¶Status C15→¶Meta-1 C16→¶Meta-1 C17→¶Brief C18→¶Required (IR: docs/records/branch-point-v1.6.ir.md) -->
+<!-- render map: C1→¶Meta-1 C2→¶Meta-1 C3→¶Meta-1 C4→¶Meta-1 C5→¶Meta-1 C6→¶Meta-1 C7→¶Meta-1 C8→¶Meta-1 C9→¶Meta-1 C10→¶Meta-1 C13→¶Meta-1 C11→¶Meta-1 C12→¶Meta-1 C14→¶Status C15→¶Meta-1 C16→¶Meta-1 C17→¶Brief C18→¶Required C19→¶Required C20→¶Why (IR: docs/records/branch-point-v1.6.ir.md) -->

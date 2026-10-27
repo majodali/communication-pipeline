@@ -2,7 +2,7 @@
 
 Reader: RD-4
 Purpose: document. The revision of the branch point that replaces the three-round meta-review trigger with four signals read from the review record, by owner decision of 2026-10-27.
-Status: draft (round 2 in progress; unratified terms 0)
+Status: draft (round 2 fixes applied, confirmation pending; unratified terms 0)
 Source: the owner's decision of 2026-10-27 ("signal based triggers are preferred"; "Go ahead with those defaults"); the five recorded counts; the methodology specification's count-3 amendment.
 Normative: yes
 Footprint: docs/branch-point.md; docs/records/branch-point-v1.6.ir.md; docs/records/branch-point-v1.6.review.md; docs/vocabulary.md; scripts/signals.mjs; scripts/test.mjs
@@ -31,7 +31,7 @@ C7. The reasoning role writes `Meta-review: pending` when the text is a subject 
 
 C8. The script `scripts/signals.mjs` reads a review record and reports the first and third signals from its per-round word counts, confirmation results and claims-check results. [proposed: this IR]
 
-C9. The script reports wording that may show the second or fourth signal, for the reasoning role to confirm by reading. [proposed: this IR]
+C9. The script reports wording that may show the second or fourth signal, for the reasoning role to confirm by reading at the end of the count. [proposed: this IR]
 
 C10. The owner may dispatch a meta-review of any text, signal or none. [decided: owner, 2026-10-27]
 
@@ -45,13 +45,17 @@ C13. The limit of ten stays as the one count-based trigger. [decided: owner, 202
 
 C14. Until the owner accepts v1.6, v1.5 is active on main. [decided: owner, 2026-10-27]
 
-C15. Case 008 proposed no change to the D1 row's rule on joining a reason to its rule by connective prose, and none was made. [decided: owner, 2026-10-27]
+C15. Case 008 proposed no change to the D1 row's rule on joining a reason to its rule by connective prose. [decided: owner, 2026-10-27]
 
 C16. When the owner dispatches a meta-review, the meta-review session reads the review record and the text, and reports, as an evaluation case, whether the process needs a change. [decided: owner, 2026-10-26]
 
 C17. The stranger reads only the prose, the IR, and at Rounds steps 4 and 7 its own findings table with the fixed passages. [decided: owner, 2026-10-27]
 
 C18. The reasoning role writes a document as an IR first. [decided: owner, 2026-10-25]
+
+C19. A report to RD-1 or RD-3 may be written as prose directly, with the prose lint, when it holds no term, decision or register fact, because each is content a model would hold. [decided: owner, 2026-10-25]
+
+C20. The returning owner needs the state paragraph, the paragraph stating where the project stands, which only the paraphraser writes. [decided: branch point v1.1, 2026-10-25]
 
 ## Relations
 
@@ -77,4 +81,4 @@ E3. eval/cases/005-meta-review-stranger-rounds-2026-10-26.md: prose 2,572 to 4,5
 
 ## Asks
 
-A1. Accept branch point v1.6. Depends: C1 to C18.
+A1. Accept branch point v1.6. Depends: C1 to C20.
