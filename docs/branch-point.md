@@ -2,8 +2,9 @@
 
 Status: active (v1.4, 2026-10-27, pending the owner's acceptance of
 the version, of the style rules SP-05, SP-18, SP-25 and SP-26, and of
-the terms restatement, locus and fix kind: the rounds procedure and
-the stranger brief, from evaluation case 007; v1.3, 2026-10-26:
+the terms restatement, locus and fix kind: the six process changes
+of evaluation case 007 and the owner's decisions on case 005's held
+changes; v1.3, 2026-10-26:
 every review runs in rounds until readable, limit ten; three or more
 rounds make a text a meta-review subject).
 Thresholds are provisional until the evaluation corpus tunes them. The rules are
@@ -45,7 +46,7 @@ All inputs but the owner flag come from the IR.
 | D0 [lint](vocabulary.md#def-lint) only | the schema checks, CK-01 (the referent rule) to CK-10 (section order), and the prose lints; the IR is delivered as it stands |
 | D1 render | D0, then the [paraphraser](vocabulary.md#def-paraphraser) renders prose for the reader. The paraphraser, or under D3 the reasoning role, joins a reason the IR holds as its own claim to its rule by connective prose |
 | D2 render and review | D1, then [reviewer](vocabulary.md#def-reviewer) rounds under the Rounds section below |
-| D3 review, reasoning-role rendered | the [reasoning role](vocabulary.md#def-reasoning-role) renders the prose itself, because the text is normative (a rule, a specification) and a paraphrase could change its force; then reviewer rounds as in D2 |
+| D3 review, reasoning-role rendered | the [reasoning role](vocabulary.md#def-reasoning-role) renders the prose itself. Then the reviewer rounds run as in D2 |
 
 ## Rounds
 

@@ -22,7 +22,7 @@ confirmation after the fixes, declined findings carried.
 | 3 | 1,637 | 46 | 9 | 5.5 | not readable (restatement mismatch on C33's wording; 0 contradictions, 1 undefined term, pre-v1.4) |
 | 4 | 1,637 | 47 | 6 | 3.7 | not readable (restatement mismatch on provenance: C3, C41, A1; 3 contradictions, 1 undefined term) |
 | 5 | 1,639 | 49 | 9 | 5.5 | not readable (restatement mismatch on C49 only; 0 contradictions, 0 undefined terms) |
-| 6 | 1634 | 48 | | | |
+| 6 | 1,631 | 48 | | | |
 
 
 ## Round 1, 2026-10-27
@@ -182,4 +182,11 @@ both 4.
 | 9 | "first" | excess | cut from C5 |
 
 Claims check before round 6: 4 changed claims, 0 missing, C45 removed.
-Same-instance confirmation: recorded below.
+Same-instance confirmation: 6 of 9 fixes held; findings 1, 2 and 6
+had not reached the prose. The reasoning role's first edit script
+aborted on a wrapped anchor before writing, and the second script
+omitted the two passages; the claims check passed because C49's
+sentence still overlapped the unfixed row. The confirmation caught
+it. Fixed again: the status line's scope and the D3 row. Claims
+check after: 0 changed, the two passages re-read against C47 and
+C49.
