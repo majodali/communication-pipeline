@@ -254,6 +254,8 @@ check of the ten, that a mechanism to track findings and confidence
 in their fixes is wanted; that is for the meta-review and a later
 decision.
 
-Meta-review: pending. Dispatched by the owner on 2026-10-27 to a
-fresh session with no part in the rounds; its report becomes
-evaluation case 008.
+Meta-review: delivered, 2026-10-27, by a fresh session with no part in
+the rounds:
+[evaluation case 008](../../eval/cases/008-meta-review-branch-point-rounds-2026-10-27.md)
+(five changes proposed and recommended; the round-6 text judged
+readable for RD-4).
