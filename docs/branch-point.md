@@ -4,7 +4,7 @@ Status: active (v1.4, 2026-10-27: the rounds procedure and the
 stranger brief, from evaluation case 007; the terms restatement,
 locus and fix kind are proposed by v1.4 and await ratification; v1.3, 2026-10-26:
 every review runs in rounds until readable, limit ten; three or more
-rounds trigger a meta-review).
+rounds make a text a meta-review subject).
 Thresholds are provisional until the evaluation corpus tunes them. The rules are
 also the Rendering conditions of the methodology's
 [intermediate-representation specification](https://github.com/majodali/methodology/blob/main/docs/intermediate-representation.md)
@@ -20,7 +20,7 @@ pipeline; the human owner setting thresholds.
 
 The [branch point](vocabulary.md#def-branch-point) decides, for one IR, which of the pipeline's model
 stages run. It protects proportional verification: a short report to
-a reader who shares the conversation costs one [lint](vocabulary.md#def-lint) pass, and a
+a reader who shares the conversation costs one [lint](vocabulary.md#def-lint) pass. A
 document for a [stranger](vocabulary.md#def-stranger) costs the full pipeline.
 
 ## Inputs
@@ -76,7 +76,7 @@ decisions of 2026-10-27 on case 007):
    referent or rule. The reasoning role records a declined finding
    in the review record with its reason.
 4. After the fixes, the round's stranger instance receives its
-   findings table and the fixed passages. The instance answers, per
+   findings table and the fixed passages. The round's stranger instance answers, per
    accepted finding, whether the fix holds. The reasoning role fixes again,
    before the next round, a fix the instance says does not hold.
 5. The reasoning role adds to the next round's stranger brief the
@@ -96,7 +96,7 @@ The stranger reads the prose, the IR, and at Rounds step 4 its own
 findings table with the fixed passages, and no other file. After reading the IR, the stranger reports each
 disagreement between its restatement and the IR as a finding, with
 the side that caused it. The stranger reports findings against
-SP-01 to SP-05, SP-08 to SP-11, SP-18 as calibrated, SP-25 and SP-26
+SP-01 to SP-05, SP-08 to SP-11, SP-18, SP-25 and SP-26
 of the [style specification's rule table](style-spec.md#rule-table). Each finding carries a
 locus (the prose, the IR, or both) and a fix kind (cut, rephrase, or
 add). The stranger brief's SP-05 reads as the methodology's
@@ -124,14 +124,14 @@ Findings, Readability, Counts.
 A report to RD-1 (the human owner, in conversation) or RD-3 (a
 delegating agent) may be written as prose directly, with the prose
 [lint](vocabulary.md#def-lint). The condition: it introduces no term,
-records no decision, and states no register fact. Any of those three requires
-the IR, because each is content a model would hold: a term, a
-decision, or a register fact (owner ruling, 2026-10-25). Documents
+records no decision, and states no register fact. A term, a decision, or a
+register fact requires the IR, because each is content a model would
+hold (owner ruling, 2026-10-25). Documents
 always start as an IR.
 
 ## Rules
 
-Rules apply in order. The first rule whose condition holds decides.
+The first rule whose condition holds decides.
 Readers are the [catalog](readers.md)'s: RD-1 (human owner, in
 conversation), RD-2 (human owner, returning), RD-3 (delegating agent),
 RD-4 (fresh agent session), RD-5 (external reader).
@@ -184,7 +184,7 @@ The owner's decisions of 2026-10-27 on case 005's held changes.
 Change 1, a verdict by a finding-rate threshold, is struck, because
 the verdict rule reached zero contradictions without a threshold.
 Change 3, stopping when the finding count is flat with a limit of
-five, is struck, because the rate was flat from round 5 while
+five, is struck, because the finding rate was flat from round 5 while
 contradictions ran to round 9. Change 4, a bound on growth, is
 replaced by the measure of the Rounds section, because fixing in the
 IR first kept the prose from growing.
@@ -197,7 +197,8 @@ recommended.
 ## Record
 
 The [dispatcher](vocabulary.md#def-dispatcher) records, for every IR it routes, the inputs, the rule
-that fired and the [disposition](vocabulary.md#def-disposition), in `eval/dispatch-log.md` (chunk 2
-creates it). The log is the data chunk 3 tunes against.
+that fired and the [disposition](vocabulary.md#def-disposition), in `eval/dispatch-log.md`, created in
+chunk 2 of the [pilot plan](plans/pipeline-pilot.md). The log is the
+data the thresholds are tuned against.
 
-<!-- render map: C37→¶Status C47→¶Status C38→¶Status C39→¶D2 C1→¶Rounds C2→¶Rounds-1 C36→¶Rounds-1 C3→¶Rounds-1 C41→¶Rounds-1 C4→¶Rounds-1 C5→¶Rounds-2 C6→¶Rounds-3 C7→¶Rounds-3 C35→¶Rounds-3 C8→¶Rounds-3 C9→¶Rounds-4 C10→¶Rounds-4 C11→¶Rounds-5 C12→¶Rounds-6 C13→¶Rounds-verdict C14→¶Rounds-verdict C15→¶Rounds-verdict C16→¶D1 C17→¶Rounds-2 C46→¶Brief C19→¶Brief C20→¶Brief C21→¶Brief C22→¶Brief C45→¶Brief C23→¶Brief C24→¶Brief C25→¶Brief C26→¶Brief C43→¶Brief C44→¶Brief C27→¶Brief C28→¶Meta-2 C29→¶Meta-2 C30→¶Meta-2 C31→¶Meta-2 C32→¶Meta-2 C42→¶Meta-2 C33→¶Meta-1 C40→¶Meta-1 C34→¶Meta-1 (IR: docs/records/branch-point-v1.4.ir.md) -->
+<!-- render map: C37→¶Status C47→¶Status C38→¶Status C39→¶D2 C48→¶D1 C1→¶Rounds C2→¶Rounds-1 C36→¶Rounds-1 C3→¶Rounds-1 C41→¶Rounds-1 C4→¶Rounds-1 C5→¶Rounds-2 C6→¶Rounds-3 C7→¶Rounds-3 C35→¶Rounds-3 C8→¶Rounds-3 C9→¶Rounds-4 C10→¶Rounds-4 C11→¶Rounds-5 C12→¶Rounds-6 C13→¶Rounds-verdict C14→¶Rounds-verdict C15→¶Rounds-verdict C16→¶D1 C17→¶Rounds-2 C46→¶Brief C19→¶Brief C20→¶Brief C21→¶Brief C22→¶Brief C45→¶Brief C23→¶Brief C24→¶Brief C25→¶Brief C26→¶Brief C43→¶Brief C44→¶Brief C27→¶Brief C28→¶Meta-2 C29→¶Meta-2 C30→¶Meta-2 C31→¶Meta-2 C32→¶Meta-2 C42→¶Meta-2 C33→¶Meta-1 C40→¶Meta-1 C34→¶Meta-1 (IR: docs/records/branch-point-v1.4.ir.md) -->

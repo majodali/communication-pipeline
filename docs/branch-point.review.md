@@ -19,7 +19,8 @@ confirmation after the fixes, declined findings carried.
 |---|---|---|---|---|---|
 | 1 | 1,527 | 36 | 23 | 15.1 | not readable (restatement matched in substance; 4 contradictions, 0 undefined terms) |
 | 2 | 1,580 | 43 | 18 | 11.4 | not readable (restatement matched in substance; 1 contradiction, 2 undefined terms) |
-| 3 | 1,637 | 46 | | | |
+| 3 | 1,637 | 46 | 9 | 5.5 | not readable (restatement mismatch on C33's wording; 0 contradictions, 1 undefined term, pre-v1.4) |
+| 4 | 1,632 | 47 | | | |
 
 
 ## Round 1, 2026-10-27
@@ -106,3 +107,28 @@ stays declined. Claims check after: 9 changed, 0 missing; prose 1,637
 words. Round 3 starts, so the text is a meta-review subject.
 
 Meta-review: pending
+
+## Round 3, 2026-10-27
+
+1,637 words; 9 findings; 5.5 per thousand words. Restatement: 196
+words; one mismatch, the status line's "trigger a meta-review" against
+C33's "meta-review subject". Contradictions 0, undefined terms 1
+("chunk 2", "chunk 3" in the pre-v1.4 Record section); verdict: not
+readable for RD-4. By fix kind as the stranger judged: cut 2,
+rephrase 3, add 4; by locus: prose 2, IR 1, both 2, pre-v1.4 4. The
+declined finding was carried in the brief and not raised again.
+
+| # | Finding (shortened) | Kind | Disposition |
+|---|---|---|---|
+| 1 | "trigger" vs "subject" | restatement | rephrase the status line to C33's wording |
+| 2 | the D1 row's first sentence has no claim | IR gap | add C48 in the IR |
+| 3 | Purpose sentence with two claims | compound (pre-v1.4) | rephrase: split |
+| 4 | "those three" | referent (pre-v1.4) | rephrase, fewer words |
+| 5 | "The instance" | referent | rephrase: "The round's stranger instance" |
+| 6 | "as calibrated" stated twice | excess | cut from C20 and the prose |
+| 7 | "the rate" | referent | rephrase C29: "the finding rate" |
+| 8 | "chunk 2", "chunk 3" undefined | term (pre-v1.4) | rephrase: chunk 2 linked to the pilot plan; "chunk 3 tunes against" becomes "the thresholds are tuned against" |
+| 9 | "Rules apply in order" repeated | excess (pre-v1.4) | cut |
+
+Claims check before round 4: 3 changed or new claims, 0 missing.
+Same-instance confirmation: recorded below.

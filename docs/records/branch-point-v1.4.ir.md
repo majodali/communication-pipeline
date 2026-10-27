@@ -2,7 +2,7 @@
 
 Reader: RD-4
 Purpose: document. The revision of the branch point that carries the six process changes of evaluation case 007, which reviewed the rounds case 006 records, and the owner's decisions on case 005's held changes.
-Status: draft (round 2 fixes confirmed, one fixed again, three new defects fixed; round 3 in progress; unratified terms 3)
+Status: draft (round 3 fixes applied; confirmation pending; unratified terms 3)
 Source: the owner's decisions of 2026-10-27 ("They are all justified"; "Agreed on all four - go ahead with the branch-point revision"); evaluation cases 005, 006 and 007; the methodology specification docs/intermediate-representation.md as merged in PR #52 and #53.
 Normative: yes
 Footprint: docs/branch-point.md; docs/branch-point.review.md; docs/style-spec.md; docs/records/branch-point-v1.4.ir.md; eval/cases/005-meta-review-stranger-rounds-2026-10-26.md; eval/cases/007-meta-review-full-ir-rounds-2026-10-27.md; eval/README.md; scripts/claims-check.mjs; scripts/test.mjs
@@ -36,6 +36,8 @@ C47. The terms restatement, locus and fix kind are proposed by v1.4 and await ra
 C38. The rules are the Rendering conditions of the methodology's intermediate-representation specification. [decided: methodology PR #49, 2026-10-26]
 
 C39. Disposition D2 runs D1, then the reviewer rounds. [decided: branch point v1.1, 2026-10-25]
+
+C48. Disposition D1 runs D0, then the paraphraser renders prose for the reader. [decided: branch point v1.1, 2026-10-25]
 
 C2. Before each round, the reasoning role finds, for each claim changed since the last round, the prose sentence that carries it. [decided: owner, 2026-10-27]
 
@@ -81,7 +83,7 @@ C46. The stranger reads the prose, the IR, and at Rounds step 4 its own findings
 
 C19. After reading the IR, the stranger reports each disagreement between its restatement and the IR as a finding, with the side that caused it. [decided: owner, 2026-10-27]
 
-C20. The stranger reports findings against SP-01 to SP-05, SP-08 to SP-11, SP-18 as calibrated, SP-25 and SP-26 of the style specification's rule table. [decided: owner, 2026-10-27]
+C20. The stranger reports findings against SP-01 to SP-05, SP-08 to SP-11, SP-18, SP-25 and SP-26 of the style specification's rule table. [decided: owner, 2026-10-27]
 
 C21. Each finding carries a locus and a fix kind. [decided: owner, 2026-10-27]
 
@@ -107,7 +109,7 @@ C27. The stranger's report has four parts in order: Restatement, Findings, Reada
 
 C28. Case 005's change 1, a verdict by a finding-rate threshold, is struck, because the verdict rule reached zero contradictions without a threshold. [decided: owner, 2026-10-27]
 
-C29. Case 005's change 3, stopping when the finding count is flat with a limit of five, is struck, because the rate was flat from round 5 while contradictions ran to round 9. [decided: owner, 2026-10-27]
+C29. Case 005's change 3, stopping when the finding count is flat with a limit of five, is struck, because the finding rate was flat from round 5 while contradictions ran to round 9. [decided: owner, 2026-10-27]
 
 C30. Case 005's change 4, a bound on growth, is replaced by the measure of the Rounds section, because fixing in the IR first kept the prose from growing. [decided: owner, 2026-10-27]
 
