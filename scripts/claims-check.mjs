@@ -64,7 +64,8 @@ function main() {
   const args = process.argv.slice(2);
   const oi = args.indexOf('--old-prose'); const oldProse = oi >= 0 ? args[oi + 1] : null;
   const fi = args.indexOf('--floor'); const floor = fi >= 0 ? Number(args[fi + 1]) : 0.5;
-  const files = args.filter((a, i) => !a.startsWith('--') && !/^\d/.test(a) && i !== oi + 1 && i !== fi + 1);
+  const skip = new Set([oi >= 0 ? oi + 1 : -1, fi >= 0 ? fi + 1 : -1]);
+  const files = args.filter((a, i) => !a.startsWith('--') && !skip.has(i));
   if (files.length < 3) { console.error('usage: claims-check.mjs <old.ir.md> <new.ir.md> <prose.md> [--floor 0.5] [--json]'); process.exit(2); }
   const r = claimsCheck(readFileSync(resolve(files[0]), 'utf8'), readFileSync(resolve(files[1]), 'utf8'), readFileSync(resolve(files[2]), 'utf8'), { floor, oldProseText: oldProse ? readFileSync(resolve(oldProse), 'utf8') : null });
   if (args.includes('--json')) { process.stdout.write(JSON.stringify(r, null, 2)); return; }
