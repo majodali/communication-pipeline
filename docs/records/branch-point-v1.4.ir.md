@@ -89,7 +89,11 @@ C24. SP-25, contradiction, is a finding when two passages cannot both be followe
 
 C25. SP-26, excess words, is a finding when a word, phrase or sentence can go without losing a claim, or a claim is stated twice. [decided: owner, 2026-10-27]
 
-C26. The brief lists the forms that are not defects: a status line recording versions with dates; a table cell listing items with semicolons; a parenthesis naming a rule or a section; a sentence about a count that states the count; a list introduced by a colon with items separated by semicolons; a Reader, Type or Status line at the head of a document; and any form the text under review adds. [decided: owner, 2026-10-27]
+C26. The brief lists the forms that are not defects. [decided: owner, 2026-10-27]
+
+C43. The forms that are not defects are: a status line recording versions with dates; a table cell listing items with semicolons; a parenthesis naming a rule or a section; a sentence about a count that states the count; a colon-introduced list with semicolons; a Reader, Type or Status line heading a document. [decided: owner, 2026-10-27]
+
+C44. The brief adds any form the text under review needs. [decided: owner, 2026-10-27]
 
 C27. The stranger's report has four parts in order: Restatement, Findings, Readability, Counts. [decided: owner, 2026-10-27]
 
