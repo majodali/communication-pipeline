@@ -223,3 +223,13 @@ test('CK-12: a duplicated identifier is a violation', () => {
   const ir = 'Reader: RD-1\nPurpose: report. x\nStatus: draft\nSource: s\n\n## Terms\n\n## Claims\n\nC1. One. [proposed: this IR]\n\nC1. Two. [proposed: this IR]\n\n## Relations\n\n## Evidence\n\n## Asks\n\nA0. No asks.\n';
   assert.ok(lintIR(ir, { vocab: new Set() }).findings.some((f) => f.check === 'CK-12'));
 });
+
+test('CK-13: two T elements naming one term is a violation', () => {
+  const ir = 'Reader: RD-1\nPurpose: report. x\nStatus: draft\nSource: s\n\n## Terms\n\nT1. Widget: a thing. [proposed: this IR]\n\nT2. Widget: another thing. [proposed: this IR]\n\n## Claims\n\nC1. One. [proposed: this IR]\n\n## Relations\n\n## Evidence\n\n## Asks\n\nA0. No asks.\n';
+  assert.ok(lintIR(ir, { vocab: new Set() }).findings.some((f) => f.check === 'CK-13'));
+});
+
+test('CK-16: a stray line in a section is a violation', () => {
+  const ir = 'Reader: RD-1\nPurpose: report. x\nStatus: draft\nSource: s\n\n## Terms\n\n## Claims\n\nC1. One. [proposed: this IR]\n\nA stray sentence.\n\n## Relations\n\n## Evidence\n\n## Asks\n\nA0. No asks.\n';
+  assert.ok(lintIR(ir, { vocab: new Set() }).findings.some((f) => f.check === 'CK-16'));
+});

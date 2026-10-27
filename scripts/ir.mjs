@@ -10,7 +10,7 @@ const PROV_RE = /\[(decided|proposed|inferred)(?::\s*([^\]]*))?\]\s*$/;
 
 export function parseIR(text) {
   const lines = text.split(/\r?\n/);
-  const ir = { header: {}, sections: [], elements: [], errors: [] };
+  const ir = { header: {}, sections: [], elements: [], errors: [], stray: [] };
   let section = null;
   let firstH2 = lines.findIndex((l) => H2_RE.test(l));
   const headLines = firstH2 === -1 ? lines : lines.slice(0, firstH2);
@@ -32,6 +32,12 @@ export function parseIR(text) {
     if (current) {
       if (raw.trim() === '' || /^#/.test(raw)) { flush(); }
       else current.body += ' ' + raw.trim();
+      return;
+    }
+    // CK-16: a non-empty line inside a section that is neither an element,
+    // a heading, a continuation, a comment, nor the empty-parts line.
+    if (section && raw.trim() !== '' && !/^#/.test(raw) && !/^<!--/.test(raw.trim()) && !/^Empty parts:/.test(raw.trim()) && !/^A\d+ resolved:/.test(raw.trim())) {
+      ir.stray.push({ line: i + 1, text: raw.trim().slice(0, 80) });
     }
   });
   flush();
