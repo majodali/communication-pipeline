@@ -5,7 +5,7 @@ Purpose: document. The revision of the branch point that carries the six process
 Status: reviewed (unratified terms 3; surprises 0; misses 0; round 6 readable)
 Source: the owner's decisions of 2026-10-27 ("They are all justified"; "Agreed on all four - go ahead with the branch-point revision"); evaluation cases 005, 006 and 007; the methodology specification docs/intermediate-representation.md as merged in PR #52 and #53.
 Normative: yes
-Footprint: docs/branch-point.md; docs/branch-point.review.md; docs/style-spec.md; docs/records/branch-point-v1.4.ir.md; eval/cases/005-meta-review-stranger-rounds-2026-10-26.md; eval/cases/007-meta-review-full-ir-rounds-2026-10-27.md; eval/README.md; scripts/claims-check.mjs; scripts/test.mjs
+Footprint: docs/branch-point.md; docs/records/branch-point-v1.4.review.md; docs/style-spec.md; docs/records/branch-point-v1.4.ir.md; eval/cases/005-meta-review-stranger-rounds-2026-10-26.md; eval/cases/007-meta-review-full-ir-rounds-2026-10-27.md; eval/README.md; scripts/claims-check.mjs; scripts/test.mjs
 
 ## Terms
 
