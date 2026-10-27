@@ -68,7 +68,7 @@ of ten. This project's procedure for one round, in order:
 2. The round's stranger is a fresh instance. The stranger brief is
    the instruction the reasoning role gives a round's stranger
    instance. A restatement is the stranger's account, in at most 200 words of its own, of the text's
-   problem, terms and decisions. The stranger reads the prose first,
+   problem, terms and decisions. The stranger reads the prose,
    writes its restatement, and only then reads the IR.
 3. The reasoning role fixes each finding it accepts in the IR first
    and then in the prose. A fix rephrases or cuts words before it
@@ -96,14 +96,13 @@ The stranger reads the prose, the IR, and at Rounds step 4 its own
 findings table with the fixed passages, and no other file. Each
 finding carries a locus (the prose, the IR, or both) and a fix kind
 (cut, rephrase, or add). After reading the IR, the stranger reports
-each disagreement between its restatement and the IR as a finding
-with its locus. The stranger reports findings against
+each disagreement between its restatement and the IR as a finding.
+The stranger reports findings against
 SP-01 to SP-05, SP-08 to SP-11, SP-18, SP-25 and SP-26
 of the [style specification's rule table](style-spec.md#rule-table).
 The stranger brief's SP-05 reads as the methodology's
 [P-004](https://github.com/majodali/methodology/blob/main/docs/rules/prose.md#p-004--identifiers-carry-names)
-(identifiers carry names) does: a name or a link at first use. From
-v1.4 the style specification's SP-05 reads as P-004 does. SP-18 is calibrated to a duty whose actor or trigger the
+(identifiers carry names) does: a name or a link at first use. SP-18 is calibrated to a duty whose actor or trigger the
 text does not state. SP-25, contradiction, is a finding when two
 passages cannot both be followed. SP-26, excess words, is a finding
 when a word, phrase or sentence can go without losing a claim, or a
@@ -116,8 +115,8 @@ claim is stated twice. The brief lists the forms that are not defects:
 - a colon-introduced list with semicolons;
 - a document's Reader, Type or Status line.
 
-The reasoning role adds to the stranger brief any form the text
-under review needs. The stranger's report has four parts in order: Restatement,
+Before each round, the reasoning role adds to the stranger brief any
+form the text under review needs. The stranger's report has four parts in order: Restatement,
 Findings, Readability, Counts.
 
 ## When an IR is required at all
@@ -174,7 +173,7 @@ RD-4 (fresh agent session), RD-5 (external reader).
 
 A text with three or more rounds in one count is a subject for
 [meta-review](vocabulary.md#def-meta-review) (owner ruling,
-2026-10-26). This project reads the review record and the text, and
+2026-10-26). The meta-review reads the review record and the text, and
 reports, as an [evaluation case](vocabulary.md#def-evaluation-case),
 whether the process needs a change. The meta-reviews so far are
 [case 005](../eval/cases/005-meta-review-stranger-rounds-2026-10-26.md),
@@ -183,11 +182,11 @@ on methodology PR #51's rounds, and
 on methodology PR #52's rounds.
 
 The owner's decisions of 2026-10-27 on case 005's held changes.
-Change 1, a verdict by a finding-rate threshold, is struck, because
+Case 005's change 1, a verdict by a finding-rate threshold, is struck, because
 the verdict rule reached zero contradictions without a threshold.
-Change 3, stopping when the finding count is flat with a limit of
+Case 005's change 3, stopping when the finding count is flat with a limit of
 five, is struck, because the finding rate was flat from round 5 while
-contradictions ran to round 9. Change 4, a bound on growth, is
+contradictions ran to round 9. Case 005's change 4, a bound on growth, is
 replaced by the measure of the Rounds section, because fixing in the
 IR first kept the prose from growing.
 The split of the specification into IR form and review process is
@@ -203,4 +202,4 @@ that fired and the [disposition](vocabulary.md#def-disposition), in `eval/dispat
 chunk 2 of the [pilot plan](plans/pipeline-pilot.md). The log is the
 data the thresholds are tuned against.
 
-<!-- render map: C37→¶Status C47→¶Status C38→¶Status C39→¶D2 C48→¶D1 C1→¶Rounds C2→¶Rounds-1 C36→¶Rounds-1 C3→¶Rounds-1 C41→¶Rounds-1 C4→¶Rounds-1 C5→¶Rounds-2 C6→¶Rounds-3 C7→¶Rounds-3 C35→¶Rounds-3 C8→¶Rounds-3 C9→¶Rounds-4 C50→¶Rounds-4 C10→¶Rounds-4 C11→¶Rounds-5 C12→¶Rounds-6 C13→¶Rounds-verdict C14→¶Rounds-verdict C15→¶Rounds-verdict C16→¶D1 C17→¶Rounds-2 C46→¶Brief C19→¶Brief C20→¶Brief C21→¶Brief C22→¶Brief C45→¶Brief C23→¶Brief C24→¶Brief C25→¶Brief C26→¶Brief C43→¶Brief C44→¶Brief C27→¶Brief C28→¶Meta-2 C29→¶Meta-2 C30→¶Meta-2 C31→¶Meta-2 C32→¶Meta-2 C42→¶Meta-2 C33→¶Meta-1 C40→¶Meta-1 C49→¶D3 C34→¶Meta-1 (IR: docs/records/branch-point-v1.4.ir.md) -->
+<!-- render map: C37→¶Status C47→¶Status C38→¶Status C39→¶D2 C48→¶D1 C1→¶Rounds C2→¶Rounds-1 C36→¶Rounds-1 C3→¶Rounds-1 C41→¶Rounds-1 C4→¶Rounds-1 C5→¶Rounds-2 C6→¶Rounds-3 C7→¶Rounds-3 C35→¶Rounds-3 C8→¶Rounds-3 C9→¶Rounds-4 C50→¶Rounds-4 C10→¶Rounds-4 C11→¶Rounds-5 C12→¶Rounds-6 C13→¶Rounds-verdict C14→¶Rounds-verdict C15→¶Rounds-verdict C16→¶D1 C17→¶Rounds-2 C46→¶Brief C19→¶Brief C20→¶Brief C21→¶Brief C22→¶Brief C23→¶Brief C24→¶Brief C25→¶Brief C26→¶Brief C43→¶Brief C44→¶Brief C27→¶Brief C28→¶Meta-2 C29→¶Meta-2 C30→¶Meta-2 C31→¶Meta-2 C32→¶Meta-2 C42→¶Meta-2 C33→¶Meta-1 C40→¶Meta-1 C49→¶D3 C34→¶Meta-1 (IR: docs/records/branch-point-v1.4.ir.md) -->

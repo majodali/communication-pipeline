@@ -21,7 +21,8 @@ confirmation after the fixes, declined findings carried.
 | 2 | 1,580 | 43 | 18 | 11.4 | not readable (restatement matched in substance; 1 contradiction, 2 undefined terms) |
 | 3 | 1,637 | 46 | 9 | 5.5 | not readable (restatement mismatch on C33's wording; 0 contradictions, 1 undefined term, pre-v1.4) |
 | 4 | 1,637 | 47 | 6 | 3.7 | not readable (restatement mismatch on provenance: C3, C41, A1; 3 contradictions, 1 undefined term) |
-| 5 | 1,639 | 49 | | | |
+| 5 | 1,639 | 49 | 9 | 5.5 | not readable (restatement mismatch on C49 only; 0 contradictions, 0 undefined terms) |
+| 6 | 1634 | 48 | | | |
 
 
 ## Round 1, 2026-10-27
@@ -158,3 +159,27 @@ Claims check before round 5: 4 changed or new claims, 0 missing.
 Same-instance confirmation (re-run after a container restart lost
 the first): 6 of 6 fixes hold; one new defect noted, "author" in the
 new D3 name, fixed to "D3 review, reasoning-role rendered" (C49).
+
+## Round 5, 2026-10-27
+
+1,639 words; 9 findings; 5.5 per thousand words. Restatement: 180
+words; one mismatch, the D3 row's reason clause, which no claim
+backed once the row's name entered the IR. Contradictions 0,
+undefined terms 0; verdict: not readable for RD-4. By fix kind as the
+stranger judged: cut 4, rephrase 2, add 3; by locus: prose 4, IR 1,
+both 4.
+
+| # | Finding (shortened) | Kind | Disposition |
+|---|---|---|---|
+| 1 | the status line's scope narrower than the IR Purpose | mismatch | rephrase: the status line states the scope as the IR does |
+| 2 | the D3 row's reason clause has no claim and repeats BP-02a's reason | IR gap, excess | cut the clause; C49 states the row |
+| 3 | "This project" as actor | SP-18 | rephrase to C40: "The meta-review reads" |
+| 4 | SP-05's reading stated twice | excess | cut C45 and R5 |
+| 5 | "with its locus" after the locus sentence | excess | cut from C19 |
+| 6 | semicolon in the D3 row | SP-09 | rephrase: two sentences (with 2) |
+| 7 | forms added with no trigger | SP-18 | rephrase C44: "Before each round" |
+| 8 | "Change 1", "Change 3", "Change 4" | referent | rephrase: "Case 005's change n" |
+| 9 | "first" | excess | cut from C5 |
+
+Claims check before round 6: 4 changed claims, 0 missing, C45 removed.
+Same-instance confirmation: recorded below.
