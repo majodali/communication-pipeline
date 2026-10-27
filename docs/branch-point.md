@@ -190,8 +190,8 @@ A text is a subject for [meta-review](vocabulary.md#def-meta-review)
 when its count reaches the limit or its review record shows a
 [meta-review signal](https://github.com/majodali/methodology/blob/main/docs/intermediate-representation.md#meta-review)
 (owner decision, 2026-10-27). The first signal: in two or more rounds
-of the count, the same-instance confirmation rejected a fix or the
-claims check reported a missing or stale claim. The second signal: a
+of the count, the round's stranger instance rejected a fix at
+confirmation or the claims check reported a missing or stale claim. The second signal: a
 finding declined and carried in the stranger brief was raised again,
 or a restatement mismatch recurred on one passage. The third signal:
 the prose grew across the count by more than one tenth of its round-1

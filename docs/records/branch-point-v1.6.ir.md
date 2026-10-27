@@ -17,7 +17,7 @@ T1. Meta-review signal. defined-at: https://github.com/majodali/methodology/blob
 
 C1. A text is a meta-review subject when its count reaches the limit or its review record shows a meta-review signal. [decided: owner, 2026-10-27]
 
-C2. The first signal: in two or more rounds of the count, the same-instance confirmation rejected a fix or the claims check reported a missing or stale claim. [decided: owner, 2026-10-27]
+C2. The first signal: in two or more rounds of the count, the round's stranger instance rejected a fix at confirmation or the claims check reported a missing or stale claim. [decided: owner, 2026-10-27]
 
 C3. The second signal: a finding declined and carried in the stranger brief was raised again, or a restatement mismatch recurred on one passage. [decided: owner, 2026-10-27]
 
