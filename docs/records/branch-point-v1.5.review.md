@@ -101,7 +101,8 @@ Claims check (stale-aware) after the fixes: 3 changed or new claims,
 
 Same-instance confirmation before delivery: 7 of 7 fixes hold, each
 marked confirmed above; none unfixed. Footprint before delivery:
-footprint: declared 7, changed 10, surprises 3, misses 0. IR Status set to `reviewed (round 3 readable; fixes
+footprint: declared 7, changed 7, surprises 0, misses 0 (an earlier run against a stale local main showed three
+surprises that were the previous PR's files). IR Status set to `reviewed (round 3 readable; fixes
 confirmed)`.
 
 ## Verdict
