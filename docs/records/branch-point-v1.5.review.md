@@ -88,13 +88,38 @@ style rules in the status line, and that spot is fixed with a link.
 
 | # | Finding (shortened) | Kind | Fix | Confirmation |
 |---|---|---|---|---|
-| 1 | the status line's two claims in one sentence | compound | rephrase: split | |
-| 2 | the v1.3 clause restates the rounds and meta-review rules; a stray parenthesis | excess (pre-v1.5) | cut | |
-| 3 | SP-05, SP-18, SP-25, SP-26 unlinked at first use | identifier (pre-v1.5) | rephrase: linked to the rule table | |
-| 4 | CK-02 to CK-09 unnamed | identifier (pre-v1.5) | rephrase: the range linked to the checks table | |
-| 5 | v1.5 "pending acceptance" stated twice | excess | cut from Meta-review; C17 maps to the status line | |
-| 6 | C11 two rules | compound | split: C11, C18 | |
-| 7 | C16 no trigger | SP-18 | rephrase: "At the start of each round" | |
+| 1 | the status line's two claims in one sentence | compound | rephrase: split | confirmed |
+| 2 | the v1.3 clause restates the rounds and meta-review rules; a stray parenthesis | excess (pre-v1.5) | cut | confirmed |
+| 3 | SP-05, SP-18, SP-25, SP-26 unlinked at first use | identifier (pre-v1.5) | rephrase: linked to the rule table | confirmed |
+| 4 | CK-02 to CK-09 unnamed | identifier (pre-v1.5) | rephrase: the range linked to the checks table | confirmed |
+| 5 | v1.5 "pending acceptance" stated twice | excess | cut from Meta-review; C17 maps to the status line | confirmed |
+| 6 | C11 two rules | compound | split: C11, C18 | confirmed |
+| 7 | C16 no trigger | SP-18 | rephrase: "At the start of each round" | confirmed |
 
 Claims check (stale-aware) after the fixes: 3 changed or new claims,
 0 missing, 0 stale. Prose 1,882 to 1,858 words.
+
+Same-instance confirmation before delivery: 7 of 7 fixes hold, each
+marked confirmed above; none unfixed. Footprint before delivery:
+recorded below. IR Status set to `reviewed (round 3 readable; fixes
+confirmed)`.
+
+## Verdict
+
+Readable for RD-4 at round 3 of a count of three, under the v1.5
+procedure the text defines, applied to itself. Findings per thousand
+words by round: 8.2, 7.5, 3.7. Contradictions by round: 2, 0, 0.
+Prose 1,832 words at round 1 and 1,858 at delivery; IR 13 claims at
+round 1 and 18 at delivery. The procedure's own steps on this count:
+the stale-aware claims check found no missing claim and one stale
+report that was not a miss (an IR fixed to match a right sentence);
+the same-instance confirmation found no fix that did not hold and
+noted one new defect (A1's range); the carried declines held, and
+one stranger disagreed with a carried decline on one new spot, which
+was fixed; no restatement mismatch recurred; the status line under
+rounds drew one compound finding and no contradiction.
+
+Meta-review: pending. This text is a meta-review subject (three
+rounds in one count). The delivering report asks the owner to
+dispatch the meta-review, or to decide that three rounds on a
+revision of this size need none.
