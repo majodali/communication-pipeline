@@ -218,9 +218,9 @@ on methodology PR #51's rounds, and
 [case 007](../eval/cases/007-meta-review-full-ir-rounds-2026-10-27.md),
 on methodology PR #52's rounds, and
 [case 008](../eval/cases/008-meta-review-branch-point-rounds-2026-10-27.md),
-on branch point v1.4's rounds. The owner adopted case 008's five changes on 2026-10-27. Case 008's
-change 6, the D1 row's rule on joining a reason to its rule by
-connective prose, stays as written.
+on branch point v1.4's rounds. The owner adopted case 008's five changes on 2026-10-27. Case 008
+proposed no change to the D1 row's rule on joining a reason to its
+rule by connective prose, and none was made.
 
 The owner's decisions of 2026-10-27 on case 005's held changes.
 Case 005's change 1, a verdict by a finding-rate threshold, is struck, because

@@ -2,7 +2,7 @@
 
 Reader: RD-4
 Purpose: document. The revision of the branch point that replaces the three-round meta-review trigger with four signals read from the review record, by owner decision of 2026-10-27.
-Status: draft (round 1 fixes applied, confirmation pending; unratified terms 0)
+Status: draft (round 2 in progress; unratified terms 0)
 Source: the owner's decision of 2026-10-27 ("signal based triggers are preferred"; "Go ahead with those defaults"); the five recorded counts; the methodology specification's count-3 amendment.
 Normative: yes
 Footprint: docs/branch-point.md; docs/records/branch-point-v1.6.ir.md; docs/records/branch-point-v1.6.review.md; docs/vocabulary.md; scripts/signals.mjs; scripts/test.mjs
@@ -45,7 +45,7 @@ C13. The limit of ten stays as the one count-based trigger. [decided: owner, 202
 
 C14. Until the owner accepts v1.6, v1.5 is active on main. [decided: owner, 2026-10-27]
 
-C15. Case 008's change 6, the D1 row's rule on joining a reason to its rule by connective prose, stays as written. [decided: owner, 2026-10-27]
+C15. Case 008 proposed no change to the D1 row's rule on joining a reason to its rule by connective prose, and none was made. [decided: owner, 2026-10-27]
 
 C16. When the owner dispatches a meta-review, the meta-review session reads the review record and the text, and reports, as an evaluation case, whether the process needs a change. [decided: owner, 2026-10-26]
 

@@ -35,4 +35,11 @@ kind as the stranger judged: rephrase 1, add 9; by locus: IR 5, both
 | 10 | "Documents always start as an IR" has no actor | SP-18 (pre-v1.6) | rephrase: "The reasoning role writes a document as an IR first."; C18 |
 
 Claims check (stale-aware) before round 2: 6 changed or new claims,
-0 missing, 0 stale. Same-instance confirmation: recorded below.
+0 missing, 0 stale. Same-instance confirmation: 7 of 7 accepted fixes
+hold; the three partial declines accepted as answered where the
+sentence predates v1.6 (the instance could not read the earlier IRs);
+two new defects noted: "change 6" against "five changes", fixed (C15
+now says case 008 proposed no change to the rule); C16's provenance
+date of 2026-10-26, declined, since the tag records the owner's
+ruling that defined the meta-review, not this revision. Claims check
+after: 1 changed, 0 missing, 0 stale.
