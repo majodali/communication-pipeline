@@ -263,3 +263,19 @@ test('claims-check reports a changed claim whose sentence did not change (stale)
   const fixed = claimsCheck(oldIR, newIR, 'The widget is blue before delivery and green after.', { oldProseText: prose });
   assert.deepEqual(fixed.stale, []);
 });
+
+import { readSignals } from './signals.mjs';
+
+test('signals: growth and repeated confirmation failures fire; a clean record does not', () => {
+  const bad = `# Review record\n\n| Round | Prose words | IR claims |\n|---|---|---|\n| 1 | 1,000 | 10 |\n| 2 | 1,150 | 11 |\n\n## Round 1\n\nSame-instance confirmation: 3 of 5 fixes hold.\n\n## Round 2\n\nClaims check: 2 changed, missing 1, stale 0.\n`;
+  const r = readSignals(bad);
+  assert.equal(r.signal1.fired, true);
+  assert.deepEqual(r.signal1.roundsWithFailure, [1, 2]);
+  assert.equal(r.signal3.fired, true);
+  assert.equal(r.subject, true);
+  const good = `# Review record\n\n| Round | Prose words | IR claims |\n|---|---|---|\n| 1 | 1,000 | 10 |\n| 2 | 990 | 11 |\n\n## Round 1\n\nSame-instance confirmation: 5 of 5 fixes hold.\nClaims check: 2 changed, missing 0, stale 0.\n`;
+  const g = readSignals(good);
+  assert.equal(g.signal1.fired, false);
+  assert.equal(g.signal3.fired, false);
+  assert.equal(g.subject, false);
+});
