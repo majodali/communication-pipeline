@@ -14,7 +14,7 @@ Thresholds are provisional until the evaluation corpus tunes them. The rules are
 from 2026-10-26.
 
 Type: Specification (methodology vocabulary). The pipeline's
-[dispatcher](vocabulary.md#def-dispatcher) implements against it.
+[dispatcher](vocabulary.md#def-dispatcher) implements against this specification.
 
 Reader: RD-4 (a fresh agent session) implementing or running the
 pipeline; the human owner setting thresholds.
@@ -22,9 +22,8 @@ pipeline; the human owner setting thresholds.
 ## Purpose
 
 The [branch point](vocabulary.md#def-branch-point) decides, for one IR, which of the pipeline's model
-stages run. It protects proportional verification: a short report to
-a reader who shares the conversation costs one [lint](vocabulary.md#def-lint) pass. A
-document for a [stranger](vocabulary.md#def-stranger) costs the full pipeline.
+stages run. The branch point protects proportional verification: a short report to
+a reader who shares the conversation costs one [lint](vocabulary.md#def-lint) pass. A document for a [stranger](vocabulary.md#def-stranger) costs the full pipeline.
 
 ## Inputs
 
@@ -65,11 +64,11 @@ of ten. This project's procedure for one round, in order:
    [review record](https://github.com/majodali/methodology/blob/main/docs/vocabulary.md#def-review-record).
    The script `scripts/claims-check.mjs` lists the changed claims and
    the best-matching sentence for each. The script reports a changed
-   claim no sentence carries. The script also reports a changed claim
-   whose best-matching sentence did not change since the last round,
-   as stale, from the previous round's prose. The reasoning role
-   fixes, before the round starts, a changed claim that no sentence
-   carries or that is stale.
+   claim no sentence carries. The script also reports a changed claim whose best-matching sentence
+   did not change since the last round, as stale. The script takes the
+   previous round's prose as its base. The reasoning role fixes the
+   prose, before the round starts, for a changed claim that no
+   sentence carries or that is stale.
 2. The round's stranger is a fresh instance. The stranger brief is
    the instruction the reasoning role gives a round's stranger
    instance. A restatement is the stranger's account, in at most 200 words of its own, of the text's
@@ -85,10 +84,12 @@ of ten. This project's procedure for one round, in order:
    answers, per accepted finding, whether the fix holds. The reasoning role fixes again,
    before the next round, a fix the instance says does not hold.
 5. The reasoning role adds to the next round's stranger brief the
-   declined findings of the earlier rounds with their reasons, and a
-   finding declined in part with the declined part and its reason.
-6. A restatement mismatch on one passage in two rounds is a prose
-   finding, whatever the strangers attributed it to.
+   declined findings of the earlier rounds with their reasons. The
+   reasoning role also adds a finding declined in part, with the
+   declined part and its reason.
+6. The reasoning role treats a restatement mismatch on one passage in
+   any two rounds as a prose finding, whatever the strangers
+   attributed it to.
 7. At a readable verdict, the reasoning role fixes the round's
    findings in the IR and then in the prose. The readable round's
    stranger instance confirms each fix before delivery. The reasoning
@@ -101,7 +102,8 @@ the prose word count, the IR claim count, the finding count and the
 verdict. Growth of the prose across rounds is a measure in the review record,
 not a bound. During rounds the prose status line reads `under review`
 with the version and the round number. During rounds the IR's Status
-parenthesis holds the round number, and the two change together.
+parenthesis holds the round number, and the prose status line and
+the IR's Status parenthesis change together.
 
 ## Stranger brief
 
@@ -121,7 +123,8 @@ passages cannot both be followed. SP-26, excess words, is a finding
 when a word, phrase or sentence can go without losing a claim, or a
 claim is stated twice. The brief lists the forms that are not defects:
 
-- a dated status line, and an under-review status line with a version and round number;
+- a dated status line;
+- an under-review status line with a version and round number;
 - a table cell with semicolons;
 - a parenthesis naming a rule or section;
 - a sentence stating a count;
@@ -136,8 +139,7 @@ Findings, Readability, Counts.
 
 A report to RD-1 (the human owner, in conversation) or RD-3 (a
 delegating agent) may be written as prose directly, with the prose
-[lint](vocabulary.md#def-lint). The condition: it introduces no term,
-records no decision, and states no
+[lint](vocabulary.md#def-lint). The condition: the report introduces no term, records no decision, and states no
 [register fact](https://github.com/majodali/methodology/blob/main/docs/vocabulary.md#def-register-fact). A term, a decision, or a
 register fact requires the IR, because each is content a model would
 hold (owner ruling, 2026-10-25). Documents
@@ -167,7 +169,7 @@ RD-4 (fresh agent session), RD-5 (external reader).
 ## Why each rule
 
 - BP-03 and BP-04: documentation is read by someone who was not in the
-  conversation, and that reader is the one the pipeline exists for.
+  conversation.
 - BP-02a: a paraphrase of normative text could change its force, so
   the [reasoning role](vocabulary.md#def-reasoning-role) renders it and only the review runs.
 - BP-05 and BP-05a: an unratified term in a document gets the
@@ -196,8 +198,10 @@ on methodology PR #51's rounds, and
 on methodology PR #52's rounds, and
 [case 008](../eval/cases/008-meta-review-branch-point-rounds-2026-10-27.md),
 on branch point v1.4's rounds. The owner adopted case 008's five
-changes on 2026-10-27 as branch point v1.5. The connective-prose
-rule and the limit of ten stay as written.
+changes on 2026-10-27, and branch point v1.5 carries them pending the
+owner's acceptance. Until the owner accepts v1.5, v1.4 is the active
+version on main. The D1 row's rule on joining a reason to its rule by
+connective prose, and the limit of ten, stay as written.
 
 The owner's decisions of 2026-10-27 on case 005's held changes.
 Case 005's change 1, a verdict by a finding-rate threshold, is struck, because
@@ -219,9 +223,9 @@ recommended.
 
 The [dispatcher](vocabulary.md#def-dispatcher) records, for every IR it routes, the inputs, the rule
 that fired and the [disposition](vocabulary.md#def-disposition), in `eval/dispatch-log.md`. Chunk 2 of the
-[pilot plan](plans/pipeline-pilot.md) created the file. The log is
+[pilot plan](plans/pipeline-pilot.md) created `eval/dispatch-log.md`. The log is
 the data the thresholds are tuned against.
 
 <!-- v1.4 map (IR: docs/records/branch-point-v1.4.ir.md): C37→¶Status C47→¶Status C38→¶Status C39→¶D2 C48→¶D1 C1→¶Rounds C2→¶Rounds-1 C36→¶Rounds-1 C3→¶Rounds-1 C41→¶Rounds-1 C4→¶Rounds-1 C5→¶Rounds-2 C6→¶Rounds-3 C7→¶Rounds-3 C35→¶Rounds-3 C8→¶Rounds-3 C9→¶Rounds-4 C50→¶Rounds-4 C10→¶Rounds-4 C11→¶Rounds-5 C12→¶Rounds-6 C13→¶Rounds-verdict C14→¶Rounds-verdict C15→¶Rounds-verdict C16→¶D1 C17→¶Rounds-2 C46→¶Brief C19→¶Brief C20→¶Brief C21→¶Brief C22→¶Brief C23→¶Brief C24→¶Brief C25→¶Brief C26→¶Brief C43→¶Brief C44→¶Brief C27→¶Brief C28→¶Meta-2 C29→¶Meta-2 C30→¶Meta-2 C51→¶Meta-2 C31→¶Meta-2 C32→¶Meta-2 C42→¶Meta-2 C33→¶Meta-1 C40→¶Meta-1 C49→¶D3 C34→¶Meta-1 -->
 
-<!-- render map: C1→¶Rounds-1 C2→¶Rounds-1 C4→¶Rounds-5 C3→¶Rounds-6 C8→¶Rounds-7 C9→¶Rounds-7 C10→¶Rounds-7 C5→¶Rounds-verdict C6→¶Rounds-verdict C7→¶Brief-forms C12→¶Meta-1 C13→¶Meta-1 C11→¶Meta-1 (IR: docs/records/branch-point-v1.5.ir.md) -->
+<!-- render map: C1→¶Rounds-1 C2→¶Rounds-1 C14→¶Rounds-1 C4→¶Rounds-5 C3→¶Rounds-6 C8→¶Rounds-7 C9→¶Rounds-7 C10→¶Rounds-7 C5→¶Rounds-verdict C6→¶Rounds-verdict C7→¶Brief-forms C12→¶Meta-1 C13→¶Meta-1 C15→¶Meta-1 C11→¶Meta-1 (IR: docs/records/branch-point-v1.5.ir.md) -->
