@@ -2,7 +2,7 @@
 
 Reader: RD-4
 Purpose: document. The revision of the branch point that carries the six process changes of evaluation case 007, which reviewed the rounds case 006 records, and the owner's decisions on case 005's held changes.
-Status: reviewed (unratified terms 3; surprises 0; misses 0; round 6 readable)
+Status: reviewed (unratified terms 0; surprises 0; misses 0; round 6 readable; accepted and ratified 2026-10-27)
 Source: the owner's decisions of 2026-10-27 ("They are all justified"; "Agreed on all four - go ahead with the branch-point revision"); evaluation cases 005, 006 and 007; the methodology specification docs/intermediate-representation.md as merged in PR #52 and #53.
 Normative: yes
 Footprint: docs/branch-point.md; docs/records/branch-point-v1.4.review.md; docs/style-spec.md; docs/records/branch-point-v1.4.ir.md; eval/cases/005-meta-review-stranger-rounds-2026-10-26.md; eval/cases/007-meta-review-full-ir-rounds-2026-10-27.md; eval/README.md; scripts/claims-check.mjs; scripts/test.mjs
@@ -17,11 +17,11 @@ T3. Limit. defined-at: https://github.com/majodali/methodology/blob/main/docs/vo
 
 T4. Review record. defined-at: https://github.com/majodali/methodology/blob/main/docs/vocabulary.md#def-review-record [decided: owner, 2026-10-27]
 
-T5. Restatement: the stranger's account, in at most 200 words of its own, of the text's problem, terms and decisions, written from the prose before the IR is read. [proposed: this IR]
+T5. Restatement. defined-at: ../vocabulary.md#def-restatement [decided: owner, 2026-10-27]
 
-T6. Fix kind: the stranger's judgement of what a finding needs: cut, rephrase, or add. [proposed: this IR]
+T6. Fix kind. defined-at: ../vocabulary.md#def-fix-kind [decided: owner, 2026-10-27]
 
-T7. Locus: the stranger's judgement of where a defect sits: the prose, the IR, or both. [proposed: this IR]
+T7. Locus. defined-at: ../vocabulary.md#def-locus [decided: owner, 2026-10-27]
 
 ## Claims
 
@@ -31,7 +31,7 @@ C1. The rounds of dispositions D2 and D3 follow the methodology specification's 
 
 C37. The thresholds are provisional until the evaluation corpus tunes them. [decided: branch point v1.1, 2026-10-25]
 
-C47. Version 1.4, the style rules SP-05, SP-18, SP-25 and SP-26, and the terms restatement, locus and fix kind await the owner's acceptance. [proposed: this IR]
+C47. Version 1.4, the style rules SP-05, SP-18, SP-25 and SP-26, and the terms restatement, locus and fix kind were accepted by the owner on 2026-10-27. [decided: owner, 2026-10-27]
 
 C38. The rules are the Rendering conditions of the methodology's intermediate-representation specification. [decided: methodology PR #49, 2026-10-26]
 
@@ -43,15 +43,15 @@ C2. Before each round, the reasoning role finds, for each claim changed since th
 
 C36. The reasoning role records each changed claim and its sentence in the review record. [decided: owner, 2026-10-27]
 
-C3. The script `scripts/claims-check.mjs` lists the changed claims and the best-matching sentence for each. [proposed: this IR]
+C3. The script `scripts/claims-check.mjs` lists the changed claims and the best-matching sentence for each. [decided: owner, 2026-10-27]
 
-C41. The script reports a changed claim no sentence carries. [proposed: this IR]
+C41. The script reports a changed claim no sentence carries. [decided: owner, 2026-10-27]
 
 C4. The reasoning role fixes, before the round starts, a changed claim that no sentence carries. [decided: owner, 2026-10-27]
 
 C5. Each round's stranger is a fresh instance that reads the prose, writes its restatement, and only then reads the IR. [decided: owner, 2026-10-27]
 
-C6. The reasoning role fixes each finding it accepts in the IR first and then in the prose. [decided: owner, 2026-10-27]
+C6. The reasoning role fixes each finding it accepts in the IR and then in the prose. [decided: owner, 2026-10-27]
 
 C7. A fix rephrases or cuts words before it adds words. [decided: owner, 2026-10-27]
 
@@ -75,13 +75,13 @@ C14. The reasoning role records in the review record, per round, the prose word 
 
 C15. Growth of the prose across rounds is a measure in the review record, not a bound. [decided: owner, 2026-10-27]
 
-C16. The paraphraser, or under D3 the reasoning role, joins a reason the IR holds as its own claim to its rule by connective prose. [decided: owner, 2026-10-27]
+C16. The paraphraser, or the reasoning role when it renders, joins a reason the IR holds as its own claim to its rule by connective prose. [decided: owner, 2026-10-27]
 
 ### The reviewer brief
 
 C17. The stranger brief is the instruction the reasoning role gives a round's stranger instance. [decided: owner, 2026-10-27]
 
-C46. The stranger reads the prose, the IR, and at Rounds step 4 its own findings table with the fixed passages, and no other file. [decided: owner, 2026-10-27]
+C46. The stranger reads only the prose, the IR, and at Rounds step 4 its own findings table with the fixed passages. [decided: owner, 2026-10-27]
 
 C19. After reading the IR, the stranger reports each disagreement between its restatement and the IR as a finding. [decided: owner, 2026-10-27]
 
@@ -113,7 +113,9 @@ C29. Case 005's change 3, stopping when the finding count is flat with a limit o
 
 C30. Case 005's change 4, a bound on growth, is replaced by the measure of the Rounds section, because fixing in the IR first kept the prose from growing. [decided: owner, 2026-10-27]
 
-C31. The split of the specification into IR form and review process is closed as not needed, because the IR specification reached readable at 2,808 words. [decided: owner, 2026-10-27]
+C51. Case 005's change 2, SP-18 calibrated, is adopted in the narrow form: a duty names its actor and its trigger. [decided: owner, 2026-10-27]
+
+C31. The split of the methodology's IR specification into IR form and review process is closed as not needed, because that specification reached readable at 2,808 words. [decided: owner, 2026-10-27]
 
 C32. Reviewing only the amended passages after round 1 stays not recommended. [decided: owner, 2026-10-27]
 
@@ -147,9 +149,9 @@ R8. C41 supports C4 because the report names the claim the fix must reach.
 
 ## Evidence
 
-E1. eval/cases/007-meta-review-full-ir-rounds-2026-10-27.md, Outcome: seven changes, six recommended; the owner accepted them on 2026-10-27.
+E1. eval/cases/007-meta-review-full-ir-rounds-2026-10-27.md, Outcome: seven changes; the owner accepted changes 1 to 6 on 2026-10-27 and did not adopt change 7 alone.
 
-E2. eval/cases/005-meta-review-stranger-rounds-2026-10-26.md, Outcome: nine changes; the owner's decisions of 2026-10-27 on changes 1 to 4 and 9.
+E2. eval/cases/005-meta-review-stranger-rounds-2026-10-26.md, Outcome: nine changes; the owner's decisions of 2026-10-27 on changes 1 to 4 and 9 (C28, C51, C29, C30, C31).
 
 E3. docs/intermediate-representation.review.md in the methodology repository: rounds 7 and 9 (drift), rounds 3 to 8 (the status rule), rounds 5 to 10 (the declined RD-n finding).
 
@@ -157,4 +159,8 @@ E3. docs/intermediate-representation.review.md in the methodology repository: ro
 
 A1. Accept branch point v1.4 and the style specification's SP-05, SP-18, SP-25 and SP-26. Depends: C1 to C27.
 
+A1 resolved: accepted, communication-pipeline PR #10 merged 2026-10-27.
+
 A2. Ratify or strike the terms restatement (T5), fix kind (T6) and locus (T7). Depends: A1.
+
+A2 resolved: ratified by the owner, 2026-10-27; vocabulary rows added.

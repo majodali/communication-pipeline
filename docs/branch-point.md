@@ -1,14 +1,12 @@
 # Branch point
 
-Status: active (v1.4, 2026-10-27, pending the owner's acceptance of
-the version, of the style rules SP-05, SP-18, SP-25 and SP-26, and of
-the terms restatement, locus and fix kind: the six process changes
-of evaluation case 007 and the owner's decisions on case 005's held
-changes; v1.3, 2026-10-26:
+Status: active (v1.4, 2026-10-27, accepted by the owner with the
+style rules SP-05, SP-18, SP-25 and SP-26 and the terms restatement,
+locus and fix kind: the six process changes of evaluation case 007
+and the owner's decisions on case 005's held changes; v1.3, 2026-10-26:
 every review runs in rounds until readable, limit ten; three or more
 rounds make a text a meta-review subject).
-Thresholds are provisional until the evaluation corpus tunes them. The rules are
-also the Rendering conditions of the methodology's
+Thresholds are provisional until the evaluation corpus tunes them. The rules are the Rendering conditions of the methodology's
 [intermediate-representation specification](https://github.com/majodali/methodology/blob/main/docs/intermediate-representation.md)
 from 2026-10-26.
 
@@ -44,7 +42,7 @@ All inputs but the owner flag come from the IR.
 | [Disposition](vocabulary.md#def-disposition) | What runs |
 |---|---|
 | D0 [lint](vocabulary.md#def-lint) only | the schema checks, CK-01 (the referent rule) to CK-10 (section order), and the prose lints; the IR is delivered as it stands |
-| D1 render | D0, then the [paraphraser](vocabulary.md#def-paraphraser) renders prose for the reader. The paraphraser, or under D3 the reasoning role, joins a reason the IR holds as its own claim to its rule by connective prose |
+| D1 render | D0, then the [paraphraser](vocabulary.md#def-paraphraser) renders prose for the reader. The paraphraser, or the reasoning role when it renders, joins a reason the IR holds as its own claim to its rule by connective prose |
 | D2 render and review | D1, then [reviewer](vocabulary.md#def-reviewer) rounds under the Rounds section below |
 | D3 review, reasoning-role rendered | the [reasoning role](vocabulary.md#def-reasoning-role) renders the prose itself. Then the reviewer rounds run as in D2 |
 
@@ -71,8 +69,8 @@ of ten. This project's procedure for one round, in order:
    instance. A restatement is the stranger's account, in at most 200 words of its own, of the text's
    problem, terms and decisions. The stranger reads the prose,
    writes its restatement, and only then reads the IR.
-3. The reasoning role fixes each finding it accepts in the IR first
-   and then in the prose. A fix rephrases or cuts words before it
+3. The reasoning role fixes each finding it accepts in the IR and
+   then in the prose. A fix rephrases or cuts words before it
    adds words. A fix adds words only for a missing definition,
    referent or rule. The reasoning role records a declined finding
    in the review record with its reason.
@@ -93,8 +91,8 @@ record, not a bound.
 
 ## Stranger brief
 
-The stranger reads the prose, the IR, and at Rounds step 4 its own
-findings table with the fixed passages, and no other file. Each
+The stranger reads only the prose, the IR, and at Rounds step 4 its
+own findings table with the fixed passages. Each
 finding carries a locus (the prose, the IR, or both) and a fix kind
 (cut, rephrase, or add). After reading the IR, the stranger reports
 each disagreement between its restatement and the IR as a finding.
@@ -170,7 +168,8 @@ RD-4 (fresh agent session), RD-5 (external reader).
 - BP-09: the proportional-verification case. The owner or the
   delegating agent reads the short form.
 
-## Meta-review
+## Meta-review and the decisions on case 005
+
 
 A text with three or more rounds in one count is a subject for
 [meta-review](vocabulary.md#def-meta-review) (owner ruling,
@@ -190,17 +189,19 @@ five, is struck, because the finding rate was flat from round 5 while
 contradictions ran to round 9. Case 005's change 4, a bound on growth, is
 replaced by the measure of the Rounds section, because fixing in the
 IR first kept the prose from growing.
-The split of the specification into IR form and review process is
-closed as not needed, because the IR specification reached readable
-at 2,808 words. Reviewing only the amended passages after round 1
+Case 005's change 2, SP-18 calibrated, is adopted in the narrow
+form: a duty names its actor and its trigger. The split of the
+methodology's IR specification into IR form and review process is
+closed as not needed, because that specification reached readable at
+2,808 words. Reviewing only the amended passages after round 1
 stays not recommended. Fixing only new-passage findings stays not
 recommended.
 
 ## Record
 
 The [dispatcher](vocabulary.md#def-dispatcher) records, for every IR it routes, the inputs, the rule
-that fired and the [disposition](vocabulary.md#def-disposition), in `eval/dispatch-log.md`, created in
-chunk 2 of the [pilot plan](plans/pipeline-pilot.md). The log is the
-data the thresholds are tuned against.
+that fired and the [disposition](vocabulary.md#def-disposition), in `eval/dispatch-log.md`. Chunk 2 of the
+[pilot plan](plans/pipeline-pilot.md) created the file. The log is
+the data the thresholds are tuned against.
 
-<!-- render map: C37→¶Status C47→¶Status C38→¶Status C39→¶D2 C48→¶D1 C1→¶Rounds C2→¶Rounds-1 C36→¶Rounds-1 C3→¶Rounds-1 C41→¶Rounds-1 C4→¶Rounds-1 C5→¶Rounds-2 C6→¶Rounds-3 C7→¶Rounds-3 C35→¶Rounds-3 C8→¶Rounds-3 C9→¶Rounds-4 C50→¶Rounds-4 C10→¶Rounds-4 C11→¶Rounds-5 C12→¶Rounds-6 C13→¶Rounds-verdict C14→¶Rounds-verdict C15→¶Rounds-verdict C16→¶D1 C17→¶Rounds-2 C46→¶Brief C19→¶Brief C20→¶Brief C21→¶Brief C22→¶Brief C23→¶Brief C24→¶Brief C25→¶Brief C26→¶Brief C43→¶Brief C44→¶Brief C27→¶Brief C28→¶Meta-2 C29→¶Meta-2 C30→¶Meta-2 C31→¶Meta-2 C32→¶Meta-2 C42→¶Meta-2 C33→¶Meta-1 C40→¶Meta-1 C49→¶D3 C34→¶Meta-1 (IR: docs/records/branch-point-v1.4.ir.md) -->
+<!-- render map: C37→¶Status C47→¶Status C38→¶Status C39→¶D2 C48→¶D1 C1→¶Rounds C2→¶Rounds-1 C36→¶Rounds-1 C3→¶Rounds-1 C41→¶Rounds-1 C4→¶Rounds-1 C5→¶Rounds-2 C6→¶Rounds-3 C7→¶Rounds-3 C35→¶Rounds-3 C8→¶Rounds-3 C9→¶Rounds-4 C50→¶Rounds-4 C10→¶Rounds-4 C11→¶Rounds-5 C12→¶Rounds-6 C13→¶Rounds-verdict C14→¶Rounds-verdict C15→¶Rounds-verdict C16→¶D1 C17→¶Rounds-2 C46→¶Brief C19→¶Brief C20→¶Brief C21→¶Brief C22→¶Brief C23→¶Brief C24→¶Brief C25→¶Brief C26→¶Brief C43→¶Brief C44→¶Brief C27→¶Brief C28→¶Meta-2 C29→¶Meta-2 C30→¶Meta-2 C51→¶Meta-2 C31→¶Meta-2 C32→¶Meta-2 C42→¶Meta-2 C33→¶Meta-1 C40→¶Meta-1 C49→¶D3 C34→¶Meta-1 (IR: docs/records/branch-point-v1.4.ir.md) -->

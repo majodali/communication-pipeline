@@ -236,6 +236,26 @@ reached the prose at all; the declined-findings list carried one
 finding and it was not raised again in four rounds; no restatement
 mismatch recurred.
 
-Meta-review: pending. This text is a meta-review subject (six rounds
-in one count). The delivering report asks the owner to dispatch the
-meta-review.
+## After the count, 2026-10-27
+
+The owner accepted v1.4 (PR #10 merged) and ratified the terms
+restatement, locus and fix kind. The ratification edit added the
+three vocabulary rows, set the IR's terms to decided with their
+definition sites and its three proposed claims to decided, and fixed
+the ten accepted findings of round 6: the status line now records
+the acceptance; E1 names the six accepted changes; the decision on
+case 005's change 2 is stated (C51); D3 is no longer named before
+its row; "the methodology's IR specification"; "also" and "first"
+cut; "reads only"; the Meta-review header names the case 005
+decisions; the Record sentence split. Prose 1,626 to 1,646 words; IR
+48 to 49 claims. The edit fixes accepted findings and ratification
+only, so it starts no new rounds. The owner noted, without a full
+check of the ten, that a mechanism to track findings and confidence
+in their fixes is wanted; that is for the meta-review and a later
+decision.
+
+Meta-review: delivered, 2026-10-27, by a fresh session with no part in
+the rounds:
+[evaluation case 008](../../eval/cases/008-meta-review-branch-point-rounds-2026-10-27.md)
+(five changes proposed and recommended; the round-6 text judged
+readable for RD-4).
