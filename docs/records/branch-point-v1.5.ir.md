@@ -2,7 +2,7 @@
 
 Reader: RD-4
 Purpose: document. The revision of the branch point that carries the five process changes of evaluation case 008, adopted by the owner on 2026-10-27.
-Status: reviewed (round 3 readable; fixes confirmed; surprises 0; misses 0; unratified terms 0)
+Status: delivered (accepted 2026-10-27; round 3 readable; fixes confirmed; surprises 0; misses 0; unratified terms 0)
 Source: the owner's decision of 2026-10-27 ("go ahead with case 008's five changes"); evaluation case 008; branch point v1.4 and its review record.
 Normative: yes
 Footprint: docs/branch-point.md; docs/records/branch-point-v1.5.ir.md; docs/records/branch-point-v1.5.review.md; eval/cases/008-meta-review-branch-point-rounds-2026-10-27.md; eval/README.md; scripts/claims-check.mjs; scripts/test.mjs
@@ -76,3 +76,5 @@ E2. docs/records/branch-point-v1.4.review.md: round 5's three fixes passed the c
 ## Asks
 
 A1. Accept branch point v1.5. Depends: C1 to C18.
+
+A1 resolved: accepted, communication-pipeline PR #13 merged 2026-10-27.
