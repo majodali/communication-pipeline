@@ -17,7 +17,7 @@ check with the previous round's prose.
 |---|---|---|---|---|---|
 | 1 | 1,832 | 13 | 15 | 8.2 | not readable (restatement scoped to the whole document; 2 contradictions, 1 undefined term) |
 | 2 | 1,878 | 15 | 14 | 7.5 | not readable (restatement mismatch on C4; 0 contradictions, 1 undefined term) |
-| 3 | 1882 | 17 | | | |
+| 3 | 1,882 | 17 | 7 | 3.7 | readable (restatement matched; 0 contradictions, 0 undefined terms) |
 
 ## Round 1, 2026-10-27
 
@@ -74,3 +74,27 @@ for RD-4. By fix kind as the stranger judged: cut 4, rephrase 1, add
 Claims check (stale-aware) before round 3: 5 changed or new claims,
 0 missing, 0 stale. Same-instance confirmation: 9 of 9 fixes hold;
 the five declines accepted by the instance as answered.
+
+## Round 3, 2026-10-27
+
+1,882 words; 7 findings; 3.7 per thousand words. Restatement: 198
+words, matching the IR. Contradictions 0, undefined terms 0; verdict:
+readable for RD-4. The count ends at round 3. Under step 7 of the
+Rounds section, the seven findings are fixed and the round's instance
+confirms each before delivery. By fix kind as the stranger judged:
+cut 2, rephrase 1, add 4; by locus: prose 2, both 2, pre-v1.5 3. The
+stranger disagreed with the carried decline on one spot, the four
+style rules in the status line, and that spot is fixed with a link.
+
+| # | Finding (shortened) | Kind | Fix | Confirmation |
+|---|---|---|---|---|
+| 1 | the status line's two claims in one sentence | compound | rephrase: split | |
+| 2 | the v1.3 clause restates the rounds and meta-review rules; a stray parenthesis | excess (pre-v1.5) | cut | |
+| 3 | SP-05, SP-18, SP-25, SP-26 unlinked at first use | identifier (pre-v1.5) | rephrase: linked to the rule table | |
+| 4 | CK-02 to CK-09 unnamed | identifier (pre-v1.5) | rephrase: the range linked to the checks table | |
+| 5 | v1.5 "pending acceptance" stated twice | excess | cut from Meta-review; C17 maps to the status line | |
+| 6 | C11 two rules | compound | split: C11, C18 | |
+| 7 | C16 no trigger | SP-18 | rephrase: "At the start of each round" | |
+
+Claims check (stale-aware) after the fixes: 3 changed or new claims,
+0 missing, 0 stale. Prose 1,882 to 1,858 words.

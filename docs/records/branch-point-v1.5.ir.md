@@ -2,7 +2,7 @@
 
 Reader: RD-4
 Purpose: document. The revision of the branch point that carries the five process changes of evaluation case 008, adopted by the owner on 2026-10-27.
-Status: draft (round 3 in progress; unratified terms 0)
+Status: draft (round 3 readable; fixes applied, confirmation pending; unratified terms 0)
 Source: the owner's decision of 2026-10-27 ("go ahead with case 008's five changes"); evaluation case 008; branch point v1.4 and its review record.
 Normative: yes
 Footprint: docs/branch-point.md; docs/records/branch-point-v1.5.ir.md; docs/records/branch-point-v1.5.review.md; eval/cases/008-meta-review-branch-point-rounds-2026-10-27.md; eval/README.md; scripts/claims-check.mjs; scripts/test.mjs
@@ -31,7 +31,7 @@ C5. During rounds the prose status line reads `under review` with the version an
 
 C6. During rounds the IR's Status parenthesis holds the round number. [decided: owner, 2026-10-27]
 
-C16. The reasoning role changes the prose status line and the IR's Status parenthesis together. [decided: owner, 2026-10-27]
+C16. At the start of each round, the reasoning role changes the prose status line and the IR's Status parenthesis together. [decided: owner, 2026-10-27]
 
 C7. The stranger brief lists the under-review status line among the forms that are not defects. [decided: owner, 2026-10-27]
 
@@ -41,7 +41,9 @@ C9. The readable round's stranger instance confirms each fix before delivery. [d
 
 C10. The reasoning role marks in the review record each finding of the readable round as confirmed, or as unfixed when the instance did not confirm its fix. [decided: owner, 2026-10-27]
 
-C11. The D1 row's rule on joining a reason to its rule by connective prose, and the limit of ten, stay as written. [decided: owner, 2026-10-27]
+C11. The D1 row's rule on joining a reason to its rule by connective prose stays as written. [decided: owner, 2026-10-27]
+
+C18. The limit of ten stays as written. [decided: owner, 2026-10-27]
 
 ### Meta-review
 
@@ -73,4 +75,4 @@ E2. docs/records/branch-point-v1.4.review.md: round 5's three fixes passed the c
 
 ## Asks
 
-A1. Accept branch point v1.5. Depends: C1 to C17.
+A1. Accept branch point v1.5. Depends: C1 to C18.
