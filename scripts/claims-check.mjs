@@ -4,7 +4,10 @@
 // that are new, and for each finds the prose sentence that best carries it,
 // by overlap of content words. A claim with no sentence above the overlap
 // floor is reported as missing: the fix reached the IR and not the prose.
-// Usage: node scripts/claims-check.mjs <old.ir.md> <new.ir.md> <prose.md> [--floor 0.5] [--json]
+// With --old-prose <old.md> (branch point v1.5, case 008 change 1), a changed
+// claim whose best-matching sentence also stands verbatim in the old prose is
+// reported as stale: the claim changed and its sentence did not.
+// Usage: node scripts/claims-check.mjs <old.ir.md> <new.ir.md> <prose.md> [--old-prose <old.md>] [--floor 0.5] [--json]
 
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
@@ -39,7 +42,8 @@ export function overlap(a, b) {
   return n / a.size;
 }
 
-export function claimsCheck(oldText, newText, proseText, { floor = 0.5 } = {}) {
+export function claimsCheck(oldText, newText, proseText, { floor = 0.5, oldProseText = null } = {}) {
+  const oldSentences = oldProseText === null ? null : new Set(sentencesOf(oldProseText));
   const oldC = new Map(parseIR(oldText).elements.filter((e) => e.kind === 'C').map((e) => [e.id, e.text]));
   const newC = parseIR(newText).elements.filter((e) => e.kind === 'C');
   const sentences = sentencesOf(proseText).map((s) => ({ s, w: contentWords(s) }));
@@ -48,23 +52,27 @@ export function claimsCheck(oldText, newText, proseText, { floor = 0.5 } = {}) {
     const w = contentWords(e.text);
     let best = { score: 0, sentence: '' };
     for (const x of sentences) { const sc = overlap(w, x.w); if (sc > best.score) best = { score: sc, sentence: x.s }; }
-    return { id: e.id, status: oldC.has(e.id) ? 'changed' : 'new', score: Number(best.score.toFixed(2)), sentence: best.sentence, missing: best.score < floor };
+    const missing = best.score < floor;
+    const stale = !missing && oldSentences !== null && oldC.has(e.id) && oldSentences.has(best.sentence);
+    return { id: e.id, status: oldC.has(e.id) ? 'changed' : 'new', score: Number(best.score.toFixed(2)), sentence: best.sentence, missing, stale };
   });
   const removed = [...oldC.keys()].filter((id) => !newC.some((e) => e.id === id));
-  return { changed: rows, removed, missing: rows.filter((r) => r.missing).map((r) => r.id) };
+  return { changed: rows, removed, missing: rows.filter((r) => r.missing).map((r) => r.id), stale: rows.filter((r) => r.stale).map((r) => r.id) };
 }
 
 function main() {
   const args = process.argv.slice(2);
-  const files = args.filter((a) => !a.startsWith('--') && !/^\d/.test(a));
+  const oi = args.indexOf('--old-prose'); const oldProse = oi >= 0 ? args[oi + 1] : null;
   const fi = args.indexOf('--floor'); const floor = fi >= 0 ? Number(args[fi + 1]) : 0.5;
+  const skip = new Set([oi >= 0 ? oi + 1 : -1, fi >= 0 ? fi + 1 : -1]);
+  const files = args.filter((a, i) => !a.startsWith('--') && !skip.has(i));
   if (files.length < 3) { console.error('usage: claims-check.mjs <old.ir.md> <new.ir.md> <prose.md> [--floor 0.5] [--json]'); process.exit(2); }
-  const r = claimsCheck(readFileSync(resolve(files[0]), 'utf8'), readFileSync(resolve(files[1]), 'utf8'), readFileSync(resolve(files[2]), 'utf8'), { floor });
+  const r = claimsCheck(readFileSync(resolve(files[0]), 'utf8'), readFileSync(resolve(files[1]), 'utf8'), readFileSync(resolve(files[2]), 'utf8'), { floor, oldProseText: oldProse ? readFileSync(resolve(oldProse), 'utf8') : null });
   if (args.includes('--json')) { process.stdout.write(JSON.stringify(r, null, 2)); return; }
-  for (const row of r.changed) console.log(`${row.id} ${row.status} ${row.missing ? 'MISSING' : 'ok'} ${row.score} :: ${row.sentence.slice(0, 100)}`);
+  for (const row of r.changed) console.log(`${row.id} ${row.status} ${row.missing ? 'MISSING' : row.stale ? 'STALE' : 'ok'} ${row.score} :: ${row.sentence.slice(0, 100)}`);
   if (r.removed.length) console.log(`removed: ${r.removed.join(', ')}`);
-  console.log(`changed ${r.changed.length}, missing ${r.missing.length}${r.missing.length ? ' (' + r.missing.join(', ') + ')' : ''}`);
-  process.exitCode = r.missing.length ? 1 : 0;
+  console.log(`changed ${r.changed.length}, missing ${r.missing.length}${r.missing.length ? ' (' + r.missing.join(', ') + ')' : ''}, stale ${r.stale.length}${r.stale.length ? ' (' + r.stale.join(', ') + ')' : ''}`);
+  process.exitCode = r.missing.length || r.stale.length ? 1 : 0;
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) main();
