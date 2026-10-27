@@ -96,4 +96,4 @@ Case 005's recommended changes. 1, threshold verdict: weakened; zero contradicti
 
 Case 006's outcomes. 1, the revised brief: recommended, with change 2. 2, SP-05 wording: recommended. 3, the round trip's text half: recommended, as the record of change 3. 4, the fix discipline in the specification: recommended. 5, CK-03 unchanged: recommended, with change 7's caveat.
 
-Owner's decision on the outcome: pending.
+Owner's decision on the outcome, 2026-10-27: changes 1 to 6 accepted; change 7 not adopted alone. On case 005's changes: 1 struck; 2 adopted in the narrow form (actor or trigger); 3 struck; 4 adopted as a measure; 5 and 6 adopted through changes 5 and 4; 9 closed as not needed. Carried into branch point v1.4.

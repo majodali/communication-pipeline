@@ -233,3 +233,22 @@ test('CK-16: a stray line in a section is a violation', () => {
   const ir = 'Reader: RD-1\nPurpose: report. x\nStatus: draft\nSource: s\n\n## Terms\n\n## Claims\n\nC1. One. [proposed: this IR]\n\nA stray sentence.\n\n## Relations\n\n## Evidence\n\n## Asks\n\nA0. No asks.\n';
   assert.ok(lintIR(ir, { vocab: new Set() }).findings.some((f) => f.check === 'CK-16'));
 });
+
+import { claimsCheck } from './claims-check.mjs';
+
+test('claims-check reports a changed claim the prose does not carry', () => {
+  const oldIR = `# IR: y\n\nReader: RD-4\nPurpose: document. t\nStatus: draft\nSource: t\n\n## Terms\n\n## Claims\n\nC1. The widget is blue. [decided: owner, 2026-10-27]\n\nC2. The widget has four wheels. [decided: owner, 2026-10-27]\n\n## Relations\n\n## Evidence\n`;
+  const newIR = oldIR.replace('The widget is blue.', 'The widget is painted green before delivery.').replace('## Relations', 'C3. Every widget carries a serial number. [decided: owner, 2026-10-27]\n\n## Relations');
+  const prose = `# Widgets\n\nThe widget is blue. The widget has four wheels. Every widget carries a serial number.\n`;
+  const r = claimsCheck(oldIR, newIR, prose);
+  assert.deepEqual(r.changed.map((c) => c.id), ['C1', 'C3']);
+  assert.deepEqual(r.missing, ['C1']);
+  assert.equal(r.changed[1].missing, false);
+});
+
+test('claims-check reports removed claims', () => {
+  const oldIR = `# IR: y\n\nReader: RD-4\nPurpose: document. t\nStatus: draft\nSource: t\n\n## Terms\n\n## Claims\n\nC1. The widget is blue. [decided: owner, 2026-10-27]\n\n## Relations\n\n## Evidence\n`;
+  const newIR = oldIR.replace('C1. The widget is blue. [decided: owner, 2026-10-27]\n\n', '');
+  const r = claimsCheck(oldIR, newIR, 'The widget is blue.');
+  assert.deepEqual(r.removed, ['C1']);
+});
