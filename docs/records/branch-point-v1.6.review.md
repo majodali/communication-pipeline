@@ -61,4 +61,7 @@ pre-v1.6 2.
 | 4 | "state paragraph" undefined | term (pre-v1.6) | add: its definition in the BP-06 reason (C20) |
 
 Claims check (stale-aware) before round 3: 4 changed or new claims,
-0 missing, 0 stale. Same-instance confirmation: recorded below.
+0 missing, 0 stale. Same-instance confirmation: 4 of 4 fixes hold;
+one new defect noted, the merged sentence at 42 words, split again
+with the reason as its own sentence (C19, C21). Claims check after:
+2 changed or new, 0 missing, 0 stale.

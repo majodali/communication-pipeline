@@ -139,9 +139,9 @@ Findings, Readability, Counts.
 A report to RD-1 (the human owner, in conversation) or RD-3 (a
 delegating agent) may be written as prose directly, with the prose
 [lint](vocabulary.md#def-lint), when it holds no term, decision or
-[register fact](https://github.com/majodali/methodology/blob/main/docs/vocabulary.md#def-register-fact),
-because each is content a model would hold (owner ruling,
-2026-10-25). The reasoning role writes a document as an IR first.
+[register fact](https://github.com/majodali/methodology/blob/main/docs/vocabulary.md#def-register-fact).
+A term, a decision and a register fact are each content a model
+would hold (owner ruling, 2026-10-25). The reasoning role writes a document as an IR first.
 
 ## Rules
 
@@ -249,4 +249,4 @@ the data the thresholds are tuned against.
 
 <!-- v1.5 map (IR: docs/records/branch-point-v1.5.ir.md): C1→¶Rounds-1 C2→¶Rounds-1 C14→¶Rounds-1 C4→¶Rounds-5 C3→¶Rounds-6 C8→¶Rounds-7 C9→¶Rounds-7 C10→¶Rounds-7 C5→¶Rounds-verdict C6→¶Rounds-verdict C16→¶Rounds-verdict C7→¶Brief-forms C12→¶Meta-1 C13→¶Meta-1 C17→¶Status C15→¶Status C11→¶Meta-1 C18→¶Meta-1 -->
 
-<!-- render map: C1→¶Meta-1 C2→¶Meta-1 C3→¶Meta-1 C4→¶Meta-1 C5→¶Meta-1 C6→¶Meta-1 C7→¶Meta-1 C8→¶Meta-1 C9→¶Meta-1 C10→¶Meta-1 C13→¶Meta-1 C11→¶Meta-1 C12→¶Meta-1 C14→¶Status C15→¶Meta-1 C16→¶Meta-1 C17→¶Brief C18→¶Required C19→¶Required C20→¶Why (IR: docs/records/branch-point-v1.6.ir.md) -->
+<!-- render map: C1→¶Meta-1 C2→¶Meta-1 C3→¶Meta-1 C4→¶Meta-1 C5→¶Meta-1 C6→¶Meta-1 C7→¶Meta-1 C8→¶Meta-1 C9→¶Meta-1 C10→¶Meta-1 C13→¶Meta-1 C11→¶Meta-1 C12→¶Meta-1 C14→¶Status C15→¶Meta-1 C16→¶Meta-1 C17→¶Brief C18→¶Required C19→¶Required C21→¶Required C20→¶Why (IR: docs/records/branch-point-v1.6.ir.md) -->
