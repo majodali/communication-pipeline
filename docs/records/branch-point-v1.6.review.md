@@ -77,11 +77,37 @@ delivery. By fix kind as the stranger judged: cut 1, rephrase 2, add
 
 | # | Finding (shortened) | Kind | Fix | Confirmation |
 |---|---|---|---|---|
-| 1 | "the measurements" without a referent | referent | rephrase C11: "the five recorded counts" | |
-| 2 | step 5's two sentences repeat their main clause | excess (pre-v1.6) | declined: a v1.5 round split that sentence under SP-01; the two readings conflict and the split stands | |
-| 3 | the header names case 005 only | header (pre-v1.6) | rephrase: "Meta-review and the decisions on cases 005 and 008" | |
-| 4 | "case 005" unlinked at first use | identifier (pre-v1.6) | add: the link | |
-| 5 | C8 and C9 proposed while the prose states them as settled | provenance (IR) | rephrase: decided by the owner's go-ahead of 2026-10-27 | |
+| 1 | "the measurements" without a referent | referent | rephrase C11: "the five recorded counts" | confirmed |
+| 2 | step 5's two sentences repeat their main clause | excess (pre-v1.6) | declined: a v1.5 round split that sentence under SP-01; the two readings conflict and the split stands | declined, accepted by the instance |
+| 3 | the header names case 005 only | header (pre-v1.6) | rephrase: "Meta-review and the decisions on cases 005 and 008" | confirmed |
+| 4 | "case 005" unlinked at first use | identifier (pre-v1.6) | add: the link | confirmed |
+| 5 | C8 and C9 proposed while the prose states them as settled | provenance (IR) | rephrase: decided by the owner's go-ahead of 2026-10-27 | confirmed |
 
 Claims check (stale-aware) after the fixes: 3 changed claims, 0
 missing, 0 stale. Prose 2,115 to 2126 words.
+
+Same-instance confirmation before delivery: 4 of 4 accepted fixes
+hold, each marked confirmed above; the decline accepted by the
+instance; finding 3's first fix did not hold (the header still
+omitted the trigger) and was fixed again and confirmed. None unfixed.
+Footprint before delivery:
+footprint: declared 6, changed 6, surprises 0, misses 0. IR Status set to
+`reviewed (round 3 readable; fixes confirmed)`.
+
+## Verdict
+
+Readable for RD-4 at round 3 of a count of three, under the v1.5
+procedure. Findings per thousand words by round: 4.8, 1.9, 2.4.
+Contradictions by round: 1, 0, 0. Prose 2,099 words at round 1 and
+2,126 at delivery; IR 13 claims at round 1 and 21 at delivery, eight
+of them claims behind sentences the strangers read as v1.6's.
+
+Signals checked at the end of the count, under the rule this version
+introduces, by `scripts/signals.mjs` and by reading: first, no fix
+rejected at confirmation for a procedure reason and no missing or
+stale claim (the confirmations noted new defects, which is the step
+working); second, no finding raised again and no mismatch recurring;
+third, growth of 1.3 percent; fourth, no round after round 3. The
+limit was not reached.
+
+Meta-review: not indicated.

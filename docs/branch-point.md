@@ -1,6 +1,7 @@
 # Branch point
 
-Status: under review (v1.6, round 3). Until the owner accepts v1.6,
+Status: under review (v1.6, readable at round 3, pending the owner's
+acceptance). Until the owner accepts v1.6,
 v1.5 is active on main. Versions: v1.6, 2026-10-27, the signal-based
 meta-review trigger; v1.5, 2026-10-27, the five process changes of
 evaluation case 008; v1.4, 2026-10-27, accepted by the
