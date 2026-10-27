@@ -2,7 +2,7 @@
 
 Reader: RD-4
 Purpose: document. The revision of the branch point that carries the six process changes of evaluation case 007, which reviewed the rounds case 006 records, and the owner's decisions on case 005's held changes.
-Status: draft (round 4 fixes applied; confirmation pending; unratified terms 3)
+Status: draft (round 4 fixes confirmed, one new defect fixed; round 5 in progress; unratified terms 3)
 Source: the owner's decisions of 2026-10-27 ("They are all justified"; "Agreed on all four - go ahead with the branch-point revision"); evaluation cases 005, 006 and 007; the methodology specification docs/intermediate-representation.md as merged in PR #52 and #53.
 Normative: yes
 Footprint: docs/branch-point.md; docs/branch-point.review.md; docs/style-spec.md; docs/records/branch-point-v1.4.ir.md; eval/cases/005-meta-review-stranger-rounds-2026-10-26.md; eval/cases/007-meta-review-full-ir-rounds-2026-10-27.md; eval/README.md; scripts/claims-check.mjs; scripts/test.mjs
@@ -129,7 +129,7 @@ C34. The meta-reviews so far are case 005, on methodology PR #51's rounds, and c
 
 C40. The meta-review reads the review record and the text, and reports, as an evaluation case, whether the process needs a change. [decided: owner, 2026-10-26]
 
-C49. Disposition D3 is named review, author-rendered. [proposed: this IR]
+C49. Disposition D3 is named review, reasoning-role rendered. [proposed: this IR]
 
 ## Relations
 

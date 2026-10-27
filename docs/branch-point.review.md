@@ -155,4 +155,6 @@ add 4; by locus: both 4, pre-v1.4 2.
 | 6 | "D3 review without render" vs its row | contradiction (pre-v1.4) | rephrase: "D3 review, author-rendered" (C49) |
 
 Claims check before round 5: 4 changed or new claims, 0 missing.
-Same-instance confirmation: recorded below.
+Same-instance confirmation (re-run after a container restart lost
+the first): 6 of 6 fixes hold; one new defect noted, "author" in the
+new D3 name, fixed to "D3 review, reasoning-role rendered" (C49).
