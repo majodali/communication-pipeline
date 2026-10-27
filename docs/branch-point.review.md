@@ -22,7 +22,7 @@ confirmation after the fixes, declined findings carried.
 | 3 | 1,637 | 46 | 9 | 5.5 | not readable (restatement mismatch on C33's wording; 0 contradictions, 1 undefined term, pre-v1.4) |
 | 4 | 1,637 | 47 | 6 | 3.7 | not readable (restatement mismatch on provenance: C3, C41, A1; 3 contradictions, 1 undefined term) |
 | 5 | 1,639 | 49 | 9 | 5.5 | not readable (restatement mismatch on C49 only; 0 contradictions, 0 undefined terms) |
-| 6 | 1,626 | 48 | | | |
+| 6 | 1,626 | 48 | 10 | 6.2 | readable (restatement matched; 0 contradictions, 0 undefined terms) |
 
 
 ## Round 1, 2026-10-27
@@ -108,7 +108,6 @@ now points at the style specification's rule table; naming each rule
 stays declined. Claims check after: 9 changed, 0 missing; prose 1,637
 words. Round 3 starts, so the text is a meta-review subject.
 
-Meta-review: pending
 
 ## Round 3, 2026-10-27
 
@@ -190,3 +189,53 @@ sentence still overlapped the unfixed row. The confirmation caught
 it. Fixed again: the status line's scope and the D3 row. Claims
 check after: 0 changed, the two passages re-read against C47 and
 C49.
+
+## Round 6, 2026-10-27
+
+1,626 words; 10 findings; 6.2 per thousand words. Restatement: 192
+words, matching the IR. Contradictions 0, undefined terms 0; verdict:
+readable for RD-4. The count ends at round 6 with a readable verdict.
+The text delivered is the text this round judged. The ten findings
+are recorded unfixed, as the rule for a readable round says; the next
+edit of the branch point fixes them. By fix kind as the stranger
+judged: cut 2, rephrase 2, add 6; by locus: prose 6, IR 1, both 2,
+pre-v1.4 1.
+
+| # | Finding (shortened) | Kind | Disposition |
+|---|---|---|---|
+| 1 | prose "active" vs IR "draft" during rounds | status | accepted, unfixed; the IR's Status becomes reviewed at this delivery and the prose's active holds from acceptance |
+| 2 | E2 names decisions on changes 2 and 9 the prose does not state | IR gap | accepted, unfixed; fix: C32's companions for change 2 (SP-18 narrowed) and change 9 (closed) are C23 and C31; E2 to cite them |
+| 3 | "six process changes" without naming which six | IR gap | accepted, unfixed; fix: E1 lists changes 1 to 6 |
+| 4 | D3 used in the D1 row before its name | identifier | accepted, unfixed |
+| 5 | "the specification" in the split decision | referent | accepted, unfixed; fix: "the methodology's IR specification" (C31 has it) |
+| 6 | "also" | excess | accepted, unfixed |
+| 7 | "first and" | excess | accepted, unfixed |
+| 8 | reading list and restriction in one sentence | compound | accepted, unfixed; fix: "reads only ..." |
+| 9 | the Meta-review header does not predict the case 005 decisions | header | accepted, unfixed; fix: "Meta-review and the decisions on case 005" |
+| 10 | the Record sentence holds two claims | compound (pre-v1.4) | accepted, unfixed |
+
+Footprint before delivery: declared 9, changed 9, surprises 0,
+misses 0. IR Status set to `reviewed (unratified terms 3; surprises
+0; misses 0; round 6 readable)`.
+
+## Verdict
+
+Readable for RD-4 at round 6 of a count of six, under the v1.4
+procedure the text defines, applied to itself. Findings per thousand
+words by round: 15.1, 11.4, 5.5, 3.7, 5.5, 6.2. Contradictions by
+round: 4, 1, 0, 3, 0, 0. Prose 1,527 words at round 1 and 1,626 at
+round 6: the growth is the forms list, the definitions of the
+stranger brief and the restatement, and the status line's pending
+acceptances. IR 36 claims at round 1 and 48 at round 6.
+
+The procedure's own steps, measured on this count: the claims check
+found no missing claim in six runs; the same-instance confirmation
+found fixes that did not hold in three of five runs (two in round 1,
+one in round 2, three in round 5), two of them fixes that had not
+reached the prose at all; the declined-findings list carried one
+finding and it was not raised again in four rounds; no restatement
+mismatch recurred.
+
+Meta-review: pending. This text is a meta-review subject (six rounds
+in one count). The delivering report asks the owner to dispatch the
+meta-review.
