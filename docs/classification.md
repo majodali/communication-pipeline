@@ -10,7 +10,10 @@
      (Constitution Article 4). -->
 
 - **C-tier**: C1
-- **Pinned methodology version**: 1.5.0 (compliance target)
+- **Pinned methodology version**: 1.6.0 (compliance target; migrated
+  from 1.5.0 on 2026-10-28 — v1.6.0 carries one migration note, the
+  amended W-008 bootstrap block, which this repo's `CLAUDE.md` now
+  carries verbatim)
 - **S-level**: S0
 - **Type**: exploration
 - **Target**: none/local
