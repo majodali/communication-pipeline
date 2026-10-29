@@ -25,7 +25,7 @@ C2. Until the owner accepts v1.7, v1.6 is active on main. [decided: owner, 2026-
 
 C3. Before round 1, the reasoning role resolves every SP-02 lint warning in the prose, a sentence over 25 words. evidence: E1. [decided: owner, 2026-10-29]
 
-C4. The reasoning role records the lint result in the review record. evidence: E1. [decided: owner, 2026-10-29]
+C4. Before round 1, the reasoning role records the lint result in the review record. evidence: E1. [decided: owner, 2026-10-29]
 
 ### Rounds step 2
 
@@ -33,7 +33,7 @@ C5. The review record names each round's stranger model. evidence: E1. [decided:
 
 C6. The review record names, for every restatement mismatch, the claim the mismatch concerns. evidence: E1. [decided: owner, 2026-10-29]
 
-C42. The record carries the mismatch claims on one `Mismatches:` line per round, or `none`. evidence: E1. [decided: owner, 2026-10-29]
+C42. The review record carries the mismatch claims on one `Mismatches:` line per round, or `none`. evidence: E1. [decided: owner, 2026-10-29]
 
 C7. For a mismatch the stranger attributes to its own restatement, the brief asks the stranger to quote the prose sentence it relied on. evidence: E1. [decided: owner, 2026-10-29]
 
@@ -71,11 +71,11 @@ C18. A rewording alone is not a step-6 fix. evidence: E1. [decided: owner, 2026-
 
 C19. The reasoning role lists a decided claim changed by a structural fix for the owner in the delivering report. evidence: E1. [decided: owner, 2026-10-29]
 
-C20. The round's instance does not confirm a step-6 fix. evidence: E1. [decided: owner, 2026-10-29]
+C20. The round's instance does not confirm a step-6 fix, which step 4's answer excludes. evidence: E1. [decided: owner, 2026-10-29]
 
 C21. The review record marks a step-6 fix `awaiting restatement`. evidence: E1. [decided: owner, 2026-10-29]
 
-C22. The next round's entry states whether that round's restatement matched on the passage. evidence: E1. [decided: owner, 2026-10-29]
+C22. The next round's entry states whether that round's restatement matched on the passage with the mismatch. evidence: E1. [decided: owner, 2026-10-29]
 
 ### Rounds step 7
 
@@ -107,7 +107,7 @@ C32. The script reports the first signal from the confirmation lines in their fi
 
 C33. The script reports the second signal's recurring mismatch from the `Mismatches:` lines, a claim named in two rounds. evidence: E1. [decided: owner, 2026-10-29]
 
-C34. The script reads the third signal from the curve table's words and claims. evidence: E1. [decided: owner, 2026-10-29]
+C34. The script reads the third signal from the review record's per-round table of prose words and IR claims. evidence: E1. [decided: owner, 2026-10-29]
 
 C35. The script reports a confirmation line it cannot parse as unparsed. evidence: E1. [decided: owner, 2026-10-29]
 
@@ -115,7 +115,7 @@ C36. The reasoning role writes no `Meta-review: not indicated` while a line is u
 
 C37. The script reports wording that may show a declined finding raised again or the fourth signal. [decided: owner, 2026-10-27]
 
-C45. The reasoning role confirms that wording by reading at the end of the count. [decided: owner, 2026-10-27]
+C45. The reasoning role confirms the script's reported wording by reading at the end of the count. [decided: owner, 2026-10-27]
 
 C46. Case 005's change 4, a growth bound, is replaced by the third signal, because words per IR claim measure prose drift from the IR. evidence: E1. [decided: owner, 2026-10-29]
 
@@ -123,7 +123,7 @@ C38. Case 009 is the meta-review of the methodology's vision document rounds. [d
 
 C39. The owner adopted case 009's nineteen changes on 2026-10-29. evidence: E2. [decided: owner, 2026-10-29]
 
-C40. Three of the nineteen confirm the verdict's three conditions without a finding-rate threshold, the restatement limit of 200 words, and the limit of ten. evidence: E1. [decided: owner, 2026-10-29]
+C40. Three of the nineteen confirm three rules as written: the readable verdict without a finding-rate threshold, the 200-word restatement limit, and the limit of ten. evidence: E1. [decided: owner, 2026-10-29]
 
 ## Relations
 
