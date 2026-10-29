@@ -128,3 +128,5 @@ Proposed process changes. "Brief" means the branch point's Stranger brief; "step
 17. Before round 1 the reasoning role resolves every SP-02 lint warning (over 25 words), and the record states the lint result. Evidence: eight SP-02 findings of 38 in round 1, one per warned sentence. Recommended.
 18. Step 7 applies at the limit: the final round's findings are fixed, confirmed by its instance, and marked confirmed or unfixed. Evidence: round 10 did so by choice. Recommended.
 19. The claims check, same-instance confirmation outside step 6, the carried declines and the limit of ten stay as written. Evidence: earlier changes 1 to 3; judgement a. No change.
+
+Owner's decision on the outcome, 2026-10-29: all nineteen adopted as proposed ("adopt all nineteen as proposed"); the term structural fix ratified. Carried into branch point v1.7 and, for changes 2, 14, 15 and 18, into the methodology's intermediate-representation specification; the project-orchestrator's Reviewer (stranger) role follows.

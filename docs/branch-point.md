@@ -1,8 +1,6 @@
 # Branch point
 
-Status: active (v1.6, accepted by the owner on 2026-10-27 after three
-rounds). Versions: v1.6, 2026-10-27, the signal-based
-meta-review trigger; v1.5, 2026-10-27, the five process changes of
+Status: under review (v1.7, round 1). Until the owner accepts v1.7, v1.6 is active on main. Versions: v1.7, 2026-10-29, the sixteen process changes of evaluation case 009 and the term structural fix; v1.6, 2026-10-27, the signal-based meta-review trigger; v1.5, 2026-10-27, the five process changes of
 evaluation case 008; v1.4, 2026-10-27, accepted by the
 owner with the style rules
 [SP-05, SP-18, SP-25 and SP-26](style-spec.md#rule-table) and the
@@ -52,13 +50,7 @@ All inputs but the owner flag come from the IR.
 
 ## Rounds
 
-The rounds of D2 and D3 follow the methodology specification's
-[Stranger rounds](https://github.com/majodali/methodology/blob/main/docs/intermediate-representation.md#stranger-rounds)
-rule: a [count](https://github.com/majodali/methodology/blob/main/docs/vocabulary.md#def-count)
-of [rounds](https://github.com/majodali/methodology/blob/main/docs/vocabulary.md#def-round)
-runs until a round returns readable, or to the
-[limit](https://github.com/majodali/methodology/blob/main/docs/vocabulary.md#def-limit)
-of ten. This project's procedure for one round, in order:
+The rounds of D2 and D3 follow the methodology specification's [Stranger rounds](https://github.com/majodali/methodology/blob/main/docs/intermediate-representation.md#stranger-rounds) rule. A [count](https://github.com/majodali/methodology/blob/main/docs/vocabulary.md#def-count) of [rounds](https://github.com/majodali/methodology/blob/main/docs/vocabulary.md#def-round) runs until a round returns readable, or to the [limit](https://github.com/majodali/methodology/blob/main/docs/vocabulary.md#def-limit) of ten. This project's procedure for one round, in order:
 
 1. Before the round, the reasoning role finds, for each claim changed
    since the last round, the prose sentence that carries it. The
@@ -68,34 +60,26 @@ of ten. This project's procedure for one round, in order:
    the best-matching sentence for each. The script reports a changed
    claim no sentence carries. The script reports a changed claim whose best-matching sentence did
    not change since the last round, as stale. The script takes the
-   previous round's prose as its base. The reasoning role fixes the
-   prose, before the round starts, for a changed claim that no
-   sentence carries or is stale.
+   previous round's prose as its base. The reasoning role fixes the prose, before the round starts, for a changed claim that no sentence carries or is stale. Before round 1, the reasoning role resolves every [SP-02](style-spec.md#rule-table) lint warning in the prose, a sentence over 25 words. The reasoning role records the lint result in the review record.
 2. The round's stranger is a fresh instance. The stranger brief is
    the instruction the reasoning role gives a round's stranger
    instance. A restatement is the stranger's account, in at most 200 words of its own, of the text's
-   problem, terms and decisions. The stranger reads the prose,
-   writes its restatement, and only then reads the IR.
+   problem, terms and decisions. The stranger reads the prose, writes its restatement, and only then reads the IR. The review record names each round's stranger model. The review record names, for every restatement mismatch, the claim the mismatch concerns. The record carries the claims on one `Mismatches:` line per round, or `none`. For a mismatch the stranger attributes to its own restatement, the brief asks the stranger to quote the prose sentence it relied on.
 3. The reasoning role fixes each finding it accepts in the IR and
    then in the prose. A fix rephrases or cuts words before it
-   adds words. A fix adds words only for a missing definition,
-   referent or rule. The reasoning role records a declined finding
-   in the review record with its reason.
+   adds words. A fix adds words only for a missing definition, referent or rule. An actor or trigger added for SP-18 to a decided claim whose source names none makes the claim inferred, with a relation naming its basis. A fix that separates present state from target state moves the sentence under a header that names its state. A fix does not mark a single sentence with "Today". A fix keeps the connective prose that joins a rule to a reason the IR holds as its own claim. The reasoning role records a declined finding in the review record with its reason.
 4. After the fixes, the reasoning role sends the round's stranger
    instance its findings table and the fixed passages. The instance
-   answers, per accepted finding, whether the fix holds. The reasoning role fixes again,
-   before the next round, a fix the instance says does not hold.
+   answers, per accepted finding, whether the fix holds. The reasoning role fixes again, before the next round, a fix the instance says does not hold. The reasoning role records the confirmation on one line: `Confirmation: H of A fixes hold. Not held: <finding numbers, or none>. Declines accepted: K of D. New defects: N.` A fix that holds in part is not held. A contradiction or undefined-term finding the instance withdraws at confirmation, on a reason quoting the prose, is marked withdrawn. A withdrawn finding does not count against the verdict. A restatement mismatch is never withdrawn at confirmation.
 5. The reasoning role adds to the next round's stranger brief the
    declined findings of the earlier rounds with their reasons. The reasoning role adds to the next round's stranger brief a finding
    declined in part, with the declined part and its reason.
 6. The reasoning role treats a restatement mismatch on one passage in
    any two rounds as a prose finding, whatever the strangers
-   attributed it to.
+   attributed it to. The fix for such a finding is a [structural fix](vocabulary.md#def-structural-fix). A structural fix moves the sentence out of the structure that produces the reading: a list, a section or an adjacency. A structural fix may instead change the claim to the strangers' reading when that reading is true. A rewording alone is not a step-6 fix. The reasoning role lists a decided claim changed by a structural fix for the owner in the delivering report. The round's instance does not confirm a step-6 fix. The review record marks a step-6 fix `awaiting restatement`. The next round's entry states whether that round's restatement matched on the passage.
 7. At a readable verdict, the reasoning role fixes the round's
    findings in the IR and then in the prose. The readable round's
-   stranger instance confirms each fix before delivery. The reasoning role marks in the review record each finding of the
-   readable round as confirmed, or as unfixed when the instance did
-   not confirm its fix.
+   stranger instance confirms each fix before delivery. The reasoning role marks each finding of the readable round confirmed, or unfixed when the instance did not confirm its fix. Step 7 applies at the limit: the reasoning role fixes the final round's findings in the IR and then in the prose. The final round's instance confirms each fix. The record marks each finding of the final round confirmed or unfixed.
 
 The verdict is readable when the restatement matches the IR and the
 stranger finds no contradiction and no undefined term. The reasoning role records in the review record, per round,
@@ -119,9 +103,7 @@ The stranger brief's SP-05 reads as the methodology's
 [P-004](https://github.com/majodali/methodology/blob/main/docs/rules/prose.md#p-004--identifiers-carry-names)
 (identifiers carry names) does: a name or a link at first use. SP-18 is calibrated to a duty whose actor or trigger the
 text does not state. SP-25, contradiction, is a finding when two
-passages cannot both be followed. SP-26, excess words, is a finding
-when a word, phrase or sentence can go without losing a claim, or a
-claim is stated twice. The brief lists the forms that are not defects:
+passages cannot both be followed. SP-26, excess words, is a finding when a word, phrase or sentence can go without losing a claim, or a claim is stated twice. Three calibrations of 2026-10-29 (case 009) bind the brief. Under SP-01 a duty with its actor and its trigger is one claim. Under SP-18 a sentence that states a target, or names roadmap work and assigns it to no one, is not a duty. Under SP-26 words that name a referent SP-03 requires are not excess. The [style specification's rule table](style-spec.md#rule-table) carries the three calibrations in its SP-01, SP-18 and SP-26 rows. The brief lists the forms that are not defects:
 
 - a dated status line;
 - an under-review status line with a version and round number;
@@ -129,7 +111,8 @@ claim is stated twice. The brief lists the forms that are not defects:
 - a parenthesis naming a rule or section;
 - a sentence stating a count;
 - a colon-introduced list with semicolons;
-- a document's Reader, Type or Status line.
+- a document's Reader, Type or Status line;
+- a rule joined by "because", "so" or "therefore" to a reason the IR holds as its own claim.
 
 Before each round, the reasoning role adds to the stranger brief any
 form the text under review needs. The stranger's report has four parts in order: Restatement,
@@ -137,10 +120,7 @@ Findings, Readability, Counts.
 
 ## When an IR is required at all
 
-A report to RD-1 (the human owner, in conversation) or RD-3 (a
-delegating agent) may be written as prose directly, with the prose
-[lint](vocabulary.md#def-lint), when it holds no term, decision or
-[register fact](https://github.com/majodali/methodology/blob/main/docs/vocabulary.md#def-register-fact).
+A report to RD-1 (the human owner, in conversation) or RD-3 (a delegating agent) may be written as prose directly, with the prose [lint](vocabulary.md#def-lint). The direct form holds no term, decision or [register fact](https://github.com/majodali/methodology/blob/main/docs/vocabulary.md#def-register-fact).
 A term, a decision and a register fact are each content a model
 would hold (owner ruling, 2026-10-25). The reasoning role writes a document as an IR first.
 
@@ -191,51 +171,25 @@ RD-4 (fresh agent session), RD-5 (external reader).
 A text is a subject for [meta-review](vocabulary.md#def-meta-review)
 when its count reaches the limit or its review record shows a
 [meta-review signal](https://github.com/majodali/methodology/blob/main/docs/intermediate-representation.md#meta-review)
-(owner decision, 2026-10-27). The first signal: in two or more rounds
-of the count, the round's stranger instance rejected a fix at
-confirmation or the claims check reported a missing or stale claim. The second signal: a
+(owner decision, 2026-10-27). The first signal: in two or more rounds, a fix was rejected at confirmation or the claims check reported a missing or stale claim. The second signal: a
 finding declined and carried in the stranger brief was raised again,
-or a restatement mismatch recurred on one passage. The third signal:
-the prose grew across the count by more than one tenth of its round-1
-word count. The fourth signal: after round 3, a stranger found a
-contradiction in a passage an earlier round's fix touched. At the end
+or a restatement mismatch recurred on one passage. The third signal: at the count's end, words per IR claim exceed round 1's words per claim by more than one tenth. The fourth signal: in round 3 or later, a stranger found a contradiction in a passage an earlier round's fix touched. At the end
 of a count, the reasoning role checks the four signals against the
 review record. The reasoning role writes `Meta-review: pending` when
 the text is a subject and `Meta-review: not indicated` otherwise,
-naming the signals checked. The script `scripts/signals.mjs` reads a review record and reports
-the first and third signals from its per-round word counts,
-confirmation results and claims-check results. The script
-reports wording that may show the second or fourth signal, for the reasoning role to confirm by reading at the end of the count. The owner may dispatch a
+naming the signals checked. The script `scripts/signals.mjs` reads a review record and reports the first signal from the confirmation lines in their fixed form and the claims-check lines. The script reports the second signal's recurring mismatch from the `Mismatches:` lines, a claim named in two rounds. The script reads the third signal from the curve table's words and claims. The script reports a confirmation line it cannot parse as unparsed. The reasoning role writes no `Meta-review: not indicated` while a line is unparsed. The script reports wording that may show a declined finding raised again or the fourth signal. The reasoning role confirms that wording by reading at the end of the count. The owner may dispatch a
 meta-review of any text, signal or none. The limit of ten stays as
 the one count-based trigger. The trigger of three rounds predated the five recorded counts and
-fired on counts that converged without any step failing. Every meta-review so far was foreshadowed by a signal in its
-review record: growth and an abandoned IR, a drift the mechanical
-check passed, confirmations rejecting fixes. When the owner dispatches a meta-review, the meta-review session
-reads the review record and the text, and reports, as an
-[evaluation case](vocabulary.md#def-evaluation-case), whether the
-process needs a change. The meta-reviews so far are
-[case 005](../eval/cases/005-meta-review-stranger-rounds-2026-10-26.md),
-on methodology PR #51's rounds, and
-[case 007](../eval/cases/007-meta-review-full-ir-rounds-2026-10-27.md),
-on methodology PR #52's rounds, and
-[case 008](../eval/cases/008-meta-review-branch-point-rounds-2026-10-27.md),
-on branch point v1.4's rounds. The owner adopted case 008's five changes on 2026-10-27. Case 008
+fired on counts that converged without any step failing. Every meta-review so far was foreshadowed by a signal in its review record: growth with an abandoned IR, a drift the check passed, rejected fixes. When the owner dispatches a meta-review, the meta-review session reads the review record and the text. The session reports, as an [evaluation case](vocabulary.md#def-evaluation-case), whether the process needs a change. The meta-reviews so far are cases 005, 007, 008 and 009. [Case 005](../eval/cases/005-meta-review-stranger-rounds-2026-10-26.md) reviewed methodology PR #51's rounds and [case 007](../eval/cases/007-meta-review-full-ir-rounds-2026-10-27.md) methodology PR #52's rounds. [Case 008](../eval/cases/008-meta-review-branch-point-rounds-2026-10-27.md) reviewed branch point v1.4's rounds and [case 009](../eval/cases/009-meta-review-vision-rounds-2026-10-29.md) the methodology's vision document rounds. The owner adopted case 008's five changes on 2026-10-27. The owner adopted case 009's nineteen changes on 2026-10-29. Sixteen of the nineteen are the process changes of v1.7. Three of the nineteen confirm the verdict's three conditions without a finding-rate threshold, the restatement limit of 200 words, and the limit of ten. Case 008
 proposed no change to the D1 row's rule on joining a reason to its
 rule by connective prose.
 
 The owner's decisions of 2026-10-27 on case 005's held changes.
 Case 005's change 1, a verdict by a finding-rate threshold, is struck, because
 the verdict rule reached zero contradictions without a threshold.
-Case 005's change 3, stopping when the finding count is flat with a limit of
-five, is struck, because the finding rate was flat from round 5 while
-contradictions ran to round 9. Case 005's change 4, a bound on growth, is
-replaced by the measure of the Rounds section, because fixing in the
-IR first kept the prose from growing.
+Case 005's change 3, a stop at a flat finding count, is struck because contradictions ran to round 9 while the rate was flat. Case 005's change 4, a growth bound, is replaced by the third signal, because words per IR claim measure prose drift from the IR.
 Case 005's change 2, SP-18 calibrated, is adopted in the narrow
-form: a duty names its actor and its trigger. The split of the
-methodology's IR specification into IR form and review process is
-closed as not needed, because that specification reached readable at
-2,808 words. Reviewing only the amended passages after round 1
+form: a duty names its actor and its trigger. The split of the methodology's IR specification into form and process is closed as not needed, because that specification reached readable at 2,808 words. Reviewing only the amended passages after round 1
 stays not recommended. Fixing only new-passage findings stays not
 recommended.
 
@@ -250,4 +204,6 @@ the data the thresholds are tuned against.
 
 <!-- v1.5 map (IR: docs/records/branch-point-v1.5.ir.md): C1→¶Rounds-1 C2→¶Rounds-1 C14→¶Rounds-1 C4→¶Rounds-5 C3→¶Rounds-6 C8→¶Rounds-7 C9→¶Rounds-7 C10→¶Rounds-7 C5→¶Rounds-verdict C6→¶Rounds-verdict C16→¶Rounds-verdict C7→¶Brief-forms C12→¶Meta-1 C13→¶Meta-1 C17→¶Status C15→¶Status C11→¶Meta-1 C18→¶Meta-1 -->
 
-<!-- render map: C1→¶Meta-1 C2→¶Meta-1 C3→¶Meta-1 C4→¶Meta-1 C5→¶Meta-1 C6→¶Meta-1 C7→¶Meta-1 C8→¶Meta-1 C9→¶Meta-1 C10→¶Meta-1 C13→¶Meta-1 C11→¶Meta-1 C12→¶Meta-1 C14→¶Status C15→¶Meta-1 C16→¶Meta-1 C17→¶Brief C18→¶Required C19→¶Required C21→¶Required C20→¶Why (IR: docs/records/branch-point-v1.6.ir.md) -->
+<!-- v1.6 map (IR: docs/records/branch-point-v1.6.ir.md): C1→¶Meta-1 C2→¶Meta-1 C3→¶Meta-1 C4→¶Meta-1 C5→¶Meta-1 C6→¶Meta-1 C7→¶Meta-1 C8→¶Meta-1 C9→¶Meta-1 C10→¶Meta-1 C13→¶Meta-1 C11→¶Meta-1 C12→¶Meta-1 C14→¶Status C15→¶Meta-1 C16→¶Meta-1 C17→¶Brief C18→¶Required C19→¶Required C21→¶Required C20→¶Why -->
+
+<!-- render map: C1→¶Status C2→¶Status C3→¶Rounds-1 C4→¶Rounds-1 C5→¶Rounds-2 C6→¶Rounds-2 C42→¶Rounds-2 C7→¶Rounds-2 C8→¶Rounds-3 C9→¶Rounds-3 C10→¶Rounds-3 C11→¶Rounds-3 C12→¶Rounds-4 C13→¶Rounds-4 C14→¶Rounds-4 C43→¶Rounds-4 C15→¶Rounds-4 C16→¶Rounds-6 C17→¶Rounds-6 C44→¶Rounds-6 C18→¶Rounds-6 C19→¶Rounds-6 C20→¶Rounds-6 C21→¶Rounds-6 C22→¶Rounds-6 C23→¶Rounds-7 C24→¶Rounds-7 C25→¶Rounds-7 C26→¶Brief C27→¶Brief C28→¶Brief C29→¶Brief-forms C41→¶Brief C30→¶Meta-1 C31→¶Meta-1 C32→¶Meta-1 C33→¶Meta-1 C34→¶Meta-1 C35→¶Meta-1 C36→¶Meta-1 C37→¶Meta-1 C45→¶Meta-1 C46→¶Meta-2 C38→¶Meta-1 C39→¶Meta-1 C40→¶Meta-1 (IR: docs/records/branch-point-v1.7.ir.md) -->

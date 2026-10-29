@@ -266,16 +266,26 @@ test('claims-check reports a changed claim whose sentence did not change (stale)
 
 import { readSignals } from './signals.mjs';
 
-test('signals: growth and repeated confirmation failures fire; a clean record does not', () => {
-  const bad = `# Review record\n\n| Round | Prose words | IR claims |\n|---|---|---|\n| 1 | 1,000 | 10 |\n| 2 | 1,150 | 11 |\n\n## Round 1\n\nSame-instance confirmation: 3 of 5 fixes hold.\n\n## Round 2\n\nClaims check: 2 changed, missing 1, stale 0.\n`;
+test('signals v1.7: fixed confirmation form, mismatch recurrence, words per claim, unparsed lines', () => {
+  const bad = `# Review record\n\n| Round | Prose words | IR claims |\n|---|---|---|\n| 1 | 1,000 | 50 |\n| 2 | 1,150 | 50 |\n\n## Round 1\n\nMismatches: C8, C26\nConfirmation: 3 of 5 fixes hold. Not held: 2, 4. Declines accepted: 1 of 1. New defects: 0.\n\n## Round 2\n\nMismatches: C8\nClaims check: 2 changed, missing 1, stale 0.\nConfirmation: 2 of 2 fixes hold. Not held: none. Declines accepted: 0 of 0. New defects: 1.\n`;
   const r = readSignals(bad);
   assert.equal(r.signal1.fired, true);
   assert.deepEqual(r.signal1.roundsWithFailure, [1, 2]);
+  assert.equal(r.signal2.fired, true);
+  assert.deepEqual(r.signal2.recurring, ['C8 in rounds 1, 2']);
   assert.equal(r.signal3.fired, true);
   assert.equal(r.subject, true);
-  const good = `# Review record\n\n| Round | Prose words | IR claims |\n|---|---|---|\n| 1 | 1,000 | 10 |\n| 2 | 990 | 11 |\n\n## Round 1\n\nSame-instance confirmation: 5 of 5 fixes hold.\nClaims check: 2 changed, missing 0, stale 0.\n`;
-  const g = readSignals(good);
-  assert.equal(g.signal1.fired, false);
+  assert.deepEqual(r.unparsed, []);
+  // words per claim, not words: prose grows 20% while claims grow 25%, so the signal does not fire
+  const perClaim = `| Round | Prose words | IR claims |\n|---|---|---|\n| 1 | 1,000 | 40 |\n| 2 | 1,200 | 50 |\n\n## Round 1\n\nMismatches: none\nConfirmation: 5 of 5 fixes hold. Not held: none. Declines accepted: 0 of 0. New defects: 0.\n`;
+  const g = readSignals(perClaim);
   assert.equal(g.signal3.fired, false);
+  assert.equal(g.signal1.fired, false);
+  assert.equal(g.signal2.fired, false);
   assert.equal(g.subject, false);
+  // a confirmation line outside the fixed form is unparsed and blocks "not indicated"
+  const loose = `| Round | Prose words | IR claims |\n|---|---|---|\n| 1 | 1,000 | 40 |\n\n## Round 1\n\nSame-instance confirmation: 10 of 11 prose fixes hold in full.\n`;
+  const u = readSignals(loose);
+  assert.equal(u.unparsed.length, 1);
+  assert.equal(u.subject, 'unparsed');
 });

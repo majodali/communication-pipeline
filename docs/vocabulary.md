@@ -49,5 +49,6 @@ the term's first use to it ([term lifecycle](term-lifecycle.md)).
 | <a id="def-restatement"></a>Restatement | the stranger's account, in at most 200 words of its own, of the text's problem, terms and decisions, written from the prose before the IR is read | decided, owner 2026-10-27 | [branch-point.md](branch-point.md), Rounds |
 | <a id="def-locus"></a>Locus | the stranger's judgement of where a defect sits: the prose, the IR, or both | decided, owner 2026-10-27 | [branch-point.md](branch-point.md), Stranger brief |
 | <a id="def-fix-kind"></a>Fix kind | the stranger's judgement of what a finding needs: cut, rephrase, or add | decided, owner 2026-10-27 | [branch-point.md](branch-point.md), Stranger brief |
+| <a id="def-structural-fix"></a>Structural fix | a fix that moves a sentence out of the structure that produces a misreading, or changes the claim to the reading, rather than rewording it | decided, owner 2026-10-29 | [branch-point.md](branch-point.md), Rounds step 6 |
 
 Unratified terms at this revision: 1 (meta-review, proposed 2026-10-26).
