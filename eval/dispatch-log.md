@@ -25,3 +25,4 @@ Newest last. The data chunk 3 tunes the thresholds against.
 | 2026-10-26 | docs/records/chunk-5-close-out.ir.md | RD-1 | report | 26 | 0 | 5 | 26 | — | BP-07 | D1 |
 | 2026-10-26 | docs/records/stranger-rounds.ir.md | RD-1 | report | 21 | 1 | 3 | 54 | — | BP-05a | D1 |
 | 2026-10-26 | docs/records/stranger-rounds.ir.md | RD-1 | report | 24 | 1 | 3 | 39 | — | BP-05a | D1 |
+| 2026-10-28 | docs/records/portfolio-1.6.0-refresh.ir.md | RD-1 | report | 11 | 0 | 1 | 24 | — | BP-07 | D1 |
