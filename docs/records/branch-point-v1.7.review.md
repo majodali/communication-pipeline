@@ -7,6 +7,7 @@ Reader of the reviewed text: RD-4 (a fresh agent session). Reviewer: a stranger,
 | Round | Prose words | IR claims | Findings | Per 1,000 words | Verdict |
 |---|---|---|---|---|---|
 | 1 | 2,318 | 46 | 12 | 5.2 | not readable (restatement matched; contradictions 2; undefined terms 1) |
+| 2 | 2,330 | 47 | 9 | 3.9 | not readable (restatement matched; contradiction 1; undefined term 1) |
 
 ## Round 1, 2026-10-29
 
@@ -34,3 +35,23 @@ Claims after fixes: 46. Prose after fixes: 2,739 words.
 Confirmation: 12 of 12 fixes hold. Not held: none. Declines accepted: 0 of 0. New defects: 0.
 
 Added before round 2: C47, the script reads a multi-count record from its last count only, so the methodology's record, whose counts 1 to 3 hold confirmation lines in the older form, is not read as unparsed in count 4.
+
+## Round 2, 2026-10-29
+
+Claims check before the round: 8 changed claims, 0 missing, 0 stale (base: round 1 prose). Stranger model: claude-haiku. Prose 2,330 words; 9 findings; 3.9 per thousand words. Restatement: matched the IR; one own slip on no claim. Contradiction 1 (step 7's confirmation of each fix against step 6's unconfirmed step-6 fix, at the limit), undefined term 1 ("proportional verification", unlinked since v1.1); verdict: not readable for RD-4. By fix kind as the stranger judged: rephrase 6, add 1, cut 2; four findings on v1.7 claims, five on older text.
+
+Mismatches: none
+
+| # | Finding (shortened) | Kind | Disposition |
+|---|---|---|---|
+| 2 | step 7 at the limit confirms a step-6 fix step 6 leaves unconfirmed | SP-25 | rephrase C24: other than a step-6 fix; C48: a final-round step-6 fix stays awaiting restatement and counts as unfixed |
+| 3 | "The review record names" has no actor | SP-18 | rephrase C5, C6, C42, C21: the reasoning role names, writes, marks |
+| 4 | "proportional verification" unlinked (v1.1) | SP-04 | add the link to the methodology vocabulary |
+| 5 | "to its rule" in the D1 row (v1.4) | SP-03 | rephrase: joins a rule to a reason |
+| 6 | "The direct form" (round 1's split) | SP-03 | rephrase: A prose report |
+| 7 | "is the check" (v1.1) | SP-03 | rephrase: replaces the reviewer's check |
+| 8 | "the short form" (v1.1) | SP-03 | rephrase: the short IR as it stands |
+| 9 | step 5's repeated destination (v1.5) | SP-26 | cut: "The brief also carries a finding declined in part ..." |
+| 10 | BP-05 never fires, BP-03 precedes it (v1.1) | SP-26 | cut the row; the BP-05a reason names BP-03 |
+
+Claims after fixes: 48. Prose after fixes: 2,769 words. The prose fixes landed one commit after the IR's, an edit script having stopped on one anchor.

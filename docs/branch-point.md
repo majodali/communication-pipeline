@@ -1,6 +1,6 @@
 # Branch point
 
-Status: under review (v1.7, round 2). Until the owner accepts v1.7, v1.6 is active on main. Versions: v1.7, 2026-10-29, the sixteen process changes of evaluation case 009 and the term structural fix; v1.6, 2026-10-27, the signal-based meta-review trigger; v1.5, 2026-10-27, the five process changes of
+Status: under review (v1.7, round 3). Until the owner accepts v1.7, v1.6 is active on main. Versions: v1.7, 2026-10-29, the sixteen process changes of evaluation case 009 and the term structural fix; v1.6, 2026-10-27, the signal-based meta-review trigger; v1.5, 2026-10-27, the five process changes of
 evaluation case 008; v1.4, 2026-10-27, accepted by the
 owner with the style rules
 [SP-05, SP-18, SP-25 and SP-26](style-spec.md#rule-table) and the
@@ -21,7 +21,7 @@ pipeline; the human owner setting thresholds.
 ## Purpose
 
 The [branch point](vocabulary.md#def-branch-point) decides, for one IR, which of the pipeline's model
-stages run. The branch point protects proportional verification: a short report to
+stages run. The branch point protects [proportional verification](https://github.com/majodali/methodology/blob/main/docs/vocabulary.md#def-proportional-verification): a short report to
 a reader who shares the conversation costs one [lint](vocabulary.md#def-lint) pass. A document for a [stranger](vocabulary.md#def-stranger) costs the full pipeline.
 
 ## Inputs
@@ -44,7 +44,7 @@ All inputs but the owner flag come from the IR.
 |---|---|
 | D0 [lint](vocabulary.md#def-lint) only | the schema checks, CK-01 to CK-10 of the methodology's
 [mechanical checks](https://github.com/majodali/methodology/blob/main/docs/intermediate-representation.md#mechanical-checks), and the prose lints; the IR is delivered as it stands |
-| D1 render | D0, then the [paraphraser](vocabulary.md#def-paraphraser) renders prose for the reader. The paraphraser, or the reasoning role when it renders, joins a reason the IR holds as its own claim to its rule by connective prose |
+| D1 render | D0, then the [paraphraser](vocabulary.md#def-paraphraser) renders prose for the reader. The paraphraser, or the reasoning role when it renders, joins a rule to a reason the IR holds as its own claim by connective prose |
 | D2 render and review | D1, then [reviewer](vocabulary.md#def-reviewer) rounds under the Rounds section below |
 | D3 review, reasoning-role rendered | the [reasoning role](vocabulary.md#def-reasoning-role) renders the prose itself. Then the reviewer rounds run as in D2 |
 
@@ -64,21 +64,20 @@ The rounds of D2 and D3 follow the methodology specification's [Stranger rounds]
 2. The round's stranger is a fresh instance. The stranger brief is
    the instruction the reasoning role gives a round's stranger
    instance. A restatement is the stranger's account, in at most 200 words of its own, of the text's
-   problem, terms and decisions. The stranger reads the prose, writes its restatement, and only then reads the IR. The review record names each round's stranger model. The review record names, for every restatement mismatch, the claim the mismatch concerns. The review record carries the claims on one `Mismatches:` line per round, or `none`. For a mismatch the stranger attributes to its own restatement, the brief asks the stranger to quote the prose sentence it relied on.
+   problem, terms and decisions. The stranger reads the prose, writes its restatement, and only then reads the IR. The reasoning role names each round's stranger model in the review record. The reasoning role names in the review record, for every restatement mismatch, the claim the mismatch concerns. The reasoning role writes the claims on one `Mismatches:` line per round, or `none`. For a mismatch the stranger attributes to its own restatement, the brief asks the stranger to quote the prose sentence it relied on.
 3. The reasoning role fixes each finding it accepts in the IR and
    then in the prose. A fix rephrases or cuts words before it
    adds words. A fix adds words only for a missing definition, referent or rule. An actor or trigger added for SP-18 to a decided claim whose source names none makes the claim inferred, with a relation naming its basis. A fix that separates present state from target state moves the sentence under a header that names its state. A fix does not mark a single sentence with "Today". A fix keeps the connective prose that joins a rule to a reason the IR holds as its own claim. The reasoning role records a declined finding in the review record with its reason.
 4. After the fixes, the reasoning role sends the round's stranger
    instance its findings table and the fixed passages. The round's stranger instance answers, per accepted finding other than a step-6 fix, whether the fix holds. The reasoning role fixes again, before the next round, a fix the instance says does not hold. The reasoning role records the confirmation on one line: `Confirmation: H of A fixes hold. Not held: <finding numbers, or none>. Declines accepted: K of D. New defects: N.` A fix that holds in part is not held. A contradiction or undefined-term finding the instance withdraws at confirmation, on a reason quoting the prose, is marked withdrawn. A withdrawn finding does not count against the verdict. A restatement mismatch is never withdrawn at confirmation.
 5. The reasoning role adds to the next round's stranger brief the
-   declined findings of the earlier rounds with their reasons. The reasoning role adds to the next round's stranger brief a finding
-   declined in part, with the declined part and its reason.
+   declined findings of the earlier rounds with their reasons. The brief also carries a finding declined in part, with the declined part and its reason.
 6. The reasoning role treats a restatement mismatch on one passage in
    any two rounds as a prose finding, whatever the strangers
-   attributed it to. The fix for such a finding is a [structural fix](vocabulary.md#def-structural-fix). A structural fix moves the sentence out of the structure that produces the reading: a list, a section or an adjacency. A structural fix may instead change the claim to the strangers' reading when that reading is true. A rewording alone is not a step-6 fix. The reasoning role lists a decided claim changed by a structural fix for the owner in the delivering report. The round's instance does not confirm a step-6 fix, which step 4's answer excludes. The review record marks a step-6 fix `awaiting restatement`. The next round's entry states whether that round's restatement matched on the passage with the mismatch.
+   attributed it to. The fix for such a finding is a [structural fix](vocabulary.md#def-structural-fix). A structural fix moves the sentence out of the structure that produces the reading: a list, a section or an adjacency. A structural fix may instead change the claim to the strangers' reading when that reading is true. A rewording alone is not a step-6 fix. The reasoning role lists a decided claim changed by a structural fix for the owner in the delivering report. The round's instance does not confirm a step-6 fix, which step 4's answer excludes. The reasoning role marks a step-6 fix `awaiting restatement` in the review record. The next round's entry states whether that round's restatement matched on the passage with the mismatch.
 7. At a readable verdict, the reasoning role fixes the round's
    findings in the IR and then in the prose. The readable round's
-   stranger instance confirms each fix before delivery. The reasoning role marks each finding of the readable round confirmed, or unfixed when the instance did not confirm its fix. Step 7 applies at the limit: the reasoning role fixes the final round's findings in the IR and then in the prose. The final round's instance confirms each fix. The record marks each finding of the final round confirmed or unfixed.
+   stranger instance confirms each fix before delivery. The reasoning role marks each finding of the readable round confirmed, or unfixed when the instance did not confirm its fix. Step 7 applies at the limit: the reasoning role fixes the final round's findings in the IR and then in the prose. The final round's instance confirms each fix other than a step-6 fix. A step-6 fix of the final round stays `awaiting restatement` and counts as unfixed. The record marks each finding of the final round confirmed or unfixed.
 
 The verdict is readable when the restatement matches the IR and the
 stranger finds no contradiction and no undefined term. The reasoning role records in the review record, per round,
@@ -119,7 +118,7 @@ Findings, Readability, Counts.
 
 ## The texts that require an IR
 
-A report to RD-1 (the human owner, in conversation) or RD-3 (a delegating agent) may be written as prose directly, with the prose [lint](vocabulary.md#def-lint). The direct form holds no term, decision or [register fact](https://github.com/majodali/methodology/blob/main/docs/vocabulary.md#def-register-fact).
+A report to RD-1 (the human owner, in conversation) or RD-3 (a delegating agent) may be written as prose directly, with the prose [lint](vocabulary.md#def-lint). A prose report holds no term, decision or [register fact](https://github.com/majodali/methodology/blob/main/docs/vocabulary.md#def-register-fact).
 A term, a decision and a register fact are each content a model
 would hold (owner ruling, 2026-10-25). The reasoning role writes a document as an IR first.
 
@@ -137,7 +136,6 @@ RD-4 (fresh agent session), RD-5 (external reader).
 | BP-02a | purpose is `document` and the IR header carries `Normative: yes` | D3 |
 | BP-03 | purpose is `document` | D2 |
 | BP-04 | reader is RD-4 or RD-5 | D2 |
-| BP-05 | proposed terms > 0 and purpose is `document` | D2 |
 | BP-05a | proposed terms > 0 | D1, with the ratification ask |
 | BP-06 | reader is RD-2 | D1 |
 | BP-07 | reader is RD-1 and (claims > 6 or dependent asks > 0 or longest claim > 30 words) | D1 |
@@ -150,9 +148,7 @@ RD-4 (fresh agent session), RD-5 (external reader).
   conversation.
 - BP-02a: a paraphrase of normative text could change its force, so
   the [reasoning role](vocabulary.md#def-reasoning-role) renders it and only the review runs.
-- BP-05 and BP-05a: an unratified term in a document gets the
-  [reviewer](vocabulary.md#def-reviewer)'s check. In a report the owner's ratification ask is the
-  check, because the [stranger](vocabulary.md#def-stranger) review on reports runs only on request
+- BP-05a: an unratified term in a document gets the reviewer's check under BP-03. In a report the owner's ratification ask replaces the reviewer's check, because the [stranger](vocabulary.md#def-stranger) review on reports runs only on request
   (owner ruling, 2026-10-25).
 - BP-06: the returning owner needs the state paragraph, the paragraph
   stating where the project stands, which only the
@@ -160,8 +156,7 @@ RD-4 (fresh agent session), RD-5 (external reader).
 - BP-07 and BP-08: a short IR with no dependencies reads well as it
   stands. Past the thresholds, the owner reads prose faster than a
   claims list.
-- BP-09: the proportional-verification case. The owner or the
-  delegating agent reads the short form.
+- BP-09: the proportional-verification case. The owner or the delegating agent reads the short IR as it stands.
 
 ## Meta-review: the trigger and the case decisions
 
@@ -204,4 +199,4 @@ the data the thresholds are tuned against.
 
 <!-- v1.6 map (IR: docs/records/branch-point-v1.6.ir.md): C1→¶Meta-1 C2→¶Meta-1 C3→¶Meta-1 C4→¶Meta-1 C5→¶Meta-1 C6→¶Meta-1 C7→¶Meta-1 C8→¶Meta-1 C9→¶Meta-1 C10→¶Meta-1 C13→¶Meta-1 C11→¶Meta-1 C12→¶Meta-1 C14→¶Status C15→¶Meta-1 C16→¶Meta-1 C17→¶Brief C18→¶Required C19→¶Required C21→¶Required C20→¶Why -->
 
-<!-- render map: C1→¶Status C2→¶Status C3→¶Rounds-1 C4→¶Rounds-1 C5→¶Rounds-2 C6→¶Rounds-2 C42→¶Rounds-2 C7→¶Rounds-2 C8→¶Rounds-3 C9→¶Rounds-3 C10→¶Rounds-3 C11→¶Rounds-3 C12→¶Rounds-4 C13→¶Rounds-4 C14→¶Rounds-4 C43→¶Rounds-4 C15→¶Rounds-4 C16→¶Rounds-6 C17→¶Rounds-6 C44→¶Rounds-6 C18→¶Rounds-6 C19→¶Rounds-6 C20→¶Rounds-6 C21→¶Rounds-6 C22→¶Rounds-6 C23→¶Rounds-7 C24→¶Rounds-7 C25→¶Rounds-7 C26→¶Brief C27→¶Brief C28→¶Brief C29→¶Brief-forms C41→¶Brief C30→¶Meta-1 C31→¶Meta-1 C32→¶Meta-1 C33→¶Meta-1 C34→¶Meta-1 C47→¶Meta-1 C35→¶Meta-1 C36→¶Meta-1 C37→¶Meta-1 C45→¶Meta-1 C46→¶Meta-2 C38→¶Meta-1 C39→¶Meta-1 C40→¶Meta-1 (IR: docs/records/branch-point-v1.7.ir.md) -->
+<!-- render map: C1→¶Status C2→¶Status C3→¶Rounds-1 C4→¶Rounds-1 C5→¶Rounds-2 C6→¶Rounds-2 C42→¶Rounds-2 C7→¶Rounds-2 C8→¶Rounds-3 C9→¶Rounds-3 C10→¶Rounds-3 C11→¶Rounds-3 C12→¶Rounds-4 C13→¶Rounds-4 C14→¶Rounds-4 C43→¶Rounds-4 C15→¶Rounds-4 C16→¶Rounds-6 C17→¶Rounds-6 C44→¶Rounds-6 C18→¶Rounds-6 C19→¶Rounds-6 C20→¶Rounds-6 C21→¶Rounds-6 C22→¶Rounds-6 C23→¶Rounds-7 C24→¶Rounds-7 C48→¶Rounds-7 C25→¶Rounds-7 C26→¶Brief C27→¶Brief C28→¶Brief C29→¶Brief-forms C41→¶Brief C30→¶Meta-1 C31→¶Meta-1 C32→¶Meta-1 C33→¶Meta-1 C34→¶Meta-1 C47→¶Meta-1 C35→¶Meta-1 C36→¶Meta-1 C37→¶Meta-1 C45→¶Meta-1 C46→¶Meta-2 C38→¶Meta-1 C39→¶Meta-1 C40→¶Meta-1 (IR: docs/records/branch-point-v1.7.ir.md) -->
