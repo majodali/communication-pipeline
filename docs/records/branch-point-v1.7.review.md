@@ -55,3 +55,5 @@ Mismatches: none
 | 10 | BP-05 never fires, BP-03 precedes it (v1.1) | SP-26 | cut the row; the BP-05a reason names BP-03 |
 
 Claims after fixes: 48. Prose after fixes: 2,769 words. The prose fixes landed one commit after the IR's, an edit script having stopped on one anchor.
+
+Confirmation: 9 of 9 fixes hold. Not held: none. Declines accepted: 0 of 0. New defects: 0.
