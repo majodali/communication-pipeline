@@ -1,6 +1,6 @@
 # Branch point
 
-Status: under review (v1.7, round 3). Until the owner accepts v1.7, v1.6 is active on main. Versions: v1.7, 2026-10-29, the sixteen process changes of evaluation case 009 and the term structural fix; v1.6, 2026-10-27, the signal-based meta-review trigger; v1.5, 2026-10-27, the five process changes of
+Status: proposed (v1.7, round 3 readable on 2026-10-29, fixes confirmed; awaiting the owner's acceptance). Until the owner accepts v1.7, v1.6 is active on main. Versions: v1.7, 2026-10-29, the sixteen process changes of evaluation case 009 and the term structural fix; v1.6, 2026-10-27, the signal-based meta-review trigger; v1.5, 2026-10-27, the five process changes of
 evaluation case 008; v1.4, 2026-10-27, accepted by the
 owner with the style rules
 [SP-05, SP-18, SP-25 and SP-26](style-spec.md#rule-table) and the

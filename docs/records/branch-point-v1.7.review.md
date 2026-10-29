@@ -67,9 +67,20 @@ Mismatches: none
 
 | # | Finding (shortened) | Kind | Fix | Confirmation |
 |---|---|---|---|---|
-| 1 | "the claims" on the Mismatches line | SP-03 | rephrase: the mismatch claims (C42's wording) | pending |
-| 2 | "such a finding" | SP-03 | rephrase: a step-6 finding (C16's wording) | pending |
-| 3, 4 | C22's entry sentence names no actor and points at the previous sentence | SP-03, SP-18 | rephrase C22: the reasoning role states in the next round's entry ... on the step-6 passage; C22 becomes inferred by R3 under step 3's rule | pending |
-| 5 | "The record marks" | SP-18 | rephrase C25: the reasoning role marks; C25 becomes inferred by R9 | pending |
+| 1 | "the claims" on the Mismatches line | SP-03 | rephrase: the mismatch claims (C42's wording) | confirmed |
+| 2 | "such a finding" | SP-03 | rephrase: a step-6 finding (C16's wording) | confirmed |
+| 3, 4 | C22's entry sentence names no actor and points at the previous sentence | SP-03, SP-18 | rephrase C22: the reasoning role states in the next round's entry ... on the step-6 passage; C22 becomes inferred by R3 under step 3's rule | confirmed |
+| 5 | "The record marks" | SP-18 | rephrase C25: the reasoning role marks; C25 becomes inferred by R9 | confirmed |
 
 Claims after fixes: 48. Prose after fixes: 2,773 words.
+
+Confirmation: 5 of 5 fixes hold. Not held: none. Declines accepted: 0 of 0. New defects: 0.
+
+## Verdict
+
+Readable for RD-4 at round 3 of a count of three, under the v1.7 procedure the text defines. Findings per thousand words by round: 5.2, 3.9, 2.1. Contradictions by round: 2, 1, 0. Prose 2,318 words at round 1 and 2,338 at delivery; IR 46 claims at round 1 and 48 at delivery, two of them inferred actors added under step 3's rule (C22, C25). Every accepted fix confirmed by its round's instance; the prose fixes of round 2 landed one commit after their IR. Eleven of the twenty-six findings fell on text older than v1.7 and were fixed as editorial changes.
+
+Signals checked at the end of the count by `scripts/signals.mjs` and by reading: first, no fix not held and no missing or stale claim; second, no claim on two rounds' Mismatches lines and no declined finding (none was declined); third, words per IR claim 50.4 to 48.7, minus 3 percent; fourth, no contradiction in round 3. The limit was not reached.
+
+Meta-review: not indicated.
+

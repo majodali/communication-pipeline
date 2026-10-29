@@ -2,7 +2,7 @@
 
 Reader: RD-4
 Purpose: document. The revision of the branch point that carries the sixteen process changes of evaluation case 009, the meta-review of the methodology's vision document rounds, adopted by the owner on 2026-10-29 with the term structural fix.
-Status: rendered (reasoning role, 2026-10-29; round 3)
+Status: reviewed (round 3 readable 2026-10-29; fixes confirmed; declared 9, changed 9, surprises 0, misses 0; unratified terms 0)
 Source: the owner's decision of 2026-10-29 ("All merged and the term ratified - adopt all nineteen as proposed"); evaluation case 009; the methodology specification's count-4 amendment.
 Normative: yes
 Footprint: docs/branch-point.md; docs/records/branch-point-v1.7.ir.md; docs/records/branch-point-v1.7.review.md; docs/style-spec.md; docs/vocabulary.md; eval/README.md; eval/cases/009-meta-review-vision-rounds-2026-10-29.md; scripts/signals.mjs; scripts/test.mjs
