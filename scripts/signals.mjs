@@ -14,6 +14,8 @@
 //             1's by more than one tenth, from the curve table.
 //   Signal 4: in round 3 or later, a contradiction in a fix-touched passage
 //             (wording, hand check).
+// A record holding several counts under "## Count n" headings is read
+// from its last count only.
 // Usage: node scripts/signals.mjs <review-record.md> [--json]
 
 import { readFileSync } from 'node:fs';
@@ -25,7 +27,11 @@ function num(s) { return Number(String(s).replace(/,/g, '')); }
 export const CONFIRMATION_FORM = /^Confirmation: (\d+) of (\d+) fixes hold\. Not held: ([^.]+)\. Declines accepted: (\d+) of (\d+)\. New defects: (\d+)\.$/;
 
 export function readSignals(text, { fraction = 0.1 } = {}) {
-  const lines = text.split('\n');
+  // A record with several counts ("## Count n" headings) is read from its last count only.
+  const all = text.split('\n');
+  let start = 0;
+  all.forEach((l, i) => { if (/^##\s+Count\s+\d+/.test(l)) start = i; });
+  const lines = all.slice(start);
   // curve rows: | round | prose words | IR claims | ...
   const rows = [];
   for (const l of lines) {

@@ -288,4 +288,10 @@ test('signals v1.7: fixed confirmation form, mismatch recurrence, words per clai
   const u = readSignals(loose);
   assert.equal(u.unparsed.length, 1);
   assert.equal(u.subject, 'unparsed');
+  // a record with several counts is read from its last count only
+  const multi = `## Count 1\n\n| Round | Prose words | IR claims |\n|---|---|---|\n| 1 | 900 | 10 |\n| 2 | 1,200 | 10 |\n\n## Round 1\n\nSame-instance confirmation: 3 of 5 fixes hold.\n\n## Count 2\n\n| Round | Prose words | IR claims |\n|---|---|---|\n| 1 | 1,000 | 40 |\n\n## Round 1\n\nMismatches: none\nConfirmation: 2 of 2 fixes hold. Not held: none. Declines accepted: 0 of 0. New defects: 0.\n`;
+  const m = readSignals(multi);
+  assert.deepEqual(m.unparsed, []);
+  assert.equal(m.signal3.fired, false);
+  assert.equal(m.subject, false);
 });

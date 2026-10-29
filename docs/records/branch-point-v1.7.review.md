@@ -30,3 +30,7 @@ Mismatches: none
 | 12 | "the verdict's three conditions" | SP-03 | rephrase C40: three rules as written, named |
 
 Claims after fixes: 46. Prose after fixes: 2,739 words.
+
+Confirmation: 12 of 12 fixes hold. Not held: none. Declines accepted: 0 of 0. New defects: 0.
+
+Added before round 2: C47, the script reads a multi-count record from its last count only, so the methodology's record, whose counts 1 to 3 hold confirmation lines in the older form, is not read as unparsed in count 4.

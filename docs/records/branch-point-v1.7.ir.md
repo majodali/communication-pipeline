@@ -2,7 +2,7 @@
 
 Reader: RD-4
 Purpose: document. The revision of the branch point that carries the sixteen process changes of evaluation case 009, the meta-review of the methodology's vision document rounds, adopted by the owner on 2026-10-29 with the term structural fix.
-Status: rendered (reasoning role, 2026-10-29; round 1)
+Status: rendered (reasoning role, 2026-10-29; round 2)
 Source: the owner's decision of 2026-10-29 ("All merged and the term ratified - adopt all nineteen as proposed"); evaluation case 009; the methodology specification's count-4 amendment.
 Normative: yes
 Footprint: docs/branch-point.md; docs/records/branch-point-v1.7.ir.md; docs/records/branch-point-v1.7.review.md; docs/style-spec.md; docs/vocabulary.md; eval/README.md; eval/cases/009-meta-review-vision-rounds-2026-10-29.md; scripts/signals.mjs; scripts/test.mjs
@@ -109,6 +109,8 @@ C33. The script reports the second signal's recurring mismatch from the `Mismatc
 
 C34. The script reads the third signal from the review record's per-round table of prose words and IR claims. evidence: E1. [decided: owner, 2026-10-29]
 
+C47. The script reads a review record that holds several counts from its last count only. [inferred: R7]
+
 C35. The script reports a confirmation line it cannot parse as unparsed. evidence: E1. [decided: owner, 2026-10-29]
 
 C36. The reasoning role writes no `Meta-review: not indicated` while a line is unparsed. evidence: E1. [decided: owner, 2026-10-29]
@@ -139,6 +141,8 @@ R5. C30 refines C1 because the signal's wording is one of the sixteen changes.
 
 R6. C14 supports C1 because the withdrawal rule is case 009's change 2.
 
+R7. C47 depends-on C35 because confirmation lines written before the fixed form would otherwise read as unparsed in every later count.
+
 ## Evidence
 
 E1. eval/cases/009-meta-review-vision-rounds-2026-10-29.md, Outcome, changes 2 to 6, 8 to 18 (recommended) and 1, 7, 19 (no change).
@@ -147,4 +151,4 @@ E2. The owner's message of 2026-10-29: "All merged and the term ratified - adopt
 
 ## Asks
 
-A1. Accept branch point v1.7. Depends: C1 to C46.
+A1. Accept branch point v1.7. Depends: C1 to C47.
