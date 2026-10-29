@@ -2,7 +2,7 @@
 
 Reader: RD-4
 Purpose: document. The revision of the branch point that carries the sixteen process changes of evaluation case 009, the meta-review of the methodology's vision document rounds, adopted by the owner on 2026-10-29 with the term structural fix.
-Status: rendered (reasoning role, 2026-10-29; round 2)
+Status: rendered (reasoning role, 2026-10-29; round 3)
 Source: the owner's decision of 2026-10-29 ("All merged and the term ratified - adopt all nineteen as proposed"); evaluation case 009; the methodology specification's count-4 amendment.
 Normative: yes
 Footprint: docs/branch-point.md; docs/records/branch-point-v1.7.ir.md; docs/records/branch-point-v1.7.review.md; docs/style-spec.md; docs/vocabulary.md; eval/README.md; eval/cases/009-meta-review-vision-rounds-2026-10-29.md; scripts/signals.mjs; scripts/test.mjs
@@ -29,11 +29,11 @@ C4. Before round 1, the reasoning role records the lint result in the review rec
 
 ### Rounds step 2
 
-C5. The review record names each round's stranger model. evidence: E1. [decided: owner, 2026-10-29]
+C5. The reasoning role names each round's stranger model in the review record. evidence: E1. [decided: owner, 2026-10-29]
 
-C6. The review record names, for every restatement mismatch, the claim the mismatch concerns. evidence: E1. [decided: owner, 2026-10-29]
+C6. The reasoning role names in the review record, for every restatement mismatch, the claim the mismatch concerns. evidence: E1. [decided: owner, 2026-10-29]
 
-C42. The review record carries the mismatch claims on one `Mismatches:` line per round, or `none`. evidence: E1. [decided: owner, 2026-10-29]
+C42. The reasoning role writes the mismatch claims on one `Mismatches:` line per round, or `none`. evidence: E1. [decided: owner, 2026-10-29]
 
 C7. For a mismatch the stranger attributes to its own restatement, the brief asks the stranger to quote the prose sentence it relied on. evidence: E1. [decided: owner, 2026-10-29]
 
@@ -73,7 +73,7 @@ C19. The reasoning role lists a decided claim changed by a structural fix for th
 
 C20. The round's instance does not confirm a step-6 fix, which step 4's answer excludes. evidence: E1. [decided: owner, 2026-10-29]
 
-C21. The review record marks a step-6 fix `awaiting restatement`. evidence: E1. [decided: owner, 2026-10-29]
+C21. The reasoning role marks a step-6 fix `awaiting restatement` in the review record. evidence: E1. [decided: owner, 2026-10-29]
 
 C22. The next round's entry states whether that round's restatement matched on the passage with the mismatch. evidence: E1. [decided: owner, 2026-10-29]
 
@@ -81,7 +81,9 @@ C22. The next round's entry states whether that round's restatement matched on t
 
 C23. At the limit, the reasoning role fixes the final round's findings in the IR and then in the prose. evidence: E1. [decided: owner, 2026-10-29]
 
-C24. The final round's instance confirms each fix. evidence: E1. [decided: owner, 2026-10-29]
+C24. The final round's instance confirms each fix other than a step-6 fix. evidence: E1. [decided: owner, 2026-10-29]
+
+C48. A step-6 fix of the final round stays `awaiting restatement` and counts as unfixed. [inferred: R8]
 
 C25. The record marks each finding of the final round confirmed or unfixed. evidence: E1. [decided: owner, 2026-10-29]
 
@@ -143,6 +145,8 @@ R6. C14 supports C1 because the withdrawal rule is case 009's change 2.
 
 R7. C47 depends-on C35 because confirmation lines written before the fixed form would otherwise read as unparsed in every later count.
 
+R8. C48 depends-on C20 because no later round can restate a fix made in the final round.
+
 ## Evidence
 
 E1. eval/cases/009-meta-review-vision-rounds-2026-10-29.md, Outcome, changes 2 to 6, 8 to 18 (recommended) and 1, 7, 19 (no change).
@@ -151,4 +155,4 @@ E2. The owner's message of 2026-10-29: "All merged and the term ratified - adopt
 
 ## Asks
 
-A1. Accept branch point v1.7. Depends: C1 to C47.
+A1. Accept branch point v1.7. Depends: C1 to C48.
