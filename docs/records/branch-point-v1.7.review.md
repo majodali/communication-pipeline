@@ -8,6 +8,7 @@ Reader of the reviewed text: RD-4 (a fresh agent session). Reviewer: a stranger,
 |---|---|---|---|---|---|
 | 1 | 2,318 | 46 | 12 | 5.2 | not readable (restatement matched; contradictions 2; undefined terms 1) |
 | 2 | 2,330 | 47 | 9 | 3.9 | not readable (restatement matched; contradiction 1; undefined term 1) |
+| 3 | 2,338 | 48 | 5 | 2.1 | readable (restatement matched; contradictions 0; undefined terms 0) |
 
 ## Round 1, 2026-10-29
 
@@ -57,3 +58,18 @@ Mismatches: none
 Claims after fixes: 48. Prose after fixes: 2,769 words. The prose fixes landed one commit after the IR's, an edit script having stopped on one anchor.
 
 Confirmation: 9 of 9 fixes hold. Not held: none. Declines accepted: 0 of 0. New defects: 0.
+
+## Round 3, 2026-10-29
+
+Claims check before the round: 6 changed claims, 0 missing, 0 stale (base: round 2 prose). Stranger model: claude-haiku. Prose 2,338 words; 5 findings; 2.1 per thousand words. Restatement: matched the IR, no mismatch. Contradictions 0, undefined terms 0; verdict: readable for RD-4. The count ends at round 3. Under step 7, the findings are fixed and the round's instance confirms each before delivery. By fix kind as the stranger judged: rephrase 5; by locus: both 3, prose 2.
+
+Mismatches: none
+
+| # | Finding (shortened) | Kind | Fix | Confirmation |
+|---|---|---|---|---|
+| 1 | "the claims" on the Mismatches line | SP-03 | rephrase: the mismatch claims (C42's wording) | pending |
+| 2 | "such a finding" | SP-03 | rephrase: a step-6 finding (C16's wording) | pending |
+| 3, 4 | C22's entry sentence names no actor and points at the previous sentence | SP-03, SP-18 | rephrase C22: the reasoning role states in the next round's entry ... on the step-6 passage; C22 becomes inferred by R3 under step 3's rule | pending |
+| 5 | "The record marks" | SP-18 | rephrase C25: the reasoning role marks; C25 becomes inferred by R9 | pending |
+
+Claims after fixes: 48. Prose after fixes: 2,773 words.

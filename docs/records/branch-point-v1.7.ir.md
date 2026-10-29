@@ -75,7 +75,7 @@ C20. The round's instance does not confirm a step-6 fix, which step 4's answer e
 
 C21. The reasoning role marks a step-6 fix `awaiting restatement` in the review record. evidence: E1. [decided: owner, 2026-10-29]
 
-C22. The next round's entry states whether that round's restatement matched on the passage with the mismatch. evidence: E1. [decided: owner, 2026-10-29]
+C22. The reasoning role states in the next round's entry whether that round's restatement matched on the step-6 passage. evidence: E1. [inferred: R3]
 
 ### Rounds step 7
 
@@ -85,7 +85,7 @@ C24. The final round's instance confirms each fix other than a step-6 fix. evide
 
 C48. A step-6 fix of the final round stays `awaiting restatement` and counts as unfixed. [inferred: R8]
 
-C25. The record marks each finding of the final round confirmed or unfixed. evidence: E1. [decided: owner, 2026-10-29]
+C25. The reasoning role marks each finding of the final round confirmed or unfixed. evidence: E1. [inferred: R9]
 
 ### Stranger brief
 
@@ -135,7 +135,7 @@ R1. C16 depends-on C17 because step 6 names the fix kind the term defines.
 
 R2. C20 depends-on C15 because the confirming instance has read the IR and cannot restate as a stranger.
 
-R3. C22 depends-on C20 because the next round's restatement is the confirmation the same instance cannot give.
+R3. C22 depends-on C20 because the next round's restatement is the confirmation the same instance cannot give, and the reasoning role, who writes the record, is the actor case 009 left implicit.
 
 R4. C36 depends-on C35 because an unparsed line hides a signal the script would otherwise read.
 
@@ -146,6 +146,8 @@ R6. C14 supports C1 because the withdrawal rule is case 009's change 2.
 R7. C47 depends-on C35 because confirmation lines written before the fixed form would otherwise read as unparsed in every later count.
 
 R8. C48 depends-on C20 because no later round can restate a fix made in the final round.
+
+R9. C25 depends-on C24 because the marking records the instance's answer, and the reasoning role, who writes the record, is the actor case 009 left implicit.
 
 ## Evidence
 
