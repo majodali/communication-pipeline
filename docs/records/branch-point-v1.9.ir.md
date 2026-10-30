@@ -67,7 +67,17 @@ C13. The claims check runs on the fixed prose before the round's stranger instan
 
 C14. The reasoning role fixes a changed claim the claims check reports missing or stale before the confirmation read (case 010 change 6). evidence: E1. [inferred: R16]
 
-C85. The instance also says whether it accepts each decline the reasoning role made, and names each new defect the fixes introduce. [inferred: R31]
+C85. At confirmation, the instance says whether it accepts each decline the reasoning role made. evidence: E5. [inferred: R31]
+
+C88. The instance also names each new defect the fixes introduce. evidence: E5. [inferred: R31]
+
+C95. The reasoning role records the confirmation on one line, in the fixed form `Confirmation: H of A fixes hold. Not held: <finding numbers, or none>. Declines accepted: K of D. New defects: N.` [decided: owner, 2026-10-29; reworded in rounds 6 and 7]
+
+C99. After the fixes, the reasoning role sends the round's stranger instance its findings table, the fixed passages and the round's declined findings with their reasons. [inferred: R35]
+
+C101. At Rounds steps 4 and 7 the round's instance also reads its findings table, the fixed passages and the round's declines. [inferred: R35]
+
+C89. In the next round's brief, the reasoning role also carries a finding declined in part, with the declined part and its reason. [inferred: R36]
 
 C74. A step-6 fix is the structural fix made under step 6 for a mismatch that recurred. [inferred: R27]
 
@@ -97,6 +107,14 @@ C62. The reasoning role lists a decided claim changed by a structural fix for th
 
 C21. Step 7's claims check runs as in step 4 (case 010 change 6). evidence: E1. [decided: owner, 2026-10-30]
 
+C91. Step 7 applies at a readable verdict and at the limit. [decided: owner, 2026-10-29; reworded in round 7]
+
+C92. At step 7, the round's stranger instance confirms each fix other than a step-6 fix before delivery or the owner's decision. [decided: owner, 2026-10-29; reworded in round 7]
+
+C93. At step 7, the reasoning role marks each finding of the round confirmed, or unfixed when the instance did not confirm its fix. [decided: owner, 2026-10-29; reworded in round 7]
+
+C94. At the limit, a step-6 fix of the final round stays `awaiting restatement` and counts as unfixed. [inferred: R37]
+
 ### Verdict
 
 C22. The verdict is readable when three conditions hold. [decided: owner, 2026-10-27]
@@ -112,6 +130,8 @@ C63. The verdict's third condition: the stranger finds no undefined term. [decid
 C25. The first condition's exception: an own mismatch does not count when the stranger quotes a prose sentence that carries an IR claim (case 011 change 1). evidence: E2. [decided: owner, 2026-10-30; reworded in round 5, to the reading adopted on 2026-10-30]
 
 C26. The first condition's override: a restatement mismatch on one passage in any two rounds of the text's counts always counts (case 011 change 1). evidence: E2. [decided: owner, 2026-10-30; reworded in rounds 5 and 6, in the specification's words]
+
+C90. The first condition's override governs its exception. [inferred: R38]
 
 C75. The round's stranger instance never withdraws a restatement mismatch at confirmation (v1.7's C15, in the verdict table). [inferred: R32]
 
@@ -145,6 +165,10 @@ C58. Under BP-00 the reasoning role still runs the lints, as D0, and no later di
 
 C28. The first signal: in two or more rounds, a fix was not held at confirmation or the claims check reported a missing or stale claim (case 010 change 5). evidence: E1. [decided: owner, 2026-10-30]
 
+C98. The second signal: a finding declined and carried in the stranger brief was raised again. [decided: owner, 2026-10-27; reworded in round 7]
+
+C100. The second signal also fires when a restatement mismatch recurred on one passage in two rounds of the text's counts. [decided: owner, 2026-10-27; reworded in round 7, case 011 change 3]
+
 C29. The third signal: in the count's last round, words per IR claim exceed round 1's words per claim by more than one tenth (case 010 change 9). evidence: E1. [decided: owner, 2026-10-30]
 
 C30. The script reads the `Mismatches:` lines of every count for signal 2 (case 011 change 3). evidence: E2. [decided: owner, 2026-10-30]
@@ -167,7 +191,11 @@ C67. While a line is unparsed, the reasoning role writes `Meta-review: unparsed`
 
 C86. The reasoning role writes `Meta-review: pending` when the text is a meta-review subject. [decided: owner, 2026-10-27; reworded in round 6]
 
-C78. An unparsed line is a review-record line the signals script cannot read, or a claims-check line a round after round 1 lacks. [inferred: R28]
+C78. An unparsed line is a review-record line the signals script cannot read. [inferred: R28]
+
+C97. A claims-check line is the review-record line in which the reasoning role records the claims check's result before a round. [inferred: R39]
+
+C96. A round after round 1 with no claims-check line counts as an unparsed line. [inferred: R28]
 
 C70. When the unparsed line parses, the reasoning role writes `pending` again for a text that is a meta-review subject. [inferred: R22]
 
@@ -196,10 +224,6 @@ C41. Case 011 reviewed count 2 of the methodology's vision document. [decided: o
 C42. The owner adopted case 010's thirteen recommended changes and case 011's nine on 2026-10-30. evidence: E3. [decided: owner, 2026-10-30]
 
 C43. Nineteen of the twenty-two adopted changes are the process changes of v1.9: case 010's changes 1 to 10 and case 011's changes 1, 2, 3 and 5 to 10. evidence: E3. [decided: owner, 2026-10-30]
-
-C44. Seven of the twenty-two adopted changes amend the methodology's intermediate-representation specification as its count 5: case 010's changes 1, 5, 9, 11, 12 and 13 and case 011's change 1. evidence: E3. [decided: owner, 2026-10-30]
-
-C80. Four of the seven specification amendments are also among the nineteen process changes of v1.9. [inferred: R30]
 
 C45. Case 010's change 15 confirms four rules as written. evidence: E1. [decided: owner, 2026-10-30]
 
@@ -269,15 +293,23 @@ R28. C78 refines C35 because the script reports the lines it cannot read as unpa
 
 R29. C79 refines C67 because the form-audit rule is the methodology's, Article 9, and the specification states it for both lines.
 
-R30. C80 refines C44 because case 010's changes 1, 5 and 9 and case 011's change 1 are in both lists.
-
-R31. C85 refines C12 because the confirmation line's declines-accepted and new-defects counts record what the instance answers, as every recorded round shows.
+R31. C85 refines C95 because the confirmation line's declines-accepted and new-defects counts record what the instance answers.
 
 R32. C75 depends-on C50 because the round's stranger instance is the one that withdraws at confirmation; v1.7's C15 named no actor.
 
 R33. C83 refines C76 because a withdrawal counts only on a reason quoting the prose, so a withdrawal on any other reason leaves the finding counting.
 
 R34. C87 refines C55 because the table's rows map conditions on the inputs to dispositions.
+
+R35. C99 depends-on C85 because the instance can accept or refuse a decline only when it receives the decline with its reason.
+
+R36. C89 depends-on C5 because the reasoning role writes the brief; v1.5's sentence named no actor.
+
+R37. C94 refines C92 because no later round can restate a final round's step-6 fix.
+
+R38. C90 refines C26 because case 011 change 1 states that a mismatch step 6 makes a prose finding always counts, whatever the exception says.
+
+R39. C97 refines C96 because the unparsed rule reads the line the claims check writes.
 
 ## Evidence
 
@@ -289,8 +321,10 @@ E3. The owner's message of 2026-10-30: "For cases 010 and 011 - go with all reco
 
 E4. methodology docs/releases.md, v1.6.0, The meta-review trigger is signal-based: "five recorded counts (10, 10, 6, 3 and 4 rounds)".
 
+E5. The review records docs/records/branch-point-v1.4.review.md to docs/records/branch-point-v1.9.review.md: every recorded confirmation states the declines accepted and the new defects.
+
 ## Asks
 
 A1. Accept branch point v1.9. Depends: C1 to C82.
 
-A2. Ratify or strike the new wording of the decided claims v1.9's rounds reworded, split, moved or reordered: C2; C7; C10; C11; C12 and C49; C14; C15 and C59; C16; C20; C23; C24 and C63; C25; C26; C27; C45 and C65; C50; C53; C54 (row BP-01 left the rules table in round 5; the label BP-01 retired in round 6); C55; C62; C66; C68 (the row order); C73; C75 to C77; C81; C86; C58. New rules: the `Meta-review: unparsed` line (C67, C70, C78) and the pointer to the specification's form-audit rule (C79); a withdrawal without a quoted reason still counts (C83, C84); the instance's answer on declines and new defects (C85). Depends: C2, C7, C10, C11, C12, C14, C15, C16, C20, C23, C24, C25, C26, C27, C45, C50, C53, C54, C55, C62, C66, C67, C68, C73, C75, C79, C81, C83, C85, C86.
+A2. Ratify or strike the new wording of the decided claims v1.9's rounds reworded, split, moved or reordered: C2; C7; C10; C11; C12 and C49; C14; C15 and C59; C16; C20; C23; C24 and C63; C25; C26; C27; C45 and C65; C50; C53; C54 (row BP-01 left the rules table in round 5; the label BP-01 retired in round 6); C55; C62; C66; C68 (the row order); C73; C75 to C77; C81; C86; C58; C89; C91 to C93; C95; C98 and C100; C101. New rules: the `Meta-review: unparsed` line (C67, C70, C78) and the pointer to the specification's form-audit rule (C79); a withdrawal without a quoted reason still counts (C83, C84); the instance's answer on declines and new defects (C85, C88); the declines sent at confirmation (C99); the override governs the exception (C90); the claims-check line (C96, C97). Cut in round 7: C44 and C80, the process-change counts the Versions line carries. Depends: C2, C7, C10, C11, C12, C14, C15, C16, C20, C23, C24, C25, C26, C27, C45, C50, C53, C54, C55, C62, C66, C67, C68, C73, C75, C79, C81, C83, C85, C86, C89, C90, C91, C95, C98, C99, C100, C101.

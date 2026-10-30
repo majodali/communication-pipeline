@@ -12,6 +12,7 @@ Reader of the reviewed text: RD-4 (a fresh agent session). Reviewer: a stranger,
 | 4 | 3,610 | 66 | 11 | 3.0 | not readable (restatement matched, no mismatch; contradictions 3; undefined terms 0) |
 | 5 | 3,656 | 70 | 11 | 3.0 | not readable (one own mismatch, a step-6 passage that counts under the override; contradictions 0; undefined terms 0) |
 | 6 | 3,785 | 79 | 9 | 2.4 | not readable (one own mismatch on a step-6 passage, counting under the override; contradictions 0; undefined terms 2) |
+| 7 | 3,892 | 84 | 8 | 2.1 | not readable (one own mismatch, quoted, not counting; contradiction 1; undefined term 1) |
 
 ## Round 1, 2026-10-30
 
@@ -306,3 +307,31 @@ Awaiting restatement: round 6's third structural fix on the Rules opening and th
 Declined findings carried in the brief: round 1's F1 (the instance did not accept the decline) and F3; round 2's 9 and 10; round 4's 11; round 5's N1; round 6's 6; each with its reason.
 
 Signals script before the round: signal 1 fired (rounds 3 and 5); signal 2 fired by claim (C55, C54); signal 3 not fired; signal 4 fired by reading in round 4; no line unparsed. The text is a meta-review subject at the count's end.
+
+Stranger model: claude-haiku-5-5, a fresh instance at the frugal tier. Prose 3,892 words by `wordCount`; IR 84 claims; 8 findings, 2.1 per thousand words. Restatement: one mismatch, attributed by the stranger to its own restatement, quoting the Purpose sentence that carries C73; no earlier mismatch on that passage, so it does not count. Contradiction 1 (finding 6), undefined term 1 (finding 7); verdict: not readable for RD-4.
+
+Mismatches: C73 (own; relied on C73)
+
+
+Signals script after the `Mismatches:` line: C73 stood on no earlier line; signal 2 as before (C55, C54); no line unparsed.
+
+Awaiting restatement: the Rules opening matched on C87 and C55; the lints sentence (C54) was not restated, an omission, not a disagreement. Round 6's third structural fix is confirmed by restatement.
+
+| # | Finding (shortened) | Kind | Disposition |
+|---|---|---|---|
+| 1 | own mismatch on C73, quoted | restatement | no prose defect, under the exception |
+| 2 | the instance's two acts in one sentence with no trigger | SP-01 | split C85 and C88: "At confirmation, the instance says whether it accepts each decline the reasoning role made. The instance also names each new defect the fixes introduce." |
+| 3 | "The brief also carries a finding declined in part …" names no actor | SP-18 | rephrase as C89: "In the next round's brief, the reasoning role also carries …"; inferred by R36 |
+| 4 | step 6's "The fix for a step-6 finding is a structural fix." repeats step 4's definition | SP-26 | cut; the structural-fix link moves to step 4's definition |
+| 5 | step 7 repeats the fix procedure for the limit | SP-26 | rephrase: "Step 7 applies at a readable verdict and at the limit." once, then the fix, the confirmation other than a step-6 fix, the marking and the limit's step-6 case (C91 to C94) |
+| 6 | the override against the exception with no stated precedence | SP-25 | add to the table, both texts: "The override governs the exception." (C90; the specification's C255) |
+| 7 | "form audit" undefined | SP-04 | fixed by round 6's N3: the link to the methodology's Article 9 |
+| 8 | the process-change counts stated in the Versions line and the Meta-review history | SP-26 | cut from the history; C44 and C80 removed; C43 renders in the Versions line |
+
+Round 6's carried items applied in the same pass: N1 (C99, step 4 sends the round's declined findings with their reasons; C101, the brief's read list names them); N2 (C95, the confirmation-line claim; R31 retargeted to it; E5 cites the review records); N3 (the form-audit link). Shared with the specification's round 6: C78 split, C97 defines the claims-check line, C96; the second signal's scope "in two rounds of the text's counts" (C98, C100). The Backlog gains the entry for the dispatcher's missing row BP-00, and `scripts/dispatch.mjs`'s header comment notes it. Two long sentences the fixes made were split before commit: the brief's read list and the second signal.
+
+Claims after fixes: 96. Prose after fixes: 3,874 words. Claims check after the fixes (base: round 7 prose): 16 changed claims, 0 missing, 0 stale; C44 and C80 removed. Round trip: 96 of 96. npm test: 42 of 42.
+
+Decided claims the fixes changed, for the owner: all are listed in A2.
+
+Declined findings for round 8's brief: round 1's F1 and F3; round 2's 9 and 10; round 4's 11; round 5's N1; round 6's 6; each with its reason. Round 2's 9 and 10 concerned step 7's old wording, which round 7's fix replaced. Nothing awaits restatement in round 8.

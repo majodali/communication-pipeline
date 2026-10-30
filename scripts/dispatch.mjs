@@ -3,6 +3,7 @@
 // inputs, applies the rules BP-02a to BP-09 in order (the lints run for
 // every IR; label BP-01 retired in v1.9), prints the disposition, and
 // appends a row to eval/dispatch-log.md unless --dry-run.
+// Row BP-00 (v1.8, IR-only documents) is not implemented; see the Backlog.
 // Usage: node scripts/dispatch.mjs <file.ir.md> [--flag review] [--dry-run] [--json]
 
 import { readFileSync, appendFileSync, existsSync, writeFileSync } from 'node:fs';

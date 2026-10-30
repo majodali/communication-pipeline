@@ -143,3 +143,7 @@ roles have moved to project-orchestrator, this repository archives
   specification's rules. A meta-review session with no part in the
   rounds performs the review and reports as an
   [evaluation case](../eval/README.md).
+- [ ] **Dispatcher: row BP-00** — open. `scripts/dispatch.mjs` does not
+  implement BP-00, branch point v1.8's IR-only row, and its header
+  comment notes this. Pointer: [the script](../scripts/dispatch.mjs);
+  noted in the round 7 fix pass of branch point v1.9.
