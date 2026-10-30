@@ -2,7 +2,7 @@
 
 Reader: RD-4
 Purpose: document. The revision of the branch point that carries the process changes of evaluation case 012, the meta-review of branch point v1.9 and the methodology's intermediate-representation specification's count 5, adopted by the owner on 2026-10-30.
-Status: rendered (round 3, rendered by the reasoning role 2026-10-30; unratified terms 1)
+Status: rendered (round 4, rendered by the reasoning role 2026-10-30; unratified terms 1)
 Source: the owner's decision of 2026-10-30 on evaluation case 012 (all fifteen changes adopted as recommended; terms by the default); evaluation case 012's Outcome.
 Normative: yes
 Footprint: docs/branch-point.md; docs/records/branch-point-v1.10.ir.md; docs/records/branch-point-v1.10.review.md; docs/vocabulary.md; docs/backlog.md; eval/README.md; eval/cases/012-meta-review-branch-point-v1.9-and-ir-spec-count-5-2026-10-30.md; scripts/signals.mjs; scripts/test.mjs
@@ -129,7 +129,7 @@ C51. The reasoning role fixes the new defect in the next edit of the text (case 
 
 C53. At Rounds steps 4 and 7 the round's instance also reads the findings table, the fixed passages and the declined findings. [decided: owner, 2026-10-30; reworded in v1.10's count, rounds 1, 2 and 3]
 
-C65. In its round read, the stranger reads only the prose and the IR. [decided: owner, 2026-10-30; reworded in v1.10's count, round 3]
+C65. When it reads for a round, the stranger reads only the prose and the IR. [decided: owner, 2026-10-30; reworded in v1.10's count, round 3 and after its confirmation]
 
 C57. The stranger's report has five parts in order: Restatement, Listed passages, Findings, Readability, Counts (case 012 change 4). evidence: E1, E2. [decided: owner, 2026-10-30; reworded in v1.10's count, round 2 and after its confirmation]
 
@@ -147,7 +147,7 @@ C38. The methodology specification's Meta-review section defines the signals (ca
 
 C39. At the end of a count, the reasoning role checks the signals against the review record. [decided: owner, 2026-10-27]
 
-C61. The signals script, `scripts/signals.mjs`, reports the signals it can read. [inferred: R4]
+C61. The signals script, `scripts/signals.mjs`, reports the first signal from the confirmation and claims-check lines and the second signal's recurrences from the `Mismatches:` lines. [inferred: R4]
 
 C40. A claims-check line is the review-record line in which the reasoning role records the claims check's result after a fix pass (case 012 change 13). evidence: E1, E2. [decided: owner, 2026-10-30]
 

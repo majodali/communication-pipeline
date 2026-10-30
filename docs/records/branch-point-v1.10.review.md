@@ -136,3 +136,27 @@ For the ruleset review: the stranger could not tell whether the round's instance
 Claims after fixes: 63. Prose after fixes: 3,837 words. Claims check after the fix pass (base: round 3 prose): 8 changed claims, 0 missing, 0 stale; C42 removed. Round trip: 63 of 63. IR check: 0 violations, 0 warnings.
 
 Decided claims the fixes reworded or merged, for the owner's list at the count's close: C9, C20 (again), C53 (again), C41 (with C42), C63 (v1.9's C21), C64, C65.
+
+Confirmation: 8 of 9 fixes hold. Not held: 9. Declines accepted: 0 of 0. New defects: 2.
+
+The instance (ab602a031857ba609) read both files at fix commit 504c071. Fix 9 did not hold: the definition of a process change sat after its first use, "the nineteen process changes of v1.9", one sentence earlier. Re-fixed: the definition (C62) now precedes that sentence. The two new defects, fixed IR first before round 4 opens (case 012 change 6): N1 (SP-04), "round read" undefined; C65 reads "When it reads for a round, the stranger reads only the prose and the IR." N2 (SP-03), "the signals it can read" named no set; C61 reads "The signals script, `scripts/signals.mjs`, reports the first signal from the confirmation and claims-check lines and the second signal's recurrences from the `Mismatches:` lines."
+
+The instance also pointed at a mention of the third signal. The whole file holds one: "Case 005's change 4, a growth bound, is replaced by the third signal ...", in the record of the owner's decisions of 2026-10-27. It is history and stays as written; case 012's change 11 struck the signal from the rule.
+
+Also in this pass, at the Orchestrator's direction: step 7's owner-adopted sentence is split at its semicolon, as the specification's count 6 split it in round 3: "A step-6 fix made in that round's fix pass stays `awaiting restatement`. The reasoning role lists its passage in the next count's round 1 brief." The claims C59 and C60 were already separate. A form split of an owner-adopted text, listed for the close; the two texts stay identical on the rule.
+
+Claims check after the confirmation's fixes (base: the round 3 fix pass's prose): 2 changed claims, 0 missing, 0 stale. Claims: 63. Prose: 3,852 words. Round trip: 63 of 63.
+
+## Round 4
+
+Branch point version and commit the count runs under: v1.10 at commit 387dc43; round 4 reads the text at this round's opening commit, named in the brief. Prose 3,852 words; IR 63 claims; unratified terms 1 (T8, fix commit).
+
+Passages awaiting restatement: none.
+
+Owner-pending findings: none.
+
+Declined findings carried in the brief from v1.9's count: round 1's F3, round 2's 10, round 4's 11, round 5's N1 and round 6's 6, each with its reason. The brief also says that the v1.10 IR lists the claims v1.10 changed only.
+
+Forms added to the brief: none.
+
+Signals script before the round: signal 1 reads one round with a fix not held (round 3), so it does not fire; no line unparsed.
