@@ -151,3 +151,15 @@ Claims after fixes: 66. Prose after fixes: 3,610 words. Claims check after the f
 Decided claims the fixes changed, for the owner: C23 points at its exception and override (case 010 change 1's text, reworded); C11 names the rules it binds (reworded); C12 and C49 gain the reasoning role as actor and become inferred (basis case 011 change 9); C67 is a new rule the rounds added: the `Meta-review: unparsed` line (basis case 010 change 7 and case 011 change 7).
 
 Declined findings for round 4's brief: round 1's F1 and F3; round 2's 9 and 10; each with its reason.
+
+## Round 4, 2026-10-30
+
+Branch point version and commit the round runs under: v1.9 at this round's opening commit. Prose 3,610 words; IR 66 claims. Round 3's confirmation was not yet back when round 4 opened; its line is recorded in round 3's entry when it arrives.
+
+Claims check before the round: 7 changed claims, 0 missing, 0 stale (base: round 3 prose).
+
+Awaiting restatement: none.
+
+Declined findings carried in the brief: round 1's F1 (the instance did not accept the decline) and F3; round 2's 9 and 10; each with its reason.
+
+Signals script before the round: no signal fired; no line unparsed. Signal 4 by reading: round 3's contradiction (finding 10) sat on two sentences no earlier round's fix touched; not fired.

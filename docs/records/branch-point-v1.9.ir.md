@@ -2,7 +2,7 @@
 
 Reader: RD-4
 Purpose: document. The revision of the branch point that carries the adopted changes of evaluation cases 010 and 011, the meta-reviews of the methodology's intermediate-representation specification's count 4 and the vision document's count 2, adopted by the owner on 2026-10-30 with the terms own mismatch and re-fix.
-Status: rendered (reasoning role, 2026-10-30; round 3)
+Status: rendered (reasoning role, 2026-10-30; round 4)
 Source: the owner's decision of 2026-10-30 ("For cases 010 and 011 - go with all recommendations, all terms ratified."); evaluation cases 010 and 011; the methodology specification's count-5 amendment.
 Normative: yes
 Footprint: docs/branch-point.md; docs/records/branch-point-v1.9.ir.md; docs/records/branch-point-v1.9.review.md; docs/vocabulary.md; docs/backlog.md; eval/README.md; eval/cases/010-meta-review-ir-spec-count-4-2026-10-30.md; eval/cases/011-meta-review-vision-count-2-2026-10-30.md; scripts/signals.mjs; scripts/test.mjs
