@@ -346,3 +346,23 @@ For the ruleset review: findings 1 and 5 are sentences of 28 and 26 words that s
 Claims after fixes: 89. Prose after fixes: 3,953 words. Claims check after the fix pass (base: round 8 prose): 7 changed claims, 0 missing, 0 stale. Round trip: 89 of 89. IR check: 0 violations, 0 warnings.
 
 Decided claims the fixes reworded or split, for the owner's list at the count's close: C72 (split, with C88), C86 (again), C89 (v1.6's line rule); C90 to C92 added.
+
+Confirmation: 5 of 6 fixes hold. Not held: 6. Declines accepted: 0 of 0. New defects: 1.
+
+The instance (a2f2573c782cbcbb3) read both files in full at fix commit 6301041. Fix 6 did not hold: the decision closing the form-and-process split joins its rule to a reason, "that specification reached readable at 2,808 words", which the IR did not hold. Re-fixed: C93 adds the owner's recorded reason as a decided claim. The new defect: C92 repeated the reason C86 already holds; C92 is dropped, and C86 carries it.
+
+Claims check after the confirmation's fixes (base: the round 8 fix pass's prose): 1 changed claim, 0 missing, 0 stale; C92 removed. Claims: 89. Prose: 3,953 words. Round trip: 89 of 89.
+
+## Round 9
+
+Branch point version and commit the count runs under: v1.10 at commit 387dc43; round 9 reads the text at this round's opening commit, named in the brief. Prose 3,953 words; IR 89 claims; unratified terms 3 (T8 fix commit, T9 present state, T10 target state).
+
+Passages awaiting restatement: none.
+
+Owner-pending findings: none.
+
+Declined findings carried in the brief: from v1.9's count, round 1's F3, round 2's 10, round 4's 11, round 5's N1 and round 6's 6; from this count, round 4's 9. Each with its reason. The brief also says that the v1.10 IR lists the claims v1.10 changed only.
+
+Forms added to the brief: none.
+
+Signals script before the round: signal 1 reads two rounds with a fix not held (rounds 3 and 8), so it fires; signal 2 does not; no line unparsed. The text is a meta-review subject at the count's end.

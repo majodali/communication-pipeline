@@ -2,7 +2,7 @@
 
 Reader: RD-4
 Purpose: document. The revision of the branch point that carries the process changes of evaluation case 012, the meta-review of branch point v1.9 and the methodology's intermediate-representation specification's count 5, adopted by the owner on 2026-10-30.
-Status: rendered (round 8, rendered by the reasoning role 2026-10-30; unratified terms 3)
+Status: rendered (round 9, rendered by the reasoning role 2026-10-30; unratified terms 3)
 Source: the owner's decision of 2026-10-30 on evaluation case 012 (all fifteen changes adopted as recommended; terms by the default); evaluation case 012's Outcome.
 Normative: yes
 Footprint: docs/branch-point.md; docs/records/branch-point-v1.10.ir.md; docs/records/branch-point-v1.10.review.md; docs/vocabulary.md; docs/backlog.md; eval/README.md; eval/cases/012-meta-review-branch-point-v1.9-and-ir-spec-count-5-2026-10-30.md; scripts/signals.mjs; scripts/test.mjs
@@ -219,7 +219,7 @@ C91. The owner's reason for striking case 005's change 3: contradictions ran to 
 
 C86. Case 005's change 4 was replaced by the third signal on 2026-10-27, because words per IR claim measure prose drift from the IR. [decided: owner, 2026-10-27; reworded in v1.10's count, rounds 7 and 8]
 
-C92. The owner's reason for replacing case 005's change 4: words per IR claim measure prose drift from the IR. [decided: owner, 2026-10-27]
+C93. The owner's reason for closing the split of the methodology's IR specification into form and process: that specification reached readable at 2,808 words. [decided: owner, 2026-10-27]
 
 C81. Change 11 of case 012 struck the third signal. evidence: E1, E2. [decided: owner, 2026-10-30; the history paragraph's statement, C78, merged into it in round 7]
 
@@ -261,7 +261,7 @@ E4. docs/backlog.md, chunk 3's row: "Scope narrowed per the owner: reports to RD
 
 ## Asks
 
-A1. Accept branch point v1.10. Depends: C1 to C92.
+A1. Accept branch point v1.10. Depends: C1 to C93.
 
 A2. Decide the mark of a step-6 fix made in a readable round's fix pass, a gap round 1 found (finding 5). Proposed wording, revised after the round 1 confirmation: "At a readable verdict, the round's stranger instance confirms each fix other than a step-6 fix. A step-6 fix made in that round's fix pass stays `awaiting restatement`; the reasoning role lists its passage in the next count's round 1 brief." The finding counts against the verdict as a contradiction until the owner decides (case 012 change 9). Depends: C33.
 
