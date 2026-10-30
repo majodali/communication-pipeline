@@ -33,6 +33,8 @@ C5. Before round 1, the reasoning role records in the review record the number o
 
 ### Rounds step 2
 
+C48. A restatement mismatch is a disagreement between the stranger's restatement and the IR. [decided: methodology intermediate-representation specification, C211]
+
 C6. An own mismatch is a restatement mismatch the stranger attributes to its own restatement (case 011, the term ratified). evidence: E2. [decided: owner, 2026-10-30]
 
 C7. An own mismatch's claim carries `(own)` (case 011 change 2). evidence: E2. [decided: owner, 2026-10-30]
@@ -45,9 +47,11 @@ C10. The review record quotes the prose sentence the stranger relied on (case 01
 
 ### Rounds step 3
 
-C11. The fix rules bind an edit to an IR whose Status is reviewed, outside a round (case 011 change 9). evidence: E2. [decided: owner, 2026-10-30]
+C11. The rules of step 3 bind an edit to an IR whose Status is reviewed, outside a round (case 011 change 9). evidence: E2. [decided: owner, 2026-10-30]
 
-C12. An edit to a reviewed IR outside a round cuts each claim the edit makes a duplicate and amends each claim the edit makes stale (case 011 change 9). evidence: E2. [decided: owner, 2026-10-30]
+C12. An edit to a reviewed IR cuts each claim the edit makes a duplicate (case 011 change 9). evidence: E2. [decided: owner, 2026-10-30]
+
+C49. An edit to a reviewed IR amends each claim the edit makes stale (case 011 change 9). evidence: E2. [decided: owner, 2026-10-30]
 
 ### Rounds step 4
 
@@ -55,39 +59,53 @@ C13. The claims check runs on the fixed prose before the round's stranger instan
 
 C14. A changed claim the claims check reports missing or stale is fixed before the confirmation read (case 010 change 6). evidence: E1. [decided: owner, 2026-10-30]
 
-C15. The record marks the second fix of a claim `awaiting restatement` (case 011 change 6). evidence: E2. [decided: owner, 2026-10-30]
+C15. When the instance says a fix does not hold, the reasoning role marks the second fix `awaiting restatement` in the review record (case 011 change 6). evidence: E2. [inferred: R7]
 
-C16. The next round's entry states whether that round names the second fix's claim on its `Mismatches:` line or in a finding (case 011 change 6). evidence: E2. [decided: owner, 2026-10-30]
+C16. In the next round's entry, the reasoning role states whether that round names the second fix's claim on its `Mismatches:` line or in a finding (case 011 change 6). evidence: E2. [inferred: R8]
+
+C50. When the instance withdraws a contradiction or undefined-term finding at confirmation, on a reason quoting the prose, the reasoning role marks the finding withdrawn (v1.7's C14, case 009 change 2). [inferred: R9]
 
 ### Rounds step 6
 
-C17. Step 6 treats as a prose finding a restatement mismatch on one passage in any two rounds of the text's counts (case 011 change 3). evidence: E2. [decided: owner, 2026-10-30]
+C17. The reasoning role treats as a prose finding a restatement mismatch on one passage in any two rounds of the text's counts (case 011 change 3). evidence: E2. [decided: owner, 2026-10-30]
+
+C51. A step-6 finding stands whatever the strangers attributed the mismatch to. [decided: owner, 2026-10-27]
 
 C18. The reasoning role runs the script `scripts/signals.mjs` after writing each round's `Mismatches:` line and before writing the verdict (case 010 change 2). evidence: E1. [decided: owner, 2026-10-30]
 
 C19. The script's recurrence report is step 6's check (case 010 change 2). evidence: E1. [decided: owner, 2026-10-30]
 
-C20. Before each round from round 2, the reasoning role runs `scripts/signals.mjs` and applies step 6 to each claim the script reports (case 011 change 5). evidence: E2. [decided: owner, 2026-10-30]
+C20. Before the next round, the reasoning role applies step 6 to each claim the script reports (case 011 change 5, its run folded into case 010 change 2's). evidence: E2. [inferred: R10]
+
+C52. The round's instance does not confirm a step-6 fix, as step 4 states (v1.7's C20 rephrased). [decided: owner, 2026-10-29]
 
 ### Rounds step 7
 
-C21. At a readable verdict and at the limit, the claims check runs on the fixed prose before the instance confirms, as in step 4 (case 010 change 6). evidence: E1. [decided: owner, 2026-10-30]
+C21. Step 7's claims check runs as in step 4 (case 010 change 6). evidence: E1. [decided: owner, 2026-10-30]
 
 ### Verdict
 
 C22. The verdict is readable when three conditions hold. [decided: owner, 2026-10-27]
 
-C23. The verdict's first condition: the stranger's restatement of the problem, terms and decisions has no mismatch with the IR, whatever the stranger attributes a mismatch to (case 010 change 1). evidence: E1. [decided: owner, 2026-10-30]
+C23. The verdict's first condition: the stranger's restatement of the problem, terms and decisions has no mismatch with the IR (case 010 change 1). evidence: E1. [decided: owner, 2026-10-30]
+
+C53. Under the first condition, a mismatch counts whatever the stranger attributes it to, with one exception and one override (case 010 change 1 joined to case 011 change 1). evidence: E1. [decided: owner, 2026-10-30]
 
 C24. The verdict's second and third conditions: the stranger finds no contradiction and no undefined term. [decided: owner, 2026-10-27]
 
-C25. An own mismatch does not count against the verdict when the stranger quotes a prose sentence that carries the IR's claim (case 011 change 1). evidence: E2. [decided: owner, 2026-10-30]
+C25. The first condition's exception: an own mismatch does not count when the stranger quotes a prose sentence that carries the IR's claim (case 011 change 1). evidence: E2. [decided: owner, 2026-10-30]
 
-C26. A mismatch that step 6 makes a prose finding always counts against the verdict (case 011 change 1). evidence: E2. [decided: owner, 2026-10-30]
+C26. The first condition's override: a mismatch that step 6 makes a prose finding always counts (case 011 change 1). evidence: E2. [decided: owner, 2026-10-30]
 
 ### Stranger brief
 
 C27. The review record quotes the form the reasoning role adds to the brief and names the finding or fix the form bears on (case 011 change 10). evidence: E2. [decided: owner, 2026-10-30]
+
+### Rules
+
+C54. Rule BP-01 (the lints run) applies to every IR. [decided: owner, 2026-10-25]
+
+C55. Among the rules after BP-01, the first rule whose condition holds decides the disposition. [inferred: R11]
 
 ### Meta-review
 
@@ -103,7 +121,7 @@ C32. The script counts a recurrence on either claim of a `Mismatches:` entry (ca
 
 C33. The script lists as information the claims on earlier counts' `Mismatches:` lines that the last count's lines do not name (case 010 change 4). evidence: E1. [decided: owner, 2026-10-30]
 
-C34. The script reads the curve, the confirmation lines and the claims-check lines of a review record that holds several counts from the record's last count only. [inferred: R2]
+C34. The script reads the per-round table, the confirmation lines and the claims-check lines of a review record that holds several counts from the record's last count only. [inferred: R2]
 
 C35. The script reports a round with no claims-check line as unparsed (case 011 change 7). evidence: E2. [decided: owner, 2026-10-30]
 
@@ -112,6 +130,10 @@ C36. The script exempts round 1 from the claims-check line, because the claims c
 C37. The script reports a `Meta-review: not indicated` line that the script's own reading contradicts (case 010 change 7). evidence: E1. [decided: owner, 2026-10-30]
 
 C38. The script's wording search skips the `Meta-review:` line (case 010 change 7). evidence: E1. [decided: owner, 2026-10-30]
+
+C57. The trigger of three rounds predated the five counts recorded by 2026-10-27. [decided: owner, 2026-10-27]
+
+C56. The five counts: the rounds on methodology PR #51; the methodology's IR specification counts 1 and 2; branch point v1.4; branch point v1.5. evidence: E4. [inferred: R12]
 
 C39. The meta-reviews so far are cases 005 and 007 to 011. [decided: owner, 2026-10-30]
 
@@ -145,6 +167,18 @@ R5. C26 refines C25 because a passage with a mismatch in two rounds is a prose f
 
 R6. C28 refines C1 because case 010 change 5 aligns the specification's first signal with this sentence, and v1.9 takes the same words.
 
+R7. C15 depends-on C5 because the reasoning role writes the review record, and case 011 change 6 names no actor; round 1 finding 9 asked for the actor and trigger.
+
+R8. C16 depends-on C5 because the reasoning role writes each round's entry, and case 011 change 6 names no actor; round 1 finding 10.
+
+R9. C50 depends-on C5 because the reasoning role writes the review record, and case 009 change 2 ("is marked withdrawn") names no actor; round 1 finding 11.
+
+R10. C20 refines C18 because the run after each round's `Mismatches:` line already reports every recurrence before the next round, so case 011 change 5's second run is the same check; round 1 finding 13.
+
+R11. C55 refines C54 because BP-01's condition always holds and BP-01 decides no disposition; round 1 finding 18.
+
+R12. C56 refines C57 because the release register's v1.6.0 entry gives the five counts as 10, 10, 6, 3 and 4 rounds, the round counts of these five texts' review records; round 1 finding 20.
+
 ## Evidence
 
 E1. eval/cases/010-meta-review-ir-spec-count-4-2026-10-30.md, Outcome, changes 1 to 13 (recommended), 14 (declined) and 15 (no change).
@@ -153,6 +187,8 @@ E2. eval/cases/011-meta-review-vision-count-2-2026-10-30.md, Outcome, changes 1,
 
 E3. The owner's message of 2026-10-30: "For cases 010 and 011 - go with all recommendations, all terms ratified."
 
+E4. methodology docs/releases.md, v1.6.0, The meta-review trigger is signal-based: "five recorded counts (10, 10, 6, 3 and 4 rounds)".
+
 ## Asks
 
-A1. Accept branch point v1.9. Depends: C1 to C47.
+A1. Accept branch point v1.9. Depends: C1 to C57.
