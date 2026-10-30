@@ -171,7 +171,9 @@ roles have moved to project-orchestrator, this repository archives
   drew restatement mismatches in its counts 4, 5 and 6, with structural
   fixes between the counts (count 6, round 1). Branch point v1.10's step 6 keys a
   recurrence on one passage, while the signals script and the
-  `Mismatches:` lines key it on claims (v1.10, round 2). A meta-review session with no part in the
+  `Mismatches:` lines key it on claims (v1.10, round 2). Step 4 leaves open whether the
+  round's instance reads the prose before or after the claims check's
+  fixes (v1.10, round 3). A meta-review session with no part in the
   rounds performs the review and reports as an
   [evaluation case](../eval/README.md).
 - [ ] **Dispatcher: row BP-00** — open. `scripts/dispatch.mjs` does not

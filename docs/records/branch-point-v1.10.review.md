@@ -8,6 +8,7 @@ Reader of the reviewed text: RD-4 (a fresh agent session). Reviewer: a stranger,
 |---|---|---|---|---|---|
 | 1 | 3,755 | 51 | 9 | 2.4 | not readable (mismatches 0; contradiction 1, a rule gap listed for the owner; undefined term 1) |
 | 2 | 3,790 | 55 | 3 | 0.8 | not readable (mismatches 0; contradiction 1 new, with round 1's finding 5 pending; undefined terms 0) |
+| 3 | 3,821 | 59 | 9 | 2.4 | not readable (mismatch 1, first occurrence; contradiction 1; undefined term 1) |
 
 ## Round 1
 
@@ -110,3 +111,28 @@ Declined findings carried in the brief from v1.9's count: round 1's F3, round 2'
 Forms added to the brief: none.
 
 Signals script before the round: no signal; no line unparsed.
+
+Stranger model: claude-haiku-5-5, a fresh instance at the frugal tier (ab602a031857ba609). Prose 3,821 words by `wordCount` (the stranger's hand estimate: about 4,200); IR 59 claims; 9 findings, 2.4 per thousand words. Restatement: one mismatch. Listed passages: none. Contradiction 1 (finding 6), undefined term 1 (finding 9); verdict: not readable for RD-4.
+
+The mismatch: the restatement said the signals are "checked by a signals script". C39 gives the check to the reasoning role. The stranger relied on the script paragraph's first sentence, "The script `scripts/signals.mjs` reads a review record and reports the first signal from the confirmation lines in their fixed form and the claims-check lines.", which v1.10 did not change and the v1.10 IR does not carry. First occurrence on this passage: v1.9's count had no mismatch on the meta-review check or the script paragraph. Not a step-6 passage.
+Mismatches: C39
+
+Omissions noticed, not counted: about 50 across the changed passages, among them step 2's `Mismatches:` form, step 4's confirmation-line form and partial-hold rule, step 6's structural-fix definition and script timing, the verdict paragraph's per-round record and the history of cases 010 and 011. Most are sentences v1.10 did not change, whose claims stand in earlier IRs.
+
+For the ruleset review: the stranger could not tell whether the round's instance reads the prose before or after the claims check's fixes in step 4. Both orders can be followed; no text change.
+
+| # | Finding (shortened) | Kind | Decision |
+|---|---|---|---|
+| 1 | mismatch on C39: the script read as checking the signals | restatement | the check and the report made adjacent and explicit: "At the end of a count, the reasoning role checks the signals against the review record. The signals script, `scripts/signals.mjs`, reports the signals it can read. The reasoning role checks the second signal's declined findings raised again and the fourth signal by reading." (C61 added, inferred by R4; C43 moved beside C39) |
+| 2 | "The stranger brief lists each passage" names no actor | SP-18 | rephrase C9: "In the stranger brief, the reasoning role lists each passage awaiting restatement." |
+| 3 | step 3's rewording sentence at 26 words | SP-02 | the stranger's version, 23 words (C20): "... keeps the claim's source and notes the rewording as ..." |
+| 4 | step 6's "the reading" | SP-03 | "the mismatched reading" (C64) |
+| 5 | "Step 7's claims check runs as in step 4" names no actor | SP-18 | "The reasoning role runs step 7's claims check as in step 4." (C63) |
+| 6 | the Stranger brief's "reads only the prose and the IR" against steps 4 and 7 | SP-25 | "In its round read, the stranger reads only the prose and the IR." (C65) |
+| 7 | the confirmation-inputs sentence at 26 words | SP-02 | "At Rounds steps 4 and 7 the round's instance also reads the findings table, the fixed passages and the declined findings." (C53); steps 4 and 7 state the sending |
+| 8 | the unparsed rule stated at the line rules and in the script paragraph | SP-26 | the script sentence cut; C42 merged into C41 |
+| 9 | "process change" undefined | SP-04 | add C62 at first use: "A process change is an adopted change to how the rounds or the meta-review run." (inferred, R5); case 012's change 12, on the script, is one; changes 3 and 15 are not |
+
+Claims after fixes: 63. Prose after fixes: 3,837 words. Claims check after the fix pass (base: round 3 prose): 8 changed claims, 0 missing, 0 stale; C42 removed. Round trip: 63 of 63. IR check: 0 violations, 0 warnings.
+
+Decided claims the fixes reworded or merged, for the owner's list at the count's close: C9, C20 (again), C53 (again), C41 (with C42), C63 (v1.9's C21), C64, C65.
