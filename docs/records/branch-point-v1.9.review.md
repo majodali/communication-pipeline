@@ -335,3 +335,15 @@ Claims after fixes: 96. Prose after fixes: 3,874 words. Claims check after the f
 Decided claims the fixes changed, for the owner: all are listed in A2.
 
 Declined findings for round 8's brief: round 1's F1 and F3; round 2's 9 and 10; round 4's 11; round 5's N1; round 6's 6; each with its reason. Round 2's 9 and 10 concerned step 7's old wording, which round 7's fix replaced. Nothing awaits restatement in round 8.
+
+## Round 8, 2026-10-30
+
+Branch point version and commit the round runs under: v1.9 at this round's opening commit. Prose 3,874 words; IR 96 claims. Round 7's confirmation was not yet back when round 8 opened; its line is recorded in round 7's entry when it arrives.
+
+Claims check before the round: 16 changed claims, 0 missing, 0 stale (base: round 7 prose).
+
+Awaiting restatement: none; round 7 confirmed the Rules opening's third fix.
+
+Declined findings carried in the brief: round 1's F1 (the instance did not accept the decline) and F3; round 2's 9 and 10; round 4's 11; round 5's N1; round 6's 6; each with its reason.
+
+Signals script before the round: signals 1 and 2 fired as before (rounds 3 and 5; C55, C54); signal 3 not fired; signal 4 fired by reading in round 4; no line unparsed. The text is a meta-review subject at the count's end.
