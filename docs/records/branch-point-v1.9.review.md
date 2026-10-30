@@ -209,3 +209,5 @@ Awaiting restatement: none.
 Declined findings carried in the brief: round 1's F1 (the instance did not accept the decline) and F3; round 2's 9 and 10; round 4's 11; each with its reason.
 
 Signals script before the round: signals 1, 2 and 3 not fired; no line unparsed. Signal 4 fired by reading in round 4 (see round 4's entry); the script's CHECK points at that round.
+
+Stranger brief: before round 5 the Orchestrator brought the brief's Readability verdict sentence to the current rule: three conditions, the first with the own-mismatch exception and the recurrence override, the second and third plain. In rounds 1 to 4 that sentence had quoted the round 1 rule. Later rounds' briefs start from the updated round 5 brief.
