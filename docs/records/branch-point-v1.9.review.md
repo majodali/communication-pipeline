@@ -244,6 +244,10 @@ Queued items applied in the same pass: round 4's A (C70: "When the unparsed line
 
 Claims after fixes: 79. Prose after fixes: 3,785 words. Claims check after the fixes (base: round 5 prose): 21 changed claims, 0 missing, 0 stale. Round trip: 79 of 79.
 
+Confirmation: 7 of 10 fixes hold. Not held: 6, 7, 11. Declines accepted: 0 of 0. New defects: 5.
+
+Finding 6 did not hold: the definition of a step-6 fix (C74) read as any fix, against "A rewording alone is not a step-6 fix"; re-fixed with N2 in round 6's pass. Finding 7 did not hold on the instance's reading of the exception ("the claim the mismatch concerns"); the wording "carries an IR claim" is the reading adopted on 2026-10-30, it stands, and the owner's decision on the exception's reading is pending. Finding 11 did not hold: two trigger sentences sit outside the trigger paragraph, and the case 005 decisions paragraph has no place among the subjects; re-fixed in round 6's pass. Of the new defects, N1 (the brief's quoting ask beside the record's quoting duty) is declined: the two sentences have different actors and objects, both from case 011 change 2. N2 to N5 are fixed in round 6's pass.
+
 Decided claims the fixes changed, for the owner: all are listed in A2, including rule BP-01's move out of the rules table.
 
 Declined findings for round 6's brief: round 1's F1 and F3; round 2's 9 and 10; round 4's 11; each with its reason. Passage awaiting restatement in round 6: the Rules opening with rule BP-01 (C54, C55); the verdict table, new in this round (C23, C53, C25, C26, C75 to C77).
