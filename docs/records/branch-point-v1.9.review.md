@@ -148,6 +148,10 @@ Awaiting restatement: none.
 
 Claims after fixes: 66. Prose after fixes: 3,610 words. Claims check after the fixes (base: round 3 prose): 7 changed claims, 0 missing, 0 stale. Round trip: 66 of 66.
 
+Confirmation: 9 of 10 fixes hold. Not held: 9. Declines accepted: 0 of 0. New defects: 3.
+
+Finding 9 did not hold: the gloss named the condition, not rule BP-02. Finding 9 and the three new defects are fixed in round 4's fix pass: N1 (SP-25, which value the one `Meta-review:` line takes for a subject text with an unparsed line), N2 (SP-03, "The rules above on how a fix is made" read as limiting the fix rules to outside-round edits) and N3 (SP-26, the repeated lead-in "In such an edit", accepted as a varied lead-in, not a merge, because round 1's finding 8 split the two duties under SP-01).
+
 Decided claims the fixes changed, for the owner: C23 points at its exception and override (case 010 change 1's text, reworded); C11 names the rules it binds (reworded); C12 and C49 gain the reasoning role as actor and become inferred (basis case 011 change 9); C67 is a new rule the rounds added: the `Meta-review: unparsed` line (basis case 010 change 7 and case 011 change 7).
 
 Declined findings for round 4's brief: round 1's F1 and F3; round 2's 9 and 10; each with its reason.
