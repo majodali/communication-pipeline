@@ -264,7 +264,7 @@ test('claims-check reports a changed claim whose sentence did not change (stale)
   assert.deepEqual(fixed.stale, []);
 });
 
-import { readSignals } from './signals.mjs';
+import { readSignals, mismatchEntries } from './signals.mjs';
 
 test('signals v1.7: fixed confirmation form, mismatch recurrence, words per claim, unparsed lines', () => {
   const bad = `# Review record\n\n| Round | Prose words | IR claims |\n|---|---|---|\n| 1 | 1,000 | 50 |\n| 2 | 1,150 | 50 |\n\n## Round 1\n\nMismatches: C8, C26\nConfirmation: 3 of 5 fixes hold. Not held: 2, 4. Declines accepted: 1 of 1. New defects: 0.\n\n## Round 2\n\nMismatches: C8\nClaims check: 2 changed, missing 1, stale 0.\nConfirmation: 2 of 2 fixes hold. Not held: none. Declines accepted: 0 of 0. New defects: 1.\n`;
@@ -294,4 +294,57 @@ test('signals v1.7: fixed confirmation form, mismatch recurrence, words per clai
   assert.deepEqual(m.unparsed, []);
   assert.equal(m.signal3.fired, false);
   assert.equal(m.subject, false);
+});
+
+// --- signals v1.9 (cases 010 and 011) ---
+const CC = (n) => `Claims check before the round: 3 changed claims, 0 missing, 0 stale (base: round ${n} prose).`;
+const OK = 'Confirmation: 2 of 2 fixes hold. Not held: none. Declines accepted: 0 of 0. New defects: 0.';
+
+test('signals v1.9: a run before the verdict reads a partial record (case 010 change 2)', () => {
+  const partial = `| Round | Prose words | IR claims |\n|---|---|---|\n| 1 | 1,000 | 50 |\n\n## Round 1\n\nMismatches: C8 (own)\n${OK}\n\n## Round 2\n\n${CC(1)}\nMismatches: C8 (own)\n`;
+  const r = readSignals(partial);
+  assert.deepEqual(r.unparsed, []);
+  assert.equal(r.roundsSeen, 2);
+  assert.deepEqual(r.signal2.recurring, ['C8 in rounds 1, 2']);
+  assert.equal(r.subject, true);
+});
+
+test('signals v1.9: "relied on" claims are parsed and recur on either claim (case 010 change 3)', () => {
+  assert.deepEqual(mismatchEntries('C41 (own; relied on C35), C44 (own)'), [{ id: 'C41', relied: false }, { id: 'C35', relied: true }, { id: 'C44', relied: false }]);
+  const rec = `## Round 1\n\nMismatches: C41 (own; relied on C35)\n\n## Round 2\n\n${CC(1)}\nMismatches: C35 (own)\n`;
+  const r = readSignals(rec);
+  assert.deepEqual(r.signal2.recurring, ['C35 in rounds 1, 2 (relied on: round 1)']);
+});
+
+test('signals v1.9: signal 2 reads every count; earlier counts listed as information (case 010 change 4, case 011 change 3)', () => {
+  const rec = `# Review record\n\n## Round 6\n\nMismatches: C44 (own), C9\n\n## Round 7\n\nMismatches: C44 (own), C12\n\n## Round 8\n\nMismatches: C12\n\n## Count 2\n\n| Round | Prose words | IR claims |\n|---|---|---|\n| 1 | 1,000 | 50 |\n\n### Round 1, count 2\n\nMismatches: C44 (own)\n${OK}\n`;
+  const r = readSignals(rec);
+  assert.equal(r.signal2.fired, true);
+  assert.deepEqual(r.signal2.recurring, ['C44 in count 1 rounds 6, 7; count 2 round 1']);
+  assert.deepEqual(r.signal2.earlierCounts, ['C9 in count 1 round 6', 'C12 in count 1 rounds 7, 8']);
+  const old = rec.replace('Mismatches: C44 (own)\n' + OK, 'Mismatches: none\n' + OK);
+  assert.equal(readSignals(old).signal2.fired, false);
+});
+
+test('signals v1.9: the Meta-review line is skipped by the wording search and checked against the reading (case 010 change 7)', () => {
+  const rec = `| Round | Prose words | IR claims |\n|---|---|---|\n| 1 | 1,000 | 50 |\n\n## Round 1\n\nMismatches: C3\n${OK}\n\n## Round 2\n\n${CC(1)}\nMismatches: C3\n${OK}\n\n## Verdict\n\nMeta-review: not indicated. No declined finding raised again.\n`;
+  const r = readSignals(rec);
+  assert.deepEqual(r.signal2.check, []);
+  assert.equal(r.metaReviewLine.contradicted, true);
+  const clean = rec.replace(/Mismatches: C3/g, 'Mismatches: none');
+  const c = readSignals(clean);
+  assert.equal(c.metaReviewLine.notIndicated, true);
+  assert.equal(c.metaReviewLine.contradicted, false);
+});
+
+test('signals v1.9: a round from round 2 with no claims-check line is unparsed; both count orders parse (case 011 change 7)', () => {
+  const rec = `## Round 1\n\nMismatches: none\n${OK}\n\n## Round 2\n\nMismatches: none\n${OK}\n`;
+  const r = readSignals(rec);
+  assert.deepEqual(r.unparsed, ['round 2: no claims-check line']);
+  assert.equal(r.subject, 'unparsed');
+  const two = `## Round 1\n\n${OK}\n\n## Round 2\n\nClaims check before the round: 4 changed claims, 2 missing, 0 stale (base: round 1 prose).\n${OK}\n\n## Round 3\n\nClaims check: 2 changed, missing 0, stale 1.\n${OK}\n`;
+  const t = readSignals(two);
+  assert.deepEqual(t.unparsed, []);
+  assert.deepEqual(t.signal1.roundsWithFailure, [2, 3]);
+  assert.equal(t.signal1.fired, true);
 });

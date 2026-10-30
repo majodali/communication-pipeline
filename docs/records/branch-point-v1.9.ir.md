@@ -1,0 +1,158 @@
+# IR: Branch point v1.9, the adopted changes of evaluation cases 010 and 011
+
+Reader: RD-4
+Purpose: document. The revision of the branch point that carries the adopted changes of evaluation cases 010 and 011, the meta-reviews of the methodology's intermediate-representation specification's count 4 and the vision document's count 2, adopted by the owner on 2026-10-30 with the terms own mismatch and re-fix.
+Status: rendered (reasoning role, 2026-10-30; stranger rounds not yet run)
+Source: the owner's decision of 2026-10-30 ("For cases 010 and 011 - go with all recommendations, all terms ratified."); evaluation cases 010 and 011; the methodology specification's count-5 amendment.
+Normative: yes
+Footprint: docs/branch-point.md; docs/records/branch-point-v1.9.ir.md; docs/records/branch-point-v1.9.review.md; docs/vocabulary.md; docs/backlog.md; eval/README.md; eval/cases/010-meta-review-ir-spec-count-4-2026-10-30.md; eval/cases/011-meta-review-vision-count-2-2026-10-30.md; scripts/signals.mjs; scripts/test.mjs
+
+## Terms
+
+T1. Own mismatch. defined-at: ../vocabulary.md#def-own-mismatch [decided: owner, 2026-10-30]
+
+T2. Re-fix. defined-at: ../vocabulary.md#def-re-fix [decided: owner, 2026-10-30]
+
+## Claims
+
+### Status
+
+C1. Version 1.9 carries the adopted changes of evaluation cases 010 and 011 and the terms own mismatch and re-fix. evidence: E3. [decided: owner, 2026-10-30]
+
+### Rounds
+
+C2. The review record names the branch point version and commit a count runs under (case 010 change 10). evidence: E1. [decided: owner, 2026-10-30]
+
+C3. A change the owner adopts during a count applies from the next count (case 010 change 10). evidence: E1. [decided: owner, 2026-10-30]
+
+### Rounds step 1
+
+C4. Before round 1, the reasoning role resolves every SP-02 lint warning, a sentence over 25 words, in the text under review, whatever its age (case 010 change 8). evidence: E1. [decided: owner, 2026-10-30]
+
+C5. Before round 1, the reasoning role records in the review record the number of sentences over 25 words (case 011 change 8). evidence: E2. [decided: owner, 2026-10-30]
+
+### Rounds step 2
+
+C6. An own mismatch is a restatement mismatch the stranger attributes to its own restatement (case 011, the term ratified). evidence: E2. [decided: owner, 2026-10-30]
+
+C7. An own mismatch's claim carries `(own)` (case 011 change 2). evidence: E2. [decided: owner, 2026-10-30]
+
+C8. Each entry on a `Mismatches:` line names the claim the restatement contradicts and, after "relied on", the claim of the sentence the stranger quoted (case 010 change 3). evidence: E1. [decided: owner, 2026-10-30]
+
+C9. For an own mismatch, the brief asks the stranger to quote the prose sentence the stranger relied on (v1.7's C7 with the term of case 011 change 2). evidence: E2. [decided: owner, 2026-10-30]
+
+C10. The review record quotes the prose sentence the stranger relied on (case 011 change 2). evidence: E2. [decided: owner, 2026-10-30]
+
+### Rounds step 3
+
+C11. The fix rules bind an edit to an IR whose Status is reviewed, outside a round (case 011 change 9). evidence: E2. [decided: owner, 2026-10-30]
+
+C12. An edit to a reviewed IR outside a round cuts each claim the edit makes a duplicate and amends each claim the edit makes stale (case 011 change 9). evidence: E2. [decided: owner, 2026-10-30]
+
+### Rounds step 4
+
+C13. The claims check runs on the fixed prose before the round's stranger instance confirms (case 010 change 6). evidence: E1. [decided: owner, 2026-10-30]
+
+C14. A changed claim the claims check reports missing or stale is fixed before the confirmation read (case 010 change 6). evidence: E1. [decided: owner, 2026-10-30]
+
+C15. The record marks the second fix of a claim `awaiting restatement` (case 011 change 6). evidence: E2. [decided: owner, 2026-10-30]
+
+C16. The next round's entry states whether that round names the second fix's claim on its `Mismatches:` line or in a finding (case 011 change 6). evidence: E2. [decided: owner, 2026-10-30]
+
+### Rounds step 6
+
+C17. Step 6 treats as a prose finding a restatement mismatch on one passage in any two rounds of the text's counts (case 011 change 3). evidence: E2. [decided: owner, 2026-10-30]
+
+C18. The reasoning role runs the script `scripts/signals.mjs` after writing each round's `Mismatches:` line and before writing the verdict (case 010 change 2). evidence: E1. [decided: owner, 2026-10-30]
+
+C19. The script's recurrence report is step 6's check (case 010 change 2). evidence: E1. [decided: owner, 2026-10-30]
+
+C20. Before each round from round 2, the reasoning role runs `scripts/signals.mjs` and applies step 6 to each claim the script reports (case 011 change 5). evidence: E2. [decided: owner, 2026-10-30]
+
+### Rounds step 7
+
+C21. At a readable verdict and at the limit, the claims check runs on the fixed prose before the instance confirms, as in step 4 (case 010 change 6). evidence: E1. [decided: owner, 2026-10-30]
+
+### Verdict
+
+C22. The verdict is readable when three conditions hold. [decided: owner, 2026-10-27]
+
+C23. The verdict's first condition: the stranger's restatement of the problem, terms and decisions has no mismatch with the IR, whatever the stranger attributes a mismatch to (case 010 change 1). evidence: E1. [decided: owner, 2026-10-30]
+
+C24. The verdict's second and third conditions: the stranger finds no contradiction and no undefined term. [decided: owner, 2026-10-27]
+
+C25. An own mismatch does not count against the verdict when the stranger quotes a prose sentence that carries the IR's claim (case 011 change 1). evidence: E2. [decided: owner, 2026-10-30]
+
+C26. A mismatch that step 6 makes a prose finding always counts against the verdict (case 011 change 1). evidence: E2. [decided: owner, 2026-10-30]
+
+### Stranger brief
+
+C27. The review record quotes the form the reasoning role adds to the brief and names the finding or fix the form bears on (case 011 change 10). evidence: E2. [decided: owner, 2026-10-30]
+
+### Meta-review
+
+C28. The first signal: in two or more rounds, a fix was not held at confirmation or the claims check reported a missing or stale claim (case 010 change 5). evidence: E1. [decided: owner, 2026-10-30]
+
+C29. The third signal: in the count's last round, words per IR claim exceed round 1's words per claim by more than one tenth (case 010 change 9). evidence: E1. [decided: owner, 2026-10-30]
+
+C30. The script reads the `Mismatches:` lines of every count for signal 2 (case 011 change 3). evidence: E2. [decided: owner, 2026-10-30]
+
+C31. The script's recurring mismatch is a claim on the last count's `Mismatches:` lines named in two rounds of the text's counts. [inferred: R1]
+
+C32. The script counts a recurrence on either claim of a `Mismatches:` entry (case 010 change 3). evidence: E1. [decided: owner, 2026-10-30]
+
+C33. The script lists as information the claims on earlier counts' `Mismatches:` lines that the last count's lines do not name (case 010 change 4). evidence: E1. [decided: owner, 2026-10-30]
+
+C34. The script reads the curve, the confirmation lines and the claims-check lines of a review record that holds several counts from the record's last count only. [inferred: R2]
+
+C35. The script reports a round with no claims-check line as unparsed (case 011 change 7). evidence: E2. [decided: owner, 2026-10-30]
+
+C36. The script exempts round 1 from the claims-check line, because the claims check's base is the previous round's prose. [inferred: R3]
+
+C37. The script reports a `Meta-review: not indicated` line that the script's own reading contradicts (case 010 change 7). evidence: E1. [decided: owner, 2026-10-30]
+
+C38. The script's wording search skips the `Meta-review:` line (case 010 change 7). evidence: E1. [decided: owner, 2026-10-30]
+
+C39. The meta-reviews so far are cases 005 and 007 to 011. [decided: owner, 2026-10-30]
+
+C40. Case 010 reviewed count 4 of the methodology's intermediate-representation specification. [decided: owner, 2026-10-30]
+
+C41. Case 011 reviewed count 2 of the methodology's vision document. [decided: owner, 2026-10-30]
+
+C42. The owner adopted case 010's thirteen recommended changes and case 011's nine on 2026-10-30. evidence: E3. [decided: owner, 2026-10-30]
+
+C43. Nineteen of the twenty-two adopted changes are the process changes of v1.9: case 010's changes 1 to 10 and case 011's changes 1, 2, 3 and 5 to 10. evidence: E3. [decided: owner, 2026-10-30]
+
+C44. Seven of the twenty-two adopted changes amend the methodology's intermediate-representation specification as its count 5: case 010's changes 1, 5, 9, 11, 12 and 13 and case 011's change 1. evidence: E3. [decided: owner, 2026-10-30]
+
+C45. Case 010's change 15 confirms four rules as written: the withdrawal at confirmation, the fourth signal, the final round's fixes at the limit, and the limit of ten. evidence: E1. [decided: owner, 2026-10-30]
+
+C46. Case 011's change 4 confirms that the second signal counts own mismatches. evidence: E2. [decided: owner, 2026-10-30]
+
+C47. Case 010's change 14 and case 011's change 11, each an SP-01 calibration, stay declined. evidence: E3. [decided: owner, 2026-10-30]
+
+## Relations
+
+R1. C31 depends-on C30 because a recurrence wholly inside an earlier count would fire signal 2 in every later count, and case 010 change 4 lists earlier counts' claims as information only.
+
+R2. C34 depends-on C30 because only the `Mismatches:` lines read every count, and confirmation lines written before v1.7's fixed form would otherwise read as unparsed in every later count.
+
+R3. C36 refines C35 because step 1's claims check takes the previous round's prose as its base, which round 1 lacks.
+
+R4. C25 refines C23 because the quoted sentence shows the prose carries the claim, so the mismatch lies in the restatement alone.
+
+R5. C26 refines C25 because a passage with a mismatch in two rounds is a prose finding whatever the attribution.
+
+R6. C28 refines C1 because case 010 change 5 aligns the specification's first signal with this sentence, and v1.9 takes the same words.
+
+## Evidence
+
+E1. eval/cases/010-meta-review-ir-spec-count-4-2026-10-30.md, Outcome, changes 1 to 13 (recommended), 14 (declined) and 15 (no change).
+
+E2. eval/cases/011-meta-review-vision-count-2-2026-10-30.md, Outcome, changes 1, 2, 3, 5 to 10 (recommended), 4 (no change) and 11 (declined); the terms own mismatch and re-fix.
+
+E3. The owner's message of 2026-10-30: "For cases 010 and 011 - go with all recommendations, all terms ratified."
+
+## Asks
+
+A1. Accept branch point v1.9. Depends: C1 to C47.

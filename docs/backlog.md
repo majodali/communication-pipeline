@@ -89,6 +89,21 @@ roles have moved to project-orchestrator, this repository archives
   [IR](records/stranger-rounds.ir.md). Gate: the owner rules on PR #51
   and on the six changes.
 
+- [x] **Branch point v1.9 from cases 010 and 011** — 2026-10-30.
+  The owner adopted case 010's thirteen recommended changes and case
+  011's nine, and ratified the terms own mismatch and re-fix.
+  In [branch point](branch-point.md) v1.9, an own mismatch counts
+  against the verdict unless its quoted sentence carries the claim.
+  Step 6 reads the text's counts, and `scripts/signals.mjs` checks it
+  each round. The claims check runs before confirmation. The fix rules
+  bind edits to reviewed IRs. `scripts/signals.mjs` reads "relied on"
+  claims and every count's `Mismatches:` lines, reports a round with no
+  claims-check line as unparsed, and checks the `Meta-review:` line; 41
+  tests pass. Seven of the changes amend the methodology's
+  intermediate-representation specification as its count 5. Source:
+  [IR](records/branch-point-v1.9.ir.md). Gate: the stranger rounds,
+  then the owner accepts v1.9.
+
 ## Upcoming
 
 - [x] **Chunk 4 — [graduation](vocabulary.md#def-graduation)** — 2026-10-26. Three stacked
@@ -116,3 +131,15 @@ roles have moved to project-orchestrator, this repository archives
   (CK-12). Source: [chunk 5 IR](records/chunk-5-close-out.ir.md).
   Gate: the owner confirms the record. The repository stays open on
   the owner's hold.
+- [ ] **Branch point v1.9's stranger rounds** — open. The
+  Orchestrator (project-orchestrator) runs the rounds under the v1.9
+  procedure and records them in the
+  [review record](records/branch-point-v1.9.review.md).
+- [ ] **Review of the pipeline's ruleset for simplification** — open,
+  no calendar date. The owner opens it. Asked by the owner on
+  2026-10-30: the ruleset grows a lot and may hold opportunities to
+  simplify. Candidate scope: the branch point's Rounds steps, the
+  meta-review signals, the stranger brief's calibrations, the style
+  specification's rules. A meta-review session with no part in the
+  rounds performs the review and reports as an
+  [evaluation case](../eval/README.md).
