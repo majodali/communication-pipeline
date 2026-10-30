@@ -46,3 +46,25 @@ Omissions the stranger noted, not counted: the v1.10 IR carries no claim for ste
 Claims after fixes: 54. Prose after fixes: 3,774 words. Claims check after the fix pass (base: round 1 prose): 5 changed claims, 0 missing, 0 stale. Round trip: 54 of 54. IR check: 0 violations, 0 warnings.
 
 Decided claims the fixes reworded, for the owner's list at the count's close: C20, C51, C53 (v1.9's C101), C54.
+
+Confirmation: 8 of 8 fixes hold. Not held: none. Declines accepted: 0 of 0. New defects: 2.
+
+The instance (a6182cb868caefdad) read both files in full at fix commit c6ff827. Row 5 stays owner-pending. The instance said the proposed wording settles the mark, but step 7's confirmation and marking must also exclude a step-6 fix, and the wording's last clause named no actor; ask A2's proposed wording is revised to cover both: "At a readable verdict, the round's stranger instance confirms each fix other than a step-6 fix. A step-6 fix made in that round's fix pass stays `awaiting restatement`; the reasoning role lists its passage in the next count's round 1 brief." No text change. The two new defects, fixed IR first before round 2 opens (case 012 change 6): N1, SP-04, the IR held "fix commit" only as inferred claim C52; T8 added, proposed, and the IR's unratified terms read 1. N2, SP-18, step 7 named no duty that supplies its instance's inputs; C55 added, "At step 7, the reasoning role sends the round's stranger instance the inputs step 4 lists." (inferred, R3).
+
+Claims check after the confirmation's fixes (base: the round 1 fix pass's prose): 1 changed claim, 0 missing, 0 stale. Claims: 55. Prose: 3,790 words. Round trip: 55 of 55.
+
+## Round 2
+
+Branch point version and commit the count runs under: v1.10 at commit 387dc43; round 2 reads the text at this round's opening commit, named in the brief. Prose 3,790 words; IR 55 claims; unratified terms 1 (T8, fix commit).
+
+Passages awaiting restatement: none; v1.9's C54 matched in round 1.
+
+Owner-pending finding carried in the brief (case 012 change 9): round 1's finding 5, the mark of a step-6 fix at a readable verdict, with ask A2's revised wording. It counts against the verdict as a contradiction until the owner decides.
+
+Declined findings carried in the brief from v1.9's count: round 1's F3, round 2's 10, round 4's 11, round 5's N1 and round 6's 6, each with its reason.
+
+The brief also says that the v1.10 IR lists the claims v1.10 changed only, so a sentence v1.10 did not change has no claim in it.
+
+Forms added to the brief: none.
+
+Signals script before the round: no signal from round 1; no line unparsed.
