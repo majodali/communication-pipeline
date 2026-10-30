@@ -7,6 +7,7 @@ Reader of the reviewed text: RD-4 (a fresh agent session). Reviewer: a stranger,
 | Round | Prose words | IR claims | Findings | Per 1,000 words | Verdict |
 |---|---|---|---|---|---|
 | 1 | 3,755 | 51 | 9 | 2.4 | not readable (mismatches 0; contradiction 1, a rule gap listed for the owner; undefined term 1) |
+| 2 | 3,790 | 55 | 3 | 0.8 | not readable (mismatches 0; contradiction 1 new, with round 1's finding 5 pending; undefined terms 0) |
 
 ## Round 1
 
@@ -68,3 +69,22 @@ The brief also says that the v1.10 IR lists the claims v1.10 changed only, so a 
 Forms added to the brief: none.
 
 Signals script before the round: no signal from round 1; no line unparsed.
+
+Stranger model: claude-haiku-5-5, a fresh instance at the frugal tier (a215d5b4788a041e9). Prose 3,790 words by `wordCount` (the stranger's hand estimate: about 4,800); IR 55 claims; 3 findings, 0.8 per thousand words. Restatement: no mismatch. Listed passages: none. Contradiction 1 new (finding 3), and round 1's finding 5 counts as a contradiction while it waits for the owner (ask A2, now with the owner); undefined terms 0; verdict: not readable for RD-4.
+Mismatches: none
+
+Omissions the stranger noted, not counted: (a) step 7's confirmation at a readable verdict; (b) step 6's first sentence; (c) step 6's signals-script order; (d) step 4's confirmation-line form; (e) "The owner may dispatch a meta-review of any text, signal or none." v1.10 changed none of the five sentences; each stands as v1.9 wrote it or earlier. Their claims stand in earlier IRs: (a) v1.9's C92; (b) v1.9's C17; (c) v1.9's C18; (d) v1.9's C95; (e) v1.6's C10.
+
+For the ruleset review: step 6 keys a recurrence on one passage, while the signals script and the `Mismatches:` lines key it on claims. The stranger observed it; no text change.
+
+| # | Finding (shortened) | Kind | Decision |
+|---|---|---|---|
+| 1 | "The meta-reviews so far are cases 005 and 007 to 012" before the cases are linked | SP-05 | the sentence moves to the end of the history paragraph, after the sentences that link each case |
+| 2 | "the inputs step 4 lists" beside the Inputs section | SP-04 | name the three items in step 7 (C55) and in the Stranger brief (C53): "its findings table, the fixed passages and the round's declined findings" |
+| 3 | step 7's "fixes the round's findings" against step 3's declined findings | SP-25 | rephrase, C56: "The reasoning role fixes each accepted finding of the round in the IR and then in the prose." |
+
+The stranger's first observation, fixed under case 012 change 4: the Stranger brief's report "has four parts" while step 2 adds the listed-passage sentences. C57: "The stranger's report has five parts in order: Restatement, Listed passages (one sentence for each listed passage), Findings, Readability, Counts."
+
+Claims after fixes: 57. Prose after fixes: 3,814 words. Claims check after the fix pass (base: round 2 prose): 4 changed claims, 0 missing, 0 stale. Round trip: 57 of 57. IR check: 0 violations, 0 warnings.
+
+Decided claims the fixes reworded, for the owner's list at the count's close: C53 (again), C56 (step 7's fixing sentence), C57 (the report's parts).
