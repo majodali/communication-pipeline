@@ -2,7 +2,7 @@
 
 Reader: RD-4
 Purpose: document. The revision of the branch point that carries the process changes of evaluation case 012, the meta-review of branch point v1.9 and the methodology's intermediate-representation specification's count 5, adopted by the owner on 2026-10-30.
-Status: rendered (round 7, rendered by the reasoning role 2026-10-30; unratified terms 1)
+Status: rendered (round 8, rendered by the reasoning role 2026-10-30; unratified terms 3)
 Source: the owner's decision of 2026-10-30 on evaluation case 012 (all fifteen changes adopted as recommended; terms by the default); evaluation case 012's Outcome.
 Normative: yes
 Footprint: docs/branch-point.md; docs/records/branch-point-v1.10.ir.md; docs/records/branch-point-v1.10.review.md; docs/vocabulary.md; docs/backlog.md; eval/README.md; eval/cases/012-meta-review-branch-point-v1.9-and-ir-spec-count-5-2026-10-30.md; scripts/signals.mjs; scripts/test.mjs
@@ -24,6 +24,10 @@ T6. Step-6 fix. defined-at: ../vocabulary.md#def-step-6-fix [decided: owner, 202
 T7. Awaiting restatement. defined-at: ../vocabulary.md#def-awaiting-restatement [decided: owner, 2026-10-30]
 
 T8. Fix commit: the commit that holds the round's fix pass. [proposed: this IR]
+
+T9. Present state: what is done now. [proposed: this IR]
+
+T10. Target state: what the text aims at. [proposed: this IR]
 
 ## Claims
 
@@ -209,7 +213,7 @@ C86. Case 005's change 4, a growth bound, was replaced by the third signal on 20
 
 C81. Change 11 of case 012 struck the third signal. evidence: E1, E2. [decided: owner, 2026-10-30; the history paragraph's statement, C78, merged into it in round 7]
 
-C85. The per-round word and claim counts in the review record stand in the third signal's place. evidence: E1, E2. [decided: owner, 2026-10-30]
+C85. Change 11 keeps the per-round word and claim counts as measures in the review record (case 012 change 11). evidence: E1, E2. [decided: owner, 2026-10-30; reworded in v1.10's count after round 7's confirmation, to the adopted change's text]
 
 C87. The first, second and fourth signals keep their numbers. [decided: owner, 2026-10-30]
 

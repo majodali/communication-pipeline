@@ -306,3 +306,23 @@ Omissions noticed, not counted: about 40 on changed passages. The stranger did n
 Claims after fixes: 84. Prose after fixes: 3,943 words. Claims check after the fix pass (base: round 7 prose): 8 changed claims, 0 missing, 0 stale; C78 removed. Round trip: 84 of 84. IR check: 0 violations, 0 warnings.
 
 Decided claims the fixes reworded or merged, for the owner's list at the count's close: C55, C81 (with C78), C84 (v1.9's C34), C86 (v1.6's decision record); C85 and C87 added.
+
+Confirmation: 8 of 8 fixes hold. Not held: none. Declines accepted: 0 of 0. New defects: 2.
+
+The instance (a80ef1c283104e3f7) read both files in full at fix commit 526106e. The two new defects, fixed IR first before round 8 opens (case 012 change 6): ND1, C85 read as a rule no adopted change holds; it now cites the adopted change's own text, "Change 11 keeps the per-round word and claim counts as measures in the review record.", with case 012 change 11 as its source and evidence. ND2, C82 and C83 defined present state and target state with no term elements; T9 and T10 added, proposed, and the IR's unratified terms read 3.
+
+Claims check after the confirmation's fixes (base: the round 7 fix pass's prose): 1 changed claim, 0 missing, 0 stale. Claims: 84. Prose: 3,944 words. Round trip: 84 of 84.
+
+## Round 8
+
+Branch point version and commit the count runs under: v1.10 at commit 387dc43; round 8 reads the text at this round's opening commit, named in the brief. Prose 3,944 words; IR 84 claims; unratified terms 3 (T8 fix commit, T9 present state, T10 target state).
+
+Passages awaiting restatement: none.
+
+Owner-pending findings: none.
+
+Declined findings carried in the brief: from v1.9's count, round 1's F3, round 2's 10, round 4's 11, round 5's N1 and round 6's 6; from this count, round 4's 9. Each with its reason. The brief also says that the v1.10 IR lists the claims v1.10 changed only.
+
+Forms added to the brief: none.
+
+Signals script before the round: signal 1 reads one round with a fix not held (round 3), so it does not fire; no line unparsed.

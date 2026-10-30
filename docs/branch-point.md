@@ -1,6 +1,6 @@
 # Branch point
 
-Status: under review (v1.10, 2026-10-30, the adopted changes of [evaluation case](vocabulary.md#def-evaluation-case) 012, round 7). v1.9 is active on main. The [Versions](#versions) section lists the versions.
+Status: under review (v1.10, 2026-10-30, the adopted changes of [evaluation case](vocabulary.md#def-evaluation-case) 012, round 8). v1.9 is active on main. The [Versions](#versions) section lists the versions.
 Thresholds are provisional until the [evaluation corpus](../eval/README.md) tunes them. The rules are the Rendering conditions of the methodology's
 [intermediate-representation specification](https://github.com/majodali/methodology/blob/main/docs/intermediate-representation.md)
 from 2026-10-26.
@@ -172,7 +172,7 @@ proposed no change to the D1 row's rule on joining a rule to a reason by connect
 
 Case 005's change 1, a verdict by a finding-rate threshold, is struck, because
 the verdict rule reached zero contradictions without a threshold.
-Case 005's change 3, a stop at a flat finding count, is struck because contradictions ran to round 9 while the rate was flat. Case 005's change 4, a growth bound, was replaced by the third signal on 2026-10-27, because words per IR claim measure prose drift from the IR. Change 11 of case 012 struck the third signal. The per-round word and claim counts in the review record stand in its place. The first, second and fourth signals keep their numbers.
+Case 005's change 3, a stop at a flat finding count, is struck because contradictions ran to round 9 while the rate was flat. Case 005's change 4, a growth bound, was replaced by the third signal on 2026-10-27, because words per IR claim measure prose drift from the IR. Change 11 of case 012 struck the third signal. Change 11 keeps the per-round word and claim counts as measures in the review record. The first, second and fourth signals keep their numbers.
 Case 005's change 2, SP-18 calibrated, is adopted in the narrow
 form: a duty names its actor and its trigger. The split of the methodology's IR specification into form and process is closed as not needed, because that specification reached readable at 2,808 words. Reviewing only the amended passages after round 1
 stays not recommended. Fixing only new-passage findings stays not
