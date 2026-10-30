@@ -165,7 +165,9 @@ C54. Case 008 proposed no change to the D1 row's rule on joining a rule to a rea
 
 C69. BP-02a: a paraphrase of normative text could change its force, so the reasoning role renders the normative text and only the review runs. [decided: owner, 2026-10-25; reworded in v1.10's count, round 4]
 
-C72. BP-05a: in a report the owner's ratification ask replaces the reviewer's check, because the stranger review on reports to RD-1 or RD-3 runs only on request (owner ruling, 2026-10-25). evidence: E4. [decided: owner, 2026-10-25; reworded in v1.10's count, round 5, scoped as the ruling's record reads]
+C72. BP-05a: in a report the owner's ratification ask replaces the reviewer's check. evidence: E4. [decided: owner, 2026-10-25; reworded in v1.10's count, rounds 5 and 8, split at its reason]
+
+C88. The reason: the stranger review on reports to RD-1 or RD-3 runs only on request (owner ruling, 2026-10-25). evidence: E4. [decided: owner, 2026-10-25; split from C72 in v1.10's count, round 8]
 
 C70. The script `scripts/signals.mjs` reads the confirmation lines in their fixed form. [decided: owner, 2026-10-29; reworded in v1.10's count, round 4, the first-signal clause cut as a repeat of C61]
 
@@ -191,6 +193,8 @@ C41. A round with a fix pass and no claims-check line counts as an unparsed line
 
 C80. When the unparsed line parses, the reasoning role writes `pending` again if the text is a meta-review subject. [decided: owner, 2026-10-30; reworded in v1.10's count, round 6 and after its confirmation]
 
+C89. At the end of a count, the reasoning role names the signals it checked on the `Meta-review:` line. [decided: owner, 2026-10-27; reworded in v1.10's count, round 8, the actor and the trigger named]
+
 C43. The reasoning role checks the second signal's declined findings raised again and the fourth signal by reading (case 012 change 12). evidence: E1, E2. [decided: owner, 2026-10-30]
 
 ### Meta-review history
@@ -209,7 +213,13 @@ C48. Case 012's change 3 keeps the 200-word restatement limit as written. eviden
 
 C49. Case 012's change 15 amends the evaluation corpus's Meta-review records section. evidence: E1. [decided: owner, 2026-10-30]
 
-C86. Case 005's change 4, a growth bound, was replaced by the third signal on 2026-10-27, because words per IR claim measure prose drift from the IR. [decided: owner, 2026-10-27; reworded in v1.10's count, round 7, the replacement dated]
+C90. The owner's reason for striking case 005's change 1: the verdict rule reached zero contradictions without a threshold. [decided: owner, 2026-10-27]
+
+C91. The owner's reason for striking case 005's change 3: contradictions ran to round 9 while the rate was flat. [decided: owner, 2026-10-27]
+
+C86. Case 005's change 4 was replaced by the third signal on 2026-10-27, because words per IR claim measure prose drift from the IR. [decided: owner, 2026-10-27; reworded in v1.10's count, rounds 7 and 8]
+
+C92. The owner's reason for replacing case 005's change 4: words per IR claim measure prose drift from the IR. [decided: owner, 2026-10-27]
 
 C81. Change 11 of case 012 struck the third signal. evidence: E1, E2. [decided: owner, 2026-10-30; the history paragraph's statement, C78, merged into it in round 7]
 
@@ -251,7 +261,7 @@ E4. docs/backlog.md, chunk 3's row: "Scope narrowed per the owner: reports to RD
 
 ## Asks
 
-A1. Accept branch point v1.10. Depends: C1 to C87.
+A1. Accept branch point v1.10. Depends: C1 to C92.
 
 A2. Decide the mark of a step-6 fix made in a readable round's fix pass, a gap round 1 found (finding 5). Proposed wording, revised after the round 1 confirmation: "At a readable verdict, the round's stranger instance confirms each fix other than a step-6 fix. A step-6 fix made in that round's fix pass stays `awaiting restatement`; the reasoning role lists its passage in the next count's round 1 brief." The finding counts against the verdict as a contradiction until the owner decides (case 012 change 9). Depends: C33.
 

@@ -175,7 +175,9 @@ roles have moved to project-orchestrator, this repository archives
   round's instance reads the prose before or after the claims check's
   fixes (v1.10, round 3). The Stranger brief's read-scope sentence took four
   rewordings in v1.10's count, trying to carry scope and order at once
-  (v1.10, round 5). A meta-review session with no part in the
+  (v1.10, round 5). `scripts/lint.mjs` warns under SP-02 only above
+  35 words, so step 1 misses sentences of 26 to 35 words (v1.10,
+  round 8; case 013). A meta-review session with no part in the
   rounds performs the review and reports as an
   [evaluation case](../eval/README.md).
 - [ ] **Dispatcher: row BP-00** — open. `scripts/dispatch.mjs` does not

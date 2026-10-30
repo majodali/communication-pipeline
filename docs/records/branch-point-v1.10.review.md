@@ -13,6 +13,7 @@ Reader of the reviewed text: RD-4 (a fresh agent session). Reviewer: a stranger,
 | 5 | 3,865 | 69 | 7 | 1.8 | not readable (mismatch 1; contradictions 2; undefined terms 0) |
 | 6 | 3,888 | 75 | 4 | 1.0 | not readable (mismatches 0; contradiction 1; undefined terms 0) |
 | 7 | 3,939 | 79 | 8 | 2.0 | not readable (mismatches 0; contradiction 1; undefined terms 3) |
+| 8 | 3,944 | 84 | 6 | 1.5 | not readable (mismatches 0; contradictions 0; undefined term 1) |
 
 ## Round 1
 
@@ -326,3 +327,22 @@ Declined findings carried in the brief: from v1.9's count, round 1's F3, round 2
 Forms added to the brief: none.
 
 Signals script before the round: signal 1 reads one round with a fix not held (round 3), so it does not fire; no line unparsed.
+
+Stranger model: claude-haiku-5-5, a fresh instance at the frugal tier (a2f2573c782cbcbb3), reading at commit 91355ce. Prose 3,944 words by `wordCount` (the stranger's hand estimate: about 5,000); IR 84 claims; 6 findings, 1.5 per thousand words. Restatement: no mismatch. Listed passages: none. Contradictions 0, undefined term 1 (finding 3); verdict: not readable for RD-4, on the undefined term alone.
+Mismatches: none
+
+Omissions noticed, not counted: about 28, on sentences v1.10 did not change; their claims stand in earlier IRs.
+
+For the ruleset review: findings 1 and 5 are sentences of 28 and 26 words that step 1 should have resolved before round 1. `scripts/lint.mjs` warns under SP-02 only above 35 words; from 26 to 35 it reports an info line, and only with its verbose flag. Step 1's "every SP-02 lint warning" therefore misses sentences of 26 to 35 words. Evaluation case 013 observed the same threshold.
+
+| # | Finding (shortened) | Kind | Decision |
+|---|---|---|---|
+| 1 | BP-05a's reason sentence at 28 words | SP-02 | split at "because": "In a report the owner's ratification ask replaces the reviewer's check. The reason: the stranger review on reports to RD-1 or RD-3 runs only on request (owner ruling, 2026-10-25)." (C72, C88) |
+| 2 | "The `Meta-review:` line names the signals checked" names no actor | SP-18 | "At the end of a count, the reasoning role names the signals it checked on the `Meta-review:` line." (C89) |
+| 3 | "own mismatch" first used in the history without a link | SP-04 | linked at first use to the vocabulary row. The sentence, "Case 011's change 4 confirms that the second signal counts own mismatches.", is v1.9's C46, unchanged in words; its claim stands in v1.9's IR |
+| 4, 6 | the 2026-10-27 decisions' "because" reasons are not claims of the IR | SP-01 | the owner's recorded reasons added as decided claims, so the exemption for a rule joined to its reason applies: C90 (change 1), C91 (change 3), C92 (change 4) |
+| 5 | the change 4 sentence at 26 words | SP-02 | "a growth bound," cut (C86) |
+
+Claims after fixes: 89. Prose after fixes: 3,953 words. Claims check after the fix pass (base: round 8 prose): 7 changed claims, 0 missing, 0 stale. Round trip: 89 of 89. IR check: 0 violations, 0 warnings.
+
+Decided claims the fixes reworded or split, for the owner's list at the count's close: C72 (split, with C88), C86 (again), C89 (v1.6's line rule); C90 to C92 added.
