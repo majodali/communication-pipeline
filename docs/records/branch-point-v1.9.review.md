@@ -11,6 +11,7 @@ Reader of the reviewed text: RD-4 (a fresh agent session). Reviewer: a stranger,
 | 3 | 3,577 | 65 | 10 | 2.8 | not readable (one own mismatch, not counting under the reading of 2026-10-30; contradiction 1; undefined term 1) |
 | 4 | 3,610 | 66 | 11 | 3.0 | not readable (restatement matched, no mismatch; contradictions 3; undefined terms 0) |
 | 5 | 3,656 | 70 | 11 | 3.0 | not readable (one own mismatch, a step-6 passage that counts under the override; contradictions 0; undefined terms 0) |
+| 6 | 3,785 | 79 | 9 | 2.4 | not readable (one own mismatch on a step-6 passage, counting under the override; contradictions 0; undefined terms 2) |
 
 ## Round 1, 2026-10-30
 
@@ -263,3 +264,29 @@ Awaiting restatement: round 5's step-6 fix on the Rules opening (C54, C55); the 
 Declined findings carried in the brief: round 1's F1 (the instance did not accept the decline) and F3; round 2's 9 and 10; round 4's 11; each with its reason.
 
 Signals script before the round: signals 1 and 3 not fired; signal 2 fired by reading on the Rules opening (rounds 2 and 5); signal 4 fired by reading in round 4; no line unparsed.
+
+Stranger model: claude-haiku-5-5, a fresh instance at the frugal tier. Prose 3,785 words by `wordCount`; IR 79 claims; 9 findings, 2.4 per thousand words. Restatement: one mismatch, attributed by the stranger to its own restatement, on the Rules opening: the restatement called BP-01 a table row. Contradictions 0, undefined terms 2 (findings 3 and 4 with 5); verdict: not readable for RD-4, on the override and the undefined terms.
+
+Mismatches: C54 (own; relied on C55)
+
+
+Signals script after the `Mismatches:` line: signal 2 fired by claim for the first time on this text: C55 in rounds 2 and 6, C54 in rounds 5 and 6. The Rules opening has drawn a mismatch in rounds 2, 5 and 6; the override counts it, and round 5's structural fix did not hold on restatement. The verdict table, awaiting restatement from round 5, matched.
+
+| # | Finding (shortened) | Kind | Disposition |
+|---|---|---|---|
+| 1 | own mismatch on C54: BP-01 restated as a table row | restatement, step 6 | third structural fix: the lints leave the BP series; the Dispositions section states "The reasoning role runs the lints for every IR, whatever disposition follows." with no identifier (C54); the label BP-01 is retired, with this note and C54's provenance; `scripts/dispatch.mjs` names the change; the Rules section opens with the table's subject (C87) and the first-row sentence (C55); `awaiting restatement`, third fix |
+| 2 | the confirmation-line sentence at 29 words with its template | SP-02 | rephrase: "The reasoning role records the confirmation on one line, in this form:" with the template on its own line |
+| 3 | "awaiting restatement" used one sentence before its definition | SP-04 | reorder C61 before C15 |
+| 4, 5 | "Declines accepted" and "New defects" with no step that produces them | SP-04 | add C85 before the line: "The instance also says whether it accepts each decline the reasoning role made, and names each new defect the fixes introduce."; inferred by R31 |
+| 6 | "The stranger brief sets what the stranger reads and reports." | SP-26 | declined: round 2's instance asked for the section to open with its subject and confirmed that sentence |
+| 7 | the lints "run" with no actor | SP-18 | folded into finding 1: the reasoning role runs the lints; the BP-00 cell reads "D0, under which the reasoning role still runs the lints" (C58) |
+| 8 | the readers sentence before the table | SP-10 | move: the readers sentence below the rules table |
+| 9 | "The texts that require an IR" after the Stranger brief | SP-11 | move: the section before Inputs; its anchor is unchanged |
+
+Round 5's carried items applied in the same pass: finding 6 and N2 (C74: "A step-6 fix is the structural fix made under step 6 for a mismatch that recurred."); finding 11 (the dispatch and limit sentences moved into the trigger paragraph; the case 005 decisions under their own sub-header); N3 (C78, the unparsed line covers a round after round 1 with no claims-check line); N4 (C26, "in any two rounds of the text's counts"); N5 (C79, the pointer states the rule's effect). The specification's shared items: the first row's Counts qualifier (C53); the withdrawal without a quoted reason (C83, C84); the stranger instance as actor on the no-withdrawal cell (C75); "meta-review subject" in full (C86, C70, C81). The verdict table stays identical to the specification's. Step 7 does not state the delivered text, so the specification's C248 and C249 have no counterpart here.
+
+Claims after fixes: 84. Prose after fixes: 3,892 words. Claims check after the fixes (base: round 6 prose): 16 changed claims, 0 missing, 0 stale. Round trip: 84 of 84. npm test: 42 of 42.
+
+Decided claims the fixes changed, for the owner: all are listed in A2, including the retired label BP-01.
+
+Declined findings for round 7's brief: round 1's F1 and F3; round 2's 9 and 10; round 4's 11; round 5's N1; round 6's 6; each with its reason. Passage awaiting restatement in round 7: the Rules opening and the lints sentence (C87, C55, C54), third fix.

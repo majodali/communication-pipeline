@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 // The branch point (docs/branch-point.md v1): reads one IR, computes the
-// inputs, applies BP-01..BP-09 in order, prints the disposition, and
+// inputs, applies the rules BP-02a to BP-09 in order (the lints run for
+// every IR; label BP-01 retired in v1.9), prints the disposition, and
 // appends a row to eval/dispatch-log.md unless --dry-run.
 // Usage: node scripts/dispatch.mjs <file.ir.md> [--flag review] [--dry-run] [--json]
 

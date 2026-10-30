@@ -67,13 +67,15 @@ C13. The claims check runs on the fixed prose before the round's stranger instan
 
 C14. The reasoning role fixes a changed claim the claims check reports missing or stale before the confirmation read (case 010 change 6). evidence: E1. [inferred: R16]
 
-C74. A step-6 fix is a fix made under step 6 for a mismatch that recurred. [inferred: R27]
+C85. The instance also says whether it accepts each decline the reasoning role made, and names each new defect the fixes introduce. [inferred: R31]
+
+C74. A step-6 fix is the structural fix made under step 6 for a mismatch that recurred. [inferred: R27]
 
 C59. When the instance says a fix does not hold, the reasoning role fixes again before the next round (v1.7's step 4 sentence with the trigger first). [decided: owner, 2026-10-27]
 
-C15. The reasoning role marks the re-fix of a claim `awaiting restatement` in the review record (case 011 change 6). evidence: E2. [inferred: R7]
-
 C61. A fix awaiting restatement is a fix whose hold the next round's restatement has not yet tested. [inferred: R17]
+
+C15. The reasoning role marks the re-fix of a claim `awaiting restatement` in the review record (case 011 change 6). evidence: E2. [inferred: R7]
 
 C16. In the next round's entry, the reasoning role states whether that round names the re-fixed claim on its `Mismatches:` line or in a finding (case 011 change 6). evidence: E2. [inferred: R8]
 
@@ -101,7 +103,7 @@ C22. The verdict is readable when three conditions hold. [decided: owner, 2026-1
 
 C23. The verdict's first condition: the restatement of the problem, terms and decisions has no mismatch with the IR that counts (case 010 change 1). evidence: E1. [decided: owner, 2026-10-30; reworded in rounds 3 and 5]
 
-C53. Under the first condition, a mismatch counts whatever the stranger attributes it to. evidence: E1. [decided: owner, 2026-10-30; reworded in round 5]
+C53. Under the first condition, a mismatch counts whatever the stranger attributes it to, except as the first condition's exception states. evidence: E1. [decided: owner, 2026-10-30; reworded in rounds 5 and 6]
 
 C24. The verdict's second condition: the stranger finds no contradiction. [decided: owner, 2026-10-27]
 
@@ -109,13 +111,17 @@ C63. The verdict's third condition: the stranger finds no undefined term. [decid
 
 C25. The first condition's exception: an own mismatch does not count when the stranger quotes a prose sentence that carries an IR claim (case 011 change 1). evidence: E2. [decided: owner, 2026-10-30; reworded in round 5, to the reading adopted on 2026-10-30]
 
-C26. The first condition's override: a restatement mismatch on one passage in two rounds always counts (case 011 change 1). evidence: E2. [decided: owner, 2026-10-30; reworded in round 5, in the specification's words]
+C26. The first condition's override: a restatement mismatch on one passage in any two rounds of the text's counts always counts (case 011 change 1). evidence: E2. [decided: owner, 2026-10-30; reworded in rounds 5 and 6, in the specification's words]
 
-C75. A restatement mismatch is never withdrawn at confirmation (v1.7's C15, in the verdict table). [decided: owner, 2026-10-29]
+C75. The round's stranger instance never withdraws a restatement mismatch at confirmation (v1.7's C15, in the verdict table). [inferred: R32]
 
 C76. A contradiction finding withdrawn by the round's stranger instance at confirmation, on a reason quoting the prose, does not count against the verdict. [decided: owner, 2026-10-29; reworded in round 5]
 
+C83. A contradiction finding withdrawn on a reason that does not quote the prose still counts. [inferred: R33]
+
 C77. An undefined-term finding withdrawn by the round's stranger instance at confirmation, on a reason quoting the prose, does not count against the verdict. [decided: owner, 2026-10-29; reworded in round 5]
+
+C84. An undefined-term finding withdrawn on a reason that does not quote the prose still counts. [inferred: R33]
 
 ### Stranger brief
 
@@ -123,15 +129,17 @@ C27. Before each round, the reasoning role quotes in the review record each form
 
 ### Rules
 
-C55. The first row whose condition holds decides the disposition. [inferred: R11]
+C55. The first row of the rules table whose condition holds decides the disposition. [inferred: R11]
 
-C54. Rule BP-01: the lints run for every IR, whatever disposition follows. [decided: owner, 2026-10-25; reworded in rounds 1 to 5; the row left the rules table in round 5]
+C87. The rules table maps an IR's inputs to a disposition. [inferred: R34]
+
+C54. The reasoning role runs the lints for every IR, whatever disposition follows. [decided: owner, 2026-10-25; reworded in rounds 1 to 6; the label BP-01 retired in round 6]
 
 C68. Row BP-02a stands before row BP-02, so a normative document takes D3 whatever the owner flag. [inferred: R21]
 
 C69. Rule BP-02 is the owner's review request: the owner asked for a review of this output, so the reviewer rounds run. [decided: owner, 2026-10-25]
 
-C58. Under BP-00 the lints still run, as D0, and no later disposition row applies. [inferred: R13]
+C58. Under BP-00 the reasoning role still runs the lints, as D0, and no later disposition row applies. [inferred: R13]
 
 ### Meta-review
 
@@ -157,15 +165,17 @@ C37. The script reports a `Meta-review: not indicated` line that the script's ow
 
 C67. While a line is unparsed, the reasoning role writes `Meta-review: unparsed`, naming the line, in place of `pending` or `not indicated`. [inferred: R20]
 
-C78. An unparsed line is a review-record line the signals script cannot read. [inferred: R28]
+C86. The reasoning role writes `Meta-review: pending` when the text is a meta-review subject. [decided: owner, 2026-10-27; reworded in round 6]
 
-C70. When the unparsed line parses, the reasoning role writes `pending` again for a subject text. [inferred: R22]
+C78. An unparsed line is a review-record line the signals script cannot read, or a claims-check line a round after round 1 lacks. [inferred: R28]
 
-C81. When the text is no subject and no line is unparsed, the reasoning role writes `Meta-review: not indicated`. [decided: owner, 2026-10-27; reworded in round 5]
+C70. When the unparsed line parses, the reasoning role writes `pending` again for a text that is a meta-review subject. [inferred: R22]
+
+C81. When the text is no meta-review subject and no line is unparsed, the reasoning role writes `Meta-review: not indicated`. [decided: owner, 2026-10-27; reworded in rounds 5 and 6]
 
 C82. The `Meta-review:` line names the signals checked. [decided: owner, 2026-10-27]
 
-C79. The methodology specification's rule on `Meta-review: pending` and `Meta-review: unparsed` lines in an accepted deliverable's review record applies. [inferred: R29]
+C79. Under the methodology specification's rule, a `Meta-review: pending` or `Meta-review: unparsed` line in an accepted deliverable's record is a finding of the next form audit. [inferred: R29]
 
 C38. The script's wording search skips the `Meta-review:` line (case 010 change 7). evidence: E1. [decided: owner, 2026-10-30]
 
@@ -221,7 +231,7 @@ R9. C50 depends-on C5 because the reasoning role writes the review record, and c
 
 R10. C20 refines C18 because the run after each round's `Mismatches:` line already reports every recurrence before the next round, so case 011 change 5's second run is the same check; round 1 finding 13.
 
-R11. C55 refines C54 because BP-01's condition always holds and BP-01 decides no disposition; round 1 finding 18.
+R11. C55 refines C54 because the lints run for every IR and decide no disposition, so the rules table holds dispositions only.
 
 R12. C56 refines C57 because the release register's v1.6.0 entry gives the five counts as 10, 10, 6, 3 and 4 rounds, the round counts of these five texts' review records; round 1 finding 20.
 
@@ -237,7 +247,7 @@ R22. C70 refines C67 because `unparsed` stands in for `pending` only while the l
 
 R23. C71 refines C66 because cases 005, 007 and 008 reviewed the other three of the five counts.
 
-R13. C58 refines C54 because D0 is lint only, so an IR-only document still gets the lints BP-01 names; round 1 new defect 1.
+R13. C58 refines C54 because D0 is lint only, so an IR-only document still gets the lints.
 
 R14. C2 depends-on C5 because the reasoning role writes the review record, and case 010 change 10, the claim's basis, names no actor.
 
@@ -261,6 +271,14 @@ R29. C79 refines C67 because the form-audit rule is the methodology's, Article 9
 
 R30. C80 refines C44 because case 010's changes 1, 5 and 9 and case 011's change 1 are in both lists.
 
+R31. C85 refines C12 because the confirmation line's declines-accepted and new-defects counts record what the instance answers, as every recorded round shows.
+
+R32. C75 depends-on C50 because the round's stranger instance is the one that withdraws at confirmation; v1.7's C15 named no actor.
+
+R33. C83 refines C76 because a withdrawal counts only on a reason quoting the prose, so a withdrawal on any other reason leaves the finding counting.
+
+R34. C87 refines C55 because the table's rows map conditions on the inputs to dispositions.
+
 ## Evidence
 
 E1. eval/cases/010-meta-review-ir-spec-count-4-2026-10-30.md, Outcome, changes 1 to 13 (recommended), 14 (declined) and 15 (no change).
@@ -275,4 +293,4 @@ E4. methodology docs/releases.md, v1.6.0, The meta-review trigger is signal-base
 
 A1. Accept branch point v1.9. Depends: C1 to C82.
 
-A2. Ratify or strike the new wording of the decided claims v1.9's rounds reworded, split, moved or reordered: C2; C7; C10; C11; C12 and C49; C14; C15 and C59; C16; C20; C23; C24 and C63; C25; C26; C27; C45 and C65; C50; C53; C54 (row BP-01 left the rules table); C55; C62; C66; C68 (the row order); C73; C75 to C77; C81. New rules: the `Meta-review: unparsed` line (C67, C70, C78) and the pointer to the specification's form-audit rule (C79). Depends: C2, C7, C10, C11, C12, C14, C15, C16, C20, C23, C24, C25, C26, C27, C45, C50, C53, C54, C55, C62, C66, C67, C68, C73, C75, C79, C81.
+A2. Ratify or strike the new wording of the decided claims v1.9's rounds reworded, split, moved or reordered: C2; C7; C10; C11; C12 and C49; C14; C15 and C59; C16; C20; C23; C24 and C63; C25; C26; C27; C45 and C65; C50; C53; C54 (row BP-01 left the rules table in round 5; the label BP-01 retired in round 6); C55; C62; C66; C68 (the row order); C73; C75 to C77; C81; C86; C58. New rules: the `Meta-review: unparsed` line (C67, C70, C78) and the pointer to the specification's form-audit rule (C79); a withdrawal without a quoted reason still counts (C83, C84); the instance's answer on declines and new defects (C85). Depends: C2, C7, C10, C11, C12, C14, C15, C16, C20, C23, C24, C25, C26, C27, C45, C50, C53, C54, C55, C62, C66, C67, C68, C73, C75, C79, C81, C83, C85, C86.
