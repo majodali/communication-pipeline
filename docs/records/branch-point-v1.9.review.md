@@ -7,6 +7,7 @@ Reader of the reviewed text: RD-4 (a fresh agent session). Reviewer: a stranger,
 | Round | Prose words | IR claims | Findings | Per 1,000 words | Verdict |
 |---|---|---|---|---|---|
 | 1 | 3,393 | 47 | 21 | 6.2 | not readable (restatement matched, no mismatch; contradictions 2; undefined terms 4) |
+| 2 | 3,499 | 59 | 15 | 4.3 | not readable (one own mismatch, quoted, not counting; contradictions 0; undefined terms 3) |
 
 ## Round 1, 2026-10-30
 
@@ -66,3 +67,36 @@ Claims check before the round: 23 changed claims, 0 missing, 0 stale (base: roun
 
 Declined findings carried in the brief: F1 (SP-26, the v1.9 history in the Status line and the Versions sentence; the Status line is an exempt form, and the Versions sentence is the history every version carries; the round 1 instance did not accept the decline) and F3 (SP-18, the thresholds sentence; under the SP-18 calibration a sentence that names future work and assigns it to no one is not a duty).
 Signals script before the round: no signal fired; no line unparsed.
+
+Stranger model: claude-haiku-5-5, a fresh instance at the frugal tier. Prose 3,499 words by `wordCount`; IR 59 claims; 15 findings, 4.3 per thousand words. Restatement: one mismatch, attributed by the stranger to its own restatement, with the quoted sentence "Among the rows other than BP-01, the first whose condition holds decides the disposition.", which carries C55. Contradictions 0, undefined terms 3 (findings 2, 7, 8); verdict: not readable for RD-4. Accepted 12, declined 2.
+
+Mismatches: C55 (own; relied on C55)
+
+
+Signals script after the `Mismatches:` line: no recurring mismatch; C55 stood on no earlier line; no line unparsed. C55 is not a step-6 finding and does not count, under the exception.
+
+Awaiting restatement from round 1: none; round 1 made no step-6 fix and no fix was re-fixed.
+
+| # | Finding (shortened) | Kind | Disposition |
+|---|---|---|---|
+| 1 | own mismatch on C55 | restatement | no prose defect, under the exception |
+| 2 | the Inputs table's `C`, `T` and `A` elements and the `Depends:` field undefined | SP-04 | rephrase: links to the IR specification's Element kinds and Provenance; each element kind named; the `Depends:` field glossed |
+| 3 | "The review record names the branch point version and commit" names no actor | SP-18 | rephrase C2: "At a count's start, the reasoning role records in the review record …"; C2 inferred by R14 |
+| 4 | the example entry's claim numbers unnamed | SP-05 | add C60: "Entries name claims by their claim identifiers in the IR.", linked; inferred by R15 |
+| 5 | "A changed claim reported missing or stale is fixed before the confirmation read." names no actor | SP-18 | rephrase C14: "The reasoning role fixes …"; C14 inferred by R16 |
+| 6 | "the second fix" | SP-03 | rephrase C15: "the re-fix", linked to the vocabulary row |
+| 7 | `awaiting restatement` undefined | SP-04 | add C61 at first use: "A fix awaiting restatement is a fix whose hold the next round's restatement has not yet tested."; inferred by R17 |
+| 8 | "the delivering report" | SP-04 | rephrase v1.7's C19 as C62: "the report that delivers the text to the owner" |
+| 9 | step 7's "each fix" does not exclude a step-6 fix | SP-03 | declined: at a readable verdict no step-6 fix exists, because the override makes a step-6 mismatch count against the verdict; "each fix" is exact, and a clause for a case that cannot arise adds words |
+| 10 | "The reasoning role marks each finding of the final round confirmed or unfixed." repeats | SP-26 | declined: the two sentences before it state the confirmation and the step-6 case, not the marking; the marking is a distinct recorded duty (case 008 change 5) |
+| 11 | "The second and third conditions: …" holds two claims | SP-01 | split C24; C63 the third condition |
+| 12 | the Stranger brief opens with its inputs | SP-10 | add a first sentence: "The stranger brief sets what the stranger reads and reports.", connective prose |
+| 13 | case 010 change 15's sentence at 28 words | SP-02 | split C45; C65 the list of four rules |
+| 14 | "The trigger fired on counts …" | SP-03 | rephrase v1.6's sentence as C66: "The three-round trigger fired …" |
+| 15 | the Meta-review heading names the trigger only | SP-08 | rephrase: "Meta-review: the signals, the signals script and the case decisions"; no link pointed at the old anchor |
+
+Claims after fixes: 65. Prose after fixes: 3,575 words. Claims check after the fixes (base: round 2 prose): 11 changed claims, 0 missing, 0 stale. Round trip: 65 of 65.
+
+Decided claims the fixes changed, for the owner: C2 and C14 gain the reasoning role as actor and become inferred (bases case 010 changes 10 and 6); C24 and C45 split (C63, C65); v1.7's C19 and v1.6's three-round-trigger sentence rephrased (C62, C66).
+
+Declined findings for round 3's brief: F1 and F3 of round 1, 9 and 10 of round 2, each with its reason.
