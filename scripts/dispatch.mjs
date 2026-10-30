@@ -28,8 +28,8 @@ export function inputsOf(ir, ownerFlag = '') {
 }
 
 export function decide(i) {
+  if (i.purpose === 'document' && i.normative) return { rule: 'BP-02a', disposition: 'D3' }; // D3: reviewer rounds until readable, limit ten (v1.3); before BP-02 (v1.9)
   if (i.ownerFlag === 'review') return { rule: 'BP-02', disposition: i.normative ? 'D3' : 'D2' };
-  if (i.purpose === 'document' && i.normative) return { rule: 'BP-02a', disposition: 'D3' }; // D3: reviewer rounds until readable, limit ten (v1.3)
   if (i.purpose === 'document') return { rule: 'BP-03', disposition: 'D2' };
   if (i.reader === 'RD-4' || i.reader === 'RD-5') return { rule: 'BP-04', disposition: 'D2' };
   if (i.proposedTerms > 0 && i.purpose === 'document') return { rule: 'BP-05', disposition: 'D2' };

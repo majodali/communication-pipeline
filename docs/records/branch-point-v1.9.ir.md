@@ -5,7 +5,7 @@ Purpose: document. The revision of the branch point that carries the adopted cha
 Status: rendered (reasoning role, 2026-10-30; round 4)
 Source: the owner's decision of 2026-10-30 ("For cases 010 and 011 - go with all recommendations, all terms ratified."); evaluation cases 010 and 011; the methodology specification's count-5 amendment.
 Normative: yes
-Footprint: docs/branch-point.md; docs/records/branch-point-v1.9.ir.md; docs/records/branch-point-v1.9.review.md; docs/vocabulary.md; docs/backlog.md; eval/README.md; eval/cases/010-meta-review-ir-spec-count-4-2026-10-30.md; eval/cases/011-meta-review-vision-count-2-2026-10-30.md; scripts/signals.mjs; scripts/test.mjs
+Footprint: docs/branch-point.md; docs/records/branch-point-v1.9.ir.md; docs/records/branch-point-v1.9.review.md; docs/vocabulary.md; docs/backlog.md; eval/README.md; eval/cases/010-meta-review-ir-spec-count-4-2026-10-30.md; eval/cases/011-meta-review-vision-count-2-2026-10-30.md; scripts/dispatch.mjs; scripts/signals.mjs; scripts/test.mjs
 
 ## Terms
 
@@ -18,6 +18,12 @@ T2. Re-fix. defined-at: ../vocabulary.md#def-re-fix [decided: owner, 2026-10-30]
 ### Status
 
 C1. Version 1.9 carries the adopted changes of evaluation cases 010 and 011 and the terms own mismatch and re-fix. evidence: E3. [decided: owner, 2026-10-30]
+
+### Purpose
+
+C72. The branch point protects proportional verification. [decided: owner, 2026-10-24]
+
+C73. Under proportional verification, a short report to a reader who shares the conversation costs one lint pass. [decided: owner, 2026-10-24; reworded in round 4]
 
 ### Rounds
 
@@ -49,7 +55,7 @@ C10. The review record quotes the prose sentence the stranger relied on (case 01
 
 ### Rounds step 3
 
-C11. Step 3's rules on how a fix is made bind an edit to an IR whose Status is reviewed, outside a round (case 011 change 9). evidence: E2. [decided: owner, 2026-10-30; reworded in round 3 to name the rules]
+C11. Step 3's fix rules govern every fix, including an edit outside a round to an IR whose Status is reviewed (case 011 change 9). evidence: E2. [decided: owner, 2026-10-30; reworded in rounds 3 and 4]
 
 C12. In an edit to a reviewed IR outside a round, the reasoning role cuts each claim the edit makes a duplicate (case 011 change 9). evidence: E2. [inferred: R18]
 
@@ -75,17 +81,13 @@ C50. When the instance withdraws a contradiction or undefined-term finding at co
 
 C17. The reasoning role treats as a prose finding a restatement mismatch on one passage in any two rounds of the text's counts (case 011 change 3). evidence: E2. [decided: owner, 2026-10-30]
 
-C51. A step-6 finding stands whatever the strangers attributed the mismatch to. [decided: owner, 2026-10-27]
-
-C18. The reasoning role runs the script `scripts/signals.mjs` after writing each round's `Mismatches:` line and before writing the verdict (case 010 change 2). evidence: E1. [decided: owner, 2026-10-30]
+C18. The reasoning role runs the signals script, `scripts/signals.mjs`, which reads the review record, after writing each round's `Mismatches:` line and before writing the verdict (case 010 change 2). evidence: E1. [decided: owner, 2026-10-30]
 
 C19. The script's recurrence report is step 6's check (case 010 change 2). evidence: E1. [decided: owner, 2026-10-30]
 
 C20. Before the next round, the reasoning role applies step 6 to each claim the script reports (case 011 change 5, its run folded into case 010 change 2's). evidence: E2. [inferred: R10]
 
 C62. The reasoning role lists a decided claim changed by a structural fix for the owner in the report that delivers the text to the owner (v1.7's C19 rephrased). [decided: owner, 2026-10-29]
-
-C52. The round's instance does not confirm a step-6 fix, as step 4 states (v1.7's C20 rephrased). [decided: owner, 2026-10-29]
 
 ### Rounds step 7
 
@@ -113,9 +115,13 @@ C27. The review record quotes the form the reasoning role adds to the brief and 
 
 ### Rules
 
-C55. Among the rows other than rule BP-01 (the lints run), the first row whose condition holds decides the disposition. [inferred: R11]
+C55. The first row whose condition holds decides the disposition. [inferred: R11]
 
-C54. BP-01 applies to every IR. [decided: owner, 2026-10-25]
+C54. Rule BP-01 (the lints run) stands outside that order and applies to every IR. [decided: owner, 2026-10-25; reworded in rounds 1 to 4]
+
+C68. Row BP-02a stands before row BP-02, so a normative document takes D3 whatever the owner flag. [inferred: R21]
+
+C69. Rule BP-02 is the owner's review request: the owner asked for a review of this output, so the reviewer rounds run. [decided: owner, 2026-10-25]
 
 C58. Under BP-00 the lints still run, as D0, and no later disposition row applies. [inferred: R13]
 
@@ -141,13 +147,17 @@ C36. The script exempts round 1 from the claims-check line, because the claims c
 
 C37. The script reports a `Meta-review: not indicated` line that the script's own reading contradicts (case 010 change 7). evidence: E1. [decided: owner, 2026-10-30]
 
-C67. While a line is unparsed, the reasoning role writes `Meta-review: unparsed`, naming the line, in place of `Meta-review: not indicated`. [inferred: R20]
+C67. While a line is unparsed, the reasoning role writes `Meta-review: unparsed`, naming the line, in place of `pending` or `not indicated`. [inferred: R20]
+
+C70. When the line parses, the reasoning role writes `pending` again for a subject text. [inferred: R22]
 
 C38. The script's wording search skips the `Meta-review:` line (case 010 change 7). evidence: E1. [decided: owner, 2026-10-30]
 
 C57. The trigger of three rounds predated the five counts recorded by 2026-10-27. [decided: owner, 2026-10-27]
 
 C66. The three-round trigger fired on counts that converged without any step failing (v1.6's C11, the referent named). [decided: owner, 2026-10-27]
+
+C71. The owner dispatched no meta-review for the two counts that converged: branch point v1.5 and the IR specification's count 2. evidence: E4. [inferred: R23]
 
 C56. The five counts: the rounds on methodology PR #51, the subject of case 005; the methodology's IR specification counts 1 and 2, in its review record; branch point v1.4 and v1.5, in their review records. evidence: E4. [inferred: R12]
 
@@ -203,6 +213,12 @@ R19. C49 depends-on C59 because the reasoning role is the actor that fixes and e
 
 R20. C67 refines C35 because a round the script reports unparsed bars `Meta-review: not indicated` (case 010 change 7, case 011 change 7), and the record then needs a line of its own.
 
+R21. C68 refines C55 because the first-match rule would otherwise give a normative document with the owner flag D2 and the paraphraser, against BP-02a's reason; the dispatcher checks BP-02a first.
+
+R22. C70 refines C67 because `unparsed` stands in for `pending` only while the line stays unparsed.
+
+R23. C71 refines C66 because cases 005, 007 and 008 reviewed the other three of the five counts.
+
 R13. C58 refines C54 because D0 is lint only, so an IR-only document still gets the lints BP-01 names; round 1 new defect 1.
 
 R14. C2 depends-on C5 because the reasoning role writes the review record, and case 010 change 10, the claim's basis, names no actor.
@@ -225,4 +241,6 @@ E4. methodology docs/releases.md, v1.6.0, The meta-review trigger is signal-base
 
 ## Asks
 
-A1. Accept branch point v1.9. Depends: C1 to C67.
+A1. Accept branch point v1.9. Depends: C1 to C73.
+
+A2. Ratify or strike the new wording of the decided claims v1.9's rounds reworded, split or reordered: C2; C11; C12 and C49; C14; C15 and C59; C16; C20; C23; C24 and C63; C25; C26; C45 and C65; C50; C54 and C55; C62; C66; C68 (the row order); C73. Depends: C2, C11, C12, C14, C15, C16, C20, C23, C24, C25, C26, C45, C50, C54, C55, C62, C66, C68, C73.

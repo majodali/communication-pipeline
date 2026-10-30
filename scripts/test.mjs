@@ -348,3 +348,10 @@ test('signals v1.9: a round from round 2 with no claims-check line is unparsed; 
   assert.deepEqual(t.signal1.roundsWithFailure, [2, 3]);
   assert.equal(t.signal1.fired, true);
 });
+
+test('dispatch v1.9: BP-02a stands before BP-02, so a normative document takes D3 with the owner flag', () => {
+  const norm = parseIR(GOOD_IR.replace('Purpose: report.', 'Purpose: document.').replace('Status: draft', 'Status: draft\nNormative: yes'));
+  assert.deepEqual(decide(inputsOf(norm, 'review')), { rule: 'BP-02a', disposition: 'D3' });
+  const rep = parseIR(GOOD_IR.replace('[proposed: this IR]', '[decided: owner, 2026-10-25]'));
+  assert.deepEqual(decide(inputsOf(rep, 'review')), { rule: 'BP-02', disposition: 'D2' });
+});

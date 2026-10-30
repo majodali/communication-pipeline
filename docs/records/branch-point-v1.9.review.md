@@ -8,7 +8,8 @@ Reader of the reviewed text: RD-4 (a fresh agent session). Reviewer: a stranger,
 |---|---|---|---|---|---|
 | 1 | 3,393 | 47 | 21 | 6.2 | not readable (restatement matched, no mismatch; contradictions 2; undefined terms 4) |
 | 2 | 3,499 | 59 | 15 | 4.3 | not readable (one own mismatch, quoted, not counting; contradictions 0; undefined terms 3) |
-| 3 | 3,577 | 65 | 10 | 2.8 | not readable (one own mismatch that counts; contradiction 1; undefined term 1) |
+| 3 | 3,577 | 65 | 10 | 2.8 | not readable (one own mismatch, not counting under the reading of 2026-10-30; contradiction 1; undefined term 1) |
+| 4 | 3,610 | 66 | 11 | 3.0 | not readable (restatement matched, no mismatch; contradictions 3; undefined terms 0) |
 
 ## Round 1, 2026-10-30
 
@@ -124,7 +125,7 @@ Declined findings carried in the brief: round 1's F1 (the instance did not accep
 
 Signals script before the round: no signal fired; no line unparsed.
 
-Stranger model: claude-haiku-5-5, a fresh instance at the frugal tier. Prose 3,577 words by `wordCount`; IR 65 claims; 10 findings, 2.8 per thousand words. Restatement: one mismatch, attributed by the stranger to its own restatement, quoting "The first condition: the stranger's restatement of the problem, terms and decisions has no mismatch with the IR." That sentence carries C23, not C25, so the exception does not apply: the mismatch counts. Contradiction 1 (finding 10), undefined term 1; verdict: not readable for RD-4.
+Stranger model: claude-haiku-5-5, a fresh instance at the frugal tier. Prose 3,577 words by `wordCount`; IR 65 claims; 10 findings, 2.8 per thousand words. Restatement: one mismatch, attributed by the stranger to its own restatement, quoting "The first condition: the stranger's restatement of the problem, terms and decisions has no mismatch with the IR." That sentence carries C23, not C25. The mismatch is recorded. Under the reading of the exception the Orchestrator adopted on 2026-10-30 (a quoted sentence that carries an IR claim faithfully, whichever claim), it does not count; the round's verdict, not readable, is unchanged. Contradiction 1 (finding 10), undefined term 1; verdict: not readable for RD-4.
 
 Mismatches: C25 (own; relied on C23)
 
@@ -167,3 +168,32 @@ Awaiting restatement: none.
 Declined findings carried in the brief: round 1's F1 (the instance did not accept the decline) and F3; round 2's 9 and 10; each with its reason.
 
 Signals script before the round: no signal fired; no line unparsed. Signal 4 by reading: round 3's contradiction (finding 10) sat on two sentences no earlier round's fix touched; not fired.
+
+Stranger model: claude-haiku-5-5, a fresh instance at the frugal tier. Prose 3,610 words by `wordCount`; IR 66 claims; 11 findings, 3.0 per thousand words. Restatement: matched the IR, no mismatch. Contradictions 3 (findings 8, 9, 10), undefined terms 0; verdict: not readable for RD-4.
+
+Mismatches: none
+
+
+Signals script after the `Mismatches:` line: no recurring mismatch; no line unparsed. Signal 4, by reading: fired. Round 4's contradiction 9 (pending against unparsed) sits on the `Meta-review: unparsed` sentence, which round 3's fix of finding 10 wrote. Contradictions 8 (row BP-02 against BP-02a) and 10 (the counts with no meta-review) sit on passages round 3's fix of finding 9 and round 1's fix of F20 touched. The text is a meta-review subject at the count's end unless the owner rules otherwise.
+
+| # | Finding (shortened) | Kind | Disposition |
+|---|---|---|---|
+| 1 | Purpose's sentence joins the protection and its cost | SP-01 | split: C72 "The branch point protects proportional verification."; C73 "Under proportional verification, a short report … costs one lint pass." |
+| 2 | "readable" used before the verdict section defines it | SP-04 | add the link at first use to "The verdict and the status lines" |
+| 3 | step 6's "A step-6 finding stands whatever the strangers attributed the mismatch to" repeats the override | SP-26 | cut C51; the verdict's override carries the rule |
+| 4 | `scripts/signals.mjs` named by path only at first use | SP-05 | rephrase C18: "the signals script, `scripts/signals.mjs`, which reads the review record" |
+| 5 | "as step 4 states" repeats step 4's exclusion | SP-26 | cut C52 |
+| 6 | "case 009" unlinked at first use in the Stranger brief | SP-05 | add the link |
+| 7 | Rules opens with the BP-01 exception | SP-11 | rephrase C55 and C54: "The first row whose condition holds decides the disposition. Rule BP-01 (the lints run) stands outside that order and applies to every IR." |
+| 8 | row BP-02 before BP-02a gives a normative document with the owner flag D2 | SP-25 | reorder: BP-02a before BP-02 (C68, inferred by R21); `scripts/dispatch.mjs` checks BP-02a first; one test added |
+| 9 | `pending` against `unparsed` | SP-25 | fixed with round 3's N1: C67 "… in place of `pending` or `not indicated`", C70 "When the line parses, the reasoning role writes `pending` again for a subject text." |
+| 10 | "The owner dispatched no meta-review for those counts" against cases 005 and 008 | SP-25 | rephrase as C71: "The owner dispatched no meta-review for the two counts that converged: branch point v1.5 and the IR specification's count 2." |
+| 11 | "stays not recommended" twice names no actor | SP-18 | declined: the sentences record the owner's decisions on case recommendations, not duties |
+
+Round 3's carried items applied in the same pass: finding 9 re-fixed (C69, BP-02 named under "Why each rule" as the owner's review request); N1 as finding 9 above; N2 (C11: "The rules above govern every fix, including an edit outside a round to an IR whose Status is reviewed."); N3 (C49's prose: "The reasoning role also amends each claim the edit makes stale."). A2 asks the owner to ratify or strike the new wording of every decided claim v1.9's rounds reworded, split or reordered.
+
+Claims after fixes: 70. Prose after fixes: 3,656 words. Claims check after the fixes (base: round 4 prose): 11 changed claims, 0 missing, 0 stale; C51 and C52 removed. Round trip: 70 of 70. npm test: 42 of 42.
+
+Decided claims the fixes changed, for the owner: all are listed in A2; the row order BP-02a before BP-02 (C68) is new, and the dispatcher follows it.
+
+Declined findings for round 5's brief: round 1's F1 and F3; round 2's 9 and 10; round 4's 11; each with its reason.
