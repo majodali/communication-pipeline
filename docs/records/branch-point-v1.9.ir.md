@@ -45,7 +45,9 @@ C6. An own mismatch is a restatement mismatch the stranger attributes to its own
 
 C7. When writing the `Mismatches:` line, the reasoning role marks an own mismatch's claim `(own)` (case 011 change 2). evidence: E2. [inferred: R24]
 
-C8. Each entry on a `Mismatches:` line names the claim the restatement contradicts and, after "relied on", the claim of the sentence the stranger quoted (case 010 change 3). evidence: E1. [decided: owner, 2026-10-30]
+C8. Each entry on a `Mismatches:` line names the claim the restatement contradicts (case 010 change 3). evidence: E1. [decided: owner, 2026-10-30; reworded in round 8]
+
+C102. After "relied on", the entry names the claim of the sentence the stranger quoted (case 010 change 3). evidence: E1. [decided: owner, 2026-10-30; split from C8 in round 8]
 
 C60. Entries on a `Mismatches:` line name claims by their claim identifiers in the IR. [inferred: R15]
 
@@ -109,7 +111,9 @@ C21. Step 7's claims check runs as in step 4 (case 010 change 6). evidence: E1. 
 
 C91. Step 7 applies at a readable verdict and at the limit. [decided: owner, 2026-10-29; reworded in round 7]
 
-C92. At step 7, the round's stranger instance confirms each fix other than a step-6 fix before delivery or the owner's decision. [decided: owner, 2026-10-29; reworded in round 7]
+C92. At a readable verdict, the round's stranger instance confirms each fix before delivery. [decided: owner, 2026-10-29; reworded in rounds 7 and 8]
+
+C103. At the limit, the final round's stranger instance confirms each fix other than a step-6 fix. [decided: owner, 2026-10-29; split from C92 in round 8]
 
 C93. At step 7, the reasoning role marks each finding of the round confirmed, or unfixed when the instance did not confirm its fix. [decided: owner, 2026-10-29; reworded in round 7]
 
@@ -159,7 +163,7 @@ C68. Row BP-02a stands before row BP-02, so a normative document takes D3 whatev
 
 C69. Rule BP-02 is the owner's review request: the owner asked for a review of this output, so the reviewer rounds run. [decided: owner, 2026-10-25]
 
-C58. Under BP-00 the reasoning role still runs the lints, as D0, and no later disposition row applies. [inferred: R13]
+C58. Under BP-00 no later disposition row applies. [inferred: R13]
 
 ### Meta-review
 
@@ -225,13 +229,17 @@ C42. The owner adopted case 010's thirteen recommended changes and case 011's ni
 
 C43. Nineteen of the twenty-two adopted changes are the process changes of v1.9: case 010's changes 1 to 10 and case 011's changes 1, 2, 3 and 5 to 10. evidence: E3. [decided: owner, 2026-10-30]
 
+C44. Seven of the twenty-two adopted changes amend the methodology's intermediate-representation specification as its count 5: case 010's changes 1, 5, 9, 11, 12 and 13 and case 011's change 1. evidence: E3. [decided: owner, 2026-10-30]
+
+C80. Four of the seven specification amendments are also among the nineteen process changes of v1.9. [inferred: R30]
+
 C45. Case 010's change 15 confirms four rules as written. evidence: E1. [decided: owner, 2026-10-30]
 
 C65. The four rules case 010's change 15 confirms: the withdrawal at confirmation, the fourth signal, the final round's fixes at the limit, and the limit of ten. evidence: E1. [decided: owner, 2026-10-30]
 
 C46. Case 011's change 4 confirms that the second signal counts own mismatches. evidence: E2. [decided: owner, 2026-10-30]
 
-C47. Case 010's change 14 and case 011's change 11, each an SP-01 calibration, stay declined. evidence: E3. [decided: owner, 2026-10-30]
+C47. Cases 010 and 011 each declined one change of its own, an SP-01 calibration: case 010's change 14 and case 011's change 11. evidence: E3. [decided: owner, 2026-10-30; reworded in round 8]
 
 ## Relations
 
@@ -271,7 +279,7 @@ R22. C70 refines C67 because `unparsed` stands in for `pending` only while the l
 
 R23. C71 refines C66 because cases 005, 007 and 008 reviewed the other three of the five counts.
 
-R13. C58 refines C54 because D0 is lint only, so an IR-only document still gets the lints.
+R13. C58 refines C54 because D0 is lint only, so an IR-only document still gets the lints C54 states, and the row adds only that no later row applies.
 
 R14. C2 depends-on C5 because the reasoning role writes the review record, and case 010 change 10, the claim's basis, names no actor.
 
@@ -292,6 +300,8 @@ R27. C74 refines C17 because step 6 makes a recurring mismatch a prose finding, 
 R28. C78 refines C35 because the script reports the lines it cannot read as unparsed.
 
 R29. C79 refines C67 because the form-audit rule is the methodology's, Article 9, and the specification states it for both lines.
+
+R30. C80 refines C44 because case 010's changes 1, 5 and 9 and case 011's change 1 are in both lists.
 
 R31. C85 refines C95 because the confirmation line's declines-accepted and new-defects counts record what the instance answers.
 
@@ -327,4 +337,4 @@ E5. The review records docs/records/branch-point-v1.4.review.md to docs/records/
 
 A1. Accept branch point v1.9. Depends: C1 to C82.
 
-A2. Ratify or strike the new wording of the decided claims v1.9's rounds reworded, split, moved or reordered: C2; C7; C10; C11; C12 and C49; C14; C15 and C59; C16; C20; C23; C24 and C63; C25; C26; C27; C45 and C65; C50; C53; C54 (row BP-01 left the rules table in round 5; the label BP-01 retired in round 6); C55; C62; C66; C68 (the row order); C73; C75 to C77; C81; C86; C58; C89; C91 to C93; C95; C98 and C100; C101. New rules: the `Meta-review: unparsed` line (C67, C70, C78) and the pointer to the specification's form-audit rule (C79); a withdrawal without a quoted reason still counts (C83, C84); the instance's answer on declines and new defects (C85, C88); the declines sent at confirmation (C99); the override governs the exception (C90); the claims-check line (C96, C97). Cut in round 7: C44 and C80, the process-change counts the Versions line carries. Depends: C2, C7, C10, C11, C12, C14, C15, C16, C20, C23, C24, C25, C26, C27, C45, C50, C53, C54, C55, C62, C66, C67, C68, C73, C75, C79, C81, C83, C85, C86, C89, C90, C91, C95, C98, C99, C100, C101.
+A2. Ratify or strike the new wording of the decided claims v1.9's rounds reworded, split, moved or reordered: C2; C7; C10; C11; C12 and C49; C14; C15 and C59; C16; C20; C23; C24 and C63; C25; C26; C27; C45 and C65; C50; C53; C54 (row BP-01 left the rules table in round 5; the label BP-01 retired in round 6); C55; C62; C66; C68 (the row order); C73; C75 to C77; C81; C86; C58; C89; C91 to C93; C95; C98 and C100; C101; C8 and C102; C92 and C103; C47; C58 (its lint clause cut in round 8, the lints stated once in C54). New rules: the `Meta-review: unparsed` line (C67, C70, C78) and the pointer to the specification's form-audit rule (C79); a withdrawal without a quoted reason still counts (C83, C84); the instance's answer on declines and new defects (C85, C88); the declines sent at confirmation (C99); the override governs the exception (C90); the claims-check line (C96, C97). C44 and C80, cut in round 7, restored in round 8 as the specification-amendment counts. Depends: C2, C7, C10, C11, C12, C14, C15, C16, C20, C23, C24, C25, C26, C27, C45, C50, C53, C54, C55, C62, C66, C67, C68, C73, C75, C79, C81, C83, C85, C86, C89, C90, C91, C95, C98, C99, C100, C101, C102, C103, C47.

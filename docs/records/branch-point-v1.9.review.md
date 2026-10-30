@@ -13,6 +13,7 @@ Reader of the reviewed text: RD-4 (a fresh agent session). Reviewer: a stranger,
 | 5 | 3,656 | 70 | 11 | 3.0 | not readable (one own mismatch, a step-6 passage that counts under the override; contradictions 0; undefined terms 0) |
 | 6 | 3,785 | 79 | 9 | 2.4 | not readable (one own mismatch on a step-6 passage, counting under the override; contradictions 0; undefined terms 2) |
 | 7 | 3,892 | 84 | 8 | 2.1 | not readable (one own mismatch, quoted, not counting; contradiction 1; undefined term 1) |
+| 8 | 3,874 | 96 | 6 | 1.5 | readable (restatement matched, no mismatch; contradictions 0; undefined terms 0) |
 
 ## Round 1, 2026-10-30
 
@@ -351,3 +352,29 @@ Awaiting restatement: none; round 7 confirmed the Rules opening's third fix.
 Declined findings carried in the brief: round 1's F1 (the instance did not accept the decline) and F3; round 2's 9 and 10; round 4's 11; round 5's N1; round 6's 6; each with its reason.
 
 Signals script before the round: signals 1 and 2 fired as before (rounds 3 and 5; C55, C54); signal 3 not fired; signal 4 fired by reading in round 4; no line unparsed. The text is a meta-review subject at the count's end.
+
+Stranger model: claude-haiku-5-5, a fresh instance at the frugal tier (a97f5c0d8113aae3f). Prose 3,874 words by `wordCount` (the stranger's estimate: about 3,800); IR 96 claims; 6 findings, 1.5 per thousand words. Restatement: matched the IR, no mismatch. Contradictions 0, undefined terms 0; no declined finding raised again; verdict: readable for RD-4. The count ends at round 8. Under step 7, the findings are fixed and the round's instance confirms each before delivery.
+
+Mismatches: none
+
+
+Signals script after the `Mismatches:` line: signals 1 and 2 as before (rounds 3, 5 and 7; C55, C54); signal 3 not fired; signal 4 fired by reading in round 4; no line unparsed.
+
+Awaiting restatement: the Rules opening matched on C87 and C55, so that passage no longer awaits restatement. The lint sentence (C54) was not restated in round 7 or round 8, and finding 4 read it only as a duplicate. C54 stays `awaiting restatement` at the close; the count closes readable with one step-6 passage unmatched, and the owner rules whether that blocks delivery.
+
+| # | Finding (shortened) | Kind | Fix | Confirmation |
+|---|---|---|---|---|
+| 1 | "reasoning role" first used in The texts that require an IR with no link | SP-04 | add the link at first use | pending |
+| 2 | step 2's `Mismatches:` sentence states the contradicted and the relied-on claim together | SP-01 | split C8; C102 "After "relied on", the entry names the claim of the sentence the stranger quoted." | pending |
+| 3 | SP-18 first appears in step 3 with no name or link | SP-05 | add the link to the style specification's rule table | pending |
+| 4 | row BP-00's "under which the reasoning role still runs the lints" repeats the Dispositions sentence | SP-26 | cut the clause; C58 keeps only "no later disposition row applies"; the lints stay stated once (C54); no merge of claims | pending |
+| 5 | RD-5 and RD-2 first appear in rows BP-04 and BP-06 with no name | SP-05 | add the names in the rows: "RD-4 (fresh agent session) or RD-5 (external reader)", "RD-2 (human owner, returning)" | pending |
+| 6 | "Each case declined one change of its own" names no case | SP-03 | rephrase C47: "Cases 010 and 011 each declined one change of its own, …" | pending |
+
+Round 7's carried items applied in the same pass: finding 8 re-fixed by option (a): the history again states "Seven of the twenty-two amend the methodology's intermediate-representation specification as its count 5. Four of the seven are also among the nineteen process changes of v1.9." (C44, C80 restored; the nineteen count stays in the Versions line); new defect 2: step 7's confirmation has one trigger per case, "At a readable verdict, the round's stranger instance confirms each fix before delivery. At the limit, the final round's stranger instance confirms each fix other than a step-6 fix." (C92, C103).
+
+Owner notes, not findings: the count closes readable with C54 unmatched on restatement; the Status sentence "Until the owner accepts v1.7, v1.6 is active on main" does not say what accepting v1.9 does (already on the owner list).
+
+Claims after fixes: 100. Prose after fixes: 3,915 words. Claims check after the fixes (base: round 8 prose): 8 changed claims, 0 missing, 0 stale. Round trip: 100 of 100. npm test: 42 of 42.
+
+The confirmation line, the verdict and the `Meta-review:` line follow when the round's instance confirms.
