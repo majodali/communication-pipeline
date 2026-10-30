@@ -2,7 +2,7 @@
 
 Reader: RD-4
 Purpose: document. The revision of the branch point that carries the process changes of evaluation case 012, the meta-review of branch point v1.9 and the methodology's intermediate-representation specification's count 5, adopted by the owner on 2026-10-30.
-Status: rendered (round 5, rendered by the reasoning role 2026-10-30; unratified terms 1)
+Status: rendered (round 6, rendered by the reasoning role 2026-10-30; unratified terms 1)
 Source: the owner's decision of 2026-10-30 on evaluation case 012 (all fifteen changes adopted as recommended; terms by the default); evaluation case 012's Outcome.
 Normative: yes
 Footprint: docs/branch-point.md; docs/records/branch-point-v1.10.ir.md; docs/records/branch-point-v1.10.review.md; docs/vocabulary.md; docs/backlog.md; eval/README.md; eval/cases/012-meta-review-branch-point-v1.9-and-ir-spec-count-5-2026-10-30.md; scripts/signals.mjs; scripts/test.mjs
@@ -60,6 +60,10 @@ C12. Each entry on a `Mismatches:` line names the claim the restatement contradi
 C13. After "relied on", the entry names the claim of the sentence the stranger quoted. [decided: owner, 2026-10-30]
 
 C73. The reasoning role names each claim in an entry by its claim identifier in the IR. [decided: owner, 2026-10-30; reworded in v1.10's count, round 5, the actor named]
+
+C65. In step 2, the stranger reads no file other than the prose and the IR. [decided: owner, 2026-10-30; reworded in v1.10's count, rounds 3, 4 and 5, and after rounds 3 and 5's confirmations: five wordings; moved from the Stranger brief into step 2 as a structural fix; awaiting restatement]
+
+C53. At steps 4 and 7, the round's instance also reads the findings table, the fixed passages and the declined findings. [decided: owner, 2026-10-30; reworded in v1.10's count, rounds 1, 2 and 3; moved into step 2 after round 5's confirmation]
 
 C14. An entry on a `Mismatches:` line reads, for example, `C41 (relied on C35)` (case 012 change 1). evidence: E1, E2. [decided: owner, 2026-10-30]
 
@@ -144,10 +148,6 @@ C34. The reasoning role does not fix in the count a new defect the step-7 confir
 C35. The reasoning role lists a new defect the step-7 confirmation names for the owner (case 012 change 8). evidence: E1, E2. [decided: owner, 2026-10-30]
 
 C51. The reasoning role fixes the new defect in the next edit of the text (case 012 change 8). evidence: E1, E2. [decided: owner, 2026-10-30; reworded in v1.10's count, round 1]
-
-C53. At Rounds steps 4 and 7 the round's instance also reads the findings table, the fixed passages and the declined findings. [decided: owner, 2026-10-30; reworded in v1.10's count, rounds 1, 2 and 3]
-
-C65. For its review, the stranger reads two files and nothing else: the prose, then the IR. [decided: owner, 2026-10-30; reworded in v1.10's count, rounds 3, 4 and 5, and after round 3's confirmation: four rewordings]
 
 C57. The stranger's report has five parts in order: Restatement, Listed passages, Findings, Readability, Counts (case 012 change 4). evidence: E1, E2. [decided: owner, 2026-10-30; reworded in v1.10's count, round 2 and after its confirmation]
 

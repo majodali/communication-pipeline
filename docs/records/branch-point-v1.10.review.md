@@ -227,3 +227,23 @@ The C65 wording differs from the Orchestrator's suggestion, "The stranger reads 
 Claims after fixes: 75. Prose after fixes: 3,890 words. Claims check after the fix pass (base: round 5 prose): 10 changed claims, 0 missing, 0 stale. Round trip: 75 of 75. IR check: 0 violations, 0 warnings.
 
 Decided claims the fixes reworded, for the owner's list at the count's close: C19, C65 (fourth rewording), C71 (again), C72, C73, C74 to C77.
+
+Confirmation: 7 of 7 fixes hold. Not held: none. Declines accepted: 0 of 0. New defects: 1.
+
+The instance (a14a756c4fb06e7bd) read both files in full at fix commit 7657b6a. The new defect, N1 (SP-25), fell on C65 again: "For its review, the stranger reads two files and nothing else" against the reads at steps 4 and 7, with "its review" naming no clear referent. The sentence has now failed five wordings on one adjacency, the Stranger brief paragraph beside the confirmation inputs. At the Orchestrator's direction it takes a structural fix, though step 6's trigger is a mismatch: the file-scope claim moves out of the Stranger brief paragraph into step 2, beside the read-order sentence, and the confirmation inputs move with it. Step 2 now reads: "The stranger reads the prose, writes its restatement, and only then reads the IR. In step 2, the stranger reads no file other than the prose and the IR. At steps 4 and 7, the round's instance also reads the findings table, the fixed passages and the declined findings." The Stranger brief paragraph's two sentences are cut. Reason: scope and order now sit together, and the extension at steps 4 and 7 is stated in the same place. C65 and C53 carry the rewording and move notes. The step 2 passage is marked `awaiting restatement` and listed in round 6's brief for a one-sentence restatement.
+
+Claims check after the confirmation's fix (base: the round 5 fix pass's prose): 2 changed claims, 0 missing, 0 stale. Claims: 75. Prose: 3,888 words. Round trip: 75 of 75.
+
+## Round 6
+
+Branch point version and commit the count runs under: v1.10 at commit 387dc43; round 6 reads the text at this round's opening commit, named in the brief. Prose 3,888 words; IR 75 claims; unratified terms 1 (T8, fix commit).
+
+Passage awaiting restatement, listed in the brief for a one-sentence restatement (case 012 change 4): step 2's read scope with the read order and the confirmation inputs (C65, C53), the structural fix after round 5's confirmation.
+
+Owner-pending findings: none.
+
+Declined findings carried in the brief: from v1.9's count, round 1's F3, round 2's 10, round 4's 11, round 5's N1 and round 6's 6; from this count, round 4's 9. Each with its reason. The brief also says that the v1.10 IR lists the claims v1.10 changed only.
+
+Forms added to the brief: none.
+
+Signals script before the round: signal 1 reads one round with a fix not held (round 3), so it does not fire; no line unparsed.
