@@ -2,7 +2,7 @@
 
 Reader: RD-4
 Purpose: document. The revision of the branch point that carries the adopted changes of evaluation cases 010 and 011, the meta-reviews of the methodology's intermediate-representation specification's count 4 and the vision document's count 2, adopted by the owner on 2026-10-30 with the terms own mismatch and re-fix.
-Status: rendered (reasoning role, 2026-10-30; round 2)
+Status: rendered (reasoning role, 2026-10-30; round 3)
 Source: the owner's decision of 2026-10-30 ("For cases 010 and 011 - go with all recommendations, all terms ratified."); evaluation cases 010 and 011; the methodology specification's count-5 amendment.
 Normative: yes
 Footprint: docs/branch-point.md; docs/records/branch-point-v1.9.ir.md; docs/records/branch-point-v1.9.review.md; docs/vocabulary.md; docs/backlog.md; eval/README.md; eval/cases/010-meta-review-ir-spec-count-4-2026-10-30.md; eval/cases/011-meta-review-vision-count-2-2026-10-30.md; scripts/signals.mjs; scripts/test.mjs
@@ -67,7 +67,7 @@ C15. The reasoning role marks the re-fix of a claim `awaiting restatement` in th
 
 C61. A fix awaiting restatement is a fix whose hold the next round's restatement has not yet tested. [inferred: R17]
 
-C16. In the next round's entry, the reasoning role states whether that round names the second fix's claim on its `Mismatches:` line or in a finding (case 011 change 6). evidence: E2. [inferred: R8]
+C16. In the next round's entry, the reasoning role states whether that round names the re-fixed claim on its `Mismatches:` line or in a finding (case 011 change 6). evidence: E2. [inferred: R8]
 
 C50. When the instance withdraws a contradiction or undefined-term finding at confirmation, on a reason quoting the prose, the reasoning role marks the finding withdrawn (v1.7's C14, case 009 change 2). [inferred: R9]
 
@@ -193,6 +193,10 @@ R10. C20 refines C18 because the run after each round's `Mismatches:` line alrea
 
 R11. C55 refines C54 because BP-01's condition always holds and BP-01 decides no disposition; round 1 finding 18.
 
+R12. C56 refines C57 because the release register's v1.6.0 entry gives the five counts as 10, 10, 6, 3 and 4 rounds, the round counts of these five texts' review records; round 1 finding 20.
+
+R13. C58 refines C54 because D0 is lint only, so an IR-only document still gets the lints BP-01 names; round 1 new defect 1.
+
 R14. C2 depends-on C5 because the reasoning role writes the review record, and case 010 change 10, the claim's basis, names no actor.
 
 R15. C60 refines C8 because an entry names a claim, and the IR names each claim by its identifier.
@@ -200,10 +204,6 @@ R15. C60 refines C8 because an entry names a claim, and the IR names each claim 
 R16. C14 depends-on C59 because the reasoning role is the actor that fixes, and case 010 change 6, the claim's basis, names no actor.
 
 R17. C61 refines C15 because the next round's restatement is the test a step-6 fix or a re-fix waits for.
-
-R13. C58 refines C54 because D0 is lint only, so an IR-only document still gets the lints BP-01 names; round 1 new defect 1.
-
-R12. C56 refines C57 because the release register's v1.6.0 entry gives the five counts as 10, 10, 6, 3 and 4 rounds, the round counts of these five texts' review records; round 1 finding 20.
 
 ## Evidence
 

@@ -97,6 +97,28 @@ Awaiting restatement from round 1: none; round 1 made no step-6 fix and no fix w
 
 Claims after fixes: 65. Prose after fixes: 3,575 words. Claims check after the fixes (base: round 2 prose): 11 changed claims, 0 missing, 0 stale. Round trip: 65 of 65.
 
+Confirmation: 14 of 14 fixes hold. Not held: none. Declines accepted: 2 of 2. New defects: 3.
+
+Re-fixed before round 3:
+
+| # | New defect (shortened) | Kind | Re-fix |
+|---|---|---|---|
+| N1 | the Meta-review heading dropped the trigger the section opens with | SP-08 | heading: "Meta-review: the trigger, the signals, the signals script and the case decisions" |
+| N2 | C16 says "the second fix's claim" while the prose says "the fixed claim" | IR | C16 and the prose: "whether that round names the re-fixed claim on its `Mismatches:` line or in a finding" |
+| N3 | the IR's Relations list R14 to R17 before R12 and R13 | IR | reordered R12 to R17; no content changed |
+
 Decided claims the fixes changed, for the owner: C2 and C14 gain the reasoning role as actor and become inferred (bases case 010 changes 10 and 6); C24 and C45 split (C63, C65); v1.7's C19 and v1.6's three-round-trigger sentence rephrased (C62, C66).
 
 Declined findings for round 3's brief: F1 and F3 of round 1, 9 and 10 of round 2, each with its reason.
+
+## Round 3, 2026-10-30
+
+Branch point version and commit the round runs under: v1.9 at this round's opening commit. Prose 3,577 words; IR 65 claims.
+
+Claims check before the round: 12 changed claims, 0 missing, 0 stale (base: round 2 prose).
+
+Awaiting restatement: none; rounds 1 and 2 made no step-6 fix, and no fix was re-fixed.
+
+Declined findings carried in the brief: round 1's F1 (the instance did not accept the decline) and F3; round 2's 9 and 10; each with its reason.
+
+Signals script before the round: no signal fired; no line unparsed.
