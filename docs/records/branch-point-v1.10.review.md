@@ -266,3 +266,23 @@ Omissions noticed, not counted: seven on sentences v1.10 did not change, whose c
 Claims after fixes: 78. Prose after fixes: 3,910 words. Claims check after the fix pass (base: round 6 prose): 7 changed claims, 0 missing, 0 stale. Round trip: 78 of 78. IR check: 0 violations, 0 warnings.
 
 Decided claims the fixes reworded, for the owner's list at the count's close: C40, C53 (again), C65 (its sixth wording), C71 (again), C80 (v1.9's C70); C78 added.
+
+Confirmation: 4 of 4 fixes hold. Not held: none. Declines accepted: 0 of 0. New defects: 4.
+
+The instance (a3bd5db7c45481380) read both files in full at fix commit 98a19d4. The four new defects, fixed IR first before round 7 opens (case 012 change 6): N1 (SP-25), C80's cut let `pending` apply to every text, against `not indicated` for a non-subject; the condition is restored: "... writes `pending` again if the text is a meta-review subject." N2 (SP-25), the decision of 2026-10-27 "replaced by the third signal" against change 11; a sentence under that record, C81: "Change 11 of case 012 struck the third signal, and the first, second and fourth signals keep their numbers.", as the specification's C288 reads; the Orchestrator's semicolon became "and". N3 (SP-26), step 2's list had "with their reasons" and step 7's did not; step 7's list (C55) gains it. N4 (IR), R7 cited C17 for the recording duty; step 3's recording sentence is unchanged since v1.4, and R7 now cites branch point v1.4's IR, C8.
+
+Claims check after the confirmation's fixes (base: the round 6 fix pass's prose): 3 changed claims, 0 missing, 0 stale. Claims: 79. Prose: 3,939 words. Round trip: 79 of 79.
+
+## Round 7
+
+Branch point version and commit the count runs under: v1.10 at commit 387dc43; round 7 reads the text at this round's opening commit, named in the brief. Prose 3,939 words; IR 79 claims; unratified terms 1 (T8, fix commit).
+
+Passages awaiting restatement: none.
+
+Owner-pending findings: none.
+
+Declined findings carried in the brief: from v1.9's count, round 1's F3, round 2's 10, round 4's 11, round 5's N1 and round 6's 6; from this count, round 4's 9. Each with its reason. The brief also says that the v1.10 IR lists the claims v1.10 changed only.
+
+Forms added to the brief: none.
+
+Signals script before the round: signal 1 reads one round with a fix not held (round 3), so it does not fire; no line unparsed.

@@ -2,7 +2,7 @@
 
 Reader: RD-4
 Purpose: document. The revision of the branch point that carries the process changes of evaluation case 012, the meta-review of branch point v1.9 and the methodology's intermediate-representation specification's count 5, adopted by the owner on 2026-10-30.
-Status: rendered (round 6, rendered by the reasoning role 2026-10-30; unratified terms 1)
+Status: rendered (round 7, rendered by the reasoning role 2026-10-30; unratified terms 1)
 Source: the owner's decision of 2026-10-30 on evaluation case 012 (all fifteen changes adopted as recommended; terms by the default); evaluation case 012's Outcome.
 Normative: yes
 Footprint: docs/branch-point.md; docs/records/branch-point-v1.10.ir.md; docs/records/branch-point-v1.10.review.md; docs/vocabulary.md; docs/backlog.md; eval/README.md; eval/cases/012-meta-review-branch-point-v1.9-and-ir-spec-count-5-2026-10-30.md; scripts/signals.mjs; scripts/test.mjs
@@ -133,7 +133,7 @@ C64. A structural fix moves the sentence out of the structure that produces the 
 
 ### Rounds step 7
 
-C55. At step 7, the reasoning role sends the round's stranger instance its findings table, the fixed passages and the round's declined findings. [inferred: R3]
+C55. At step 7, the reasoning role sends the round's stranger instance its findings table, the fixed passages and the round's declined findings with their reasons. [inferred: R3]
 
 C58. At a readable verdict, the round's stranger instance confirms each fix other than a step-6 fix (case 012 context, ask A2 as the owner adopted it on 2026-10-30). evidence: E3. [decided: owner, 2026-10-30]
 
@@ -179,7 +179,7 @@ C40. A claims-check line is the review-record line that records a claims check's
 
 C41. A round with a fix pass and no claims-check line counts as an unparsed line (case 012 change 13). evidence: E1, E2. [decided: owner, 2026-10-30; C42, the script's report of the same rule, merged into it in v1.10's count, round 3]
 
-C80. When the unparsed line parses, the reasoning role writes `pending` again. [decided: owner, 2026-10-30; reworded in v1.10's count, round 6, "for a text that is a meta-review subject" cut as a repeat]
+C80. When the unparsed line parses, the reasoning role writes `pending` again if the text is a meta-review subject. [decided: owner, 2026-10-30; reworded in v1.10's count, round 6 and after its confirmation]
 
 C43. The reasoning role checks the second signal's declined findings raised again and the fourth signal by reading (case 012 change 12). evidence: E1, E2. [decided: owner, 2026-10-30]
 
@@ -201,6 +201,8 @@ C49. Case 012's change 15 amends the evaluation corpus's Meta-review records sec
 
 C78. Case 012's change 11 struck the third signal from the methodology specification's signals. evidence: E1, E2. [decided: owner, 2026-10-30]
 
+C81. Change 11 of case 012 struck the third signal, and the first, second and fourth signals keep their numbers. evidence: E1, E2. [decided: owner, 2026-10-30]
+
 C50. Eleven of case 012's fifteen changes amend the methodology specification as its count 6: changes 1, 2, 4 to 9, 11, 13 and 14. evidence: E1, E2. [decided: owner, 2026-10-30]
 
 ## Relations
@@ -217,7 +219,7 @@ R5. C62 refines C47 because the thirteen changes v1.10 carries change how the ro
 
 R6. C67 depends-on C53 because step 4 sends the findings table to the round's instance, and the Stranger brief has each finding carry its locus and fix kind.
 
-R7. C79 depends-on C17 because step 3 records a declined finding with its reason, and the reasoning role is the one that fixes or declines each finding.
+R7. C79 depends-on C17 because step 3 records a declined finding with its reason (branch point v1.4's IR, C8, unchanged since), and the reasoning role is the one that fixes or declines each finding.
 
 ## Evidence
 
@@ -231,7 +233,7 @@ E4. docs/backlog.md, chunk 3's row: "Scope narrowed per the owner: reports to RD
 
 ## Asks
 
-A1. Accept branch point v1.10. Depends: C1 to C80.
+A1. Accept branch point v1.10. Depends: C1 to C81.
 
 A2. Decide the mark of a step-6 fix made in a readable round's fix pass, a gap round 1 found (finding 5). Proposed wording, revised after the round 1 confirmation: "At a readable verdict, the round's stranger instance confirms each fix other than a step-6 fix. A step-6 fix made in that round's fix pass stays `awaiting restatement`; the reasoning role lists its passage in the next count's round 1 brief." The finding counts against the verdict as a contradiction until the owner decides (case 012 change 9). Depends: C33.
 
