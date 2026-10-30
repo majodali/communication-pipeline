@@ -9,6 +9,7 @@ Reader of the reviewed text: RD-4 (a fresh agent session). Reviewer: a stranger,
 | 1 | 3,755 | 51 | 9 | 2.4 | not readable (mismatches 0; contradiction 1, a rule gap listed for the owner; undefined term 1) |
 | 2 | 3,790 | 55 | 3 | 0.8 | not readable (mismatches 0; contradiction 1 new, with round 1's finding 5 pending; undefined terms 0) |
 | 3 | 3,821 | 59 | 9 | 2.4 | not readable (mismatch 1, first occurrence; contradiction 1; undefined term 1) |
+| 4 | 3,852 | 63 | 9 | 2.3 | not readable (mismatches 0; contradictions 2; undefined terms 0) |
 
 ## Round 1
 
@@ -160,3 +161,24 @@ Declined findings carried in the brief from v1.9's count: round 1's F3, round 2'
 Forms added to the brief: none.
 
 Signals script before the round: signal 1 reads one round with a fix not held (round 3), so it does not fire; no line unparsed.
+
+Stranger model: claude-haiku-5-5, a fresh instance at the frugal tier (a8d9b82e1b02704c6). Prose 3,852 words by `wordCount` (the stranger's hand estimate: about 4,900); IR 63 claims; 9 findings, 2.3 per thousand words. Restatement: no mismatch. Listed passages: none. Contradictions 2 (findings 3 and 5), undefined terms 0; verdict: not readable for RD-4.
+Mismatches: none
+
+Omissions the stranger noted on v1.10-changed passages, not counted: fifteen, (a) to (o). One of them changed in this pass: (j), step 7's marking, now scoped to the limit by finding 3 and carried as C68. The other fourteen are sentences v1.10 did not change; their claims stand in earlier IRs: (a), (b), (d), (f) and (o) in v1.7's; (c) v1.9's C50; (e) v1.9's C18; (g) v1.9's C62; (h) v1.9's C103; (i) v1.9's C94; (k) and (l) v1.6's (C10 for (l)); (m) v1.9's C67, C70, C81 and C86; (n) v1.9's C34.
+
+| # | Finding (shortened) | Kind | Decision |
+|---|---|---|---|
+| 1 | step 3's no-new-rule sentence and step 6's structural-fix alternative name no actor | SP-18 | rephrase C17: "The reasoning role adds no rule in a fix beyond the changes the owner adopted for the count."; C66: "In a structural fix, the reasoning role may instead change the claim to the strangers' reading when that reading is true." |
+| 2 | "findings table" used in step 4 before its definition | SP-04 | define at first use, C67: "A findings table lists the round's findings with each finding's locus and fix kind." (inferred, R6) |
+| 3 | step 7's marking of each finding against the owner's step-6 rule at a readable verdict | SP-25 | scope the marking to the limit, where case 009 change 18 put it, C68: "At the limit, the reasoning role marks each finding of the final round confirmed, or unfixed when the instance did not confirm its fix." Scoping, not a new rule |
+| 4 | the header "The verdict and the status lines" holds the per-round record | SP-08 | rename "The verdict, the status lines and the per-round record"; the anchor kept |
+| 5 | "When it reads for a round" against the reads at steps 4 and 7 | SP-25 | C65, its third rewording: "For its restatement at step 2, the stranger reads only the prose and the IR." |
+| 6 | BP-02a's "renders it" | SP-03 | "renders the normative text" (C69) |
+| 7 | "claims-check line" used in the trigger paragraph before its definition | SP-04 | the definition (C40) moves into the trigger paragraph, before its first use |
+| 8 | the script paragraph repeats the first-signal clause of the trigger paragraph | SP-26 | the clause cut: "The script `scripts/signals.mjs` reads the confirmation lines in their fixed form." (C70); C61 stays the one claim |
+| 9 | "The meta-reviews so far are cases 005 and 007 to 012" (low confidence) | SP-26 | declined: the sentence carries C44, a decided history claim; the paragraph names the cases in different roles, and no sentence of it states the set |
+
+Claims after fixes: 68. Prose after fixes: 3,873 words. Claims check after the fix pass (base: round 4 prose): 7 changed claims, 0 missing, 0 stale. Round trip: 68 of 68. IR check: 0 violations, 0 warnings.
+
+Decided claims the fixes reworded, for the owner's list at the count's close: C17, C65 (again), C66, C68 (v1.9's C93), C69, C70; C40 moved.
