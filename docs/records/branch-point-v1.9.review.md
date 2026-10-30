@@ -412,3 +412,16 @@ Owner items for branch point v1.9, one list:
 7. Dispatch the meta-review (signals 1, 2 and 4).
 8. The Backlog entry: the dispatcher does not implement row BP-00.
 
+
+The owner's decision, 2026-10-30: branch point v1.9 accepted (PR #22 merged). The items above, marked:
+
+1. A1: accepted.
+2. A2: granted; the claims carry decided provenance from 2026-10-30.
+3. C54's unmatched passage: not blocking.
+4. Residue N1: left to the ruleset review, on the Backlog.
+5. The exception's reading: no separate ruling; the acceptance takes C25's wording, the reading adopted on 2026-10-30.
+6. The Status sentence: it now names v1.9 as the latest version the owner accepted, active on main.
+7. The meta-review: dispatched, with the IR specification's count 5, as one task.
+8. The Backlog entry on row BP-00: no ruling; it stays open on the Backlog.
+
+Meta-review: pending (signals 1, 2 and 4). The line stays until the meta-review is delivered.
