@@ -10,6 +10,7 @@ Reader of the reviewed text: RD-4 (a fresh agent session). Reviewer: a stranger,
 | 2 | 3,790 | 55 | 3 | 0.8 | not readable (mismatches 0; contradiction 1 new, with round 1's finding 5 pending; undefined terms 0) |
 | 3 | 3,821 | 59 | 9 | 2.4 | not readable (mismatch 1, first occurrence; contradiction 1; undefined term 1) |
 | 4 | 3,852 | 63 | 9 | 2.3 | not readable (mismatches 0; contradictions 2; undefined terms 0) |
+| 5 | 3,865 | 69 | 7 | 1.8 | not readable (mismatch 1; contradictions 2; undefined terms 0) |
 
 ## Round 1
 
@@ -202,3 +203,27 @@ Declined findings carried in the brief: from v1.9's count, round 1's F3, round 2
 Forms added to the brief: none.
 
 Signals script before the round: signal 1 reads one round with a fix not held (round 3), so it does not fire; no line unparsed.
+
+Stranger model: claude-haiku-5-5, a fresh instance at the frugal tier (a14a756c4fb06e7bd), reading at commit c3fbbdf. Prose 3,865 words by `wordCount` (the stranger's hand estimate: about 4,000); IR 69 claims; 7 findings, 1.8 per thousand words. Restatement: one mismatch. Listed passages: none. Contradictions 2 (findings 2 and 6), undefined terms 0; verdict: not readable for RD-4.
+
+The mismatch: C65's round 4 wording, "For its restatement at step 2, the stranger reads only the prose and the IR.", gave the IR to the restatement; the stranger relied on step 2's "The stranger reads the prose, writes its restatement, and only then reads the IR." First occurrence on this sentence as a mismatch.
+Mismatches: C65
+
+Omissions noticed, not counted: (a) step 6's trigger, a mismatch "in any two rounds of the text's counts", is v1.9's C17; (b) the Rounds introduction's limit of ten stands in an earlier IR. Both sentences are unchanged in v1.10.
+
+For the ruleset review: C65 took four rewordings in this count, each from a defect on the same sentence (round 3's finding 6, round 3's confirmation N1, round 4's finding 5, this round's findings 1 and 2). The sentence tried to carry the file scope and the read order at once; its purpose since v1.7 is the scope. Two reader points: step 7's "The reasoning role runs step 7's claims check as in step 4." sits after the limit's sentences, so it reads as part of the limit run; the Meta-review history runs about 450 words in one block.
+
+| # | Finding (shortened) | Kind | Decision |
+|---|---|---|---|
+| 1, 2 | mismatch on C65; C65 against step 2's read order | restatement; SP-25 | C65 reworded to the scope only, its fourth rewording: "For its review, the stranger reads two files and nothing else: the prose, then the IR." |
+| 3 | "Entries name claims by their claim identifiers" names no actor | SP-18 | C73: "The reasoning role names each claim in an entry by its claim identifier in the IR." |
+| 4 | step 3's "as its kind does" | SP-03 | C19: "Until the owner decides, the finding counts against the verdict like a mismatch, contradiction or undefined-term finding.", as the specification reads |
+| 5 | step 3's "A fix ..." sentences name no actor | SP-18 | each names the reasoning role: C74, C71, C75, C76, C77 |
+| 6 | BP-05a's reason against BP-04 | SP-25 | the ruling's record (the backlog's chunk 3 row, E4) reads "reports to RD-1 or RD-3 need an IR only for a term, a decision or a register fact; review on request". The ruling covers reports to RD-1 and RD-3 only, so the reason is scoped: "... the stranger review on reports to RD-1 or RD-3 runs only on request" (C72). A text fix, not a new rule |
+| 7 | the trigger paragraph repeats the script paragraph's second-signal clause | SP-26 | the clause cut from C61; the script paragraph keeps its sentence |
+
+The C65 wording differs from the Orchestrator's suggestion, "The stranger reads two files for a round and nothing else", in its opening: "For its review" leaves the reads at steps 4 and 7 outside the sentence, which "for a round" would have caught again.
+
+Claims after fixes: 75. Prose after fixes: 3,890 words. Claims check after the fix pass (base: round 5 prose): 10 changed claims, 0 missing, 0 stale. Round trip: 75 of 75. IR check: 0 violations, 0 warnings.
+
+Decided claims the fixes reworded, for the owner's list at the count's close: C19, C65 (fourth rewording), C71 (again), C72, C73, C74 to C77.

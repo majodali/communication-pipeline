@@ -59,6 +59,8 @@ C12. Each entry on a `Mismatches:` line names the claim the restatement contradi
 
 C13. After "relied on", the entry names the claim of the sentence the stranger quoted. [decided: owner, 2026-10-30]
 
+C73. The reasoning role names each claim in an entry by its claim identifier in the IR. [decided: owner, 2026-10-30; reworded in v1.10's count, round 5, the actor named]
+
 C14. An entry on a `Mismatches:` line reads, for example, `C41 (relied on C35)` (case 012 change 1). evidence: E1, E2. [decided: owner, 2026-10-30]
 
 C15. For each mismatch, the brief asks the stranger to quote the prose sentence the stranger relied on (case 012 change 1). evidence: E1, E2. [decided: owner, 2026-10-30]
@@ -67,15 +69,23 @@ C16. For each mismatch, the reasoning role quotes in the review record the prose
 
 ### Rounds step 3
 
-C71. A fix adds words only for a missing definition or referent. [decided: owner, 2026-10-30; reworded in v1.10's count after round 4's confirmation, "or rule" cut]
+C74. In a fix, the reasoning role rephrases or cuts words before it adds words. [decided: owner, 2026-10-27; reworded in v1.10's count, round 5]
+
+C71. In a fix, the reasoning role adds words only for a missing definition or referent. [decided: owner, 2026-10-30; reworded in v1.10's count after round 4's confirmation, "or rule" cut, and in round 5]
 
 C17. The reasoning role adds no rule in a fix beyond the changes the owner adopted for the count (case 012 change 9). evidence: E1, E2. [decided: owner, 2026-10-30; reworded in v1.10's count, round 4]
 
 C18. When a finding needs a new rule, the reasoning role lists the finding for the owner with a proposed wording (case 012 change 9). evidence: E1, E2. [decided: owner, 2026-10-30]
 
-C19. A finding that needs a new rule counts against the verdict as its kind does until the owner decides (case 012 change 9). evidence: E1, E2. [decided: owner, 2026-10-30]
+C19. Until the owner decides, a finding that needs a new rule counts against the verdict like a mismatch, contradiction or undefined-term finding (case 012 change 9). evidence: E1, E2. [decided: owner, 2026-10-30; reworded in v1.10's count, round 5]
 
 C20. When a fix rewords a decided claim, the reasoning role keeps the claim's source and notes the rewording as `reworded in count N, round M` (case 012 change 14). evidence: E1, E2. [decided: owner, 2026-10-30; reworded in v1.10's count, rounds 1 and 3]
+
+C75. In a fix that separates present state from target state, the reasoning role moves the sentence under a header that names its state. [decided: owner, 2026-10-29; reworded in v1.10's count, round 5]
+
+C76. In a fix, the reasoning role does not mark a single sentence with "Today". [decided: owner, 2026-10-29; reworded in v1.10's count, round 5]
+
+C77. In a fix, the reasoning role keeps the connective prose that joins a rule to a reason the IR holds as its own claim. [decided: owner, 2026-10-29; reworded in v1.10's count, round 5]
 
 C21. The owner ratifies the reworded claims as one list at the count's close (case 012 change 14). evidence: E1, E2. [decided: owner, 2026-10-30]
 
@@ -137,13 +147,15 @@ C51. The reasoning role fixes the new defect in the next edit of the text (case 
 
 C53. At Rounds steps 4 and 7 the round's instance also reads the findings table, the fixed passages and the declined findings. [decided: owner, 2026-10-30; reworded in v1.10's count, rounds 1, 2 and 3]
 
-C65. For its restatement at step 2, the stranger reads only the prose and the IR. [decided: owner, 2026-10-30; reworded in v1.10's count, rounds 3 and 4, and after round 3's confirmation]
+C65. For its review, the stranger reads two files and nothing else: the prose, then the IR. [decided: owner, 2026-10-30; reworded in v1.10's count, rounds 3, 4 and 5, and after round 3's confirmation: four rewordings]
 
 C57. The stranger's report has five parts in order: Restatement, Listed passages, Findings, Readability, Counts (case 012 change 4). evidence: E1, E2. [decided: owner, 2026-10-30; reworded in v1.10's count, round 2 and after its confirmation]
 
 C54. Case 008 proposed no change to the D1 row's rule on joining a rule to a reason by connective prose. [decided: owner, 2026-10-27; reworded in v1.10's count, round 1]
 
 C69. BP-02a: a paraphrase of normative text could change its force, so the reasoning role renders the normative text and only the review runs. [decided: owner, 2026-10-25; reworded in v1.10's count, round 4]
+
+C72. BP-05a: in a report the owner's ratification ask replaces the reviewer's check, because the stranger review on reports to RD-1 or RD-3 runs only on request (owner ruling, 2026-10-25). evidence: E4. [decided: owner, 2026-10-25; reworded in v1.10's count, round 5, scoped as the ruling's record reads]
 
 C70. The script `scripts/signals.mjs` reads the confirmation lines in their fixed form. [decided: owner, 2026-10-29; reworded in v1.10's count, round 4, the first-signal clause cut as a repeat of C61]
 
@@ -159,7 +171,7 @@ C38. The methodology specification's Meta-review section defines the signals (ca
 
 C39. At the end of a count, the reasoning role checks the signals against the review record. [decided: owner, 2026-10-27]
 
-C61. The signals script, `scripts/signals.mjs`, reports the first signal from the confirmation and claims-check lines and the second signal's recurrences from the `Mismatches:` lines. [inferred: R4]
+C61. The signals script, `scripts/signals.mjs`, reports the first signal from the confirmation and claims-check lines. [inferred: R4]
 
 C40. A claims-check line is the review-record line in which the reasoning role records the claims check's result after a fix pass (case 012 change 13). evidence: E1, E2. [decided: owner, 2026-10-30]
 
@@ -207,9 +219,11 @@ E2. The owner's decision of 2026-10-30 on case 012, relayed by the Orchestrator:
 
 E3. The owner's adoption of 2026-10-30 of ask A2's revised proposed wording, relayed by the Orchestrator.
 
+E4. docs/backlog.md, chunk 3's row: "Scope narrowed per the owner: reports to RD-1 or RD-3 need an IR only for a term, a decision or a register fact; review on request."
+
 ## Asks
 
-A1. Accept branch point v1.10. Depends: C1 to C71.
+A1. Accept branch point v1.10. Depends: C1 to C77.
 
 A2. Decide the mark of a step-6 fix made in a readable round's fix pass, a gap round 1 found (finding 5). Proposed wording, revised after the round 1 confirmation: "At a readable verdict, the round's stranger instance confirms each fix other than a step-6 fix. A step-6 fix made in that round's fix pass stays `awaiting restatement`; the reasoning role lists its passage in the next count's round 1 brief." The finding counts against the verdict as a contradiction until the owner decides (case 012 change 9). Depends: C33.
 

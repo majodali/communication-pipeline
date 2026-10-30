@@ -173,7 +173,9 @@ roles have moved to project-orchestrator, this repository archives
   recurrence on one passage, while the signals script and the
   `Mismatches:` lines key it on claims (v1.10, round 2). Step 4 leaves open whether the
   round's instance reads the prose before or after the claims check's
-  fixes (v1.10, round 3). A meta-review session with no part in the
+  fixes (v1.10, round 3). The Stranger brief's read-scope sentence took four
+  rewordings in v1.10's count, trying to carry scope and order at once
+  (v1.10, round 5). A meta-review session with no part in the
   rounds performs the review and reports as an
   [evaluation case](../eval/README.md).
 - [ ] **Dispatcher: row BP-00** — open. `scripts/dispatch.mjs` does not
