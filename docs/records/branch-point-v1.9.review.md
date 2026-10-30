@@ -364,12 +364,12 @@ Awaiting restatement: the Rules opening matched on C87 and C55, so that passage 
 
 | # | Finding (shortened) | Kind | Fix | Confirmation |
 |---|---|---|---|---|
-| 1 | "reasoning role" first used in The texts that require an IR with no link | SP-04 | add the link at first use | pending |
-| 2 | step 2's `Mismatches:` sentence states the contradicted and the relied-on claim together | SP-01 | split C8; C102 "After "relied on", the entry names the claim of the sentence the stranger quoted." | pending |
-| 3 | SP-18 first appears in step 3 with no name or link | SP-05 | add the link to the style specification's rule table | pending |
-| 4 | row BP-00's "under which the reasoning role still runs the lints" repeats the Dispositions sentence | SP-26 | cut the clause; C58 keeps only "no later disposition row applies"; the lints stay stated once (C54); no merge of claims | pending |
-| 5 | RD-5 and RD-2 first appear in rows BP-04 and BP-06 with no name | SP-05 | add the names in the rows: "RD-4 (fresh agent session) or RD-5 (external reader)", "RD-2 (human owner, returning)" | pending |
-| 6 | "Each case declined one change of its own" names no case | SP-03 | rephrase C47: "Cases 010 and 011 each declined one change of its own, …" | pending |
+| 1 | "reasoning role" first used in The texts that require an IR with no link | SP-04 | add the link at first use | confirmed |
+| 2 | step 2's `Mismatches:` sentence states the contradicted and the relied-on claim together | SP-01 | split C8; C102 "After "relied on", the entry names the claim of the sentence the stranger quoted." | confirmed |
+| 3 | SP-18 first appears in step 3 with no name or link | SP-05 | add the link to the style specification's rule table | confirmed |
+| 4 | row BP-00's "under which the reasoning role still runs the lints" repeats the Dispositions sentence | SP-26 | cut the clause; C58 keeps only "no later disposition row applies"; the lints stay stated once (C54); no merge of claims | confirmed |
+| 5 | RD-5 and RD-2 first appear in rows BP-04 and BP-06 with no name | SP-05 | add the names in the rows: "RD-4 (fresh agent session) or RD-5 (external reader)", "RD-2 (human owner, returning)" | confirmed |
+| 6 | "Each case declined one change of its own" names no case | SP-03 | rephrase C47: "Cases 010 and 011 each declined one change of its own, …" | confirmed |
 
 Round 7's carried items applied in the same pass: finding 8 re-fixed by option (a): the history again states "Seven of the twenty-two amend the methodology's intermediate-representation specification as its count 5. Four of the seven are also among the nineteen process changes of v1.9." (C44, C80 restored; the nineteen count stays in the Versions line); new defect 2: step 7's confirmation has one trigger per case, "At a readable verdict, the round's stranger instance confirms each fix before delivery. At the limit, the final round's stranger instance confirms each fix other than a step-6 fix." (C92, C103).
 
@@ -386,4 +386,29 @@ The instance (a97f5c0d8113aae3f) re-read the prose only. The three new defects a
 | N1 | the reader names now stated in rows BP-04 and BP-06 and again in the readers paragraph | SP-26 | the paragraph's list cut; every row names its readers at first use in the table, and row BP-04 carries the catalog link: "reader is RD-4 (fresh agent session) or RD-5 (external reader), from the [reader catalog](readers.md)"; rows BP-07 to BP-09 name RD-1 and RD-3 |
 | N2 | step 7's limit sentence states no timing, and C92 is read as not matching | IR and prose | the IR already carries the two-trigger form (C92 at a readable verdict, C103 at the limit); the limit sentence gains its timing: "At the limit, the final round's stranger instance confirms each fix other than a step-6 fix before the count closes." (C103) |
 | N3 | the seven and four sentences read as having no IR claim | IR | declined: C44 ("Seven of the twenty-two adopted changes amend the methodology's intermediate-representation specification as its count 5 …") and C80 ("Four of the seven specification amendments are also among the nineteen process changes of v1.9.") carry them; the instance read the prose only |
+
+Second confirmation, on the three post-confirmation fixes (instance a97f5c0d8113aae3f, the prose and the whole IR re-read):
+
+Confirmation: 1 of 2 fixes hold. Not held: N1. Declines accepted: 1 of 1. New defects: 0.
+
+N2 holds. The N3 decline is accepted; the instance withdraws its round 8 defect 3 after reading C44 and C80. N1 does not hold and stays unfixed, residue for the owner: RD-1 and RD-3 are still named twice, in The texts that require an IR ("A report to RD-1 (the human owner, in conversation) or RD-3 (a delegating agent)") and in rows BP-07 and BP-08; the catalog link appears both at the Inputs table and in row BP-04. Under the Orchestrator's direction of 2026-10-30, no further fix is made on the branch point in this count.
+
+## Verdict
+
+Readable for RD-4 at round 8 of a count of eight, under the v1.9 procedure the text defines. Findings per thousand words by round: 6.2, 4.3, 2.8, 3.0, 3.0, 2.4, 2.1, 1.5. Contradictions by round: 2, 0, 1, 3, 0, 0, 1, 0. Prose 3,393 words at round 1 and 3,912 at delivery; IR 47 claims at round 1 and 100 at delivery. Step-6 passages: the Rules opening, structural fixes in rounds 5 and 6, matched on C87 and C55 in rounds 7 and 8; the verdict table, matched from round 6. Every fix of the readable round confirmed; of the three post-confirmation fixes, N2 holds, N3's decline is accepted and N1 is unfixed.
+
+Signals checked at the end of the count by `scripts/signals.mjs` and by reading: first, fired (fixes not held in rounds 3, 5 and 7); second, fired (C55 in rounds 2 and 6, C54 in rounds 5 and 6, the Rules opening in rounds 2, 5 and 6); third, words per IR claim 72.2 to 40.4, not fired; fourth, fired by reading in round 4 (contradictions 8, 9 and 10 on passages earlier fixes touched). The limit was not reached.
+
+Meta-review: pending (signals 1, 2 and 4).
+
+Owner items for branch point v1.9, one list:
+
+1. Accept or reject branch point v1.9 (A1).
+2. Ratify or strike the new wording of the decided claims the rounds reworded, split, moved or reordered, and the new rules (A2). Among them: the retired label BP-01, with its rule now the lint sentence C54; row BP-02a before BP-02 (C68), which the dispatcher follows; the `Meta-review: unparsed` line (C67, C70, C78, C96, C97); the pointer to the specification's form-audit rule (C79); a withdrawal without a quoted reason still counts (C83, C84); the instance's answer on declines and new defects (C85, C88); the declines sent at confirmation (C99, C101); the override governs the exception (C90).
+3. The count closes readable with one step-6 passage unmatched: the lint sentence (C54) was not restated in rounds 7 or 8. Rule whether that blocks delivery.
+4. Residue N1, unfixed: RD-1 and RD-3 named twice; the catalog link twice (Inputs table, row BP-04).
+5. The exception's reading: "a prose sentence that carries the IR's claim" read as any IR claim the sentence carries faithfully, adopted on 2026-10-30; "carries an IR claim" now in C25. Round 5's instance read it otherwise (finding 7, not held on its reading).
+6. The Status sentence "Until the owner accepts v1.7, v1.6 is active on main" does not say what accepting v1.9 does.
+7. Dispatch the meta-review (signals 1, 2 and 4).
+8. The Backlog entry: the dispatcher does not implement row BP-00.
 
