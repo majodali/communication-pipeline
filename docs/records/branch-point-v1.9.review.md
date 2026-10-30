@@ -247,3 +247,15 @@ Claims after fixes: 79. Prose after fixes: 3,785 words. Claims check after the f
 Decided claims the fixes changed, for the owner: all are listed in A2, including rule BP-01's move out of the rules table.
 
 Declined findings for round 6's brief: round 1's F1 and F3; round 2's 9 and 10; round 4's 11; each with its reason. Passage awaiting restatement in round 6: the Rules opening with rule BP-01 (C54, C55); the verdict table, new in this round (C23, C53, C25, C26, C75 to C77).
+
+## Round 6, 2026-10-30
+
+Branch point version and commit the round runs under: v1.9 at this round's opening commit. Prose 3,785 words; IR 79 claims. Round 5's confirmation was not yet back when round 6 opened; its line is recorded in round 5's entry when it arrives.
+
+Claims check before the round: 21 changed claims, 0 missing, 0 stale (base: round 5 prose).
+
+Awaiting restatement: round 5's step-6 fix on the Rules opening (C54, C55); the verdict table, new in round 5 (C23, C53, C25, C26, C75 to C77). This round's entry states whether the restatement matched on each.
+
+Declined findings carried in the brief: round 1's F1 (the instance did not accept the decline) and F3; round 2's 9 and 10; round 4's 11; each with its reason.
+
+Signals script before the round: signals 1 and 3 not fired; signal 2 fired by reading on the Rules opening (rounds 2 and 5); signal 4 fired by reading in round 4; no line unparsed.
