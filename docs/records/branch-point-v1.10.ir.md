@@ -69,7 +69,7 @@ C65. In step 2, the stranger reads no file other than its brief, the prose and t
 
 C79. A declined finding is one the reasoning role declines with a reason at step 3. [inferred: R7]
 
-C53. At steps 4 and 7, the round's instance also reads the findings table, the fixed passages and the declined findings with their reasons. [decided: owner, 2026-10-30; reworded in v1.10's count, rounds 1, 2, 3 and 6; moved into step 2 after round 5's confirmation]
+C53. At steps 4 and 7, the round's instance also reads what step 4 sends. [decided: owner, 2026-10-30; reworded in v1.10's count, rounds 1, 2, 3, 6 and 9; moved into step 2 after round 5's confirmation]
 
 C14. An entry on a `Mismatches:` line reads, for example, `C41 (relied on C35)` (case 012 change 1). evidence: E1, E2. [decided: owner, 2026-10-30]
 
@@ -117,7 +117,7 @@ C25. The claims-check script reports a changed claim whose best-matching sentenc
 
 C26. The reasoning role records the claims check's result in the review record. [decided: owner, 2026-10-30]
 
-C27. The reasoning role fixes a claim reported missing or stale before the confirmation read and before the next round opens (case 012 change 13). evidence: E1, E2. [decided: owner, 2026-10-30]
+C27. The reasoning role fixes a claim reported missing or stale before the confirmation read (case 012 change 13). evidence: E1, E2. [decided: owner, 2026-10-30; reworded in v1.10's count, round 9]
 
 C28. The reasoning role names the fix commit to the round's stranger instance (case 012 change 7). evidence: E1, E2. [decided: owner, 2026-10-30]
 

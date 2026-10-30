@@ -14,6 +14,7 @@ Reader of the reviewed text: RD-4 (a fresh agent session). Reviewer: a stranger,
 | 6 | 3,888 | 75 | 4 | 1.0 | not readable (mismatches 0; contradiction 1; undefined terms 0) |
 | 7 | 3,939 | 79 | 8 | 2.0 | not readable (mismatches 0; contradiction 1; undefined terms 3) |
 | 8 | 3,944 | 84 | 6 | 1.5 | not readable (mismatches 0; contradictions 0; undefined term 1) |
+| 9 | 3,953 | 89 | 4 | 1.0 | readable (mismatches 0; contradictions 0; undefined terms 0) |
 
 ## Round 1
 
@@ -366,3 +367,21 @@ Declined findings carried in the brief: from v1.9's count, round 1's F3, round 2
 Forms added to the brief: none.
 
 Signals script before the round: signal 1 reads two rounds with a fix not held (rounds 3 and 8), so it fires; signal 2 does not; no line unparsed. The text is a meta-review subject at the count's end.
+
+Stranger model: claude-haiku-5-5, a fresh instance at the frugal tier (aaee1c6d5fd61632a), reading at commit d7f97ee. Prose 3,953 words by `wordCount` (the stranger's hand estimate: about 4,700); IR 89 claims; 4 findings, 1.0 per thousand words. Restatement: no mismatch. Listed passages: none. Contradictions 0, undefined terms 0; verdict: readable for RD-4.
+Mismatches: none
+
+Omissions noticed, not counted: four, on sentences v1.10 did not change; their claims stand in earlier IRs.
+
+Readability notes for the ruleset review, no fix: "ratification ask" is undefined but inferable; passage against claim as the recurrence unit (noted in round 2); the case 008 sentence's place in the history's chronology; the heading's order of script and line.
+
+Step 7 applies. The findings are fixed IR first; the round's instance confirms each fix before the count closes. Under case 012 change 8, a new defect the confirmation names goes to the owner's list and is not fixed in this count.
+
+| # | Finding (shortened) | Kind | Decision |
+|---|---|---|---|
+| 1 | step 2's list of the steps 4 and 7 inputs repeats step 4 | SP-26 | the pointer form, C53: "At steps 4 and 7, the round's instance also reads what step 4 sends." |
+| 2 | "step-6 fix" used in step 2 before step 4 defines it | SP-04 | declined: the first use in step 2, "The reasoning role checks each listed passage's step-6 fix against that sentence.", already links the vocabulary row `def-step-6-fix` |
+| 3 | "and before the next round opens" follows from the next sentence | SP-26 | cut, C27: "The reasoning role fixes a claim reported missing or stale before the confirmation read." |
+| 4 | the 2026-10-27 heading holds case 012's sentences of 2026-10-30 | SP-08 | the smaller change: the heading reads "The owner's decisions on case 005's held changes, 2026-10-27 and 2026-10-30" |
+
+Claims after fixes: 89. Prose after fixes: 3,939 words. Claims check after the fix pass (base: round 9 prose): 2 changed claims, 0 missing, 0 stale. Round trip: 89 of 89. IR check: 0 violations, 0 warnings.
