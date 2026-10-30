@@ -399,7 +399,7 @@ Readable for RD-4 at round 8 of a count of eight, under the v1.9 procedure the t
 
 Signals checked at the end of the count by `scripts/signals.mjs` and by reading: first, fired (fixes not held in rounds 3, 5 and 7); second, fired (C55 in rounds 2 and 6, C54 in rounds 5 and 6, the Rules opening in rounds 2, 5 and 6); third, words per IR claim 72.2 to 40.4, not fired; fourth, fired by reading in round 4 (contradictions 8, 9 and 10 on passages earlier fixes touched). The limit was not reached.
 
-Meta-review: pending (signals 1, 2 and 4).
+Meta-review: delivered (signals 1, 2 and 4; pending at the close on 2026-10-30): [evaluation case 012](https://github.com/majodali/communication-pipeline/blob/main/eval/cases/012-meta-review-branch-point-v1.9-and-ir-spec-count-5-2026-10-30.md).
 
 Owner items for branch point v1.9, one list:
 
