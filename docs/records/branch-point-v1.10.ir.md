@@ -87,6 +87,10 @@ C19. Until the owner decides, a finding that needs a new rule counts against the
 
 C20. When a fix rewords a decided claim, the reasoning role keeps the claim's source and notes the rewording as `reworded in count N, round M` (case 012 change 14). evidence: E1, E2. [decided: owner, 2026-10-30; reworded in v1.10's count, rounds 1 and 3]
 
+C82. Present state is what is done now. [inferred: R8]
+
+C83. Target state is what the text aims at. [inferred: R9]
+
 C75. In a fix that separates present state from target state, the reasoning role moves the sentence under a header that names its state. [decided: owner, 2026-10-29; reworded in v1.10's count, round 5]
 
 C76. In a fix, the reasoning role does not mark a single sentence with "Today". [decided: owner, 2026-10-29; reworded in v1.10's count, round 5]
@@ -133,7 +137,7 @@ C64. A structural fix moves the sentence out of the structure that produces the 
 
 ### Rounds step 7
 
-C55. At step 7, the reasoning role sends the round's stranger instance its findings table, the fixed passages and the round's declined findings with their reasons. [inferred: R3]
+C55. At step 7, the reasoning role sends the round's stranger instance what step 4 sends. [inferred: R3]
 
 C58. At a readable verdict, the round's stranger instance confirms each fix other than a step-6 fix (case 012 context, ask A2 as the owner adopted it on 2026-10-30). evidence: E3. [decided: owner, 2026-10-30]
 
@@ -160,6 +164,8 @@ C69. BP-02a: a paraphrase of normative text could change its force, so the reaso
 C72. BP-05a: in a report the owner's ratification ask replaces the reviewer's check, because the stranger review on reports to RD-1 or RD-3 runs only on request (owner ruling, 2026-10-25). evidence: E4. [decided: owner, 2026-10-25; reworded in v1.10's count, round 5, scoped as the ruling's record reads]
 
 C70. The script `scripts/signals.mjs` reads the confirmation lines in their fixed form. [decided: owner, 2026-10-29; reworded in v1.10's count, round 4, the first-signal clause cut as a repeat of C61]
+
+C84. The script reads the per-round record, the confirmation lines and the claims-check lines from a record's last count only. [decided: owner, 2026-10-30; reworded in v1.10's count, round 7, "per-round table" named as the verdict subsection names it]
 
 ### Verdict
 
@@ -199,9 +205,13 @@ C48. Case 012's change 3 keeps the 200-word restatement limit as written. eviden
 
 C49. Case 012's change 15 amends the evaluation corpus's Meta-review records section. evidence: E1. [decided: owner, 2026-10-30]
 
-C78. Case 012's change 11 struck the third signal from the methodology specification's signals. evidence: E1, E2. [decided: owner, 2026-10-30]
+C86. Case 005's change 4, a growth bound, was replaced by the third signal on 2026-10-27, because words per IR claim measure prose drift from the IR. [decided: owner, 2026-10-27; reworded in v1.10's count, round 7, the replacement dated]
 
-C81. Change 11 of case 012 struck the third signal, and the first, second and fourth signals keep their numbers. evidence: E1, E2. [decided: owner, 2026-10-30]
+C81. Change 11 of case 012 struck the third signal. evidence: E1, E2. [decided: owner, 2026-10-30; the history paragraph's statement, C78, merged into it in round 7]
+
+C85. The per-round word and claim counts in the review record stand in the third signal's place. evidence: E1, E2. [decided: owner, 2026-10-30]
+
+C87. The first, second and fourth signals keep their numbers. [decided: owner, 2026-10-30]
 
 C50. Eleven of case 012's fifteen changes amend the methodology specification as its count 6: changes 1, 2, 4 to 9, 11, 13 and 14. evidence: E1, E2. [decided: owner, 2026-10-30]
 
@@ -211,7 +221,7 @@ R1. C3 depends-on C4 because the version list on the Status line ran to 91 words
 
 R2. C52 refines C28 because case 012 change 7 names the commit the instance reads, and that commit holds the round's fix pass.
 
-R3. C55 depends-on C53 because step 7's instance reads the findings table the reasoning role sends, the fixed passages and the round's declined findings, and step 4 names the reasoning role as the one that sends them.
+R3. C55 depends-on C53 because step 7's instance reads what step 4 sends, and step 4 names the reasoning role as the one that sends it.
 
 R4. C61 refines C39 because the script reads the confirmation, claims-check and `Mismatches:` lines, and the reasoning role reads the rest (C43).
 
@@ -220,6 +230,10 @@ R5. C62 refines C47 because the thirteen changes v1.10 carries change how the ro
 R6. C67 depends-on C53 because step 4 sends the findings table to the round's instance, and the Stranger brief has each finding carry its locus and fix kind.
 
 R7. C79 depends-on C17 because step 3 records a declined finding with its reason (branch point v1.4's IR, C8, unchanged since), and the reasoning role is the one that fixes or declines each finding.
+
+R8. C82 refines C75 because the state rule of case 009 change 12 separates what is done now from what the text aims at.
+
+R9. C83 refines C75 because the state rule of case 009 change 12 separates what the text aims at from what is done now.
 
 ## Evidence
 
@@ -233,7 +247,7 @@ E4. docs/backlog.md, chunk 3's row: "Scope narrowed per the owner: reports to RD
 
 ## Asks
 
-A1. Accept branch point v1.10. Depends: C1 to C81.
+A1. Accept branch point v1.10. Depends: C1 to C87.
 
 A2. Decide the mark of a step-6 fix made in a readable round's fix pass, a gap round 1 found (finding 5). Proposed wording, revised after the round 1 confirmation: "At a readable verdict, the round's stranger instance confirms each fix other than a step-6 fix. A step-6 fix made in that round's fix pass stays `awaiting restatement`; the reasoning role lists its passage in the next count's round 1 brief." The finding counts against the verdict as a contradiction until the owner decides (case 012 change 9). Depends: C33.
 

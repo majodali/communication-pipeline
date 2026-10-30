@@ -12,6 +12,7 @@ Reader of the reviewed text: RD-4 (a fresh agent session). Reviewer: a stranger,
 | 4 | 3,852 | 63 | 9 | 2.3 | not readable (mismatches 0; contradictions 2; undefined terms 0) |
 | 5 | 3,865 | 69 | 7 | 1.8 | not readable (mismatch 1; contradictions 2; undefined terms 0) |
 | 6 | 3,888 | 75 | 4 | 1.0 | not readable (mismatches 0; contradiction 1; undefined terms 0) |
+| 7 | 3,939 | 79 | 8 | 2.0 | not readable (mismatches 0; contradiction 1; undefined terms 3) |
 
 ## Round 1
 
@@ -286,3 +287,22 @@ Declined findings carried in the brief: from v1.9's count, round 1's F3, round 2
 Forms added to the brief: none.
 
 Signals script before the round: signal 1 reads one round with a fix not held (round 3), so it does not fire; no line unparsed.
+
+Stranger model: claude-haiku-5-5, a fresh instance at the frugal tier (a80ef1c283104e3f7), reading at commit a20c560. Prose 3,939 words by `wordCount` (the stranger's hand estimate: about 5,000); IR 79 claims; 8 findings, 2.0 per thousand words. Restatement: no mismatch. Listed passages: none. Contradiction 1 (finding 8), undefined terms 3 ("present state", "target state", "per-round table"); verdict: not readable for RD-4.
+Mismatches: none
+
+Omissions noticed, not counted: about 40 on changed passages. The stranger did not open earlier IRs; as in earlier rounds, the sentences v1.10 did not change carry their claims in the v1.9, v1.7, v1.6 and v1.4 IRs.
+
+| # | Finding (shortened) | Kind | Decision |
+|---|---|---|---|
+| 1 | step 3's "present state" and "target state" undefined | SP-04 | neither vocabulary has a row; defined in two sentences before the rule: "Present state is what is done now. Target state is what the text aims at." (C82, C83, inferred by R8 and R9) |
+| 2 | the send duty stated in step 4 and step 7 | SP-26 | step 7 points to step 4, keeping a supplier as round 1's N2 asked: "At step 7, the reasoning role sends the round's stranger instance what step 4 sends." (C55) |
+| 3 | the Meta-review heading omits the history | SP-08 | "Meta-review: the trigger, the signals, the signals script, the line, the history and the case decisions" |
+| 4 | "per-round table" undefined | SP-04 | named as the verdict subsection names it and linked: "the [per-round record]" (C84) |
+| 5 | case 005 and PR #51 stated twice in the history paragraph | SP-26 | the second statement cut; the sentence keeps case 007: "Case 007 reviewed methodology PR #52's rounds." |
+| 6, 7 | change 11's strike stated twice (C78, C81); C81 holds two claims | SP-26, SP-01 | the history paragraph's sentence cut and C78 merged into C81; the decisions subsection states it in separate sentences (C81, C85, C87) |
+| 8 | "Case 005's change 4 ... is replaced by the third signal" against change 11 | SP-25 | the stale decided claim amended under step 3's rule (C86): "... was replaced by the third signal on 2026-10-27 ..."; then "Change 11 of case 012 struck the third signal. The per-round word and claim counts in the review record stand in its place." (C81, C85), as case 012 change 11 adopted |
+
+Claims after fixes: 84. Prose after fixes: 3,943 words. Claims check after the fix pass (base: round 7 prose): 8 changed claims, 0 missing, 0 stale; C78 removed. Round trip: 84 of 84. IR check: 0 violations, 0 warnings.
+
+Decided claims the fixes reworded or merged, for the owner's list at the count's close: C55, C81 (with C78), C84 (v1.9's C34), C86 (v1.6's decision record); C85 and C87 added.
