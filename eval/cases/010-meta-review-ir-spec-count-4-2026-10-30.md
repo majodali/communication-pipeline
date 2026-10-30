@@ -111,3 +111,5 @@ Proposed process changes. "Step" means a step of the branch point's Rounds secti
 13. At the same edit the reasoning role checks the sources of C76, C77, C79, C81, C82, C94, C152 and C202. A claim whose source names no actor becomes inferred, with a relation naming its basis. Evidence: earlier change 8. Recommended.
 14. An SP-01 calibration for dated History sentences. Evidence: the readability note; the brief already allows a colon-introduced list. Declined: no new rule.
 15. Case 009's changes 2, 14 and 18 and the limit of ten stay as written. Evidence: none was exercised. No change.
+
+Owner's decision on the outcome, 2026-10-30: the thirteen recommended changes adopted ("For cases 010 and 011 - go with all recommendations, all terms ratified"); change 14 stays declined; change 15 confirmed. Carried into branch point v1.9 (changes 1 to 10) and, for changes 1, 5, 9, 11, 12 and 13, into the methodology's intermediate-representation specification as its count 5; the project-orchestrator's Reviewer (stranger) role follows.

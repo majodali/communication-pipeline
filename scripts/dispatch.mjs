@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 // The branch point (docs/branch-point.md v1): reads one IR, computes the
-// inputs, applies BP-01..BP-09 in order, prints the disposition, and
+// inputs, applies the rules BP-02a to BP-09 in order (the lints run for
+// every IR; label BP-01 retired in v1.9), prints the disposition, and
 // appends a row to eval/dispatch-log.md unless --dry-run.
+// Row BP-00 (v1.8, IR-only documents) is not implemented; see the Backlog.
 // Usage: node scripts/dispatch.mjs <file.ir.md> [--flag review] [--dry-run] [--json]
 
 import { readFileSync, appendFileSync, existsSync, writeFileSync } from 'node:fs';
@@ -28,8 +30,8 @@ export function inputsOf(ir, ownerFlag = '') {
 }
 
 export function decide(i) {
+  if (i.purpose === 'document' && i.normative) return { rule: 'BP-02a', disposition: 'D3' }; // D3: reviewer rounds until readable, limit ten (v1.3); before BP-02 (v1.9)
   if (i.ownerFlag === 'review') return { rule: 'BP-02', disposition: i.normative ? 'D3' : 'D2' };
-  if (i.purpose === 'document' && i.normative) return { rule: 'BP-02a', disposition: 'D3' }; // D3: reviewer rounds until readable, limit ten (v1.3)
   if (i.purpose === 'document') return { rule: 'BP-03', disposition: 'D2' };
   if (i.reader === 'RD-4' || i.reader === 'RD-5') return { rule: 'BP-04', disposition: 'D2' };
   if (i.proposedTerms > 0 && i.purpose === 'document') return { rule: 'BP-05', disposition: 'D2' };

@@ -116,4 +116,4 @@ Proposed process changes. "Branch point" means v1.7; "specification" means the m
 10. The brief's sentence "Before each round, the reasoning role adds to the stranger brief any form the text under review needs." gains: "The review record quotes the form and names the finding or fix it bears on." Rationale: observation 7. Recommended.
 11. The parenthesis calibration of round 3 enters SP-01's row in the style specification. Rationale: one instance, added for a pending fix, with no oscillation shown. Declined.
 
-Owner's decision on the outcome: pending.
+Owner's decision on the outcome, 2026-10-30: the nine recommended changes adopted ("For cases 010 and 011 - go with all recommendations, all terms ratified"); change 4 confirmed; change 11 stays declined; the terms own mismatch and re-fix ratified, with rows in the vocabulary. Carried into branch point v1.9 and, for change 1, into the methodology's intermediate-representation specification as its count 5, with the term own mismatch; the project-orchestrator's Reviewer (stranger) role follows.
