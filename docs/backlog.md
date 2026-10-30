@@ -166,7 +166,10 @@ roles have moved to project-orchestrator, this repository archives
   meta-review signals, the stranger brief's calibrations, the style
   specification's rules, and branch point v1.9's residue N1 (RD-1 and
   RD-3 named twice; the catalog link twice), which the owner left to
-  this review on 2026-10-30. A meta-review session with no part in the
+  this review on 2026-10-30. Also in scope: the methodology
+  specification's Provenance opening and meta-review subject passage
+  drew restatement mismatches in its counts 4, 5 and 6, with structural
+  fixes between the counts (count 6, round 1). A meta-review session with no part in the
   rounds performs the review and reports as an
   [evaluation case](../eval/README.md).
 - [ ] **Dispatcher: row BP-00** — open. `scripts/dispatch.mjs` does not

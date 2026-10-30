@@ -71,7 +71,7 @@ C18. When a finding needs a new rule, the reasoning role lists the finding for t
 
 C19. A finding that needs a new rule counts against the verdict as its kind does until the owner decides (case 012 change 9). evidence: E1, E2. [decided: owner, 2026-10-30]
 
-C20. A decided claim a fix rewords keeps its decided source and notes the rewording, as `reworded in count N, round M` (case 012 change 14). evidence: E1, E2. [decided: owner, 2026-10-30]
+C20. When a fix rewords a decided claim, the reasoning role keeps the claim's decided source and notes the rewording, as `reworded in count N, round M` (case 012 change 14). evidence: E1, E2. [decided: owner, 2026-10-30; reworded in v1.10's count, round 1]
 
 C21. The owner ratifies the reworded claims as one list at the count's close (case 012 change 14). evidence: E1, E2. [decided: owner, 2026-10-30]
 
@@ -91,6 +91,8 @@ C27. The reasoning role fixes a claim reported missing or stale before the confi
 
 C28. The reasoning role names the fix commit to the round's stranger instance (case 012 change 7). evidence: E1, E2. [decided: owner, 2026-10-30]
 
+C52. The fix commit is the commit that holds the round's fix pass. [inferred: R2]
+
 C29. The round's stranger instance reads the prose and the IR at the fix commit, in full, before answering (case 012 change 7). evidence: E1, E2. [decided: owner, 2026-10-30]
 
 C30. The instance also names each new defect the fixes introduce. [decided: owner, 2026-10-30]
@@ -109,7 +111,11 @@ C34. The reasoning role does not fix in the count a new defect the step-7 confir
 
 C35. The reasoning role lists a new defect the step-7 confirmation names for the owner (case 012 change 8). evidence: E1, E2. [decided: owner, 2026-10-30]
 
-C51. The next edit of the text fixes the new defect (case 012 change 8). evidence: E1, E2. [decided: owner, 2026-10-30]
+C51. The reasoning role fixes the new defect in the next edit of the text (case 012 change 8). evidence: E1, E2. [decided: owner, 2026-10-30; reworded in v1.10's count, round 1]
+
+C53. At Rounds steps 4 and 7 the round's instance also reads the inputs step 4 lists. [decided: owner, 2026-10-30; reworded in v1.10's count, round 1, the list pointed to step 4]
+
+C54. Case 008 proposed no change to the D1 row's rule on joining a rule to a reason by connective prose. [decided: owner, 2026-10-27; reworded in v1.10's count, round 1]
 
 ### Verdict
 
@@ -151,6 +157,8 @@ C50. Eleven of case 012's fifteen changes amend the methodology specification as
 
 R1. C3 depends-on C4 because the version list on the Status line ran to 91 words, and step 1 resolves every sentence over 25 words before round 1.
 
+R2. C52 refines C28 because case 012 change 7 names the commit the instance reads, and that commit holds the round's fix pass.
+
 ## Evidence
 
 E1. eval/cases/012-meta-review-branch-point-v1.9-and-ir-spec-count-5-2026-10-30.md, Outcome, changes 1 to 15.
@@ -159,4 +167,6 @@ E2. The owner's decision of 2026-10-30 on case 012, relayed by the Orchestrator:
 
 ## Asks
 
-A1. Accept branch point v1.10. Depends: C1 to C51.
+A1. Accept branch point v1.10. Depends: C1 to C54.
+
+A2. Decide the mark of a step-6 fix made in a readable round's fix pass, a gap round 1 found (finding 5). Proposed wording: "At a readable verdict, a step-6 fix made in that round's fix pass stays `awaiting restatement`, as at the limit; the next count's round 1 brief lists its passage." The finding counts against the verdict as a contradiction until the owner decides (case 012 change 9). Depends: C33.
