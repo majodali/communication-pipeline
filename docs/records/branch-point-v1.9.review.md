@@ -194,6 +194,10 @@ Round 3's carried items applied in the same pass: finding 9 re-fixed (C69, BP-02
 
 Claims after fixes: 70. Prose after fixes: 3,656 words. Claims check after the fixes (base: round 4 prose): 11 changed claims, 0 missing, 0 stale; C51 and C52 removed. Round trip: 70 of 70. npm test: 42 of 42.
 
+Confirmation: 10 of 10 fixes hold. Not held: none. Declines accepted: 1 of 1. New defects: 2.
+
+The two new defects are fixed in round 5's fix pass: A (SP-03, "When the line parses" does not name the unparsed line) and B (SP-25, "The three-round trigger fired on counts that converged" against "the two counts that converged").
+
 Decided claims the fixes changed, for the owner: all are listed in A2; the row order BP-02a before BP-02 (C68) is new, and the dispatcher follows it.
 
 Declined findings for round 5's brief: round 1's F1 and F3; round 2's 9 and 10; round 4's 11; each with its reason.
