@@ -1,6 +1,6 @@
 # Branch point
 
-Status: proposed (v1.7, round 3 readable on 2026-10-29, fixes confirmed; awaiting the owner's acceptance). Until the owner accepts v1.7, v1.6 is active on main. Versions: v1.7, 2026-10-29, the sixteen process changes of evaluation case 009 and the term structural fix; v1.6, 2026-10-27, the signal-based meta-review trigger; v1.5, 2026-10-27, the five process changes of
+Status: proposed (v1.8, 2026-10-30, the row BP-00 for IR-only documents, delivered IR-only under that same option; v1.7, round 3 readable on 2026-10-29, fixes confirmed; awaiting the owner's acceptance). Until the owner accepts v1.7, v1.6 is active on main. Versions: v1.7, 2026-10-29, the sixteen process changes of evaluation case 009 and the term structural fix; v1.6, 2026-10-27, the signal-based meta-review trigger; v1.5, 2026-10-27, the five process changes of
 evaluation case 008; v1.4, 2026-10-27, accepted by the
 owner with the style rules
 [SP-05, SP-18, SP-25 and SP-26](style-spec.md#rule-table) and the
@@ -131,6 +131,7 @@ RD-4 (fresh agent session), RD-5 (external reader).
 
 | Rule | Condition | [Disposition](vocabulary.md#def-disposition) |
 |---|---|---|
+| BP-00 | the owner designated the document [IR-only](https://github.com/majodali/methodology/blob/main/docs/vocabulary.md#def-ir-only-document) and the IR header does not carry `Normative: yes` | D0; the IR is the deliverable, its Status reads `delivered IR-only`, and no later row applies |
 | BP-01 | always | the lints run, whatever disposition follows |
 | BP-02 | owner flag is `review` | D2 |
 | BP-02a | purpose is `document` and the IR header carries `Normative: yes` | D3 |
