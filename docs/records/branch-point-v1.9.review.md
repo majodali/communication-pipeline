@@ -330,6 +330,10 @@ Awaiting restatement: the Rules opening matched on C87 and C55; the lints senten
 
 Round 6's carried items applied in the same pass: N1 (C99, step 4 sends the round's declined findings with their reasons; C101, the brief's read list names them); N2 (C95, the confirmation-line claim; R31 retargeted to it; E5 cites the review records); N3 (the form-audit link). Shared with the specification's round 6: C78 split, C97 defines the claims-check line, C96; the second signal's scope "in two rounds of the text's counts" (C98, C100). The Backlog gains the entry for the dispatcher's missing row BP-00, and `scripts/dispatch.mjs`'s header comment notes it. Two long sentences the fixes made were split before commit: the brief's read list and the second signal.
 
+Confirmation: 6 of 7 fixes hold. Not held: 8. Declines accepted: 0 of 0. New defects: 2.
+
+The instance (a2932fc99aded0e74) re-read the prose at the fixed passages only. Finding 8 did not hold: the cut removed the seven-amendment sentence and the four-claim overlap, which no other prose passage states, so C43, C44 and C80 lost their prose carrier. New defect 1 is that over-cut. New defect 2 (SP-18, from fix 5): step 7's "before delivery or the owner's decision" names an owner decision no step names as a confirmation point. The instance could not open the constitution for fix 7's link target and checked the link only. The re-fix and the two defects are fixed in round 8's fix pass.
+
 Claims after fixes: 96. Prose after fixes: 3,874 words. Claims check after the fixes (base: round 7 prose): 16 changed claims, 0 missing, 0 stale; C44 and C80 removed. Round trip: 96 of 96. npm test: 42 of 42.
 
 Decided claims the fixes changed, for the owner: all are listed in A2.
