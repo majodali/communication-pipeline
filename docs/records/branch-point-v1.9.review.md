@@ -42,4 +42,18 @@ Signals script after the `Mismatches:` line (step 6, case 010 change 2): no recu
 
 Claims after fixes: 57. Prose after fixes: 3,490 words. Claims check after the fixes (base: round 1 prose): 21 changed claims, 0 missing, 0 stale.
 
-Decided claims the fixes changed, for the owner: C15, C16 and C50 (v1.7's C14) gain the reasoning role as actor and become inferred; C20 folds case 011 change 5's run into case 010 change 2's and becomes inferred; C23, C25 and C26, with the new C53, join case 010 change 1's and case 011 change 1's texts into one rule; C55 states that the first-match rule applies after BP-01 and is inferred.
+Confirmation: 19 of 19 fixes hold. Not held: none. Declines accepted: 1 of 2. New defects: 3.
+
+F3's decline was accepted. F1's decline was not accepted by the instance; the decline stands on its reason (the Status line is an exempt form, and the Versions sentence is the history every version carries). F1 and F3 go into round 2's brief with their reasons.
+
+Re-fixed before round 2, the three new defects:
+
+| # | New defect (shortened) | Kind | Re-fix |
+|---|---|---|---|
+| N1 | "Rule BP-01 (the lints run) applies to every IR" against BP-00's "no later row applies" | SP-25 | BP-00 row: "D0, so the lints still run; …, and no later disposition row applies" (C58, inferred by R13); C55: "Among the rows other than BP-01, the first whose condition holds decides the disposition." |
+| N2 | the five counts named with no case or record | SP-05 | C56: methodology PR #51 with a link to case 005; the IR specification's counts 1 and 2 and branch point v1.4 and v1.5 with links to their review records; C56 stays inferred by R12 |
+| N3 | step 4 states the not-held trigger twice | SP-26 | C59 and C15: "When the instance says a fix does not hold, the reasoning role fixes again before the next round. The reasoning role marks the second fix `awaiting restatement` in the review record." |
+
+Claims after the re-fixes: 59. Claims check against the round 1 base after the re-fixes: 23 changed claims, 0 missing, 0 stale.
+
+Decided claims the fixes changed, for the owner: C15, C16 and C50 (v1.7's C14) gain the reasoning role as actor and become inferred; C20 folds case 011 change 5's run into case 010 change 2's and becomes inferred; C23, C25 and C26, with the new C53, join case 010 change 1's and case 011 change 1's texts into one rule; C55 states that the first-match rule applies to the rows other than BP-01 and is inferred; C58 restates v1.8's row BP-00 (the lints still run under D0), inferred; C59 restates v1.7's re-fix sentence with its trigger first.

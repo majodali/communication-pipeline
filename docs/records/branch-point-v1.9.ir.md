@@ -59,7 +59,9 @@ C13. The claims check runs on the fixed prose before the round's stranger instan
 
 C14. A changed claim the claims check reports missing or stale is fixed before the confirmation read (case 010 change 6). evidence: E1. [decided: owner, 2026-10-30]
 
-C15. When the instance says a fix does not hold, the reasoning role marks the second fix `awaiting restatement` in the review record (case 011 change 6). evidence: E2. [inferred: R7]
+C59. When the instance says a fix does not hold, the reasoning role fixes again before the next round (v1.7's step 4 sentence with the trigger first). [decided: owner, 2026-10-27]
+
+C15. The reasoning role marks the second fix of a claim `awaiting restatement` in the review record (case 011 change 6). evidence: E2. [inferred: R7]
 
 C16. In the next round's entry, the reasoning role states whether that round names the second fix's claim on its `Mismatches:` line or in a finding (case 011 change 6). evidence: E2. [inferred: R8]
 
@@ -105,7 +107,9 @@ C27. The review record quotes the form the reasoning role adds to the brief and 
 
 C54. Rule BP-01 (the lints run) applies to every IR. [decided: owner, 2026-10-25]
 
-C55. Among the rules after BP-01, the first rule whose condition holds decides the disposition. [inferred: R11]
+C55. Among the rows other than BP-01, the first row whose condition holds decides the disposition. [inferred: R11]
+
+C58. Under BP-00 the lints still run, as D0, and no later disposition row applies. [inferred: R13]
 
 ### Meta-review
 
@@ -133,7 +137,7 @@ C38. The script's wording search skips the `Meta-review:` line (case 010 change 
 
 C57. The trigger of three rounds predated the five counts recorded by 2026-10-27. [decided: owner, 2026-10-27]
 
-C56. The five counts: the rounds on methodology PR #51; the methodology's IR specification counts 1 and 2; branch point v1.4; branch point v1.5. evidence: E4. [inferred: R12]
+C56. The five counts: the rounds on methodology PR #51, the subject of case 005; the methodology's IR specification counts 1 and 2, in its review record; branch point v1.4 and v1.5, in their review records. evidence: E4. [inferred: R12]
 
 C39. The meta-reviews so far are cases 005 and 007 to 011. [decided: owner, 2026-10-30]
 
@@ -177,6 +181,8 @@ R10. C20 refines C18 because the run after each round's `Mismatches:` line alrea
 
 R11. C55 refines C54 because BP-01's condition always holds and BP-01 decides no disposition; round 1 finding 18.
 
+R13. C58 refines C54 because D0 is lint only, so an IR-only document still gets the lints BP-01 names; round 1 new defect 1.
+
 R12. C56 refines C57 because the release register's v1.6.0 entry gives the five counts as 10, 10, 6, 3 and 4 rounds, the round counts of these five texts' review records; round 1 finding 20.
 
 ## Evidence
@@ -191,4 +197,4 @@ E4. methodology docs/releases.md, v1.6.0, The meta-review trigger is signal-base
 
 ## Asks
 
-A1. Accept branch point v1.9. Depends: C1 to C57.
+A1. Accept branch point v1.9. Depends: C1 to C59.
