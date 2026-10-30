@@ -424,4 +424,4 @@ The owner's decision, 2026-10-30: branch point v1.9 accepted (PR #22 merged). Th
 7. The meta-review: dispatched, with the IR specification's count 5, as one task.
 8. The Backlog entry on row BP-00: no ruling; it stays open on the Backlog.
 
-Meta-review: pending (signals 1, 2 and 4). The line stays until the meta-review is delivered.
+Meta-review: delivered (signals 1, 2 and 4): [evaluation case 012](https://github.com/majodali/communication-pipeline/blob/main/eval/cases/012-meta-review-branch-point-v1.9-and-ir-spec-count-5-2026-10-30.md), 2026-10-30.
