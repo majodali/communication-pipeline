@@ -10,6 +10,7 @@ Reader of the reviewed text: RD-4 (a fresh agent session). Reviewer: a stranger,
 | 2 | 3,499 | 59 | 15 | 4.3 | not readable (one own mismatch, quoted, not counting; contradictions 0; undefined terms 3) |
 | 3 | 3,577 | 65 | 10 | 2.8 | not readable (one own mismatch, not counting under the reading of 2026-10-30; contradiction 1; undefined term 1) |
 | 4 | 3,610 | 66 | 11 | 3.0 | not readable (restatement matched, no mismatch; contradictions 3; undefined terms 0) |
+| 5 | 3,656 | 70 | 11 | 3.0 | not readable (one own mismatch, a step-6 passage that counts under the override; contradictions 0; undefined terms 0) |
 
 ## Round 1, 2026-10-30
 
@@ -215,3 +216,34 @@ Declined findings carried in the brief: round 1's F1 (the instance did not accep
 Signals script before the round: signals 1, 2 and 3 not fired; no line unparsed. Signal 4 fired by reading in round 4 (see round 4's entry); the script's CHECK points at that round.
 
 Stranger brief: before round 5 the Orchestrator brought the brief's Readability verdict sentence to the current rule: three conditions, the first with the own-mismatch exception and the recurrence override, the second and third plain. In rounds 1 to 4 that sentence had quoted the round 1 rule. Later rounds' briefs start from the updated round 5 brief.
+
+Stranger model: claude-haiku-5-5, a fresh instance at the frugal tier, under the brief with the current verdict sentence. Prose 3,656 words by `wordCount`; IR 70 claims; 11 findings, 3.0 per thousand words. Restatement: one mismatch, attributed by the stranger to its own restatement, quoting the Rules opening, which carries C54. Contradictions 0, undefined terms 0. The stranger's verdict was readable; under the override it is not readable for RD-4, because round 2's own mismatch on C55 sat on the same passage, the Rules opening.
+
+Mismatches: C54 (own; relied on C54)
+
+
+Signals script after the `Mismatches:` line: no recurrence by claim. By passage, by reading: the Rules opening drew own mismatches in round 2 (C55) and round 5 (C54), so signal 2 fires and step 6 makes the passage a prose finding owed a structural fix.
+
+| # | Finding (shortened) | Kind | Disposition |
+|---|---|---|---|
+| 1 | own mismatch on C54: the Rules opening restated without BP-01's exemption | restatement, step 6 | structural fix: rule BP-01 leaves the rules table and stands as a sentence of its own before it, "Rule BP-01: the lints run for every IR, whatever disposition follows."; the first-row sentence then has no exception: "The first row of the table below whose condition holds decides the disposition."; `awaiting restatement` |
+| 2 | "IR" unexpanded at its first use in Purpose | SP-04 | add: "intermediate representation (IR)", linked |
+| 3 | "The review record quotes the prose sentence the stranger relied on" names no actor | SP-18 | rephrase C10: "For each own mismatch, the reasoning role quotes in the review record …"; inferred by R25 |
+| 4 | "An own mismatch's claim carries `(own)`" names no actor | SP-18 | rephrase C7: "When writing the `Mismatches:` line, the reasoning role marks an own mismatch's claim `(own)`."; inferred by R24 |
+| 5 | step 2 names the mismatch claim twice | SP-26 | cut v1.7's sentence "The reasoning role names in the review record, for every restatement mismatch, the claim the mismatch concerns."; the `Mismatches:` line sentence carries the duty |
+| 6 | "step-6 fix" used in step 4 before step 6 | SP-04 | add C74 at first use: "A step-6 fix is a fix made under step 6 for a mismatch that recurred."; inferred by R27 |
+| 7 | "carries the IR's claim" names no claim | SP-03 | rephrase C25 to the reading adopted on 2026-10-30: "carries an IR claim"; the same in the specification's C223 |
+| 8 | "The review record quotes the form …" names no actor | SP-18 | rephrase C27: "Before each round, the reasoning role quotes each added form in the review record …"; inferred by R26 |
+| 9 | "unparsed" used before its definition | SP-04 | add C78: "An unparsed line is a review-record line the signals script cannot read."; inferred by R28 |
+| 10 | "The script exempts round 1" has no object | SP-03 | rephrase C36: "… exempts round 1 from the claims-check-line rule …" |
+| 11 | the Meta-review paragraph mixes trigger, signals, line, script and history | SP-09 | split into four paragraphs by subject; no claim changed; the render map names them |
+
+The verdict becomes the specification's table, so the two verdict texts stay identical after the specification's second structural fix: one row per condition, the exception and override in the first row (C23, C53, C25, C26, C75), each withdrawal in its own row (C76, C77). Step 4 keeps the withdrawal marking (C50) and loses the two sentences the table now carries.
+
+Queued items applied in the same pass: round 4's A (C70: "When the unparsed line parses, …"); round 4's B (C66: "The three-round trigger fired on two counts that converged without any step failing: branch point v1.5 and the IR specification's count 2."; C71: "The owner dispatched no meta-review for those two counts."); the specification's N1 (C81: "When the text is no subject and no line is unparsed, the reasoning role writes `Meta-review: not indicated`."; C82); N2 (C79: the specification's rule on `Meta-review: pending` and `Meta-review: unparsed` lines in an accepted deliverable's review record applies, linked). The stranger's two small adds: "Four of the seven are also among the nineteen." (C80); the case 008 sentence, v1.7's text, left as it is.
+
+Claims after fixes: 79. Prose after fixes: 3,785 words. Claims check after the fixes (base: round 5 prose): 21 changed claims, 0 missing, 0 stale. Round trip: 79 of 79.
+
+Decided claims the fixes changed, for the owner: all are listed in A2, including rule BP-01's move out of the rules table.
+
+Declined findings for round 6's brief: round 1's F1 and F3; round 2's 9 and 10; round 4's 11; each with its reason. Passage awaiting restatement in round 6: the Rules opening with rule BP-01 (C54, C55); the verdict table, new in this round (C23, C53, C25, C26, C75 to C77).
