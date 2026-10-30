@@ -113,7 +113,7 @@ C91. Step 7 applies at a readable verdict and at the limit. [decided: owner, 202
 
 C92. At a readable verdict, the round's stranger instance confirms each fix before delivery. [decided: owner, 2026-10-29; reworded in rounds 7 and 8]
 
-C103. At the limit, the final round's stranger instance confirms each fix other than a step-6 fix. [decided: owner, 2026-10-29; split from C92 in round 8]
+C103. At the limit, the final round's stranger instance confirms each fix other than a step-6 fix before the count closes. [decided: owner, 2026-10-29; split from C92 in round 8, timing added after its confirmation]
 
 C93. At step 7, the reasoning role marks each finding of the round confirmed, or unfixed when the instance did not confirm its fix. [decided: owner, 2026-10-29; reworded in round 7]
 

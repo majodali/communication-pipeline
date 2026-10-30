@@ -87,7 +87,7 @@ The rounds of D2 and D3 follow the methodology specification's [Stranger rounds]
    any two rounds of the text's counts as a prose finding.
    The reasoning role runs the signals script, `scripts/signals.mjs`, which reads the review record, after writing each round's `Mismatches:` line and before writing the verdict. The script's recurrence report is step 6's check. Before the next round, the reasoning role applies step 6 to each claim the script reports. A structural fix moves the sentence out of the structure that produces the reading: a list, a section or an adjacency. A structural fix may instead change the claim to the strangers' reading when that reading is true. A rewording alone is not a step-6 fix. The reasoning role lists a decided claim changed by a structural fix for the owner in the report that delivers the text to the owner. The reasoning role marks a step-6 fix `awaiting restatement` in the review record. The reasoning role states in the next round's entry whether that round's restatement matched on the step-6 passage.
 7. Step 7 applies at a readable verdict and at the limit. The reasoning role fixes the round's
-   findings in the IR and then in the prose. At a readable verdict, the round's stranger instance confirms each fix before delivery. At the limit, the final round's stranger instance confirms each fix other than a step-6 fix. Step 7's claims check runs as in step 4. The reasoning role marks each finding of the round confirmed, or unfixed when the instance did not confirm its fix. At the limit, a step-6 fix of the final round stays `awaiting restatement` and counts as unfixed.
+   findings in the IR and then in the prose. At a readable verdict, the round's stranger instance confirms each fix before delivery. At the limit, the final round's stranger instance confirms each fix other than a step-6 fix before the count closes. Step 7's claims check runs as in step 4. The reasoning role marks each finding of the round confirmed, or unfixed when the instance did not confirm its fix. At the limit, a step-6 fix of the final round stays `awaiting restatement` and counts as unfixed.
 
 ### The verdict and the status lines
 
@@ -145,16 +145,12 @@ The rules table maps an IR's inputs to a disposition. The first row of the table
 | BP-02a | purpose is `document` and the IR header carries `Normative: yes` | D3 |
 | BP-02 | owner flag is `review` (the owner asked for a review) | D2 |
 | BP-03 | purpose is `document` | D2 |
-| BP-04 | reader is RD-4 (fresh agent session) or RD-5 (external reader) | D2 |
+| BP-04 | reader is RD-4 (fresh agent session) or RD-5 (external reader), from the [reader catalog](readers.md) | D2 |
 | BP-05a | proposed terms > 0 | D1, with the ratification ask |
 | BP-06 | reader is RD-2 (human owner, returning) | D1 |
-| BP-07 | reader is RD-1 and (claims > 6 or dependent asks > 0 or longest claim > 30 words) | D1 |
-| BP-08 | reader is RD-3 and (claims > 12 or dependent asks > 0) | D1 |
+| BP-07 | reader is RD-1 (human owner, in conversation) and (claims > 6 or dependent asks > 0 or longest claim > 30 words) | D1 |
+| BP-08 | reader is RD-3 (delegating agent) and (claims > 12 or dependent asks > 0) | D1 |
 | BP-09 | reader is RD-1 or RD-3 | D0 |
-
-Readers are the [catalog](readers.md)'s: RD-1 (human owner, in
-conversation), RD-2 (human owner, returning), RD-3 (delegating agent),
-RD-4 (fresh agent session), RD-5 (external reader).
 
 ## Why each rule
 

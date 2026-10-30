@@ -377,4 +377,13 @@ Owner notes, not findings: the count closes readable with C54 unmatched on resta
 
 Claims after fixes: 100. Prose after fixes: 3,915 words. Claims check after the fixes (base: round 8 prose): 8 changed claims, 0 missing, 0 stale. Round trip: 100 of 100. npm test: 42 of 42.
 
-The confirmation line, the verdict and the `Meta-review:` line follow when the round's instance confirms.
+Confirmation: 6 of 6 fixes hold. Not held: none. Declines accepted: 0 of 0. New defects: 3.
+
+The instance (a97f5c0d8113aae3f) re-read the prose only. The three new defects arise from the fixes, so the reasoning role applies them before the close and sends them to the same instance once:
+
+| # | New defect (shortened) | Kind | Fix |
+|---|---|---|---|
+| N1 | the reader names now stated in rows BP-04 and BP-06 and again in the readers paragraph | SP-26 | the paragraph's list cut; every row names its readers at first use in the table, and row BP-04 carries the catalog link: "reader is RD-4 (fresh agent session) or RD-5 (external reader), from the [reader catalog](readers.md)"; rows BP-07 to BP-09 name RD-1 and RD-3 |
+| N2 | step 7's limit sentence states no timing, and C92 is read as not matching | IR and prose | the IR already carries the two-trigger form (C92 at a readable verdict, C103 at the limit); the limit sentence gains its timing: "At the limit, the final round's stranger instance confirms each fix other than a step-6 fix before the count closes." (C103) |
+| N3 | the seven and four sentences read as having no IR claim | IR | declined: C44 ("Seven of the twenty-two adopted changes amend the methodology's intermediate-representation specification as its count 5 …") and C80 ("Four of the seven specification amendments are also among the nineteen process changes of v1.9.") carry them; the instance read the prose only |
+
