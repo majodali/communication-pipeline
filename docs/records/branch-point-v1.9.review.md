@@ -197,3 +197,15 @@ Claims after fixes: 70. Prose after fixes: 3,656 words. Claims check after the f
 Decided claims the fixes changed, for the owner: all are listed in A2; the row order BP-02a before BP-02 (C68) is new, and the dispatcher follows it.
 
 Declined findings for round 5's brief: round 1's F1 and F3; round 2's 9 and 10; round 4's 11; each with its reason.
+
+## Round 5, 2026-10-30
+
+Branch point version and commit the round runs under: v1.9 at this round's opening commit. Prose 3,656 words; IR 70 claims. Round 4's confirmation was not yet back when round 5 opened; its line is recorded in round 4's entry when it arrives.
+
+Claims check before the round: 11 changed claims, 0 missing, 0 stale (base: round 4 prose).
+
+Awaiting restatement: none.
+
+Declined findings carried in the brief: round 1's F1 (the instance did not accept the decline) and F3; round 2's 9 and 10; round 4's 11; each with its reason.
+
+Signals script before the round: signals 1, 2 and 3 not fired; no line unparsed. Signal 4 fired by reading in round 4 (see round 4's entry); the script's CHECK points at that round.
