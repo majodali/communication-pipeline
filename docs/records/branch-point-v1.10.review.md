@@ -11,6 +11,7 @@ Reader of the reviewed text: RD-4 (a fresh agent session). Reviewer: a stranger,
 | 3 | 3,821 | 59 | 9 | 2.4 | not readable (mismatch 1, first occurrence; contradiction 1; undefined term 1) |
 | 4 | 3,852 | 63 | 9 | 2.3 | not readable (mismatches 0; contradictions 2; undefined terms 0) |
 | 5 | 3,865 | 69 | 7 | 1.8 | not readable (mismatch 1; contradictions 2; undefined terms 0) |
+| 6 | 3,888 | 75 | 4 | 1.0 | not readable (mismatches 0; contradiction 1; undefined terms 0) |
 
 ## Round 1
 
@@ -247,3 +248,21 @@ Declined findings carried in the brief: from v1.9's count, round 1's F3, round 2
 Forms added to the brief: none.
 
 Signals script before the round: signal 1 reads one round with a fix not held (round 3), so it does not fire; no line unparsed.
+
+Stranger model: claude-haiku-5-5, a fresh instance at the frugal tier (a3bd5db7c45481380), reading at commit 34b6a93. Prose 3,888 words by `wordCount` (the stranger's hand estimate: about 4,900); IR 75 claims; 4 findings, 1.0 per thousand words. Restatement: no mismatch. Contradiction 1 (finding 1), undefined terms 0; verdict: not readable for RD-4, on the contradiction alone.
+Mismatches: none
+
+The listed passage, step 2's read scope with the read order and the confirmation inputs, restated in one sentence that matches C65 and C53. The `awaiting restatement` mark clears. The stranger's readability note: "no file other than the prose and the IR" left the brief's own status open; C65 now names the brief.
+
+Omissions noticed, not counted: seven on sentences v1.10 did not change, whose claims stand in earlier IRs; and two gaps in this IR: (f) C53 had dropped "with their reasons" from step 4's list, now restored in the claim and the prose; (g) case 012's change 11 had no claim, now C78 in the history.
+
+| # | Finding (shortened) | Kind | Decision |
+|---|---|---|---|
+| 1 | step 3's "adds words only for a missing definition or referent" against the state-header move and the rewording note | SP-25 | reconciled without a new rule, C71: "In a fix, the reasoning role adds words only for a missing definition or referent, a state header, or a rewording note." |
+| 2 | the claims-check line definition restates step 4's recording duty | SP-26 | C40: "A claims-check line is the review-record line that records a claims check's result."; the fix-pass link moves to the unparsed rule's sentence |
+| 3 | "for a text that is a meta-review subject" repeated | SP-26 | cut, C80: "When the unparsed line parses, the reasoning role writes `pending` again." |
+| 4 | "declined findings" used in step 2 before step 3 defines it | SP-04 | C79 at first use: "A declined finding is one the reasoning role declines with a reason at step 3." (inferred, R7) |
+
+Claims after fixes: 78. Prose after fixes: 3,910 words. Claims check after the fix pass (base: round 6 prose): 7 changed claims, 0 missing, 0 stale. Round trip: 78 of 78. IR check: 0 violations, 0 warnings.
+
+Decided claims the fixes reworded, for the owner's list at the count's close: C40, C53 (again), C65 (its sixth wording), C71 (again), C80 (v1.9's C70); C78 added.
