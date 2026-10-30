@@ -8,6 +8,7 @@ Reader of the reviewed text: RD-4 (a fresh agent session). Reviewer: a stranger,
 |---|---|---|---|---|---|
 | 1 | 3,393 | 47 | 21 | 6.2 | not readable (restatement matched, no mismatch; contradictions 2; undefined terms 4) |
 | 2 | 3,499 | 59 | 15 | 4.3 | not readable (one own mismatch, quoted, not counting; contradictions 0; undefined terms 3) |
+| 3 | 3,577 | 65 | 10 | 2.8 | not readable (one own mismatch that counts; contradiction 1; undefined term 1) |
 
 ## Round 1, 2026-10-30
 
@@ -122,3 +123,31 @@ Awaiting restatement: none; rounds 1 and 2 made no step-6 fix, and no fix was re
 Declined findings carried in the brief: round 1's F1 (the instance did not accept the decline) and F3; round 2's 9 and 10; each with its reason.
 
 Signals script before the round: no signal fired; no line unparsed.
+
+Stranger model: claude-haiku-5-5, a fresh instance at the frugal tier. Prose 3,577 words by `wordCount`; IR 65 claims; 10 findings, 2.8 per thousand words. Restatement: one mismatch, attributed by the stranger to its own restatement, quoting "The first condition: the stranger's restatement of the problem, terms and decisions has no mismatch with the IR." That sentence carries C23, not C25, so the exception does not apply: the mismatch counts. Contradiction 1 (finding 10), undefined term 1; verdict: not readable for RD-4.
+
+Mismatches: C25 (own; relied on C23)
+
+
+Signals script after the `Mismatches:` line: no recurring mismatch; C25 and C23 stood on no earlier line; no line unparsed. Not a step-6 case on this text. The methodology specification's count 5 had an own mismatch on the same rule (C223) in its round 1, so the passage is one to watch in both texts.
+
+Awaiting restatement: none.
+
+| # | Finding (shortened) | Kind | Disposition |
+|---|---|---|---|
+| 1 | own mismatch on C25: the reader of the first-condition sentence drops the exception that follows | restatement | rephrase C23: "The first condition: the restatement of the problem, terms and decisions has no mismatch with the IR that counts under the exception and override below." |
+| 2 | "evaluation corpus" undefined in the opening block | SP-04 | add the link to `eval/README.md` |
+| 3 | Inputs opens with the exception "All inputs but the owner flag come from the IR." | SP-11 | rephrase: "The inputs come from the IR."; the owner-flag row: "the owner: `review` if …" |
+| 4 | "reasoning role" first used in row D1 without a link | SP-04 | add the link at D1; the D3 row's link removed |
+| 5 | "The rules of this step" with unclear scope | SP-03 | rephrase C11: "The rules above on how a fix is made bind …" |
+| 6 | the reviewed-IR edit sentences name no actor | SP-18 | rephrase C12 and C49: "In such an edit, the reasoning role cuts …", "… amends …"; both inferred (R18, R19) |
+| 7 | the verdict and status-line rules under a header naming only rounds | SP-08 | add the sub-header "The verdict and the status lines"; no link pointed at an anchor that moved |
+| 8 | Rules opens with BP-01 before the first-match rule | SP-11 | reorder C55 and C54: "Among the rows other than rule BP-01 (the lints run), the first whose condition holds decides the disposition. BP-01 applies to every IR." |
+| 9 | row BP-02 carries no name | SP-05 | rephrase the row: "owner flag is `review` (the owner asked for a review)" |
+| 10 | "writes `Meta-review: not indicated` otherwise" against "writes no `Meta-review: not indicated` while a line is unparsed" | SP-25 | add C67: "While a line is unparsed, the reasoning role writes `Meta-review: unparsed`, naming the line."; inferred by R20; "Otherwise the reasoning role writes `Meta-review: not indicated`" follows it |
+
+Claims after fixes: 66. Prose after fixes: 3,610 words. Claims check after the fixes (base: round 3 prose): 7 changed claims, 0 missing, 0 stale. Round trip: 66 of 66.
+
+Decided claims the fixes changed, for the owner: C23 points at its exception and override (case 010 change 1's text, reworded); C11 names the rules it binds (reworded); C12 and C49 gain the reasoning role as actor and become inferred (basis case 011 change 9); C67 is a new rule the rounds added: the `Meta-review: unparsed` line (basis case 010 change 7 and case 011 change 7).
+
+Declined findings for round 4's brief: round 1's F1 and F3; round 2's 9 and 10; each with its reason.

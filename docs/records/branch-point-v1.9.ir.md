@@ -49,11 +49,11 @@ C10. The review record quotes the prose sentence the stranger relied on (case 01
 
 ### Rounds step 3
 
-C11. The rules of step 3 bind an edit to an IR whose Status is reviewed, outside a round (case 011 change 9). evidence: E2. [decided: owner, 2026-10-30]
+C11. Step 3's rules on how a fix is made bind an edit to an IR whose Status is reviewed, outside a round (case 011 change 9). evidence: E2. [decided: owner, 2026-10-30; reworded in round 3 to name the rules]
 
-C12. An edit to a reviewed IR cuts each claim the edit makes a duplicate (case 011 change 9). evidence: E2. [decided: owner, 2026-10-30]
+C12. In an edit to a reviewed IR outside a round, the reasoning role cuts each claim the edit makes a duplicate (case 011 change 9). evidence: E2. [inferred: R18]
 
-C49. An edit to a reviewed IR amends each claim the edit makes stale (case 011 change 9). evidence: E2. [decided: owner, 2026-10-30]
+C49. In an edit to a reviewed IR outside a round, the reasoning role amends each claim the edit makes stale (case 011 change 9). evidence: E2. [inferred: R19]
 
 ### Rounds step 4
 
@@ -95,7 +95,7 @@ C21. Step 7's claims check runs as in step 4 (case 010 change 6). evidence: E1. 
 
 C22. The verdict is readable when three conditions hold. [decided: owner, 2026-10-27]
 
-C23. The verdict's first condition: the stranger's restatement of the problem, terms and decisions has no mismatch with the IR (case 010 change 1). evidence: E1. [decided: owner, 2026-10-30]
+C23. The verdict's first condition: the restatement of the problem, terms and decisions has no mismatch with the IR that counts under the exception and override below (case 010 change 1). evidence: E1. [decided: owner, 2026-10-30; reworded in round 3 to point at its exception and override]
 
 C53. Under the first condition, a mismatch counts whatever the stranger attributes it to, with one exception and one override (case 010 change 1 joined to case 011 change 1). evidence: E1. [decided: owner, 2026-10-30]
 
@@ -113,9 +113,9 @@ C27. The review record quotes the form the reasoning role adds to the brief and 
 
 ### Rules
 
-C54. Rule BP-01 (the lints run) applies to every IR. [decided: owner, 2026-10-25]
+C55. Among the rows other than rule BP-01 (the lints run), the first row whose condition holds decides the disposition. [inferred: R11]
 
-C55. Among the rows other than BP-01, the first row whose condition holds decides the disposition. [inferred: R11]
+C54. BP-01 applies to every IR. [decided: owner, 2026-10-25]
 
 C58. Under BP-00 the lints still run, as D0, and no later disposition row applies. [inferred: R13]
 
@@ -140,6 +140,8 @@ C35. The script reports a round with no claims-check line as unparsed (case 011 
 C36. The script exempts round 1 from the claims-check line, because the claims check's base is the previous round's prose. [inferred: R3]
 
 C37. The script reports a `Meta-review: not indicated` line that the script's own reading contradicts (case 010 change 7). evidence: E1. [decided: owner, 2026-10-30]
+
+C67. While a line is unparsed, the reasoning role writes `Meta-review: unparsed`, naming the line, in place of `Meta-review: not indicated`. [inferred: R20]
 
 C38. The script's wording search skips the `Meta-review:` line (case 010 change 7). evidence: E1. [decided: owner, 2026-10-30]
 
@@ -195,6 +197,12 @@ R11. C55 refines C54 because BP-01's condition always holds and BP-01 decides no
 
 R12. C56 refines C57 because the release register's v1.6.0 entry gives the five counts as 10, 10, 6, 3 and 4 rounds, the round counts of these five texts' review records; round 1 finding 20.
 
+R18. C12 depends-on C59 because the reasoning role is the actor that fixes and edits the IR, and case 011 change 9, the claim's basis, names no actor.
+
+R19. C49 depends-on C59 because the reasoning role is the actor that fixes and edits the IR, and case 011 change 9, the claim's basis, names no actor.
+
+R20. C67 refines C35 because a round the script reports unparsed bars `Meta-review: not indicated` (case 010 change 7, case 011 change 7), and the record then needs a line of its own.
+
 R13. C58 refines C54 because D0 is lint only, so an IR-only document still gets the lints BP-01 names; round 1 new defect 1.
 
 R14. C2 depends-on C5 because the reasoning role writes the review record, and case 010 change 10, the claim's basis, names no actor.
@@ -217,4 +225,4 @@ E4. methodology docs/releases.md, v1.6.0, The meta-review trigger is signal-base
 
 ## Asks
 
-A1. Accept branch point v1.9. Depends: C1 to C66.
+A1. Accept branch point v1.9. Depends: C1 to C67.
