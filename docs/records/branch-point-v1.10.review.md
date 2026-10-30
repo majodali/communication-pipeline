@@ -182,3 +182,23 @@ Omissions the stranger noted on v1.10-changed passages, not counted: fifteen, (a
 Claims after fixes: 68. Prose after fixes: 3,873 words. Claims check after the fix pass (base: round 4 prose): 7 changed claims, 0 missing, 0 stale. Round trip: 68 of 68. IR check: 0 violations, 0 warnings.
 
 Decided claims the fixes reworded, for the owner's list at the count's close: C17, C65 (again), C66, C68 (v1.9's C93), C69, C70; C40 moved.
+
+Confirmation: 8 of 8 fixes hold. Not held: none. Declines accepted: 1 of 1. New defects: 2.
+
+The instance (a8d9b82e1b02704c6) read both files in full at fix commit f0b9baf and accepted the decline of finding 9. The two new defects, fixed IR first before round 5 opens (case 012 change 6): N1 (SP-25), step 3's "A fix adds words only for a missing definition, referent or rule" against "adds no rule in a fix beyond the changes the owner adopted"; "or rule" cut (C71). N2 (SP-26), the locus and the fix kind stated in step 4's findings-table definition and in the Stranger brief; step 4 keeps "A findings table lists the round's findings." (C67), and the brief's sentence defines the values; R6 adjusted.
+
+Claims check after the confirmation's fixes (base: the round 4 fix pass's prose): 2 changed claims, 0 missing, 0 stale. Claims: 69. Prose: 3,865 words. Round trip: 69 of 69.
+
+## Round 5
+
+Branch point version and commit the count runs under: v1.10 at commit 387dc43; round 5 reads the text at this round's opening commit, named in the brief. Prose 3,865 words; IR 69 claims; unratified terms 1 (T8, fix commit).
+
+Passages awaiting restatement: none.
+
+Owner-pending findings: none.
+
+Declined findings carried in the brief: from v1.9's count, round 1's F3, round 2's 10, round 4's 11, round 5's N1 and round 6's 6; from this count, round 4's 9. Each with its reason. The brief also says that the v1.10 IR lists the claims v1.10 changed only.
+
+Forms added to the brief: none.
+
+Signals script before the round: signal 1 reads one round with a fix not held (round 3), so it does not fire; no line unparsed.
