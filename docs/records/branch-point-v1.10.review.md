@@ -385,3 +385,39 @@ Step 7 applies. The findings are fixed IR first; the round's instance confirms e
 | 4 | the 2026-10-27 heading holds case 012's sentences of 2026-10-30 | SP-08 | the smaller change: the heading reads "The owner's decisions on case 005's held changes, 2026-10-27 and 2026-10-30" |
 
 Claims after fixes: 89. Prose after fixes: 3,939 words. Claims check after the fix pass (base: round 9 prose): 2 changed claims, 0 missing, 0 stale. Round trip: 89 of 89. IR check: 0 violations, 0 warnings.
+
+Confirmation: 2 of 3 fixes hold. Not held: 4. Declines accepted: 1 of 1. New defects: 0.
+
+The instance (aaee1c6d5fd61632a) read both files in full at fix commit b72a88f and accepted the decline of finding 2. Fix 4 did not hold: the renamed heading still says "case 005's held changes", while its 2026-10-30 sentences are case 012's change 11 and the signal numbers. As at v1.9's close, no further fix is made in the count: finding 4 is unfixed residue for the owner, with two proposals, the owner's choice at acceptance: the heading "The owner's decisions on case 005's held changes and their later fate, 2026-10-27 and 2026-10-30", or a move of the three case 012 sentences (C81, C85, C87) to the history paragraph.
+
+Final-round marks: finding 1 confirmed; finding 2 declined, the decline accepted; finding 3 confirmed; finding 4 unfixed.
+
+## Verdict
+
+Readable for RD-4 at round 9 of a count of nine, on 2026-10-30, under the v1.10 procedure the text defines. The limit was not reached.
+
+| Round | Findings per 1,000 words | Contradictions | Held at first confirmation |
+|---|---|---|---|
+| 1 | 2.4 | 1 | 8 of 8 |
+| 2 | 0.8 | 1 | 3 of 3 |
+| 3 | 2.4 | 1 | 8 of 9 |
+| 4 | 2.3 | 2 | 8 of 8 |
+| 5 | 1.8 | 2 | 7 of 7 |
+| 6 | 1.0 | 1 | 4 of 4 |
+| 7 | 2.0 | 1 | 8 of 8 |
+| 8 | 1.5 | 0 | 5 of 6 |
+| 9 | 1.0 | 0 | 2 of 3 |
+
+Findings in all: 59 across nine rounds. Restatement mismatches: 2 (rounds 3 and 5), both first occurrences. Contradictions: 9. Undefined terms: 6. Held at first confirmation: 53 of 56 fixes. New defects at confirmation: 17, sixteen fixed before the next round and none from step 7. Declines: 2, both accepted. Prose 3,755 words at round 1, 3,939 after step 7's fixes and 3,950 at close with the closing Status line; IR 51 claims at round 1 and 89 at close. Step-6 passages: v1.9's C54, matched in round 1; the step 2 read scope, a structural fix after round 5's confirmation, matched in round 6.
+
+Meta-review: pending (signals 1 and 4). Signals checked at the end of the count by `scripts/signals.mjs` and by reading: first, fired by the script (fixes not held in rounds 3 and 8). Second, not fired: no claim recurred on the `Mismatches:` lines, and no declined finding was raised again. Fourth, fired by reading: from round 3 on, each round to round 7 had a contradiction on a passage an earlier fix had touched, among them C65 (rounds 3, 4 and 5), step 7's marking beside the owner's A2 sentences (round 4), C71 (round 6) and the 2026-10-27 decisions beside C81 (round 7). The third signal is struck. The reasoning role asks the owner, in the report on this count, to dispatch the meta-review.
+
+Owner items for branch point v1.10, one list:
+
+1. A1: accept or reject branch point v1.10.
+2. The decided claims the rounds reworded, each with its note (case 012 change 14): C9, C17, C19, C20, C27, C40, C41 (C42 merged), C51, C53, C54, C57, C63, C64, C65 (six wordings and a move into step 2), C66, C68 (v1.9's C93, scoped to the limit), C69, C70, C71, C72 (split, with C88), C73, C74 to C77, C80, C81 (C78 merged), C84, C85, C86, C89. Decided claims added from the owner's records: C58 to C60 (ask A2, adopted 2026-10-30), C87, C90, C91, C93.
+3. The proposed terms: fix commit (T8, C52), process change (C62), findings table (C67), declined finding (C79), present state (T9, C82), target state (T10, C83).
+4. The form split of the owner's A2 sentence in step 7 at its semicolon, as the specification's count 6 split it; the claims unchanged.
+5. Residue, unfixed: finding 4 of round 9, the decisions heading, with the two proposals above.
+7. An IR edit at the close, no prose change: C60 reads "The reasoning role lists the step-6 fix's passage in the next count's round 1 brief (ask A2).", so the claims check against an empty base finds its sentence after step 7's split; the claim is unchanged in meaning.
+6. For the ruleset review, recorded in the rounds and on the backlog: step 6 keys a recurrence on a passage while the script keys it on claims; the step-4 read order; C65's six wordings, scope and order in one sentence; the lint's SP-02 threshold of 35 words against step 1's 25; the readability notes of round 9 ("ratification ask", the case 008 sentence's place, the heading's order).

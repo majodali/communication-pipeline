@@ -1,6 +1,6 @@
 # Branch point
 
-Status: under review (v1.10, 2026-10-30, the adopted changes of [evaluation case](vocabulary.md#def-evaluation-case) 012, round 9). v1.9 is active on main. The [Versions](#versions) section lists the versions.
+Status: proposed (v1.10, 2026-10-30, the adopted changes of [evaluation case](vocabulary.md#def-evaluation-case) 012, readable at round 9, awaiting the owner's acceptance). v1.9 is active on main. The [Versions](#versions) section lists the versions.
 Thresholds are provisional until the [evaluation corpus](../eval/README.md) tunes them. The rules are the Rendering conditions of the methodology's
 [intermediate-representation specification](https://github.com/majodali/methodology/blob/main/docs/intermediate-representation.md)
 from 2026-10-26.
@@ -181,7 +181,7 @@ recommended.
 
 | Version | Date | Content |
 |---|---|---|
-| v1.10 | 2026-10-30 | the thirteen process changes of evaluation case 012; under review |
+| v1.10 | 2026-10-30 | the thirteen process changes of evaluation case 012; readable at round 9; awaiting the owner's acceptance |
 | v1.9 | 2026-10-30 | the nineteen process changes of evaluation cases 010 and 011 and the terms [own mismatch](vocabulary.md#def-own-mismatch) and [re-fix](vocabulary.md#def-re-fix); readable at round 8; accepted by the owner on 2026-10-30 |
 | v1.8 | 2026-10-30 | the row BP-00 for IR-only documents; delivered IR-only |
 | v1.7 | 2026-10-29 | the sixteen process changes of evaluation case 009 and the term structural fix; readable at round 3 |

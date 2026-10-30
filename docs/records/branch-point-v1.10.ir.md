@@ -2,7 +2,7 @@
 
 Reader: RD-4
 Purpose: document. The revision of the branch point that carries the process changes of evaluation case 012, the meta-review of branch point v1.9 and the methodology's intermediate-representation specification's count 5, adopted by the owner on 2026-10-30.
-Status: rendered (round 9, rendered by the reasoning role 2026-10-30; unratified terms 3)
+Status: reviewed (round 9 readable 2026-10-30; fixes confirmed but one, round 9's finding 4 unfixed; declared 9, changed 9, surprises 0, misses 0; unratified terms 3)
 Source: the owner's decision of 2026-10-30 on evaluation case 012 (all fifteen changes adopted as recommended; terms by the default); evaluation case 012's Outcome.
 Normative: yes
 Footprint: docs/branch-point.md; docs/records/branch-point-v1.10.ir.md; docs/records/branch-point-v1.10.review.md; docs/vocabulary.md; docs/backlog.md; eval/README.md; eval/cases/012-meta-review-branch-point-v1.9-and-ir-spec-count-5-2026-10-30.md; scripts/signals.mjs; scripts/test.mjs
@@ -151,7 +151,7 @@ C68. At the limit, the reasoning role marks each finding of the final round conf
 
 C59. A step-6 fix made in a readable round's fix pass stays `awaiting restatement` (ask A2). evidence: E3. [decided: owner, 2026-10-30]
 
-C60. The reasoning role lists the passage of a step-6 fix left `awaiting restatement` at a readable verdict in the next count's round 1 brief (ask A2). evidence: E3. [decided: owner, 2026-10-30]
+C60. The reasoning role lists the step-6 fix's passage in the next count's round 1 brief (ask A2). evidence: E3. [decided: owner, 2026-10-30]
 
 C34. The reasoning role does not fix in the count a new defect the step-7 confirmation names (case 012 change 8). evidence: E1, E2. [decided: owner, 2026-10-30]
 
