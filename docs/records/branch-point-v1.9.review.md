@@ -287,6 +287,10 @@ Round 5's carried items applied in the same pass: finding 6 and N2 (C74: "A step
 
 Claims after fixes: 84. Prose after fixes: 3,892 words. Claims check after the fixes (base: round 6 prose): 16 changed claims, 0 missing, 0 stale. Round trip: 84 of 84. npm test: 42 of 42.
 
+Confirmation: 8 of 8 fixes hold. Not held: none. Declines accepted: 1 of 1. New defects: 3.
+
+The eight are findings 2 to 9, with 4 and 5 holding as to wording; finding 1, the third structural fix, awaits round 7's restatement. The three new defects are fixed in round 7's fix pass: N1 (SP-25, step 4 asks the instance to accept each decline but does not send it the declines), N2 (R31 targets C12, not the claim that states the confirmation, and cites the records in a bare clause) and N3 (SP-04, "form audit" in the pointer sentence unlinked).
+
 Decided claims the fixes changed, for the owner: all are listed in A2, including the retired label BP-01.
 
 Declined findings for round 7's brief: round 1's F1 and F3; round 2's 9 and 10; round 4's 11; round 5's N1; round 6's 6; each with its reason. Passage awaiting restatement in round 7: the Rules opening and the lints sentence (C87, C55, C54), third fix.
