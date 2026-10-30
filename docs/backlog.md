@@ -102,7 +102,14 @@ roles have moved to project-orchestrator, this repository archives
   tests pass. Seven of the changes amend the methodology's
   intermediate-representation specification as its count 5. Source:
   [IR](records/branch-point-v1.9.ir.md). Gate: the stranger rounds,
-  then the owner accepts v1.9.
+  then the owner accepts v1.9. Closed 2026-10-30: readable at round
+  8; accepted by the owner (PR #22 merged) with A2 ratified; the
+  meta-review dispatched.
+- [x] **Branch point v1.9's stranger rounds** — 2026-10-30. Eight
+  rounds under the v1.9 procedure, readable at round 8, recorded in
+  the [review record](records/branch-point-v1.9.review.md). The owner
+  ruled C54's unmatched passage not blocking and left residue N1 to
+  the ruleset review.
 
 ## Upcoming
 
@@ -131,16 +138,14 @@ roles have moved to project-orchestrator, this repository archives
   (CK-12). Source: [chunk 5 IR](records/chunk-5-close-out.ir.md).
   Gate: the owner confirms the record. The repository stays open on
   the owner's hold.
-- [ ] **Branch point v1.9's stranger rounds** — open. The
-  Orchestrator (project-orchestrator) runs the rounds under the v1.9
-  procedure and records them in the
-  [review record](records/branch-point-v1.9.review.md).
 - [ ] **Review of the pipeline's ruleset for simplification** — open,
   no calendar date. The owner opens it. Asked by the owner on
   2026-10-30: the ruleset grows a lot and may hold opportunities to
   simplify. Candidate scope: the branch point's Rounds steps, the
   meta-review signals, the stranger brief's calibrations, the style
-  specification's rules. A meta-review session with no part in the
+  specification's rules, and branch point v1.9's residue N1 (RD-1 and
+  RD-3 named twice; the catalog link twice), which the owner left to
+  this review on 2026-10-30. A meta-review session with no part in the
   rounds performs the review and reports as an
   [evaluation case](../eval/README.md).
 - [ ] **Dispatcher: row BP-00** — open. `scripts/dispatch.mjs` does not
