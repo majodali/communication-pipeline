@@ -88,3 +88,25 @@ The stranger's first observation, fixed under case 012 change 4: the Stranger br
 Claims after fixes: 57. Prose after fixes: 3,814 words. Claims check after the fix pass (base: round 2 prose): 4 changed claims, 0 missing, 0 stale. Round trip: 57 of 57. IR check: 0 violations, 0 warnings.
 
 Decided claims the fixes reworded, for the owner's list at the count's close: C53 (again), C56 (step 7's fixing sentence), C57 (the report's parts).
+
+Confirmation: 3 of 3 fixes hold. Not held: none. Declines accepted: 0 of 0. New defects: 3.
+
+The instance (a215d5b4788a041e9) read both files in full at fix commit 4690286. The three new defects, fixed IR first before round 3 opens (case 012 change 6): N1 (SP-03), "its findings table" in the Stranger brief took the instance as referent; C53 and R3 read "the findings table the reasoning role sends". N2 (SP-26), step 7's fixing sentence repeated step 3; C56 cut, and step 7 relies on step 3's fix order. N3 (SP-26), the five-part sentence's parenthesis repeated step 2; cut (C57).
+
+The owner adopted ask A2's revised wording on 2026-10-30. Step 7 now reads: "At a readable verdict, the round's stranger instance confirms each fix other than a step-6 fix. A step-6 fix made in that round's fix pass stays `awaiting restatement`; the reasoning role lists its passage in the next count's round 1 brief." C58 to C60 carry it, decided (owner, 2026-10-30), with evidence E3. The limit sentence stays as it was. A2 is resolved. Round 1's finding 5 is closed as fixed by the owner's decision and is no longer pending.
+
+Claims check after the confirmation's fixes (base: the round 2 fix pass's prose): 5 changed claims, 0 missing, 0 stale; C56 removed. Claims: 59. Prose: 3,821 words. Round trip: 59 of 59.
+
+## Round 3
+
+Branch point version and commit the count runs under: v1.10 at commit 387dc43; round 3 reads the text at this round's opening commit, named in the brief. Prose 3,821 words; IR 59 claims; unratified terms 1 (T8, fix commit).
+
+Passages awaiting restatement: none.
+
+Owner-pending findings: none; round 1's finding 5 is closed by the owner's adoption of A2.
+
+Declined findings carried in the brief from v1.9's count: round 1's F3, round 2's 10, round 4's 11, round 5's N1 and round 6's 6, each with its reason. The brief also says that the v1.10 IR lists the claims v1.10 changed only.
+
+Forms added to the brief: none.
+
+Signals script before the round: no signal; no line unparsed.

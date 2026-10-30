@@ -2,7 +2,7 @@
 
 Reader: RD-4
 Purpose: document. The revision of the branch point that carries the process changes of evaluation case 012, the meta-review of branch point v1.9 and the methodology's intermediate-representation specification's count 5, adopted by the owner on 2026-10-30.
-Status: rendered (round 2, rendered by the reasoning role 2026-10-30; unratified terms 1)
+Status: rendered (round 3, rendered by the reasoning role 2026-10-30; unratified terms 1)
 Source: the owner's decision of 2026-10-30 on evaluation case 012 (all fifteen changes adopted as recommended; terms by the default); evaluation case 012's Outcome.
 Normative: yes
 Footprint: docs/branch-point.md; docs/records/branch-point-v1.10.ir.md; docs/records/branch-point-v1.10.review.md; docs/vocabulary.md; docs/backlog.md; eval/README.md; eval/cases/012-meta-review-branch-point-v1.9-and-ir-spec-count-5-2026-10-30.md; scripts/signals.mjs; scripts/test.mjs
@@ -109,9 +109,13 @@ C33. The reasoning role marks a step-6 fix `awaiting restatement` in the review 
 
 ### Rounds step 7
 
-C56. At step 7, the reasoning role fixes each accepted finding of the round in the IR and then in the prose. [decided: owner, 2026-10-30; reworded in v1.10's count, round 2]
-
 C55. At step 7, the reasoning role sends the round's stranger instance its findings table, the fixed passages and the round's declined findings. [inferred: R3]
+
+C58. At a readable verdict, the round's stranger instance confirms each fix other than a step-6 fix (case 012 context, ask A2 as the owner adopted it on 2026-10-30). evidence: E3. [decided: owner, 2026-10-30]
+
+C59. A step-6 fix made in a readable round's fix pass stays `awaiting restatement` (ask A2). evidence: E3. [decided: owner, 2026-10-30]
+
+C60. The reasoning role lists the passage of a step-6 fix left `awaiting restatement` at a readable verdict in the next count's round 1 brief (ask A2). evidence: E3. [decided: owner, 2026-10-30]
 
 C34. The reasoning role does not fix in the count a new defect the step-7 confirmation names (case 012 change 8). evidence: E1, E2. [decided: owner, 2026-10-30]
 
@@ -119,9 +123,9 @@ C35. The reasoning role lists a new defect the step-7 confirmation names for the
 
 C51. The reasoning role fixes the new defect in the next edit of the text (case 012 change 8). evidence: E1, E2. [decided: owner, 2026-10-30; reworded in v1.10's count, round 1]
 
-C53. At Rounds steps 4 and 7 the round's instance also reads its findings table, the fixed passages and the round's declined findings. [decided: owner, 2026-10-30; reworded in v1.10's count, rounds 1 and 2]
+C53. At Rounds steps 4 and 7 the round's instance also reads the findings table the reasoning role sends, the fixed passages and the round's declined findings. [decided: owner, 2026-10-30; reworded in v1.10's count, rounds 1 and 2, and after round 2's confirmation]
 
-C57. The stranger's report has five parts in order: Restatement, Listed passages (one sentence for each listed passage), Findings, Readability, Counts (case 012 change 4). evidence: E1, E2. [decided: owner, 2026-10-30; reworded in v1.10's count, round 2]
+C57. The stranger's report has five parts in order: Restatement, Listed passages, Findings, Readability, Counts (case 012 change 4). evidence: E1, E2. [decided: owner, 2026-10-30; reworded in v1.10's count, round 2 and after its confirmation]
 
 C54. Case 008 proposed no change to the D1 row's rule on joining a rule to a reason by connective prose. [decided: owner, 2026-10-27; reworded in v1.10's count, round 1]
 
@@ -167,7 +171,7 @@ R1. C3 depends-on C4 because the version list on the Status line ran to 91 words
 
 R2. C52 refines C28 because case 012 change 7 names the commit the instance reads, and that commit holds the round's fix pass.
 
-R3. C55 depends-on C53 because step 7's instance reads its findings table, the fixed passages and the round's declined findings, and step 4 names the reasoning role as the one that sends them.
+R3. C55 depends-on C53 because step 7's instance reads the findings table the reasoning role sends, the fixed passages and the round's declined findings, and step 4 names the reasoning role as the one that sends them.
 
 ## Evidence
 
@@ -175,8 +179,12 @@ E1. eval/cases/012-meta-review-branch-point-v1.9-and-ir-spec-count-5-2026-10-30.
 
 E2. The owner's decision of 2026-10-30 on case 012, relayed by the Orchestrator: all fifteen changes adopted as recommended; terms by the default.
 
+E3. The owner's adoption of 2026-10-30 of ask A2's revised proposed wording, relayed by the Orchestrator.
+
 ## Asks
 
-A1. Accept branch point v1.10. Depends: C1 to C57.
+A1. Accept branch point v1.10. Depends: C1 to C60.
 
 A2. Decide the mark of a step-6 fix made in a readable round's fix pass, a gap round 1 found (finding 5). Proposed wording, revised after the round 1 confirmation: "At a readable verdict, the round's stranger instance confirms each fix other than a step-6 fix. A step-6 fix made in that round's fix pass stays `awaiting restatement`; the reasoning role lists its passage in the next count's round 1 brief." The finding counts against the verdict as a contradiction until the owner decides (case 012 change 9). Depends: C33.
+
+A2 resolved: the owner adopted the proposed wording on 2026-10-30; C58 to C60 carry it, and round 1's finding 5 is closed as fixed by the owner's decision.
