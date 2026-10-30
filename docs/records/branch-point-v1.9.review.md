@@ -57,3 +57,12 @@ Re-fixed before round 2, the three new defects:
 Claims after the re-fixes: 59. Claims check against the round 1 base after the re-fixes: 23 changed claims, 0 missing, 0 stale.
 
 Decided claims the fixes changed, for the owner: C15, C16 and C50 (v1.7's C14) gain the reasoning role as actor and become inferred; C20 folds case 011 change 5's run into case 010 change 2's and becomes inferred; C23, C25 and C26, with the new C53, join case 010 change 1's and case 011 change 1's texts into one rule; C55 states that the first-match rule applies to the rows other than BP-01 and is inferred; C58 restates v1.8's row BP-00 (the lints still run under D0), inferred; C59 restates v1.7's re-fix sentence with its trigger first.
+
+## Round 2, 2026-10-30
+
+Branch point version and commit the round runs under: v1.9 at this round's opening commit. Prose 3,499 words; IR 59 claims.
+
+Claims check before the round: 23 changed claims, 0 missing, 0 stale (base: round 1 prose).
+
+Declined findings carried in the brief: F1 (SP-26, the v1.9 history in the Status line and the Versions sentence; the Status line is an exempt form, and the Versions sentence is the history every version carries; the round 1 instance did not accept the decline) and F3 (SP-18, the thresholds sentence; under the SP-18 calibration a sentence that names future work and assigns it to no one is not a duty).
+Signals script before the round: no signal fired; no line unparsed.
