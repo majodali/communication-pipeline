@@ -110,6 +110,22 @@ roles have moved to project-orchestrator, this repository archives
   the [review record](records/branch-point-v1.9.review.md). The owner
   ruled C54's unmatched passage not blocking and left residue N1 to
   the ruleset review.
+- [x] **Branch point v1.10 from case 012** — 2026-10-30. The owner
+  adopted case 012's fifteen changes. In
+  [branch point](branch-point.md) v1.10, every restatement mismatch
+  counts, and an omission is not a mismatch. The brief lists the
+  passages awaiting restatement for a one-sentence restatement each.
+  The claims check runs once per fix pass. The next round waits for
+  the confirmation and its fixes, and the instance reads both files in
+  full at the fix commit. A fix adds no rule the adopted changes do not
+  hold. The verdict table and the signal definitions link the
+  methodology specification. `scripts/signals.mjs` reads entries
+  without `(own)`, drops signal 3 and the wording searches, and reports
+  a round with a fix pass and no claims-check line as unparsed; 46
+  tests pass. Eleven of the changes amend the methodology's
+  intermediate-representation specification as its count 6. Source:
+  [IR](records/branch-point-v1.10.ir.md). Gate: the stranger rounds,
+  then the owner accepts v1.10.
 
 ## Upcoming
 
@@ -138,14 +154,30 @@ roles have moved to project-orchestrator, this repository archives
   (CK-12). Source: [chunk 5 IR](records/chunk-5-close-out.ir.md).
   Gate: the owner confirms the record. The repository stays open on
   the owner's hold.
+- [ ] **Branch point v1.10's stranger rounds** — open. The rounds run
+  under the v1.10 procedure and are recorded in the
+  [review record](records/branch-point-v1.10.review.md).
 - [ ] **Review of the pipeline's ruleset for simplification** — open,
-  no calendar date. The owner opens it. Asked by the owner on
-  2026-10-30: the ruleset grows a lot and may hold opportunities to
-  simplify. Candidate scope: the branch point's Rounds steps, the
+  scheduled after branch point v1.10 lands (owner, 2026-10-30). Asked
+  by the owner on 2026-10-30: the ruleset grows a lot and may hold
+  opportunities to simplify. Starting point: case 012's changes 1, 5,
+  10, 11 and 12, which strike about 450 words from the branch point.
+  Candidate scope: the branch point's Rounds steps, the
   meta-review signals, the stranger brief's calibrations, the style
   specification's rules, and branch point v1.9's residue N1 (RD-1 and
   RD-3 named twice; the catalog link twice), which the owner left to
-  this review on 2026-10-30. A meta-review session with no part in the
+  this review on 2026-10-30. Also in scope: the methodology
+  specification's Provenance opening and meta-review subject passage
+  drew restatement mismatches in its counts 4, 5 and 6, with structural
+  fixes between the counts (count 6, round 1). Branch point v1.10's step 6 keys a
+  recurrence on one passage, while the signals script and the
+  `Mismatches:` lines key it on claims (v1.10, round 2). Step 4 leaves open whether the
+  round's instance reads the prose before or after the claims check's
+  fixes (v1.10, round 3). The Stranger brief's read-scope sentence took four
+  rewordings in v1.10's count, trying to carry scope and order at once
+  (v1.10, round 5). `scripts/lint.mjs` warns under SP-02 only above
+  35 words, so step 1 misses sentences of 26 to 35 words (v1.10,
+  round 8; case 013). A meta-review session with no part in the
   rounds performs the review and reports as an
   [evaluation case](../eval/README.md).
 - [ ] **Dispatcher: row BP-00** — open. `scripts/dispatch.mjs` does not
