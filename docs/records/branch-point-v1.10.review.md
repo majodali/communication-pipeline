@@ -410,7 +410,7 @@ Readable for RD-4 at round 9 of a count of nine, on 2026-10-30, under the v1.10 
 
 Findings in all: 59 across nine rounds. Restatement mismatches: 2 (rounds 3 and 5), both first occurrences. Contradictions: 9. Undefined terms: 6. Held at first confirmation: 53 of 56 fixes. New defects at confirmation: 17, sixteen fixed before the next round and none from step 7. Declines: 2, both accepted. Prose 3,755 words at round 1, 3,939 after step 7's fixes and 3,950 at close with the closing Status line; IR 51 claims at round 1 and 89 at close. Step-6 passages: v1.9's C54, matched in round 1; the step 2 read scope, a structural fix after round 5's confirmation, matched in round 6.
 
-Meta-review: pending (signals 1 and 4). Signals checked at the end of the count by `scripts/signals.mjs` and by reading: first, fired by the script (fixes not held in rounds 3 and 8). Second, not fired: no claim recurred on the `Mismatches:` lines, and no declined finding was raised again. Fourth, fired by reading: from round 3 on, each round to round 7 had a contradiction on a passage an earlier fix had touched, among them C65 (rounds 3, 4 and 5), step 7's marking beside the owner's A2 sentences (round 4), C71 (round 6) and the 2026-10-27 decisions beside C81 (round 7). The third signal is struck. The reasoning role asks the owner, in the report on this count, to dispatch the meta-review.
+Meta-review: delivered (signals 1 and 4; pending at the close on 2026-10-30): [evaluation case 014](https://github.com/majodali/communication-pipeline/blob/main/eval/cases/014-meta-review-branch-point-v1.10-and-ir-spec-count-6-2026-11-01.md), 2026-11-01. Signals checked at the end of the count by `scripts/signals.mjs` and by reading: first, fired by the script (fixes not held in rounds 3 and 8). Second, not fired: no claim recurred on the `Mismatches:` lines, and no declined finding was raised again. Fourth, fired by reading: from round 3 on, each round to round 7 had a contradiction on a passage an earlier fix had touched, among them C65 (rounds 3, 4 and 5), step 7's marking beside the owner's A2 sentences (round 4), C71 (round 6) and the 2026-10-27 decisions beside C81 (round 7). The third signal is struck. The reasoning role asks the owner, in the report on this count, to dispatch the meta-review.
 
 Owner items for branch point v1.10, one list:
 
@@ -432,4 +432,4 @@ The owner's decision, 2026-11-01: branch point v1.10 accepted with every default
 6. The ruleset-review notes: carried to the review, now the pipeline's next task on the backlog.
 7. The C60 edit at the close: stands.
 
-Meta-review: pending (signals 1 and 4). The owner dispatched the meta-review of both counts as one task; the line stays until it is delivered.
+Meta-review: delivered (signals 1 and 4): [evaluation case 014](https://github.com/majodali/communication-pipeline/blob/main/eval/cases/014-meta-review-branch-point-v1.10-and-ir-spec-count-6-2026-11-01.md), 2026-11-01.
