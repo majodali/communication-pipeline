@@ -421,3 +421,15 @@ Owner items for branch point v1.10, one list:
 5. Residue, unfixed: finding 4 of round 9, the decisions heading, with the two proposals above.
 7. An IR edit at the close, no prose change: C60 reads "The reasoning role lists the step-6 fix's passage in the next count's round 1 brief (ask A2).", so the claims check against an empty base finds its sentence after step 7's split; the claim is unchanged in meaning.
 6. For the ruleset review, recorded in the rounds and on the backlog: step 6 keys a recurrence on a passage while the script keys it on claims; the step-4 read order; C65's six wordings, scope and order in one sentence; the lint's SP-02 threshold of 35 words against step 1's 25; the readability notes of round 9 ("ratification ask", the case 008 sentence's place, the heading's order).
+
+The owner's decision, 2026-11-01: branch point v1.10 accepted with every default (PR #25 merged). The items above, marked:
+
+1. A1: accepted.
+2. The reworded decided claims: ratified; the claims carry decided provenance from 2026-11-01.
+3. The proposed terms fix commit, process change, findings table, declined finding, present state and target state: ratified, with vocabulary rows whose definition site is this branch point.
+4. The form split of the owner's A2 sentence: stands.
+5. Round 9's residue: the heading reads "The owner's decisions on case 005's held changes and their later fate, 2026-10-27 and 2026-10-30", the owner's choice.
+6. The ruleset-review notes: carried to the review, now the pipeline's next task on the backlog.
+7. The C60 edit at the close: stands.
+
+Meta-review: pending (signals 1 and 4). The owner dispatched the meta-review of both counts as one task; the line stays until it is delivered.
