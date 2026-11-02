@@ -2,7 +2,7 @@
 
 Reader: RD-4
 Purpose: document. The branch point as a whole: which checks a text gets before it reaches its reader, and how its review rounds run, after the adopted changes of evaluation case 015.
-Status: rendered (v1.11, round 4; rendered by the reasoning role, D3)
+Status: rendered (v1.11, round 4 fix pass; rendered by the reasoning role, D3)
 Source: the owner's decision of 2026-11-02 on evaluation case 015 (changes 1 to 30 adopted, changes 31 to 35 declined); the adopted changes of cases 013 (1, 2, 3 and 5) and 014 (1 to 8), whose landing joined case 015; branch point v1.10 as the owner accepted it on 2026-11-01; the IRs of v1.4 to v1.10 under docs/records/.
 Normative: yes
 Footprint: docs/branch-point.md; docs/records/branch-point-history.md; docs/style-spec.md; docs/vocabulary.md; docs/backlog.md; .claude/agents/; .claude/skills/; scripts/; package.json
@@ -113,7 +113,7 @@ C12. The branch point protects proportional verification. [decided: branch point
 
 C13. Under proportional verification, a short report to a reader who shares the conversation costs one pass of the lint, the project's deterministic checker. [decided: branch point v1.9 IR, C73]
 
-C156. A short report is one under the thresholds of rows BP-07 and BP-08. [inferred: R5]
+C156. A short report is one under its reader's threshold: row BP-07's for RD-1, row BP-08's for RD-3. [inferred: R5]
 
 C14. Under BP-03 and BP-04, a document gets the lint, the rendering and the stranger rounds. [decided: owner, 2026-11-01, branch point v1.10; reworded in count 1, round 3]
 
@@ -195,7 +195,7 @@ C44. In step 2, the reasoning role starts a fresh stranger instance from the age
 
 C45. In the brief, the reasoning role names the commit to read and the human reader the text's Reader line names. [decided: owner, 2026-11-02, case 015 changes 26 and 29; reworded in count 1, round 2]
 
-C46. In the brief, the reasoning role names each finding declined so far, in whole or in part, with its reason. [decided: owner, 2026-11-02, case 015 change 7; reworded in count 1, round 2]
+C46. In the brief, the reasoning role names each finding the reasoning role declined so far, in whole or in part, with its reason. [decided: owner, 2026-11-02, case 015 change 7; reworded in count 1, round 4]
 
 C47. In the brief, the reasoning role lists each passage awaiting restatement: a passage moved by an earlier fix that no later restatement has yet tested. [decided: branch point v1.10 IR, C32; reworded in count 1, round 2]
 
@@ -216,6 +216,8 @@ C52. In step 3, the stranger reads the brief, the prose and the IR, and no other
 ### Step 4, record the round
 
 C53. In step 4, the reasoning role writes the round's entry: the stranger model, the restatement as written, and each finding with its decision. evidence: E1. [decided: owner, 2026-11-02, case 015 changes 7 and 26]
+
+C162. A decision on a finding is fixed, or declined with a reason. [decided: methodology intermediate-representation specification, C261; added in count 1, round 4]
 
 C54. The reasoning role runs `node scripts/lint.mjs --restatement` on the entry. evidence: E1. [decided: owner, 2026-11-02, case 015 change 27]
 
@@ -259,9 +261,7 @@ C154. The reasoning role fixes again each fix the instance says does not hold, a
 
 C160. The reasoning role runs `npm run check` on those fixes, with the fix commit as its base. [decided: owner, 2026-11-02, case 015 change 24; added after round 3 confirmation]
 
-C161. The commit that holds those fixes opens the next round, whose stranger reads them. [decided: branch point v1.10 IR, C31; added after round 3 confirmation]
-
-C69. Then the next round opens. [decided: branch point v1.10 IR, C31]
+C161. The reasoning role then opens the next round at the commit that holds those fixes. [decided: branch point v1.10 IR, C31; reworded in count 1, round 4]
 
 ### Step 7, close the count
 
@@ -449,7 +449,7 @@ G4. cluster: C53, C54, C55, C56, C57 [decided: owner, 2026-11-02, case 015 chang
 
 G5. cluster: C58, C59, C60, C61, C62 [decided: owner, 2026-11-02, case 015 change 13]
 
-G6. cluster: C63, C64, C65, C66, C67, C68, C69 [decided: owner, 2026-11-02, case 015 change 13]
+G6. cluster: C63, C64, C65, C66, C67, C68, C154, C160, C161 [decided: owner, 2026-11-02, case 015 change 13]
 
 G7. cluster: C70, C71, C72 [decided: owner, 2026-11-02, case 015 change 13]
 
@@ -477,6 +477,6 @@ E4. docs/backlog.md, chunk 3's row: "Scope narrowed per the owner: reports to RD
 
 ## Asks
 
-A1. Accept or reject branch point v1.11. Under case 015 change 19, acceptance ratifies the wording of each decided claim this IR rewords from its source, unless the owner names a claim to exclude. Depends: C1 to C161.
+A1. Accept or reject branch point v1.11. Under case 015 change 19, acceptance ratifies the wording of each decided claim this IR rewords from its source, unless the owner names a claim to exclude. Depends: C1 to C162.
 
 A2. Ratify or strike the term "a term the text introduces" (T34) and its definition, C157, which the paraphrase test rests on; the specification's count 7 asks the same. Depends: C157.

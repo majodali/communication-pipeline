@@ -59,7 +59,7 @@ Signals script before the round: no round recorded yet; nothing to read.
 | 1 | 2,396 | 141 | 24 | 10.0 | not readable (mismatch 1; contradictions 2; undefined terms 4; paraphrase-test findings 6) |
 | 2 | 2,491 | 151 | 12 | 4.8 | not readable (mismatches 2; contradictions 2; undefined term 1; paraphrase-test findings 3) |
 | 3 | 2,549 | 154 | 15 | 5.9 | not readable (mismatch 1; contradictions 4; undefined terms 3; paraphrase-test findings 2) |
-| 4 | 2,660 | 160 | | | pending |
+| 4 | 2,660 | 160 | 11 | 4.1 | not readable (mismatch 1; contradictions 0; undefined term 1; paraphrase-test findings 2) |
 
 ### Round 1, count 1, 2026-11-02
 
@@ -267,3 +267,38 @@ The round reads the text at its opening commit, named in the brief, under v1.11 
 
 Declines carried in the round 4 brief: v1.9 round 1's F3; round 1's 3, 14 and 16; round 2's 1 and 2; round 3's 1 is fixed, so none from round 3. Not carried: the restatement-check items. The brief names the passages round 3 and its confirmation changed, the departure kept for this count. Passages awaiting restatement: none.
 
+Stranger model: claude-haiku-5-5, a fresh instance, reading at commit 31c5133. It wrote its restatement before it opened the IR and made no call outside its brief.
+
+Restatement:
+
+> The problem is how much checking a written text gets before a reader sees it. Checks cost time, and a short report to someone in the same conversation needs few. This document decides which checks each text gets. It starts from facts about the text: who reads it, whether it is a report or a document, how many statements it makes, how many new word meanings it proposes, how many requests it makes, how long its longest statement runs, whether its prose is binding, and whether the owner asked for a review. Rules, read top to bottom, stop at the first one that fits and pick one of four check levels. The lowest level runs only automatic checks for structure and style. Higher levels add a model that rewrites the text for the reader, and then repeated review passes in which a fresh reader restates the text and reports problems. The document also sets the steps, the record of each review, and the rules for when reviews stop. The numeric limits in the rules are provisional, and the owner sets them once a test corpus tunes them.
+
+Prose 2,660 words by `wordCount` (the stranger's estimate: about 3,300); IR 160 claims; 9 findings from the stranger and 2 from the restatement check, 11 in all, 4.1 per thousand words. Restatement: one mismatch. Listed passages: none. Contradictions 0, undefined term 1 (finding 6), paraphrase-test findings 2 (the check's items; the stranger found none); verdict: not readable for RD-4. Omissions noticed, not counted: 6.
+
+The mismatch: the restatement gave the stranger rounds to every level above the first; the D1 row renders only, and the rounds begin at D2 (C28). The stranger relied on the D2 row, "D1, then the stranger rounds under the Rounds section", and put the error down to its own restatement; the prose did not invite it. First occurrence; no structural fix is owed.
+Mismatches: C28
+
+Restatement check, `node scripts/lint.mjs --restatement docs/branch-point.review.md --round 4`: 2 items, U1 ("limits") and U2 (a repeated sentence).
+
+Signals script after the `Mismatches:` line: signal 1 stands from rounds 1 to 3; no claim recurs. Signal 4 stands by reading from round 3; this round found no contradiction.
+
+| # | Finding (shortened) | Kind | Decision |
+|---|---|---|---|
+| 1 | stranger rounds at every level above the first (C28) | restatement | declined: the prose did not invite it; the D1 row renders only, and the D2 row reads "D1, then the stranger rounds". The mismatch counts |
+| 2 | the plain purpose's second sentence holds two claims (C2) | SP-01 | declined: SP-27 holds the plain purpose to two sentences, and the sentence states one fact, who reads the document; round 1's decline 3 stands on the same sentence |
+| 3 | the Status sentence with "while" (C4) | SP-01 | declined: a document's Status line is a form that is not a defect |
+| 4 | BP-07 and BP-08 unnamed at first use (C156) | SP-05 | fixed: each links the Rules section |
+| 5 | which threshold applies to which reader (C156) | SP-03 | fixed: "A short report is one under its reader's threshold: row BP-07's for RD-1, row BP-08's for RD-3." |
+| 6 | decline, accepted and decision undefined | SP-04 | fixed: step 2 says "each finding the reasoning role declined so far" (C46); step 4 links the decision and adds "A decision on a finding is fixed, or declined with a reason." (C162); "accepts" in step 6 is the instance's plain answer |
+| 7 | the next round opened by a commit (C161) | SP-18 | fixed: "The reasoning role then opens the next round at the commit that holds those fixes." |
+| 8 | "Then the next round opens." repeats (C69) | SP-26 | fixed: C69 cut; C161 carries the opening |
+| 9 | the IR-only sentence repeats BP-00's result (C159) | SP-26 | declined: the sentence is round 3's answer to a contradiction four rounds held. BP-00's cell says no later row applies, but a reader applied BP-03 and BP-04's reason to every document. The sentence names those two rows, so the exclusion cannot be missed |
+| U1 | "The numeric limits in the rules are provisional" (T13) | paraphrase test | declined: the plain word for the thresholds' numbers, not the text's term for the round limit |
+| U2 | "This document decides which checks each text gets." repeats the plain purpose (80 percent) | paraphrase test | declined: the purpose holds no term the text introduces; repeating it shows no passage that can only be repeated |
+
+Step 5, `npm run check -- docs/branch-point.md --base 31c5133`, on the fixed text:
+Checks: 0 sentences over 25 words; 160 of 160 claims mapped; 4 claims changed, 0 missing, 0 stale.
+
+Claims after fixes: 160 (C69 cut; C162 added). Prose after fixes: 2,675 words. Structural fixes owed: none. Decided claims the fixes reworded, for the owner at acceptance: C46, C161; C156 is inferred.
+
+The confirmation is pending.
