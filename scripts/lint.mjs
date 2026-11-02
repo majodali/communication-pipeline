@@ -311,7 +311,7 @@ export function lintProse(text, { verbose = false, file = null, vocab = vocabula
 // carries a supersession marker is a record kept as it stands.
 export function sp27Applies(file, text) {
   const rel = relative(ROOT, resolve(file)).split('\\').join('/');
-  if (!/^(docs\/(?!records\/).+|eval\/cases\/.+)\.md$/.test(rel) || /\.ir\.md$/.test(rel) || /(^|\/)vocabulary\.md$/.test(rel)) return false;
+  if (!/^(docs\/(?!records\/).+|eval\/cases\/.+)\.md$/.test(rel) || /\.(ir|review)\.md$/.test(rel) || /(^|\/)vocabulary\.md$/.test(rel)) return false;
   return !/^>\s*Superseded by/m.test(text.split('\n').slice(0, 30).join('\n'));
 }
 
