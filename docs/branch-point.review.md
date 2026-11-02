@@ -61,6 +61,7 @@ Signals script before the round: no round recorded yet; nothing to read.
 | 3 | 2,549 | 154 | 15 | 5.9 | not readable (mismatch 1; contradictions 4; undefined terms 3; paraphrase-test findings 2) |
 | 4 | 2,660 | 160 | 11 | 4.1 | not readable (mismatch 1; contradictions 0; undefined term 1; paraphrase-test findings 2) |
 | 5 | 2,676 | 160 | 5 | 1.9 | not readable (mismatches 0; contradiction 1; undefined term 1; paraphrase-test findings 1) |
+| 6 | 2,707 | 161 | | | pending |
 
 ### Round 1, count 1, 2026-11-02
 
@@ -347,4 +348,25 @@ Checks: 0 sentences over 25 words; 161 of 161 claims mapped; 2 claims changed, 0
 
 Claims after fixes: 161 (C163 added). Prose after fixes: 2,708 words. Structural fixes owed: none. Decided claim the fixes reworded, for the owner at acceptance: C62.
 
-The confirmation is pending.
+Confirmation: 3 of 4 fixes hold. Not held: 3. Declines accepted: 0 of 1. New defects: 2.
+
+The instance read both files in full at fix commit 85776c8. The confirmation's fixes, IR first, before round 6 opens:
+
+- Fix 3 did not hold: the round's definition, "the fixes that follow", still reached step 6's fixes, while the fix commit held only step 5's. The fix commit is now scoped by its step: "The fix commit is the commit that holds step 5's fixes and every fix step 5's check calls for." (C62). Step 6's fixes stay in the commit that opens the next round (C161).
+- N1 (SP-04, C163 did not parse): "A recurring claim is a claim named on the `Mismatches:` lines of two rounds of the text's counts, as the second signal counts."
+- N2: "recurring claim" is the reasoning role's term, not owner wording. C163 now reads `[proposed: this IR]`, with T35 and ask A3 for the owner, beside T34. Unratified terms: 2.
+- W1, decline not accepted: the instance holds that "numeric limits" used a linked term, whatever sense was meant. The decline stands: the fourth condition counts a passage the stranger cannot restate without a term the text introduces, and the instance's own word for the numbers, "thresholds", shows it could. Recorded for the owner with the instance's reason.
+
+Step 6's check, `npm run check -- docs/branch-point.md --base 85776c8`:
+Checks: 0 sentences over 25 words; 161 of 161 claims mapped; 2 claims changed, 0 missing, 0 stale.
+
+Prose after the confirmation's fixes: 2,707 words; IR 161 claims. Decided claim reworded after confirmation, for the owner at acceptance: C62.
+
+Signals script after the confirmation line: signal 1 stands, now with fixes not held in rounds 1 to 5. Signal 4 stands by reading.
+
+### Round 6, count 1, 2026-11-02
+
+The round reads the text at its opening commit, named in the brief, under v1.11 at commit 12ff480. Prose 2,707 words; IR 161 claims; unratified terms 2 (T34, T35). Human reader for the paraphrase test: the human owner. Stranger: pending, a fresh instance.
+
+Declines carried in the round 6 brief: v1.9 round 1's F3; round 1's 3, 14 and 16; round 2's 1 and 2; round 4's 1, 2, 3 and 9, each with its reason. Not carried: the restatement-check items. The brief names the passages round 5 and its confirmation changed, the departure kept for this count. Passages awaiting restatement: none.
+
