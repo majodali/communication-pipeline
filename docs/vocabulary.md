@@ -59,5 +59,11 @@ the term's first use to it ([term lifecycle](term-lifecycle.md)).
 | <a id="def-fix-pass"></a>Fix pass | the reasoning role's fixes of one round's findings, in the IR and then in the prose | decided, owner 2026-10-30 (case 012) | [methodology vocabulary](https://github.com/majodali/methodology/blob/main/docs/vocabulary.md#def-fix-pass) |
 | <a id="def-new-defect"></a>New defect | a defect a fix introduces, which the round's stranger instance names at confirmation | decided, owner 2026-10-30 (case 012) | [methodology vocabulary](https://github.com/majodali/methodology/blob/main/docs/vocabulary.md#def-new-defect) |
 | <a id="def-unparsed-line"></a>Unparsed line | a review-record line the signals script `scripts/signals.mjs` cannot read | decided, owner 2026-10-30 (case 012) | [methodology vocabulary](https://github.com/majodali/methodology/blob/main/docs/vocabulary.md#def-unparsed-line) |
+| <a id="def-fix-commit"></a>Fix commit | the commit that holds a round's fix pass, which the reasoning role names to the round's stranger instance | decided, owner 2026-11-01 (case 012) | [branch-point.md](branch-point.md), Rounds step 4 |
+| <a id="def-process-change"></a>Process change | an adopted change to how the rounds or the meta-review run | decided, owner 2026-11-01 (case 012) | [branch-point.md](branch-point.md), Meta-review history |
+| <a id="def-findings-table"></a>Findings table | the list of a round's findings the reasoning role sends to the round's stranger instance at confirmation | decided, owner 2026-11-01 (case 012) | [branch-point.md](branch-point.md), Rounds step 4 |
+| <a id="def-declined-finding"></a>Declined finding | a finding the reasoning role declines with a reason at Rounds step 3 | decided, owner 2026-11-01 (case 012) | [branch-point.md](branch-point.md), Rounds step 2 |
+| <a id="def-present-state"></a>Present state | what is done now, as a fix separates it from target state | decided, owner 2026-11-01 (case 012) | [branch-point.md](branch-point.md), Rounds step 3 |
+| <a id="def-target-state"></a>Target state | what a text aims at, as a fix separates it from present state | decided, owner 2026-11-01 (case 012) | [branch-point.md](branch-point.md), Rounds step 3 |
 
 Unratified terms at this revision: 1 (meta-review, proposed 2026-10-26).

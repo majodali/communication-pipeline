@@ -410,7 +410,7 @@ Readable for RD-4 at round 9 of a count of nine, on 2026-10-30, under the v1.10 
 
 Findings in all: 59 across nine rounds. Restatement mismatches: 2 (rounds 3 and 5), both first occurrences. Contradictions: 9. Undefined terms: 6. Held at first confirmation: 53 of 56 fixes. New defects at confirmation: 17, sixteen fixed before the next round and none from step 7. Declines: 2, both accepted. Prose 3,755 words at round 1, 3,939 after step 7's fixes and 3,950 at close with the closing Status line; IR 51 claims at round 1 and 89 at close. Step-6 passages: v1.9's C54, matched in round 1; the step 2 read scope, a structural fix after round 5's confirmation, matched in round 6.
 
-Meta-review: pending (signals 1 and 4). Signals checked at the end of the count by `scripts/signals.mjs` and by reading: first, fired by the script (fixes not held in rounds 3 and 8). Second, not fired: no claim recurred on the `Mismatches:` lines, and no declined finding was raised again. Fourth, fired by reading: from round 3 on, each round to round 7 had a contradiction on a passage an earlier fix had touched, among them C65 (rounds 3, 4 and 5), step 7's marking beside the owner's A2 sentences (round 4), C71 (round 6) and the 2026-10-27 decisions beside C81 (round 7). The third signal is struck. The reasoning role asks the owner, in the report on this count, to dispatch the meta-review.
+Meta-review: delivered (signals 1 and 4; pending at the close on 2026-10-30): [evaluation case 014](https://github.com/majodali/communication-pipeline/blob/main/eval/cases/014-meta-review-branch-point-v1.10-and-ir-spec-count-6-2026-11-01.md), 2026-11-01. Signals checked at the end of the count by `scripts/signals.mjs` and by reading: first, fired by the script (fixes not held in rounds 3 and 8). Second, not fired: no claim recurred on the `Mismatches:` lines, and no declined finding was raised again. Fourth, fired by reading: from round 3 on, each round to round 7 had a contradiction on a passage an earlier fix had touched, among them C65 (rounds 3, 4 and 5), step 7's marking beside the owner's A2 sentences (round 4), C71 (round 6) and the 2026-10-27 decisions beside C81 (round 7). The third signal is struck. The reasoning role asks the owner, in the report on this count, to dispatch the meta-review.
 
 Owner items for branch point v1.10, one list:
 
@@ -421,3 +421,15 @@ Owner items for branch point v1.10, one list:
 5. Residue, unfixed: finding 4 of round 9, the decisions heading, with the two proposals above.
 7. An IR edit at the close, no prose change: C60 reads "The reasoning role lists the step-6 fix's passage in the next count's round 1 brief (ask A2).", so the claims check against an empty base finds its sentence after step 7's split; the claim is unchanged in meaning.
 6. For the ruleset review, recorded in the rounds and on the backlog: step 6 keys a recurrence on a passage while the script keys it on claims; the step-4 read order; C65's six wordings, scope and order in one sentence; the lint's SP-02 threshold of 35 words against step 1's 25; the readability notes of round 9 ("ratification ask", the case 008 sentence's place, the heading's order).
+
+The owner's decision, 2026-11-01: branch point v1.10 accepted with every default (PR #25 merged). The items above, marked:
+
+1. A1: accepted.
+2. The reworded decided claims: ratified; the claims carry decided provenance from 2026-11-01.
+3. The proposed terms fix commit, process change, findings table, declined finding, present state and target state: ratified, with vocabulary rows whose definition site is this branch point.
+4. The form split of the owner's A2 sentence: stands.
+5. Round 9's residue: the heading reads "The owner's decisions on case 005's held changes and their later fate, 2026-10-27 and 2026-10-30", the owner's choice.
+6. The ruleset-review notes: carried to the review, now the pipeline's next task on the backlog.
+7. The C60 edit at the close: stands.
+
+Meta-review: delivered (signals 1 and 4): [evaluation case 014](https://github.com/majodali/communication-pipeline/blob/main/eval/cases/014-meta-review-branch-point-v1.10-and-ir-spec-count-6-2026-11-01.md), 2026-11-01.
