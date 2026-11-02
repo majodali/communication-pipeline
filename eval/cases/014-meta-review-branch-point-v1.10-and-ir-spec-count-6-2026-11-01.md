@@ -273,4 +273,4 @@ Proposed process changes. "Branch point" means v1.10. "Specification" means the 
 
 Changes 6 and 7 bear on 1,702 of the branch point's 3,950 words (my word count). The 1,702 are the history parts and steps 2, 3, 4 and 7. The ruleset review can start from changes 1 to 8 and the list in judgement g.
 
-Owner's decision on the outcome: pending.
+Owner's decision on the outcome: changes 1 to 8 adopted as recommended, 2026-11-02; changes 9 and 10 declined, as the case recommended; change 11 keeps the one-task form as written. Terms by the default: blocker, round-1 text, fix-written finding and history parts stay the case's own prose and take no vocabulary rows. The landing of changes 1 to 8 is deferred to the review of the pipeline's ruleset, which they join. No branch point v1.11 or specification count 7 carries them before the owner decides on that review.
