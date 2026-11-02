@@ -60,7 +60,7 @@ Signals script before the round: no round recorded yet; nothing to read.
 | 2 | 2,491 | 151 | 12 | 4.8 | not readable (mismatches 2; contradictions 2; undefined term 1; paraphrase-test findings 3) |
 | 3 | 2,549 | 154 | 15 | 5.9 | not readable (mismatch 1; contradictions 4; undefined terms 3; paraphrase-test findings 2) |
 | 4 | 2,660 | 160 | 11 | 4.1 | not readable (mismatch 1; contradictions 0; undefined term 1; paraphrase-test findings 2) |
-| 5 | 2,676 | 160 | | | pending |
+| 5 | 2,676 | 160 | 5 | 1.9 | not readable (mismatches 0; contradiction 1; undefined term 1; paraphrase-test findings 1) |
 
 ### Round 1, count 1, 2026-11-02
 
@@ -321,3 +321,30 @@ The round reads the text at its opening commit, named in the brief, under v1.11 
 
 Declines carried in the round 5 brief: v1.9 round 1's F3; round 1's 3, 14 and 16; round 2's 1 and 2; round 4's 1, 2, 3 and 9, each with its reason. Not carried: the restatement-check items. The brief names the passages round 4 and its confirmation changed, the departure kept for this count. Passages awaiting restatement: none.
 
+Stranger model: claude-haiku-5-5, a fresh instance, reading at commit da5136d. It wrote its restatement before it opened the IR and made no call outside its brief.
+
+Restatement:
+
+> The problem is how much checking a written text needs before its reader gets it. Too little checking lets errors and unclear claims through. Too much costs time on short texts that carry little risk. The text sorts each document into one of several check levels. The lowest level runs only an automatic checker. Higher levels also rewrite the prose for the reader, then send fresh reviewers to read the text and report what they understood. The choice depends on who reads the text, what kind of text it is, how many claims it makes, whether it uses terms the owner has not approved, and whether the owner asked for a review. An ordered list of rules picks the first match. The text also sets the steps of a review, the records each step writes, and when a review stops. The human owner sets the numeric limits, which stay provisional until a test set tunes them.
+
+Prose 2,676 words by `wordCount` (the stranger's estimate: about 2,770); IR 160 claims; 4 findings from the stranger and 1 from the restatement check, 5 in all, 1.9 per thousand words. Restatement: no mismatch. Listed passages: none. Contradiction 1 (finding 3), undefined term 1 (finding 2), paraphrase-test findings 1 (the check's item; the stranger found none, and calls its own use of "claims" and "terms" its lapse); verdict: not readable for RD-4. Omissions noticed, not counted: 7.
+Mismatches: none
+
+Restatement check, `node scripts/lint.mjs --restatement docs/branch-point.review.md --round 5`: 1 item, W1 ("limits").
+
+Signals script after the `Mismatches:` line: signal 1 stands from rounds 1 to 4; no claim recurs. By reading, signal 4 stands: finding 3 is a contradiction in step 5 and step 6, the passage rounds 3 and 4 touched.
+
+| # | Finding (shortened) | Kind | Decision |
+|---|---|---|---|
+| 1 | "stranger" first used in the Purpose without a link | SP-04 | fixed: linked there |
+| 2 | "recurring" undefined (C59) | SP-04 | fixed: "A recurring claim is one that mismatches named in two rounds of the text's counts, the part of the second signal the script reads." (C163) |
+| 3 | the fix commit holds "every fix the checks call for", yet step 6 fixes later on the fix commit as base (C62, C160) | SP-25 | fixed, settling the passage: the fix commit holds "every fix step 5's check calls for" (C62). Step 6's fixes are checked against the fix commit (C160) and held in the commit that opens the next round (C161), so the two commits are named apart |
+| 4 | the 2026-10-25 owner ruling cited by date only | SP-05 | fixed: "recorded in the backlog's chunk 3 row", linked |
+| W1 | "The human owner sets the numeric limits" (T13) | paraphrase test | declined: the plain word for the thresholds' numbers, not the text's term for the round limit, as round 4's U1 |
+
+Step 5, `npm run check -- docs/branch-point.md --base da5136d`, on the fixed text:
+Checks: 0 sentences over 25 words; 161 of 161 claims mapped; 2 claims changed, 0 missing, 0 stale.
+
+Claims after fixes: 161 (C163 added). Prose after fixes: 2,708 words. Structural fixes owed: none. Decided claim the fixes reworded, for the owner at acceptance: C62.
+
+The confirmation is pending.
