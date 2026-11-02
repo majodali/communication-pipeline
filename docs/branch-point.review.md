@@ -59,6 +59,7 @@ Signals script before the round: no round recorded yet; nothing to read.
 | 1 | 2,396 | 141 | 24 | 10.0 | not readable (mismatch 1; contradictions 2; undefined terms 4; paraphrase-test findings 6) |
 | 2 | 2,491 | 151 | 12 | 4.8 | not readable (mismatches 2; contradictions 2; undefined term 1; paraphrase-test findings 3) |
 | 3 | 2,549 | 154 | 15 | 5.9 | not readable (mismatch 1; contradictions 4; undefined terms 3; paraphrase-test findings 2) |
+| 4 | 2,660 | 160 | | | pending |
 
 ### Round 1, count 1, 2026-11-02
 
@@ -243,4 +244,26 @@ Checks: 0 sentences over 25 words; 157 of 157 claims mapped; 11 claims changed, 
 
 Claims after fixes: 157 (C156 to C158 added). Prose after fixes: 2,601 words. Structural fixes owed to a recurring mismatch: none. Decided claims the fixes reworded, for the owner at acceptance: C14, C33, C61, C115, C121, C152, C154, C155.
 
-The confirmation is pending.
+Confirmation: 11 of 13 fixes hold. Not held: 2, 3. Declines accepted: 2 of 2. New defects: 2.
+
+The instance read both files in full at fix commit 1d89430. The confirmation's fixes, IR first, before round 4 opens:
+
+- Fix 2 did not hold, with N1 (SP-25): the move dropped the IR-only exception, so C14 read against BP-00. This is the fourth round on that rule, so the exception becomes a claim of its own beside BP-00, not a qualifier on C14: "A document the owner designates IR-only, with no `Normative: yes`, gets the lint alone, and rows BP-03 and BP-04 never apply to it." (C159, after the Rules table). C14 stays in Why each rule, scoped to its two rows.
+- Fix 3 did not hold: "a short IR" stayed undefined in the reasons for BP-07, BP-08 and BP-09. Re-fixed: "An IR under the thresholds, with no dependent ask, reads well as it stands." (C120) and "reads an IR under the thresholds as it stands" (C122).
+- N2 (SP-25): the fix commit sent at step 6 cannot hold the fixes step 6 then makes. Settled as v1.10 and the specification's C275 and C298 have it: the confirmation's fixes come after the confirmation and before the next round. Step 6 now says "The reasoning role runs `npm run check` on those fixes, with the fix commit as its base. The commit that holds those fixes opens the next round, whose stranger reads them." (C160, C161). A wording fix of the case's adopted step 6, stating the practice every round of this count followed; no new rule.
+- Declines R1 and R2 accepted.
+- Also in this pass, after the specification's round 3 confirmation named the same defect there: C157, the definition of "a term the text introduces", is the reasoning role's wording, not the owner's. It now reads `[proposed: this IR]`, with the term as T34 and ask A2 for the owner. Unratified terms: 1. Its sentence now stands before the term's first use in step 3, the same defect the specification's confirmation named as N2.
+
+Step 6's check, `npm run check -- docs/branch-point.md --base 1d89430`:
+Checks: 0 sentences over 25 words; 160 of 160 claims mapped; 5 claims changed, 0 missing, 0 stale.
+
+Prose after the confirmation's fixes: 2,660 words; IR 160 claims. Decided claims reworded after confirmation, for the owner at acceptance: C120, C122; added: C159 to C161.
+
+Signals script after the confirmation line: signal 1 stands from rounds 1 and 2, and round 3 adds fixes not held. Signal 4 stands by reading.
+
+### Round 4, count 1, 2026-11-02
+
+The round reads the text at its opening commit, named in the brief, under v1.11 at commit 12ff480. Prose 2,660 words; IR 160 claims; unratified terms 1 (T34). Human reader for the paraphrase test: the human owner. Stranger: pending, a fresh instance.
+
+Declines carried in the round 4 brief: v1.9 round 1's F3; round 1's 3, 14 and 16; round 2's 1 and 2; round 3's 1 is fixed, so none from round 3. Not carried: the restatement-check items. The brief names the passages round 3 and its confirmation changed, the departure kept for this count. Passages awaiting restatement: none.
+

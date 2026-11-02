@@ -2,7 +2,7 @@
 
 Reader: RD-4
 Purpose: document. The branch point as a whole: which checks a text gets before it reaches its reader, and how its review rounds run, after the adopted changes of evaluation case 015.
-Status: rendered (v1.11, round 3 fix pass; rendered by the reasoning role, D3)
+Status: rendered (v1.11, round 4; rendered by the reasoning role, D3)
 Source: the owner's decision of 2026-11-02 on evaluation case 015 (changes 1 to 30 adopted, changes 31 to 35 declined); the adopted changes of cases 013 (1, 2, 3 and 5) and 014 (1 to 8), whose landing joined case 015; branch point v1.10 as the owner accepted it on 2026-11-01; the IRs of v1.4 to v1.10 under docs/records/.
 Normative: yes
 Footprint: docs/branch-point.md; docs/records/branch-point-history.md; docs/style-spec.md; docs/vocabulary.md; docs/backlog.md; .claude/agents/; .claude/skills/; scripts/; package.json
@@ -74,6 +74,8 @@ T31. Normative text. defined-at: https://github.com/majodali/methodology/blob/ma
 T32. Meta-review. defined-at: vocabulary.md#def-meta-review [decided: owner, 2026-10-27]
 
 T33. Meta-review signal. defined-at: https://github.com/majodali/methodology/blob/main/docs/vocabulary.md#def-meta-review-signal [decided: owner, 2026-10-27]
+
+T34. Term the text introduces: a term the text defines or links to a vocabulary entry. [proposed: this IR]
 
 ## Claims
 
@@ -203,7 +205,7 @@ C48. In step 3, the stranger reads the prose and writes its restatement, its own
 
 C49. The stranger writes the restatement for the human reader the brief names, without any term the text introduces. evidence: E1. [decided: owner, 2026-11-02, case 015 change 26]
 
-C157. A term the text introduces is one the text defines or links to a vocabulary entry. [decided: owner, 2026-11-02, case 015 change 26; added in count 1, round 3]
+C157. A term the text introduces is one the text defines or links to a vocabulary entry. [proposed: this IR]
 
 C50. Then the stranger restates each listed passage in one sentence. [decided: branch point v1.10 IR, C10]
 
@@ -254,6 +256,10 @@ C67. The instance names each new defect a fix introduced. [decided: branch point
 C68. The reasoning role writes the `Confirmation:` line. [decided: branch point v1.10 IR, C31; reworded in count 1, round 2]
 
 C154. The reasoning role fixes again each fix the instance says does not hold, and fixes each new defect the instance names. [decided: branch point v1.10 IR, C31; reworded in count 1, round 3]
+
+C160. The reasoning role runs `npm run check` on those fixes, with the fix commit as its base. [decided: owner, 2026-11-02, case 015 change 24; added after round 3 confirmation]
+
+C161. The commit that holds those fixes opens the next round, whose stranger reads them. [decided: branch point v1.10 IR, C31; added after round 3 confirmation]
 
 C69. Then the next round opens. [decided: branch point v1.10 IR, C31]
 
@@ -339,6 +345,8 @@ C102. Row BP-00: when the owner designated the document IR-only and the IR heade
 
 C147. Under BP-00 the IR is the deliverable, its Status reads `delivered IR-only`, and no later row applies. [decided: owner, 2026-10-30, branch point v1.8]
 
+C159. A document the owner designates IR-only, with no `Normative: yes`, gets the lint alone, and rows BP-03 and BP-04 never apply to it. [decided: owner, 2026-10-30, branch point v1.8; added after round 3 confirmation]
+
 C103. Row BP-02a: when the purpose is `document` and the IR header carries `Normative: yes`, the disposition is D3. [decided: owner, 2026-10-26, branch point v1.2]
 
 C104. Row BP-02: when the owner flag is `review`, the disposition is D2. [decided: branch point v1.1, 2026-10-25]
@@ -377,11 +385,11 @@ C118. The reason: the stranger review on reports to RD-1 or RD-3 runs only on re
 
 C119. The returning owner needs the state paragraph, the paragraph stating where the project stands, which only a rendering of prose writes. [decided: branch point v1.6 IR, C20; reworded in count 1, round 2]
 
-C120. A short IR with no dependencies reads well as it stands. [decided: branch point v1.1, 2026-10-25; reworded in count 1, round 1]
+C120. An IR under the thresholds, with no dependent ask, reads well as it stands. [decided: branch point v1.1, 2026-10-25; reworded after round 3 confirmation]
 
 C121. Past the thresholds, the reader reads prose faster than a claims list. [decided: branch point v1.1, 2026-10-25; reworded in count 1, round 3]
 
-C122. BP-09 is the proportional-verification case: the owner or the delegating agent reads the short IR as it stands. [decided: branch point v1.1, 2026-10-25]
+C122. BP-09 is the proportional-verification case: the owner or the delegating agent reads an IR under the thresholds as it stands. [decided: branch point v1.1, 2026-10-25; reworded after round 3 confirmation]
 
 ### Meta-review signals
 
@@ -469,4 +477,6 @@ E4. docs/backlog.md, chunk 3's row: "Scope narrowed per the owner: reports to RD
 
 ## Asks
 
-A1. Accept or reject branch point v1.11. Under case 015 change 19, acceptance ratifies the wording of each decided claim this IR rewords from its source, unless the owner names a claim to exclude. Depends: C1 to C158.
+A1. Accept or reject branch point v1.11. Under case 015 change 19, acceptance ratifies the wording of each decided claim this IR rewords from its source, unless the owner names a claim to exclude. Depends: C1 to C161.
+
+A2. Ratify or strike the term "a term the text introduces" (T34) and its definition, C157, which the paraphrase test rests on; the specification's count 7 asks the same. Depends: C157.
