@@ -2,7 +2,7 @@
 
 Reader: RD-4
 Purpose: document. The branch point as a whole: which checks a text gets before it reaches its reader, and how its review rounds run, after the adopted changes of evaluation case 015.
-Status: rendered (v1.11, round 1 fix pass; rendered by the reasoning role, D3)
+Status: rendered (v1.11, round 2; rendered by the reasoning role, D3)
 Source: the owner's decision of 2026-11-02 on evaluation case 015 (changes 1 to 30 adopted, changes 31 to 35 declined); the adopted changes of cases 013 (1, 2, 3 and 5) and 014 (1 to 8), whose landing joined case 015; branch point v1.10 as the owner accepted it on 2026-11-01; the IRs of v1.4 to v1.10 under docs/records/.
 Normative: yes
 Footprint: docs/branch-point.md; docs/records/branch-point-history.md; docs/style-spec.md; docs/vocabulary.md; docs/backlog.md; .claude/agents/; .claude/skills/; scripts/; package.json
@@ -101,7 +101,7 @@ C9. The dispatcher, the script that applies these rules to one IR, implements ag
 
 C10. The reader is RD-4, a fresh agent session implementing or running these rules. [decided: owner, 2026-11-01, branch point v1.10; reworded in count 1, round 1]
 
-C142. The human owner, setting the thresholds, reads the branch point as RD-4 does. [decided: owner, 2026-11-01, branch point v1.10; reworded in count 1, round 1]
+C142. The human owner, setting the thresholds, reads the branch point with no more context than RD-4. [decided: owner, 2026-11-01, branch point v1.10; reworded after round 1 confirmation]
 
 ### Purpose
 
@@ -127,7 +127,7 @@ C19. The input claims is the count of `C` elements. [decided: owner, 2026-11-01,
 
 C20. The input proposed terms is the count of `T` elements, terms, with status `proposed`: terms that wait for the owner's ratification. [decided: owner, 2026-11-01, branch point v1.10; reworded in count 1, round 1]
 
-C21. The input dependent asks is the count of `A` elements, requests to the reader, whose `Depends:` field names the claims or asks the request rests on. [decided: owner, 2026-11-01, branch point v1.10; reworded in count 1, round 1]
+C21. The input dependent asks counts the `A` elements, asks (requests to the reader), whose `Depends:` field names the claims or asks they rest on. [decided: owner, 2026-11-01, branch point v1.10; reworded after round 1 confirmation]
 
 C22. The input longest claim is the word count of the longest `C` element. [decided: owner, 2026-11-01, branch point v1.10]
 
@@ -263,7 +263,7 @@ C74. The restatement stands at step 4 as a `Restatement:` line, then the restate
 
 C75. The `Mismatches:` line, at step 4, holds one entry per mismatch, or `none`. [decided: branch point v1.10 IR, C14; reworded in count 1, round 1]
 
-C146. Each `Mismatches:` entry names the claim the restatement contradicts and, after "relied on", the claim of the sentence the stranger quoted, as `C41 (relied on C35)`. [decided: branch point v1.10 IR, C14]
+C146. Each entry names the contradicted claim and, after "relied on", the claim of the quoted sentence, as `C41 (relied on C35)`. [decided: branch point v1.10 IR, C14; reworded after round 1 confirmation]
 
 C76. The `Confirmation:` line, at step 6, reads `Confirmation: H of A fixes hold. Not held: <finding numbers, or none>. Declines accepted: K of D. New defects: N.` [decided: branch point v1.9 IR, C95]
 
@@ -290,6 +290,10 @@ C85. The stranger reports as a finding each passage the stranger cannot restate 
 C86. The stranger reports findings against the style specification's rows SP-01 to SP-05, SP-08 to SP-11, SP-18, SP-25 and SP-26, with the calibrations the rows carry. evidence: E1. [decided: owner, 2026-11-02, case 015 change 11]
 
 C87. For each mismatch, the brief asks the stranger to quote the prose sentence the stranger relied on. [decided: branch point v1.10 IR, C15]
+
+C150. SP-02's limit of 25 words binds the sentences of the prose. [decided: owner, 2026-11-02, case 015 change 1; added after round 1 confirmation]
+
+C151. An IR claim's limit is 40 words, the specification's check CK-02 (claim length). [decided: methodology intermediate-representation specification, C54; added after round 1 confirmation]
 
 C88. The brief lists the forms that are not defects. [decided: branch point v1.4 IR, C26]
 
@@ -337,7 +341,7 @@ C107. Row BP-05a: when proposed terms exceed zero, the disposition is D1, with a
 
 C108. Row BP-06: when the reader is RD-2 (the human owner, returning), the disposition is D1. [decided: branch point v1.1, 2026-10-25]
 
-C109. Row BP-07 gives D1 for RD-1 (the owner, in conversation) when the IR has over six claims, a dependent ask or a claim over 30 words. [decided: branch point v1.1, 2026-10-25; reworded in count 1, round 1]
+C109. BP-07 gives D1 for RD-1 (the owner, in conversation) when the IR has over six claims, a dependent ask or a claim over 30 words. [decided: branch point v1.1, 2026-10-25; reworded after round 1 confirmation]
 
 C110. Row BP-08: when the reader is RD-3 (a delegating agent) and the IR has more than twelve claims or a dependent ask, the disposition is D1. [decided: branch point v1.1, 2026-10-25]
 
@@ -451,4 +455,4 @@ E4. docs/backlog.md, chunk 3's row: "Scope narrowed per the owner: reports to RD
 
 ## Asks
 
-A1. Accept or reject branch point v1.11. Under case 015 change 19, acceptance ratifies the wording of each decided claim this IR rewords from its source, unless the owner names a claim to exclude. Depends: C1 to C149.
+A1. Accept or reject branch point v1.11. Under case 015 change 19, acceptance ratifies the wording of each decided claim this IR rewords from its source, unless the owner names a claim to exclude. Depends: C1 to C151.

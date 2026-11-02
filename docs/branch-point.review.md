@@ -57,6 +57,7 @@ Signals script before the round: no round recorded yet; nothing to read.
 | Round | Prose words | IR claims | Findings | Per 1,000 words | Verdict |
 |---|---|---|---|---|---|
 | 1 | 2,396 | 141 | 24 | 10.0 | not readable (mismatch 1; contradictions 2; undefined terms 4; paraphrase-test findings 6) |
+| 2 | 2,491 | 151 | | | pending |
 
 ### Round 1, count 1, 2026-11-02
 
@@ -111,4 +112,28 @@ The six stale claims are IR-only edits whose sentences already carry them: C114,
 
 Claims after fixes: 149. Prose after fixes: 2,468 words. Structural fixes: none; no claim recurred. Decided claims the fixes reworded, for the owner at acceptance (case 015 change 19): C6, C9, C10, C11, C14, C20, C21, C23, C25, C27, C41, C75, C102, C109, C114, C115, C119, C120, C125, C126, C127, C131. The carried decline's sentence, C6, now holds the gloss of thresholds; its reason still holds.
 
-The confirmation is pending.
+Confirmation: 15 of 17 fixes hold. Not held: 15, 18. Declines accepted: 3 of 7. New defects: 3.
+
+The instance read both files in full at fix commit 66f9852. The fix pass's count for C109 was wrong: by `wordCount` it held 26 words, not 24. C146, split from C75, also held 26. The confirmation's fixes, IR first, before round 2 opens:
+
+- Fix 15 did not hold, with N2 (SP-02, C146 at 26 words). Re-fixed: "Each entry names the contradicted claim and, after "relied on", the claim of the quoted sentence, as `C41 (relied on C35)`." (21 words); the prose row follows.
+- Fix 18 did not hold (C109 at 26 words). Re-fixed: "BP-07 gives D1 for RD-1 (the owner, in conversation) ..." (25 words). The prose row already carries the claim.
+- Declines 14 and 16 not accepted: the 40-word limit the declines cite stood in neither file the stranger read. Settled in the text: the Stranger brief section now says "SP-02's limit of 25 words binds the sentences of the prose. An IR claim's limit is 40 words, the specification's check CK-02 (claim length)." (C150, C151). C73 (30 words) and C76 (27 words) fall under the 40-word limit, so both declines stand, now on a rule the text states.
+- P3 and P4, declines not accepted: the instance holds that the check's term part and repeat part each record a finding whatever the text. The declines stand. The verdict's fourth condition, in the specification, counts a passage the stranger cannot restate without a term the text introduces. The check lists candidates for that condition; a reused glossed word and a copied plain sentence show no such passage.
+- N1 (SP-04, "ask" undefined after fix 6): the dependent-asks row reads "the count of `A` elements, asks (requests to the reader), whose `Depends:` field names the claims or asks they rest on" (C21).
+- N3 (SP-03, "as RD-4 does"): the Reader line reads "The human owner, setting the thresholds, reads the branch point with no more context than RD-4." (C142).
+- Declines 3, P1 and P2 accepted.
+
+Step 5 after the confirmation's fixes, `npm run check -- docs/branch-point.md --base 66f9852`:
+Checks: 0 sentences over 25 words; 151 of 151 claims mapped; 6 claims changed, 0 missing, 1 stale.
+
+The stale claim, C109, is an IR-only edit; the prose row carries it. Prose after the confirmation's fixes: 2,491 words; IR 151 claims. Decided claims reworded after confirmation, for the owner at acceptance: C21, C109, C142, C146; added: C150, C151.
+
+Signals script after the confirmation line: no signal. Signal 1 needs fixes not held in two or more rounds; round 1 is the first.
+
+### Round 2, count 1, 2026-11-02
+
+The round reads the text at its opening commit, named in the brief, under v1.11 at commit 12ff480. Prose 2,491 words; IR 151 claims; unratified terms 0. Human reader for the paraphrase test: the human owner. Stranger: pending, a fresh instance.
+
+Declines carried in the round 2 brief: v1.9 round 1's F3, on the sentence C6 now glosses; round 1's 3, 14 and 16, each with its reason. Not carried: P1 to P4, which concerned round 1's restatement and not the text. The brief names the passages round 1 and its confirmation changed, for the whole-text read. Passages awaiting restatement: none.
+
