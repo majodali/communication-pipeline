@@ -2,7 +2,7 @@
 
 Reader: RD-4
 Purpose: document. The branch point as a whole: which checks a text gets before it reaches its reader, and how its review rounds run, after the adopted changes of evaluation case 015.
-Status: rendered (v1.11, round 1; rendered by the reasoning role, D3)
+Status: rendered (v1.11, round 1 fix pass; rendered by the reasoning role, D3)
 Source: the owner's decision of 2026-11-02 on evaluation case 015 (changes 1 to 30 adopted, changes 31 to 35 declined); the adopted changes of cases 013 (1, 2, 3 and 5) and 014 (1 to 8), whose landing joined case 015; branch point v1.10 as the owner accepted it on 2026-11-01; the IRs of v1.4 to v1.10 under docs/records/.
 Normative: yes
 Footprint: docs/branch-point.md; docs/records/branch-point-history.md; docs/style-spec.md; docs/vocabulary.md; docs/backlog.md; .claude/agents/; .claude/skills/; scripts/; package.json
@@ -81,7 +81,7 @@ T33. Meta-review signal. defined-at: https://github.com/majodali/methodology/blo
 
 C1. This document decides how much checking a text gets before it reaches its reader, and how the review of the text runs. [inferred: R1]
 
-C2. The pipeline's agents read the document to route and review texts, and the human owner reads it to set the thresholds. [inferred: R2]
+C2. The agents that route and review texts read the document, and the human owner reads it to set the numbers its rules use. [inferred: R2]
 
 ### Status, type and reader
 
@@ -91,25 +91,27 @@ C4. Version 1.10, the latest version the owner accepted, is active on main while
 
 C5. The Versions section lists the versions. [decided: branch point v1.10 IR, C3]
 
-C6. The thresholds are provisional until the evaluation corpus tunes them. [decided: branch point v1.4 IR, C37]
+C6. The thresholds, the numbers in the rules' conditions, are provisional until the evaluation corpus tunes them. [decided: branch point v1.4 IR, C37; reworded in count 1, round 1]
 
 C7. The rules are the Rendering conditions of the methodology's intermediate-representation specification. [decided: branch point v1.4 IR, C38]
 
 C8. The branch point is a Specification, the methodology's document type. [decided: owner, 2026-11-01, branch point v1.10]
 
-C9. The pipeline's dispatcher, the script that applies these rules to one IR, implements against this specification. [decided: owner, 2026-11-01, branch point v1.10]
+C9. The dispatcher, the script that applies these rules to one IR, implements against this specification. [decided: owner, 2026-11-01, branch point v1.10; reworded in count 1, round 1]
 
-C10. The readers are RD-4, a fresh agent session implementing or running the pipeline, and the human owner setting thresholds. [decided: owner, 2026-11-01, branch point v1.10]
+C10. The reader is RD-4, a fresh agent session implementing or running these rules. [decided: owner, 2026-11-01, branch point v1.10; reworded in count 1, round 1]
+
+C142. The human owner, setting the thresholds, reads the branch point as RD-4 does. [decided: owner, 2026-11-01, branch point v1.10; reworded in count 1, round 1]
 
 ### Purpose
 
-C11. The branch point decides for one IR which of the pipeline's model stages run. [decided: owner, 2026-11-01, branch point v1.10]
+C11. The branch point decides for one IR which model stages run. [decided: owner, 2026-11-01, branch point v1.10; reworded in count 1, round 1]
 
 C12. The branch point protects proportional verification. [decided: branch point v1.9 IR, C72]
 
 C13. Under proportional verification, a short report to a reader who shares the conversation costs one pass of the lint, the project's deterministic checker. [decided: branch point v1.9 IR, C73]
 
-C14. A document for a stranger costs the full pipeline. [decided: owner, 2026-11-01, branch point v1.10]
+C14. A document for a stranger costs every stage. [decided: owner, 2026-11-01, branch point v1.10; reworded in count 1, round 1]
 
 C15. The methodology specification's section "Texts that require an IR" says which texts start as an IR. evidence: E1. [decided: owner, 2026-11-02, case 015 change 9]
 
@@ -123,23 +125,29 @@ C18. The input purpose comes from the Purpose header: `report` or `document`. [d
 
 C19. The input claims is the count of `C` elements. [decided: owner, 2026-11-01, branch point v1.10]
 
-C20. The input proposed terms is the count of `T` elements with status `proposed`. [decided: owner, 2026-11-01, branch point v1.10]
+C20. The input proposed terms is the count of `T` elements, terms, with status `proposed`: terms that wait for the owner's ratification. [decided: owner, 2026-11-01, branch point v1.10; reworded in count 1, round 1]
 
-C21. The input dependent asks is the count of `A` elements with a `Depends:` field, the field naming the claims or asks the ask rests on. [decided: owner, 2026-11-01, branch point v1.10]
+C21. The input dependent asks is the count of `A` elements, requests to the reader, whose `Depends:` field names the claims or asks the request rests on. [decided: owner, 2026-11-01, branch point v1.10; reworded in count 1, round 1]
 
 C22. The input longest claim is the word count of the longest `C` element. [decided: owner, 2026-11-01, branch point v1.10]
 
-C23. The input owner flag is `review` if the owner asked for a review of this output, or `ir-only` if the owner designated the document IR-only. evidence: E1. [decided: owner, 2026-11-02, case 015 change 25]
+C23. The input owner flag is `review` if the owner asked for a review of this output. [decided: owner, 2026-11-02, case 015 change 25; reworded in count 1, round 1]
+
+C143. The input owner flag is `ir-only` if the owner designated the document IR-only: delivered as its IR alone, with no prose. evidence: E1. [decided: owner, 2026-11-02, case 015 change 25; added in count 1, round 1]
 
 ### Dispositions
 
 C24. A disposition is the branch point's output for one IR: which stages run. [decided: owner, 2026-10-25]
 
-C25. Disposition D0, lint only, runs the schema checks CK-01 (referent rule) to CK-10 (section order) of the methodology's mechanical checks and the prose lints, then delivers the IR as it stands. [decided: owner, 2026-11-01, branch point v1.10]
+C25. Disposition D0, lint only, runs the schema checks CK-01 (referent rule) to CK-10 (section order) and the prose lints. [decided: owner, 2026-11-01, branch point v1.10; reworded in count 1, round 1]
+
+C144. Under D0 the IR is delivered as it stands. [decided: owner, 2026-11-01, branch point v1.10]
 
 C26. Disposition D1, render, runs D0, then the paraphraser renders prose for the reader. [decided: branch point v1.4 IR, C48]
 
-C27. The paraphraser, or the reasoning role when it renders, joins a rule to a reason the IR holds as its own claim by connective prose, words that join claims and assert nothing of their own. [decided: branch point v1.4 IR, C16]
+C27. The paraphraser, or the reasoning role when it renders, joins a rule to a reason the IR holds as its own claim by connective prose. [decided: branch point v1.4 IR, C16; reworded in count 1, round 1]
+
+C145. Connective prose is words that join claims and assert nothing of their own. [decided: owner, 2026-10-26, the vocabulary row connective prose]
 
 C28. Disposition D2, render and review, runs D1, then the stranger rounds under the Rounds section. [decided: branch point v1.4 IR, C39]
 
@@ -171,7 +179,7 @@ C39. The claims check looks for a prose sentence that carries each changed claim
 
 C40. Before round 1, the claims check compares the text with the version the owner last accepted. [inferred: R3]
 
-C41. The reasoning role shortens each sentence over 25 words that the check lists, outside the forms the brief permits. evidence: E1, E2. [decided: owner, 2026-11-02, case 015 change 1]
+C41. The reasoning role shortens each sentence over 25 words that the check lists, outside the forms the Stranger brief section permits. [decided: owner, 2026-11-02, case 015 change 1; reworded in count 1, round 1]
 
 C42. The reasoning role fixes each claim the check lists as unmapped, missing or stale. evidence: E1. [decided: owner, 2026-11-02, case 015 change 24]
 
@@ -253,7 +261,9 @@ C73. The `Checks:` line reads `Checks: L sentences over 25 words; M of N claims 
 
 C74. The restatement stands at step 4 as a `Restatement:` line, then the restatement as written in a quoted block. evidence: E1. [decided: owner, 2026-11-02, case 015 change 26]
 
-C75. The `Mismatches:` line, at step 4, holds one entry per mismatch, naming the claim the restatement contradicts and, after "relied on", the claim of the sentence the stranger quoted, as `C41 (relied on C35)`; or `none`. [decided: branch point v1.10 IR, C14]
+C75. The `Mismatches:` line, at step 4, holds one entry per mismatch, or `none`. [decided: branch point v1.10 IR, C14; reworded in count 1, round 1]
+
+C146. Each `Mismatches:` entry names the claim the restatement contradicts and, after "relied on", the claim of the sentence the stranger quoted, as `C41 (relied on C35)`. [decided: branch point v1.10 IR, C14]
 
 C76. The `Confirmation:` line, at step 6, reads `Confirmation: H of A fixes hold. Not held: <finding numbers, or none>. Declines accepted: K of D. New defects: N.` [decided: branch point v1.9 IR, C95]
 
@@ -311,7 +321,9 @@ C100. The rules table maps an IR's inputs to a disposition. [decided: branch poi
 
 C101. The first row of the rules table whose condition holds decides the disposition. [decided: branch point v1.9 IR, C55]
 
-C102. Row BP-00: when the owner designated the document IR-only and the IR header does not carry `Normative: yes`, the disposition is D0, the IR is the deliverable, its Status reads `delivered IR-only`, and no later row applies. [decided: owner, 2026-10-30, branch point v1.8]
+C102. Row BP-00: when the owner designated the document IR-only and the IR header does not carry `Normative: yes`, the disposition is D0. [decided: owner, 2026-10-30, branch point v1.8; reworded in count 1, round 1]
+
+C147. Under BP-00 the IR is the deliverable, its Status reads `delivered IR-only`, and no later row applies. [decided: owner, 2026-10-30, branch point v1.8]
 
 C103. Row BP-02a: when the purpose is `document` and the IR header carries `Normative: yes`, the disposition is D3. [decided: owner, 2026-10-26, branch point v1.2]
 
@@ -325,7 +337,7 @@ C107. Row BP-05a: when proposed terms exceed zero, the disposition is D1, with a
 
 C108. Row BP-06: when the reader is RD-2 (the human owner, returning), the disposition is D1. [decided: branch point v1.1, 2026-10-25]
 
-C109. Row BP-07: when the reader is RD-1 (the human owner, in conversation) and the IR has more than six claims, a dependent ask or a claim over 30 words, the disposition is D1. [decided: branch point v1.1, 2026-10-25]
+C109. Row BP-07 gives D1 for RD-1 (the owner, in conversation) when the IR has over six claims, a dependent ask or a claim over 30 words. [decided: branch point v1.1, 2026-10-25; reworded in count 1, round 1]
 
 C110. Row BP-08: when the reader is RD-3 (a delegating agent) and the IR has more than twelve claims or a dependent ask, the disposition is D1. [decided: branch point v1.1, 2026-10-25]
 
@@ -337,9 +349,11 @@ C112. BP-02 is the owner's review request: the owner asked for a review of this 
 
 C113. BP-02a stands before BP-02, so a normative document takes D3 whatever the owner flag. [decided: branch point v1.9 IR, C68]
 
-C114. BP-03 and BP-04 hold because documentation is read by someone who was not in the conversation. [decided: branch point v1.1, 2026-10-25]
+C114. Documentation is read by someone who was not in the conversation. [decided: branch point v1.1, 2026-10-25; reworded in count 1, round 1]
 
-C115. BP-02a holds because a paraphrase of normative text could change its force, so the reasoning role renders the normative text and only the review runs. [decided: branch point v1.10 IR, C69]
+C115. Under BP-02a the reasoning role renders the normative text and only the review runs. [decided: branch point v1.10 IR, C69; reworded in count 1, round 1]
+
+C148. A paraphrase of normative text could change its force. [decided: branch point v1.10 IR, C69]
 
 C116. Under BP-05a, an unratified term in a document gets the stranger's check under BP-03. [decided: owner, 2026-11-01, branch point v1.10]
 
@@ -347,9 +361,9 @@ C117. Under BP-05a, in a report the owner's ratification of the proposed terms r
 
 C118. The reason: the stranger review on reports to RD-1 or RD-3 runs only on request (owner ruling, 2026-10-25). evidence: E4. [decided: branch point v1.10 IR, C88]
 
-C119. BP-06 holds because the returning owner needs the state paragraph, the paragraph stating where the project stands, which only the paraphraser writes. [decided: branch point v1.6 IR, C20]
+C119. The returning owner needs the state paragraph, the paragraph stating where the project stands, which only the paraphraser writes. [decided: branch point v1.6 IR, C20; reworded in count 1, round 1]
 
-C120. BP-07 and BP-08 hold because a short IR with no dependencies reads well as it stands. [decided: branch point v1.1, 2026-10-25]
+C120. A short IR with no dependencies reads well as it stands. [decided: branch point v1.1, 2026-10-25; reworded in count 1, round 1]
 
 C121. Past the thresholds, the owner reads prose faster than a claims list. [decided: branch point v1.1, 2026-10-25]
 
@@ -361,11 +375,13 @@ C123. At the end of a count the reasoning role runs `node scripts/signals.mjs` o
 
 C124. The methodology specification's Meta-review section defines the trigger, the signals and the `Meta-review:` line. evidence: E1. [decided: owner, 2026-11-02, case 015 change 10]
 
-C125. The script reads the first signal from the `Confirmation:` lines. evidence: E1, E2. [decided: owner, 2026-11-02, case 015 change 2]
+C125. The script reads the first signal, a fix not held in two or more rounds, from the `Confirmation:` lines. [decided: owner, 2026-11-02, case 015 change 2; reworded in count 1, round 1]
 
-C126. The script reads recurring mismatches, part of the second signal, from the `Mismatches:` lines of every count. [decided: branch point v1.9 IR, C30]
+C126. The script reads part of the second signal, one claim named by mismatches in two rounds, from the `Mismatches:` lines of every count. [decided: branch point v1.9 IR, C30; reworded in count 1, round 1]
 
-C127. The reasoning role reads the rest of the second signal and the fourth signal from the record. [decided: branch point v1.10 IR, C43]
+C127. The reasoning role reads the rest of the second signal, a finding raised again after a decline, from the record. [decided: branch point v1.10 IR, C43; reworded in count 1, round 1]
+
+C149. The reasoning role also reads the fourth signal from the record: a contradiction, in round 3 or later, in a passage a fix touched. evidence: E1. [decided: owner, 2026-11-02, case 015 change 10; added in count 1, round 1]
 
 C128. The script stops with an error on a line the script cannot read. evidence: E1. [decided: owner, 2026-11-02, case 015 change 17]
 
@@ -375,7 +391,7 @@ C130. The branch point's history, a record outside the reviewed text, holds the 
 
 ### Versions
 
-C131. Version 1.11, of 2026-11-02, carries the adopted changes of evaluation case 015 that bear on the branch point, with an IR of the whole text beside the prose. evidence: E1. [decided: owner, 2026-11-02, case 015 changes 13 and 29]
+C131. Version 1.11, of 2026-11-02, carries the branch point's share of evaluation case 015's adopted changes and an IR of the whole text. [decided: owner, 2026-11-02, case 015 changes 13 and 29; reworded in count 1, round 1]
 
 C132. Version 1.10, of 2026-10-30: thirteen adopted changes of evaluation case 012 and six terms; readable at round 9; accepted by the owner on 2026-11-01. [decided: branch point v1.10 IR, C1]
 
@@ -419,7 +435,7 @@ R1. C1 refines C11 because the plain purpose states the Purpose section's decisi
 
 R2. C2 refines C10 because the readers the Reader line names are the agents that route and review texts and the owner who sets the thresholds.
 
-R3. C40 depends-on C37 because the claims check needs a base, and before round 1 the base is the text the count changes; with no accepted IR of the whole text, the first check runs against an empty base (case 015 change 13).
+R3. C40 depends-on C37 because the claims check needs a base, the version the owner last accepted; v1.10, that version, holds no IR beside its prose, so this count's first check read an empty base (case 015 change 13).
 
 R4. C55 depends-on C49 because a term the restatement check finds in the restatement is a term the stranger did not restate without, which the specification's fourth condition counts (case 015 changes 26 and 27).
 
@@ -435,4 +451,4 @@ E4. docs/backlog.md, chunk 3's row: "Scope narrowed per the owner: reports to RD
 
 ## Asks
 
-A1. Accept or reject branch point v1.11. Under case 015 change 19, acceptance ratifies the wording of each decided claim this IR rewords from its source, unless the owner names one. Depends: C1 to C141.
+A1. Accept or reject branch point v1.11. Under case 015 change 19, acceptance ratifies the wording of each decided claim this IR rewords from its source, unless the owner names a claim to exclude. Depends: C1 to C149.

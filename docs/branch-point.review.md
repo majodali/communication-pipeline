@@ -19,6 +19,14 @@ Choices recorded for the owner, where the case left a choice open (the smaller t
 5. SP-27 binds documents under `docs/` outside `docs/records/`, and evaluation cases. A review record, an IR and a file opening with a supersession marker are exempt. Its gloss check counts a vocabulary row as a coined name when the row's definition site is not the methodology's.
 6. Steps 2 and 4 drop two v1.10 sentences that the case's draft also leaves out. The first is the record's quote of each relied-on sentence. The brief still asks the stranger to quote that sentence. The second sentence states, in the next round's entry, whether a listed passage matched.
 
+Landing departures from the dispatch brief, ruled by the Orchestrator on 2026-11-02 as the case's adopted text:
+
+7. The IR and this record sit beside the prose, not under `docs/records/` (change 13).
+8. Claims that render an adopted change are decided in both IRs, naming the owner, the date, the case and the change, not proposed (change 13). Acceptance ratifies the reworded claims (change 19).
+9. `docs/readers.md`, `docs/ir-schema.md` and `docs/term-lifecycle.md` stay unedited as records; the skills and agents read the methodology's homes (change 22).
+10. The specification's count 7 carries the branch point v1.10 rule that a fix still awaiting restatement counts as unfixed at the limit (its C198 and C326). Change 15 does not list the rule, and v1.11 links the specification for the final round.
+11. The count runs under v1.11 at commit 12ff480. The strangers read the opening commit 8e3ceb8, which adds this record, the IR's round 1 status and one lint scope fix: SP-27 exempts review records.
+
 Step 1, before round 1, by `npm run check -- docs/branch-point.md --empty-base`:
 Checks: 0 sentences over 25 words; 141 of 141 claims mapped; 141 claims changed, 0 missing, 0 stale.
 
@@ -48,8 +56,59 @@ Signals script before the round: no round recorded yet; nothing to read.
 
 | Round | Prose words | IR claims | Findings | Per 1,000 words | Verdict |
 |---|---|---|---|---|---|
-| 1 | 2,396 | 141 | | | pending |
+| 1 | 2,396 | 141 | 24 | 10.0 | not readable (mismatch 1; contradictions 2; undefined terms 4; paraphrase-test findings 6) |
 
 ### Round 1, count 1, 2026-11-02
 
-The round reads the text at its opening commit, named in the brief. Prose 2,396 words, by `wordCount` in `scripts/ir.mjs` with comments stripped. IR 141 claims. Unratified terms 0. Human reader for the paraphrase test: the human owner. Stranger: pending.
+The round reads the text at its opening commit, named in the brief. Prose 2,396 words, by `wordCount` in `scripts/ir.mjs` with comments stripped. IR 141 claims. Unratified terms 0. Human reader for the paraphrase test: the human owner.
+
+Stranger model: claude-haiku-5-5, a fresh instance started from `.claude/agents/reviewer.md`, reading at commit 8e3ceb8.
+
+Restatement:
+
+> The problem: a text given to a reader needs checking, and checking every text fully costs too much. This document decides how much checking each text gets before the reader sees it, and how the review of a text runs when it gets the full check. For each text, the pipeline reads a set of counts taken from the text's header and content: who the reader is, whether the text is a short report or a longer document, how many claims it makes, how many terms are new, how many asks rest on other claims, the length of the longest claim, and whether the owner asked for a review or marked the text as machine-only. A table of ordered rules maps these inputs to one of four levels of work: a deterministic check only; a check plus a rendering of the prose; a rendering plus a review by fresh reader instances; or the same review with the rendering done by the reasoning agent itself. The review runs in rounds: a fresh reader writes its own restatement and report, the text is fixed, and a new reader checks the fixes. Thresholds are provisional. The owner sets them.
+
+Prose 2,396 words by `wordCount` (the stranger's estimate: about 2,900, by eye); IR 141 claims; 20 findings from the stranger and 4 from the restatement check, 24 in all, 10.0 per thousand words. Restatement: one mismatch. Listed passages: none. Contradictions 2 (findings 5 and 10), undefined terms 4 (findings 2, 4, 7 and 9), paraphrase-test findings 2 (findings 6 and 12); verdict: not readable for RD-4. Omissions noticed, not counted: 4 (the threshold values, the dispatch log, A1's ratification clause, the list of forms).
+
+The mismatch: the restatement read the owner flag `ir-only` as "machine-only". The stranger relied on the Inputs row "`ir-only` if the owner designated the document IR-only", which carries C23 itself, with no gloss and the link only at row BP-00. First occurrence; no structural fix is owed.
+Mismatches: C23
+
+Restatement check, `node scripts/lint.mjs --restatement docs/branch-point.review.md`: 4 items, recorded as findings P1 to P4 under the verdict's fourth condition.
+
+Signals script after the `Mismatches:` line: no signal.
+
+| # | Finding (shortened) | Kind | Decision |
+|---|---|---|---|
+| 1 | `ir-only` read as machine-only (C23) | restatement | fixed: the owner flag row glosses and links IR-only, "delivered as its IR alone, with no prose" (C23 split, C143 added) |
+| 2 | "the pipeline" undefined | SP-04 | fixed by cutting: the text no longer uses the word (C2, C9, C10, C11, C14 reworded) |
+| 3 | the purpose's second sentence repeats the Reader line | SP-26 | declined: SP-27 (case 015 change 28) asks the plain purpose to say who reads the document, with no identifier; the Reader line names the reader by catalog identifier for the lint and the brief. Each form carries what the other cannot |
+| 4 | "thresholds" undefined | SP-04 | fixed: "The thresholds, the numbers in the rules' conditions, are provisional ..." (C6); the purpose says "the numbers its rules use" (C2) |
+| 5 | the Reader line names two readers, the IR header one | SP-25 | fixed: the Reader line names RD-4, then "The human owner, setting the thresholds, reads the branch point as RD-4 does." (C10 reworded, C142 added), the specification's form; the IR header stays RD-4 |
+| 6 | the proposed-terms and dependent-asks rows | paraphrase test | fixed: the rows say "terms that wait for the owner's ratification" and "requests to the reader" (C20, C21) |
+| 7 | IR-only used before its gloss or link | SP-04 | fixed with finding 1 |
+| 8 | the D1 row's sentence at 35 words | SP-02 | fixed: the gloss of connective prose is its own sentence (C27 split, C145 added) |
+| 9 | "the brief" used before the Stranger brief section | SP-04 | fixed: step 1 links "the [Stranger brief](#stranger-brief) section" (C41) |
+| 10 | step 1's base against R3's empty base | SP-25 | fixed in the IR: the base is the version the owner last accepted; v1.10 holds no IR beside its prose, so the first check read an empty base. R3 now says so; the prose stands. Against v1.10 on main the IR file is absent, so the check reads an empty base there too |
+| 11 | "so" and "because" joining a rule to a reason the IR does not hold | SP-01 | fixed in the IR: each reason is its own claim (C114, C115 with C148, C119, C120), so the prose sentences take the brief's permitted form |
+| 12 | the signals unnamed | paraphrase test | fixed: the Meta-review paragraph says what each signal the script or the reasoning role reads is (C125 to C127, C149 added) |
+| 13 | IR C25 at 31 words | SP-02 | fixed: split (C25, C144) |
+| 14 | IR C73 quotes the `Checks:` form | SP-02 | declined: the words over 25 are the fixed record form, quoted as code; without the form the claim holds 12 words. CK-02 caps an IR claim at 40 |
+| 15 | IR C75 at 36 words | SP-02 | fixed: split (C75, C146) |
+| 16 | IR C76 quotes the `Confirmation:` form | SP-02 | declined: as finding 14; the claim holds 9 words besides the form |
+| 17 | IR C102 at 37 words | SP-02 | fixed: split (C102, C147) |
+| 18 | IR C109 at 31 words | SP-02 | fixed: 24 words (C109) |
+| 19 | IR C131 at 28 words | SP-02 | fixed: 22 words (C131) |
+| 20 | A1's "names one" | SP-03 | fixed: "names a claim to exclude" |
+| P1 | the restatement uses "rounds" (T11) | paraphrase test | declined: the restatement says in the same sentence what a round is ("a fresh reader writes its own restatement and report, the text is fixed, and a new reader checks the fixes"); the passage was restated in plain words |
+| P2 | the restatement uses "counts" (T12) | paraphrase test | declined: the restatement uses "counts" in its plain sense, numbers taken from the header, not the text's term for a run of rounds |
+| P3 | the restatement uses "restatement" (T20) | paraphrase test | declined: the text glosses the word at its first use, "its own account of the text in at most 200 words", and the restatement uses it in that plain sense |
+| P4 | the restatement's second sentence repeats the plain purpose (77 percent) | paraphrase test | declined: the repeated sentence is the plain purpose, written without any term the text introduces under SP-27; repeating it leans on no term |
+
+Step 5, `npm run check -- docs/branch-point.md --base 8e3ceb8`, after the fixes:
+Checks: 0 sentences over 25 words; 149 of 149 claims mapped; 31 claims changed, 0 missing, 6 stale.
+
+The six stale claims are IR-only edits whose sentences already carry them: C114, C115, C119 and C120 split a reason from its rule in Why each rule, C102 splits row BP-00 and C109 rephrases row BP-07. No prose fix is owed. The lint's SP-27 gloss check does not see the gloss of connective prose, which follows in the next sentence without an article; the gloss stands.
+
+Claims after fixes: 149. Prose after fixes: 2,468 words. Structural fixes: none; no claim recurred. Decided claims the fixes reworded, for the owner at acceptance (case 015 change 19): C6, C9, C10, C11, C14, C20, C21, C23, C25, C27, C41, C75, C102, C109, C114, C115, C119, C120, C125, C126, C127, C131. The carried decline's sentence, C6, now holds the gloss of thresholds; its reason still holds.
+
+The confirmation is pending.
