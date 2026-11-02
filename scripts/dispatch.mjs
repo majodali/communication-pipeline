@@ -1,10 +1,11 @@
 #!/usr/bin/env node
-// The branch point (docs/branch-point.md v1): reads one IR, computes the
-// inputs, applies the rules BP-02a to BP-09 in order (the lints run for
+// The branch point (docs/branch-point.md v1.11): reads one IR, computes the
+// inputs, applies the rules BP-00 to BP-09 in order (the lints run for
 // every IR; label BP-01 retired in v1.9), prints the disposition, and
 // appends a row to eval/dispatch-log.md unless --dry-run.
-// Row BP-00 (v1.8, IR-only documents) is not implemented; see the Backlog.
-// Usage: node scripts/dispatch.mjs <file.ir.md> [--flag review] [--dry-run] [--json]
+// Row BP-00 (v1.8, IR-only documents; implemented by case 015 change 25)
+// reads the owner flag `ir-only`, or a Status that reads `delivered IR-only`.
+// Usage: node scripts/dispatch.mjs <file.ir.md> [--flag review|ir-only] [--dry-run] [--json]
 
 import { readFileSync, appendFileSync, existsSync, writeFileSync } from 'node:fs';
 import { resolve, relative, dirname } from 'node:path';
@@ -19,8 +20,9 @@ export function inputsOf(ir, ownerFlag = '') {
   const purpose = (ir.header.purpose ?? '').match(/^(report|document)/)?.[1] ?? '';
   const claims = ir.elements.filter((e) => e.kind === 'C');
   const normative = /^yes/i.test(ir.header.normative ?? '');
+  const irOnly = ownerFlag === 'ir-only' || /^delivered IR-only/.test(ir.header.status ?? '');
   return {
-    reader, purpose, normative,
+    reader, purpose, normative, irOnly,
     claims: claims.length,
     proposedTerms: ir.elements.filter((e) => e.kind === 'T' && e.provenance?.status === 'proposed').length,
     dependentAsks: ir.elements.filter((e) => e.kind === 'A' && /Depends:/.test(e.body)).length,
@@ -30,6 +32,7 @@ export function inputsOf(ir, ownerFlag = '') {
 }
 
 export function decide(i) {
+  if (i.irOnly && !i.normative) return { rule: 'BP-00', disposition: 'D0' }; // the IR is the deliverable; no later row applies
   if (i.purpose === 'document' && i.normative) return { rule: 'BP-02a', disposition: 'D3' }; // D3: reviewer rounds until readable, limit ten (v1.3); before BP-02 (v1.9)
   if (i.ownerFlag === 'review') return { rule: 'BP-02', disposition: i.normative ? 'D3' : 'D2' };
   if (i.purpose === 'document') return { rule: 'BP-03', disposition: 'D2' };
@@ -57,7 +60,7 @@ Newest last. The data chunk 3 tunes the thresholds against.
 function main() {
   const args = process.argv.slice(2);
   const file = args.find((a) => !a.startsWith('--'));
-  if (!file) { console.error('usage: dispatch.mjs <file.ir.md> [--flag review] [--dry-run] [--json]'); process.exit(2); }
+  if (!file) { console.error('usage: dispatch.mjs <file.ir.md> [--flag review|ir-only] [--dry-run] [--json]'); process.exit(2); }
   const flag = args.includes('--flag') ? args[args.indexOf('--flag') + 1] : '';
   const ir = parseIR(readFileSync(resolve(file), 'utf8'));
   const i = inputsOf(ir, flag);

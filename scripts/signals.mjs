@@ -1,35 +1,31 @@
 #!/usr/bin/env node
-// Meta-review signals (branch point v1.10, owner decision of 2026-10-30 on
-// evaluation case 012; v1.9 on cases 010 and 011; v1.7 on case 009). Reads a
-// review record and reports what it shows for the signals the script reads.
-// The reasoning role runs it after writing each round's "Mismatches:" line
-// and before writing the verdict, so it reads a partial record: a round with
-// no confirmation line or curve row yet is read as far as it goes.
-//   Signal 1: in two or more rounds a confirmation line reports fixes not
-//             held, or a claims-check line reports a missing or stale claim.
-//             Confirmation lines have one fixed form:
+// Meta-review signals (branch point v1.11, the owner's decision of 2026-11-02
+// on evaluation case 015; v1.10 on case 012; v1.9 on cases 010 and 011).
+// Reads a review record and reports what it shows for the signals the
+// script reads. The reasoning role runs it at Rounds step 4, after writing
+// the round's "Mismatches:" line, and at the end of a count.
+//   Signal 1: in two or more rounds of the last count, a confirmation line
+//             reports fixes not held (case 015 change 2: the claims check
+//             no longer counts). The line has one fixed form:
 //             "Confirmation: H of A fixes hold. Not held: <...>. Declines accepted: K of D. New defects: N."
-//             A confirmation-like line in any other form is reported as
-//             unparsed, and so is a round with a fix pass and no
-//             claims-check line (case 012 change 13); a round's fix pass
-//             shows as a confirmation line in the round's entry. No "not
-//             indicated" may be written while a line is unparsed.
 //   Signal 2: a claim of the last count's "Mismatches:" lines named in two
-//             rounds of the text's counts. An entry names the claim the
-//             restatement contradicts and, after "relied on", the claim of
-//             the quoted sentence: "C41 (relied on C35)"; a recurrence counts
-//             on either claim. An "(own)" mark in an older record is read and
-//             ignored (case 012 change 1). Claims on earlier counts' lines
-//             that do not recur into the last count are listed as
-//             information.
-// Signal 3 is struck (case 012 change 11); the curve's prose words and IR
-// claims stay as measures. The script searches no wording (case 012 change
-// 12): the reasoning role checks a declined finding raised again and the
-// fourth signal by reading.
-// The curve, confirmation and claims-check lines are read from the last
-// "## Count n" section only; text before the first such heading is count 1.
-// The script reports a "Meta-review: not indicated" line its own reading
-// contradicts.
+//             rounds of the text's counts (keyed on a claim, case 015 change
+//             3). An entry names the claim the restatement contradicts and,
+//             after "relied on", the claim of the quoted sentence:
+//             "C41 (relied on C35)"; a recurrence counts on either claim. An
+//             "(own)" mark in an older record is read and ignored. Claims on
+//             earlier counts' lines that do not recur into the last count are
+//             listed as information.
+// The script stops with an error on a line it cannot read (case 015 change
+// 17): a confirmation line outside the fixed form, a "Mismatches:" line
+// that names no claim and is not "none", or a "Meta-review:" line whose
+// value is not pending, not indicated or delivered. The reasoning role
+// corrects the line and runs the script again. The script reads the
+// confirmation and Meta-review lines of the last "## Count n" section only
+// (text before the first such heading is count 1), and the "Mismatches:"
+// lines of every count. The reasoning role reads the rest of signal 2 and
+// signal 4. The script reports a "Meta-review: not indicated" line its own
+// reading contradicts.
 // Usage: node scripts/signals.mjs <review-record.md> [--json]
 
 import { readFileSync } from 'node:fs';
@@ -59,10 +55,8 @@ export function mismatchEntries(body) {
   return out;
 }
 
-function claimsCheckCounts(l) {
-  const m = /(\d+)\s+missing|missing\s+(\d+)/i.exec(l);
-  const s = /(\d+)\s+stale|stale\s+(\d+)/i.exec(l);
-  return { missing: m ? Number(m[1] ?? m[2]) : 0, stale: s ? Number(s[1] ?? s[2]) : 0 };
+export class UnreadableLine extends Error {
+  constructor(line, text, why) { super(`line ${line}: ${why}: ${text.slice(0, 100)}`); this.line = line; this.text = text; }
 }
 
 export function readSignals(text) {
@@ -94,6 +88,7 @@ export function readSignals(text) {
       const h = /^#+\s*Round\s+(\d+)/.exec(l);
       if (h) round = Number(h[1]);
       const mm = /^Mismatches:\s*(.*)$/.exec(l);
+      if (mm && !/^none\.?$/i.test(mm[1].trim()) && !/\bC\d+\b/.test(mm[1])) throw new UnreadableLine(i + 1, l, 'a Mismatches line names no claim and is not "none"');
       if (mm) for (const { id, relied } of mismatchEntries(mm[1])) {
         if (!occurrences.has(id)) occurrences.set(id, []);
         occurrences.get(id).push({ count: c, round, relied });
@@ -124,49 +119,37 @@ export function readSignals(text) {
   }
   const signal2 = recurring.length > 0;
 
-  // Confirmation lines and claims-check lines, last count only.
+  // Confirmation and Meta-review lines, last count only.
   let round = 0;
   const roundsSeen = new Set();
-  const roundsWithClaimsCheck = new Set();
-  const roundsWithFixPass = new Set();
   const roundsWithFailure = new Set();
   const evidence1 = [];
-  const unparsed = [];
   let notIndicated = null;
-  for (const raw of lines) {
+  lines.forEach((raw, k) => {
     const l = raw.trim();
+    const at = start + k + 1;
     const h = /^#+\s*Round\s+(\d+)/.exec(l);
     if (h) { round = Number(h[1]); roundsSeen.add(round); }
     if (/^Meta-review:/i.test(l)) {
+      if (!/^Meta-review:\s*(pending|not indicated|delivered)\b/i.test(l)) throw new UnreadableLine(at, l, 'a Meta-review line whose value is not pending, not indicated or delivered');
       if (/^Meta-review:\s*not indicated/i.test(l)) notIndicated = l.slice(0, 100);
-      continue;
+      return;
     }
-    if (/^Confirmation:/.test(l) || /\bfixes\s+(hold|held)\b/i.test(l)) {
-      roundsWithFixPass.add(round);
+    if (/^Confirmation:/.test(l) || /^[\w -]*confirmation:\s*\d+\s+of\s+\d+/i.test(l)) {
       const c = CONFIRMATION_FORM.exec(l);
-      if (!c) { unparsed.push(`round ${round}: ${l.slice(0, 100)}`); }
-      else if (Number(c[1]) < Number(c[2])) { roundsWithFailure.add(round); evidence1.push(`round ${round}: ${c[1]} of ${c[2]} fixes hold; not held ${c[3]}`); }
+      if (!c) throw new UnreadableLine(at, l, 'a confirmation line outside the fixed form');
+      if (Number(c[1]) < Number(c[2])) { roundsWithFailure.add(round); evidence1.push(`round ${round}: ${c[1]} of ${c[2]} fixes hold; not held ${c[3]}`); }
     }
-    if (/claims[ -]check/i.test(l)) {
-      roundsWithClaimsCheck.add(round);
-      const k = claimsCheckCounts(l);
-      if (k.missing > 0 || k.stale > 0) { roundsWithFailure.add(round); evidence1.push(`round ${round}: claims check, ${k.missing} missing, ${k.stale} stale`); }
-    }
-  }
-  for (const r of [...roundsWithFixPass].sort((a, b) => a - b)) {
-    if (!roundsWithClaimsCheck.has(r)) unparsed.push(`round ${r}: a fix pass and no claims-check line`);
-  }
+  });
   const signal1 = roundsWithFailure.size >= 2;
   const fired = signal1 || signal2;
-  const subject = unparsed.length ? 'unparsed' : fired;
   return {
     rounds: rows.length,
     roundsSeen: roundsSeen.size,
-    unparsed,
     signal1: { fired: signal1, roundsWithFailure: [...roundsWithFailure].sort((a, b) => a - b), evidence: evidence1 },
     signal2: { fired: signal2, recurring, earlierCounts: earlier },
-    metaReviewLine: { notIndicated: notIndicated !== null, contradicted: notIndicated !== null && (subject === true || subject === 'unparsed') },
-    subject,
+    metaReviewLine: { notIndicated: notIndicated !== null, contradicted: notIndicated !== null && fired },
+    subject: fired,
   };
 }
 
@@ -174,16 +157,22 @@ function main() {
   const args = process.argv.slice(2);
   const file = args.find((a) => !a.startsWith('--'));
   if (!file) { console.error('usage: signals.mjs <review-record.md> [--json]'); process.exit(2); }
-  const r = readSignals(readFileSync(resolve(file), 'utf8'));
+  let r;
+  try { r = readSignals(readFileSync(resolve(file), 'utf8')); }
+  catch (e) {
+    if (!(e instanceof UnreadableLine)) throw e;
+    console.error(`signals: cannot read ${file}, ${e.message}`);
+    console.error('Correct the line to its fixed form and run the script again.');
+    process.exit(2);
+  }
   if (args.includes('--json')) { process.stdout.write(JSON.stringify(r, null, 2)); return; }
   console.log(`rounds ${r.rounds} in the curve; ${r.roundsSeen} round headings`);
-  if (r.unparsed.length) console.log(`unparsed (${r.unparsed.length}): ${r.unparsed.join(' | ')}`);
-  console.log(`signal 1 (fixes not held or claims missing or stale, two or more rounds): ${r.signal1.fired ? 'FIRED' : 'no'}${r.signal1.evidence.length ? ' :: ' + r.signal1.evidence.join('; ') : ''}`);
+  console.log(`signal 1 (fixes not held, two or more rounds): ${r.signal1.fired ? 'FIRED' : 'no'}${r.signal1.evidence.length ? ' :: ' + r.signal1.evidence.join('; ') : ''}`);
   console.log(`signal 2 (a claim of the last count's Mismatches lines in two rounds of the text's counts): ${r.signal2.fired ? 'FIRED :: ' + r.signal2.recurring.join('; ') : 'no'}`);
   if (r.signal2.earlierCounts.length) console.log(`information, earlier counts' Mismatches claims not in the last count: ${r.signal2.earlierCounts.join('; ')}`);
   console.log('signal 2 (a declined finding raised again) and signal 4 (contradiction in a fix-touched passage): by reading, not read by the script');
   if (r.metaReviewLine.contradicted) console.log('Meta-review line: CONTRADICTED, the record says "not indicated" against the reading above');
-  console.log(`meta-review subject: ${r.subject === 'unparsed' ? 'UNDECIDED, unparsed line; no "not indicated" may be written' : r.subject === true ? 'yes' : 'not by the script; check signals 2 and 4 by reading'}`);
+  console.log(`meta-review subject: ${r.subject ? 'yes' : 'not by the script; check signals 2 and 4 by reading'}`);
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) main();

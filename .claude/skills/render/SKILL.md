@@ -12,10 +12,10 @@ description: Dispatch one IR through the [branch point](../../../docs/vocabulary
 3. D1 or D2: assemble the paraphraser's prompt with exactly three
    things, pasted in full, and nothing else:
    - the IR text;
-   - the reader's entry from `docs/readers.md` (the whole table for
+   - the reader's entry from the methodology's
+     [reader catalog](https://github.com/majodali/methodology/blob/main/docs/style.md#readers) (the whole row for
      that RD identifier);
-   - the rows of `docs/style-spec.md` whose Readers column includes
-     that identifier or `all`.
+   - the rule table of `docs/style-spec.md`.
    Then invoke the Agent tool with `subagent_type: "paraphraser"` and
    that prompt. Do not describe the conversation, the project, or
    your intent. The subagent's fresh context is the mechanism.

@@ -1,107 +1,67 @@
 # Style specification
 
-Status: active (v1, chunk 1).
+This document lists the writing rules this project's texts follow, and names the check that enforces each rule. The agents that write and review texts read it, and so does the human owner who rules on the project's own trial rules.
 
-> Superseded by methodology PR #48 (P-007 and P-008, with the style
-> guide's Mechanical checks table) on 2026-10-26; the rules' normative
-> home is [the methodology style guide](https://github.com/majodali/methodology/blob/main/docs/style.md). Rows SP-16 to
-> SP-19 (Allegro's P-009 to P-011) stay pilot-only. This file stays as
-> the paraphraser's and reviewer's input until the roles run in
-> project-orchestrator.
+Status: active (v2, 2026-11-02). Version 2 applies changes 1, 21 and 28 of [evaluation case](vocabulary.md#def-evaluation-case) 015, the review of this project's rules. Twenty rows point to their methodology rule, which became the authority with methodology PR #48 (the prose rules adopted) on 2026-10-26. Seven rows are this project's own.
 
-Type: Specification (methodology vocabulary). The [paraphraser](vocabulary.md#def-paraphraser) applies
-it rule by rule. The [reviewer](vocabulary.md#def-reviewer) and the lints check against it.
+Type: Specification (methodology vocabulary). The [paraphraser](https://github.com/majodali/methodology/blob/main/docs/vocabulary.md#def-paraphraser) applies it rule by rule. The [stranger](https://github.com/majodali/methodology/blob/main/docs/vocabulary.md#def-stranger) and the [lint](vocabulary.md#def-lint), the project's deterministic checker, check against it.
 
-Reader: RD-4 (a fresh agent session) in the paraphraser or reviewer
-role.
+Reader: RD-4 (a fresh agent session) in the paraphraser role or as the stranger.
 
-## Authority and precedence
+## Precedence
 
-The specification restates the methodology's prose rules as data. The
-[style guide](https://github.com/majodali/methodology/blob/v1.5.0/docs/style.md),
-the [P- rules](https://github.com/majodali/methodology/blob/v1.5.0/docs/rules/prose.md)
-and [W-008](https://github.com/majodali/methodology/blob/v1.5.0/docs/rules/working-agreement.md#w-008--reports-map-their-deliverables)
-(reports map their deliverables) remain the authority. A disagreement
-between this table and those documents is a defect here.
+The methodology's [style guide](https://github.com/majodali/methodology/blob/main/docs/style.md), its [P- rules](https://github.com/majodali/methodology/blob/main/docs/rules/prose.md) and [W-008](https://github.com/majodali/methodology/blob/main/docs/rules/working-agreement.md#w-008--reports-map-their-deliverables) (reports map their deliverables) are the authority for the twenty pointer rows. A disagreement between a pointer row and its methodology rule is a defect here.
 
-Where a rule here conflicts with writing guidance from the agent
-harness, this specification wins. Known conflicts:
+Where a rule here conflicts with writing guidance from the agent harness, this specification wins. Known conflicts:
 
 | Harness guidance | This specification | Why |
 |---|---|---|
-| bold the first few words of a bullet or paragraph | SP-07 (bold marks structure): bold only on a field label or a term at its [definition site](vocabulary.md#def-definition-site) | P-003 (bold marks structure, never emphasis) forbids bold as emphasis; the harness pattern produced finding 8 of [case 001](../eval/cases/001-review-response-2026-10-23.md) |
+| bold the first few words of a bullet or paragraph | SP-07 (bold marks structure) | P-003 (bold marks structure, never emphasis) forbids bold as emphasis; the harness pattern produced finding 8 of [case 001](../eval/cases/001-review-response-2026-10-23.md) |
 | no headers in a message under about 500 words | SP-10 (headers state their contents): a header is permitted whenever a reader scanning headers would find a fact faster | P-001 (documents are structured for reference) |
-
-Guidance from the harness that agrees with the methodology (short
-sentences, lead with the outcome, no em-dashes, numbers out of prose)
-is simply restated below with its methodology source.
 
 ## Rule table
 
-Columns: identifier; rule; check, where `lint` is a deterministic
-pattern and `judgment` needs a reader; the readers it binds; source.
+The Check column names `lint` where `scripts/lint.mjs` runs the check, `mtool style` where only methodology-tools runs it, and `judgment` where a reader decides.
 
-Readers and sources are cited by identifier. Their names:
+### Rows that point to a methodology rule
 
-| Identifier | Name |
-|---|---|
-| RD-1 | human owner, in conversation ([catalog](readers.md)) |
-| RD-2 | human owner, returning |
-| RD-3 | delegating agent |
-| RD-4 | fresh agent session |
-| RD-5 | external reader |
-| P-001 | documents are structured for reference |
-| P-002 | one idea per sentence |
-| P-003 | bold marks structure, never emphasis |
-| P-004 | citations carry names |
-| P-005 | headers state their contents |
-| P-006 | registers hold uniform rows |
-| W-008 | reports map their deliverables |
-| K-010 | superseded content is never silently readable |
-| K-011 | found contradictions are marked, not routed around |
-| P-007 | Allegro's proposal: a document states its reader and prerequisites |
-| P-008 | Allegro's proposal: terms are defined once and cited everywhere |
-| P-009 | Allegro's proposal: principles carry their standard names and a test |
-| P-010 | Allegro's proposal: a measurement states its question |
-| P-011 | Allegro's proposal: design documents state the problem before the solution |
+| Id | Methodology rule | Check |
+|---|---|---|
+| SP-01 | [P-002](https://github.com/majodali/methodology/blob/main/docs/rules/prose.md#p-002--one-idea-per-sentence) (one idea per sentence): one claim per sentence; calibrated 2026-10-29 ([case 009](../eval/cases/009-meta-review-vision-rounds-2026-10-29.md)): a duty with its actor and its trigger is one claim | judgment; `mtool style` |
+| SP-02 | P-002: a sentence over 25 words | lint: warn over 25 |
+| SP-03 | P-002: every referent is named | lint |
+| SP-04 | [P-008](https://github.com/majodali/methodology/blob/main/docs/rules/prose.md#p-008--terms-are-defined-once-and-linked-at-first-use) (terms are defined once and linked at first use): a term not plain English and in neither vocabulary is defined in the text | judgment; `mtool style` |
+| SP-05 | [P-004](https://github.com/majodali/methodology/blob/main/docs/rules/prose.md#p-004--citations-carry-names) (citations carry names): a name or a link at first use (calibrated 2026-10-27, case 007) | lint |
+| SP-06 | P-004 (citations carry names), for RD-5 (an external reader): every occurrence | `mtool style` |
+| SP-07 | [P-003](https://github.com/majodali/methodology/blob/main/docs/rules/prose.md#p-003--bold-marks-structure-never-emphasis) (bold marks structure, never emphasis) | lint |
+| SP-08 | P-002: no rhetorical devices | lint; judgment |
+| SP-09 | P-002: no sentence chained by em-dashes or semicolons | lint |
+| SP-10 | [P-005](https://github.com/majodali/methodology/blob/main/docs/rules/prose.md#p-005--headers-state-their-contents) (headers state their contents) | lint; judgment |
+| SP-11 | [P-001](https://github.com/majodali/methodology/blob/main/docs/rules/prose.md#p-001--documents-are-structured-for-reference) (documents are structured for reference): each section answers its own header | judgment |
+| SP-12 | [P-006](https://github.com/majodali/methodology/blob/main/docs/rules/prose.md#p-006--registers-hold-uniform-rows) (registers hold uniform rows) | `mtool style` |
+| SP-13 | W-008 (reports map their deliverables): a report to RD-1 (the owner, in conversation) or RD-2 (the owner, returning) carries its four parts in order | lint |
+| SP-14 | W-008: a report to RD-3 (a delegating agent) carries status, a map and asks | `mtool style` |
+| SP-15 | the methodology's [reader catalog](https://github.com/majodali/methodology/blob/main/docs/style.md#readers), RD-2: a report to the returning owner opens with the current state | judgment |
+| SP-16 | [P-007](https://github.com/majodali/methodology/blob/main/docs/rules/prose.md#p-007--documents-state-their-reader) (documents state their reader) | `mtool style` |
+| SP-20 | P-001: numbers go in a table or on their own line | lint |
+| SP-22 | [K-010](https://github.com/majodali/methodology/blob/main/docs/rules/knowledge.md#k-010--superseded-content-is-never-silently-readable) (superseded content is never silently readable) and K-011 (found contradictions are marked, not routed around) | `mtool style` |
+| SP-23 | P-008: a vocabulary term is linked at its first use in the unit | lint |
+| SP-24 | P-008: a link to a `#def-` anchor resolves | lint |
+
+### This project's own rows
 
 | Id | Rule | Check | Readers | Source |
 |---|---|---|---|---|
-| SP-01 | One claim per sentence. A sentence is a finding when it carries two claims the reader could decide or dispute separately; one fact with two attributes is not two claims. Calibrated 2026-10-29 (case 009): a duty with its actor and its trigger is one claim. | judgment; [lint](vocabulary.md#def-lint) flags two independent clauses joined by `and`, `but`, `so`, `;` or an em-dash | all | P-002; owner feedback 2026-10-23 and ruling 2026-10-25 |
-| SP-02 | A sentence is at most about 25 words. | lint: warn over 25, flag over 35 | all | P-002; style guide *Sentences* |
-| SP-03 | Every referent is named. No pronoun or determiner phrase whose antecedent is in another sentence or paragraph. | lint: sentence-initial `This`, `That`, `These`, `Those`, `It`; `the other`, `the above`, `the former`, `the latter` | all | owner feedback 2026-10-23; IR referent rule |
-| SP-04 | A term is used only if it is defined in the text, in the project [vocabulary](vocabulary.md), or in the methodology vocabulary. A word taken from the conversation is not a term. A word is a finding only when it is in neither vocabulary and is not plain English. | judgment; lint flags bolded or capitalized phrases absent from both vocabularies | all | owner feedback 2026-10-23 and ruling 2026-10-25; Allegro's proposed P-008 |
-| SP-05 | An identifier carries its name or a link on first use in the text, as P-004 says (calibrated 2026-10-27, case 007). An identifier from another repository carries its name at every use. | lint: pattern `[A-Z]{1,3}-?\d+` or `§\d+` whose first occurrence is not followed by a parenthesized name or a link | RD-1 to RD-4 | P-004 |
-| SP-06 | No bare identifiers at all. An identifier is replaced by its name, or named at every use. | lint as SP-05, every occurrence | RD-5 | P-004; in-real-life "Register readability pass" |
-| SP-07 | Bold appears only as a field label in a fielded entry or on a term at its [definition site](vocabulary.md#def-definition-site). | lint: bold span longer than four words, or bold not followed by `:` and not the first use of a vocabulary term | all | P-003 |
-| SP-08 | No rhetorical devices: no dramatic accumulation, aphorism, suspense, metaphor, or slogan standing for a principle. | judgment; lint flags fragments of the form `That is X.` and `X is not Y. It is Z.` | all | P-002; style guide *Sentences*; case 001 findings 3 to 6 |
-| SP-09 | No sentence is extended by chained em-dashes or semicolons. A single em-dash is permitted only inside a register row or field label. | lint: em-dash or semicolon joining clauses in body prose | all | P-002; style guide *Sentences* |
-| SP-10 | A header is a noun phrase or a claim that predicts its section's content. No teaser, no joke, no bare identifier. | judgment; lint flags identifier-only headers and headers ending in `?` or containing an em-dash | all | P-005 |
-| SP-11 | Each section answers its own header without the text above it and front-loads its claim. | judgment | RD-4, RD-5 | P-001 |
-| SP-12 | A register entry has the shape its register declares, with bounded length; reasoning lives in a linked document. | lint: entry over 60 words in a register whose header declares a row shape | all | P-006 |
-| SP-13 | A report to RD-1 or RD-2 leads with the outcome or the decision needed and carries, in order: asks; what is already covered; what changed; terms introduced. An empty part is stated in one line. | lint: the four headings present and ordered | RD-1, RD-2 | W-008; its bootstrap block; the plan's term ratification |
-| SP-14 | A report to RD-3 carries status, a map of the deliverable, and asks, and may omit the rest. | lint: the three parts present | RD-3 | W-008 agent audience |
-| SP-15 | A report to RD-2 opens with one paragraph stating the current state and citing the last recorded state. | judgment | RD-2 | [reader catalog](vocabulary.md#def-reader-catalog) RD-2 |
-| SP-16 | A document opens with a reader statement: who it is for and what they are assumed to know, with a link. | lint: a `Reader:` line or a *Reader* section within the first twenty lines | RD-4, RD-5 | Allegro's proposed P-007 (pilot-only) |
 | SP-17 | A design document or plan states its problem before its mechanism: requirement, challenge, approach with displaced alternatives. | judgment | RD-4 | Allegro's proposed P-011 (pilot-only) |
 | SP-18 | A duty names its actor and its trigger. Calibrated 2026-10-27 (cases 005 and 007) from the wider form, a norm names a test that would show it violated, which drew twelve edge-case findings of which two were rules. Calibrated 2026-10-29 (case 009): a sentence that states a target, or names roadmap work and assigns it to no one, is not a duty. | judgment | RD-4, RD-5 | Allegro's proposed P-009 (pilot-only); case 007 |
 | SP-19 | A measurement is preceded by the question it answers and what each outcome would mean. | judgment | RD-4 | Allegro's proposed P-010 (pilot-only) |
-| SP-20 | Numbers and counts go in a table or on their own line, not inside a sentence, unless the sentence is about that number. | lint: three or more numerals in one sentence | all | harness guidance, agreeing with P-001 |
 | SP-21 | Quoted text from another document is byte-exact and marked as a quotation; it is not restyled. | judgment | all | project-orchestrator proposals, 2026-09-02 |
-| SP-23 | A term with a definition site in either vocabulary is linked to its anchor at its first use in the unit (the document for a report, the section for a reference document), and bare after. For RD-5 the link is an inline gloss. | lint: first use in the unit of a vocabulary term without a link | all | [term lifecycle](term-lifecycle.md); owner ruling 2026-10-25 |
-| SP-24 | A link to a `#def-` anchor resolves. | lint | all | term lifecycle |
 | SP-25 | Two passages of one text cannot both be followed. | judgment | all | case 007, change 2; the methodology specification's verdict rule |
 | SP-26 | A word, phrase or sentence can go without losing a claim, or a claim is stated twice. The finding quotes the words that can go. Calibrated 2026-10-29 (case 009): words that name a referent SP-03 requires are not excess. | judgment | all | case 006, the owner's rule of 2026-10-26 that fixes rephrase or cut before they add |
-| SP-22 | A known-stale passage that cannot be corrected in the same deliverable carries a supersession marker in the style guide's form. A false passage in an active document is corrected, not marked. | lint: blockquotes beginning `Superseded by` resolve their citation | RD-4 | K-010, K-011 |
+| SP-27 | <a id="def-plain-purpose-sentence"></a>A document under `docs/`, outside `docs/records/`, and an [evaluation case](vocabulary.md#def-evaluation-case) open with a plain-purpose sentence: at most two sentences, before any other line, saying what the text is for and who reads it, with no identifier, code or link. Each name this project coined carries a short gloss at its first use in the text. A methodology term keeps its link. | lint | all | case 015 change 28 (pilot-only) |
 
-Rules marked pilot-only derive from Allegro's proposals that the
-methodology has not adjudicated. They bind documentation produced by
-this pipeline so the pilot yields evidence for or against them. They
-do not bind any other project.
+Rules marked pilot-only bind documentation produced by this pipeline, so the pilot yields evidence for or against them. They do not bind any other project.
 
 ## What the paraphraser does with this table
 
-For the IR's reader, the [paraphraser](vocabulary.md#def-paraphraser) selects the rows whose Readers
-column includes that reader and applies them while rendering. Rows for
-other readers do not apply. After rendering, the paraphraser runs the
-[lint](vocabulary.md#def-lint) column and fixes what it can before the [reviewer](vocabulary.md#def-reviewer) sees the text.
+For the IR's reader, the [paraphraser](https://github.com/majodali/methodology/blob/main/docs/vocabulary.md#def-paraphraser) applies the rows whose rule binds that reader while rendering. After rendering, the paraphraser runs the [lint](vocabulary.md#def-lint) and fixes what it can before the [stranger](https://github.com/majodali/methodology/blob/main/docs/vocabulary.md#def-stranger) reads the text.

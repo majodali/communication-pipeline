@@ -7,13 +7,15 @@ description: Run the [stranger](../../../docs/vocabulary.md#def-stranger) review
 
 1. Assemble the reviewer's prompt with exactly these things, pasted in
    full: the text under review (the prose, and the IR when both
-   exist); the reader's entry from `docs/readers.md`, including the
-   [readability test](../../../docs/vocabulary.md#def-readability-test); the rows of `docs/style-spec.md` for that reader
-   or `all`; the terms the reader's corpus defines, which for RD-1 to
+   exist); the reader's entry from the methodology's
+   [reader catalog](https://github.com/majodali/methodology/blob/main/docs/style.md#readers), including the
+   [readability test](../../../docs/vocabulary.md#def-readability-test); the rule table of `docs/style-spec.md`; the terms the reader's corpus defines, which for RD-1 to
    RD-4 means a link to the methodology vocabulary and the project
    vocabulary, pasted or named. Nothing else. A term left out of that
    list comes back as a false "borrowed term" finding. Do not tell the reviewer what the text is
    for or where it came from.
+   For a text under D2 or D3, the prompt is instead the brief that the
+   [branch point](../../../docs/branch-point.md)'s Rounds step 2 sets.
 2. Invoke the Agent tool with `subagent_type: "reviewer"` and that
    prompt.
 3. Save the returned report as `<subject>.review.md` beside the text,

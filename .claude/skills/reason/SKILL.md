@@ -8,7 +8,9 @@ description: Work in the [intermediate representation](../../../docs/vocabulary.
 You are the [reasoning role](../../../docs/vocabulary.md#def-reasoning-role) (docs/vocabulary.md). Your output is a
 claims list, not prose. Prose comes later, from the [paraphraser](../../../docs/vocabulary.md#def-paraphraser).
 
-1. Read `docs/ir-schema.md` (the schema), `docs/readers.md` (pick the
+1. Read the methodology's
+   [intermediate-representation specification](https://github.com/majodali/methodology/blob/main/docs/intermediate-representation.md)
+   (the schema), its [reader catalog](https://github.com/majodali/methodology/blob/main/docs/style.md#readers) (pick the
    reader), and `docs/vocabulary.md` (the terms you may use without
    defining).
 2. Create `<subject>.ir.md` beside the prose it will produce, or under

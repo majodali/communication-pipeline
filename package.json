@@ -9,7 +9,9 @@
     "dispatch": "node scripts/dispatch.mjs",
     "test": "node --test scripts/test.mjs scripts/link-terms.test.mjs",
     "link-terms": "node scripts/link-terms.mjs",
-    "roundtrip": "node scripts/roundtrip.mjs"
+    "roundtrip": "node scripts/roundtrip.mjs",
+    "check": "node scripts/check.mjs",
+    "signals": "node scripts/signals.mjs"
   },
   "engines": {
     "node": ">=20"
