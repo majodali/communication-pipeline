@@ -425,7 +425,7 @@ R4. C55 depends-on C49 because a term the restatement check finds in the restate
 
 ## Evidence
 
-E1. eval/cases/015-ruleset-simplification-review-2026-11-02.md, Outcome, changes 1 to 30, adopted by the owner on 2026-11-02 (changes 31 to 35 declined), as the Orchestrator relayed the decision.
+E1. eval/cases/015-ruleset-simplification-review-2026-11-02.md, Outcome, changes 1 to 30, adopted by the owner on 2026-11-02 (changes 31 to 35 declined), the case's decision line.
 
 E2. eval/cases/014-meta-review-branch-point-v1.10-and-ir-spec-count-6-2026-11-01.md, Outcome, changes 1 to 8, adopted by the owner on 2026-11-02, their landing deferred to case 015.
 
