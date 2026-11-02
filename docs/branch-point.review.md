@@ -58,7 +58,7 @@ Signals script before the round: no round recorded yet; nothing to read.
 |---|---|---|---|---|---|
 | 1 | 2,396 | 141 | 24 | 10.0 | not readable (mismatch 1; contradictions 2; undefined terms 4; paraphrase-test findings 6) |
 | 2 | 2,491 | 151 | 12 | 4.8 | not readable (mismatches 2; contradictions 2; undefined term 1; paraphrase-test findings 3) |
-| 3 | 2,549 | 154 | | | pending |
+| 3 | 2,549 | 154 | 15 | 5.9 | not readable (mismatch 1; contradictions 4; undefined terms 3; paraphrase-test findings 2) |
 
 ### Round 1, count 1, 2026-11-02
 
@@ -205,3 +205,42 @@ The round reads the text at its opening commit, named in the brief, under v1.11 
 
 Declines carried in the round 3 brief: v1.9 round 1's F3; round 1's 3, 14 and 16; round 2's 1 and 2, each with its reason. Not carried: round 2's Q1 and Q2, which concerned round 2's restatement. The brief names the passages round 2 and its confirmation changed, for the whole-text read, the departure kept for this count. Passages awaiting restatement: none.
 
+Stranger model: claude-haiku-5-5, a fresh instance, reading at commit 97e4266. It wrote its restatement before it opened the IR and made no call outside its brief.
+
+Restatement:
+
+> This document decides how much checking a written text gets before a reader sees it, and how that checking runs. A text is first reduced to a numbered list of its statements. A fixed set of conditions reads that list and picks one of four levels: an automatic check only; that check plus a plain-prose rendering for the reader; that plus repeated reviews by a fresh reader; or a rendering written by the working agent plus those reviews. The first condition that holds decides the level. The conditions use the reader type, whether the text is a short report or a document, the number of statements, the number of new words awaiting the owner's approval, the number of requests that depend on other items, the length of the longest statement, and any review or list-only flag the owner set. The owner reads the document to set the numbers in those conditions, which stay provisional until a test corpus tunes them. The document also gives the steps of each review: run the check, brief a fresh reviewer, collect its findings, fix them, have the reviewer confirm the fixes, and close the review, with a record written at each step.
+
+Prose 2,549 words by `wordCount` (the stranger counted 1,709 words of body text, outside tables and headings); IR 154 claims; 13 findings from the stranger and 2 from the restatement check, 15 in all, 5.9 per thousand words. Restatement: one mismatch. Listed passages: none. Contradictions 4 (findings 2, 5, 8 and 10), undefined terms 3 (findings 3, 4 and 6; finding 13 is a missing input), paraphrase-test findings 2 (the check's items; the stranger found none); verdict: not readable for RD-4. Omissions noticed, not counted: 4.
+
+The mismatch: the restatement had a record line written at every step. The stranger relied on the Rounds introduction, "This section holds this project's steps, the script each step runs and the line each step writes in the review record." (C33); steps 2 and 3 write no line (C73 to C78). The prose invited the reading. First occurrence; no structural fix is owed.
+Mismatches: C73 (relied on C33)
+
+Restatement check, `node scripts/lint.mjs --restatement docs/branch-point.review.md --round 3`: 2 items, R1 and R2, both repeated sentences.
+
+Signals script after the `Mismatches:` line: signal 1 stands from rounds 1 and 2; no claim recurs. By reading, the fourth signal fires: findings 2 and 10 are contradictions in round 3 on passages earlier fixes touched, the Purpose's stranger sentence (C14, fixed in rounds 1 and 2) and BP-02a's reason (C115, split in round 1).
+
+| # | Finding (shortened) | Kind | Decision |
+|---|---|---|---|
+| 1 | a record line at every step (C73, relying on C33) | restatement | fixed with 5: "the scripts they run and the lines they write" (C33) |
+| 2 | the Purpose's IR-only clause against BP-00's normative exclusion (C14, C102) | SP-25 | fixed by a structural move, by judgement: the third round on this sentence, so no further qualifier. C14 leaves the Purpose for its rows' reason in Why each rule: "BP-03 and BP-04: someone not in the conversation reads documentation, so a document gets the lint, the rendering and the stranger rounds." Scoped to its two rows, the claim needs no exception. Not owed to a recurring mismatch, so not marked `awaiting restatement` |
+| 3 | "short" undefined | SP-04 | fixed: "A short report is one under the thresholds of rows BP-07 and BP-08." (C156, inferred by R5) |
+| 4 | "the lint's prose checks" undefined | SP-04 | fixed: the D0 row links the prose checks to the style specification's rule table |
+| 5 | "each step" runs a script and writes a line | SP-25 | fixed: C33, as finding 1 |
+| 6 | "a term the text introduces" undefined | SP-04 | fixed: "A term the text introduces is one the text defines or links to a vocabulary entry." (C157), at step 3 |
+| 7 | step 4 repeats step 3's clause | SP-26 | fixed: "The fourth condition, the paraphrase test, asks for the restatement step 3 describes, in the stranger's own words." (C152) |
+| 8 | step 5's second run targets the pre-fix commit | SP-25 | fixed: "The reasoning role runs `npm run check` again on the fixed text, with the commit the round read as its base." (C61). A wording fix of the case's adopted step 5, which says "runs `npm run check` again": the fix pass's wording "against the commit the round read" named the base as if it were the target. No new rule |
+| 9 | "the fixes the confirmation calls for" names no fixes | SP-03 | fixed: "The reasoning role fixes again each fix the instance says does not hold, and fixes each new defect the instance names." (C154) |
+| 10 | BP-02a's "only the review runs" against the lint under every disposition | SP-25 | fixed: "so the reasoning role renders the normative text in place of the paraphraser" (C115) |
+| 11 | "the owner" in BP-07 and BP-08's reason, while BP-08's reader is RD-3 | SP-03 | fixed: "the reader reads prose faster" (C121) |
+| 12 | the struck third signal unnamed | SP-05 | fixed: "The specification struck the third signal, a measure of the prose's growth per IR claim." (C155) |
+| 13 | the Inputs table lacks the Normative header two rules read | SP-04 | fixed: a normative row (C158) |
+| R1 | the restatement's first sentence repeats the plain purpose (82 percent) | paraphrase test | declined: the purpose holds no term the text introduces; repeating it shows no passage that can only be repeated |
+| R2 | "The first condition that holds decides the level." repeats C94 (80 percent) | paraphrase test | declined: the stranger's sentence swaps the text's terms, row and disposition, for plain words; it restates the rule |
+
+Step 5, `npm run check -- docs/branch-point.md --base 97e4266`, on the fixed text:
+Checks: 0 sentences over 25 words; 157 of 157 claims mapped; 11 claims changed, 0 missing, 0 stale.
+
+Claims after fixes: 157 (C156 to C158 added). Prose after fixes: 2,601 words. Structural fixes owed to a recurring mismatch: none. Decided claims the fixes reworded, for the owner at acceptance: C14, C33, C61, C115, C121, C152, C154, C155.
+
+The confirmation is pending.

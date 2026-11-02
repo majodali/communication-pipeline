@@ -2,7 +2,7 @@
 
 Reader: RD-4
 Purpose: document. The branch point as a whole: which checks a text gets before it reaches its reader, and how its review rounds run, after the adopted changes of evaluation case 015.
-Status: rendered (v1.11, round 3; rendered by the reasoning role, D3)
+Status: rendered (v1.11, round 3 fix pass; rendered by the reasoning role, D3)
 Source: the owner's decision of 2026-11-02 on evaluation case 015 (changes 1 to 30 adopted, changes 31 to 35 declined); the adopted changes of cases 013 (1, 2, 3 and 5) and 014 (1 to 8), whose landing joined case 015; branch point v1.10 as the owner accepted it on 2026-11-01; the IRs of v1.4 to v1.10 under docs/records/.
 Normative: yes
 Footprint: docs/branch-point.md; docs/records/branch-point-history.md; docs/style-spec.md; docs/vocabulary.md; docs/backlog.md; .claude/agents/; .claude/skills/; scripts/; package.json
@@ -111,7 +111,9 @@ C12. The branch point protects proportional verification. [decided: branch point
 
 C13. Under proportional verification, a short report to a reader who shares the conversation costs one pass of the lint, the project's deterministic checker. [decided: branch point v1.9 IR, C73]
 
-C14. A document for a stranger gets the lint, the rendering and the stranger rounds, unless the owner designates it IR-only. [decided: owner, 2026-11-01, branch point v1.10; reworded after round 2 confirmation]
+C156. A short report is one under the thresholds of rows BP-07 and BP-08. [inferred: R5]
+
+C14. Under BP-03 and BP-04, a document gets the lint, the rendering and the stranger rounds. [decided: owner, 2026-11-01, branch point v1.10; reworded in count 1, round 3]
 
 C15. The methodology specification's section "Texts that require an IR" says which texts start as an IR. evidence: E1. [decided: owner, 2026-11-02, case 015 change 9]
 
@@ -132,6 +134,8 @@ C21. The input dependent asks counts the `A` elements, asks (requests to the rea
 C22. The input longest claim is the word count of the longest `C` element. [decided: owner, 2026-11-01, branch point v1.10]
 
 C23. The input owner flag is `review` if the owner asked for a review of this output. [decided: owner, 2026-11-02, case 015 change 25; reworded in count 1, round 1]
+
+C158. The input normative comes from the Normative header: `yes` when the prose is normative text. [decided: owner, 2026-10-25, the Normative header; added in count 1, round 3]
 
 C143. The input owner flag is `ir-only` if the owner designated the document IR-only: delivered as its IR alone, with no prose. evidence: E1. [decided: owner, 2026-11-02, case 015 change 25; added in count 1, round 1]
 
@@ -159,7 +163,7 @@ C31. A round is one fresh stranger's reading of the text, the fixes that follow,
 
 C32. The methodology specification's Stranger rounds section holds the rules every round follows: the verdict, the fix rules, confirmation, the limit and the signals. evidence: E1. [decided: owner, 2026-11-02, case 015 change 7]
 
-C33. The Rounds section holds this project's steps, the script each step runs and the line each step writes in the review record. evidence: E1. [decided: owner, 2026-11-02, case 015 change 7]
+C33. The Rounds section holds this project's steps, the scripts they run and the lines they write in the review record. evidence: E1. [decided: owner, 2026-11-02, case 015 change 7; reworded in count 1, round 3]
 
 C34. At a count's start, the reasoning role writes the branch point version and commit into the review record. [decided: branch point v1.9 IR, C2]
 
@@ -199,6 +203,8 @@ C48. In step 3, the stranger reads the prose and writes its restatement, its own
 
 C49. The stranger writes the restatement for the human reader the brief names, without any term the text introduces. evidence: E1. [decided: owner, 2026-11-02, case 015 change 26]
 
+C157. A term the text introduces is one the text defines or links to a vocabulary entry. [decided: owner, 2026-11-02, case 015 change 26; added in count 1, round 3]
+
 C50. Then the stranger restates each listed passage in one sentence. [decided: branch point v1.10 IR, C10]
 
 C51. Then the stranger reads the IR and writes its report. [decided: branch point v1.4 IR, C5]
@@ -213,7 +219,7 @@ C54. The reasoning role runs `node scripts/lint.mjs --restatement` on the entry.
 
 C55. The reasoning role records each introduced term or repeated sentence the restatement check lists as a finding under the verdict's fourth condition. [inferred: R4]
 
-C152. The fourth condition, the paraphrase test, asks for a restatement in the stranger's own words that uses no term the text introduces. [decided: owner, 2026-11-02, case 015 change 26; reworded after round 2 confirmation]
+C152. The fourth condition, the paraphrase test, asks for the restatement step 3 describes, in the stranger's own words. [decided: owner, 2026-11-02, case 015 change 26; reworded in count 1, round 3]
 
 C56. The reasoning role writes the `Mismatches:` line. [decided: branch point v1.7 IR, C42]
 
@@ -227,7 +233,7 @@ C59. For each claim the signals script reports as recurring, the reasoning role 
 
 C60. The reasoning role marks that structural fix `awaiting restatement` in the review record. [decided: branch point v1.10 IR, C33]
 
-C61. The reasoning role runs `npm run check` again, against the commit the round read. [decided: owner, 2026-11-02, case 015 changes 1 and 24; reworded in count 1, round 2]
+C61. The reasoning role runs `npm run check` again on the fixed text, with the commit the round read as its base. [decided: owner, 2026-11-02, case 015 changes 1 and 24; reworded in count 1, round 3]
 
 C153. The reasoning role fixes what that run lists. [decided: owner, 2026-11-02, case 015 changes 1 and 24; reworded after round 2 confirmation]
 
@@ -247,7 +253,7 @@ C67. The instance names each new defect a fix introduced. [decided: branch point
 
 C68. The reasoning role writes the `Confirmation:` line. [decided: branch point v1.10 IR, C31; reworded in count 1, round 2]
 
-C154. The reasoning role makes the fixes the confirmation calls for. [decided: branch point v1.10 IR, C31; split in count 1, round 2]
+C154. The reasoning role fixes again each fix the instance says does not hold, and fixes each new defect the instance names. [decided: branch point v1.10 IR, C31; reworded in count 1, round 3]
 
 C69. Then the next round opens. [decided: branch point v1.10 IR, C31]
 
@@ -359,7 +365,7 @@ C113. BP-02a stands before BP-02, so a normative document takes D3 whatever the 
 
 C114. Documentation is read by someone who was not in the conversation. [decided: branch point v1.1, 2026-10-25; reworded in count 1, round 1]
 
-C115. Under BP-02a the reasoning role renders the normative text and only the review runs. [decided: branch point v1.10 IR, C69; reworded in count 1, round 1]
+C115. Under BP-02a the reasoning role renders the normative text in place of the paraphraser. [decided: branch point v1.10 IR, C69; reworded in count 1, round 3]
 
 C148. A paraphrase of normative text could change its force. [decided: branch point v1.10 IR, C69]
 
@@ -373,7 +379,7 @@ C119. The returning owner needs the state paragraph, the paragraph stating where
 
 C120. A short IR with no dependencies reads well as it stands. [decided: branch point v1.1, 2026-10-25; reworded in count 1, round 1]
 
-C121. Past the thresholds, the owner reads prose faster than a claims list. [decided: branch point v1.1, 2026-10-25]
+C121. Past the thresholds, the reader reads prose faster than a claims list. [decided: branch point v1.1, 2026-10-25; reworded in count 1, round 3]
 
 C122. BP-09 is the proportional-verification case: the owner or the delegating agent reads the short IR as it stands. [decided: branch point v1.1, 2026-10-25]
 
@@ -391,7 +397,7 @@ C127. The reasoning role reads the rest of the second signal, a finding raised a
 
 C149. The reasoning role also reads the fourth signal from the record: a contradiction, in round 3 or later, in a passage a fix touched. evidence: E1. [decided: owner, 2026-11-02, case 015 change 10; added in count 1, round 1]
 
-C155. The specification struck the third signal. [decided: methodology intermediate-representation specification, C284; added in count 1, round 2]
+C155. The specification struck the third signal, a measure of the prose's growth per IR claim. [decided: methodology intermediate-representation specification, C284; reworded in count 1, round 3]
 
 C128. The script stops with an error on a line the script cannot read. evidence: E1. [decided: owner, 2026-11-02, case 015 change 17]
 
@@ -449,6 +455,8 @@ R3. C40 depends-on C37 because the claims check needs a base, the version the ow
 
 R4. C55 depends-on C49 because a term the restatement check finds in the restatement is a term the stranger did not restate without, which the specification's fourth condition counts (case 015 changes 26 and 27).
 
+R5. C156 refines C13 because rows BP-07 and BP-08 give D1 to a report past their thresholds, so a report under them takes D0, one pass of the lint.
+
 ## Evidence
 
 E1. eval/cases/015-ruleset-simplification-review-2026-11-02.md, Outcome, changes 1 to 30, adopted by the owner on 2026-11-02 (changes 31 to 35 declined), the case's decision line.
@@ -461,4 +469,4 @@ E4. docs/backlog.md, chunk 3's row: "Scope narrowed per the owner: reports to RD
 
 ## Asks
 
-A1. Accept or reject branch point v1.11. Under case 015 change 19, acceptance ratifies the wording of each decided claim this IR rewords from its source, unless the owner names a claim to exclude. Depends: C1 to C155.
+A1. Accept or reject branch point v1.11. Under case 015 change 19, acceptance ratifies the wording of each decided claim this IR rewords from its source, unless the owner names a claim to exclude. Depends: C1 to C158.
