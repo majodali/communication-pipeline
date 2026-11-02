@@ -307,7 +307,7 @@ Group H: considered and not recommended.
 
 Seven terms in this case are in neither vocabulary: paraphrase test, plain-purpose sentence, coined name, whole-text IR, history file, working ruleset and the `Checks:` line. The owner ratifies or strikes each. The case glosses each at its first use.
 
-Owner's decision on the outcome: pending.
+Owner's decision on the outcome: groups A to G adopted as recommended, 2026-11-02, changes 1 to 30. Group H declined, changes 31 to 35, as the case recommended. Terms by the default: paraphrase test and plain-purpose sentence take their definitions from the verdict's fourth condition (change 26) and from SP-27 (change 28) when those land. Coined name, whole-text IR, history file, working ruleset and the `Checks:` line stay the case's own prose. The landing runs as one task: branch point v1.11 and the specification's count 7 as a pair, dispatched on 2026-11-02.
 
 ## Appendix: a sizing draft of v1.11's Rounds and meta-review parts
 
