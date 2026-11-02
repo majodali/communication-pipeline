@@ -2,7 +2,7 @@
 
 Reader: RD-4
 Purpose: document. The branch point as a whole: which checks a text gets before it reaches its reader, and how its review rounds run, after the adopted changes of evaluation case 015.
-Status: rendered (v1.11, round 2; rendered by the reasoning role, D3)
+Status: rendered (v1.11, round 3; rendered by the reasoning role, D3)
 Source: the owner's decision of 2026-11-02 on evaluation case 015 (changes 1 to 30 adopted, changes 31 to 35 declined); the adopted changes of cases 013 (1, 2, 3 and 5) and 014 (1 to 8), whose landing joined case 015; branch point v1.10 as the owner accepted it on 2026-11-01; the IRs of v1.4 to v1.10 under docs/records/.
 Normative: yes
 Footprint: docs/branch-point.md; docs/records/branch-point-history.md; docs/style-spec.md; docs/vocabulary.md; docs/backlog.md; .claude/agents/; .claude/skills/; scripts/; package.json
@@ -111,7 +111,7 @@ C12. The branch point protects proportional verification. [decided: branch point
 
 C13. Under proportional verification, a short report to a reader who shares the conversation costs one pass of the lint, the project's deterministic checker. [decided: branch point v1.9 IR, C73]
 
-C14. A document for a stranger gets the lint, the rendering and the stranger rounds. [decided: owner, 2026-11-01, branch point v1.10; reworded in count 1, round 2]
+C14. A document for a stranger gets the lint, the rendering and the stranger rounds, unless the owner designates it IR-only. [decided: owner, 2026-11-01, branch point v1.10; reworded after round 2 confirmation]
 
 C15. The methodology specification's section "Texts that require an IR" says which texts start as an IR. evidence: E1. [decided: owner, 2026-11-02, case 015 change 9]
 
@@ -213,7 +213,7 @@ C54. The reasoning role runs `node scripts/lint.mjs --restatement` on the entry.
 
 C55. The reasoning role records each introduced term or repeated sentence the restatement check lists as a finding under the verdict's fourth condition. [inferred: R4]
 
-C152. The fourth condition, the paraphrase test, asks for a restatement that uses no term the text introduces. [decided: owner, 2026-11-02, case 015 change 26; added in count 1, round 2]
+C152. The fourth condition, the paraphrase test, asks for a restatement in the stranger's own words that uses no term the text introduces. [decided: owner, 2026-11-02, case 015 change 26; reworded after round 2 confirmation]
 
 C56. The reasoning role writes the `Mismatches:` line. [decided: branch point v1.7 IR, C42]
 
@@ -229,7 +229,7 @@ C60. The reasoning role marks that structural fix `awaiting restatement` in the 
 
 C61. The reasoning role runs `npm run check` again, against the commit the round read. [decided: owner, 2026-11-02, case 015 changes 1 and 24; reworded in count 1, round 2]
 
-C153. The reasoning role fixes what the second check lists. [decided: owner, 2026-11-02, case 015 changes 1 and 24; split in count 1, round 2]
+C153. The reasoning role fixes what that run lists. [decided: owner, 2026-11-02, case 015 changes 1 and 24; reworded after round 2 confirmation]
 
 C62. The fix commit is the commit that holds the round's fixes and every fix the checks call for. evidence: E1, E2. [decided: owner, 2026-11-02, case 015 change 4]
 

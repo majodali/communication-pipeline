@@ -58,6 +58,7 @@ Signals script before the round: no round recorded yet; nothing to read.
 |---|---|---|---|---|---|
 | 1 | 2,396 | 141 | 24 | 10.0 | not readable (mismatch 1; contradictions 2; undefined terms 4; paraphrase-test findings 6) |
 | 2 | 2,491 | 151 | 12 | 4.8 | not readable (mismatches 2; contradictions 2; undefined term 1; paraphrase-test findings 3) |
+| 3 | 2,549 | 154 | | | pending |
 
 ### Round 1, count 1, 2026-11-02
 
@@ -182,4 +183,25 @@ Checks: 0 sentences over 25 words; 154 of 154 claims mapped; 15 claims changed, 
 
 Claims after fixes: 154 (C24 cut; C152 to C155 added). Prose after fixes: 2,539 words. Structural fixes: none. Decided claims the fixes reworded, for the owner at acceptance: C9, C11, C14, C25, C45, C46, C47, C61, C68, C113, C119, C141.
 
-The confirmation is pending.
+Confirmation: 7 of 8 fixes hold. Not held: 8. Declines accepted: 4 of 4. New defects: 2.
+
+The line above is derived from the instance's answers, finding by finding. The instance left the form's placeholders in its own line, "H of A fixes hold"; recorded as an edge. The Orchestrator derived the figures, and the reasoning role checked them against the answers. The instance read both files in full at fix commit 9acc504. The confirmation's fixes, IR first, before round 3 opens:
+
+- Fix 8 did not hold: the gloss called the fourth condition a test of terms, while the same sentence put a repeated sentence under it. Re-fixed: "The fourth condition, the paraphrase test, asks for a restatement in the stranger's own words that uses no term the text introduces." (C152)
+- N1 (SP-03, "the second check" in step 5 among step 1's three checks): "The reasoning role fixes what that run lists." (C153)
+- N2 (SP-25, C14 against C102: an IR-only document for a stranger gets the lint alone): "A document for a stranger gets the lint, the rendering and the stranger rounds, unless the owner designates it IR-only." (C14)
+- Declines 1, 2, Q1 and Q2 accepted.
+
+Step 5 after the confirmation's fixes, `npm run check -- docs/branch-point.md --base 9acc504`:
+Checks: 0 sentences over 25 words; 154 of 154 claims mapped; 3 claims changed, 0 missing, 0 stale.
+
+Prose after the confirmation's fixes: 2,549 words; IR 154 claims. Decided claims reworded after confirmation, for the owner at acceptance: C14, C152, C153.
+
+Signals script after the confirmation line: signal 1 fires, on fixes not held in rounds 1 and 2. The text is a meta-review subject; at the count's close the `Meta-review:` line reads pending, and the reasoning role reports the signal to the owner.
+
+### Round 3, count 1, 2026-11-02
+
+The round reads the text at its opening commit, named in the brief, under v1.11 at commit 12ff480. Prose 2,549 words; IR 154 claims; unratified terms 0. Human reader for the paraphrase test: the human owner. Stranger: pending, a fresh instance.
+
+Declines carried in the round 3 brief: v1.9 round 1's F3; round 1's 3, 14 and 16; round 2's 1 and 2, each with its reason. Not carried: round 2's Q1 and Q2, which concerned round 2's restatement. The brief names the passages round 2 and its confirmation changed, for the whole-text read, the departure kept for this count. Passages awaiting restatement: none.
+
