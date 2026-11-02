@@ -183,7 +183,12 @@ roles have moved to project-orchestrator, this repository archives
   35 words, so step 1 misses sentences of 26 to 35 words (v1.10,
   round 8; case 013). A meta-review session with no part in the
   rounds performs the review and reports as an
-  [evaluation case](../eval/README.md).
+  [evaluation case](../eval/README.md). Delivered 2026-11-02 as
+  [case 015](../eval/cases/015-ruleset-simplification-review-2026-11-02.md),
+  which also carries the deferred meta-review of the methodology's
+  K-003 count: 35 changes proposed in eight groups, 30 recommended,
+  with branch point v1.11 and the specification's count 7 landing as
+  one pair. Gate: the owner's decision on the case.
 - [ ] **Dispatcher: row BP-00** — open. `scripts/dispatch.mjs` does not
   implement BP-00, branch point v1.8's IR-only row, and its header
   comment notes this. Pointer: [the script](../scripts/dispatch.mjs);
