@@ -125,7 +125,13 @@ roles have moved to project-orchestrator, this repository archives
   tests pass. Eleven of the changes amend the methodology's
   intermediate-representation specification as its count 6. Source:
   [IR](records/branch-point-v1.10.ir.md). Gate: the stranger rounds,
-  then the owner accepts v1.10.
+  then the owner accepts v1.10. Closed 2026-11-01: readable at round
+  9; accepted by the owner (PR #25 merged) with the reworded claims and
+  six terms ratified; the meta-review dispatched.
+- [x] **Branch point v1.10's stranger rounds** — 2026-10-30. Nine
+  rounds under the v1.10 procedure, readable at round 9, recorded in
+  the [review record](records/branch-point-v1.10.review.md). The owner
+  named round 9's heading residue at acceptance on 2026-11-01.
 
 ## Upcoming
 
@@ -154,11 +160,9 @@ roles have moved to project-orchestrator, this repository archives
   (CK-12). Source: [chunk 5 IR](records/chunk-5-close-out.ir.md).
   Gate: the owner confirms the record. The repository stays open on
   the owner's hold.
-- [ ] **Branch point v1.10's stranger rounds** — open. The rounds run
-  under the v1.10 procedure and are recorded in the
-  [review record](records/branch-point-v1.10.review.md).
 - [ ] **Review of the pipeline's ruleset for simplification** — open,
-  scheduled after branch point v1.10 lands (owner, 2026-10-30). Asked
+  the pipeline's next task: branch point v1.10 landed on 2026-11-01,
+  the condition the owner set on 2026-10-30. Asked
   by the owner on 2026-10-30: the ruleset grows a lot and may hold
   opportunities to simplify. Starting point: case 012's changes 1, 5,
   10, 11 and 12, which strike about 450 words from the branch point.
