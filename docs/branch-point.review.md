@@ -60,6 +60,7 @@ Signals script before the round: no round recorded yet; nothing to read.
 | 2 | 2,491 | 151 | 12 | 4.8 | not readable (mismatches 2; contradictions 2; undefined term 1; paraphrase-test findings 3) |
 | 3 | 2,549 | 154 | 15 | 5.9 | not readable (mismatch 1; contradictions 4; undefined terms 3; paraphrase-test findings 2) |
 | 4 | 2,660 | 160 | 11 | 4.1 | not readable (mismatch 1; contradictions 0; undefined term 1; paraphrase-test findings 2) |
+| 5 | 2,676 | 160 | | | pending |
 
 ### Round 1, count 1, 2026-11-02
 
@@ -301,4 +302,22 @@ Checks: 0 sentences over 25 words; 160 of 160 claims mapped; 4 claims changed, 0
 
 Claims after fixes: 160 (C69 cut; C162 added). Prose after fixes: 2,675 words. Structural fixes owed: none. Decided claims the fixes reworded, for the owner at acceptance: C46, C161; C156 is inferred.
 
-The confirmation is pending.
+Confirmation: 4 of 5 fixes hold. Not held: 6. Declines accepted: 6 of 6. New defects: 0.
+
+The instance read both files in full at fix commit c82f9f9 and accepted all six declines, C159's included. The confirmation's fix, IR first, before round 5 opens:
+
+- Fix 6 did not hold: step 5 still fixed "each accepted finding", while step 4's new sentence allows a decision of fixed or declined only. Re-fixed: "The reasoning role fixes each finding not declined under the specification's fix rules, the IR first." (C58)
+
+Step 6's check, `npm run check -- docs/branch-point.md --base c82f9f9`:
+Checks: 0 sentences over 25 words; 160 of 160 claims mapped; 1 claims changed, 0 missing, 0 stale.
+
+Prose after the confirmation's fix: 2,676 words; IR 160 claims. Decided claim reworded after confirmation, for the owner at acceptance: C58.
+
+Signals script after the confirmation line: signal 1 stands, now with fixes not held in rounds 1 to 4. Signal 4 stands by reading.
+
+### Round 5, count 1, 2026-11-02
+
+The round reads the text at its opening commit, named in the brief, under v1.11 at commit 12ff480. Prose 2,676 words; IR 160 claims; unratified terms 1 (T34). Human reader for the paraphrase test: the human owner. Stranger: pending, a fresh instance.
+
+Declines carried in the round 5 brief: v1.9 round 1's F3; round 1's 3, 14 and 16; round 2's 1 and 2; round 4's 1, 2, 3 and 9, each with its reason. Not carried: the restatement-check items. The brief names the passages round 4 and its confirmation changed, the departure kept for this count. Passages awaiting restatement: none.
+
