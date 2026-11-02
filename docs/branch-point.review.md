@@ -57,7 +57,7 @@ Signals script before the round: no round recorded yet; nothing to read.
 | Round | Prose words | IR claims | Findings | Per 1,000 words | Verdict |
 |---|---|---|---|---|---|
 | 1 | 2,396 | 141 | 24 | 10.0 | not readable (mismatch 1; contradictions 2; undefined terms 4; paraphrase-test findings 6) |
-| 2 | 2,491 | 151 | | | pending |
+| 2 | 2,491 | 151 | 12 | 4.8 | not readable (mismatches 2; contradictions 2; undefined term 1; paraphrase-test findings 3) |
 
 ### Round 1, count 1, 2026-11-02
 
@@ -135,5 +135,51 @@ Signals script after the confirmation line: no signal. Signal 1 needs fixes not 
 
 The round reads the text at its opening commit, named in the brief, under v1.11 at commit 12ff480. Prose 2,491 words; IR 151 claims; unratified terms 0. Human reader for the paraphrase test: the human owner. Stranger: pending, a fresh instance.
 
-Declines carried in the round 2 brief: v1.9 round 1's F3, on the sentence C6 now glosses; round 1's 3, 14 and 16, each with its reason. Not carried: P1 to P4, which concerned round 1's restatement and not the text. The brief names the passages round 1 and its confirmation changed, for the whole-text read. Passages awaiting restatement: none.
+Declines carried in the round 2 brief: v1.9 round 1's F3, on the sentence C6 now glosses; round 1's 3, 14 and 16, each with its reason. Not carried: P1 to P4, which concerned round 1's restatement and not the text. The brief names the passages round 1 and its confirmation changed, for the whole-text read. Passages awaiting restatement: none. The changed-passages section is a departure from the brief form of branch point v1.11 step 2, made at the Orchestrator's direction and kept for this count; it is noted for the next ruleset review.
 
+A void reading, recorded as an edge of round 2 and not as its report: the first stranger dispatched on the round 2 brief, a fresh claude-haiku-5-5 instance reading at d174d5a, opened the IR before it wrote its restatement. The stranger said so in its report. That order breaks step 3 of v1.11, the stranger's read order, so its restatement cannot serve the verdict's first condition. The Orchestrator voided the reading and dispatched a fresh stranger on the same brief, with the read order made binding in its instructions. The void reading's 14 findings, on SP-01, SP-03, SP-04, SP-05, SP-18, SP-26 and the paraphrase test, are advisory. They count in neither the round's findings nor its verdict. The reasoning role may fold any of them into round 2's fix pass as its own fixes, marked as such. The report is held outside the record, at the Orchestrator's scratchpad as `bp111-r2-void-report.md`.
+
+Stranger model: claude-haiku-5-5, a fresh instance redispatched on the round 2 brief, reading at commit d174d5a. It wrote its restatement before it opened the IR.
+
+Restatement:
+
+> This text addresses how much checking a written output gets before its reader sees it. Short outputs for a reader who was in the conversation need only one mechanical check. Outputs for a reader who was not there also get a rewrite into readable prose and reviews by fresh readers who have not seen the work before. The text decides, for each output, which of these treatments applies. It reads a few counts from the output's structured form: how many separate statements the output makes, how many terms still await the owner's approval, how many requests depend on other items, and how many words the longest statement has. It also reads the reader and the purpose. It takes the first rule in its table whose condition holds. The text also sets out the steps of the fresh-reader reviews: the commands to run, the reviewer's instructions, and the lines each step writes into a log. The thresholds in the table are provisional until a test corpus tunes them, and the human owner sets those numbers.
+
+Prose 2,491 words by `wordCount` (the stranger's estimate: about 3,000); IR 151 claims; 10 findings from the stranger and 2 from the restatement check, 12 in all, 4.8 per thousand words. Restatement: two mismatches. Listed passages: none. Contradictions 2 (findings 3 and 6), undefined term 1 (finding 4), paraphrase-test findings 3 (finding 8 and the check's two items); verdict: not readable for RD-4. Omissions noticed, not counted: 4 (the owner flag, the Normative header, IR-only documents, the thresholds of BP-07 and BP-08).
+
+Side-effect call: after its reading, the stranger called one tool its brief bars, the environment documentation index, with no topic. It reported the call itself and says no finding depends on it. The call changed no file. Recorded as an edge, as the K-003 count's round 4 recorded its stranger's call outside the brief.
+
+The mismatches, each counting under the first condition though the stranger put both down to its own wording. First, the restatement gave every output for an in-conversation reader one mechanical check; row BP-03 gives a document D2 whatever its reader (C105). The stranger relied on that row. Second, the restatement gave every output for an absent reader a rendering and stranger reviews; row BP-06 and the reason for BP-05a give the returning owner a rendering and no review (C108). The stranger relied on the BP-05a reason (C118). First occurrence of each claim on a `Mismatches:` line; no structural fix is owed.
+Mismatches: C105, C108 (relied on C118)
+
+Restatement check, `node scripts/lint.mjs --restatement docs/branch-point.review.md --round 2`: 2 items, recorded as Q1 and Q2.
+
+Signals script after the `Mismatches:` line: no signal; no claim recurs.
+
+| # | Finding (shortened) | Kind | Decision |
+|---|---|---|---|
+| 1 | short outputs for an in-conversation reader read as one check (C105) | restatement | declined: the prose did not invite the reading. The Rules table states "BP-03 \| purpose is `document` \| D2", and the Purpose section says "a short report". The mismatch counts in this round |
+| 2 | outputs for an absent reader read as rendered and reviewed (C108) | restatement | declined: the prose did not invite the reading. The table gives "BP-06 \| reader is RD-2 (the human owner, returning) \| D1". The mismatch counts in this round |
+| 3 | two tuning sources, the corpus and the log | SP-25 | fixed: "The log is the data the evaluation corpus tunes the thresholds against." (C141) |
+| 4 | "stage" undefined | SP-04 | fixed: the Purpose says "a disposition: which of the lint, the rendering of prose and the stranger rounds run", and a document for a stranger "gets the lint, the rendering and the stranger rounds" (C11, C14) |
+| 5 | C11 and C24 state one claim | SP-26 | fixed: C24 cut; the Purpose carries the definition, and the Dispositions table's header links it |
+| 6 | D1 lets the reasoning role render; BP-06 says only the paraphraser writes the state paragraph | SP-25 | fixed: BP-06's reason reads "which only a rendering of prose writes" (C119) |
+| 7 | the brief named as actor in step 2 | SP-18 | fixed: "In the brief, the reasoning role names ..." (C45 to C47) |
+| 8 | the fourth condition unexplained in step 4 | paraphrase test | fixed: "The fourth condition, the paraphrase test, asks for a restatement that uses no term the text introduces." (C152 added) |
+| 9 | "BP-02a stands before it" | SP-03 | fixed: "before BP-02" (C113's prose) |
+| 10 | the fourth signal with no third | SP-03 | fixed: "The specification struck the third signal." (C155 added) |
+| Q1 | the restatement uses "counts" (T12) | paraphrase test | declined: "a few counts from the output's structured form" is the plain sense, the numbers the Inputs table reads, as round 1's P2 was accepted |
+| Q2 | "It takes the first rule in its table whose condition holds." repeats C102's prose sentence (71 percent) | paraphrase test | declined: the sentence restates the rule in the stranger's own syntax, and the shared words hold no term the text introduces |
+| V3 | own fix, from the void reading's 3: "this specification" in the Type line | SP-03 | fixed: "implements against this document" (C9) |
+| V5 | own fix, from the void reading's 5: "prose lints" undefined | SP-04 | fixed: "the lint's prose checks" (C25) |
+| V8 | own fix, from the void reading's 8: step 5's sentence carried two duties | SP-01 | fixed: split (C61, C153 added) |
+| V10 | own fix, from the void reading's 10: step 6's sentence carried two duties | SP-01 | fixed: split (C68, C154 added) |
+
+The void reading's 4, 7 and 14 coincide with this round's findings 4, 8 and 10. Its other findings take no fix: 1 (the purpose holds at most two sentences under SP-27), 2 (the Versions pointer serves a reader arriving mid-document), 6 (step 1 names the base before round 1, and step 5 names it after), 9 (step 5 fixes the second check's list, step 1 the first's), 11 (the linked style specification rows define their calibrations), 12 (the ask belongs to the report the reasoning role writes) and 13 (the reason's backlog evidence sits in the IR).
+
+Step 5, `npm run check -- docs/branch-point.md --base d174d5a`:
+Checks: 0 sentences over 25 words; 154 of 154 claims mapped; 15 claims changed, 0 missing, 0 stale.
+
+Claims after fixes: 154 (C24 cut; C152 to C155 added). Prose after fixes: 2,539 words. Structural fixes: none. Decided claims the fixes reworded, for the owner at acceptance: C9, C11, C14, C25, C45, C46, C47, C61, C68, C113, C119, C141.
+
+The confirmation is pending.

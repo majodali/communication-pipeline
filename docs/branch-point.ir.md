@@ -97,7 +97,7 @@ C7. The rules are the Rendering conditions of the methodology's intermediate-rep
 
 C8. The branch point is a Specification, the methodology's document type. [decided: owner, 2026-11-01, branch point v1.10]
 
-C9. The dispatcher, the script that applies these rules to one IR, implements against this specification. [decided: owner, 2026-11-01, branch point v1.10; reworded in count 1, round 1]
+C9. The dispatcher, the script that applies these rules to one IR, implements against this document. [decided: owner, 2026-11-01, branch point v1.10; reworded in count 1, round 2]
 
 C10. The reader is RD-4, a fresh agent session implementing or running these rules. [decided: owner, 2026-11-01, branch point v1.10; reworded in count 1, round 1]
 
@@ -105,13 +105,13 @@ C142. The human owner, setting the thresholds, reads the branch point with no mo
 
 ### Purpose
 
-C11. The branch point decides for one IR which model stages run. [decided: owner, 2026-11-01, branch point v1.10; reworded in count 1, round 1]
+C11. The branch point gives each IR a disposition: which of the lint, the rendering of prose and the stranger rounds run. [decided: owner, 2026-11-01, branch point v1.10; reworded in count 1, round 2]
 
 C12. The branch point protects proportional verification. [decided: branch point v1.9 IR, C72]
 
 C13. Under proportional verification, a short report to a reader who shares the conversation costs one pass of the lint, the project's deterministic checker. [decided: branch point v1.9 IR, C73]
 
-C14. A document for a stranger costs every stage. [decided: owner, 2026-11-01, branch point v1.10; reworded in count 1, round 1]
+C14. A document for a stranger gets the lint, the rendering and the stranger rounds. [decided: owner, 2026-11-01, branch point v1.10; reworded in count 1, round 2]
 
 C15. The methodology specification's section "Texts that require an IR" says which texts start as an IR. evidence: E1. [decided: owner, 2026-11-02, case 015 change 9]
 
@@ -137,9 +137,7 @@ C143. The input owner flag is `ir-only` if the owner designated the document IR-
 
 ### Dispositions
 
-C24. A disposition is the branch point's output for one IR: which stages run. [decided: owner, 2026-10-25]
-
-C25. Disposition D0, lint only, runs the schema checks CK-01 (referent rule) to CK-10 (section order) and the prose lints. [decided: owner, 2026-11-01, branch point v1.10; reworded in count 1, round 1]
+C25. Disposition D0, lint only, runs the schema checks CK-01 (referent rule) to CK-10 (section order) and the lint's prose checks. [decided: owner, 2026-11-01, branch point v1.10; reworded in count 1, round 2]
 
 C144. Under D0 the IR is delivered as it stands. [decided: owner, 2026-11-01, branch point v1.10]
 
@@ -189,11 +187,11 @@ C43. The reasoning role writes the `Checks:` line. evidence: E1. [decided: owner
 
 C44. In step 2, the reasoning role starts a fresh stranger instance from the agent file `.claude/agents/reviewer.md`, with the brief below. evidence: E1. [decided: owner, 2026-11-02, case 015 change 23]
 
-C45. The brief names the commit to read and the human reader the text's Reader line names. evidence: E1. [decided: owner, 2026-11-02, case 015 changes 26 and 29]
+C45. In the brief, the reasoning role names the commit to read and the human reader the text's Reader line names. [decided: owner, 2026-11-02, case 015 changes 26 and 29; reworded in count 1, round 2]
 
-C46. The brief names each finding declined so far, in whole or in part, with its reason. evidence: E1. [decided: owner, 2026-11-02, case 015 change 7]
+C46. In the brief, the reasoning role names each finding declined so far, in whole or in part, with its reason. [decided: owner, 2026-11-02, case 015 change 7; reworded in count 1, round 2]
 
-C47. The brief lists each passage awaiting restatement: a passage moved by an earlier fix that no later restatement has yet tested. [decided: branch point v1.10 IR, C32]
+C47. In the brief, the reasoning role lists each passage awaiting restatement: a passage moved by an earlier fix that no later restatement has yet tested. [decided: branch point v1.10 IR, C32; reworded in count 1, round 2]
 
 ### Step 3, read and report
 
@@ -215,6 +213,8 @@ C54. The reasoning role runs `node scripts/lint.mjs --restatement` on the entry.
 
 C55. The reasoning role records each introduced term or repeated sentence the restatement check lists as a finding under the verdict's fourth condition. [inferred: R4]
 
+C152. The fourth condition, the paraphrase test, asks for a restatement that uses no term the text introduces. [decided: owner, 2026-11-02, case 015 change 26; added in count 1, round 2]
+
 C56. The reasoning role writes the `Mismatches:` line. [decided: branch point v1.7 IR, C42]
 
 C57. Then the reasoning role runs `node scripts/signals.mjs` on the record and writes the verdict. [decided: branch point v1.9 IR, C18]
@@ -227,7 +227,9 @@ C59. For each claim the signals script reports as recurring, the reasoning role 
 
 C60. The reasoning role marks that structural fix `awaiting restatement` in the review record. [decided: branch point v1.10 IR, C33]
 
-C61. The reasoning role runs `npm run check` again, against the commit the round read, and fixes what the check lists. evidence: E1, E2. [decided: owner, 2026-11-02, case 015 changes 1 and 24]
+C61. The reasoning role runs `npm run check` again, against the commit the round read. [decided: owner, 2026-11-02, case 015 changes 1 and 24; reworded in count 1, round 2]
+
+C153. The reasoning role fixes what the second check lists. [decided: owner, 2026-11-02, case 015 changes 1 and 24; split in count 1, round 2]
 
 C62. The fix commit is the commit that holds the round's fixes and every fix the checks call for. evidence: E1, E2. [decided: owner, 2026-11-02, case 015 change 4]
 
@@ -243,7 +245,9 @@ C66. The instance says whether the instance accepts each decline. [decided: bran
 
 C67. The instance names each new defect a fix introduced. [decided: branch point v1.10 IR, C30]
 
-C68. The reasoning role writes the `Confirmation:` line and makes the fixes the confirmation calls for. [decided: branch point v1.10 IR, C31]
+C68. The reasoning role writes the `Confirmation:` line. [decided: branch point v1.10 IR, C31; reworded in count 1, round 2]
+
+C154. The reasoning role makes the fixes the confirmation calls for. [decided: branch point v1.10 IR, C31; split in count 1, round 2]
 
 C69. Then the next round opens. [decided: branch point v1.10 IR, C31]
 
@@ -351,7 +355,7 @@ C111. Row BP-09: when the reader is RD-1 or RD-3, the disposition is D0. [decide
 
 C112. BP-02 is the owner's review request: the owner asked for a review of this output, so the stranger rounds run. [decided: branch point v1.9 IR, C69]
 
-C113. BP-02a stands before BP-02, so a normative document takes D3 whatever the owner flag. [decided: branch point v1.9 IR, C68]
+C113. BP-02a stands before BP-02, so a normative document takes D3 whatever the owner flag. [decided: branch point v1.9 IR, C68; reworded in count 1, round 2]
 
 C114. Documentation is read by someone who was not in the conversation. [decided: branch point v1.1, 2026-10-25; reworded in count 1, round 1]
 
@@ -365,7 +369,7 @@ C117. Under BP-05a, in a report the owner's ratification of the proposed terms r
 
 C118. The reason: the stranger review on reports to RD-1 or RD-3 runs only on request (owner ruling, 2026-10-25). evidence: E4. [decided: branch point v1.10 IR, C88]
 
-C119. The returning owner needs the state paragraph, the paragraph stating where the project stands, which only the paraphraser writes. [decided: branch point v1.6 IR, C20; reworded in count 1, round 1]
+C119. The returning owner needs the state paragraph, the paragraph stating where the project stands, which only a rendering of prose writes. [decided: branch point v1.6 IR, C20; reworded in count 1, round 2]
 
 C120. A short IR with no dependencies reads well as it stands. [decided: branch point v1.1, 2026-10-25; reworded in count 1, round 1]
 
@@ -386,6 +390,8 @@ C126. The script reads part of the second signal, one claim named by mismatches 
 C127. The reasoning role reads the rest of the second signal, a finding raised again after a decline, from the record. [decided: branch point v1.10 IR, C43; reworded in count 1, round 1]
 
 C149. The reasoning role also reads the fourth signal from the record: a contradiction, in round 3 or later, in a passage a fix touched. evidence: E1. [decided: owner, 2026-11-02, case 015 change 10; added in count 1, round 1]
+
+C155. The specification struck the third signal. [decided: methodology intermediate-representation specification, C284; added in count 1, round 2]
 
 C128. The script stops with an error on a line the script cannot read. evidence: E1. [decided: owner, 2026-11-02, case 015 change 17]
 
@@ -417,7 +423,7 @@ C139. The dispatcher records, for every IR the dispatcher routes, the inputs, th
 
 C140. Chunk 2 of the pilot plan created `eval/dispatch-log.md`. [decided: owner, 2026-10-25, chunk 2]
 
-C141. The dispatch log is the data the thresholds are tuned against. [decided: owner, 2026-10-25, chunk 2]
+C141. The dispatch log is the data the evaluation corpus tunes the thresholds against. [decided: owner, 2026-10-25, chunk 2; reworded in count 1, round 2]
 
 G1. cluster: C36, C37, C38, C39, C40, C41, C42, C43 [decided: owner, 2026-11-02, case 015 change 13]
 
@@ -455,4 +461,4 @@ E4. docs/backlog.md, chunk 3's row: "Scope narrowed per the owner: reports to RD
 
 ## Asks
 
-A1. Accept or reject branch point v1.11. Under case 015 change 19, acceptance ratifies the wording of each decided claim this IR rewords from its source, unless the owner names a claim to exclude. Depends: C1 to C151.
+A1. Accept or reject branch point v1.11. Under case 015 change 19, acceptance ratifies the wording of each decided claim this IR rewords from its source, unless the owner names a claim to exclude. Depends: C1 to C155.
