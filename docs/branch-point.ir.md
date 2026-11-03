@@ -79,6 +79,8 @@ T34. Term the text introduces: a term the text defines or links to a vocabulary 
 
 T35. Recurring claim: a claim named on the `Mismatches:` lines of two rounds of the text's counts. [proposed: this IR]
 
+T36. Verdict. defined-at: https://github.com/majodali/methodology/blob/main/docs/intermediate-representation.md#the-verdict [decided: methodology specification, The verdict]
+
 ## Claims
 
 ### Plain purpose
@@ -231,7 +233,7 @@ C57. Then the reasoning role runs `node scripts/signals.mjs` on the record and w
 
 C58. In step 5, the reasoning role fixes each finding not declined under the specification's fix rules, the IR first. evidence: E1, E3. [decided: owner, 2026-11-02, case 015 changes 5 and 7; reworded after round 4 confirmation]
 
-C163. A recurring claim is a claim named on the `Mismatches:` lines of two rounds of the text's counts, as the second signal counts. [proposed: this IR]
+C163. A recurring claim is a claim named on the `Mismatches:` lines of two rounds of the text's counts. [proposed: this IR]
 
 C59. For each claim the signals script reports as recurring, the reasoning role makes the owed structural fix: a move of the sentence, not a rewording. evidence: E1, E2. [decided: owner, 2026-11-02, case 015 changes 3 and 15]
 
@@ -275,7 +277,7 @@ C71. The reasoning role writes the `Meta-review:` line. [decided: branch point v
 
 C72. The reasoning role lists for the owner what the specification sends to the owner. evidence: E1. [decided: owner, 2026-11-02, case 015 change 7]
 
-### The review record's lines
+### The review record's lines and the status lines
 
 C73. The `Checks:` line reads `Checks: L sentences over 25 words; M of N claims mapped; C claims changed, X missing, Y stale.` and is written at steps 1 and 5. evidence: E1. [decided: owner, 2026-11-02, case 015 change 24]
 
@@ -371,6 +373,8 @@ C110. Row BP-08: when the reader is RD-3 (a delegating agent) and the IR has mor
 
 C111. Row BP-09: when the reader is RD-1 or RD-3, the disposition is D0. [decided: branch point v1.1, 2026-10-25]
 
+C156. A short report is one under its reader's threshold: row BP-07's for RD-1 (the owner, in conversation), row BP-08's for RD-3 (a delegating agent). [inferred: R5]
+
 ### Why each rule
 
 C112. BP-02 is the owner's review request: the owner asked for a review of this output, so the stranger rounds run. [decided: branch point v1.9 IR, C69]
@@ -396,8 +400,6 @@ C120. An IR under the thresholds, with no dependent ask, reads well as it stands
 C121. Past the thresholds, the reader reads prose faster than a claims list. [decided: branch point v1.1, 2026-10-25; reworded in count 1, round 3]
 
 C122. BP-09 is the proportional-verification case. [decided: branch point v1.1, 2026-10-25; reworded in count 1, round 6]
-
-C156. A short report is one under its reader's threshold: row BP-07's for RD-1 (the owner, in conversation), row BP-08's for RD-3 (a delegating agent). [inferred: R5]
 
 C13. Under BP-09, a short report to a reader who shares the conversation costs one pass of the lint. [decided: branch point v1.9 IR, C73; reworded in count 1, round 6]
 
@@ -473,7 +475,7 @@ R3. C40 depends-on C37 because the claims check needs a base, the version the ow
 
 R4. C55 depends-on C49 because a term the restatement check finds in the restatement is a term the stranger did not restate without, which the specification's fourth condition counts (case 015 changes 26 and 27).
 
-R5. C156 refines C13 because rows BP-07 and BP-08 give D1 to a report past their thresholds, so a report under them takes D0, one pass of the lint.
+R5. C156 refines C13 because rows BP-07 and BP-08 give D1 to a report past their thresholds, so a report under them that reaches BP-09 takes D0, one pass of the lint.
 
 R6. C166 refines C73 because each letter in the `Checks:` and `Confirmation:` forms marks a number the reasoning role writes in its place.
 

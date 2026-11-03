@@ -62,6 +62,7 @@ Signals script before the round: no round recorded yet; nothing to read.
 | 4 | 2,660 | 160 | 11 | 4.1 | not readable (mismatch 1; contradictions 0; undefined term 1; paraphrase-test findings 2) |
 | 5 | 2,676 | 160 | 5 | 1.9 | not readable (mismatches 0; contradiction 1; undefined term 1; paraphrase-test findings 1) |
 | 6 | 2,707 | 161 | 12 | 4.4 | not readable (mismatches 0; contradiction 1; undefined term 1; paraphrase-test findings 2) |
+| 7 | 2,718 | 164 | | | pending |
 
 ### Round 1, count 1, 2026-11-02
 
@@ -414,4 +415,26 @@ The lint's new warning on step 5 (SP-23, "Meta-review" first used without a link
 
 Claims after fixes: 164 (C164, C165 and C166 added). Prose after fixes: 2,723 words. Structural fixes owed: none. Decided claims the fixes reworded, for the owner at acceptance: C11, C13, C122 and C154. Decided claims the fixes added: C164 (split from C154) and C165.
 
-The confirmation is pending.
+Confirmation: 6 of 10 fixes hold. Not held: 4, 5, 7, 9. Declines accepted: 2 of 2. New defects: 1.
+
+The instance read both files in full at fix commit 7c4afd0. The four fixes not held were each made in the prose and not in the IR. Recorded as an edge: round 6's fix pass fixed the prose ahead of the IR on findings 4, 5, 7 and 9, the IR-first rule inverted. The confirmation's fixes, IR first, before round 7 opens:
+
+- Fix 4 did not hold: relation R5 still said a report under the thresholds takes D0. R5 now reads "so a report under them that reaches BP-09 takes D0, one pass of the lint."
+- Fix 5 did not hold: C163 still used "the second signal", which the IR's Terms list does not hold. Cut: C163 reads "A recurring claim is a claim named on the `Mismatches:` lines of two rounds of the text's counts." The prose link goes with it, and so does the lint's false positive on step 5.
+- Fix 7 did not hold: "readable verdict" in C70 had no Terms entry. Added T36, "Verdict", defined at the specification's section "The verdict", as the prose already links it. Decided by that source; no ask.
+- Fix 9 did not hold: the IR heading still read "The review record's lines". It now matches the prose: "The review record's lines and the status lines".
+- N1 (SP-11): C156, the short report's definition, sat in "Why each rule", a section of reasons. C156 moves to the Rules section, after the table, where rows BP-07 and BP-08 stand. It still precedes C13 in the BP-09 bullet. The stranger suggested the Purpose or the Inputs; the Rules section holds the two rows the definition names.
+- Declines V1 and V2 accepted.
+
+Step 6's check, `npm run check -- docs/branch-point.md --base 7c4afd0`:
+Checks: 0 sentences over 25 words; 164 of 164 claims mapped; 1 claims changed, 0 missing, 0 stale.
+
+Prose after the confirmation's fixes: 2,718 words; IR 164 claims; unratified terms 2 (T34, T35). No decided claim reworded after confirmation.
+
+Signals script after the confirmation line: signal 1 stands, now with fixes not held in rounds 1 to 6. Signal 4 stands by reading.
+
+### Round 7, count 1, 2026-11-02
+
+The round reads the text at its opening commit, named in the brief, under v1.11 at commit 12ff480. Prose 2,718 words; IR 164 claims; unratified terms 2 (T34, T35). Human reader for the paraphrase test: the human owner. Stranger: pending, a fresh instance.
+
+Declines carried in the round 7 brief: v1.9 round 1's F3; round 1's 3, 14 and 16; round 2's 1 and 2; round 4's 1, 2, 3 and 9, each with its reason. Not carried: the restatement-check items. The brief names the passages round 6 and its confirmation changed, the departure kept for this count. Passages awaiting restatement: none.
