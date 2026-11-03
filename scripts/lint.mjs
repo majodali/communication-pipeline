@@ -1,9 +1,14 @@
 #!/usr/bin/env node
-// Lint for IR documents (checks CK-01..CK-16, docs/ir-schema.md) and
-// rendered prose (the lint column of docs/style-spec.md).
+// Lint for IR documents (checks CK-01..CK-16, the methodology's
+// intermediate-representation specification) and rendered prose (the
+// checks docs/style-spec.md names as lint). SP-02 warns over 25 words
+// (case 015 change 1). SP-27, pilot-only, checks a plain purpose and the
+// glosses of coined names (case 015 change 28). --restatement checks a
+// recorded restatement for the paraphrase test (case 015 change 27).
 // Usage:
-//   node scripts/lint.mjs [--json] [--verbose] [files...]   (default: all tracked .md)
+//   node scripts/lint.mjs [--json] [files...]   (default: all tracked .md)
 //   node scripts/lint.mjs --hook   (Claude Code PostToolUse: reads stdin JSON)
+//   node scripts/lint.mjs --restatement <review-record.md> [--round N] [--ir <file.ir.md>] [--prose <file.md>] [--repeat 0.7]
 // Exit 1 when any violation is found (0 otherwise). In --hook mode the
 // output is the hook JSON; IR violations block, everything else is context.
 
@@ -12,6 +17,7 @@ import { execSync } from 'node:child_process';
 import { resolve, relative, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseIR, sectionKind, wordCount, idsIn, PROVENANCE_KINDS } from './ir.mjs';
+import { contentWords, sentencesOf, overlap } from './claims-check.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const READER_RE = /^RD-[1-5]\b/;
@@ -42,13 +48,15 @@ export function vocabularyEntries(file = resolve(ROOT, 'docs/vocabulary.md')) {
   const entries = new Map();
   if (!existsSync(file)) return entries;
   for (const line of readFileSync(file, 'utf8').split('\n')) {
-    const m = /^\|\s*(?:<a id="([^"]+)"><\/a>)?\s*([^|]+?)\s*\|([^|]*)\|([^|]*)\|/.exec(line);
+    const m = /^\|\s*(?:<a id="([^"]+)"><\/a>)?\s*([^|]+?)\s*\|([^|]*)\|([^|]*)\|([^|]*)/.exec(line);
     if (m && !/^(Term|---)\s*$/.test(m[2])) {
       const term = m[2].replace(/\s*\(.*\)$/, '').trim();
       const status = /^\s*decided/.test(m[4]) ? 'decided' : /^\s*proposed/.test(m[4]) ? 'proposed' : 'unknown';
-      entries.set(term.toLowerCase(), { term, anchor: m[1] ?? null, status });
+      // A coined name: a row whose definition site is not the methodology's (SP-27).
+      const coined = !/methodology/i.test(m[5] ?? '');
+      entries.set(term.toLowerCase(), { term, anchor: m[1] ?? null, status, coined });
       const abbr = /\(([A-Z]{2,})\)/.exec(m[2]);
-      if (abbr) entries.set(abbr[1].toLowerCase(), { term: abbr[1], anchor: m[1] ?? null, status });
+      if (abbr) entries.set(abbr[1].toLowerCase(), { term: abbr[1], anchor: m[1] ?? null, status, coined });
     }
   }
   return entries;
@@ -271,8 +279,7 @@ export function lintProse(text, { verbose = false, file = null, vocab = vocabula
     const row = b.kind === 'row';
     for (const s of sentences(b.text)) {
       const w = wordCount(s);
-      if (w > 35) add('SP-02', 'warning', b.line, `${w}-word sentence: "${s.slice(0, 60)}…"`);
-      else if (w > 25 && verbose) add('SP-02', 'info', b.line, `${w}-word sentence`);
+      if (w > 25) add('SP-02', 'warning', b.line, `${w}-word sentence: "${s.slice(0, 60)}…"`);
       if (PRONOUN_THEN_VERB.test(s)) add('SP-03', 'warning', b.line, `sentence opens with a pronoun: "${s.slice(0, 50)}…"`);
       const d = DEICTIC.exec(s);
       if (d) add('SP-03', 'warning', b.line, `"${d[1]}" without a named referent`);
@@ -295,7 +302,111 @@ export function lintProse(text, { verbose = false, file = null, vocab = vocabula
     const ss = sentences(b.text);
     for (let i = 0; i + 1 < ss.length; i++) if (/\bis not\b/.test(ss[i]) && /^It is\b/.test(ss[i + 1])) add('SP-08', 'warning', b.line, `suspense construction: "${ss[i].slice(0, 40)}… ${ss[i + 1].slice(0, 20)}…"`);
   }
+  if (file && sp27Applies(file, text)) f.push(...lintPurposeAndGlosses(text, vocab));
   return { findings: f };
+}
+
+// SP-27 (pilot-only, case 015 change 28) binds a document under docs/,
+// outside docs/records/, and an evaluation case. A file whose opening
+// carries a supersession marker is a record kept as it stands.
+export function sp27Applies(file, text) {
+  const rel = relative(ROOT, resolve(file)).split('\\').join('/');
+  if (!/^(docs\/(?!records\/).+|eval\/cases\/.+)\.md$/.test(rel) || /\.(ir|review)\.md$/.test(rel) || /(^|\/)vocabulary\.md$/.test(rel)) return false;
+  return !/^>\s*Superseded by/m.test(text.split('\n').slice(0, 30).join('\n'));
+}
+
+// A gloss follows the term: a parenthesis, an appositive, a colon, or "is".
+const GLOSS_AFTER = /^(?:'s)?[^.;]{0,12}?(?:\s*\(|,\s+(?!and\b|or\b|but\b|so\b|then\b)[a-z]|\s+(?:is|are|means|names)\b|:\s)/i;
+
+export function lintPurposeAndGlosses(text, vocab = vocabularyEntries()) {
+  const f = [];
+  const add = (line, msg) => f.push({ check: 'SP-27', level: 'warning', line, msg });
+  const lines = text.split(/\r?\n/);
+  const h1 = lines.findIndex((l) => /^#\s/.test(l));
+  let i = h1 + 1, comment = false;
+  for (; i < lines.length; i++) {
+    const l = lines[i].trim();
+    if (comment || /^<!--/.test(l)) { comment = !/-->/.test(l); continue; }
+    if (l) break;
+  }
+  const para = [];
+  for (let j = i; j < lines.length && lines[j].trim(); j++) para.push(lines[j].trim());
+  const p = para.join(' ');
+  if (h1 === -1 || !p || /^(Status|Reader|Type|Source):|^[|>#*<-]|^\d+\./.test(p)) add(i + 1, 'the text does not open with a plain-purpose sentence after its title');
+  else {
+    if (sentences(p).length > 2) add(i + 1, `the purpose holds ${sentences(p).length} sentences; at most two`);
+    if (/\]\(|`|§|\b[A-Z]{1,3}-?\d+\b/.test(p)) add(i + 1, 'the purpose holds an identifier, code or a link');
+  }
+  // Each coined name carries a gloss at its first use in the text.
+  const coined = [...new Map([...vocab.values()].filter((v) => v.coined && v.term.length > 3).map((v) => [v.term.toLowerCase(), v])).values()]
+    .sort((a, b) => b.term.length - a.term.length);
+  const seen = new Set();
+  for (const b of proseBlocks(text)) {
+    if (b.kind === 'heading') continue;
+    const scan = b.text.replace(/`[^`]*`/g, (c) => ' '.repeat(c.length)).replace(/\]\(([^)]*)\)/g, (m0) => '](' + ' '.repeat(m0.length - 3) + ')');
+    const taken = [];
+    for (const v of coined) {
+      const key = v.term.toLowerCase();
+      if (seen.has(key)) continue;
+      const re = new RegExp(`\\b${key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}s?\\b`, 'i');
+      const m = re.exec(scan);
+      if (!m || taken.some(([a, z]) => m.index >= a && m.index < z)) continue;
+      seen.add(key);
+      taken.push([m.index, m.index + m[0].length]);
+      const after = scan.slice(m.index + m[0].length).replace(/^\]\(\s*\)/, '');
+      // or the next sentence glosses it: "The <name> is ..." or "The <name> finds ...".
+      const end = after.search(/[.!?]\s/);
+      const rest = end === -1 ? '' : after.slice(end + 2);
+      const nextGloss = new RegExp(`(?:^|[.!?]\\s+)(?:The|A|An)\\s+${key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i').test(rest.trimStart());
+      if (!GLOSS_AFTER.test(after) && !nextGloss) add(b.line, `coined name "${v.term}" carries no gloss at its first use`);
+    }
+  }
+  return f;
+}
+
+// The paraphrase test's check (case 015 change 27). Reads the restatements
+// a review record keeps: a "Restatement:" line, then a quoted block.
+export function restatementsOf(record) {
+  const out = [];
+  let round = 0;
+  const lines = record.split(/\r?\n/);
+  for (let i = 0; i < lines.length; i++) {
+    const h = /^#+\s*Round\s+(\d+)/.exec(lines[i]);
+    if (h) round = Number(h[1]);
+    if (!/^Restatement:\s*$/.test(lines[i].trim())) continue;
+    let j = i + 1;
+    while (j < lines.length && !lines[j].trim()) j++;
+    const quoted = [];
+    for (; j < lines.length && /^>/.test(lines[j]); j++) quoted.push(lines[j].replace(/^>\s?/, ''));
+    out.push({ round, line: i + 1, text: quoted.join(' ').trim() });
+  }
+  return out;
+}
+
+export function introducedTerms(irText) {
+  const terms = [];
+  for (const e of parseIR(irText).elements.filter((x) => x.kind === 'T')) {
+    const name = e.text.split(/\.\s+defined-at:|:\s|\.\s*$/)[0].trim();
+    const abbr = /\(([A-Z]{2,})\)/.exec(name);
+    const base = name.replace(/\s*\([^)]*\)\s*$/, '').trim();
+    if (base) terms.push({ id: e.id, name: base, re: new RegExp(`\\b${base.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}s?\\b`, 'i') });
+    if (abbr) terms.push({ id: e.id, name: abbr[1], re: new RegExp(`\\b${abbr[1]}s?\\b`) });
+  }
+  return terms;
+}
+
+export function lintRestatement(restatement, irText, proseText, { repeat = 0.7, minWords = 5 } = {}) {
+  const f = [];
+  for (const t of introducedTerms(irText)) if (t.re.test(restatement)) f.push({ check: 'paraphrase', level: 'warning', kind: 'term', msg: `the restatement uses "${t.name}", a term the text introduces (${t.id})` });
+  const prose = sentencesOf(proseText).map((s) => ({ s, w: contentWords(s) }));
+  for (const rs of sentences(restatement)) {
+    const w = contentWords(rs);
+    if (w.size < minWords) continue;
+    let best = { score: 0, s: '' };
+    for (const x of prose) { const sc = overlap(w, x.w); if (sc > best.score) best = { score: sc, s: x.s }; }
+    if (best.score >= repeat) f.push({ check: 'paraphrase', level: 'warning', kind: 'repeat', msg: `the restatement sentence "${rs.slice(0, 60)}…" repeats the prose sentence "${best.s.slice(0, 60)}…" (${Math.round(best.score * 100)}% of its content words)` });
+  }
+  return f;
 }
 
 export function lintFile(path, opts = {}) {
@@ -330,6 +441,26 @@ async function main() {
   const hook = args.includes('--hook');
   const json = args.includes('--json');
   const verbose = args.includes('--verbose');
+  const ri = args.indexOf('--restatement');
+  if (ri !== -1) {
+    const opt = (k) => { const x = args.indexOf(k); return x === -1 ? null : args[x + 1]; };
+    const record = resolve(args[ri + 1]);
+    const ir = resolve(opt('--ir') ?? record.replace(/\.review\.md$/, '.ir.md'));
+    const prose = resolve(opt('--prose') ?? record.replace(/\.review\.md$/, '.md'));
+    const all = restatementsOf(readFileSync(record, 'utf8'));
+    const round = opt('--round');
+    const chosen = round ? all.filter((r) => r.round === Number(round)) : all.slice(-1);
+    if (!chosen.length || !chosen[0].text) { console.error(`no recorded restatement${round ? ` for round ${round}` : ''} in ${relative(process.cwd(), record)}`); process.exitCode = 2; return; }
+    let n = 0;
+    for (const r of chosen) {
+      const found = lintRestatement(r.text, readFileSync(ir, 'utf8'), readFileSync(prose, 'utf8'), { repeat: Number(opt('--repeat') ?? 0.7) });
+      for (const x of found) console.log(`${relative(process.cwd(), record)}:${r.line}: round ${r.round}: ${x.check} ${x.kind}: ${x.msg}`);
+      n += found.length;
+    }
+    console.log(`restatement check: ${n} item(s) for the paraphrase test`);
+    process.exitCode = n ? 1 : 0;
+    return;
+  }
   let files = args.filter((a) => !a.startsWith('--'));
   if (hook) {
     let input = '';

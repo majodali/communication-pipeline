@@ -266,30 +266,22 @@ test('claims-check reports a changed claim whose sentence did not change (stale)
 
 import { readSignals, mismatchEntries } from './signals.mjs';
 
-test('signals v1.7: fixed confirmation form, mismatch recurrence, unparsed lines', () => {
-  const bad = `# Review record\n\n| Round | Prose words | IR claims |\n|---|---|---|\n| 1 | 1,000 | 50 |\n| 2 | 1,150 | 50 |\n\n## Round 1\n\nMismatches: C8, C26\nClaims check after the fixes: 2 changed, missing 0, stale 0.\nConfirmation: 3 of 5 fixes hold. Not held: 2, 4. Declines accepted: 1 of 1. New defects: 0.\n\n## Round 2\n\nMismatches: C8\nClaims check after the fixes: 2 changed, missing 1, stale 0.\nConfirmation: 2 of 2 fixes hold. Not held: none. Declines accepted: 0 of 0. New defects: 1.\n`;
+test('signals v1.7: fixed confirmation form, mismatch recurrence, last count only', () => {
+  const bad = `# Review record\n\n| Round | Prose words | IR claims |\n|---|---|---|\n| 1 | 1,000 | 50 |\n| 2 | 1,150 | 50 |\n\n## Round 1\n\nMismatches: C8, C26\nConfirmation: 3 of 5 fixes hold. Not held: 2, 4. Declines accepted: 1 of 1. New defects: 0.\n\n## Round 2\n\nMismatches: C8\nConfirmation: 1 of 2 fixes hold. Not held: 1. Declines accepted: 0 of 0. New defects: 1.\n`;
   const r = readSignals(bad);
   assert.equal(r.signal1.fired, true);
   assert.deepEqual(r.signal1.roundsWithFailure, [1, 2]);
   assert.equal(r.signal2.fired, true);
   assert.deepEqual(r.signal2.recurring, ['C8 in rounds 1, 2']);
   assert.equal(r.subject, true);
-  assert.deepEqual(r.unparsed, []);
-  const quiet = `| Round | Prose words | IR claims |\n|---|---|---|\n| 1 | 1,000 | 40 |\n| 2 | 1,200 | 50 |\n\n## Round 1\n\nMismatches: none\nClaims check after the fixes: 3 changed, 0 missing, 0 stale.\nConfirmation: 5 of 5 fixes hold. Not held: none. Declines accepted: 0 of 0. New defects: 0.\n`;
+  const quiet = `| Round | Prose words | IR claims |\n|---|---|---|\n| 1 | 1,000 | 40 |\n| 2 | 1,200 | 50 |\n\n## Round 1\n\nMismatches: none\nConfirmation: 5 of 5 fixes hold. Not held: none. Declines accepted: 0 of 0. New defects: 0.\n`;
   const g = readSignals(quiet);
   assert.equal(g.signal1.fired, false);
   assert.equal(g.signal2.fired, false);
   assert.equal(g.subject, false);
-  // a confirmation line outside the fixed form is unparsed and blocks "not indicated"
-  const loose = `| Round | Prose words | IR claims |\n|---|---|---|\n| 1 | 1,000 | 40 |\n\n## Round 1\n\nClaims check after the fixes: 1 changed, 0 missing, 0 stale.\nSame-instance confirmation: 10 of 11 prose fixes hold in full.\n`;
-  const u = readSignals(loose);
-  assert.equal(u.unparsed.length, 1);
-  assert.equal(u.subject, 'unparsed');
   // a record with several counts is read from its last count only
-  const multi = `## Count 1\n\n| Round | Prose words | IR claims |\n|---|---|---|\n| 1 | 900 | 10 |\n| 2 | 1,200 | 10 |\n\n## Round 1\n\nSame-instance confirmation: 3 of 5 fixes hold.\n\n## Count 2\n\n| Round | Prose words | IR claims |\n|---|---|---|\n| 1 | 1,000 | 40 |\n\n## Round 1\n\nMismatches: none\nClaims check after the fixes: 2 changed, 0 missing, 0 stale.\nConfirmation: 2 of 2 fixes hold. Not held: none. Declines accepted: 0 of 0. New defects: 0.\n`;
-  const m = readSignals(multi);
-  assert.deepEqual(m.unparsed, []);
-  assert.equal(m.subject, false);
+  const multi = `## Count 1\n\n## Round 1\n\nConfirmation: 3 of 5 fixes hold. Not held: 1, 2. Declines accepted: 0 of 0. New defects: 0.\n\n## Round 2\n\nConfirmation: 3 of 5 fixes hold. Not held: 1, 2. Declines accepted: 0 of 0. New defects: 0.\n\n## Count 2\n\n| Round | Prose words | IR claims |\n|---|---|---|\n| 1 | 1,000 | 40 |\n\n## Round 1\n\nMismatches: none\nConfirmation: 2 of 2 fixes hold. Not held: none. Declines accepted: 0 of 0. New defects: 0.\n`;
+  assert.equal(readSignals(multi).subject, false);
 });
 
 // --- signals v1.9 (cases 010 and 011), fixtures in the v1.10 claims-check form ---
@@ -299,7 +291,6 @@ const OK = 'Confirmation: 2 of 2 fixes hold. Not held: none. Declines accepted: 
 test('signals v1.9: a run before the verdict reads a partial record (case 010 change 2)', () => {
   const partial = `| Round | Prose words | IR claims |\n|---|---|---|\n| 1 | 1,000 | 50 |\n\n## Round 1\n\nMismatches: C8\n${CC(1)}\n${OK}\n\n## Round 2\n\nMismatches: C8\n`;
   const r = readSignals(partial);
-  assert.deepEqual(r.unparsed, []);
   assert.equal(r.roundsSeen, 2);
   assert.deepEqual(r.signal2.recurring, ['C8 in rounds 1, 2']);
   assert.equal(r.subject, true);
@@ -332,14 +323,6 @@ test('signals v1.9: a "not indicated" Meta-review line is checked against the re
   assert.equal(c.metaReviewLine.contradicted, false);
 });
 
-test('signals v1.9: both claims-check count orders parse (case 011 change 7)', () => {
-  const two = `## Round 1\n\nClaims check after the fixes: 4 changed claims, 2 missing, 0 stale (base: round 1 prose).\n${OK}\n\n## Round 2\n\nClaims check: 2 changed, missing 0, stale 1.\n${OK}\n`;
-  const t = readSignals(two);
-  assert.deepEqual(t.unparsed, []);
-  assert.deepEqual(t.signal1.roundsWithFailure, [1, 2]);
-  assert.equal(t.signal1.fired, true);
-});
-
 // --- signals v1.10 (case 012) ---
 test('signals v1.10: an entry with no (own) mark parses, and an older (own) mark is ignored (case 012 change 1)', () => {
   assert.deepEqual(mismatchEntries('C41 (relied on C35), C44'), [{ id: 'C41', relied: false }, { id: 'C35', relied: true }, { id: 'C44', relied: false }]);
@@ -362,18 +345,123 @@ test('signals v1.10: the script searches no wording for signals 2 and 4 (case 01
   assert.equal(r.subject, false);
 });
 
-test('signals v1.10: a round with a fix pass and no claims-check line is unparsed, round 1 included (case 012 change 13)', () => {
-  const rec = `## Round 1\n\nMismatches: none\n${OK}\n\n## Round 2\n\nMismatches: none\n${CC(2)}\n${OK}\n\n## Round 3\n\nMismatches: none\n`;
-  const r = readSignals(rec);
-  assert.deepEqual(r.unparsed, ['round 1: a fix pass and no claims-check line']);
-  assert.equal(r.subject, 'unparsed');
-  const ok = rec.replace(`Mismatches: none\n${OK}`, `Mismatches: none\n${CC(1)}\n${OK}`);
-  assert.deepEqual(readSignals(ok).unparsed, []);
-});
-
 test('dispatch v1.9: BP-02a stands before BP-02, so a normative document takes D3 with the owner flag', () => {
   const norm = parseIR(GOOD_IR.replace('Purpose: report.', 'Purpose: document.').replace('Status: draft', 'Status: draft\nNormative: yes'));
   assert.deepEqual(decide(inputsOf(norm, 'review')), { rule: 'BP-02a', disposition: 'D3' });
   const rep = parseIR(GOOD_IR.replace('[proposed: this IR]', '[decided: owner, 2026-10-25]'));
   assert.deepEqual(decide(inputsOf(rep, 'review')), { rule: 'BP-02', disposition: 'D2' });
+});
+
+// --- case 015 (branch point v1.11) ---
+import { UnreadableLine } from './signals.mjs';
+import { claimText } from './claims-check.mjs';
+import { runChecks } from './check.mjs';
+import { lintPurposeAndGlosses, sp27Applies, restatementsOf, lintRestatement } from './lint.mjs';
+import { resolve as resolvePath, dirname as dirnameOf } from 'node:path';
+import { fileURLToPath as toPath } from 'node:url';
+const REPO = resolvePath(dirnameOf(toPath(import.meta.url)), '..');
+
+test('case 015 change 1: SP-02 warns over 25 words, without --verbose', () => {
+  const s26 = Array(26).fill('word').join(' ') + '.';
+  const s25 = Array(25).fill('word').join(' ') + '.';
+  assert.equal(lintProse(`# T\n\n${s26}\n`).findings.filter((f) => f.check === 'SP-02' && f.level === 'warning').length, 1);
+  assert.equal(lintProse(`# T\n\n${s25}\n`).findings.filter((f) => f.check === 'SP-02').length, 0);
+});
+
+test('case 015 change 2: signal 1 reads fixes not held only; the claims check does not fire it', () => {
+  const rec = `## Round 1\n\nChecks: 0 sentences over 25 words; 5 of 5 claims mapped; 2 claims changed, 1 missing, 1 stale.\nConfirmation: 2 of 2 fixes hold. Not held: none. Declines accepted: 0 of 0. New defects: 0.\n\n## Round 2\n\nClaims check after the fixes: 2 changed, missing 1, stale 0.\nConfirmation: 2 of 2 fixes hold. Not held: none. Declines accepted: 0 of 0. New defects: 0.\n`;
+  const r = readSignals(rec);
+  assert.equal(r.signal1.fired, false);
+  assert.equal('unparsed' in r, false);
+});
+
+test('case 015 change 2: a round with no claims-check line is no longer unparsed', () => {
+  const rec = `## Round 1\n\nMismatches: none\n${OK}\n\n## Round 2\n\nMismatches: none\n`;
+  const r = readSignals(rec);
+  assert.equal(r.subject, false);
+});
+
+test('case 015 change 17: the script stops with an error on a line it cannot read', () => {
+  const loose = `## Round 1\n\nSame-instance confirmation: 10 of 11 prose fixes hold in full.\n`;
+  assert.throws(() => readSignals(loose), (e) => e instanceof UnreadableLine && e.line === 3);
+  const form = `## Round 1\n\nConfirmation: 8 of 8 fixes hold.\n`;
+  assert.throws(() => readSignals(form), UnreadableLine);
+  const mm = `## Round 1\n\nMismatches: the step 2 passage\n`;
+  assert.throws(() => readSignals(mm), UnreadableLine);
+  const meta = `## Round 1\n\n${OK}\n\n## Verdict\n\nMeta-review: unparsed (round 1)\n`;
+  assert.throws(() => readSignals(meta), UnreadableLine);
+  // narrative that mentions confirmation is not a line the script reads
+  assert.doesNotThrow(() => readSignals(`## Round 1\n\nRe-fixed after confirmation:\n\n${OK}\n\nMeta-review: delivered (signal 1): a link.\n`));
+});
+
+test('case 015 change 3: a recurrence is keyed on a claim, not on a passage', () => {
+  const rec = `## Round 1\n\nMismatches: C8, C9\n${OK}\n\n## Round 3\n\nMismatches: C10\n`;
+  assert.equal(readSignals(rec).signal2.fired, false);
+  const again = rec.replace('Mismatches: C10', 'Mismatches: C10 (relied on C9)');
+  assert.deepEqual(readSignals(again).signal2.recurring, ['C9 in rounds 1, 3 (relied on: round 3)']);
+});
+
+test('case 015 change 2: the claims check ignores a claim\'s evidence field', () => {
+  assert.equal(claimText('The widget is blue. evidence: E5, E8.'), 'The widget is blue.');
+  const oldIR = `# IR: y\n\nReader: RD-4\nPurpose: document. t\nStatus: draft\nSource: t\n\n## Terms\n\n## Claims\n\nC1. The widget is blue. evidence: E5. [decided: owner, 2026-10-27]\n\n## Relations\n\n## Evidence\n`;
+  const newIR = oldIR.replace('evidence: E5.', 'evidence: E5, E8.');
+  const r = claimsCheck(oldIR, newIR, 'The widget is blue.', { oldProseText: 'The widget is blue.' });
+  assert.deepEqual(r.changed, []);
+  assert.deepEqual(r.stale, []);
+});
+
+test('case 015 change 13: the claims check matches a table row whole', () => {
+  const oldIR = `# IR: y\n\nReader: RD-4\nPurpose: document. t\nStatus: draft\nSource: t\n\n## Terms\n\n## Claims\n\n## Relations\n\n## Evidence\n`;
+  const newIR = oldIR.replace('## Claims\n', '## Claims\n\nC1. The \`Confirmation:\` line, at step 6, reads \`Confirmation: H of A fixes hold. Not held: <numbers>. New defects: N.\` [decided: owner, 2026-11-02]\n');
+  const prose = `# T\n\n| Line | Form | Step |\n|---|---|---|\n| \`Confirmation:\` | \`Confirmation: H of A fixes hold. Not held: <numbers>. New defects: N.\` | 6 |\n`;
+  assert.deepEqual(claimsCheck(oldIR, newIR, prose).missing, []);
+});
+
+test('case 015 change 24: check prints one Checks line', () => {
+  const ir = `# IR: y\n\nReader: RD-4\nPurpose: document. t\nStatus: draft\nSource: t\n\n## Terms\n\n## Claims\n\nC1. The widget is blue. [decided: owner, 2026-10-27]\n\nC2. The widget has four wheels. [decided: owner, 2026-10-27]\n\n## Relations\n\n## Evidence\n`;
+  const long = Array(30).fill('word').join(' ') + '.';
+  const prose = `# Widgets\n\nThe widget is blue. The widget has four wheels. ${long}\n\n<!-- render map: C1→¶1 -->\n`;
+  const r = runChecks({ irText: ir, proseText: prose, baseIrText: '', baseProseText: '' });
+  assert.equal(r.line, 'Checks: 1 sentences over 25 words; 1 of 2 claims mapped; 2 claims changed, 0 missing, 0 stale.');
+  assert.equal(r.clean, false);
+  const ok = runChecks({ irText: ir, proseText: prose.replace(long, '').replace('C1→¶1', 'C1→¶1 C2→¶1'), baseIrText: ir, baseProseText: prose });
+  assert.equal(ok.line, 'Checks: 0 sentences over 25 words; 2 of 2 claims mapped; 0 claims changed, 0 missing, 0 stale.');
+  assert.equal(ok.clean, true);
+});
+
+test('case 015 change 25: the dispatcher implements BP-00', () => {
+  const doc = parseIR(GOOD_IR.replace('Purpose: report.', 'Purpose: document.'));
+  assert.deepEqual(decide(inputsOf(doc, 'ir-only')), { rule: 'BP-00', disposition: 'D0' });
+  const delivered = parseIR(GOOD_IR.replace('Purpose: report.', 'Purpose: document.').replace('Status: draft', 'Status: delivered IR-only (owner, 2026-10-30)'));
+  assert.deepEqual(decide(inputsOf(delivered)), { rule: 'BP-00', disposition: 'D0' });
+  const norm = parseIR(GOOD_IR.replace('Purpose: report.', 'Purpose: document.').replace('Status: draft', 'Status: draft\nNormative: yes'));
+  assert.deepEqual(decide(inputsOf(norm, 'ir-only')), { rule: 'BP-02a', disposition: 'D3' });
+});
+
+test('case 015 change 27: the restatement check lists introduced terms and repeated sentences', () => {
+  const ir = `# IR: y\n\nReader: RD-4\nPurpose: document. t\nStatus: draft\nSource: t\n\n## Terms\n\nT1. Fix commit. defined-at: vocabulary.md#def-fix-commit [decided: owner, 2026-11-01]\n\nT2. Intermediate representation (IR). defined-at: x [decided: owner, 2026-10-24]\n\n## Claims\n\n## Relations\n\n## Evidence\n`;
+  const prose = '# T\n\nThe reasoning role sends the round\'s stranger instance the findings, the declines and the fix commit.\n';
+  const record = '## Round 1\n\nRestatement:\n\n> The writer sends the reviewer the fix commit and the IR.\n> The reasoning role sends the round\'s stranger instance the findings, the declines and the commit.\n';
+  const rs = restatementsOf(record);
+  assert.equal(rs.length, 1);
+  assert.equal(rs[0].round, 1);
+  const f = lintRestatement(rs[0].text, ir, prose);
+  assert.deepEqual(f.filter((x) => x.kind === 'term').map((x) => x.msg.match(/"([^"]+)"/)[1]).sort(), ['Fix commit', 'IR']);
+  assert.equal(f.filter((x) => x.kind === 'repeat').length, 1);
+  assert.deepEqual(lintRestatement('The writer hands the reviewer the changes to check again.', ir, prose), []);
+});
+
+test('case 015 change 28: SP-27 asks for a plain purpose and a gloss at a coined name\'s first use', () => {
+  const vocab = new Map([['fix commit', { term: 'Fix commit', anchor: 'def-fix-commit', status: 'decided', coined: true }], ['round', { term: 'Round', anchor: 'def-round', status: 'decided', coined: false }]]);
+  assert.equal(sp27Applies(resolvePath(REPO, 'docs/x.md'), '# X\n'), true);
+  assert.equal(sp27Applies(resolvePath(REPO, 'docs/records/x.md'), '# X\n'), false);
+  assert.equal(sp27Applies(resolvePath(REPO, 'docs/x.md'), '# X\n\n> Superseded by P-008 on 2026-10-26.\n'), false);
+  const none = lintPurposeAndGlosses('# X\n\nStatus: active.\n', vocab);
+  assert.equal(none.length, 1);
+  const linked = lintPurposeAndGlosses('# X\n\nThis text sets [rules](y.md) for RD-4.\n', vocab);
+  assert.equal(linked.length, 1);
+  const plain = lintPurposeAndGlosses('# X\n\nThis text says how reviews run. Agents read it.\n\nEach round names the fix commit.\n', vocab);
+  assert.deepEqual(plain.map((x) => x.msg), ['coined name "Fix commit" carries no gloss at its first use']);
+  const glossed = lintPurposeAndGlosses('# X\n\nThis text says how reviews run. Agents read it.\n\nEach round names the [fix commit](v.md#def-fix-commit), the commit that holds its fixes.\n', vocab);
+  assert.deepEqual(glossed, []);
 });

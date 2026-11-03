@@ -1,5 +1,7 @@
 # Backlog
 
+This register lists the work this project finished and the work still ahead, in order. The human owner and the agents read it to see where the project stands.
+
 <!-- The single source of progress truth (methodology K-003): one
      dependency-ordered register of completed and upcoming work. Rewrite
      checked entries to describe what actually shipped. Update in the
@@ -160,8 +162,7 @@ roles have moved to project-orchestrator, this repository archives
   (CK-12). Source: [chunk 5 IR](records/chunk-5-close-out.ir.md).
   Gate: the owner confirms the record. The repository stays open on
   the owner's hold.
-- [ ] **Review of the pipeline's ruleset for simplification** — open,
-  the pipeline's next task: branch point v1.10 landed on 2026-11-01,
+- [x] **Review of the pipeline's ruleset for simplification** — 2026-11-02. Opened when branch point v1.10 landed on 2026-11-01,
   the condition the owner set on 2026-10-30. Asked
   by the owner on 2026-10-30: the ruleset grows a lot and may hold
   opportunities to simplify. Starting point: case 012's changes 1, 5,
@@ -188,8 +189,32 @@ roles have moved to project-orchestrator, this repository archives
   which also carries the deferred meta-review of the methodology's
   K-003 count: 35 changes proposed in eight groups, 30 recommended,
   with branch point v1.11 and the specification's count 7 landing as
-  one pair. Gate: the owner's decision on the case.
-- [ ] **Dispatcher: row BP-00** — open. `scripts/dispatch.mjs` does not
-  implement BP-00, branch point v1.8's IR-only row, and its header
-  comment notes this. Pointer: [the script](../scripts/dispatch.mjs);
-  noted in the round 7 fix pass of branch point v1.9.
+  one pair. Gate passed 2026-11-02: the owner adopted changes 1 to
+  30 and declined 31 to 35. The scope's items close with it: residue
+  N1 (change 9), the lint threshold (change 1), the step-4 read order
+  (change 4), the passage key (change 3) and the brief's calibrations
+  (change 11).
+- [x] **Dispatcher: row BP-00** — 2026-11-02. `scripts/dispatch.mjs`
+  implements BP-00, branch point v1.8's IR-only row: the owner flag
+  `ir-only`, or a Status that reads `delivered IR-only`, routes a
+  non-normative IR to D0 (case 015 change 25). Pointer:
+  [the script](../scripts/dispatch.mjs).
+- [ ] **Branch point v1.11 and the specification's count 7** — open,
+  2026-11-02. One task over two texts (case 015 change 29). In
+  [branch point](branch-point.md) v1.11 the Rounds section holds seven
+  steps, each naming its script and record line; the history moved to
+  [a record](records/branch-point-history.md); an
+  [IR](branch-point.ir.md) of the whole text sits beside the prose. The style
+  specification keeps full text for its own rows and gains SP-27,
+  pilot-only. `scripts/check.mjs` prints the `Checks:` line;
+  `scripts/lint.mjs` warns over 25 words and checks restatements and
+  SP-27; `scripts/signals.mjs` reads signal 1 from fixes not held and
+  stops on a line it cannot read. The methodology's count 7 carries the
+  specification's changes. Gate: the two counts, then the owner
+  accepts both texts.
+- [ ] **Case 015 items the owner carries** — open. Change 1's
+  methodology side: `mtool style` warns over 25 words (methodology-tools
+  branch `style-sp02-25-words`). Change 6: case 013 change 5 to
+  project-orchestrator's backlog. Change 26: the fresh agent's
+  readability test in the methodology's style guide. Change 30: the
+  K-003 record's `Meta-review:` line reads delivered.

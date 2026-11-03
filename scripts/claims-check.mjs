@@ -7,6 +7,10 @@
 // With --old-prose <old.md> (branch point v1.5, case 008 change 1), a changed
 // claim whose best-matching sentence also stands verbatim in the old prose is
 // reported as stale: the claim changed and its sentence did not.
+// A claim's `evidence:` field is not part of its text here: an edit to the
+// field alone changes no claim (case 015 change 2, case 014 change 3). A
+// table row is also matched whole, since a row carries one claim (case 015
+// change 13).
 // Usage: node scripts/claims-check.mjs <old.ir.md> <new.ir.md> <prose.md> [--old-prose <old.md>] [--floor 0.5] [--json]
 
 import { readFileSync } from 'node:fs';
@@ -16,6 +20,11 @@ import { parseIR } from './ir.mjs';
 
 const STOP = new Set(['the', 'a', 'an', 'and', 'or', 'of', 'to', 'in', 'is', 'are', 'its', 'it', 'that', 'this', 'for', 'by', 'with', 'as', 'on', 'at', 'from', 'when', 'one', 'not', 'no', 'be', 'has', 'have', 'each', 'every', 'any', 'than', 'then', 'into', 'their', 'which', 'who', 'after', 'before']);
 
+// A claim's text without its `evidence:` field.
+export function claimText(t) {
+  return t.replace(/\s*evidence:\s*E\d+(?:\s*(?:,|and)\s*E\d+)*\.?/g, '').trim();
+}
+
 export function contentWords(s) {
   return new Set(s.toLowerCase().replace(/`[^`]*`/g, (m) => m).replace(/[^a-z0-9`<>\-\s]/g, ' ').split(/\s+/).filter((w) => w.length > 2 && !STOP.has(w)));
 }
@@ -23,17 +32,23 @@ export function contentWords(s) {
 export function sentencesOf(prose) {
   const body = prose.replace(/<!--[\s\S]*?-->/g, '').replace(/\[([^\]]+)\]\([^)]*\)/g, '$1');
   const out = [];
+  const rows = [];
   for (const line of body.split('\n')) {
     const t = line.trim();
     if (!t || /^#/.test(t)) continue;
-    if (/^\|/.test(t)) { for (const cell of t.split('|')) for (const s of cell.split(/(?<=[.!?])\s+(?=[A-Z`"(])/)) if (s.trim().length > 3) out.push(s.trim()); continue; }
+    if (/^\|/.test(t)) {
+      if (/^\|[\s:|-]+$/.test(t)) continue;
+      for (const cell of t.split('|')) for (const s of cell.split(/(?<=[.!?])\s+(?=[A-Z`"(])/)) if (s.trim().length > 3) rows.push(s.trim());
+      rows.push(t.split('|').map((c) => c.trim()).filter(Boolean).join(' '));
+      continue;
+    }
     out.push(t);
   }
   // join wrapped lines into paragraphs, then split into sentences
   const joined = []; let cur = '';
   for (const l of out) { if (/[.!?]$/.test(cur) || cur === '') { if (cur) joined.push(cur); cur = l; } else cur += ' ' + l; }
   if (cur) joined.push(cur);
-  return joined.flatMap((p) => p.split(/(?<=[.!?])\s+(?=[A-Z`"(\[])/)).map((s) => s.trim()).filter(Boolean);
+  return [...joined.flatMap((p) => p.split(/(?<=[.!?])\s+(?=[A-Z`"(\[])/)), ...rows].map((s) => s.trim()).filter(Boolean);
 }
 
 export function overlap(a, b) {
@@ -44,12 +59,12 @@ export function overlap(a, b) {
 
 export function claimsCheck(oldText, newText, proseText, { floor = 0.5, oldProseText = null } = {}) {
   const oldSentences = oldProseText === null ? null : new Set(sentencesOf(oldProseText));
-  const oldC = new Map(parseIR(oldText).elements.filter((e) => e.kind === 'C').map((e) => [e.id, e.text]));
+  const oldC = new Map(parseIR(oldText).elements.filter((e) => e.kind === 'C').map((e) => [e.id, claimText(e.text)]));
   const newC = parseIR(newText).elements.filter((e) => e.kind === 'C');
   const sentences = sentencesOf(proseText).map((s) => ({ s, w: contentWords(s) }));
-  const changed = newC.filter((e) => oldC.get(e.id) !== e.text);
+  const changed = newC.filter((e) => oldC.get(e.id) !== claimText(e.text));
   const rows = changed.map((e) => {
-    const w = contentWords(e.text);
+    const w = contentWords(claimText(e.text));
     let best = { score: 0, sentence: '' };
     for (const x of sentences) { const sc = overlap(w, x.w); if (sc > best.score) best = { score: sc, sentence: x.s }; }
     const missing = best.score < floor;
