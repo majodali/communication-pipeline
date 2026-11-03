@@ -63,6 +63,7 @@ Signals script before the round: no round recorded yet; nothing to read.
 | 5 | 2,676 | 160 | 5 | 1.9 | not readable (mismatches 0; contradiction 1; undefined term 1; paraphrase-test findings 1) |
 | 6 | 2,707 | 161 | 12 | 4.4 | not readable (mismatches 0; contradiction 1; undefined term 1; paraphrase-test findings 2) |
 | 7 | 2,718 | 164 | 12 | 4.4 | not readable (mismatches 0; contradiction 1; undefined terms 0; paraphrase-test findings 3) |
+| 8 | 2,740 | 165 | | | pending |
 
 ### Round 1, count 1, 2026-11-02
 
@@ -478,4 +479,25 @@ Recorded as an edge: the commit that opened round 7, 87fac4c, left both status l
 
 Claims after fixes: 165 (C5 cut; C167 and C168 added). Prose after fixes: 2,723 words. Structural fixes owed: none. Decided claims the fixes reworded, for the owner at acceptance: C33, C45, C141, C150 and C159. Decided claims cut: C5. Decided claim added: C168 (split from C159).
 
-The confirmation is pending.
+Confirmation: 8 of 9 fixes hold. Not held: 6. Declines accepted: 2 of 3. New defects: 2.
+
+The instance read both files in full at fix commit 0107d94. The confirmation's fixes, IR first, before round 8 opens:
+
+- Fix 6 did not hold: the range "SP-01 (one claim per sentence) to SP-05 (identifiers named)" was SP-02's first use, and SP-03 and SP-04 stayed bare. The bullet now names each row: SP-01 (one claim per sentence), SP-02 (sentence length), SP-03 (referents named), SP-04 (terms defined) and SP-05 (identifiers named). The next bullet's range gets the same treatment, naming SP-09 (no chained clauses) and SP-10 (headers state their contents). C150 drops the name it had added: "The 25-word limit of SP-02 binds the sentences of the prose." C86, in the IR, keeps its ranges of the style specification's rows; it names them as rows of that table.
+- N1 (term order): T37 sat before T36 in the IR's Terms. The terms are now in order.
+- N2 (SP-03, "for its reader" could name RD-4 or the owner, C167): C167 reads "This text names the human owner as its human reader, in the Reader line's second sentence."
+- Z3, decline not accepted: the instance holds that C55 counts a repeated sentence under the fourth condition. The decline stands on round 1's P3 and P4 reason. C55 records the check's item as a finding, and the reasoning role decides each finding. The fourth condition counts a passage the stranger cannot restate without a term the text introduces; a repeated plain sentence shows no such passage. Recorded for the owner with the instance's reason.
+- Declines Z1 and Z2 accepted.
+
+Step 6's check, `npm run check -- docs/branch-point.md --base 0107d94`:
+Checks: 0 sentences over 25 words; 165 of 165 claims mapped; 2 claims changed, 0 missing, 0 stale.
+
+Prose after the confirmation's fixes: 2,740 words; IR 165 claims; unratified terms 2 (T34, T35). Decided claim reworded after confirmation, for the owner at acceptance: C150.
+
+Signals script after the confirmation line: signal 1 stands, now with fixes not held in rounds 1 to 7. Signal 4 stands by reading.
+
+### Round 8, count 1, 2026-11-02
+
+The round reads the text at its opening commit, named in the brief, under v1.11 at commit 12ff480. Prose 2,740 words; IR 165 claims; unratified terms 2 (T34, T35). Human reader for the paraphrase test: the human owner. Stranger: pending, a fresh instance.
+
+Declines carried in the round 8 brief: v1.9 round 1's F3; round 1's 3, 14 and 16; round 2's 1 and 2; round 4's 1, 2, 3 and 9, each with its reason. Round 4's 9 now sits on two sentences, after round 7 split C159; its ground, that the sentences repeat BP-00 to answer an old contradiction, stands, so it carries with its description updated. Not carried: the restatement-check items. The brief names the passages round 7 and its confirmation changed, the departure kept for this count. Passages awaiting restatement: none.

@@ -2,7 +2,7 @@
 
 Reader: RD-4
 Purpose: document. The branch point as a whole: which checks a text gets before it reaches its reader, and how its review rounds run, after the adopted changes of evaluation case 015.
-Status: rendered (v1.11, round 7 fix pass; rendered by the reasoning role, D3)
+Status: rendered (v1.11, round 8; rendered by the reasoning role, D3)
 Source: the owner's decision of 2026-11-02 on evaluation case 015 (changes 1 to 30 adopted, changes 31 to 35 declined); the adopted changes of cases 013 (1, 2, 3 and 5) and 014 (1 to 8), whose landing joined case 015; branch point v1.10 as the owner accepted it on 2026-11-01; the IRs of v1.4 to v1.10 under docs/records/.
 Normative: yes
 Footprint: docs/branch-point.md; docs/records/branch-point-history.md; docs/style-spec.md; docs/vocabulary.md; docs/backlog.md; .claude/agents/; .claude/skills/; scripts/; package.json
@@ -79,9 +79,9 @@ T34. Term the text introduces: a term the text defines or links to a vocabulary 
 
 T35. Recurring claim: a claim named on the `Mismatches:` lines of two rounds of the text's counts. [proposed: this IR]
 
-T37. Rendering. defined-at: https://github.com/majodali/methodology/blob/main/docs/vocabulary.md#def-rendering [decided: methodology vocabulary]
-
 T36. Verdict. defined-at: https://github.com/majodali/methodology/blob/main/docs/intermediate-representation.md#the-verdict [decided: methodology specification, The verdict]
+
+T37. Rendering. defined-at: https://github.com/majodali/methodology/blob/main/docs/vocabulary.md#def-rendering [decided: methodology vocabulary]
 
 ## Claims
 
@@ -195,7 +195,7 @@ C44. In step 2, the reasoning role starts a fresh stranger instance from the age
 
 C45. In the brief, the reasoning role names the commit to read and the human reader the text names for its reader. [decided: owner, 2026-11-02, case 015 changes 26 and 29; reworded in count 1, round 2; reworded in count 1, round 7]
 
-C167. This text names the human owner for its reader, in the Reader line's second sentence. [inferred: R7]
+C167. This text names the human owner as its human reader, in the Reader line's second sentence. [inferred: R7]
 
 C46. In the brief, the reasoning role names each finding the reasoning role declined so far, in whole or in part, with its reason. [decided: owner, 2026-11-02, case 015 change 7; reworded in count 1, round 4]
 
@@ -317,7 +317,7 @@ C86. The stranger reports findings against the style specification's rows SP-01 
 
 C87. For each mismatch, the brief asks the stranger to quote the prose sentence the stranger relied on. [decided: branch point v1.10 IR, C15]
 
-C150. The 25-word limit of SP-02 (sentence length) binds the sentences of the prose. [decided: owner, 2026-11-02, case 015 change 1; added after round 1 confirmation; reworded in count 1, round 7]
+C150. The 25-word limit of SP-02 binds the sentences of the prose. [decided: owner, 2026-11-02, case 015 change 1; added after round 1 confirmation; reworded after round 7 confirmation]
 
 C151. An IR claim's limit is 40 words, the specification's check CK-02 (claim length). [decided: methodology intermediate-representation specification, C54; added after round 1 confirmation]
 
