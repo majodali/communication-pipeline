@@ -62,7 +62,7 @@ Signals script before the round: no round recorded yet; nothing to read.
 | 4 | 2,660 | 160 | 11 | 4.1 | not readable (mismatch 1; contradictions 0; undefined term 1; paraphrase-test findings 2) |
 | 5 | 2,676 | 160 | 5 | 1.9 | not readable (mismatches 0; contradiction 1; undefined term 1; paraphrase-test findings 1) |
 | 6 | 2,707 | 161 | 12 | 4.4 | not readable (mismatches 0; contradiction 1; undefined term 1; paraphrase-test findings 2) |
-| 7 | 2,718 | 164 | | | pending |
+| 7 | 2,718 | 164 | 12 | 4.4 | not readable (mismatches 0; contradiction 1; undefined terms 0; paraphrase-test findings 3) |
 
 ### Round 1, count 1, 2026-11-02
 
@@ -438,3 +438,44 @@ Signals script after the confirmation line: signal 1 stands, now with fixes not 
 The round reads the text at its opening commit, named in the brief, under v1.11 at commit 12ff480. Prose 2,718 words; IR 164 claims; unratified terms 2 (T34, T35). Human reader for the paraphrase test: the human owner. Stranger: pending, a fresh instance.
 
 Declines carried in the round 7 brief: v1.9 round 1's F3; round 1's 3, 14 and 16; round 2's 1 and 2; round 4's 1, 2, 3 and 9, each with its reason. Not carried: the restatement-check items. The brief names the passages round 6 and its confirmation changed, the departure kept for this count. Passages awaiting restatement: none.
+
+Stranger model: claude-haiku-5-5, a fresh instance, reading at commit 87fac4c. It wrote its restatement before it opened the IR and made no call outside its brief.
+
+Restatement:
+
+> The problem: a text reaches its reader only after some checking, and this text decides how much checking each one gets. Each text is first turned into a structured list of its statements, requests and words the owner has not yet approved. Ordered rules, the first match winning, then pick one of four checking levels: a mechanical check alone; that check plus a plain-prose rewrite for the reader; that plus fresh-reader reviews, each retelling the text in its own words and reporting mismatches; or those reviews with the rewrite done by the working agent. The rules test who the reader is, whether the owner asked for a review, whether the text sets binding rules, and whether the counts pass set limits. The text also sets the review steps: check, brief a fresh reviewer, record its report, fix, confirm the fixes, and close with stopping signals. The owner sets the limits, which stay provisional until a test corpus tunes them.
+
+Prose 2,718 words by `wordCount` (the stranger's estimate: about 2,800); IR 164 claims; 9 findings from the stranger and 3 from the restatement check, 12 in all, 4.4 per thousand words. Restatement: no mismatch. Listed passages: none. Contradiction 1 (finding 5), undefined terms 0, paraphrase-test findings 3 (the check's items; the stranger found none, and owns its everyday use of "counts"); verdict: not readable for RD-4. Omissions noticed, not counted: 4.
+Mismatches: none
+
+Restatement check, `node scripts/lint.mjs --restatement docs/branch-point.review.md --round 7`: 3 items, Z1 ("counts"), Z2 ("limits") and Z3 (a repeat of the plain purpose).
+
+Signals script after the `Mismatches:` line: signal 1 stands from rounds 1 to 6; no claim recurs. By reading, signal 4 stands: finding 5 is a contradiction in step 2, a passage round 2's fix touched (C45).
+
+Finding 5 settled. The Reader line names RD-4, and its second sentence names the human owner (C142). Steps 2 and 3 asked for the human reader "the text's Reader line names", and the stranger took the Reader line to be its first sentence. C45 now asks for "the human reader the text names for its reader", within case 015 change 26. A new sentence points to this text's answer: "This text names the human owner for its reader, in the Reader line's second sentence." (C167, inferred by R7 from C142). No rule is added. A text that names no human reader stays the change 26 gap, listed for the owner with its proposed wording.
+
+| # | Finding (shortened) | Kind | Decision |
+|---|---|---|---|
+| 1 | the plain purpose states two decisions (C1) | SP-01 | fixed: the review clause cut; "This document decides how much checking a text gets before it reaches its reader." The Rounds section states the review |
+| 2 | "The Versions section lists the versions." (C5) | SP-26 | fixed: cut. Round 2's void reading raised it too, as advisory |
+| 3 | "rendering" used in the Purpose before its meaning (C11) | SP-04 | fixed: linked to the methodology vocabulary's entry; T37 added to the IR's Terms, decided by that source |
+| 4 | "they" in the Rounds introduction (C33) | SP-03 | fixed: "the scripts the reasoning role runs and the lines it writes"; the reasoning role's link moves to this first use |
+| 5 | the steps ask for a human reader the Reader line does not name (C45, C49) | SP-25 | fixed: C45 reworded and C167 added, as above |
+| 6 | SP-02 to SP-04 named only inside a range; SP-02 bare at its first use (C150) | SP-05 | fixed: "The 25-word limit of SP-02 (sentence length) binds the sentences of the prose." The range names and links its two ends, and the linked rule table names each row between |
+| 7 | the IR-only sentence holds two claims (C159) | SP-01 | fixed: split into C159 and C168, "Rows BP-03 and BP-04 never apply to such a document." Round 4's 9 declined an SP-26 finding, not this one |
+| 8 | five case numbers unlinked in Versions | SP-05 | fixed: cases 012, 010, 011, 009, 008 and 007 linked to their files |
+| 9 | C141 repeats C6's tuning of the thresholds | SP-26 | fixed: "The dispatch log is the data the evaluation corpus tunes against." |
+| Z1 | "whether the counts pass set limits" uses "Count" (T12) | paraphrase test | declined: the plain noun for the numbers the rules test, not the text's term for one review's rounds, as round 6's V1 |
+| Z2 | "set limits" and "the limits" use "Limit" (T13) | paraphrase test | declined: the plain word for the thresholds' numbers, as round 5's W1; the restatement says what they are, "provisional until a test corpus tunes them" |
+| Z3 | the first sentence repeats the plain purpose (73 percent) | paraphrase test | declined: the plain purpose holds no term the text introduces, as round 1's P4 and round 3's R1 |
+
+Step 5, `npm run check -- docs/branch-point.md --base 87fac4c`, on the fixed text:
+Checks: 0 sentences over 25 words; 165 of 165 claims mapped; 8 claims changed, 0 missing, 0 stale.
+
+The lint warns once more on the Versions row of v1.10: SP-23 reads "meta-review" inside the file name of the case 012 link. The warning is a false positive, as in round 6. Recorded, not fixed.
+
+Recorded as an edge: the commit that opened round 7, 87fac4c, left both status lines at round 6. The prose now reads `under review (v1.11, round 7)`, and the IR's Status parenthesis reads round 7's fix pass.
+
+Claims after fixes: 165 (C5 cut; C167 and C168 added). Prose after fixes: 2,723 words. Structural fixes owed: none. Decided claims the fixes reworded, for the owner at acceptance: C33, C45, C141, C150 and C159. Decided claims cut: C5. Decided claim added: C168 (split from C159).
+
+The confirmation is pending.

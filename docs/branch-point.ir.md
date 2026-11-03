@@ -2,7 +2,7 @@
 
 Reader: RD-4
 Purpose: document. The branch point as a whole: which checks a text gets before it reaches its reader, and how its review rounds run, after the adopted changes of evaluation case 015.
-Status: rendered (v1.11, round 6 fix pass; rendered by the reasoning role, D3)
+Status: rendered (v1.11, round 7 fix pass; rendered by the reasoning role, D3)
 Source: the owner's decision of 2026-11-02 on evaluation case 015 (changes 1 to 30 adopted, changes 31 to 35 declined); the adopted changes of cases 013 (1, 2, 3 and 5) and 014 (1 to 8), whose landing joined case 015; branch point v1.10 as the owner accepted it on 2026-11-01; the IRs of v1.4 to v1.10 under docs/records/.
 Normative: yes
 Footprint: docs/branch-point.md; docs/records/branch-point-history.md; docs/style-spec.md; docs/vocabulary.md; docs/backlog.md; .claude/agents/; .claude/skills/; scripts/; package.json
@@ -79,13 +79,15 @@ T34. Term the text introduces: a term the text defines or links to a vocabulary 
 
 T35. Recurring claim: a claim named on the `Mismatches:` lines of two rounds of the text's counts. [proposed: this IR]
 
+T37. Rendering. defined-at: https://github.com/majodali/methodology/blob/main/docs/vocabulary.md#def-rendering [decided: methodology vocabulary]
+
 T36. Verdict. defined-at: https://github.com/majodali/methodology/blob/main/docs/intermediate-representation.md#the-verdict [decided: methodology specification, The verdict]
 
 ## Claims
 
 ### Plain purpose
 
-C1. This document decides how much checking a text gets before it reaches its reader, and how the review of the text runs. [inferred: R1]
+C1. This document decides how much checking a text gets before it reaches its reader. [inferred: R1]
 
 C2. The agents that route and review texts read the document, and the human owner reads it to set the numbers its rules use. [inferred: R2]
 
@@ -94,8 +96,6 @@ C2. The agents that route and review texts read the document, and the human owne
 C3. Version 1.11 carries the adopted changes of evaluation case 015, a ruleset review, that bear on the branch point, this document's rules. evidence: E1. [decided: owner, 2026-11-02, case 015 change 29]
 
 C4. Version 1.10, the latest version the owner accepted, is active on main while version 1.11 is under review. [decided: owner, 2026-11-01]
-
-C5. The Versions section lists the versions. [decided: branch point v1.10 IR, C3]
 
 C6. The thresholds, the numbers in the rules' conditions, are provisional until the evaluation corpus tunes them. [decided: branch point v1.4 IR, C37; reworded in count 1, round 1]
 
@@ -165,7 +165,7 @@ C31. A round is one fresh stranger's reading of the text, the fixes that follow,
 
 C32. The methodology specification's Stranger rounds section holds the rules every round follows: the verdict, the fix rules, confirmation, the limit and the signals. evidence: E1. [decided: owner, 2026-11-02, case 015 change 7]
 
-C33. The Rounds section holds this project's steps, the scripts they run and the lines they write in the review record. evidence: E1. [decided: owner, 2026-11-02, case 015 change 7; reworded in count 1, round 3]
+C33. The Rounds section holds this project's steps, the scripts the reasoning role runs and the lines it writes in the review record. evidence: E1. [decided: owner, 2026-11-02, case 015 change 7; reworded in count 1, round 3; reworded in count 1, round 7]
 
 C34. At a count's start, the reasoning role writes the branch point version and commit into the review record. [decided: branch point v1.9 IR, C2]
 
@@ -193,7 +193,9 @@ C43. The reasoning role writes the `Checks:` line. evidence: E1. [decided: owner
 
 C44. In step 2, the reasoning role starts a fresh stranger instance from the agent file `.claude/agents/reviewer.md`, with the brief below. evidence: E1. [decided: owner, 2026-11-02, case 015 change 23]
 
-C45. In the brief, the reasoning role names the commit to read and the human reader the text's Reader line names. [decided: owner, 2026-11-02, case 015 changes 26 and 29; reworded in count 1, round 2]
+C45. In the brief, the reasoning role names the commit to read and the human reader the text names for its reader. [decided: owner, 2026-11-02, case 015 changes 26 and 29; reworded in count 1, round 2; reworded in count 1, round 7]
+
+C167. This text names the human owner for its reader, in the Reader line's second sentence. [inferred: R7]
 
 C46. In the brief, the reasoning role names each finding the reasoning role declined so far, in whole or in part, with its reason. [decided: owner, 2026-11-02, case 015 change 7; reworded in count 1, round 4]
 
@@ -315,7 +317,7 @@ C86. The stranger reports findings against the style specification's rows SP-01 
 
 C87. For each mismatch, the brief asks the stranger to quote the prose sentence the stranger relied on. [decided: branch point v1.10 IR, C15]
 
-C150. SP-02's limit of 25 words binds the sentences of the prose. [decided: owner, 2026-11-02, case 015 change 1; added after round 1 confirmation]
+C150. The 25-word limit of SP-02 (sentence length) binds the sentences of the prose. [decided: owner, 2026-11-02, case 015 change 1; added after round 1 confirmation; reworded in count 1, round 7]
 
 C151. An IR claim's limit is 40 words, the specification's check CK-02 (claim length). [decided: methodology intermediate-representation specification, C54; added after round 1 confirmation]
 
@@ -353,7 +355,9 @@ C102. Row BP-00: when the owner designated the document IR-only and the IR heade
 
 C147. Under BP-00 the IR is the deliverable, its Status reads `delivered IR-only`, and no later row applies. [decided: owner, 2026-10-30, branch point v1.8]
 
-C159. A document the owner designates IR-only, with no `Normative: yes`, gets the lint alone, and rows BP-03 and BP-04 never apply to it. [decided: owner, 2026-10-30, branch point v1.8; added after round 3 confirmation]
+C159. A document the owner designates IR-only, with no `Normative: yes`, gets the lint alone. [decided: owner, 2026-10-30, branch point v1.8; added after round 3 confirmation; reworded in count 1, round 7]
+
+C168. Rows BP-03 and BP-04 never apply to such a document. [decided: owner, 2026-10-30, branch point v1.8; split from C159 in count 1, round 7]
 
 C103. Row BP-02a: when the purpose is `document` and the IR header carries `Normative: yes`, the disposition is D3. [decided: owner, 2026-10-26, branch point v1.2]
 
@@ -449,11 +453,11 @@ C139. The dispatcher records, for every IR the dispatcher routes, the inputs, th
 
 C140. Chunk 2 of the pilot plan created `eval/dispatch-log.md`. [decided: owner, 2026-10-25, chunk 2]
 
-C141. The dispatch log is the data the evaluation corpus tunes the thresholds against. [decided: owner, 2026-10-25, chunk 2; reworded in count 1, round 2]
+C141. The dispatch log is the data the evaluation corpus tunes against. [decided: owner, 2026-10-25, chunk 2; reworded in count 1, round 2; reworded in count 1, round 7]
 
 G1. cluster: C36, C37, C38, C39, C40, C41, C42, C43 [decided: owner, 2026-11-02, case 015 change 13]
 
-G2. cluster: C44, C45, C46, C47 [decided: owner, 2026-11-02, case 015 change 13]
+G2. cluster: C44, C45, C167, C46, C47 [decided: owner, 2026-11-02, case 015 change 13]
 
 G3. cluster: C48, C49, C50, C51, C52 [decided: owner, 2026-11-02, case 015 change 13]
 
@@ -479,6 +483,8 @@ R5. C156 refines C13 because rows BP-07 and BP-08 give D1 to a report past their
 
 R6. C166 refines C73 because each letter in the `Checks:` and `Confirmation:` forms marks a number the reasoning role writes in its place.
 
+R7. C167 refines C45 because C142 says the human owner reads the branch point with no more context than RD-4.
+
 ## Evidence
 
 E1. eval/cases/015-ruleset-simplification-review-2026-11-02.md, Outcome, changes 1 to 30, adopted by the owner on 2026-11-02 (changes 31 to 35 declined), the case's decision line.
@@ -491,7 +497,7 @@ E4. docs/backlog.md, chunk 3's row: "Scope narrowed per the owner: reports to RD
 
 ## Asks
 
-A1. Accept or reject branch point v1.11. Under case 015 change 19, acceptance ratifies the wording of each decided claim this IR rewords from its source, unless the owner names a claim to exclude. Depends: C1 to C166.
+A1. Accept or reject branch point v1.11. Under case 015 change 19, acceptance ratifies the wording of each decided claim this IR rewords from its source, unless the owner names a claim to exclude. Depends: C1 to C168.
 
 A2. Ratify or strike the term "a term the text introduces" (T34) and its definition, C157, which the paraphrase test rests on; the specification's count 7 asks the same. Depends: C157.
 
