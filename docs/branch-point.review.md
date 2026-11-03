@@ -654,4 +654,52 @@ Checks: 0 sentences over 25 words; 167 of 167 claims mapped; 8 claims changed, 0
 
 Claims after fixes: 167 (C170 added). Prose after fixes: 2,797 words. Structural fixes owed: none. Decided claims the fixes reworded, for the owner at acceptance: C39, C47, C50, C83, C116 and C126. Decided claim added: C170, split from C39. Ask A2 names the specification in full.
 
-The confirmation is pending.
+Confirmation: 8 of 10 fixes hold. Not held: 3, 11. Declines accepted: 2 of 4. New defects: 1.
+
+The instance read both files in full at fix commit 6127b29. The line above is derived from its answers: it wrote "7 of 10 fixes hold" over eight answers of "holds". Recorded as an edge.
+
+The readable round's findings, marked as the final-round rules ask:
+
+| # | Mark |
+|---|---|
+| 2, 4, 5, 6, 7, 8, 9, 10 | confirmed |
+| 3 | unfixed: the instance found no base named for the claims check after round 1. C40 names it before round 1 and C61 for step 5's check; the stranger did not reach C61 from step 1. Proposed for the next edit: C170 points to step 5's base |
+| 11 | unfixed: A2's "ask A12" names an ask of the other IR without a link |
+
+New defect N1, the same as finding 11's residue, is not fixed in the count; it goes to the owner and is fixed at the next edit of the text. Declines DD1 and DD2 not accepted, kept on their recorded reasons; declines 1 and DD3 accepted. No further fix is made in this count.
+
+Signals script after the confirmation line: signal 1 now covers fixes not held in rounds 1 to 7 and 10. By reading, signal 2's declined-finding part fires on round 10's finding 1, and signal 4 stands from rounds 3, 5, 6 and 7.
+
+### Verdict, count 1
+
+Readable for RD-4 at round 10 of a count of ten, on 2026-11-02, under branch point v1.11. The verdict came in the last round before the limit; the limit was not reached.
+
+| Round | Findings per 1,000 words | Contradictions | Held at first confirmation |
+|---|---|---|---|
+| 1 | 10.0 | 2 | 15 of 17 |
+| 2 | 4.8 | 2 | 7 of 8 |
+| 3 | 5.9 | 4 | 11 of 13 |
+| 4 | 4.1 | 0 | 4 of 5 |
+| 5 | 1.9 | 1 | 3 of 4 |
+| 6 | 4.4 | 1 | 6 of 10 |
+| 7 | 4.4 | 1 | 8 of 9 |
+| 8 | 4.4 | 1 | 9 of 9 |
+| 9 | 2.5 | 0 | 5 of 5 |
+| 10 | 5.0 | 0 | 8 of 10 |
+
+Findings in all: 124 across ten rounds. Restatement mismatches: 7, none recurring. Contradictions: 12. Undefined terms: 16. Held at first confirmation: 76 of 90 fixes. New defects at confirmation: 16; the fifteen of rounds 1 to 9 were fixed before the next round, and round 10's goes to the owner.
+
+Meta-review: pending (signals 1, 2 and 4). Signals checked at the end of count 1: signal 1 by `node scripts/signals.mjs`, fixes not held in rounds 1 to 7 and 10; signal 2 by the script, no recurring claim, and by reading, round 10's finding 1 raised a carried decline; signal 4 by reading, contradictions in fix-touched passages in rounds 3, 5, 6 and 7.
+
+Owner items for branch point v1.11, one list:
+
+1. A1: accept or reject branch point v1.11. Acceptance ratifies the decided claims the count reworded, split or added, each with its note in the IR (case 015 change 19): C6, C9, C10, C11, C12, C13, C14, C20, C21, C23, C25, C27, C31, C33, C39, C41, C45, C46, C47, C50, C58, C61, C62, C68, C70, C75, C87, C102, C109, C113, C114, C115, C116, C119, C120, C121, C122, C125, C126, C127, C131, C141, C142, C143, C146, C149, C150, C151, C152, C153, C154, C155, C158, C159, C160, C161, C162, C164, C165, C168 and C170, unless the owner names one to exclude.
+2. A2: ratify or strike "a term the text introduces" (T34, C157). The methodology's intermediate-representation specification asks the same in its count 7. Default: ratify.
+3. A3: ratify or strike "recurring claim" (T35, C163). Default: ratify.
+4. A4: ratify or strike "calibration" (T38, C169). Default: ratify.
+5. Unfixed residue of the readable round, for the next edit: finding 3 (a pointer from C170 to step 5's base) and finding 11 with N1 (A2's reference to the specification's ask, with a link).
+6. The change 26 gap, no rule added in the count (C279): a text whose Reader line names no human reader. Proposed wording: "When the Reader line names no human reader, the brief names the human owner." This text's own answer is C167.
+7. Declines the confirming instance did not accept, kept on their recorded reasons: round 1's 14 and 16 (settled in the text by C150 and C151); round 1's P3 and P4, round 5's W1, round 7's Z3, round 8's AA2, round 9's BB2 and round 10's DD1 and DD2, the restatement check's plain-sense and repeated-sentence items.
+8. Edges: round 2's void reading and the stranger's documentation call; round 2's and round 10's confirmation lines, derived from the answers; round 6's fix pass fixing the prose ahead of the IR on findings 4, 5, 7 and 9; round 7's opening with stale status lines; round 8's documentation call; the lint's false positive on "meta-review" in a case file name.
+9. Note: round 2's void reading's findings were advisory, so the second signal's declined-finding part does not read them; two of them, "changed claim" and "calibrations", were taken up in round 8.
+10. For the next ruleset review: the restatement check's plain-sense and repeated-sentence flags; the round-trip script checks that each claim is mapped, not where; `mtool ir check` does not resolve ranges in `Depends:`; the changed-passages brief departure, kept for this count; the brief's list of non-defect forms holds two forms the prose's list does not, as C97 and C98 provide.
