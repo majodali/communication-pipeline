@@ -64,6 +64,7 @@ Signals script before the round: no round recorded yet; nothing to read.
 | 6 | 2,707 | 161 | 12 | 4.4 | not readable (mismatches 0; contradiction 1; undefined term 1; paraphrase-test findings 2) |
 | 7 | 2,718 | 164 | 12 | 4.4 | not readable (mismatches 0; contradiction 1; undefined terms 0; paraphrase-test findings 3) |
 | 8 | 2,740 | 165 | 12 | 4.4 | not readable (mismatches 2; contradiction 1; undefined terms 3; paraphrase-test findings 2) |
+| 9 | 2,781 | 166 | | | pending |
 
 ### Round 1, count 1, 2026-11-02
 
@@ -543,4 +544,23 @@ The lint's warning on the v1.10 Versions row, "meta-review" in a case file name,
 
 Claims after fixes: 166 (C169 added). Prose after fixes: 2,781 words. Structural fixes owed: none. Decided claims the fixes reworded, for the owner at acceptance: C12, C31, C39, C70 and C113.
 
-The confirmation is pending.
+Confirmation: 9 of 9 fixes hold. Not held: none. Declines accepted: 2 of 3. New defects: 1.
+
+The instance read both files in full at fix commit c058dee. The confirmation's fix, IR first, before round 9 opens:
+
+- N1 (a term the text defines without a Terms entry or an ask): "calibration" is defined in the text, so it is a term the text introduces. T38 is added, "Calibration: a dated refinement of a style rule's scope, recorded in the rule's row.", proposed by this IR. C169 is now `[proposed: this IR]`. Ask A4 asks the owner to ratify or strike it, as A2 and A3 do for T34 and T35. Unratified terms: 3. This replaces the round 8 entry's note that the word would be ratified with A1.
+- AA2, decline not accepted: the instance holds that the fourth condition also counts repeated sentences. The decline stands on round 1's P3 and P4 reason, as for round 7's Z3. Recorded for the owner with the instance's reason.
+- Declines 2 and AA1 accepted.
+
+Step 6's check, `npm run check -- docs/branch-point.md --base c058dee`:
+Checks: 0 sentences over 25 words; 166 of 166 claims mapped; 0 claims changed, 0 missing, 0 stale.
+
+Prose after the confirmation's fix: 2,781 words; IR 166 claims; unratified terms 3 (T34, T35, T38).
+
+Signals script after the confirmation line: round 8 held every fix, so signal 1 does not widen; it stands from rounds 1 to 7. Signal 4 stands by reading.
+
+### Round 9, count 1, 2026-11-02
+
+The round reads the text at its opening commit, named in the brief, under v1.11 at commit 12ff480. Prose 2,781 words; IR 166 claims; unratified terms 3 (T34, T35, T38). Human reader for the paraphrase test: the human owner. Stranger: pending, a fresh instance. Round 9 is the second to last before the limit.
+
+Declines carried in the round 9 brief: v1.9 round 1's F3; round 1's 3, 14 and 16; round 2's 1 and 2; round 4's 1, 2, 3 and 9; round 8's 2, each with its reason. Not carried: the restatement-check items. The brief names the passages round 8 and its confirmation changed, the departure kept for this count. Passages awaiting restatement: none.

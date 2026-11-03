@@ -2,7 +2,7 @@
 
 Reader: RD-4
 Purpose: document. The branch point as a whole: which checks a text gets before it reaches its reader, and how its review rounds run, after the adopted changes of evaluation case 015.
-Status: rendered (v1.11, round 8 fix pass; rendered by the reasoning role, D3)
+Status: rendered (v1.11, round 9; rendered by the reasoning role, D3)
 Source: the owner's decision of 2026-11-02 on evaluation case 015 (changes 1 to 30 adopted, changes 31 to 35 declined); the adopted changes of cases 013 (1, 2, 3 and 5) and 014 (1 to 8), whose landing joined case 015; branch point v1.10 as the owner accepted it on 2026-11-01; the IRs of v1.4 to v1.10 under docs/records/.
 Normative: yes
 Footprint: docs/branch-point.md; docs/records/branch-point-history.md; docs/style-spec.md; docs/vocabulary.md; docs/backlog.md; .claude/agents/; .claude/skills/; scripts/; package.json
@@ -82,6 +82,8 @@ T35. Recurring claim: a claim named on the `Mismatches:` lines of two rounds of 
 T36. Verdict. defined-at: https://github.com/majodali/methodology/blob/main/docs/intermediate-representation.md#the-verdict [decided: methodology specification, The verdict]
 
 T37. Rendering. defined-at: https://github.com/majodali/methodology/blob/main/docs/vocabulary.md#def-rendering [decided: methodology vocabulary]
+
+T38. Calibration: a dated refinement of a style rule's scope, recorded in the rule's row. [proposed: this IR]
 
 ## Claims
 
@@ -313,7 +315,7 @@ C84. After reading the IR, the stranger reports each disagreement between its re
 
 C85. The stranger reports as a finding each passage the stranger cannot restate without a term the text introduces. evidence: E1. [decided: owner, 2026-11-02, case 015 change 26]
 
-C169. A calibration is a dated refinement of a style rule's scope, recorded in the rule's row. [inferred: R8]
+C169. A calibration is a dated refinement of a style rule's scope, recorded in the rule's row. [proposed: this IR]
 
 C86. The stranger reports findings against the style specification's rows SP-01 to SP-05, SP-08 to SP-11, SP-18, SP-25 and SP-26, with the calibrations the rows carry. evidence: E1. [decided: owner, 2026-11-02, case 015 change 11]
 
@@ -506,3 +508,5 @@ A1. Accept or reject branch point v1.11. Under case 015 change 19, acceptance ra
 A2. Ratify or strike the term "a term the text introduces" (T34) and its definition, C157, which the paraphrase test rests on; the specification's count 7 asks the same. Depends: C157.
 
 A3. Ratify or strike the term "recurring claim" (T35) and its definition, C163, which step 5's structural fix rests on. Depends: C163.
+
+A4. Ratify or strike the term "calibration" (T38) and its definition, C169, which the stranger brief's rows rest on. Depends: C169.

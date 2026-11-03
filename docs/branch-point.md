@@ -2,7 +2,7 @@
 
 This document decides how much checking a text gets before it reaches its reader. The agents that route and review texts read the document, and the human owner reads it to set the numbers its rules use.
 
-Status: under review (v1.11, round 8). Version 1.11 carries the adopted changes of [evaluation case](vocabulary.md#def-evaluation-case) 015, a ruleset review, that bear on the [branch point](vocabulary.md#def-branch-point), this document's rules. Version 1.10, the latest version the owner accepted, is active on main while version 1.11 is under review.
+Status: under review (v1.11, round 9). Version 1.11 carries the adopted changes of [evaluation case](vocabulary.md#def-evaluation-case) 015, a ruleset review, that bear on the [branch point](vocabulary.md#def-branch-point), this document's rules. Version 1.10, the latest version the owner accepted, is active on main while version 1.11 is under review.
 The thresholds, the numbers in the rules' conditions, are provisional until the [evaluation corpus](../eval/README.md) tunes them. The rules are the [Rendering conditions](https://github.com/majodali/methodology/blob/main/docs/intermediate-representation.md#rendering-conditions) of the methodology's [intermediate-representation specification](https://github.com/majodali/methodology/blob/main/docs/intermediate-representation.md).
 
 Type: Specification, the methodology's document type. The [dispatcher](vocabulary.md#def-dispatcher), the script that applies these rules to one [intermediate representation](https://github.com/majodali/methodology/blob/main/docs/vocabulary.md#def-intermediate-representation) (IR), implements against this document.
