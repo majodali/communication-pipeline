@@ -61,7 +61,7 @@ Signals script before the round: no round recorded yet; nothing to read.
 | 3 | 2,549 | 154 | 15 | 5.9 | not readable (mismatch 1; contradictions 4; undefined terms 3; paraphrase-test findings 2) |
 | 4 | 2,660 | 160 | 11 | 4.1 | not readable (mismatch 1; contradictions 0; undefined term 1; paraphrase-test findings 2) |
 | 5 | 2,676 | 160 | 5 | 1.9 | not readable (mismatches 0; contradiction 1; undefined term 1; paraphrase-test findings 1) |
-| 6 | 2,707 | 161 | | | pending |
+| 6 | 2,707 | 161 | 12 | 4.4 | not readable (mismatches 0; contradiction 1; undefined term 1; paraphrase-test findings 2) |
 
 ### Round 1, count 1, 2026-11-02
 
@@ -370,3 +370,48 @@ The round reads the text at its opening commit, named in the brief, under v1.11 
 
 Declines carried in the round 6 brief: v1.9 round 1's F3; round 1's 3, 14 and 16; round 2's 1 and 2; round 4's 1, 2, 3 and 9, each with its reason. Not carried: the restatement-check items. The brief names the passages round 5 and its confirmation changed, the departure kept for this count. Passages awaiting restatement: none.
 
+Stranger model: claude-haiku-5-5, a fresh instance, reading at commit 475ad72. It wrote its restatement before it opened the IR and made no call outside its brief.
+
+Restatement:
+
+> The problem: texts that reach a reader get different amounts of checking, and the document must decide how much each one gets. A text's kind, its reader, its length and whether the owner asked for a review set the amount. The document sets three levels: mechanical checks of structure and wording only; mechanical checks plus a rewording of the prose for the reader; and both of those plus repeated fresh-reader reviews. A rule table takes the text's properties and returns one level, using the first row whose condition holds. The document also sets the steps of a review, the lines the review writes, and the instructions given to each fresh reader. The owner sets the numbers in the rules' conditions, such as word counts and claim counts. Those numbers are provisional until a test corpus tunes them.
+
+Prose 2,707 words by `wordCount` (the stranger's estimate: about 2,640); IR 161 claims; 10 findings from the stranger and 2 from the restatement check, 12 in all, 4.4 per thousand words. Restatement: no mismatch. Listed passages: none. Contradiction 1 (finding 4), undefined term 1 (finding 7), paraphrase-test findings 2 (the check's items); verdict: not readable for RD-4. Omissions noticed, not counted: 4.
+Mismatches: none
+
+Restatement check, `node scripts/lint.mjs --restatement docs/branch-point.review.md --round 6`: 2 items, V1 (term) and V2 (repeat).
+
+The stranger also names two phrases of its own restatement as terms the text introduces: "mechanical checks" and "rule table". Neither is a finding. Each is a plain description. The restatement states each one's content in its own words: "checks of structure and wording only" and "takes the text's properties and returns one level". No passage resisted restatement.
+
+Signals script after the `Mismatches:` line: signal 1 stands from rounds 1 to 5; no claim recurs. By reading, signal 4 stands: finding 4 is a contradiction in the Purpose's cost sentence, a passage round 5's confirmation fixes touched.
+
+| # | Finding (shortened) | Kind | Decision |
+|---|---|---|---|
+| 1 | RD-1 and RD-3 bare in C156 | SP-05 | fixed: "RD-1 (the owner, in conversation)" and "RD-3 (a delegating agent)" (C156) |
+| 2 | "rounds" relied on in the Purpose before the Rounds section | SP-04 | fixed: linked to the Rounds section there |
+| 3 | "short report" used one sentence before its definition (C13, C156) | SP-04 | fixed: C156 now precedes C13. Both moved to the BP-09 bullet under "Why each rule", with finding 4's fix |
+| 4 | a short report costs one pass of the lint, yet BP-02 and BP-05a give it D2 or D1 (C13) | SP-25 | fixed, by rephrasing, not adding: "Under BP-09, a short report to a reader who shares the conversation costs one pass of the lint." (C13). The first matching row applies, so BP-09 holds only where BP-02 and BP-05a do not. The lint's gloss moved to C11 |
+| 5 | "the second signal" relied on in step 5 before its section | SP-04 | fixed: linked to "Meta-review signals" |
+| 6 | step 6's sentence gives two duties (C154) | SP-01 | fixed: split into C154 and C164 |
+| 7 | "readable verdict" undefined in step 7 (C70) | SP-04 | fixed: linked to the verdict's definition |
+| 8 | the table writes the `Checks:` line at step 5, but step 5 names no duty | SP-18 | fixed: "The reasoning role writes the `Checks:` line again." (C165) |
+| 9 | status lines under a heading about the review record's lines | SP-11 | fixed: the subsection is retitled "The review record's lines and the status lines" |
+| 10 | BP-07, BP-08 and BP-09 bullets repeat "an IR under the thresholds as it stands" (C120, C122) | SP-26 | fixed: cut from the BP-09 bullet. "BP-09 is the proportional-verification case." (C122) |
+| V1 | "word counts and claim counts" uses "Count" (T12) | paraphrase test | declined: the plain sense of counting, not the text's term for a sequence of rounds |
+| V2 | "Those numbers are provisional until a test corpus tunes them." repeats C6's prose sentence (75 percent) | paraphrase test | declined: the sentence holds no term the text introduces, and it replaces the linked "evaluation corpus" with the stranger's own words |
+
+Two notes from the report, neither a finding:
+
+- The brief lists two forms that the prose's list of non-defect forms does not. The text provides for this. The reasoning role adds to the brief any form the text under review needs, and quotes it in the review record (C97, C98). The count's header quotes both. No change.
+- The letters in the `Checks:` and `Confirmation:` forms were not defined. Fixed by C166: "The capital letters in each form stand for the counts the line reports."
+
+Step 5, `npm run check -- docs/branch-point.md --base 475ad72`, on the fixed text:
+Checks: 0 sentences over 25 words; 164 of 164 claims mapped; 8 claims changed, 0 missing, 1 stale.
+
+The stale claim is C122. Its IR claim lost its second half. Its prose sentence already read "BP-09: the proportional-verification case." The prose sentence for the cut half is gone. No defect.
+
+The lint's new warning on step 5 (SP-23, "Meta-review" first used without a link) reads the anchor `#meta-review-signals` inside a link's target. The warning is a false positive. Recorded, not fixed.
+
+Claims after fixes: 164 (C164, C165 and C166 added). Prose after fixes: 2,723 words. Structural fixes owed: none. Decided claims the fixes reworded, for the owner at acceptance: C11, C13, C122 and C154. Decided claims the fixes added: C164 (split from C154) and C165.
+
+The confirmation is pending.

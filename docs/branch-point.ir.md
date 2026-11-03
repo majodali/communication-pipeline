@@ -2,7 +2,7 @@
 
 Reader: RD-4
 Purpose: document. The branch point as a whole: which checks a text gets before it reaches its reader, and how its review rounds run, after the adopted changes of evaluation case 015.
-Status: rendered (v1.11, round 6; rendered by the reasoning role, D3)
+Status: rendered (v1.11, round 6 fix pass; rendered by the reasoning role, D3)
 Source: the owner's decision of 2026-11-02 on evaluation case 015 (changes 1 to 30 adopted, changes 31 to 35 declined); the adopted changes of cases 013 (1, 2, 3 and 5) and 014 (1 to 8), whose landing joined case 015; branch point v1.10 as the owner accepted it on 2026-11-01; the IRs of v1.4 to v1.10 under docs/records/.
 Normative: yes
 Footprint: docs/branch-point.md; docs/records/branch-point-history.md; docs/style-spec.md; docs/vocabulary.md; docs/backlog.md; .claude/agents/; .claude/skills/; scripts/; package.json
@@ -109,13 +109,9 @@ C142. The human owner, setting the thresholds, reads the branch point with no mo
 
 ### Purpose
 
-C11. The branch point gives each IR a disposition: which of the lint, the rendering of prose and the stranger rounds run. [decided: owner, 2026-11-01, branch point v1.10; reworded in count 1, round 2]
+C11. The branch point gives each IR a disposition: which of the lint (the project's deterministic checker), the rendering and the stranger rounds run. [decided: owner, 2026-11-01, branch point v1.10; reworded in count 1, round 6]
 
 C12. The branch point protects proportional verification. [decided: branch point v1.9 IR, C72]
-
-C13. Under proportional verification, a short report to a reader who shares the conversation costs one pass of the lint, the project's deterministic checker. [decided: branch point v1.9 IR, C73]
-
-C156. A short report is one under its reader's threshold: row BP-07's for RD-1, row BP-08's for RD-3. [inferred: R5]
 
 C14. Under BP-03 and BP-04, a document gets the lint, the rendering and the stranger rounds. [decided: owner, 2026-11-01, branch point v1.10; reworded in count 1, round 3]
 
@@ -243,6 +239,8 @@ C60. The reasoning role marks that structural fix `awaiting restatement` in the 
 
 C61. The reasoning role runs `npm run check` again on the fixed text, with the commit the round read as its base. [decided: owner, 2026-11-02, case 015 changes 1 and 24; reworded in count 1, round 3]
 
+C165. The reasoning role writes the `Checks:` line again. [decided: owner, 2026-11-02, case 015 change 24; added in count 1, round 6]
+
 C153. The reasoning role fixes what that run lists. [decided: owner, 2026-11-02, case 015 changes 1 and 24; reworded after round 2 confirmation]
 
 C62. The fix commit is the commit that holds step 5's fixes and every fix step 5's check calls for. evidence: E1, E2. [decided: owner, 2026-11-02, case 015 change 4; reworded after round 5 confirmation]
@@ -261,7 +259,9 @@ C67. The instance names each new defect a fix introduced. [decided: branch point
 
 C68. The reasoning role writes the `Confirmation:` line. [decided: branch point v1.10 IR, C31; reworded in count 1, round 2]
 
-C154. The reasoning role fixes again each fix the instance says does not hold, and fixes each new defect the instance names. [decided: branch point v1.10 IR, C31; reworded in count 1, round 3]
+C154. The reasoning role fixes again each fix the instance says does not hold. [decided: branch point v1.10 IR, C31; reworded in count 1, round 6]
+
+C164. The reasoning role fixes each new defect the instance names. [decided: branch point v1.10 IR, C31; split in count 1, round 6]
 
 C160. The reasoning role runs `npm run check` on those fixes, with the fix commit as its base. [decided: owner, 2026-11-02, case 015 change 24; added after round 3 confirmation]
 
@@ -290,6 +290,8 @@ C76. The `Confirmation:` line, at step 6, reads `Confirmation: H of A fixes hold
 C77. The per-round row, at step 4, holds the round, the prose words, the IR claims, the findings and the verdict. [decided: branch point v1.4 IR, C14]
 
 C78. The `Meta-review:` line, at step 7, takes the form the specification's Meta-review section gives. evidence: E1. [decided: owner, 2026-11-02, case 015 change 10]
+
+C166. The capital letters in each form stand for the counts the line reports. [inferred: R6]
 
 C79. During the rounds the prose status line reads `under review` with the version and the round number. [decided: branch point v1.5 IR, C5]
 
@@ -393,7 +395,11 @@ C120. An IR under the thresholds, with no dependent ask, reads well as it stands
 
 C121. Past the thresholds, the reader reads prose faster than a claims list. [decided: branch point v1.1, 2026-10-25; reworded in count 1, round 3]
 
-C122. BP-09 is the proportional-verification case: the owner or the delegating agent reads an IR under the thresholds as it stands. [decided: branch point v1.1, 2026-10-25; reworded after round 3 confirmation]
+C122. BP-09 is the proportional-verification case. [decided: branch point v1.1, 2026-10-25; reworded in count 1, round 6]
+
+C156. A short report is one under its reader's threshold: row BP-07's for RD-1 (the owner, in conversation), row BP-08's for RD-3 (a delegating agent). [inferred: R5]
+
+C13. Under BP-09, a short report to a reader who shares the conversation costs one pass of the lint. [decided: branch point v1.9 IR, C73; reworded in count 1, round 6]
 
 ### Meta-review signals
 
@@ -453,7 +459,7 @@ G4. cluster: C53, C54, C55, C56, C57 [decided: owner, 2026-11-02, case 015 chang
 
 G5. cluster: C58, C163, C59, C60, C61, C62 [decided: owner, 2026-11-02, case 015 change 13]
 
-G6. cluster: C63, C64, C65, C66, C67, C68, C154, C160, C161 [decided: owner, 2026-11-02, case 015 change 13]
+G6. cluster: C63, C64, C65, C66, C67, C68, C154, C164, C160, C161 [decided: owner, 2026-11-02, case 015 change 13]
 
 G7. cluster: C70, C71, C72 [decided: owner, 2026-11-02, case 015 change 13]
 
@@ -469,6 +475,8 @@ R4. C55 depends-on C49 because a term the restatement check finds in the restate
 
 R5. C156 refines C13 because rows BP-07 and BP-08 give D1 to a report past their thresholds, so a report under them takes D0, one pass of the lint.
 
+R6. C166 refines C73 because each letter in the `Checks:` and `Confirmation:` forms marks a number the reasoning role writes in its place.
+
 ## Evidence
 
 E1. eval/cases/015-ruleset-simplification-review-2026-11-02.md, Outcome, changes 1 to 30, adopted by the owner on 2026-11-02 (changes 31 to 35 declined), the case's decision line.
@@ -481,7 +489,7 @@ E4. docs/backlog.md, chunk 3's row: "Scope narrowed per the owner: reports to RD
 
 ## Asks
 
-A1. Accept or reject branch point v1.11. Under case 015 change 19, acceptance ratifies the wording of each decided claim this IR rewords from its source, unless the owner names a claim to exclude. Depends: C1 to C163.
+A1. Accept or reject branch point v1.11. Under case 015 change 19, acceptance ratifies the wording of each decided claim this IR rewords from its source, unless the owner names a claim to exclude. Depends: C1 to C166.
 
 A2. Ratify or strike the term "a term the text introduces" (T34) and its definition, C157, which the paraphrase test rests on; the specification's count 7 asks the same. Depends: C157.
 
