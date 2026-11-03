@@ -2,7 +2,7 @@
 
 Reader: RD-4
 Purpose: document. The branch point as a whole: which checks a text gets before it reaches its reader, and how its review rounds run, after the adopted changes of evaluation case 015.
-Status: rendered (v1.11, round 9; rendered by the reasoning role, D3)
+Status: rendered (v1.11, round 9 fix pass; rendered by the reasoning role, D3)
 Source: the owner's decision of 2026-11-02 on evaluation case 015 (changes 1 to 30 adopted, changes 31 to 35 declined); the adopted changes of cases 013 (1, 2, 3 and 5) and 014 (1 to 8), whose landing joined case 015; branch point v1.10 as the owner accepted it on 2026-11-01; the IRs of v1.4 to v1.10 under docs/records/.
 Normative: yes
 Footprint: docs/branch-point.md; docs/records/branch-point-history.md; docs/style-spec.md; docs/vocabulary.md; docs/backlog.md; .claude/agents/; .claude/skills/; scripts/; package.json
@@ -84,6 +84,8 @@ T36. Verdict. defined-at: https://github.com/majodali/methodology/blob/main/docs
 T37. Rendering. defined-at: https://github.com/majodali/methodology/blob/main/docs/vocabulary.md#def-rendering [decided: methodology vocabulary]
 
 T38. Calibration: a dated refinement of a style rule's scope, recorded in the rule's row. [proposed: this IR]
+
+T39. Restatement mismatch. defined-at: https://github.com/majodali/methodology/blob/main/docs/intermediate-representation.md#the-verdict [decided: methodology specification, The verdict]
 
 ## Claims
 
@@ -181,7 +183,7 @@ C37. The check runs the lint, the round-trip check and the claims check. evidenc
 
 C38. The round-trip check finds each claim the render map omits. [decided: owner, 2026-10-24]
 
-C39. The claims check looks for a prose sentence that carries each claim changed since the check's base, the commit the check compares against. [decided: owner, 2026-10-30; reworded in count 1, round 8]
+C39. The claims check looks, for each claim changed since the check's base commit, for a prose sentence that carries the claim. [decided: owner, 2026-10-30; reworded in count 1, round 8; reworded in count 1, round 9]
 
 C40. Before round 1, the claims check compares the text with the version the owner last accepted. [inferred: R3]
 
@@ -195,9 +197,9 @@ C43. The reasoning role writes the `Checks:` line. evidence: E1. [decided: owner
 
 C44. In step 2, the reasoning role starts a fresh stranger instance from the agent file `.claude/agents/reviewer.md`, with the brief below. evidence: E1. [decided: owner, 2026-11-02, case 015 change 23]
 
-C45. In the brief, the reasoning role names the commit to read and the human reader the text names for its reader. [decided: owner, 2026-11-02, case 015 changes 26 and 29; reworded in count 1, round 2; reworded in count 1, round 7]
+C45. In the brief, the reasoning role names the commit to read and the human reader the text's Reader line names. [decided: owner, 2026-11-02, case 015 changes 26 and 29; reworded in count 1, round 2; reworded in count 1, round 7; reworded in count 1, round 9]
 
-C167. This text names the human owner as its human reader, in the Reader line's second sentence. [inferred: R7]
+C167. This text's Reader line names the human owner as that human reader, in its second sentence. [inferred: R7]
 
 C46. In the brief, the reasoning role names each finding the reasoning role declined so far, in whole or in part, with its reason. [decided: owner, 2026-11-02, case 015 change 7; reworded in count 1, round 4]
 
@@ -211,7 +213,7 @@ C49. The stranger writes the restatement for the human reader the brief names, w
 
 C157. A term the text introduces is one the text defines or links to a vocabulary entry. [proposed: this IR]
 
-C50. Then the stranger restates each listed passage in one sentence. [decided: branch point v1.10 IR, C10]
+C50. Then the stranger restates each passage awaiting restatement in one sentence. [decided: branch point v1.10 IR, C10; reworded in count 1, round 9]
 
 C51. Then the stranger reads the IR and writes its report. [decided: branch point v1.4 IR, C5]
 
@@ -287,7 +289,7 @@ C73. The `Checks:` line reads `Checks: L sentences over 25 words; M of N claims 
 
 C74. The restatement stands at step 4 as a `Restatement:` line, then the restatement as written in a quoted block. evidence: E1. [decided: owner, 2026-11-02, case 015 change 26]
 
-C75. The `Mismatches:` line, at step 4, holds one entry per mismatch, or `none`. [decided: branch point v1.10 IR, C14; reworded in count 1, round 1]
+C75. The `Mismatches:` line, at step 4, holds one entry per restatement mismatch, or `none`. [decided: branch point v1.10 IR, C14; reworded in count 1, round 1; reworded in count 1, round 9]
 
 C146. Each entry names the contradicted claim and, after "relied on", the claim of the quoted sentence, as `C41 (relied on C35)`. [decided: branch point v1.10 IR, C14; reworded after round 1 confirmation]
 
@@ -319,7 +321,7 @@ C169. A calibration is a dated refinement of a style rule's scope, recorded in t
 
 C86. The stranger reports findings against the style specification's rows SP-01 to SP-05, SP-08 to SP-11, SP-18, SP-25 and SP-26, with the calibrations the rows carry. evidence: E1. [decided: owner, 2026-11-02, case 015 change 11]
 
-C87. For each mismatch, the brief asks the stranger to quote the prose sentence the stranger relied on. [decided: branch point v1.10 IR, C15]
+C87. For each restatement mismatch, the brief asks the stranger to quote the prose sentence the stranger relied on. [decided: branch point v1.10 IR, C15; reworded in count 1, round 9]
 
 C150. The 25-word limit of SP-02 binds the sentences of the prose. [decided: owner, 2026-11-02, case 015 change 1; added after round 1 confirmation; reworded after round 7 confirmation]
 
@@ -395,7 +397,7 @@ C115. Under BP-02a the reasoning role renders the normative text in place of the
 
 C148. A paraphrase of normative text could change its force. [decided: branch point v1.10 IR, C69]
 
-C116. Under BP-05a, an unratified term in a document gets the stranger's check under BP-03. [decided: owner, 2026-11-01, branch point v1.10]
+C116. A document with an unratified term already gets the stranger's check under BP-03, which fires before BP-05a. [decided: owner, 2026-11-01, branch point v1.10; reworded in count 1, round 9]
 
 C117. Under BP-05a, in a report the owner's ratification of the proposed terms replaces the stranger's check. evidence: E1, E4. [decided: owner, 2026-11-02, case 015 change 12]
 

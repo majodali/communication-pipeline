@@ -64,7 +64,7 @@ Signals script before the round: no round recorded yet; nothing to read.
 | 6 | 2,707 | 161 | 12 | 4.4 | not readable (mismatches 0; contradiction 1; undefined term 1; paraphrase-test findings 2) |
 | 7 | 2,718 | 164 | 12 | 4.4 | not readable (mismatches 0; contradiction 1; undefined terms 0; paraphrase-test findings 3) |
 | 8 | 2,740 | 165 | 12 | 4.4 | not readable (mismatches 2; contradiction 1; undefined terms 3; paraphrase-test findings 2) |
-| 9 | 2,781 | 166 | | | pending |
+| 9 | 2,781 | 166 | 7 | 2.5 | not readable (mismatches 0; contradictions 0; undefined terms 2; paraphrase-test findings 2) |
 
 ### Round 1, count 1, 2026-11-02
 
@@ -564,3 +564,33 @@ Signals script after the confirmation line: round 8 held every fix, so signal 1 
 The round reads the text at its opening commit, named in the brief, under v1.11 at commit 12ff480. Prose 2,781 words; IR 166 claims; unratified terms 3 (T34, T35, T38). Human reader for the paraphrase test: the human owner. Stranger: pending, a fresh instance. Round 9 is the second to last before the limit.
 
 Declines carried in the round 9 brief: v1.9 round 1's F3; round 1's 3, 14 and 16; round 2's 1 and 2; round 4's 1, 2, 3 and 9; round 8's 2, each with its reason. Not carried: the restatement-check items. The brief names the passages round 8 and its confirmation changed, the departure kept for this count. Passages awaiting restatement: none.
+
+Stranger model: claude-haiku-5-5, a fresh instance, reading at commit 3644405. It wrote its restatement before it opened the IR and made no call outside its brief.
+
+Restatement:
+
+> This text decides how much checking a document receives before a reader sees it. Each document arrives with facts: who will read it, whether it is a report or a document, how many statements and new terms it holds, how many requests it makes, how long its longest statement runs, whether it is binding, and whether the owner asked for review. A table of rules matches those facts, top row first, to one of several check packages. The packages differ by how much checking runs: a mechanical check alone; that check plus a rewrite of the text into prose for the reader; or that plus repeated reviews by a fresh reader. Each review round has a fixed sequence: check the text, have a fresh reader restate it and list mismatches with the text, fix the findings, then have that reader confirm the fixes. The text also fixes how each round is recorded and when a review closes. The numeric thresholds in the rules are provisional until a test corpus tunes them, and the owner sets them.
+
+Prose 2,781 words by `wordCount` (the stranger's estimate: about 3,200); IR 166 claims; 5 findings from the stranger and 2 from the restatement check, 7 in all, 2.5 per thousand words. Restatement: no mismatch. Listed passages: none. Contradictions 0, undefined terms 2 (findings 3 and 4), paraphrase-test findings 2 (the check's items; the stranger found no passage that resisted, and owns its use of "round"); verdict: not readable for RD-4. Omissions noticed, not counted: 4.
+Mismatches: none
+
+Restatement check, `node scripts/lint.mjs --restatement docs/branch-point.review.md --round 9`: 2 items, BB1 ("round") and BB2 (a repeat of the plain purpose).
+
+Signals script after the `Mismatches:` line: signal 1 stands from rounds 1 to 7; no claim recurs. No contradiction this round, so no new fourth-signal instance; signal 4 stands from earlier rounds.
+
+| # | Finding (shortened) | Kind | Decision |
+|---|---|---|---|
+| 1 | "a prose sentence that carries each claim" reads as one sentence for all (C39) | SP-03 | fixed: "The claims check looks, for each claim changed since the check's base commit, for a prose sentence that carries the claim." |
+| 2 | "the human reader the text names for its reader" (C45) | SP-03 | fixed: C45 returns to case 015 change 26's own words, "the human reader the text's Reader line names". C167 points to this text's answer: "This text's Reader line names the human owner as that human reader, in its second sentence." The Orchestrator suggested adding "or the one the text names in its place"; that would cover a text whose Reader line names no human, the change 26 gap the owner holds, so the smaller text is kept |
+| 3 | "listed passage" never tied to "passage awaiting restatement" (C50) | SP-04 | fixed: "Then the stranger restates each passage awaiting restatement in one sentence." |
+| 4 | "mismatch" undefined (C75, C87) | SP-04 | fixed: "restatement mismatch" in full, linked to the specification's verdict section, in the record-lines table and the Stranger brief. T39 added to the IR's Terms, decided by that source |
+| 5 | BP-05a credited with BP-03's stranger check (C116) | SP-03 | fixed: "a document with an unratified term already gets the stranger's check under BP-03, which fires before BP-05a" |
+| BB1 | the restatement uses "round" (T11) | paraphrase test | declined: "Each review round has a fixed sequence" and the steps that follow say what a round is in plain words; the stranger owns the slip; no passage resisted, as the specification's round 5 X1 |
+| BB2 | the first sentence repeats the plain purpose (78 percent) | paraphrase test | declined: the plain purpose holds no term the text introduces, as round 1's P4, round 3's R1, round 7's Z3 and round 8's AA2 |
+
+Step 5, `npm run check -- docs/branch-point.md --base 3644405`, on the fixed text:
+Checks: 0 sentences over 25 words; 166 of 166 claims mapped; 7 claims changed, 0 missing, 0 stale.
+
+Claims after fixes: 166. Prose after fixes: 2,786 words. Structural fixes owed: none. Decided claims the fixes reworded, for the owner at acceptance: C39, C45, C50, C75, C87 and C116.
+
+The confirmation is pending.
