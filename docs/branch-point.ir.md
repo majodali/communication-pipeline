@@ -2,7 +2,7 @@
 
 Reader: RD-4
 Purpose: document. The branch point as a whole: which checks a text gets before it reaches its reader, and how its review rounds run, after the adopted changes of evaluation case 015.
-Status: rendered (v1.11, round 9 fix pass; rendered by the reasoning role, D3)
+Status: rendered (v1.11, round 10; rendered by the reasoning role, D3)
 Source: the owner's decision of 2026-11-02 on evaluation case 015 (changes 1 to 30 adopted, changes 31 to 35 declined); the adopted changes of cases 013 (1, 2, 3 and 5) and 014 (1 to 8), whose landing joined case 015; branch point v1.10 as the owner accepted it on 2026-11-01; the IRs of v1.4 to v1.10 under docs/records/.
 Normative: yes
 Footprint: docs/branch-point.md; docs/records/branch-point-history.md; docs/style-spec.md; docs/vocabulary.md; docs/backlog.md; .claude/agents/; .claude/skills/; scripts/; package.json
@@ -183,7 +183,7 @@ C37. The check runs the lint, the round-trip check and the claims check. evidenc
 
 C38. The round-trip check finds each claim the render map omits. [decided: owner, 2026-10-24]
 
-C39. The claims check looks, for each claim changed since the check's base commit, for a prose sentence that carries the claim. [decided: owner, 2026-10-30; reworded in count 1, round 8; reworded in count 1, round 9]
+C39. The claims check looks, for each claim changed since the check's base, the commit compared against, for a prose sentence that carries the claim. [decided: owner, 2026-10-30; reworded in count 1, round 8; reworded after round 9 confirmation]
 
 C40. Before round 1, the claims check compares the text with the version the owner last accepted. [inferred: R3]
 
@@ -213,7 +213,7 @@ C49. The stranger writes the restatement for the human reader the brief names, w
 
 C157. A term the text introduces is one the text defines or links to a vocabulary entry. [proposed: this IR]
 
-C50. Then the stranger restates each passage awaiting restatement in one sentence. [decided: branch point v1.10 IR, C10; reworded in count 1, round 9]
+C50. Then the stranger restates in one sentence each passage the brief lists as awaiting restatement. [decided: branch point v1.10 IR, C10; reworded after round 9 confirmation]
 
 C51. Then the stranger reads the IR and writes its report. [decided: branch point v1.4 IR, C5]
 
@@ -421,7 +421,7 @@ C124. The methodology specification's Meta-review section defines the trigger, t
 
 C125. The script reads the first signal, a fix not held in two or more rounds, from the `Confirmation:` lines. [decided: owner, 2026-11-02, case 015 change 2; reworded in count 1, round 1]
 
-C126. The script reads part of the second signal, one claim named by mismatches in two rounds, from the `Mismatches:` lines of every count. [decided: branch point v1.9 IR, C30; reworded in count 1, round 1]
+C126. The script reads part of the second signal, one claim named by restatement mismatches in two rounds, from the `Mismatches:` lines of every count. [decided: branch point v1.9 IR, C30; reworded in count 1, round 1; reworded after round 9 confirmation]
 
 C127. The reasoning role reads the rest of the second signal, a finding raised again after a decline, from the record. [decided: branch point v1.10 IR, C43; reworded in count 1, round 1]
 

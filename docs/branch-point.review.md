@@ -65,6 +65,7 @@ Signals script before the round: no round recorded yet; nothing to read.
 | 7 | 2,718 | 164 | 12 | 4.4 | not readable (mismatches 0; contradiction 1; undefined terms 0; paraphrase-test findings 3) |
 | 8 | 2,740 | 165 | 12 | 4.4 | not readable (mismatches 2; contradiction 1; undefined terms 3; paraphrase-test findings 2) |
 | 9 | 2,781 | 166 | 7 | 2.5 | not readable (mismatches 0; contradictions 0; undefined terms 2; paraphrase-test findings 2) |
+| 10 | 2,794 | 166 | | | pending |
 
 ### Round 1, count 1, 2026-11-02
 
@@ -593,4 +594,25 @@ Checks: 0 sentences over 25 words; 166 of 166 claims mapped; 7 claims changed, 0
 
 Claims after fixes: 166. Prose after fixes: 2,786 words. Structural fixes owed: none. Decided claims the fixes reworded, for the owner at acceptance: C39, C45, C50, C75, C87 and C116.
 
-The confirmation is pending.
+Confirmation: 5 of 5 fixes hold. Not held: none. Declines accepted: 1 of 2. New defects: 2.
+
+The instance read both files in full at fix commit 759f50d. The Orchestrator confirmed finding 2's wording: C45 in change 26's own words, with C167 giving this text's answer; the clause it had suggested would have added a rule. The confirmation's fixes, IR first, before round 10 opens:
+
+- N1 (SP-04, C39's rewording dropped the base's definition): C39 reads "The claims check looks, for each claim changed since the check's base, the commit compared against, for a prose sentence that carries the claim."
+- N2 (SP-04, the report part "Listed passages" no longer matched step 3): step 3 now ties the two. C50 reads "Then the stranger restates in one sentence each passage the brief lists as awaiting restatement." The report's part names stay as C99 gives them.
+- A residual the instance flagged as not new: the signals paragraph (C126) said "mismatches" bare. It now reads "one claim named by restatement mismatches in two rounds", linked at that first use in the section.
+- BB2, decline not accepted: the instance holds that the fourth condition counts the repeated sentence. The decline stands on round 1's P3 and P4 reason, as for rounds 7 and 8. Recorded for the owner with the instance's reason.
+- Decline BB1 accepted.
+
+Step 6's check, `npm run check -- docs/branch-point.md --base 759f50d`:
+Checks: 0 sentences over 25 words; 166 of 166 claims mapped; 3 claims changed, 0 missing, 0 stale.
+
+Prose after the confirmation's fixes: 2,794 words; IR 166 claims; unratified terms 3 (T34, T35, T38). Decided claims reworded after confirmation, for the owner at acceptance: C39, C50 and C126.
+
+Signals script after the confirmation line: round 9 held every fix, so signal 1 does not widen; it stands from rounds 1 to 7. Signal 4 stands by reading.
+
+### Round 10, count 1, 2026-11-02
+
+The round reads the text at its opening commit, named in the brief, under v1.11 at commit 12ff480. Prose 2,794 words; IR 166 claims; unratified terms 3 (T34, T35, T38). Human reader for the paraphrase test: the human owner. Stranger: pending, a fresh instance. Round 10 is the last before the limit: the final-round rules apply after it, whatever its verdict.
+
+Declines carried in the round 10 brief: v1.9 round 1's F3; round 1's 3, 14 and 16; round 2's 1 and 2; round 4's 1, 2, 3 and 9; round 8's 2, each with its reason. Not carried: the restatement-check items. The brief names the passages round 9 and its confirmation changed, the departure kept for this count. Passages awaiting restatement: none.
