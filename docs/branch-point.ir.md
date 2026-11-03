@@ -2,7 +2,7 @@
 
 Reader: RD-4
 Purpose: document. The branch point as a whole: which checks a text gets before it reaches its reader, and how its review rounds run, after the adopted changes of evaluation case 015.
-Status: rendered (v1.11, round 10; rendered by the reasoning role, D3)
+Status: rendered (v1.11, round 10 fix pass; rendered by the reasoning role, D3)
 Source: the owner's decision of 2026-11-02 on evaluation case 015 (changes 1 to 30 adopted, changes 31 to 35 declined); the adopted changes of cases 013 (1, 2, 3 and 5) and 014 (1 to 8), whose landing joined case 015; branch point v1.10 as the owner accepted it on 2026-11-01; the IRs of v1.4 to v1.10 under docs/records/.
 Normative: yes
 Footprint: docs/branch-point.md; docs/records/branch-point-history.md; docs/style-spec.md; docs/vocabulary.md; docs/backlog.md; .claude/agents/; .claude/skills/; scripts/; package.json
@@ -183,7 +183,9 @@ C37. The check runs the lint, the round-trip check and the claims check. evidenc
 
 C38. The round-trip check finds each claim the render map omits. [decided: owner, 2026-10-24]
 
-C39. The claims check looks, for each claim changed since the check's base, the commit compared against, for a prose sentence that carries the claim. [decided: owner, 2026-10-30; reworded in count 1, round 8; reworded after round 9 confirmation]
+C39. The claims check looks for one prose sentence per changed claim. [decided: owner, 2026-10-30; reworded in count 1, round 8; reworded after round 9 confirmation]
+
+C170. A changed claim is one whose text differs from its text at the claims check's base, the commit the claims check compares against. [decided: owner, 2026-10-30; split from C39 in count 1, round 10]
 
 C40. Before round 1, the claims check compares the text with the version the owner last accepted. [inferred: R3]
 
@@ -199,11 +201,11 @@ C44. In step 2, the reasoning role starts a fresh stranger instance from the age
 
 C45. In the brief, the reasoning role names the commit to read and the human reader the text's Reader line names. [decided: owner, 2026-11-02, case 015 changes 26 and 29; reworded in count 1, round 2; reworded in count 1, round 7; reworded in count 1, round 9]
 
-C167. This text's Reader line names the human owner as that human reader, in its second sentence. [inferred: R7]
+C167. The branch point's Reader line names the human owner as that human reader, in its second sentence. [inferred: R7]
 
 C46. In the brief, the reasoning role names each finding the reasoning role declined so far, in whole or in part, with its reason. [decided: owner, 2026-11-02, case 015 change 7; reworded in count 1, round 4]
 
-C47. In the brief, the reasoning role lists each passage awaiting restatement: a passage moved by an earlier fix that no later restatement has yet tested. [decided: branch point v1.10 IR, C32; reworded in count 1, round 2]
+C47. In the brief, the reasoning role lists the passage of each fix awaiting restatement: a fix that no later restatement has yet tested. [decided: branch point v1.10 IR, C32; reworded in count 1, round 2]
 
 ### Step 3, read and report
 
@@ -213,7 +215,7 @@ C49. The stranger writes the restatement for the human reader the brief names, w
 
 C157. A term the text introduces is one the text defines or links to a vocabulary entry. [proposed: this IR]
 
-C50. Then the stranger restates in one sentence each passage the brief lists as awaiting restatement. [decided: branch point v1.10 IR, C10; reworded after round 9 confirmation]
+C50. Then the stranger restates in one sentence each passage the brief lists. [decided: branch point v1.10 IR, C10; reworded after round 9 confirmation]
 
 C51. Then the stranger reads the IR and writes its report. [decided: branch point v1.4 IR, C5]
 
@@ -311,7 +313,7 @@ C81. The reasoning role changes the prose status line and the IR's Status parent
 
 C82. The stranger brief is the instruction the reasoning role gives each round's stranger instance. [decided: branch point v1.4 IR, C17]
 
-C83. Each finding carries a locus (the prose, the IR, or both) and a fix kind (cut, rephrase, or add). [decided: branch point v1.4 IR, C21]
+C83. The stranger gives each finding a locus (the prose, the IR, or both) and a fix kind (cut, rephrase, or add). [decided: branch point v1.4 IR, C21]
 
 C84. After reading the IR, the stranger reports each disagreement between its restatement and the IR as a finding. [decided: branch point v1.4 IR, C19]
 
@@ -397,7 +399,7 @@ C115. Under BP-02a the reasoning role renders the normative text in place of the
 
 C148. A paraphrase of normative text could change its force. [decided: branch point v1.10 IR, C69]
 
-C116. A document with an unratified term already gets the stranger's check under BP-03, which fires before BP-05a. [decided: owner, 2026-11-01, branch point v1.10; reworded in count 1, round 9]
+C116. A document with a proposed term already gets the stranger's check under BP-03, which fires before BP-05a. [decided: owner, 2026-11-01, branch point v1.10; reworded in count 1, round 9]
 
 C117. Under BP-05a, in a report the owner's ratification of the proposed terms replaces the stranger's check. evidence: E1, E4. [decided: owner, 2026-11-02, case 015 change 12]
 
@@ -421,7 +423,7 @@ C124. The methodology specification's Meta-review section defines the trigger, t
 
 C125. The script reads the first signal, a fix not held in two or more rounds, from the `Confirmation:` lines. [decided: owner, 2026-11-02, case 015 change 2; reworded in count 1, round 1]
 
-C126. The script reads part of the second signal, one claim named by restatement mismatches in two rounds, from the `Mismatches:` lines of every count. [decided: branch point v1.9 IR, C30; reworded in count 1, round 1; reworded after round 9 confirmation]
+C126. The script reads part of the second signal, a recurring claim, from the `Mismatches:` lines of every count. [decided: branch point v1.9 IR, C30; reworded in count 1, round 1; reworded after round 9 confirmation]
 
 C127. The reasoning role reads the rest of the second signal, a finding raised again after a decline, from the record. [decided: branch point v1.10 IR, C43; reworded in count 1, round 1]
 
@@ -505,9 +507,9 @@ E4. docs/backlog.md, chunk 3's row: "Scope narrowed per the owner: reports to RD
 
 ## Asks
 
-A1. Accept or reject branch point v1.11. Under case 015 change 19, acceptance ratifies the wording of each decided claim this IR rewords from its source, unless the owner names a claim to exclude. Depends: C1 to C169.
+A1. Accept or reject branch point v1.11. Under case 015 change 19, acceptance ratifies the wording of each decided claim this IR rewords from its source, unless the owner names a claim to exclude. Depends: C1 to C170.
 
-A2. Ratify or strike the term "a term the text introduces" (T34) and its definition, C157, which the paraphrase test rests on; the specification's count 7 asks the same. Depends: C157.
+A2. Ratify or strike the term "a term the text introduces" (T34) and its definition, C157, which the paraphrase test rests on; the methodology's intermediate-representation specification asks the same in its count 7, ask A12. Depends: C157.
 
 A3. Ratify or strike the term "recurring claim" (T35) and its definition, C163, which step 5's structural fix rests on. Depends: C163.
 

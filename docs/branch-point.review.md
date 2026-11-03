@@ -65,7 +65,7 @@ Signals script before the round: no round recorded yet; nothing to read.
 | 7 | 2,718 | 164 | 12 | 4.4 | not readable (mismatches 0; contradiction 1; undefined terms 0; paraphrase-test findings 3) |
 | 8 | 2,740 | 165 | 12 | 4.4 | not readable (mismatches 2; contradiction 1; undefined terms 3; paraphrase-test findings 2) |
 | 9 | 2,781 | 166 | 7 | 2.5 | not readable (mismatches 0; contradictions 0; undefined terms 2; paraphrase-test findings 2) |
-| 10 | 2,794 | 166 | | | pending |
+| 10 | 2,794 | 166 | 14 | 5.0 | readable (mismatches 0; contradictions 0; undefined terms 0; paraphrase-test findings 0, the check's three items declined) |
 
 ### Round 1, count 1, 2026-11-02
 
@@ -616,3 +616,42 @@ Signals script after the confirmation line: round 9 held every fix, so signal 1 
 The round reads the text at its opening commit, named in the brief, under v1.11 at commit 12ff480. Prose 2,794 words; IR 166 claims; unratified terms 3 (T34, T35, T38). Human reader for the paraphrase test: the human owner. Stranger: pending, a fresh instance. Round 10 is the last before the limit: the final-round rules apply after it, whatever its verdict.
 
 Declines carried in the round 10 brief: v1.9 round 1's F3; round 1's 3, 14 and 16; round 2's 1 and 2; round 4's 1, 2, 3 and 9; round 8's 2, each with its reason. Not carried: the restatement-check items. The brief names the passages round 9 and its confirmation changed, the departure kept for this count. Passages awaiting restatement: none.
+
+Stranger model: claude-haiku-5-5, a fresh instance, reading at commit 24415c0. It wrote its restatement before it opened the IR and made no call outside its brief.
+
+Restatement:
+
+> The problem: a text may reach its reader with too little checking, or with heavy checking that a short note does not need. This document decides how much checking each text gets. The text is first turned into a structured list of its statements. The document then applies a short ordered rule list, and the first rule whose condition holds sets the level. The rules read the intended reader, the purpose, whether the text sets binding rules, whether the owner asked for a review, and the sizes of the text's statements, new unapproved words and requests to the reader. The lightest level runs only automatic checks. Higher levels add a rewording of the prose for the reader. The highest levels add fresh reviewers who read the text, state what they understood, and report each difference from the structured list. Their fixes are re-checked in later passes until the text reads clearly or a limit is reached. The document also sets the steps of each pass, what each pass records, the style rules the reviewers apply, and when the process itself is reviewed. The numbers in the rules are provisional until a test corpus tunes them, and the owner sets them.
+
+Prose 2,794 words by `wordCount` (the stranger's estimate: about 2,850); IR 166 claims; 11 findings from the stranger and 3 from the restatement check, 14 in all, 5.0 per thousand words. Restatement: no mismatch. Listed passages: none. Contradictions 0, undefined terms 0, paraphrase-test findings 0 once the check's three items are declined; verdict: readable for RD-4. Omissions noticed, not counted: 2. The count's first readable verdict, in its last round before the limit.
+Mismatches: none
+
+Restatement check, `node scripts/lint.mjs --restatement docs/branch-point.review.md --round 10`: 3 items, DD1 ("limit"), DD2 (a repeat of the plain purpose) and DD3 (a repeat of C6's sentence).
+
+Signals script after the `Mismatches:` line: signal 1 stands from rounds 1 to 7; no claim recurs. No contradiction this round. By reading, signal 2 fires on its declined-finding part: finding 1 raises round 4's finding 2, a decline the brief carried, without saying why its reason fails.
+
+Step 7, at a readable verdict: the specification's final-round rules apply. The reasoning role fixes each finding not waiting for the owner, IR first; none waits. No structural fix is owed. The round's stranger instance then confirms each fix, and the reasoning role marks each finding confirmed or unfixed. A new defect the confirmation names is not fixed in the count; it goes to the owner and is fixed at the next edit.
+
+| # | Finding (shortened) | Kind | Decision |
+|---|---|---|---|
+| 1 | the plain purpose's second sentence names two readers (C2) | SP-01 | declined: round 4's finding 2, carried in the brief. The style guide's SP-27 holds the plain purpose to two sentences, and the sentence states one fact, who reads the document |
+| 2 | verdict, fix rules, limit and signals unlinked in the Rounds introduction | SP-04 | fixed: each linked at that first use |
+| 3 | "the check's base" ambiguous and unnamed for later rounds (C39) | SP-03 | fixed with finding 4: "the claims check's base"; step 1 names it before round 1 (C40), step 5 for later checks (C61) |
+| 4 | C39 chains two "for" phrases | SP-09 | fixed: split. "The claims check looks for one prose sentence per changed claim." (C39) and "A changed claim is one whose text differs from its text at the claims check's base, the commit the claims check compares against." (C170) |
+| 5 | "This text" in a step that governs every text (C167) | SP-03 | fixed: "The branch point's Reader line names the human owner as that human reader, in its second sentence." |
+| 6 | "awaiting restatement" defined for a passage, applied to fixes (C47, C60, C65) | SP-04 | fixed: "the reasoning role lists the passage of each fix awaiting restatement: a fix that no later restatement has yet tested." (C47); step 3 reads "each passage the brief lists" (C50) |
+| 7 | the locus and fix kind have no actor (C83) | SP-18 | fixed: "The stranger gives each finding a locus (the prose, the IR, or both) and a fix kind (cut, rephrase, or add)." |
+| 8 | "it relied on" (C87's prose) | SP-03 | fixed: "the prose sentence the stranger relied on", as C87 reads |
+| 9 | "unratified term" against the Inputs' "proposed terms" (C116) | SP-04 | fixed: "a document with a proposed term" |
+| 10 | C126 restates the recurring-claim definition | SP-26 | fixed: "The script reads part of the second signal, a recurring claim, from the `Mismatches:` lines of every count.", linked to step 5's definition |
+| 11 | A2's "count 7" names no document | SP-05 | fixed: "the methodology's intermediate-representation specification asks the same in its count 7, ask A12" |
+| DD1 | "until the text reads clearly or a limit is reached" uses "Limit" (T13) | paraphrase test | declined: "a limit" is the plain noun for a cap on the passes; the restatement relies on no definition the text gives, as the specification's round 5 X2 |
+| DD2 | "This document decides how much checking each text gets." repeats the plain purpose | paraphrase test | declined: the plain purpose holds no term the text introduces, as round 1's P4 and round 4's U2 |
+| DD3 | "The numbers in the rules are provisional until a test corpus tunes them" repeats C6's sentence (70 percent) | paraphrase test | declined: the sentence holds no term the text introduces and puts the stranger's words in place of the linked "evaluation corpus", as round 6's V2 |
+
+Step 7's check, `npm run check -- docs/branch-point.md --base 24415c0`, on the fixed text:
+Checks: 0 sentences over 25 words; 167 of 167 claims mapped; 8 claims changed, 0 missing, 0 stale.
+
+Claims after fixes: 167 (C170 added). Prose after fixes: 2,797 words. Structural fixes owed: none. Decided claims the fixes reworded, for the owner at acceptance: C39, C47, C50, C83, C116 and C126. Decided claim added: C170, split from C39. Ask A2 names the specification in full.
+
+The confirmation is pending.
