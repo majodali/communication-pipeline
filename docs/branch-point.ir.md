@@ -2,7 +2,7 @@
 
 Reader: RD-4
 Purpose: document. The branch point as a whole: which checks a text gets before it reaches its reader, and how its review rounds run, after the adopted changes of evaluation case 015.
-Status: rendered (v1.11, round 8; rendered by the reasoning role, D3)
+Status: rendered (v1.11, round 8 fix pass; rendered by the reasoning role, D3)
 Source: the owner's decision of 2026-11-02 on evaluation case 015 (changes 1 to 30 adopted, changes 31 to 35 declined); the adopted changes of cases 013 (1, 2, 3 and 5) and 014 (1 to 8), whose landing joined case 015; branch point v1.10 as the owner accepted it on 2026-11-01; the IRs of v1.4 to v1.10 under docs/records/.
 Normative: yes
 Footprint: docs/branch-point.md; docs/records/branch-point-history.md; docs/style-spec.md; docs/vocabulary.md; docs/backlog.md; .claude/agents/; .claude/skills/; scripts/; package.json
@@ -113,7 +113,7 @@ C142. The human owner, setting the thresholds, reads the branch point with no mo
 
 C11. The branch point gives each IR a disposition: which of the lint (the project's deterministic checker), the rendering and the stranger rounds run. [decided: owner, 2026-11-01, branch point v1.10; reworded in count 1, round 6]
 
-C12. The branch point protects proportional verification. [decided: branch point v1.9 IR, C72]
+C12. The branch point is how the project applies proportional verification. [decided: branch point v1.9 IR, C72; reworded in count 1, round 8]
 
 C14. Under BP-03 and BP-04, a document gets the lint, the rendering and the stranger rounds. [decided: owner, 2026-11-01, branch point v1.10; reworded in count 1, round 3]
 
@@ -161,7 +161,7 @@ C30. The reasoning role runs the lints for every IR, whatever disposition follow
 
 ### Rounds
 
-C31. A round is one fresh stranger's reading of the text, the fixes that follow, and that stranger's check of those fixes. evidence: E1. [decided: owner, 2026-11-02, case 015 change 7]
+C31. A round is one fresh stranger's reading of the text, the fixes that follow, and that stranger's check of the fixes step 6 names. evidence: E1. [decided: owner, 2026-11-02, case 015 change 7; reworded in count 1, round 8]
 
 C32. The methodology specification's Stranger rounds section holds the rules every round follows: the verdict, the fix rules, confirmation, the limit and the signals. evidence: E1. [decided: owner, 2026-11-02, case 015 change 7]
 
@@ -179,7 +179,7 @@ C37. The check runs the lint, the round-trip check and the claims check. evidenc
 
 C38. The round-trip check finds each claim the render map omits. [decided: owner, 2026-10-24]
 
-C39. The claims check looks for a prose sentence that carries each changed claim. [decided: owner, 2026-10-30]
+C39. The claims check looks for a prose sentence that carries each claim changed since the check's base, the commit the check compares against. [decided: owner, 2026-10-30; reworded in count 1, round 8]
 
 C40. Before round 1, the claims check compares the text with the version the owner last accepted. [inferred: R3]
 
@@ -273,7 +273,7 @@ C161. The reasoning role then opens the next round at the commit that holds thos
 
 ### Step 7, close the count
 
-C70. In step 7, at a readable verdict or at the limit, the specification's rules for the final round apply. evidence: E1. [decided: owner, 2026-11-02, case 015 change 7]
+C70. In step 7, at a readable verdict or at the limit, the reasoning role applies the specification's rules for the final round. evidence: E1. [decided: owner, 2026-11-02, case 015 change 7; reworded in count 1, round 8]
 
 C71. The reasoning role writes the `Meta-review:` line. [decided: branch point v1.6 IR, C7]
 
@@ -312,6 +312,8 @@ C83. Each finding carries a locus (the prose, the IR, or both) and a fix kind (c
 C84. After reading the IR, the stranger reports each disagreement between its restatement and the IR as a finding. [decided: branch point v1.4 IR, C19]
 
 C85. The stranger reports as a finding each passage the stranger cannot restate without a term the text introduces. evidence: E1. [decided: owner, 2026-11-02, case 015 change 26]
+
+C169. A calibration is a dated refinement of a style rule's scope, recorded in the rule's row. [inferred: R8]
 
 C86. The stranger reports findings against the style specification's rows SP-01 to SP-05, SP-08 to SP-11, SP-18, SP-25 and SP-26, with the calibrations the rows carry. evidence: E1. [decided: owner, 2026-11-02, case 015 change 11]
 
@@ -383,7 +385,7 @@ C156. A short report is one under its reader's threshold: row BP-07's for RD-1 (
 
 C112. BP-02 is the owner's review request: the owner asked for a review of this output, so the stranger rounds run. [decided: branch point v1.9 IR, C69]
 
-C113. BP-02a stands before BP-02, so a normative document takes D3 whatever the owner flag. [decided: branch point v1.9 IR, C68; reworded in count 1, round 2]
+C113. BP-02a stands before BP-02, so an IR with purpose `document` and `Normative: yes` takes D3 whatever the owner flag. [decided: branch point v1.9 IR, C68; reworded in count 1, round 2; reworded in count 1, round 8]
 
 C114. Documentation is read by someone who was not in the conversation. [decided: branch point v1.1, 2026-10-25; reworded in count 1, round 1]
 
@@ -485,6 +487,8 @@ R6. C166 refines C73 because each letter in the `Checks:` and `Confirmation:` fo
 
 R7. C167 refines C45 because C142 says the human owner reads the branch point with no more context than RD-4.
 
+R8. C169 refines C86 because the style specification's rows record each calibration with its date and case, as the rows of SP-01 and SP-18 do.
+
 ## Evidence
 
 E1. eval/cases/015-ruleset-simplification-review-2026-11-02.md, Outcome, changes 1 to 30, adopted by the owner on 2026-11-02 (changes 31 to 35 declined), the case's decision line.
@@ -497,7 +501,7 @@ E4. docs/backlog.md, chunk 3's row: "Scope narrowed per the owner: reports to RD
 
 ## Asks
 
-A1. Accept or reject branch point v1.11. Under case 015 change 19, acceptance ratifies the wording of each decided claim this IR rewords from its source, unless the owner names a claim to exclude. Depends: C1 to C168.
+A1. Accept or reject branch point v1.11. Under case 015 change 19, acceptance ratifies the wording of each decided claim this IR rewords from its source, unless the owner names a claim to exclude. Depends: C1 to C169.
 
 A2. Ratify or strike the term "a term the text introduces" (T34) and its definition, C157, which the paraphrase test rests on; the specification's count 7 asks the same. Depends: C157.
 

@@ -63,7 +63,7 @@ Signals script before the round: no round recorded yet; nothing to read.
 | 5 | 2,676 | 160 | 5 | 1.9 | not readable (mismatches 0; contradiction 1; undefined term 1; paraphrase-test findings 1) |
 | 6 | 2,707 | 161 | 12 | 4.4 | not readable (mismatches 0; contradiction 1; undefined term 1; paraphrase-test findings 2) |
 | 7 | 2,718 | 164 | 12 | 4.4 | not readable (mismatches 0; contradiction 1; undefined terms 0; paraphrase-test findings 3) |
-| 8 | 2,740 | 165 | | | pending |
+| 8 | 2,740 | 165 | 12 | 4.4 | not readable (mismatches 2; contradiction 1; undefined terms 3; paraphrase-test findings 2) |
 
 ### Round 1, count 1, 2026-11-02
 
@@ -501,3 +501,46 @@ Signals script after the confirmation line: signal 1 stands, now with fixes not 
 The round reads the text at its opening commit, named in the brief, under v1.11 at commit 12ff480. Prose 2,740 words; IR 165 claims; unratified terms 2 (T34, T35). Human reader for the paraphrase test: the human owner. Stranger: pending, a fresh instance.
 
 Declines carried in the round 8 brief: v1.9 round 1's F3; round 1's 3, 14 and 16; round 2's 1 and 2; round 4's 1, 2, 3 and 9, each with its reason. Round 4's 9 now sits on two sentences, after round 7 split C159; its ground, that the sentences repeat BP-00 to answer an old contradiction, stands, so it carries with its description updated. Not carried: the restatement-check items. The brief names the passages round 7 and its confirmation changed, the departure kept for this count. Passages awaiting restatement: none.
+
+Stranger model: claude-haiku-5-5, a fresh instance, reading at commit 76c05f5. It wrote its restatement before it opened the IR.
+
+Side-effect call: after its reading, the stranger called one tool its brief bars, the environment documentation index. It reported the call itself and says no finding depends on it. The call changed no file. Recorded as an edge, as round 2's call was.
+
+Restatement:
+
+> This text decides how much checking a piece of writing gets before its reader sees it. A script reads six facts about each piece: who reads it, whether it is a report or a document, how many separate statements it makes, whether it asks the reader for decisions, whether its wording states binding rules, and whether the owner asked for a review. From these facts it picks one of four levels. The lightest runs a mechanical check and delivers the structured form as it stands. The next adds a plain-language rewrite for the reader. The two heaviest add review passes by a fresh reader. In one of them, the agent running the process does the rewrite itself, because a rewrite could change binding wording. In each review pass, a fresh reader restates the text, reports where the restatement disagrees with the statements and where the wording breaks the style rules, and the fixes are then checked by that reader. The text also sets the record of each pass, when the process stops, and the style rules reviewers check. The rule conditions' numbers are provisional until the test corpus tunes them; you set them.
+
+Prose 2,740 words by `wordCount` (the stranger's estimate: about 2,800); IR 165 claims; 10 findings from the stranger and 2 from the restatement check, 12 in all, 4.4 per thousand words. Restatement: two mismatches. Listed passages: none. Contradiction 1 (finding 6), undefined terms 3 (findings 7, 9 and 10), paraphrase-test findings 2 (the check's items; the stranger found none, and owns its use of "restatement"); verdict: not readable for RD-4. Omissions noticed, not counted: 9.
+
+The mismatches, each counting under the first condition though the stranger put both down to its own restatement. First, the restatement had the round's stranger check every fix; step 6 checks each fix not awaiting restatement (C65). The stranger relied on the round's definition (C31), which said "those fixes", so the prose invited the reading; finding 6 fixes it. Second, the restatement gave the dispatcher six inputs; the Inputs table holds nine, among them proposed terms (C20), longest claim (C22) and the `ir-only` owner flag (C143). The stranger relied on the longest-claim row; the prose did not invite the reading.
+Mismatches: C65 (relied on C31), C20 (relied on C22)
+
+Restatement check, `node scripts/lint.mjs --restatement docs/branch-point.review.md --round 8`: 2 items, AA1 ("restatement") and AA2 (a repeat of the plain purpose).
+
+Two of this round's undefined terms, "changed claim" and "calibrations", were in round 2's void reading (its 6 and 11). Round 2's entry gave both no fix, on reasons that did not hold: the base was named for round 1 and step 5 only, and the style specification's rows date their calibrations without defining the word. Both are taken up now. The void reading's findings were advisory, not decided, so the second signal's declined-finding part does not read them; noted for the owner.
+
+Signals script after the `Mismatches:` line: signal 1 stands from rounds 1 to 7; no claim recurs. By reading, no new fourth-signal instance: finding 6's contradiction sits in C31 and C65, which no fix touched. Signal 4 stands from earlier rounds.
+
+| # | Finding (shortened) | Kind | Decision |
+|---|---|---|---|
+| 1 | the round's stranger checks every fix (C65, relying on C31) | restatement | fixed with finding 6: the prose invited it |
+| 2 | six inputs, against the table's nine (C20, relying on C22) | restatement | declined: the prose did not invite it; the Inputs table has nine rows. The mismatch counts |
+| 3 | Rendering conditions linked to the file, not the section (C7) | SP-05 | fixed: linked to the section |
+| 4 | IR used in the Type line before its expansion | SP-04 | fixed: expanded and linked in the Type line; the Purpose keeps the link on IR |
+| 5 | "protects proportional verification" (C12) | SP-08 | fixed: "The branch point is how the project applies proportional verification." |
+| 6 | the round's definition checks "those fixes", against step 6 (C31, C65) | SP-25 | fixed: "A round is one fresh stranger's reading of the text, the fixes that follow, and that stranger's check of the fixes step 6 names." (C31) |
+| 7 | "changed claim" undefined after round 1 (C39) | SP-04 | fixed: "The claims check looks for a prose sentence that carries each claim changed since the check's base, the commit the check compares against." Step 1 names the base before round 1 (C40); step 5 names it after (C61) |
+| 8 | step 7's final-round rules apply with no actor (C70) | SP-18 | fixed: "the reasoning role applies the specification's rules for the final round" |
+| 9 | "calibrations" undefined (C86) | SP-04 | fixed: "A calibration is a dated refinement of a style rule's scope, recorded in the rule's row." (C169, inferred by R8), before the brief's list of rows |
+| 10 | "normative document" drops BP-02a's purpose condition (C113) | SP-04 | fixed: "so an IR with purpose `document` and `Normative: yes` takes D3 whatever the owner flag" |
+| AA1 | the restatement uses "restatement" (T20) | paraphrase test | declined: "a fresh reader restates the text" says what it is in plain words, and the stranger owns the slip; no passage resisted, as the specification's round 6 Y3 |
+| AA2 | the first sentence repeats the plain purpose (70 percent) | paraphrase test | declined: the plain purpose holds no term the text introduces, as round 1's P4, round 3's R1 and round 7's Z3 |
+
+Step 5, `npm run check -- docs/branch-point.md --base 76c05f5`, on the fixed text:
+Checks: 0 sentences over 25 words; 166 of 166 claims mapped; 6 claims changed, 0 missing, 0 stale.
+
+The lint's warning on the v1.10 Versions row, "meta-review" in a case file name, is the false positive recorded in round 7.
+
+Claims after fixes: 166 (C169 added). Prose after fixes: 2,781 words. Structural fixes owed: none. Decided claims the fixes reworded, for the owner at acceptance: C12, C31, C39, C70 and C113.
+
+The confirmation is pending.
